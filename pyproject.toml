@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-evaluator"
+version = "0.1.0"
+description = "Ten agent-memory systems on one model, one embedder, one calibrated judge — with per-question evidence"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "openai>=1.30", "numpy>=1.26", "pyyaml>=6.0", "rank-bm25>=0.2", "sentence-transformers>=3.0",
+  "fastapi>=0.110", "uvicorn>=0.29",
+]
+
+[project.optional-dependencies]
+systems = ["mem0ai>=2.2", "graphiti-core>=0.31", "kuzu>=0.11", "chromadb>=0.5", "graphrag>=3.3",
+           "agentic-memory @ git+https://github.com/agiresearch/A-mem.git"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["src*", "tools*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"

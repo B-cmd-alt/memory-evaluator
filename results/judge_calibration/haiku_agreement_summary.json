@@ -1,0 +1,101 @@
+{
+  "n": 100,
+  "sonnet_mean": 0.4475,
+  "haiku_mean": 0.356,
+  "mean_abs_diff": 0.0935,
+  "cohen_kappa_binary_0p5": 0.8575,
+  "weighted_kappa_ordinal": 0.8475,
+  "n_major_disagreements_gt_0p3": 8,
+  "n_llm_calls": 52,
+  "elapsed_seconds": 410.5,
+  "disagreements": [
+    {
+      "id": "s1_q14",
+      "task": "T3",
+      "strict_score": 1.0,
+      "haiku_score": 0.5,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "What was the Project Atlas Q2 infrastructure budget before and after the executive-approved revision in March 2026?",
+      "reference": "The Q2 infrastructure budget was increased from $180,000 to $240,000 following executive approval (s1_075, around March 10, 2026).",
+      "answer": "Before: $180,000 \u2192 After: $240,000"
+    },
+    {
+      "id": "c4ea545c",
+      "task": "T4",
+      "strict_score": 1.0,
+      "haiku_score": 0.0,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "Do I go to the gym more frequently than I did previously?",
+      "reference": "Yes",
+      "answer": "Yes. Your original schedule had you going to the gym 3 times a week (Tuesdays, Thursdays, and Saturdays), but you later mentioned you're now going 4 times a week."
+    },
+    {
+      "id": "s1_q23",
+      "task": "T5",
+      "strict_score": 1.0,
+      "haiku_score": 0.0,
+      "strict_mode": "ref_abstention_judge",
+      "haiku_mode": "ref_abstention_judge",
+      "question": "What specific vulnerabilities were identified in the Atlas API authentication layer during the ShieldLabs security audit?",
+      "reference": "I don't know. The memories record that two medium-severity vulnerabilities were found in the Atlas API authentication layer (s1_005) but do not describe the nature, CVE IDs, or technical details of the vulnerabilities.",
+      "answer": "The context doesn't specify the exact nature of the two vulnerabilities \u2014 only that ShieldLabs found **two medium-severity vulnerabilities** in the Atlas API authentication layer and that both were patched within the 30-day remediation window. No further details about the specific vulnerability types are provided."
+    },
+    {
+      "id": "b5ef892d",
+      "task": "T2",
+      "strict_score": 1.0,
+      "haiku_score": 0.0,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "How many days did I spend on camping trips in the United States this year?",
+      "reference": "8 days.",
+      "answer": "Based on the context, you mentioned two camping trips this year:\n\n- A **3-day** solo trip to Big Sur in early April\n- A **5-day** trip to Yellowstone National Park last month\n\nThat's **8 days** total."
+    },
+    {
+      "id": "0ddfec37_abs",
+      "task": "T5",
+      "strict_score": 0.75,
+      "haiku_score": 0.0,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "How many autographed football have I added to my collection in the first three months of collection?",
+      "reference": "The information provided is not enough. You mentioned collecting autographed baseball but not football.",
+      "answer": "The context does not mention autographed footballs. You collected **autographed baseballs** \u2014 specifically 15 in the first three months of collecting (as mentioned when you got a signed Mike Trout baseball)."
+    },
+    {
+      "id": "gpt4_d12ceb0e",
+      "task": "T2",
+      "strict_score": 1.0,
+      "haiku_score": 0.0,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "What is the average age of me, my parents, and my grandparents?",
+      "reference": "59.6",
+      "answer": "Based on the context:\n\n- You: 32\n- Mom: 55\n- Dad: 58\n- Grandma: 75\n- Grandpa: 78\n\nAverage: (32 + 55 + 58 + 75 + 78) / 5 = **59.6 years**\n\nNote: Your deceased grandma's age at passing isn't mentioned in the context, so she's not included."
+    },
+    {
+      "id": "s1_q17",
+      "task": "T4",
+      "strict_score": 0.75,
+      "haiku_score": 0.0,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "What is the current planned launch date for Project Beacon?",
+      "reference": "May 20, 2026. (The date was first pushed from April 15 to June 3, then pulled forward to May 20 after the compliance review concluded.)",
+      "answer": "The current planned launch date for Project Beacon is **May 20, 2026**."
+    },
+    {
+      "id": "s2_q01",
+      "task": "T1",
+      "strict_score": 0.75,
+      "haiku_score": 0.0,
+      "strict_mode": "normal_judge",
+      "haiku_mode": "normal_judge",
+      "question": "What was the total amount raised in the Series B round, and who was the lead investor?",
+      "reference": "The Series B round closed at $21M. Andreessen Horowitz was the lead investor, joined by Bessemer and two angel investors.",
+      "answer": "The Series B round closed at **$21M**, with **Andreessen Horowitz** as the lead investor."
+    }
+  ]
+}

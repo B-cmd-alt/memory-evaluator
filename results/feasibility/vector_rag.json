@@ -1,0 +1,1215 @@
+{
+ "system": "vector_rag",
+ "label": "Vanilla vector RAG",
+ "family": "dense retrieval",
+ "year": 2023,
+ "kind": "classic",
+ "provenance": "baseline",
+ "status": "OK",
+ "error": null,
+ "n_memories": 90,
+ "n_questions": 25,
+ "questions": [
+  {
+   "id": "s1_q01",
+   "task": "T1",
+   "question": "What project management tool replaced Jira company-wide?",
+   "reference": "Linear",
+   "answer": "Linear replaced Jira company-wide (rollout completed as of 2025-06-15).",
+   "retrieved": [
+    {
+     "content": "[2025-06-15] Company switched from Jira to Linear for project tracking, effective company-wide rollout completed.",
+     "source": "s1_008",
+     "score": 0.7400339841842651
+    },
+    {
+     "content": "[2026-01-19] Company migrated internal documentation from Confluence to Notion, migration finalized.",
+     "source": "s1_042",
+     "score": 0.6176925301551819
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.6083661913871765
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.602030336856842
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.5986639261245728
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.2,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1664,
+    "completion_tokens": 31,
+    "cost_usd": 0.007,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Linear as the tool that replaced Jira company-wide, matching the reference. The added rollout date is extra detail that does not contradict it."
+  },
+  {
+   "id": "s1_q02",
+   "task": "T1",
+   "question": "What is Project Beacon's total approved budget for the full calendar year 2026?",
+   "reference": "$480,000",
+   "answer": "Project Beacon's total approved budget for calendar year 2026 is **$480,000**.",
+   "retrieved": [
+    {
+     "content": "[2026-01-08] Project Beacon's total approved budget is $480,000 for the full calendar year 2026.",
+     "source": "s1_034",
+     "score": 0.9059626460075378
+    },
+    {
+     "content": "[2026-02-28] Project Beacon's Q1 budget burn as of February 28, 2026 was $112,000, running approximately 8% under the planned $122,000 for the period.",
+     "source": "s1_064",
+     "score": 0.7649154663085938
+    },
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 0.7342286109924316
+    },
+    {
+     "content": "[2026-01-05] Project Beacon officially kicked off on January 5, 2026, with Diana Park assigned as tech lead.",
+     "source": "s1_030",
+     "score": 0.7195600271224976
+    },
+    {
+     "content": "[2026-03-03] The team completed the internal alpha release of Project Beacon on March 3, 2026, with core CRUD features functional end-to-end.",
+     "source": "s1_067",
+     "score": 0.7073121070861816
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.6,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1729,
+    "completion_tokens": 31,
+    "cost_usd": 0.0072,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states $480,000 for Project Beacon's total approved budget for calendar year 2026, which exactly matches the reference."
+  },
+  {
+   "id": "s1_q03",
+   "task": "T1",
+   "question": "Who was assigned as tech lead for Project Beacon at its kickoff?",
+   "reference": "Diana Park",
+   "answer": "Diana Park was assigned as tech lead for Project Beacon at its kickoff on January 5, 2026.",
+   "retrieved": [
+    {
+     "content": "[2026-01-05] Project Beacon officially kicked off on January 5, 2026, with Diana Park assigned as tech lead.",
+     "source": "s1_030",
+     "score": 0.7937294244766235
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.7408923506736755
+    },
+    {
+     "content": "[2026-03-28] Project Beacon reached its beta milestone on March 28, 2026, with 12 pilot customers onboarded for external testing.",
+     "source": "s1_088",
+     "score": 0.7159119248390198
+    },
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 0.7121086120605469
+    },
+    {
+     "content": "[2026-01-06] Eric Wu joined Project Beacon as the frontend developer, responsible for all React component development.",
+     "source": "s1_032",
+     "score": 0.7013106346130371
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.27,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1713,
+    "completion_tokens": 38,
+    "cost_usd": 0.0072,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Diana Park as tech lead, matching the reference. The added kickoff date is extra detail that doesn't contradict the reference."
+  },
+  {
+   "id": "s1_q04",
+   "task": "T1",
+   "question": "Which database did the Project Beacon team select as their primary database after evaluating alternatives?",
+   "reference": "PostgreSQL (chosen over MongoDB and DynamoDB)",
+   "answer": "PostgreSQL. The team chose it as the primary database for Project Beacon after evaluating MongoDB and DynamoDB (decision recorded 2026-01-14).",
+   "retrieved": [
+    {
+     "content": "[2026-01-14] The team decided to use PostgreSQL as the primary database for Project Beacon after evaluating MongoDB and DynamoDB.",
+     "source": "s1_038",
+     "score": 0.8416626453399658
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.7601008415222168
+    },
+    {
+     "content": "[2026-01-29] Project Beacon adopted Auth0 for authentication instead of building a custom auth system, following a security review recommendation.",
+     "source": "s1_046",
+     "score": 0.6853981614112854
+    },
+    {
+     "content": "[2026-01-06] Eric Wu joined Project Beacon as the frontend developer, responsible for all React component development.",
+     "source": "s1_032",
+     "score": 0.6752268671989441
+    },
+    {
+     "content": "[2026-01-05] Project Beacon officially kicked off on January 5, 2026, with Diana Park assigned as tech lead.",
+     "source": "s1_030",
+     "score": 0.6751769781112671
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.58,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1699,
+    "completion_tokens": 58,
+    "cost_usd": 0.0074,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names PostgreSQL as the primary database and states it was chosen over MongoDB and DynamoDB, matching all key facts in the reference. The added decision date does not contradict the reference."
+  },
+  {
+   "id": "s1_q05",
+   "task": "T1",
+   "question": "How many reusable components were included in the base React component library Eric Wu completed for Project Beacon?",
+   "reference": "34 reusable components",
+   "answer": "34 reusable components.",
+   "retrieved": [
+    {
+     "content": "[2026-02-07] Eric Wu completed the base React component library for Project Beacon by February 7, 2026, covering 34 reusable components.",
+     "source": "s1_051",
+     "score": 0.9081690311431885
+    },
+    {
+     "content": "[2026-01-06] Eric Wu joined Project Beacon as the frontend developer, responsible for all React component development.",
+     "source": "s1_032",
+     "score": 0.8215564489364624
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.7462314963340759
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.6361474990844727
+    },
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.633831799030304
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.78,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1691,
+    "completion_tokens": 9,
+    "cost_usd": 0.0069,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states 34 reusable components, which exactly matches the reference."
+  },
+  {
+   "id": "s1_q06",
+   "task": "T2",
+   "question": "What timezone does Bob Martinez work in, and what project is he currently assigned to?",
+   "reference": "Bob Martinez is in CST (Austin, Texas). He was reassigned from Project Atlas to Project Beacon effective March 10, 2026.",
+   "answer": "Bob Martinez works in Central Time (CST), since he's based in Austin. The rest of the core Atlas team is on PST.\n\nHe is currently assigned to Project Beacon. He was reassigned there from the Atlas data pipeline team effective March 10, 2026, which is the most recent assignment in the context.",
+   "retrieved": [
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.7883623838424683
+    },
+    {
+     "content": "[2025-03-07] Bob Martinez is based in Austin (CST) while the rest of the core Atlas team operates on PST, causing a recurring scheduling conflict for the Friday 4pm PST standup which Bob consistently misses.",
+     "source": "s1_002",
+     "score": 0.7647045850753784
+    },
+    {
+     "content": "[2026-03-07] Bob Martinez has been reassigned from the Atlas data pipeline team to Project Beacon, effective March 10, to address the engineering shortfall caused by the compliance delay.",
+     "source": "s1_071",
+     "score": 0.7134073972702026
+    },
+    {
+     "content": "[2025-06-10] Bob Martinez represented the engineering team at KubeCon EU 2025 in Amsterdam and evaluated three service mesh solutions for potential adoption in the infrastructure roadmap.",
+     "source": "s1_007",
+     "score": 0.6667986512184143
+    },
+    {
+     "content": "[2026-02-24] Leadership review on February 24th resulted in Compass being deprioritized in favor of Atlas, freeing Bob Martinez to return to Atlas full-time starting March 2nd.",
+     "source": "s1_062",
+     "score": 0.6628692150115967
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.6,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1809,
+    "completion_tokens": 248,
+    "cost_usd": 0.0097,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer matches all key facts: CST/Austin, currently on Project Beacon, reassigned from Atlas effective March 10, 2026. Extra detail about the Atlas team being on PST doesn't contradict the reference."
+  },
+  {
+   "id": "s1_q07",
+   "task": "T2",
+   "question": "What multiple roles was Alice Chen simultaneously holding as of early March 2026?",
+   "reference": "Alice Chen was simultaneously: (1) project manager for Project Atlas, (2) acting head of product following the director departure, and (3) interim PM for Project Beacon (splitting time 60/40 between Beacon and Atlas).",
+   "answer": "As of early March 2026, Alice Chen held three roles at once:\n\n1. **Project Manager for Project Atlas**, her original role.\n2. **Acting head of product**, taken on in February 2026 after the director left.\n3. **Interim PM for Beacon**, formally from March 1st, splitting her time 60/40 between Beacon and Atlas until a permanent replacement was hired.",
+   "retrieved": [
+    {
+     "content": "[2026-02-03] Alice Chen took over as acting head of product in addition to her PM role following director departure.",
+     "source": "s1_048",
+     "score": 0.7255741953849792
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.7181347012519836
+    },
+    {
+     "content": "[2026-03-01] Alice Chen formally took over as interim PM for Beacon on March 1st, splitting her time 60/40 between Beacon and Atlas until a permanent replacement was hired.",
+     "source": "s1_066",
+     "score": 0.6983615159988403
+    },
+    {
+     "content": "[2025-01-10] Alice Chen and the previous QA lead had a documented conflict over release gating authority; Carol Davis was hired partly to reset that dynamic with a more collaborative handoff process.",
+     "source": "s1_000",
+     "score": 0.6432982683181763
+    },
+    {
+     "content": "[2026-02-03] Alice Chen joined the Beacon project's weekly standup on February 3rd to help the team define user story acceptance criteria after their PM went on medical leave.",
+     "source": "s1_050",
+     "score": 0.6390236020088196
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.39,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1745,
+    "completion_tokens": 127,
+    "cost_usd": 0.0082,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes all three roles from the reference: PM for Atlas, acting head of product after the director left, and interim PM for Beacon with a 60/40 split between Beacon and Atlas. The extra details (February 2026, March 1st, permanent replacement) don't contradict the reference."
+  },
+  {
+   "id": "s1_q08",
+   "task": "T2",
+   "question": "What library did the Project Compass team adopt following Bob Martinez's consulting visit, and which project originally developed it?",
+   "reference": "The Compass team adopted Atlas's shared logging library on March 6, 2026, after Bob Martinez recommended it. It was originally developed by the Atlas team.",
+   "answer": "The Compass team adopted **Atlas's shared logging library** (on March 6th), and it was originally developed by **Project Atlas**.",
+   "retrieved": [
+    {
+     "content": "[2026-03-06] Bob Martinez and the Compass team adopted Atlas's shared logging library on March 6th after Bob recommended it during his consulting engagement, standardizing log formats across both projects.",
+     "source": "s1_070",
+     "score": 0.7658010721206665
+    },
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.7516233921051025
+    },
+    {
+     "content": "[2026-02-10] Bob Martinez spent two days consulting with the Compass team on February 10th to review their distributed caching implementation, identifying a race condition in their write-through logic.",
+     "source": "s1_053",
+     "score": 0.7295799255371094
+    },
+    {
+     "content": "[2026-02-24] Leadership review on February 24th resulted in Compass being deprioritized in favor of Atlas, freeing Bob Martinez to return to Atlas full-time starting March 2nd.",
+     "source": "s1_062",
+     "score": 0.6764885187149048
+    },
+    {
+     "content": "[2025-06-10] Bob Martinez represented the engineering team at KubeCon EU 2025 in Amsterdam and evaluated three service mesh solutions for potential adoption in the infrastructure roadmap.",
+     "source": "s1_007",
+     "score": 0.6462189555168152
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.01,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1803,
+    "completion_tokens": 46,
+    "cost_usd": 0.0077,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Atlas's shared logging library, gives the March 6 adoption date, and says it was originally developed by Project Atlas. These match the reference, and it omits only the mention of Bob Martinez's recommendation, which the question doesn't require."
+  },
+  {
+   "id": "s1_q09",
+   "task": "T2",
+   "question": "By how many percentage points did Project Compass's precision@10 improve after the data leakage bug was fixed?",
+   "reference": "Approximately 6.5 percentage points \u2014 from 34.7% precision@10 (baseline before fix, s1_049) to 41.2% precision@10 (after fixing the data leakage, s1_063).",
+   "answer": "Precision@10 improved by **6.5 percentage points** over the baseline: from 34.7% to 41.2% after the data leakage fix.",
+   "retrieved": [
+    {
+     "content": "[2026-02-25] After fixing the data leakage bug, Project Compass two-tower model achieved 41.2% precision@10 and 0.38 NDCG@10, still below the 45% precision target but showing a 6.5 point improvement over baseline.",
+     "source": "s1_063",
+     "score": 0.8456587195396423
+    },
+    {
+     "content": "[2026-03-20] Project Compass model retraining cadence was set to weekly full retrains plus daily incremental fine-tuning after George Kim demonstrated that model performance degraded by 3-4 points after 10 days without updates.",
+     "source": "s1_083",
+     "score": 0.6985691785812378
+    },
+    {
+     "content": "[2026-02-18] Hannah Lee identified a data leakage issue in the Project Compass feature pipeline where future interaction timestamps were bleeding into training windows, invalidating two weeks of benchmark results.",
+     "source": "s1_058",
+     "score": 0.6643461585044861
+    },
+    {
+     "content": "[2026-02-03] Project Compass baseline collaborative filtering model achieved 34.7% precision@10 on the held-out validation set, which George Kim flagged as insufficient for the target threshold of 45%.",
+     "source": "s1_049",
+     "score": 0.6611930131912231
+    },
+    {
+     "content": "[2026-03-04] George Kim added a real-time feature store backed by Redis to Project Compass, reducing inference latency from 340ms to 47ms by caching precomputed user embeddings with a 30-minute TTL.",
+     "source": "s1_068",
+     "score": 0.6495229005813599
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.44,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1855,
+    "completion_tokens": 48,
+    "cost_usd": 0.0079,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives the same 6.5 percentage point improvement and the same before and after values (34.7% to 41.2%) as the reference. The only omission is the source IDs, which are not substantive."
+  },
+  {
+   "id": "s1_q10",
+   "task": "T2",
+   "question": "Carol Davis was hired partly due to a conflict involving the previous QA lead. What position did she eventually rise to, and when?",
+   "reference": "Carol Davis was promoted from QA engineer to QA lead on October 1, 2025, where she manages a team of three testers.",
+   "answer": "She rose to **QA lead** on **2025-10-01**, when she was promoted from QA engineer and began managing a team of three testers.\n\n(Note: by 2026-03-19 she was no longer the primary QA lead for Project Atlas, having been reassigned full-time to Project Beacon.)",
+   "retrieved": [
+    {
+     "content": "[2025-10-01] Carol Davis promoted from QA engineer to QA lead, now managing a team of three testers.",
+     "source": "s1_020",
+     "score": 0.7792420387268066
+    },
+    {
+     "content": "[2025-01-10] Alice Chen and the previous QA lead had a documented conflict over release gating authority; Carol Davis was hired partly to reset that dynamic with a more collaborative handoff process.",
+     "source": "s1_000",
+     "score": 0.7542914152145386
+    },
+    {
+     "content": "[2026-03-19] Carol Davis is no longer the primary QA lead for Project Atlas; she has been reassigned to Project Beacon full-time to support its accelerated testing needs ahead of the new June launch.",
+     "source": "s1_082",
+     "score": 0.7012751698493958
+    },
+    {
+     "content": "[2025-12-09] Carol Davis is mentoring a new junior QA hire (Priya Nair, starting 2026-01) and has proposed a structured 90-day onboarding plan modeled on how she was onboarded to the Atlas project.",
+     "source": "s1_026",
+     "score": 0.6953022480010986
+    },
+    {
+     "content": "[2026-03-12] Carol Davis escalated to leadership on March 12th that QA capacity was insufficient to support three concurrent projects, resulting in Beacon's release date being pushed by two weeks.",
+     "source": "s1_077",
+     "score": 0.6940162181854248
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.02,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1818,
+    "completion_tokens": 97,
+    "cost_usd": 0.0082,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer matches all key facts in the reference: QA lead, promoted from QA engineer, on October 1, 2025, managing a team of three testers. The extra note about reassignment to Project Beacon doesn't contradict the reference."
+  },
+  {
+   "id": "s1_q11",
+   "task": "T3",
+   "question": "What was Project Atlas's original completion deadline, and what is the deadline after scope-driven changes?",
+   "reference": "The original deadline was June 30, 2026 (set January 15, 2026). It was later extended to August 15, 2026 due to scope changes.",
+   "answer": "The original deadline was June 30, 2026 (per the January 15, 2026 entry). After the scope changes, it was extended to August 15, 2026 (per the March 1, 2026 entry).",
+   "retrieved": [
+    {
+     "content": "[2026-03-01] The Project Atlas deadline has been extended to August 15, 2026 due to scope changes.",
+     "source": "s1_065",
+     "score": 0.8038482666015625
+    },
+    {
+     "content": "[2026-01-15] The Project Atlas deadline is June 30, 2026.",
+     "source": "s1_040",
+     "score": 0.7736100554466248
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.7495161294937134
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.7433937788009644
+    },
+    {
+     "content": "[2026-01-12] A CDN misconfiguration on January 12, 2026 caused Atlas dashboard assets to be served stale for approximately 90 minutes, affecting roughly 400 active users during peak morning hours.",
+     "source": "s1_037",
+     "score": 0.7060331702232361
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 3.37,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1706,
+    "completion_tokens": 64,
+    "cost_usd": 0.0075,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states original deadline June 30, 2026 (Jan 15, 2026) and extension to August 15, 2026 due to scope changes, matching all key facts in the reference. The added March 1, 2026 entry reference is extra detail that doesn't contradict it."
+  },
+  {
+   "id": "s1_q12",
+   "task": "T3",
+   "question": "How many times was Project Beacon's launch date changed, and what date did it most recently land on?",
+   "reference": "The launch date was changed twice. Originally April 15, 2026, it was first pushed to June 3, 2026 (March 4, due to compliance review blockers), then moved earlier to May 20, 2026 (March 22, after the compliance review concluded favorably).",
+   "answer": "The launch date was changed **twice**:\n\n1. March 4, 2026: moved from April 15 to June 3, 2026 (compliance review blockers).\n2. March 22, 2026: moved from June 3 to May 20, 2026 (compliance review finished early).\n\nIt most recently landed on **May 20, 2026**.",
+   "retrieved": [
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 0.7523880004882812
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.749700665473938
+    },
+    {
+     "content": "[2026-03-22] Project Beacon's launch date has been revised again, moved from June 3 to May 20, 2026 after the compliance review concluded earlier than anticipated.",
+     "source": "s1_084",
+     "score": 0.7455618381500244
+    },
+    {
+     "content": "[2026-03-28] Project Beacon reached its beta milestone on March 28, 2026, with 12 pilot customers onboarded for external testing.",
+     "source": "s1_088",
+     "score": 0.7449629902839661
+    },
+    {
+     "content": "[2026-01-05] Project Beacon officially kicked off on January 5, 2026, with Diana Park assigned as tech lead.",
+     "source": "s1_030",
+     "score": 0.7230045795440674
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.37,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1732,
+    "completion_tokens": 104,
+    "cost_usd": 0.008,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer matches all key facts: two changes, original April 15, first moved to June 3 on March 4 due to compliance blockers, then to May 20 on March 22 after compliance review concluded, final date May 20, 2026. The 'finished early' wording is a minor paraphrase and does not contradict the reference."
+  },
+  {
+   "id": "s1_q13",
+   "task": "T3",
+   "question": "What percentage complete was the Airflow-to-Dagster migration as of February 15, 2026?",
+   "reference": "60% complete as of February 15, 2026.",
+   "answer": "60% complete.",
+   "retrieved": [
+    {
+     "content": "[2026-02-15] Bob reported that the Airflow-to-Dagster migration is 60% complete as of February 15, 2026.",
+     "source": "s1_057",
+     "score": 0.8315917253494263
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.7471188306808472
+    },
+    {
+     "content": "[2026-01-15] The Project Atlas deadline is June 30, 2026.",
+     "source": "s1_040",
+     "score": 0.5772625803947449
+    },
+    {
+     "content": "[2026-01-19] Company migrated internal documentation from Confluence to Notion, migration finalized.",
+     "source": "s1_042",
+     "score": 0.5594761371612549
+    },
+    {
+     "content": "[2026-02-28] Project Beacon's Q1 budget burn as of February 28, 2026 was $112,000, running approximately 8% under the planned $122,000 for the period.",
+     "source": "s1_064",
+     "score": 0.556665301322937
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.84,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1696,
+    "completion_tokens": 7,
+    "cost_usd": 0.0069,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.9,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives the correct figure (60%), which is the key fact. It omits the 'as of February 15, 2026' date, but the question already supplies that context, so the omission is minor."
+  },
+  {
+   "id": "s1_q14",
+   "task": "T3",
+   "question": "What was the Project Atlas Q2 infrastructure budget before and after the executive-approved revision in March 2026?",
+   "reference": "The Q2 infrastructure budget was increased from $180,000 to $240,000 following executive approval (s1_075, around March 10, 2026).",
+   "answer": "Before the March 2026 revision, the Project Atlas Q2 infrastructure budget was **$180,000**. After the executive-approved revision (2026-03-10), it was **$240,000**, an increase of $60,000 due to the expanded data ingestion scope.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.7797096967697144
+    },
+    {
+     "content": "[2026-03-10] The Q2 infrastructure budget for Project Atlas has been increased from $180,000 to $240,000 following executive approval of the expanded data ingestion scope.",
+     "source": "s1_075",
+     "score": 0.7629332542419434
+    },
+    {
+     "content": "[2026-01-15] The Project Atlas deadline is June 30, 2026.",
+     "source": "s1_040",
+     "score": 0.7594976425170898
+    },
+    {
+     "content": "[2026-01-20] The Project Atlas budget was approved at $150,000 by the VP of Engineering on January 20, 2026.",
+     "source": "s1_043",
+     "score": 0.741073489189148
+    },
+    {
+     "content": "[2026-03-01] The Project Atlas deadline has been extended to August 15, 2026 due to scope changes.",
+     "source": "s1_065",
+     "score": 0.7047483921051025
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.55,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1703,
+    "completion_tokens": 88,
+    "cost_usd": 0.0077,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states the budget went from $180,000 to $240,000 after executive-approved revision on 2026-03-10, matching all key facts in the reference. The extra detail (increase of $60,000, expanded data ingestion scope) is consistent arithmetic, with the rationale being an unverifiable addition that does not contradict the reference."
+  },
+  {
+   "id": "s1_q15",
+   "task": "T3",
+   "question": "When did the company complete its migration of internal documentation from Confluence to Notion?",
+   "reference": "The migration was finalized on January 19, 2026.",
+   "answer": "The migration was finalized on January 19, 2026 (per the memory entry dated 2026-01-19).",
+   "retrieved": [
+    {
+     "content": "[2026-01-19] Company migrated internal documentation from Confluence to Notion, migration finalized.",
+     "source": "s1_042",
+     "score": 0.945209264755249
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.6548060178756714
+    },
+    {
+     "content": "[2026-03-18] A cross-project architecture review on March 18th decided that Atlas, Beacon, and Compass would all migrate to the same internal auth service by Q3 2026, eliminating three separate auth implementations.",
+     "source": "s1_081",
+     "score": 0.6376945972442627
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.6233054399490356
+    },
+    {
+     "content": "[2025-10-20] Company all-hands held; product roadmap for new internal project Horizon (customer dashboard) announced.",
+     "source": "s1_022",
+     "score": 0.6227850914001465
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.96,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1706,
+    "completion_tokens": 35,
+    "cost_usd": 0.0072,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the same date as the reference, January 19, 2026. The added note about the memory entry is only a source citation and does not change or contradict the answer."
+  },
+  {
+   "id": "s1_q16",
+   "task": "T4",
+   "question": "What is the current deadline for completing Project Atlas?",
+   "reference": "August 15, 2026. (The original deadline of June 30, 2026 was extended due to scope changes.)",
+   "answer": "The current deadline for Project Atlas is **August 15, 2026**. It was extended from the original June 30, 2026 date on 2026-03-01 because of scope changes.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] The Project Atlas deadline is June 30, 2026.",
+     "source": "s1_040",
+     "score": 0.8438031077384949
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.7692018747329712
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.76581871509552
+    },
+    {
+     "content": "[2026-03-01] The Project Atlas deadline has been extended to August 15, 2026 due to scope changes.",
+     "source": "s1_065",
+     "score": 0.7654300928115845
+    },
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.6964430809020996
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.62,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1665,
+    "completion_tokens": 57,
+    "cost_usd": 0.0072,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer gives the August 15, 2026 deadline, notes the original June 30, 2026 date, and attributes the extension to scope changes, matching all reference facts. The added extension date (2026-03-01) is extra detail that doesn't contradict the reference."
+  },
+  {
+   "id": "s1_q17",
+   "task": "T4",
+   "question": "What is the current planned launch date for Project Beacon?",
+   "reference": "May 20, 2026. (The date was first pushed from April 15 to June 3, then pulled forward to May 20 after the compliance review concluded.)",
+   "answer": "Project Beacon's current planned launch date is **May 20, 2026**. It was revised on March 22, 2026, moving up from June 3 after the compliance review finished earlier than expected.",
+   "retrieved": [
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 0.8075661063194275
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.7851848006248474
+    },
+    {
+     "content": "[2026-03-28] Project Beacon reached its beta milestone on March 28, 2026, with 12 pilot customers onboarded for external testing.",
+     "source": "s1_088",
+     "score": 0.7813550233840942
+    },
+    {
+     "content": "[2026-01-05] Project Beacon officially kicked off on January 5, 2026, with Diana Park assigned as tech lead.",
+     "source": "s1_030",
+     "score": 0.7786114811897278
+    },
+    {
+     "content": "[2026-03-22] Project Beacon's launch date has been revised again, moved from June 3 to May 20, 2026 after the compliance review concluded earlier than anticipated.",
+     "source": "s1_084",
+     "score": 0.7448593378067017
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.46,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1722,
+    "completion_tokens": 62,
+    "cost_usd": 0.0075,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.85,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated gives the correct current date (May 20, 2026) and notes it was moved up from June 3 after the compliance review. It omits the original April 15 date and adds an unverified revision date (March 22, 2026), but the key facts match and nothing contradicts the reference."
+  },
+  {
+   "id": "s1_q18",
+   "task": "T4",
+   "question": "Who is currently the primary QA lead for Project Atlas?",
+   "reference": "As of March 19, 2026, Carol Davis is no longer the primary QA lead for Project Atlas. She was reassigned full-time to Project Beacon. The memories do not name a replacement QA lead for Atlas.",
+   "answer": "Carol Davis from QA appears to be the QA contact for Project Atlas. The context says she was temporarily shared with Project Beacon from March 17, 2026, \"alongside her Atlas responsibilities,\" so she still holds her Atlas role. However, nothing in the context explicitly says she is the \"primary QA lead\" for Atlas, so that title is an inference.",
+   "retrieved": [
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.7970622777938843
+    },
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.7603788375854492
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.733283281326294
+    },
+    {
+     "content": "[2026-03-17] Carol Davis from QA was temporarily shared with Project Beacon starting March 17, 2026, to support beta testing alongside her Atlas responsibilities.",
+     "source": "s1_079",
+     "score": 0.7137861251831055
+    },
+    {
+     "content": "[2025-07-14] New hire David Kim joined as senior backend engineer, assigned to the Atlas data pipeline project.",
+     "source": "s1_011",
+     "score": 0.7050955295562744
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 6.45,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1704,
+    "completion_tokens": 120,
+    "cost_usd": 0.008,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says Carol Davis is no longer Atlas's primary QA lead because she was reassigned full-time to Project Beacon as of March 19, 2026, and no replacement is named. The generated answer says she still holds her Atlas role, based on the earlier March 17 partial sharing. That contradicts the reference and misses the full reassignment and the lack of a named replacement."
+  },
+  {
+   "id": "s1_q19",
+   "task": "T4",
+   "question": "What is the current annual tooling budget allocated to the Atlas team?",
+   "reference": "$62,000. (The budget was increased from the original $45,000 to cover newly approved tooling.)",
+   "answer": "The current annual tooling budget for the Atlas team is **$62,000**. It was increased from $45,000 on 2026-03-24 to cover the newly approved Datadog APM enterprise tier contract.",
+   "retrieved": [
+    {
+     "content": "[2026-03-24] The annual tooling budget allocated to the Atlas team has been increased from $45,000 to $62,000 to cover the newly approved Datadog APM enterprise tier contract.",
+     "source": "s1_085",
+     "score": 0.7975039482116699
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.7522570490837097
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.7328552603721619
+    },
+    {
+     "content": "[2026-01-15] The Project Atlas deadline is June 30, 2026.",
+     "source": "s1_040",
+     "score": 0.7173244953155518
+    },
+    {
+     "content": "[2026-01-20] The Project Atlas budget was approved at $150,000 by the VP of Engineering on January 20, 2026.",
+     "source": "s1_043",
+     "score": 0.6896257400512695
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 4.49,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1693,
+    "completion_tokens": 68,
+    "cost_usd": 0.0074,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives $62,000 as the current budget and notes it was increased from $45,000 to cover newly approved tooling, matching every key fact in the reference. The added date and Datadog detail do not contradict it."
+  },
+  {
+   "id": "s1_q20",
+   "task": "T4",
+   "question": "Is Kafka being used for Project Beacon's event streaming layer?",
+   "reference": "No. The decision to adopt Kafka was reversed (s1_078, March 13, 2026). The team is continuing with Redis instead.",
+   "answer": "No. The team reversed its decision to adopt Kafka on 2026-03-13. Benchmarks showed the latency gains were too small to justify the migration cost, so Project Beacon continues to use RabbitMQ for event streaming.",
+   "retrieved": [
+    {
+     "content": "[2026-03-13] The team has reversed the decision to adopt Kafka for Project Beacon's event streaming layer; they will continue using RabbitMQ after benchmarks showed insufficient latency gains to justify migration cost.",
+     "source": "s1_078",
+     "score": 0.7398667335510254
+    },
+    {
+     "content": "[2026-01-05] Project Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend.",
+     "source": "s1_031",
+     "score": 0.7081255912780762
+    },
+    {
+     "content": "[2026-01-14] The team decided to use PostgreSQL as the primary database for Project Beacon after evaluating MongoDB and DynamoDB.",
+     "source": "s1_038",
+     "score": 0.6346708536148071
+    },
+    {
+     "content": "[2026-03-10] Diana Park decided to use Redis for session caching in Project Beacon after the alpha revealed latency issues exceeding 400ms on dashboard load.",
+     "source": "s1_073",
+     "score": 0.6281893253326416
+    },
+    {
+     "content": "[2026-03-27] Alice Chen presented a unified roadmap to leadership on March 27th showing Atlas and Beacon dependency milestones aligned, after discovering that Beacon's data export feature depended on an Atlas pipeline feature not scheduled until Q3.",
+     "source": "s1_086",
+     "score": 0.6156588792800903
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.6,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1787,
+    "completion_tokens": 78,
+    "cost_usd": 0.0079,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Correctly answers No and the reversal date of 2026-03-13 matches. But it says the team continues with RabbitMQ, whereas the reference says Redis, which contradicts a key fact. It also adds an unsupported benchmark rationale."
+  },
+  {
+   "id": "s1_q21",
+   "task": "T5",
+   "question": "What are the names of the three QA testers currently on Carol Davis's team?",
+   "reference": "I don't know. The memories state that Carol Davis manages a team of three testers (s1_020) but do not name any of them.",
+   "answer": "I don't have enough information to answer this question. The context says Carol Davis manages a team of three testers, but it doesn't name them. The only other team member mentioned is Priya Nair, a junior QA hire who started in January 2026, and the context doesn't say whether she is one of the three.",
+   "retrieved": [
+    {
+     "content": "[2025-10-01] Carol Davis promoted from QA engineer to QA lead, now managing a team of three testers.",
+     "source": "s1_020",
+     "score": 0.8016581535339355
+    },
+    {
+     "content": "[2026-03-10] Carol Davis from the QA team raised 3 critical bugs in the Dagster integration during the March review.",
+     "source": "s1_072",
+     "score": 0.7609622478485107
+    },
+    {
+     "content": "[2026-03-17] Carol Davis from QA was temporarily shared with Project Beacon starting March 17, 2026, to support beta testing alongside her Atlas responsibilities.",
+     "source": "s1_079",
+     "score": 0.6952431797981262
+    },
+    {
+     "content": "[2025-10-29] Carol Davis led a workshop at QACon 2025 in Chicago presenting the team's approach to automated regression testing for data pipelines, which received positive reception and led to two partnership inquiries.",
+     "source": "s1_023",
+     "score": 0.6834791898727417
+    },
+    {
+     "content": "[2025-12-09] Carol Davis is mentoring a new junior QA hire (Priya Nair, starting 2026-01) and has proposed a structured 90-day onboarding plan modeled on how she was onboarded to the Atlas project.",
+     "source": "s1_026",
+     "score": 0.6727009415626526
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.22,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1766,
+    "completion_tokens": 91,
+    "cost_usd": 0.008,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q22",
+   "task": "T5",
+   "question": "What is Diana Park's professional background and how many years of experience does she have?",
+   "reference": "I don't know. The memories record Diana Park's role as tech lead on Project Beacon but contain no information about her background, prior employers, or years of experience.",
+   "answer": "I don't have enough information to answer this question. The context only says that Diana Park is tech lead on Project Beacon (since January 5, 2026), that she chose Redis for session caching after alpha latency issues, and that she flagged a scope creep risk. It doesn't mention her professional background or years of experience.",
+   "retrieved": [
+    {
+     "content": "[2026-01-05] Project Beacon officially kicked off on January 5, 2026, with Diana Park assigned as tech lead.",
+     "source": "s1_030",
+     "score": 0.5762942433357239
+    },
+    {
+     "content": "[2026-03-10] Diana Park decided to use Redis for session caching in Project Beacon after the alpha revealed latency issues exceeding 400ms on dashboard load.",
+     "source": "s1_073",
+     "score": 0.5678381323814392
+    },
+    {
+     "content": "[2026-02-12] Diana Park flagged a scope creep risk on February 12, 2026, after stakeholders requested real-time notifications, which was not in the original spec.",
+     "source": "s1_054",
+     "score": 0.5044124722480774
+    },
+    {
+     "content": "[2025-12-09] Carol Davis is mentoring a new junior QA hire (Priya Nair, starting 2026-01) and has proposed a structured 90-day onboarding plan modeled on how she was onboarded to the Atlas project.",
+     "source": "s1_026",
+     "score": 0.5017553567886353
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.48727867007255554
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 5.19,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1747,
+    "completion_tokens": 98,
+    "cost_usd": 0.008,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q23",
+   "task": "T5",
+   "question": "What specific vulnerabilities were identified in the Atlas API authentication layer during the ShieldLabs security audit?",
+   "reference": "I don't know. The memories record that two medium-severity vulnerabilities were found in the Atlas API authentication layer (s1_005) but do not describe the nature, CVE IDs, or technical details of the vulnerabilities.",
+   "answer": "I don't have enough information to answer this question. The context says ShieldLabs found two medium-severity vulnerabilities in the Atlas API authentication layer and that both were patched within the 30-day remediation window, but it doesn't say what the vulnerabilities were.",
+   "retrieved": [
+    {
+     "content": "[2025-05-22] A security audit by external firm ShieldLabs found two medium-severity vulnerabilities in the Atlas API authentication layer; both were patched within the 30-day remediation window.",
+     "source": "s1_005",
+     "score": 0.8243040442466736
+    },
+    {
+     "content": "[2026-01-12] A CDN misconfiguration on January 12, 2026 caused Atlas dashboard assets to be served stale for approximately 90 minutes, affecting roughly 400 active users during peak morning hours.",
+     "source": "s1_037",
+     "score": 0.6737982630729675
+    },
+    {
+     "content": "[2026-03-18] A cross-project architecture review on March 18th decided that Atlas, Beacon, and Compass would all migrate to the same internal auth service by Q3 2026, eliminating three separate auth implementations.",
+     "source": "s1_081",
+     "score": 0.6685036420822144
+    },
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.6438340544700623
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.6438330411911011
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 6.02,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1785,
+    "completion_tokens": 86,
+    "cost_usd": 0.008,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q24",
+   "task": "T5",
+   "question": "What is the detailed roadmap or milestone timeline for Project Horizon, the internal customer dashboard?",
+   "reference": "I don't know. The memories only record that Project Horizon was announced at the October 2025 all-hands (s1_022) as a new internal customer dashboard. No milestones, deadlines, team assignments, or budget details are present in the memories.",
+   "answer": "I don't have enough information to answer this question. The context only says that a product roadmap for Project Horizon (a customer dashboard) was announced at the 2025-10-20 all-hands. It doesn't include any milestones or timeline details.",
+   "retrieved": [
+    {
+     "content": "[2025-10-20] Company all-hands held; product roadmap for new internal project Horizon (customer dashboard) announced.",
+     "source": "s1_022",
+     "score": 0.8463404178619385
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.6839728951454163
+    },
+    {
+     "content": "[2026-01-15] Project Atlas is a data pipeline migration from Airflow to Dagster, targeting Q2 2026 completion.",
+     "source": "s1_039",
+     "score": 0.6733027696609497
+    },
+    {
+     "content": "[2026-03-27] Alice Chen presented a unified roadmap to leadership on March 27th showing Atlas and Beacon dependency milestones aligned, after discovering that Beacon's data export feature depended on an Atlas pipeline feature not scheduled until Q3.",
+     "source": "s1_086",
+     "score": 0.6614856719970703
+    },
+    {
+     "content": "[2026-01-15] The Project Atlas deadline is June 30, 2026.",
+     "source": "s1_040",
+     "score": 0.658985435962677
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 6.17,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1730,
+    "completion_tokens": 76,
+    "cost_usd": 0.0077,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q25",
+   "task": "T5",
+   "question": "What is Elena Vasquez's educational background and prior work experience before joining the company?",
+   "reference": "I don't know. The memories record that Elena Vasquez joined as a data engineer on September 22, 2025, reporting to Bob Martinez and focused on the Atlas ingestion layer (s1_019), but contain no information about her education or prior employment.",
+   "answer": "I don't have enough information to answer this question. The context only says that Elena Vasquez joined as a data engineer on 2025-09-22, reporting to Bob Martinez and focused on the Atlas ingestion layer. It says nothing about her education or prior work experience.",
+   "retrieved": [
+    {
+     "content": "[2025-09-22] Elena Vasquez joined as a data engineer, reporting to Bob Martinez, focused on Atlas ingestion layer.",
+     "source": "s1_019",
+     "score": 0.69862300157547
+    },
+    {
+     "content": "[2026-01-05] Alice Chen is the project manager for Project Atlas. She joined the company in March 2025.",
+     "source": "s1_029",
+     "score": 0.5200909376144409
+    },
+    {
+     "content": "[2026-01-12] Bob Martinez is the lead engineer on Project Atlas. He has 8 years of experience with distributed systems.",
+     "source": "s1_036",
+     "score": 0.5180838108062744
+    },
+    {
+     "content": "[2025-12-09] Carol Davis is mentoring a new junior QA hire (Priya Nair, starting 2026-01) and has proposed a structured 90-day onboarding plan modeled on how she was onboarded to the Atlas project.",
+     "source": "s1_026",
+     "score": 0.5013043284416199
+    },
+    {
+     "content": "[2025-07-14] New hire David Kim joined as senior backend engineer, assigned to the Atlas data pipeline project.",
+     "source": "s1_011",
+     "score": 0.49058157205581665
+    }
+   ],
+   "tier": "dense",
+   "latency_s": 6.24,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 1736,
+    "completion_tokens": 87,
+    "cost_usd": 0.0078,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  }
+ ],
+ "ingest": {
+  "seconds": 12.2,
+  "llm_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "cost_usd": 0,
+  "embed_calls": 0,
+  "errors": 0,
+  "llm_calls_per_memory": 0.0
+ },
+ "query": {
+  "accuracy": 0.93,
+  "by_task": {
+   "T1": 1.0,
+   "T2": 1.0,
+   "T3": 0.98,
+   "T4": 0.67,
+   "T5": 1.0
+  },
+  "latency_p50_s": 5.01,
+  "latency_p95_s": 6.17,
+  "read_llm_calls_per_query": 1.0,
+  "read_prompt_tokens_per_query": 1736,
+  "query_errors": 0
+ },
+ "wall_seconds": 251.7
+}

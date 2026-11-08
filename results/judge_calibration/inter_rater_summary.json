@@ -1,0 +1,74 @@
+[
+  {
+    "comparison": "proxy_1 vs proxy_2 (inter-rater)",
+    "kappa_binary": 0.911,
+    "kappa_weighted": 0.981,
+    "mean_abs_diff": 0.03,
+    "mean_a": 0.615,
+    "mean_b": 0.625
+  },
+  {
+    "comparison": "strict_v1 vs proxy_1",
+    "kappa_binary": 0.61,
+    "kappa_weighted": 0.648,
+    "mean_abs_diff": 0.188,
+    "mean_a": 0.448,
+    "mean_b": 0.615
+  },
+  {
+    "comparison": "strict_v1 vs proxy_2",
+    "kappa_binary": 0.61,
+    "kappa_weighted": 0.673,
+    "mean_abs_diff": 0.177,
+    "mean_a": 0.448,
+    "mean_b": 0.625
+  },
+  {
+    "comparison": "strict_v3 vs proxy_1",
+    "kappa_binary": 0.868,
+    "kappa_weighted": 0.904,
+    "mean_abs_diff": 0.079,
+    "mean_a": 0.599,
+    "mean_b": 0.615
+  },
+  {
+    "comparison": "strict_v3 vs proxy_2",
+    "kappa_binary": 0.824,
+    "kappa_weighted": 0.9,
+    "mean_abs_diff": 0.081,
+    "mean_a": 0.599,
+    "mean_b": 0.625
+  },
+  {
+    "comparison": "strict_v3 vs proxy_avg",
+    "kappa_binary": 0.87,
+    "kappa_weighted": 0.922,
+    "mean_abs_diff": 0.079,
+    "mean_a": 0.599,
+    "mean_b": 0.62
+  },
+  {
+    "comparison": "haiku vs proxy_1",
+    "kappa_binary": 0.496,
+    "kappa_weighted": 0.517,
+    "mean_abs_diff": 0.266,
+    "mean_a": 0.356,
+    "mean_b": 0.615
+  },
+  {
+    "comparison": "haiku vs proxy_2",
+    "kappa_binary": 0.496,
+    "kappa_weighted": 0.525,
+    "mean_abs_diff": 0.271,
+    "mean_a": 0.356,
+    "mean_b": 0.625
+  },
+  {
+    "comparison": "sonnet_strict_v1 vs haiku",
+    "kappa_binary": 0.857,
+    "kappa_weighted": 0.848,
+    "mean_abs_diff": 0.093,
+    "mean_a": 0.448,
+    "mean_b": 0.356
+  }
+]

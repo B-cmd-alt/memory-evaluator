@@ -1,0 +1,715 @@
+{
+ "system": "full_context",
+ "label": "Full context (no retrieval)",
+ "family": "no retrieval",
+ "year": 2023,
+ "kind": "baseline",
+ "provenance": "baseline",
+ "status": "OK",
+ "error": null,
+ "n_memories": 90,
+ "n_questions": 25,
+ "questions": [
+  {
+   "id": "s1_q01",
+   "task": "T1",
+   "question": "What project management tool replaced Jira company-wide?",
+   "reference": "Linear",
+   "answer": "Linear replaced Jira company-wide (rollout completed 2025-06-15).",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 6.31,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6829,
+    "completion_tokens": 29,
+    "cost_usd": 0.0276,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Linear, matching the reference. The added rollout date is extra detail that doesn't contradict the reference."
+  },
+  {
+   "id": "s1_q02",
+   "task": "T1",
+   "question": "What is Project Beacon's total approved budget for the full calendar year 2026?",
+   "reference": "$480,000",
+   "answer": "Project Beacon's total approved budget is $480,000 for the full calendar year 2026.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 3.94,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6840,
+    "completion_tokens": 31,
+    "cost_usd": 0.0277,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states $480,000 for the full calendar year 2026, which exactly matches the reference."
+  },
+  {
+   "id": "s1_q03",
+   "task": "T1",
+   "question": "Who was assigned as tech lead for Project Beacon at its kickoff?",
+   "reference": "Diana Park",
+   "answer": "Diana Park was assigned as tech lead for Project Beacon at its kickoff on January 5, 2026.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.73,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6834,
+    "completion_tokens": 38,
+    "cost_usd": 0.0277,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Diana Park as tech lead, matching the reference. The added kickoff date is extra detail that does not contradict the reference."
+  },
+  {
+   "id": "s1_q04",
+   "task": "T1",
+   "question": "Which database did the Project Beacon team select as their primary database after evaluating alternatives?",
+   "reference": "PostgreSQL (chosen over MongoDB and DynamoDB)",
+   "answer": "The Project Beacon team selected **PostgreSQL** as the primary database, after evaluating MongoDB and DynamoDB (decided 2026-01-14).",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.53,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6843,
+    "completion_tokens": 55,
+    "cost_usd": 0.0279,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer names PostgreSQL as the selected database and lists MongoDB and DynamoDB as the alternatives evaluated, matching all key facts in the reference. The added decision date does not contradict it."
+  },
+  {
+   "id": "s1_q05",
+   "task": "T1",
+   "question": "How many reusable components were included in the base React component library Eric Wu completed for Project Beacon?",
+   "reference": "34 reusable components",
+   "answer": "34 reusable components.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 5.85,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6843,
+    "completion_tokens": 9,
+    "cost_usd": 0.0275,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states 34 reusable components, exactly matching the reference."
+  },
+  {
+   "id": "s1_q06",
+   "task": "T2",
+   "question": "What timezone does Bob Martinez work in, and what project is he currently assigned to?",
+   "reference": "Bob Martinez is in CST (Austin, Texas). He was reassigned from Project Atlas to Project Beacon effective March 10, 2026.",
+   "answer": "Bob Martinez is based in Austin, so he works in Central Time (CST), while the rest of the core Atlas team is on PST.\n\nHe is currently assigned to Project Beacon. He was reassigned there from the Atlas data pipeline team, effective March 10, 2026, to cover the engineering shortfall caused by the compliance delay.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 3.53,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6844,
+    "completion_tokens": 112,
+    "cost_usd": 0.0285,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states CST/Central Time in Austin, current assignment to Project Beacon, and reassignment from Atlas effective March 10, 2026. All reference facts are present; extra details (compliance delay, PST team) do not contradict."
+  },
+  {
+   "id": "s1_q07",
+   "task": "T2",
+   "question": "What multiple roles was Alice Chen simultaneously holding as of early March 2026?",
+   "reference": "Alice Chen was simultaneously: (1) project manager for Project Atlas, (2) acting head of product following the director departure, and (3) interim PM for Project Beacon (splitting time 60/40 between Beacon and Atlas).",
+   "answer": "As of early March 2026, Alice Chen held three roles at once:\n\n1. **Project Manager for Project Atlas** (since she joined in March 2025).\n2. **Acting head of product**, which she took on Feb 3 after the director left.\n3. **Interim PM for Project Beacon**, formally from March 1, splitting her time 60/40 between Beacon and Atlas until a permanent replacement was hired. She had also joined Beacon's standup on Feb 3 to help define acceptance criteria after its PM went on medical leave.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.47,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6840,
+    "completion_tokens": 175,
+    "cost_usd": 0.0291,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer includes all three roles from the reference (PM for Atlas, acting head of product, interim PM for Beacon with 60/40 split). Extra details (dates, standup) do not contradict the reference."
+  },
+  {
+   "id": "s1_q08",
+   "task": "T2",
+   "question": "What library did the Project Compass team adopt following Bob Martinez's consulting visit, and which project originally developed it?",
+   "reference": "The Compass team adopted Atlas's shared logging library on March 6, 2026, after Bob Martinez recommended it. It was originally developed by the Atlas team.",
+   "answer": "The Compass team adopted **Atlas's shared logging library** (on March 6, 2026), after Bob Martinez recommended it during his consulting engagement. It was originally developed by the **Atlas** project, and adopting it standardized log formats across Atlas and Compass.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 5.16,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6851,
+    "completion_tokens": 90,
+    "cost_usd": 0.0283,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer names Atlas's shared logging library, the March 6, 2026 date, Bob Martinez's recommendation, and Atlas as the originating project. All reference facts are present; the extra detail about standardized log formats does not contradict anything."
+  },
+  {
+   "id": "s1_q09",
+   "task": "T2",
+   "question": "By how many percentage points did Project Compass's precision@10 improve after the data leakage bug was fixed?",
+   "reference": "Approximately 6.5 percentage points \u2014 from 34.7% precision@10 (baseline before fix, s1_049) to 41.2% precision@10 (after fixing the data leakage, s1_063).",
+   "answer": "**6.5 percentage points.** Precision@10 rose from the 34.7% baseline to 41.2% after the leakage fix (2026-02-25).",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.21,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6847,
+    "completion_tokens": 52,
+    "cost_usd": 0.0279,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer gives 6.5 percentage points, with the same 34.7% baseline and 41.2% post-fix values as the reference. The extra date and the missing source IDs do not change the substance."
+  },
+  {
+   "id": "s1_q10",
+   "task": "T2",
+   "question": "Carol Davis was hired partly due to a conflict involving the previous QA lead. What position did she eventually rise to, and when?",
+   "reference": "Carol Davis was promoted from QA engineer to QA lead on October 1, 2025, where she manages a team of three testers.",
+   "answer": "Carol Davis rose to **QA lead** (from QA engineer) on **October 1, 2025**, and now manages a team of three testers.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.27,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6854,
+    "completion_tokens": 47,
+    "cost_usd": 0.0279,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes all key facts from the reference: promotion from QA engineer to QA lead, the date October 1, 2025, and managing a team of three testers."
+  },
+  {
+   "id": "s1_q11",
+   "task": "T3",
+   "question": "What was Project Atlas's original completion deadline, and what is the deadline after scope-driven changes?",
+   "reference": "The original deadline was June 30, 2026 (set January 15, 2026). It was later extended to August 15, 2026 due to scope changes.",
+   "answer": "Project Atlas's original deadline was **June 30, 2026** (set 2026-01-15). After scope changes, it was extended to **August 15, 2026** (updated 2026-03-01).",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 3.96,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6846,
+    "completion_tokens": 64,
+    "cost_usd": 0.028,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes the original deadline (June 30, 2026, set January 15, 2026) and the extended deadline (August 15, 2026) due to scope changes. It matches the reference on all key facts; the extra update date (2026-03-01) does not contradict anything."
+  },
+  {
+   "id": "s1_q12",
+   "task": "T3",
+   "question": "How many times was Project Beacon's launch date changed, and what date did it most recently land on?",
+   "reference": "The launch date was changed twice. Originally April 15, 2026, it was first pushed to June 3, 2026 (March 4, due to compliance review blockers), then moved earlier to May 20, 2026 (March 22, after the compliance review concluded favorably).",
+   "answer": "Project Beacon's launch date changed **twice**, and it most recently landed on **May 20, 2026**.\n\n- Original: April 15, 2026\n- Change 1 (2026-03-04): pushed to June 3, 2026, due to compliance review blockers\n- Change 2 (2026-03-22): moved up to May 20, 2026, after the compliance review concluded early\n\nThe 2026-03-12 note says QA capacity issues pushed Beacon's release by two weeks. It gives no specific dates, so I haven't counted it as a separate change. If it is a distinct change, the total would be three.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.59,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6840,
+    "completion_tokens": 194,
+    "cost_usd": 0.0293,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer matches the reference: twice changed, original April 15, then June 3 (Mar 4, compliance blockers), then May 20 (Mar 22, favorable compliance review), final date May 20, 2026. The extra note about a QA-related item is a hedge that doesn't contradict the main answer."
+  },
+  {
+   "id": "s1_q13",
+   "task": "T3",
+   "question": "What percentage complete was the Airflow-to-Dagster migration as of February 15, 2026?",
+   "reference": "60% complete as of February 15, 2026.",
+   "answer": "The Airflow-to-Dagster migration was **60% complete** as of February 15, 2026, per Bob's report.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 5.68,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6844,
+    "completion_tokens": 40,
+    "cost_usd": 0.0278,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states 60% complete as of February 15, 2026, matching the reference. The added attribution to Bob's report is a minor extra detail that does not contradict the reference."
+  },
+  {
+   "id": "s1_q14",
+   "task": "T3",
+   "question": "What was the Project Atlas Q2 infrastructure budget before and after the executive-approved revision in March 2026?",
+   "reference": "The Q2 infrastructure budget was increased from $180,000 to $240,000 following executive approval (s1_075, around March 10, 2026).",
+   "answer": "The Project Atlas Q2 infrastructure budget was **$180,000 before** the revision and **$240,000 after**, following executive approval of the expanded data ingestion scope (March 10, 2026).",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.39,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6849,
+    "completion_tokens": 68,
+    "cost_usd": 0.0281,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states the budget rose from $180,000 to $240,000 after executive approval around March 10, 2026, matching all key facts in the reference. The added detail about expanded data ingestion scope does not contradict it."
+  },
+  {
+   "id": "s1_q15",
+   "task": "T3",
+   "question": "When did the company complete its migration of internal documentation from Confluence to Notion?",
+   "reference": "The migration was finalized on January 19, 2026.",
+   "answer": "The migration was finalized on January 19, 2026.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.28,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6835,
+    "completion_tokens": 18,
+    "cost_usd": 0.0275,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer is identical to the reference, stating the migration was finalized on January 19, 2026. All key facts are present."
+  },
+  {
+   "id": "s1_q16",
+   "task": "T4",
+   "question": "What is the current deadline for completing Project Atlas?",
+   "reference": "August 15, 2026. (The original deadline of June 30, 2026 was extended due to scope changes.)",
+   "answer": "The current Project Atlas deadline is **August 15, 2026**. It was originally June 30, 2026, but was extended on 2026-03-01 due to scope changes.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 3.59,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6833,
+    "completion_tokens": 56,
+    "cost_usd": 0.0279,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states the current deadline August 15, 2026, the original June 30, 2026 deadline, and the extension due to scope changes. All reference facts are present; the extra extension date (2026-03-01) does not contradict the reference."
+  },
+  {
+   "id": "s1_q17",
+   "task": "T4",
+   "question": "What is the current planned launch date for Project Beacon?",
+   "reference": "May 20, 2026. (The date was first pushed from April 15 to June 3, then pulled forward to May 20 after the compliance review concluded.)",
+   "answer": "Project Beacon's current planned launch date is **May 20, 2026**. It was moved from April 15 to June 3 on March 4 because of compliance blockers, then moved up to May 20 on March 22 after the compliance review finished early.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.27,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6829,
+    "completion_tokens": 78,
+    "cost_usd": 0.0281,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer gives May 20, 2026 and matches the reference's history (April 15 to June 3, then pulled forward to May 20 after compliance review). Extra dates (March 4, March 22) are additional detail that does not contradict the reference."
+  },
+  {
+   "id": "s1_q18",
+   "task": "T4",
+   "question": "Who is currently the primary QA lead for Project Atlas?",
+   "reference": "As of March 19, 2026, Carol Davis is no longer the primary QA lead for Project Atlas. She was reassigned full-time to Project Beacon. The memories do not name a replacement QA lead for Atlas.",
+   "answer": "The context doesn't say who replaced Carol Davis. It only says that as of 2026-03-19 she is no longer the primary QA lead for Project Atlas, having been reassigned to Project Beacon full-time. So I don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.75,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6835,
+    "completion_tokens": 85,
+    "cost_usd": 0.0282,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q19",
+   "task": "T4",
+   "question": "What is the current annual tooling budget allocated to the Atlas team?",
+   "reference": "$62,000. (The budget was increased from the original $45,000 to cover newly approved tooling.)",
+   "answer": "The annual tooling budget allocated to the Atlas team is currently **$62,000**, increased from $45,000 to cover the newly approved Datadog APM enterprise tier contract (as of 2026-03-24).",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.56,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6840,
+    "completion_tokens": 71,
+    "cost_usd": 0.0281,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states $62,000 current budget and that it was increased from $45,000 to cover newly approved tooling, matching all key facts in the reference. The extra detail (Datadog APM contract, date) does not contradict it."
+  },
+  {
+   "id": "s1_q20",
+   "task": "T4",
+   "question": "Is Kafka being used for Project Beacon's event streaming layer?",
+   "reference": "No. The decision to adopt Kafka was reversed (s1_078, March 13, 2026). The team is continuing with Redis instead.",
+   "answer": "No. The team reversed the decision to adopt Kafka for Project Beacon's event streaming layer (2026-03-13). They will continue using RabbitMQ, since benchmarks showed insufficient latency gains to justify the migration cost.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.7,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6835,
+    "completion_tokens": 80,
+    "cost_usd": 0.0281,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer correctly says No and that the Kafka decision was reversed on 2026-03-13. However, it says the team continues with RabbitMQ, contradicting the reference's Redis, and it adds an unsupported benchmark rationale. The core answer and date are right but the replacement technology is wrong."
+  },
+  {
+   "id": "s1_q21",
+   "task": "T5",
+   "question": "What are the names of the three QA testers currently on Carol Davis's team?",
+   "reference": "I don't know. The memories state that Carol Davis manages a team of three testers (s1_020) but do not name any of them.",
+   "answer": "I don't have enough information to answer this question. The context says Carol Davis was promoted to QA lead managing a team of three testers (2025-10-01), but it doesn't give their names.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.11,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6841,
+    "completion_tokens": 59,
+    "cost_usd": 0.0279,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q22",
+   "task": "T5",
+   "question": "What is Diana Park's professional background and how many years of experience does she have?",
+   "reference": "I don't know. The memories record Diana Park's role as tech lead on Project Beacon but contain no information about her background, prior employers, or years of experience.",
+   "answer": "I don't have enough information to answer this question. The context only says Diana Park is the tech lead for Project Beacon (assigned at its January 5, 2026 kickoff). She also flagged a scope creep risk on February 12 and decided to use Redis for session caching on March 10. It says nothing about her professional background or years of experience.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.28,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6837,
+    "completion_tokens": 106,
+    "cost_usd": 0.0284,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q23",
+   "task": "T5",
+   "question": "What specific vulnerabilities were identified in the Atlas API authentication layer during the ShieldLabs security audit?",
+   "reference": "I don't know. The memories record that two medium-severity vulnerabilities were found in the Atlas API authentication layer (s1_005) but do not describe the nature, CVE IDs, or technical details of the vulnerabilities.",
+   "answer": "I don't have enough information to answer this question. The context says only that ShieldLabs found two medium-severity vulnerabilities in the Atlas API authentication layer and that both were patched within the 30-day remediation window. It doesn't describe what the vulnerabilities were.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 5.16,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6854,
+    "completion_tokens": 88,
+    "cost_usd": 0.0283,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q24",
+   "task": "T5",
+   "question": "What is the detailed roadmap or milestone timeline for Project Horizon, the internal customer dashboard?",
+   "reference": "I don't know. The memories only record that Project Horizon was announced at the October 2025 all-hands (s1_022) as a new internal customer dashboard. No milestones, deadlines, team assignments, or budget details are present in the memories.",
+   "answer": "I don't have enough information to answer this question. The context only says that Project Horizon (a customer dashboard) was announced at the 2025-10-20 all-hands. It includes no roadmap, milestones, or timeline for it.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.71,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6846,
+    "completion_tokens": 73,
+    "cost_usd": 0.0281,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q25",
+   "task": "T5",
+   "question": "What is Elena Vasquez's educational background and prior work experience before joining the company?",
+   "reference": "I don't know. The memories record that Elena Vasquez joined as a data engineer on September 22, 2025, reporting to Bob Martinez and focused on the Atlas ingestion layer (s1_019), but contain no information about her education or prior employment.",
+   "answer": "I don't have enough information to answer this question. The context only says that Elena Vasquez joined on 2025-09-22 as a data engineer reporting to Bob Martinez, focused on the Atlas ingestion layer. It doesn't mention her educational background or prior work experience.",
+   "retrieved": [
+    {
+     "content": "(all 90 memories in context)",
+     "source": "all",
+     "score": 1.0
+    }
+   ],
+   "tier": "full",
+   "latency_s": 4.77,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 6839,
+    "completion_tokens": 90,
+    "cost_usd": 0.0283,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  }
+ ],
+ "ingest": {
+  "seconds": 0.0,
+  "llm_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "cost_usd": 0,
+  "embed_calls": 0,
+  "errors": 0,
+  "llm_calls_per_memory": 0.0
+ },
+ "query": {
+  "accuracy": 0.94,
+  "by_task": {
+   "T1": 1.0,
+   "T2": 1.0,
+   "T3": 1.0,
+   "T4": 0.7,
+   "T5": 1.0
+  },
+  "latency_p50_s": 4.53,
+  "latency_p95_s": 5.68,
+  "read_llm_calls_per_query": 1.0,
+  "read_prompt_tokens_per_query": 6841,
+  "query_errors": 0
+ },
+ "wall_seconds": 216.9
+}

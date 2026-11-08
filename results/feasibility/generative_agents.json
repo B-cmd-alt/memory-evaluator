@@ -1,0 +1,1215 @@
+{
+ "system": "generative_agents",
+ "label": "Generative Agents memory stream",
+ "family": "scored stream + reflection",
+ "year": 2023,
+ "kind": "classic",
+ "provenance": "faithful re-implementation",
+ "status": "OK",
+ "error": null,
+ "n_memories": 90,
+ "n_questions": 25,
+ "questions": [
+  {
+   "id": "s1_q01",
+   "task": "T1",
+   "question": "What project management tool replaced Jira company-wide?",
+   "reference": "Linear",
+   "answer": "I don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.549677866208809
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.4257483060243303
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.3698704118611986
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.1742513271789274
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.1648718210677824
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.9,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2249,
+    "completion_tokens": 15,
+    "cost_usd": 0.0091,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q02",
+   "task": "T1",
+   "question": "What is Project Beacon's total approved budget for the full calendar year 2026?",
+   "reference": "$480,000",
+   "answer": "Project Beacon's budget is stated as $480,000 under its January 5-6, 2026 kickoff. The context doesn't say whether that figure covers the full calendar year 2026 or only the initial phase, and it doesn't mention any later budget changes. So the only figure I can give is $480,000, and I can't confirm it is the total approved budget for all of 2026.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.5659417510032654
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.5226466059684753
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.4994152188301086
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.3824604153633118
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.268599718809128
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 6.4,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2254,
+    "completion_tokens": 120,
+    "cost_usd": 0.0102,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.75,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives the correct figure of $480,000 but hedges, saying it cannot confirm that this is the total approved budget for all of 2026. The key fact is present, though the framing is less definitive than the reference."
+  },
+  {
+   "id": "s1_q03",
+   "task": "T1",
+   "question": "Who was assigned as tech lead for Project Beacon at its kickoff?",
+   "reference": "Diana Park",
+   "answer": "Diana Park was the tech lead for Project Beacon at its kickoff on January 5-6, 2026.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.86411315202713
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.8047173619270325
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.5712103247642517
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.4270667135715485
+    },
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 2.3324461718024665
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 3.88,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2149,
+    "completion_tokens": 37,
+    "cost_usd": 0.009,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Diana Park as tech lead, matching the reference. The added kickoff date is extra detail that does not contradict the reference."
+  },
+  {
+   "id": "s1_q04",
+   "task": "T1",
+   "question": "Which database did the Project Beacon team select as their primary database after evaluating alternatives?",
+   "reference": "PostgreSQL (chosen over MongoDB and DynamoDB)",
+   "answer": "I don't have enough information to answer this question. The context covers Project Beacon's staffing, budget, and schedule delays, but it never mentions a database evaluation or which database was selected as the primary one.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.607950448989868
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.5926743149757385
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.504581928253174
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4775688648223877
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.41833558678627
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.75,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2258,
+    "completion_tokens": 64,
+    "cost_usd": 0.0097,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q05",
+   "task": "T1",
+   "question": "How many reusable components were included in the base React component library Eric Wu completed for Project Beacon?",
+   "reference": "34 reusable components",
+   "answer": "I don't have enough information to answer this question. The context says Eric Wu is on frontend for Project Beacon, but it doesn't mention a base React component library or how many reusable components it included.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.476456940174103
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.4520123302936554
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.425780951976776
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.368741273880005
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.3573262989521027
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 3.97,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2260,
+    "completion_tokens": 60,
+    "cost_usd": 0.0096,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q06",
+   "task": "T2",
+   "question": "What timezone does Bob Martinez work in, and what project is he currently assigned to?",
+   "reference": "Bob Martinez is in CST (Austin, Texas). He was reassigned from Project Atlas to Project Beacon effective March 10, 2026.",
+   "answer": "I don't have enough information to answer the timezone part: the context doesn't say where Bob Martinez works or what timezone he's in.\n\nOn the project: he was reassigned to Project Beacon effective March 10, 2026, as a response to the Q1 hiring freeze. The context doesn't confirm whether that is still his assignment today.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.697473645210266
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.4402198493480682
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4366370737552643
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.4336286783218384
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.402628630399704
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 6.03,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2260,
+    "completion_tokens": 107,
+    "cost_usd": 0.0101,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q07",
+   "task": "T2",
+   "question": "What multiple roles was Alice Chen simultaneously holding as of early March 2026?",
+   "reference": "Alice Chen was simultaneously: (1) project manager for Project Atlas, (2) acting head of product following the director departure, and (3) interim PM for Project Beacon (splitting time 60/40 between Beacon and Atlas).",
+   "answer": "As of early March 2026, Alice Chen held three roles at once:\n\n1. **Product manager (PM)**, her base role.\n2. **Acting head of product**, taken on February 3, 2026 after the director departed.\n3. **Interim PM for Project Beacon**, effective March 1, 2026.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.7312867641448975
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.557734251022339
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4021791517734528
+    },
+    {
+     "content": "[2026-02-03] Alice Chen took over as acting head of product in addition to her PM role following director departure.",
+     "source": "s1_048",
+     "score": 2.3924509162400907
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.3447122871875763
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 5.14,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2123,
+    "completion_tokens": 98,
+    "cost_usd": 0.0095,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated lists acting head of product and interim PM for Beacon correctly, but gives 'Product manager (base role)' instead of 'project manager for Project Atlas', omitting the Atlas link. It also misses the 60/40 Beacon/Atlas time split. Extra dates are not contradicted but are unverified."
+  },
+  {
+   "id": "s1_q08",
+   "task": "T2",
+   "question": "What library did the Project Compass team adopt following Bob Martinez's consulting visit, and which project originally developed it?",
+   "reference": "The Compass team adopted Atlas's shared logging library on March 6, 2026, after Bob Martinez recommended it. It was originally developed by the Atlas team.",
+   "answer": "I don't have enough information to answer this question. The context doesn't mention a consulting visit by Bob Martinez to Project Compass, or any library the team adopted afterward or the project that originally developed it.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.6337268948554993
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.5971354246139526
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.5828453302383423
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.5743662118911743
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.3831919133663177
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 6.03,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2270,
+    "completion_tokens": 65,
+    "cost_usd": 0.0097,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q09",
+   "task": "T2",
+   "question": "By how many percentage points did Project Compass's precision@10 improve after the data leakage bug was fixed?",
+   "reference": "Approximately 6.5 percentage points \u2014 from 34.7% precision@10 (baseline before fix, s1_049) to 41.2% precision@10 (after fixing the data leakage, s1_063).",
+   "answer": "I don't have enough information to answer this question. The context says the data leakage fix happened on February 18 and that precision@10 reached 46.8% on March 11 after Hannah Lee's item content features. It doesn't give the precision@10 value before or after the leakage fix, so the improvement from that fix alone can't be determined.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.837187647819519
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.6605793237686157
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.5786293148994446
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.435870051383972
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.2918812930583954
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 3.74,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2266,
+    "completion_tokens": 104,
+    "cost_usd": 0.0101,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q10",
+   "task": "T2",
+   "question": "Carol Davis was hired partly due to a conflict involving the previous QA lead. What position did she eventually rise to, and when?",
+   "reference": "Carol Davis was promoted from QA engineer to QA lead on October 1, 2025, where she manages a team of three testers.",
+   "answer": "She rose to **QA lead on October 1, 2025**. The context doesn't mention the conflict with the previous QA lead that supposedly led to her hiring, but it does confirm her promotion to that role on that date.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.834019958972931
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.5390070172767363
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4312443137168884
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.3880714774131775
+    },
+    {
+     "content": "[2026-03-12] Carol Davis escalated to leadership on March 12th that QA capacity was insufficient to support three concurrent projects, resulting in Beacon's release date being pushed by two weeks.",
+     "source": "s1_077",
+     "score": 2.3763276990827786
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 3.98,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2171,
+    "completion_tokens": 70,
+    "cost_usd": 0.0094,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.85,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives the correct position (QA lead) and exact date (October 1, 2025), the key facts asked. It omits the minor detail about managing a team of three testers and the prior QA engineer role, but nothing contradicts the reference."
+  },
+  {
+   "id": "s1_q11",
+   "task": "T3",
+   "question": "What was Project Atlas's original completion deadline, and what is the deadline after scope-driven changes?",
+   "reference": "The original deadline was June 30, 2026 (set January 15, 2026). It was later extended to August 15, 2026 due to scope changes.",
+   "answer": "I don't have enough information to answer this question. The context gives Atlas's extended deadline of August 15, 2026, but it never states the original completion deadline, so the change can't be described.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.8369911909103394
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.7531641721725464
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.737038314342499
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.571836829185486
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.571806788444519
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.18,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2259,
+    "completion_tokens": 58,
+    "cost_usd": 0.0096,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q12",
+   "task": "T3",
+   "question": "How many times was Project Beacon's launch date changed, and what date did it most recently land on?",
+   "reference": "The launch date was changed twice. Originally April 15, 2026, it was first pushed to June 3, 2026 (March 4, due to compliance review blockers), then moved earlier to May 20, 2026 (March 22, after the compliance review concluded favorably).",
+   "answer": "Project Beacon's launch date changed twice. It first moved from April 15 to June 3, 2026. A further two-week delay then pushed it to about June 17, 2026, which is my calculation, since the context gives no explicit date for the second change.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.9125999808311462
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.700501322746277
+    },
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 2.6666666666666665
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.625935912132263
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.540816903114319
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 5.79,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2153,
+    "completion_tokens": 252,
+    "cost_usd": 0.0111,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.25,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Correct count (twice) and the first change to June 3 matches. But the second change is wrong: the reference moved the date earlier to May 20, 2026, whereas the generated answer says a delay to about June 17. The final date, the key part of the question, is incorrect and the direction of the change contradicts the reference."
+  },
+  {
+   "id": "s1_q13",
+   "task": "T3",
+   "question": "What percentage complete was the Airflow-to-Dagster migration as of February 15, 2026?",
+   "reference": "60% complete as of February 15, 2026.",
+   "answer": "I don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.4630247950553894
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.4337983429431915
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.334981143474579
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.330590546131134
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.2720601856708527
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.62,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2263,
+    "completion_tokens": 15,
+    "cost_usd": 0.0092,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q14",
+   "task": "T3",
+   "question": "What was the Project Atlas Q2 infrastructure budget before and after the executive-approved revision in March 2026?",
+   "reference": "The Q2 infrastructure budget was increased from $180,000 to $240,000 following executive approval (s1_075, around March 10, 2026).",
+   "answer": "The Project Atlas Q2 infrastructure budget was $180,000 before the revision and $240,000 after it, an increase of $60,000 on March 10, 2026.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.995042562484741
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.7319438457489014
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.7069708704948425
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.682128429412842
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.5893145203590393
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.81,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2269,
+    "completion_tokens": 57,
+    "cost_usd": 0.0096,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives both key figures, $180,000 before and $240,000 after, and the March 10, 2026 date matches the reference. The added $60,000 increase is arithmetically correct. It omits only the 'executive approval' wording and the source ID, which are minor."
+  },
+  {
+   "id": "s1_q15",
+   "task": "T3",
+   "question": "When did the company complete its migration of internal documentation from Confluence to Notion?",
+   "reference": "The migration was finalized on January 19, 2026.",
+   "answer": "I don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.364258110523224
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.357001930475235
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.334522634744644
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.3068355917930603
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.289061814546585
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 5.77,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2239,
+    "completion_tokens": 15,
+    "cost_usd": 0.0091,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q16",
+   "task": "T4",
+   "question": "What is the current deadline for completing Project Atlas?",
+   "reference": "August 15, 2026. (The original deadline of June 30, 2026 was extended due to scope changes.)",
+   "answer": "Project Atlas's current deadline is **August 15, 2026**, following the extension noted in the March 17 context.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.7961097359657288
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.651055157184601
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.6163540482521057
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.580575942993164
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.4546002745628357
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.66,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2247,
+    "completion_tokens": 38,
+    "cost_usd": 0.0094,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.9,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated gives the correct current deadline, August 15, 2026, and mentions an extension. It omits the original June 30, 2026 deadline and the scope-change reason, which are minor supporting details. The core answer matches."
+  },
+  {
+   "id": "s1_q17",
+   "task": "T4",
+   "question": "What is the current planned launch date for Project Beacon?",
+   "reference": "May 20, 2026. (The date was first pushed from April 15 to June 3, then pulled forward to May 20 after the compliance review concluded.)",
+   "answer": "Project Beacon's current planned launch is **June 17, 2026**. It was originally April 15, then moved to June 3 because of compliance blockers, and the March 17 entry notes a further two-week delay on top of that. The context doesn't give the new date explicitly, so June 17 is my calculation from June 3 plus two weeks.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.7793259620666504
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.6709728240966797
+    },
+    {
+     "content": "[2026-03-04] Project Beacon's launch date has been pushed from April 15, 2026 to June 3, 2026 due to unresolved compliance review blockers identified during the March security audit.",
+     "source": "s1_069",
+     "score": 2.6666666666666665
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.6010538935661316
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.562836706638336
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 8.03,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2144,
+    "completion_tokens": 231,
+    "cost_usd": 0.0109,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer gives June 17, 2026, contradicting the reference's May 20, 2026. It also misses that the date was pulled forward after the compliance review. It only matches the earlier history (April 15 to June 3), which is not the asked-for current date."
+  },
+  {
+   "id": "s1_q18",
+   "task": "T4",
+   "question": "Who is currently the primary QA lead for Project Atlas?",
+   "reference": "As of March 19, 2026, Carol Davis is no longer the primary QA lead for Project Atlas. She was reassigned full-time to Project Beacon. The memories do not name a replacement QA lead for Atlas.",
+   "answer": "Carol Davis. She became QA lead on October 1, 2025. The context doesn't say that role is specific to Project Atlas, so it's an inference that she is Atlas's primary QA lead.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.789555549621582
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.7583457827568054
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.7546781301498413
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.709927022457123
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.657313108444214
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 5.68,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2238,
+    "completion_tokens": 65,
+    "cost_usd": 0.0096,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Carol Davis as the primary QA lead for Atlas, which contradicts the reference: she was reassigned full-time to Project Beacon and is no longer the lead, and no replacement is named. The generated answer also misses that she was reassigned."
+  },
+  {
+   "id": "s1_q19",
+   "task": "T4",
+   "question": "What is the current annual tooling budget allocated to the Atlas team?",
+   "reference": "$62,000. (The budget was increased from the original $45,000 to cover newly approved tooling.)",
+   "answer": "I don't have enough information to answer this question. The context mentions a Q2 Atlas infrastructure budget increase from $180,000 to $240,000 (March 10), but it doesn't give an annual tooling budget for the Atlas team.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.979270100593567
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.7629119753837585
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.662050485610962
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.6167893409729004
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.442435085773468
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.87,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2252,
+    "completion_tokens": 78,
+    "cost_usd": 0.0098,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q20",
+   "task": "T4",
+   "question": "Is Kafka being used for Project Beacon's event streaming layer?",
+   "reference": "No. The decision to adopt Kafka was reversed (s1_078, March 13, 2026). The team is continuing with Redis instead.",
+   "answer": "I don't have enough information to answer this question. The context covers Project Beacon's team, budget, and schedule, but says nothing about Kafka or the technology used for its event streaming layer.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.5714866518974304
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.5656866431236267
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.530117988586426
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.4884391725063324
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.480292469263077
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.64,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2236,
+    "completion_tokens": 60,
+    "cost_usd": 0.0095,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "s1_q21",
+   "task": "T5",
+   "question": "What are the names of the three QA testers currently on Carol Davis's team?",
+   "reference": "I don't know. The memories state that Carol Davis manages a team of three testers (s1_020) but do not name any of them.",
+   "answer": "I don't have enough information to answer this question. The context says Carol Davis became QA lead on October 1, 2025 and mentors incoming hire Priya Nair, but it doesn't name three QA testers on her team.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.8106608986854553
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.695622682571411
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4502887427806854
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.4101489186286926
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.343018740415573
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 3.58,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2251,
+    "completion_tokens": 70,
+    "cost_usd": 0.0097,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q22",
+   "task": "T5",
+   "question": "What is Diana Park's professional background and how many years of experience does she have?",
+   "reference": "I don't know. The memories record Diana Park's role as tech lead on Project Beacon but contain no information about her background, prior employers, or years of experience.",
+   "answer": "I don't have enough information to answer this question. The context only says Diana Park is the tech lead on Project Beacon, which kicked off January 5-6, 2026. It doesn't mention her professional background or her years of experience.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.8416078090667725
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.687768578529358
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.5836885571479797
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.498246043920517
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4732834100723267
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 5.26,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2248,
+    "completion_tokens": 71,
+    "cost_usd": 0.0097,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q23",
+   "task": "T5",
+   "question": "What specific vulnerabilities were identified in the Atlas API authentication layer during the ShieldLabs security audit?",
+   "reference": "I don't know. The memories record that two medium-severity vulnerabilities were found in the Atlas API authentication layer (s1_005) but do not describe the nature, CVE IDs, or technical details of the vulnerabilities.",
+   "answer": "I don't have enough information to answer this question. The context doesn't mention a ShieldLabs security audit or any vulnerabilities in the Atlas API authentication layer. The only security-related note is that the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.718285620212555
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.5409123301506042
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.4809302389621735
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.455876052379608
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.3962076604366302
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.35,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2253,
+    "completion_tokens": 94,
+    "cost_usd": 0.0099,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q24",
+   "task": "T5",
+   "question": "What is the detailed roadmap or milestone timeline for Project Horizon, the internal customer dashboard?",
+   "reference": "I don't know. The memories only record that Project Horizon was announced at the October 2025 all-hands (s1_022) as a new internal customer dashboard. No milestones, deadlines, team assignments, or budget details are present in the memories.",
+   "answer": "I don't have enough information to answer this question. The context doesn't mention Project Horizon or an internal customer dashboard. It covers Atlas, Compass, and Beacon, but nothing about a roadmap or milestones for Horizon.",
+   "retrieved": [
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.656155049800873
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.5941847562789917
+    },
+    {
+     "content": "[2026-01-15] Atlas has faced repeated reliability problems: 67% of enterprise users cited job scheduling reliability as their top pain point in the Q2 2025 survey (satisfaction 3.1/5), the August 3, 2025 database outage ran 22 minutes past the failover SLA, and a January 12, 2026 CDN misconfiguration served stale dashboard assets to about 400 users, even though the December 2025 SOC 2 Type II audit praised Atlas logging and access controls.",
+     "source": "reflection_0_0",
+     "score": 2.5287184715270996
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.4867153465747833
+    },
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.484776347875595
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 4.78,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2248,
+    "completion_tokens": 78,
+    "cost_usd": 0.0098,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q25",
+   "task": "T5",
+   "question": "What is Elena Vasquez's educational background and prior work experience before joining the company?",
+   "reference": "I don't know. The memories record that Elena Vasquez joined as a data engineer on September 22, 2025, reporting to Bob Martinez and focused on the Atlas ingestion layer (s1_019), but contain no information about her education or prior employment.",
+   "answer": "I don't have enough information to answer this question. The context only says Elena Vasquez was hired for Atlas on September 22, 2025. It doesn't mention her educational background or prior work experience.",
+   "retrieved": [
+    {
+     "content": "[2026-01-15] The company has invested heavily in staffing Atlas and the new Beacon project, hiring David Kim (July 14, 2025) and Elena Vasquez (September 22, 2025) for Atlas, and on January 5-6, 2026 kicking off Project Beacon with Diana Park as tech lead, Eric Wu on frontend, and Fiona Garcia on design, under a $480,000 budget, while Frank Okafor, a founding engineer, left on November 28, 2025.",
+     "source": "reflection_0_1",
+     "score": 2.7088897824287415
+    },
+    {
+     "content": "[2026-01-15] Written, asynchronous communication is a strong team norm, seen in Carol Davis documenting QA findings in Notion and Alice Chen giving feedback only via Linear comments, but it caused isolation for Bob Martinez, leading the team on October 15, 2025 to add an optional weekly Wednesday social call, while Carol Davis grew into QA lead (October 1, 2025) and mentor to incoming hire Priya Nair.",
+     "source": "reflection_0_2",
+     "score": 2.431468516588211
+    },
+    {
+     "content": "[2026-03-17] Project Compass reached production readiness when Hannah Lee's addition of item content features lifted precision@10 to 46.8% on March 11, past the 45% target, after the two-tower redesign by George Kim, the data leakage fix on February 18, and the Redis feature store cutting latency from 340ms to 47ms, even though the project had been deprioritized on February 24.",
+     "source": "reflection_1_2",
+     "score": 2.420702874660492
+    },
+    {
+     "content": "[2026-03-17] Leadership's February 24 deprioritization of Compass in favor of Atlas, followed by the Atlas deadline extension to August 15, 2026 and the Q2 Atlas infrastructure budget increase from $180,000 to $240,000 on March 10, shows Atlas is the company's top priority, backed by the customer advisory finding that five of eight enterprise clients plan to expand usage contingent on the multi-tenant workspace feature.",
+     "source": "reflection_1_0",
+     "score": 2.395992696285248
+    },
+    {
+     "content": "[2026-03-17] Project Beacon slipped from an April 15 to a June 3, 2026 launch (plus a further two-week delay) because of compliance blockers and QA capacity limits raised by Carol Davis on March 12, and the Q1 hiring freeze announced March 10 forced the team to respond by reassigning Bob Martinez to Beacon effective March 10 and making Alice Chen interim PM on March 1 and sharing Carol Davis from March 17 rather than adding headcount.",
+     "source": "reflection_1_1",
+     "score": 2.3186576068401337
+    }
+   ],
+   "tier": "recency+importance+relevance",
+   "latency_s": 3.84,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 2237,
+    "completion_tokens": 62,
+    "cost_usd": 0.0096,
+    "embed_calls": 0,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  }
+ ],
+ "ingest": {
+  "seconds": 71.2,
+  "llm_calls": 11,
+  "prompt_tokens": 25221,
+  "completion_tokens": 1263,
+  "cost_usd": 0.1135,
+  "embed_calls": 0,
+  "errors": 0,
+  "llm_calls_per_memory": 0.12
+ },
+ "query": {
+  "accuracy": 0.41,
+  "by_task": {
+   "T1": 0.35,
+   "T2": 0.27,
+   "T3": 0.25,
+   "T4": 0.18,
+   "T5": 1.0
+  },
+  "latency_p50_s": 4.78,
+  "latency_p95_s": 6.03,
+  "read_llm_calls_per_query": 1.0,
+  "read_prompt_tokens_per_query": 2232,
+  "query_errors": 0
+ },
+ "wall_seconds": 245.9
+}

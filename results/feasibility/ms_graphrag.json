@@ -1,0 +1,715 @@
+{
+ "system": "ms_graphrag",
+ "label": "Microsoft GraphRAG",
+ "family": "graph RAG",
+ "year": 2024,
+ "kind": "modern",
+ "provenance": "official package",
+ "status": "OK",
+ "error": null,
+ "n_memories": 90,
+ "n_questions": 25,
+ "questions": [
+  {
+   "id": "s1_q01",
+   "task": "T1",
+   "question": "What project management tool replaced Jira company-wide?",
+   "reference": "Linear",
+   "answer": "# Linear Replaced Jira Company-Wide\n\n**Linear** replaced Jira as the company's project tracking tool. The company-wide rollout was completed on 2025-06-15, making Linear the project tracking tool across the whole Company [Data: Entities (45, 44, 46, 47); Relationships (69, 76, 72, 73); Sources (14)].\n\n## Details of the Switch\n\nThe Company carried out the switch from Jira to Linear and stopped using Jira for project tracking once the transition was made [Data: Entities (46); Relationships (74, 73, 70)]. The rollout is described as the final stage of that switch [Data: Relationships (77, 75)].\n\n## Additional Role of Linear\n\nBeyond project tracking, Linear is also where Alice Chen posts written feedback comments for engineers. A source dated 2025-09-01 notes that she gives feedback exclusively in writing via Linear comments, so that engineers can process it asynchronously before responding [Data: Entities (45); Relationships (264); Sources (46)]. This means Linear serves both project management and performance-related feedback at the company.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 18.21,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11467,
+    "completion_tokens": 366,
+    "cost_usd": 0.0495,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that Linear replaced Jira company-wide, matching the reference exactly. The additional details do not contradict it."
+  },
+  {
+   "id": "s1_q02",
+   "task": "T1",
+   "question": "What is Project Beacon's total approved budget for the full calendar year 2026?",
+   "reference": "$480,000",
+   "answer": "## Project Beacon's 2026 Approved Budget\n\nProject Beacon's total approved budget for the full calendar year 2026 is **$480,000**. This figure was recorded on January 8, 2026 [Data: Sources (21); Entities (0); Reports (0)].\n\n### Budget Tracking\n\nSpending is currently on track. As of February 28, 2026, Q1 budget burn was $112,000, about 8% under the planned $122,000 for the period [Data: Sources (31); Entities (0, 95); Relationships (165)].\n\n### Note on Project Atlas\n\nThis figure should not be confused with the budget for Project Atlas, a separate project, which was approved at $150,000 by the VP of Engineering on January 20, 2026 [Data: Sources (23); Entities (75, 76)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 17.23,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11823,
+    "completion_tokens": 262,
+    "cost_usd": 0.0499,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the total approved 2026 budget as $480,000, matching the reference exactly. The extra details about Q1 burn and Project Atlas do not contradict it."
+  },
+  {
+   "id": "s1_q03",
+   "task": "T1",
+   "question": "Who was assigned as tech lead for Project Beacon at its kickoff?",
+   "reference": "Diana Park",
+   "answer": "# Tech Lead at Kickoff\n\n**Diana Park** was assigned as tech lead for Project Beacon when the project officially kicked off on January 5, 2026 [Data: Sources (89); Entities (0, 197); Relationships (407); Reports (0)].\n\nProject Beacon is a customer-facing web application built with React on the frontend and Node.js on the backend [Data: Sources (8); Entities (0)].\n\nIn that role, Diana Park has handled both risk management and technical decision-making. On February 12, 2026, she flagged a scope creep risk after stakeholders requested real-time notifications that were not in the original spec [Data: Sources (70); Entities (197); Reports (0)]. On March 10, 2026, after the alpha revealed dashboard load latency above 400ms, she decided to use Redis for session caching [Data: Sources (72); Entities (197); Relationships (407, 408)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 16.56,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12503,
+    "completion_tokens": 300,
+    "cost_usd": 0.053,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer names Diana Park as tech lead at kickoff, matching the reference exactly. The additional details do not contradict the reference."
+  },
+  {
+   "id": "s1_q04",
+   "task": "T1",
+   "question": "Which database did the Project Beacon team select as their primary database after evaluating alternatives?",
+   "reference": "PostgreSQL (chosen over MongoDB and DynamoDB)",
+   "answer": "# Primary Database Selection for Project Beacon\n\nThe Project Beacon team selected **PostgreSQL** as the primary database. The decision was made on 2026-01-14, after the team evaluated MongoDB and DynamoDB as alternatives [Data: Entities (242, 245); Relationships (485, 491); Sources (86)].\n\n## Alternatives Evaluated\n\nBoth MongoDB and DynamoDB were considered as candidate databases for the project, but neither was selected. The records state that PostgreSQL was chosen over each of them during the evaluation [Data: Entities (243, 244); Relationships (487, 488, 489, 490)].\n\n## Who Made the Decision\n\nThe decision is attributed to \"the team,\" which is responsible for Project Beacon and makes key technical decisions about it, including the choice of database [Data: Entities (66); Relationships (313, 485, 493)]. The records don't give the specific criteria or reasoning behind choosing PostgreSQL over the other two options, so I can't say why it was preferred.\n\n## Related Technology Decisions\n\nThe database choice was one of several infrastructure decisions on the project. Redis was chosen for session caching after the alpha revealed dashboard load latency above 400ms, and the team reversed its plan to adopt Kafka on 2026-03-13, keeping RabbitMQ instead [Data: Reports (0); Sources (72, 56)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 17.92,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10636,
+    "completion_tokens": 460,
+    "cost_usd": 0.0471,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer identifies PostgreSQL as the primary database and states it was chosen over MongoDB and DynamoDB, matching all key facts in the reference. The additional details (date, Redis, Kafka) do not contradict the reference."
+  },
+  {
+   "id": "s1_q05",
+   "task": "T1",
+   "question": "How many reusable components were included in the base React component library Eric Wu completed for Project Beacon?",
+   "reference": "34 reusable components",
+   "answer": "The base React component library that Eric Wu completed for Project Beacon included **34 reusable components**. He finished it by February 7, 2026 [Data: Entities (167, 166); Relationships (328, 329); Sources (58)].\n\n## Context\n\nEric Wu joined Project Beacon on January 6, 2026, as the frontend developer. He is responsible for all React component development on the project [Data: Entities (166, 189); Relationships (327, 381); Sources (67)]. The component library is the foundation for the project's user interface work, and its completion is recorded as a milestone for Project Beacon [Data: Relationships (327, 329); Reports (0)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 16.98,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12766,
+    "completion_tokens": 214,
+    "cost_usd": 0.0532,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states 34 reusable components, matching the reference exactly. The extra context (dates, role) does not contradict it."
+  },
+  {
+   "id": "s1_q06",
+   "task": "T2",
+   "question": "What timezone does Bob Martinez work in, and what project is he currently assigned to?",
+   "reference": "Bob Martinez is in CST (Austin, Texas). He was reassigned from Project Atlas to Project Beacon effective March 10, 2026.",
+   "answer": "# Bob Martinez: Timezone and Current Assignment\n\n## Timezone\n\nBob Martinez works in **Central Time (CST)**. He is based in Austin, while the rest of the core Atlas team operates on Pacific Time (PST). The difference causes a recurring scheduling conflict: he consistently misses the Friday 4pm PST standup [Data: Entities (6, 8, 11); Relationships (12, 11, 13); Sources (1)].\n\n## Current project assignment\n\nAccording to the records, Bob Martinez was reassigned from the Atlas data pipeline team to **Project Beacon**. The reassignment was announced on 2026-03-07 and took effect on **March 10, 2026**. It was made to address an engineering shortfall caused by a compliance delay [Data: Entities (133, 134, 132); Relationships (254, 257, 259, 260); Sources (44)].\n\nThis supersedes an earlier plan. After a February 24th leadership review deprioritized Compass in favor of Atlas, he was due to return to Atlas full-time on March 2nd [Data: Entities (186); Relationships (374, 373); Sources (64)]. A later record from 2026-03-27 describes his departure from the Atlas team as having reduced its bandwidth, which led to the legacy ETL script deprecation being pushed to Q3 2026 [Data: Entities (232); Relationships (463, 464); Sources (83); Reports (2)].\n\n## Caveat\n\nThe most recent record on his assignment is from late March 2026. The data does not say whether he is still on Project Beacon today, so Beacon is his last documented assignment rather than a confirmed current one.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 20.24,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11463,
+    "completion_tokens": 805,
+    "cost_usd": 0.0539,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states CST (Austin) and reassignment from Atlas to Project Beacon effective March 10, 2026, matching all key reference facts. Extra details and the caveat do not contradict the reference."
+  },
+  {
+   "id": "s1_q07",
+   "task": "T2",
+   "question": "What multiple roles was Alice Chen simultaneously holding as of early March 2026?",
+   "reference": "Alice Chen was simultaneously: (1) project manager for Project Atlas, (2) acting head of product following the director departure, and (3) interim PM for Project Beacon (splitting time 60/40 between Beacon and Atlas).",
+   "answer": "# Alice Chen's Simultaneous Roles as of Early March 2026\n\nAs of early March 2026, Alice Chen held three concurrent roles, with the third being split across two projects.\n\n## Project Manager for Atlas\n\nAlice joined the company in March 2025 as a product manager and is the project manager for Project Atlas [Data: Sources (33); Relationships (166, 167); Entities (12, 98)]. She retained this role while taking on additional responsibilities, though her time on Atlas was reduced to 40% [Data: Relationships (225, 21)].\n\n## Acting Head of Product\n\nOn February 3rd, 2026, after the director departed, Alice took over as acting head of product in addition to her PM role [Data: Sources (76); Entities (218, 219); Relationships (437, 438, 439)].\n\n## Interim PM for Beacon\n\nBeacon's PM went on medical leave, and on February 3rd, 2026, Alice joined the Beacon weekly standup to help define user story acceptance criteria [Data: Sources (51); Entities (146, 148); Relationships (280, 283, 286)]. On March 1st, 2026, she formally became interim PM for Beacon, a role she holds until a permanent replacement is hired [Data: Sources (40); Entities (117); Relationships (220, 221)].\n\n## The 60/40 Time Split\n\nThe Beacon role came with a 60/40 time split: 60% of her time goes to Beacon and 40% to Atlas [Data: Sources (40); Entities (118); Relationships (223, 224, 225)]. The Beacon and Atlas work are linked, since she found that Beacon's data export feature depends on an Atlas pipeline feature not scheduled until Q3 [Data: Sources (41); Relationships (218, 21)].\n\n## Implications\n\nThe reports note that Alice is a central node in the community and a single point of dependency, and that her limited availability may add constraints to both projects [Data: Reports (4)]. Her daily 9am to 12pm deep work block, during which she does not respond to messages, may further limit real-time responsiveness while she carries these roles [Data: Sources (5); Relationships (38, 37)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.2,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11308,
+    "completion_tokens": 713,
+    "cost_usd": 0.0524,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer covers all three roles (Atlas PM, acting head of product after the director's departure, interim PM for Beacon) and the 60/40 Beacon/Atlas time split, matching the reference. The extra detail is consistent with it."
+  },
+  {
+   "id": "s1_q08",
+   "task": "T2",
+   "question": "What library did the Project Compass team adopt following Bob Martinez's consulting visit, and which project originally developed it?",
+   "reference": "The Compass team adopted Atlas's shared logging library on March 6, 2026, after Bob Martinez recommended it. It was originally developed by the Atlas team.",
+   "answer": "# Library Adopted by the Compass Team\n\n## The library and its origin\n\nAfter Bob Martinez's consulting engagement, the Compass team adopted **Atlas's shared logging library**. The library originated with the **Atlas** project, which the records describe as the source of the adopted library [Data: Entities (108, 100); Relationships (198, 199); Sources (37)]. The adoption took place on March 6th, 2026 [Data: Entities (108); Sources (37)].\n\n## Background on the adoption\n\nBob Martinez spent two days on February 10th, 2026 consulting with the Compass team to review their distributed caching implementation. He found a race condition in their write-through logic [Data: Entities (101); Relationships (174, 176); Sources (35)]. During that engagement he recommended the Atlas logging library, and the Compass team then adopted it with his participation [Data: Entities (6, 108); Relationships (197); Sources (37)].\n\n## Outcome\n\nAdopting the library standardized log formats across the Compass and Atlas projects [Data: Entities (109); Relationships (200); Sources (37)]. The reports also describe this as part of a wider pattern of shared infrastructure between Atlas and Compass. Compass is also scheduled to migrate to a shared internal auth service by Q3 2026 [Data: Reports (2); Entities (100); Sources (62)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.76,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12525,
+    "completion_tokens": 658,
+    "cost_usd": 0.0567,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the Compass team adopted Atlas's shared logging library on March 6, 2026, after Bob Martinez's recommendation, and that it originated with the Atlas project. This covers every key fact in the reference. The extra background (the Feb 10 consulting, caching race condition, auth migration) does not contradict it."
+  },
+  {
+   "id": "s1_q09",
+   "task": "T2",
+   "question": "By how many percentage points did Project Compass's precision@10 improve after the data leakage bug was fixed?",
+   "reference": "Approximately 6.5 percentage points \u2014 from 34.7% precision@10 (baseline before fix, s1_049) to 41.2% precision@10 (after fixing the data leakage, s1_063).",
+   "answer": "## Precision@10 Improvement After the Data Leakage Fix\n\nAfter the data leakage bug was fixed, Project Compass's two-tower model reached 41.2% precision@10 (with 0.38 NDCG@10). This was a **6.5 percentage point improvement** over the baseline collaborative filtering model's 34.7% precision@10 [Data: Sources (9, 78); Entities (34, 33); Relationships (52)].\n\nEven with this gain, the result was still below the project's 45% precision target [Data: Sources (9); Reports (12)].\n\n## Context\n\nThe leakage issue was identified by Hannah Lee on 2026-02-18. Future interaction timestamps had bled into the training windows, which invalidated two weeks of benchmark results [Data: Sources (68); Entities (192); Relationships (388, 387)]. Once it was fixed, the model was re-evaluated and reported on 2026-02-25, giving trustworthy results [Data: Sources (9); Reports (12)].\n\nThe project later crossed the 45% production readiness threshold on 2026-03-11. Hannah Lee added item content features (category, tags, recency) alongside collaborative signals, raising precision@10 to 46.8% [Data: Sources (34); Entities (99); Relationships (171)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 18.04,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12189,
+    "completion_tokens": 424,
+    "cost_usd": 0.053,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states a 6.5 percentage point improvement, from 34.7% to 41.2% precision@10 after the leakage fix, matching all key facts in the reference. The extra context does not contradict it."
+  },
+  {
+   "id": "s1_q10",
+   "task": "T2",
+   "question": "Carol Davis was hired partly due to a conflict involving the previous QA lead. What position did she eventually rise to, and when?",
+   "reference": "Carol Davis was promoted from QA engineer to QA lead on October 1, 2025, where she manages a team of three testers.",
+   "answer": "# Carol Davis's Rise to QA Lead\n\n## Position and date\n\nCarol Davis rose to **QA lead**. She was promoted from QA engineer on **October 1, 2025**, and since then she has managed a team of three testers who perform regression testing [Data: Entities (77, 58); Relationships (133, 134); Sources (24)].\n\n## Background: the conflict behind her hiring\n\nThe conflict was a documented dispute between Alice Chen and the previous QA lead over who held authority over release gating. It influenced Carol's hiring [Data: Entities (175, 174); Relationships (343, 341); Sources (61)]. She was hired partly to reset that dynamic by introducing a more collaborative handoff process [Data: Entities (176, 58); Relationships (344, 346, 347); Sources (61)]. She also succeeded the previous QA lead in the QA role [Data: Relationships (345)].\n\n## Later developments\n\nOn March 19, 2026, Carol was reassigned full-time to Project Beacon. She is no longer the primary QA lead for Project Atlas [Data: Entities (160); Relationships (312, 311); Sources (55)]. The data does not say whether this changed her QA lead title.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.25,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12230,
+    "completion_tokens": 640,
+    "cost_usd": 0.0553,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Carol Davis was promoted from QA engineer to QA lead on October 1, 2025, and manages a team of three testers, matching all key facts in the reference. The additional background and later developments do not contradict the reference."
+  },
+  {
+   "id": "s1_q11",
+   "task": "T3",
+   "question": "What was Project Atlas's original completion deadline, and what is the deadline after scope-driven changes?",
+   "reference": "The original deadline was June 30, 2026 (set January 15, 2026). It was later extended to August 15, 2026 due to scope changes.",
+   "answer": "# Project Atlas Deadline\n\n## Original deadline\n\nProject Atlas was originally targeted for completion in Q2 2026, with a stated deadline of **June 30, 2026**. Both were recorded in notes dated January 15, 2026 [Data: Sources (3, 79); Entities (15, 222, 18); Relationships (28, 443)].\n\n## Deadline after scope changes\n\nAfter scope changes, the deadline was extended to **August 15, 2026**. A document dated March 1, 2026 records this extension, and it supersedes both the earlier June 30, 2026 deadline and the Q2 2026 completion target [Data: Sources (53); Entities (152, 154, 15); Relationships (292, 294, 295)].\n\n## Context for the change\n\nThe scope changes were the stated reason for the extension [Data: Relationships (294, 293)]. The reports link them to an expanded data ingestion scope, which received executive approval and raised the Q2 infrastructure budget from $180,000 to $240,000 [Data: Sources (26); Relationships (141, 143); Reports (3)].\n\nThe data does not say whether Atlas met the August 15, 2026 date, so I can't confirm the final outcome.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 16.4,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 9163,
+    "completion_tokens": 394,
+    "cost_usd": 0.0406,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states the original deadline June 30, 2026 (notes dated January 15, 2026) and the extension to August 15, 2026 due to scope changes. All key reference facts are present and consistent; extra context does not contradict."
+  },
+  {
+   "id": "s1_q12",
+   "task": "T3",
+   "question": "How many times was Project Beacon's launch date changed, and what date did it most recently land on?",
+   "reference": "The launch date was changed twice. Originally April 15, 2026, it was first pushed to June 3, 2026 (March 4, due to compliance review blockers), then moved earlier to May 20, 2026 (March 22, after the compliance review concluded favorably).",
+   "answer": "# Project Beacon Launch Date Changes\n\n## Summary\n\nProject Beacon's launch date was changed **twice** in the documented records, and it most recently landed on **May 20, 2026**. There is one additional schedule slip in the data, a two-week delay tied to QA capacity, which is not clearly tied to a specific launch date (see below) [Data: Reports (0); Entities (2, 0); Sources (0, 10)].\n\n## The Two Documented Date Changes\n\n1. **April 15, 2026 \u2192 June 3, 2026.** The original target was April 15, 2026. On March 4, 2026, the launch was pushed to June 3, 2026 because of unresolved compliance review blockers found during the March security audit [Data: Sources (0); Entities (3, 4, 5); Relationships (5, 6, 7)].\n\n2. **June 3, 2026 \u2192 May 20, 2026.** On March 22, 2026, the launch was moved up to May 20, 2026 after the compliance review concluded earlier than anticipated [Data: Sources (10); Entities (35, 0); Relationships (53)].\n\nMay 20, 2026 is the most recent documented launch date [Data: Reports (0); Entities (0, 2)].\n\n## Caveats and Inconsistencies\n\n- **Two-week QA-related delay.** A separate record says Carol Davis escalated on March 12 that QA capacity was insufficient to support three concurrent projects, which pushed Beacon's release date by two weeks. The records don't say which launch date this affected or whether it is the same event as one of the changes above, so I can't say whether it counts as a third change [Data: Sources (18); Entities (59, 63)].\n\n- **\"New June launch\" wording.** A March 19 record refers to a \"new June launch\" for accelerated testing. This most likely reflects the interim June 3 date, but that is an inference [Data: Sources (55); Entities (158); Relationships (305)].\n\n- **Reason for the move-up.** The compliance review finishing early is the stated reason for the May 20 date. The entity summary also notes the sources do not clearly explain why the launch was pulled forward [Data: Sources (10); Entities (2)].\n\n- **Conflicting accounts of the compliance review.** One account says the review concluded early and allowed an earlier launch, while another says unresolved blockers delayed it. These most likely reflect different points in time [Data: Relationships (3)].\n\nBecause of these inconsistencies, the May 20, 2026 date should be confirmed against the latest project records. The tables also contain nothing dated after March 31, 2026, so I can't say whether the date has changed since.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 21.54,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10975,
+    "completion_tokens": 857,
+    "cost_usd": 0.0525,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states twice, the original April 15, 2026, the change to June 3, 2026 on March 4 due to compliance blockers, and the move to May 20, 2026 on March 22 after the compliance review concluded early. All key facts match the reference. The extra caveats (QA delay) are hedged and do not contradict the answer."
+  },
+  {
+   "id": "s1_q13",
+   "task": "T3",
+   "question": "What percentage complete was the Airflow-to-Dagster migration as of February 15, 2026?",
+   "reference": "60% complete as of February 15, 2026.",
+   "answer": "## Migration Progress as of February 15, 2026\n\nThe Airflow-to-Dagster migration was **60% complete** as of February 15, 2026. Bob reported this status on that date, and it is the only quantitative progress measure in the data [Data: Sources (4); Entities (21, 22); Relationships (34); Reports (3, 27)].\n\n## Caveats\n\nThis figure predates several later developments, so it may not reflect the current status:\n\n- **Scope expansion:** The expanded data ingestion scope received executive approval around March 10, 2026, and the Project Atlas deadline was extended from June 30, 2026 to August 15, 2026 because of scope changes [Data: Sources (26, 53, 79); Reports (3)].\n- **Critical bugs:** Carol Davis raised 3 critical bugs in the Dagster integration during the March review, and the data gives no resolution status [Data: Sources (82); Entities (229); Relationships (457, 458)].\n\nThe data does not give any later completion figure, so the current level of completion is unknown [Data: Reports (27)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 18.49,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11609,
+    "completion_tokens": 350,
+    "cost_usd": 0.0499,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the migration was 60% complete as of February 15, 2026, matching the reference exactly. The added caveats about later developments are extra context and do not contradict the reference."
+  },
+  {
+   "id": "s1_q14",
+   "task": "T3",
+   "question": "What was the Project Atlas Q2 infrastructure budget before and after the executive-approved revision in March 2026?",
+   "reference": "The Q2 infrastructure budget was increased from $180,000 to $240,000 following executive approval (s1_075, around March 10, 2026).",
+   "answer": "# Project Atlas Q2 Infrastructure Budget Revision\n\n## Before and After\n\nThe Q2 infrastructure budget for Project Atlas was increased **from $180,000 to $240,000**, a $60,000 increase. The change followed executive approval of the expanded data ingestion scope, with the update recorded on 2026-03-10 [Data: Sources (26); Entities (83); Relationships (141)].\n\n## Why It Changed\n\nExecutive approval was granted on or around March 10, 2026 for the expanded data ingestion scope, which is a change to the scope of Project Atlas. That approval is what led to the higher infrastructure budget [Data: Entities (83); Relationships (141, 142, 143)].\n\n## Caveat: Unreconciled Budget Figures\n\nThis revision should not be confused with the separate $150,000 budget that the VP of Engineering approved on January 20, 2026 [Data: Sources (23); Entities (75, 76); Relationships (127, 130)]. The sources do not reconcile the $150,000 figure with the $180,000 to $240,000 infrastructure figures. They may reflect different scopes, such as an initial overall approval versus a later infrastructure-specific allocation, or one may supersede the other [Data: Reports (3, 30); Entities (15)].\n\nThe same expanded scope also drove the deadline extension to August 15, 2026 [Data: Relationships (294); Sources (53)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.4,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 9925,
+    "completion_tokens": 470,
+    "cost_usd": 0.0444,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the budget rose from $180,000 to $240,000 after executive approval around March 10, 2026, matching all key facts in the reference. Extra details (the $150,000 caveat, scope rationale) don't contradict it."
+  },
+  {
+   "id": "s1_q15",
+   "task": "T3",
+   "question": "When did the company complete its migration of internal documentation from Confluence to Notion?",
+   "reference": "The migration was finalized on January 19, 2026.",
+   "answer": "## Completion of the Confluence-to-Notion Documentation Migration\n\nThe company finalized the migration of its internal documentation from Confluence to Notion on **January 19, 2026**. A source record dated the same day states that the company migrated its internal documentation from Confluence to Notion and that the migration was finalized [Data: Sources (54); Entities (156, 157, 130); Relationships (302, 299)].\n\nConfluence was the platform the company previously used for internal documentation and was the source of the migration. Notion was the destination [Data: Entities (155, 141); Relationships (298, 300, 301)]. Notion also serves a second role: Carol Davis records all of her QA findings there before raising them verbally with others [Data: Entities (141); Relationships (272); Sources (48)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 17.33,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12216,
+    "completion_tokens": 255,
+    "cost_usd": 0.0514,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the migration was finalized on January 19, 2026, matching the reference exactly. The extra details about Confluence, Notion, and Carol Davis do not contradict it."
+  },
+  {
+   "id": "s1_q16",
+   "task": "T4",
+   "question": "What is the current deadline for completing Project Atlas?",
+   "reference": "August 15, 2026. (The original deadline of June 30, 2026 was extended due to scope changes.)",
+   "answer": "# Current Project Atlas Deadline\n\n**The current deadline is August 15, 2026.** A document dated March 1, 2026 extended the deadline because of scope changes, superseding the original June 30, 2026 deadline and the Q2 2026 completion target [Data: Sources (53, 79, 3); Entities (152, 222, 18); Relationships (292, 295, 294)].\n\n## How the deadline changed\n\nThe original deadline of June 30, 2026 was recorded in a note dated January 15, 2026, alongside a Q2 2026 completion target [Data: Sources (79, 3); Entities (222, 18); Relationships (443, 444)]. The expanded data ingestion scope, which received executive approval around March 10, 2026, was one of the scope changes affecting the project [Data: Sources (26); Entities (83, 154); Relationships (143, 293)]. The reports identify scope changes as the stated reason for the extension [Data: Reports (3, 30); Relationships (294)].\n\n## Caveats\n\n- **Later developments are not reflected in the deadline records.** Later sources describe staffing changes, including Bob Martinez's reassignment to Project Beacon effective March 10 and the rescheduled deprecation of the legacy ETL scripts to Q3 2026 [Data: Sources (44, 83); Entities (134, 234)]. None of the data states whether these changes affected the August 15, 2026 deadline.\n- **No completion information.** Today's date is November 8, 2026, which is after August 15, 2026, but the data contains nothing on whether Project Atlas was completed or whether the deadline was extended again. I cannot say whether the date was met or revised after March 2026.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.23,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 9864,
+    "completion_tokens": 555,
+    "cost_usd": 0.045,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the current deadline is August 15, 2026, notes the original June 30, 2026 deadline, and attributes the extension to scope changes, matching all key facts in the reference. The added caveats do not contradict it."
+  },
+  {
+   "id": "s1_q17",
+   "task": "T4",
+   "question": "What is the current planned launch date for Project Beacon?",
+   "reference": "May 20, 2026. (The date was first pushed from April 15 to June 3, then pulled forward to May 20 after the compliance review concluded.)",
+   "answer": "# Current Planned Launch Date for Project Beacon\n\n**The most recent documented launch date for Project Beacon is May 20, 2026.** [Data: Reports (0); Entities (0, 2); Sources (10)]\n\n## How the date changed\n\nThe launch date has been revised several times:\n\n- **April 15, 2026** was the original target date [Data: Entities (3); Relationships (5)].\n- **June 3, 2026** became the new date after a March 4, 2026 postponement, caused by unresolved compliance review blockers found in the March security audit [Data: Entities (4, 5); Relationships (6, 9); Sources (0)].\n- **May 20, 2026** is the latest revision. On March 22, 2026 the launch was moved up from June 3 after the compliance review concluded earlier than anticipated [Data: Entities (35); Relationships (53); Sources (10)].\n\n## Caveats\n\nThe records are not fully consistent. Some references to a \"new June launch\" tied to accelerated testing likely reflect the interim June 3 date, before the move to May 20 [Data: Entities (158, 159); Relationships (305, 309); Sources (55)]. The sources also do not explain exactly why the launch was pulled forward beyond the early compliance review completion [Data: Entities (2)].\n\nAnother record notes that Beacon's release date was pushed by two weeks because QA capacity was insufficient to support three concurrent projects. It is dated March 12, before the May 20 revision, and the data doesn't say how it relates to the final date [Data: Entities (59, 63); Sources (18)].\n\nToday's date is November 8, 2026, which is after May 20, 2026. The data contains no record confirming whether the launch actually occurred on that date, so the current status should be verified against up-to-date project records.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 18.95,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11369,
+    "completion_tokens": 582,
+    "cost_usd": 0.0513,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer gives May 20, 2026 as the current date and covers the full history: April 15 original, pushed to June 3, then pulled forward to May 20 after the compliance review concluded. All key facts from the reference are present. The extra caveats about a QA-related delay and the launch status don't contradict the reference."
+  },
+  {
+   "id": "s1_q18",
+   "task": "T4",
+   "question": "Who is currently the primary QA lead for Project Atlas?",
+   "reference": "As of March 19, 2026, Carol Davis is no longer the primary QA lead for Project Atlas. She was reassigned full-time to Project Beacon. The memories do not name a replacement QA lead for Atlas.",
+   "answer": "# Current Primary QA Lead for Project Atlas\n\n## Short answer\n\nThe data does not name a current primary QA lead for Project Atlas. It only says who no longer holds the role: Carol Davis.\n\n## What the records show\n\nCarol Davis was formerly the primary QA lead for Project Atlas. A record dated 2026-03-19 says she is no longer in that role and has been reassigned full-time to Project Beacon to support its accelerated testing needs ahead of the new June launch [Data: Sources (55); Relationships (303); Entities (160, 58); Reports (3)]. The reassignment followed a temporary arrangement that began on March 17, 2026, when she was shared with Beacon for beta testing while keeping her Atlas responsibilities [Data: Sources (66)]. The March 19 record supersedes that arrangement.\n\nEarlier in March, Carol had escalated to leadership that QA capacity was insufficient to support three concurrent projects [Data: Sources (18)]. She also raised 3 critical bugs in the Dagster integration during the March review [Data: Sources (82); Reports (3)].\n\n## What is not stated\n\nNo record names a successor or replacement QA lead for Atlas. The sources also don't say whether Carol's team of three testers stayed with Atlas or moved with her. The Atlas report flags the change in QA leadership as a possible continuity concern [Data: Reports (3)].\n\n## Caveat on timing\n\nThe most recent relevant record is dated March 2026, so the data may be out of date. If a new QA lead has been assigned since then, it isn't captured here, and you would need to confirm it with the project team or a more recent source.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 21.11,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13116,
+    "completion_tokens": 751,
+    "cost_usd": 0.06,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer matches all key facts: Carol Davis is no longer primary QA lead as of 2026-03-19, reassigned full-time to Project Beacon, and no replacement is named for Atlas. Extra details are consistent and do not contradict the reference."
+  },
+  {
+   "id": "s1_q19",
+   "task": "T4",
+   "question": "What is the current annual tooling budget allocated to the Atlas team?",
+   "reference": "$62,000. (The budget was increased from the original $45,000 to cover newly approved tooling.)",
+   "answer": "# Current Annual Tooling Budget for the Atlas Team\n\nThe Atlas team's annual tooling budget is currently **$62,000**. It was raised from $45,000 on 2026-03-24, an increase of $17,000 [Data: Entities (172, 173, 7); Relationships (337, 339, 340); Sources (60)].\n\n## Reason for the Increase\n\nThe increase was made to fund the newly approved Datadog APM enterprise tier contract [Data: Entities (172, 7); Relationships (336, 338); Sources (60)]. Two entities, the \"Tooling Budget Increase\" and the \"New Annual Tooling Budget Approval\", describe this same 2026-03-24 decision [Data: Entities (172, 173); Relationships (339)].\n\n## Caveats\n\nThe data contains no later change to the tooling budget after the 2026-03-24 decision, so $62,000 is the most recent figure available. I can't confirm from these tables that nothing has changed since then.\n\nThis tooling budget is separate from the Project Atlas budgets in the data, which are the $150,000 project approval and the Q2 infrastructure increase from $180,000 to $240,000 [Data: Entities (75, 76); Sources (23, 26)].",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 17.99,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10936,
+    "completion_tokens": 405,
+    "cost_usd": 0.0478,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states the current budget is $62,000, raised from $45,000, matching the reference. It also explains the reason (newly approved tooling, Datadog APM contract), consistent with the reference. No contradictions."
+  },
+  {
+   "id": "s1_q20",
+   "task": "T4",
+   "question": "Is Kafka being used for Project Beacon's event streaming layer?",
+   "reference": "No. The decision to adopt Kafka was reversed (s1_078, March 13, 2026). The team is continuing with Redis instead.",
+   "answer": "# Kafka and Project Beacon's Event Streaming Layer\n\n**No, Kafka is not being used for Project Beacon's event streaming layer.** The team considered adopting it but reversed that decision, and RabbitMQ remains in use.\n\n## The Decision Reversal\n\nOn 2026-03-13, the team reversed its earlier decision to adopt Kafka for Project Beacon's event streaming layer. The reason was that latency benchmarks showed insufficient gains to justify the cost of migrating [Data: Sources (56); Entities (163, 161, 164); Relationships (316, 317, 326)].\n\n## Why Kafka Was Rejected\n\nThe benchmarks compared Kafka's latency against RabbitMQ, which served as the baseline. They showed the improvement was too small to justify migration, and this was the stated reason for the reversal [Data: Entities (165); Relationships (320, 321, 322)]. The proposed migration would have moved the event streaming layer from RabbitMQ to Kafka, but it was cancelled because of its cost [Data: Entities (164); Relationships (323, 325, 326)].\n\n## What Is Used Instead\n\nProject Beacon's event streaming layer continues to use RabbitMQ, and the team has said it will keep doing so [Data: Entities (162); Relationships (314, 318)]. Kafka was considered for the project but not adopted [Data: Relationships (315, 319)].\n\n## Caveat\n\nThe most recent record on this topic is dated 2026-03-13. The data tables contain nothing suggesting the decision was revisited after that date.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.36,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11674,
+    "completion_tokens": 520,
+    "cost_usd": 0.0519,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer correctly says No, Kafka is not used, and it gives the March 13, 2026 reversal date. However, it says the team continues with RabbitMQ, while the reference says Redis. That is a substantive factual contradiction on what is used instead. The core answer is right, but a key detail is wrong."
+  },
+  {
+   "id": "s1_q21",
+   "task": "T5",
+   "question": "What are the names of the three QA testers currently on Carol Davis's team?",
+   "reference": "I don't know. The memories state that Carol Davis manages a team of three testers (s1_020) but do not name any of them.",
+   "answer": "## Answer\n\nThe data does not give the names of the three testers on Carol Davis's team. It only says that she was promoted from QA engineer to QA lead on 2025-10-01 and now manages a team of three testers who perform regression testing [Data: Entities (58, 77); Relationships (119, 134); Sources (24)].\n\n## What the data does and doesn't name\n\n- **Named individuals connected to Carol:** Priya Nair is a new junior QA hire, due to start in January 2026, whom Carol is mentoring. The data describes her as joining the QA function, but it does not say she is one of the three testers [Data: Entities (67); Relationships (113, 118); Sources (20)].\n- **Bob Martinez:** Carol informally mentors him through bi-weekly 1:1s as he moves from backend-only work into full-stack contributions on the Atlas pipeline. Nothing indicates he is a tester on her team [Data: Relationships (276); Sources (49)].\n- **Alice Chen:** She appears in connection with a Q1 2025 miscommunication and a release gating authority conflict, not as a member of Carol's team [Data: Relationships (271, 342); Sources (48, 61)].\n\n## Caveat\n\nThe records are also not current. The latest dated information is from March 2026, when Carol was reassigned full-time to Project Beacon [Data: Sources (55)]. Today is 2026-11-08, so the team's makeup may have changed since then. I can't identify the three testers by name from the information provided.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.45,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12319,
+    "completion_tokens": 493,
+    "cost_usd": 0.0542,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "ref_abstention_judge",
+   "judge_reasoning": "The generated answer states the data does not name the three testers, matching the reference. It mentions other named people (Priya Nair, Bob Martinez, Alice Chen) but explicitly says none are identified as members of the team, so nothing is fabricated."
+  },
+  {
+   "id": "s1_q22",
+   "task": "T5",
+   "question": "What is Diana Park's professional background and how many years of experience does she have?",
+   "reference": "I don't know. The memories record Diana Park's role as tech lead on Project Beacon but contain no information about her background, prior employers, or years of experience.",
+   "answer": "# Diana Park: Professional Background\n\n## What the data does not cover\n\nThe data contains no information about Diana Park's prior employment, education, or career history, and it does not say how many years of experience she has. I can't answer those parts of the question without making something up. The records only describe her current role on Project Beacon.\n\n## Her known role: Tech Lead of Project Beacon\n\nDiana Park is the tech lead of Project Beacon. She was assigned to the role when the project officially kicked off on January 5, 2026 [Data: Entities (197); Relationships (407); Sources (89)]. In that role she has handled both risk management and technical decision-making [Data: Entities (197)].\n\n## Documented contributions\n\n- **Scope creep oversight:** On February 12, 2026, she flagged a scope creep risk after stakeholders requested real-time notifications that were not in the original specification [Data: Entities (197, 198, 200); Relationships (396, 398, 400); Sources (70)].\n- **Architectural decision:** On March 10, 2026, after the alpha release revealed dashboard load latency above 400ms, she decided to use Redis for session caching in Project Beacon [Data: Entities (197); Relationships (406, 411); Sources (72)].\n\n## Summary\n\nThe records show Diana Park as the person responsible for Project Beacon's technical direction, from kickoff through scope oversight and caching decisions. For her professional background or years of experience, you would need another source, such as an HR record or a professional profile.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 18.9,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10944,
+    "completion_tokens": 631,
+    "cost_usd": 0.0501,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q23",
+   "task": "T5",
+   "question": "What specific vulnerabilities were identified in the Atlas API authentication layer during the ShieldLabs security audit?",
+   "reference": "I don't know. The memories record that two medium-severity vulnerabilities were found in the Atlas API authentication layer (s1_005) but do not describe the nature, CVE IDs, or technical details of the vulnerabilities.",
+   "answer": "# ShieldLabs Audit of the Atlas API Authentication Layer\n\nThe data tables contain no information about a ShieldLabs security audit or about vulnerabilities in the Atlas API authentication layer, so I can't answer this question. I won't speculate about findings that aren't in the records.\n\n## Related audit information in the data\n\n- **SOC 2 Type II audit:** The annual audit finished in December 2025 with zero exceptions. The auditor called Atlas's logging and access control practices exemplary. The records don't name the auditing firm, and they don't mention the API authentication layer or any vulnerabilities [Data: Sources (39); Entities (116); Relationships (213, 214, 216, 217)].\n- **March security audit:** This audit found unresolved compliance review blockers, which delayed Project Beacon's launch from April 15, 2026 to June 3, 2026. It concerned Beacon, not Atlas, and the records give no technical details of the blockers [Data: Sources (0); Entities (1); Relationships (1, 2, 4)].\n- **Security review:** A separate review recommended that Project Beacon use Auth0 instead of a custom auth system. The records don't connect it to Atlas [Data: Sources (73); Entities (208); Relationships (416, 417)].\n\n## Authentication changes affecting Atlas\n\nA Cross-Project Architecture Review on March 18, 2026 decided that Atlas, Beacon, and Compass will migrate to one internal auth service by Q3 2026. This replaces three separate auth implementations. The records give no security-related reason for the decision and don't tie it to any audit findings [Data: Sources (62); Entities (177, 178, 180); Relationships (349, 353, 358)].\n\nIf you have the ShieldLabs report or another source that covers this audit, it would need to be added to the dataset before I could say anything about its findings.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 22.13,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12733,
+    "completion_tokens": 746,
+    "cost_usd": 0.0584,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "abstention_correct",
+   "judge_reasoning": "REF=abstention, ANS=abstention"
+  },
+  {
+   "id": "s1_q24",
+   "task": "T5",
+   "question": "What is the detailed roadmap or milestone timeline for Project Horizon, the internal customer dashboard?",
+   "reference": "I don't know. The memories only record that Project Horizon was announced at the October 2025 all-hands (s1_022) as a new internal customer dashboard. No milestones, deadlines, team assignments, or budget details are present in the memories.",
+   "answer": "# Project Horizon: What the Data Shows\n\n## Summary\n\nThe data tables do not contain a detailed roadmap or milestone timeline for Project Horizon. The only information available is that the project exists and that its roadmap was announced at a company event. The content of that roadmap, including any phases, milestones, or dates beyond the announcement, is not recorded.\n\n## What Is Known\n\n**Project definition.** Project Horizon is a new internal project of the company focused on building a customer dashboard [Data: Entities (224); Relationships (448)].\n\n**Roadmap announcement.** The product roadmap for Horizon was announced at the company all-hands on 2025-10-20 [Data: Entities (224, 225); Relationships (446, 449, 450); Sources (80)]. This is the only dated event tied to the project.\n\n## What Is Not Available\n\nThe records do not say:\n\n- What the roadmap contained (features, phases, or deliverables)\n- Any target dates for milestones, alpha/beta releases, or launch\n- Owners, team members, or budget for Horizon\n- Any progress since the announcement\n\n## Possible Confusion with Project Beacon\n\nProject Beacon is also a customer-facing web application with a dashboard, and it has a well-documented timeline. Its milestones include the January 5, 2026 kickoff, Figma dashboard mockups on January 22, an internal alpha on March 3, a beta on March 28, and a most recent launch date of May 20, 2026 [Data: Reports (0); Entities (0, 220, 215); Sources (89, 52, 77, 75, 10)]. The data does not link Beacon to Horizon, so I cannot say whether the two are related, and Beacon's timeline should not be treated as Horizon's.\n\nIf you need Horizon's detailed roadmap, you would need to consult the original all-hands materials or the owning team, as they are not captured here.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.43,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11828,
+    "completion_tokens": 611,
+    "cost_usd": 0.0534,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 0.95,
+   "judge_mode": "ref_abstention_judge",
+   "judge_reasoning": "The generated answer states that the data contains no detailed roadmap or milestones for Project Horizon, matching the reference's 'don't know'. It reports only the announcement at the all-hands and a customer dashboard, consistent with the reference. It explicitly lists missing items (milestones, owners, budget) and warns that Project Beacon's timeline should not be treated as Horizon's, so that timeline is not presented as Horizon's. The only minor addition is the specific date 2025-10-20 and the claim that the 'roadmap' was announced, which are small embellishments but not a fabricated road"
+  },
+  {
+   "id": "s1_q25",
+   "task": "T5",
+   "question": "What is Elena Vasquez's educational background and prior work experience before joining the company?",
+   "reference": "I don't know. The memories record that Elena Vasquez joined as a data engineer on September 22, 2025, reporting to Bob Martinez and focused on the Atlas ingestion layer (s1_019), but contain no information about her education or prior employment.",
+   "answer": "# Elena Vasquez: Background\n\nThe data tables don't say anything about Elena Vasquez's educational background or her work experience before joining the company, so I can't answer that part of your question.\n\n## What the data does say\n\n- **Role and start date:** Elena Vasquez joined as a data engineer on 2025-09-22. She reports to Bob Martinez and focuses on the Atlas ingestion layer [Data: Entities (138, 140, 139); Relationships (265, 266, 268); Sources (47)].\n- **Reporting line:** Bob Martinez became her manager when she joined [Data: Relationships (265, 269); Reports (2)].\n- **Team context:** She works within the Atlas project. Bob Martinez, who manages her, was reassigned to Project Beacon effective March 10, 2026. This reduced Atlas's bandwidth and contributed to moving the legacy ETL script deprecation from the end of Q1 to Q3 2026 [Data: Reports (2)]. The tables don't state whether this affected her work directly.\n\nIf you need her education or earlier employment, you would need another source, such as HR records, her onboarding materials, or a hiring profile. None of these are in the data provided.",
+   "retrieved": [
+    {
+     "content": "(graphrag local search: entities + community reports + text units)",
+     "source": "graphrag",
+     "score": 1.0
+    }
+   ],
+   "tier": "local_search",
+   "latency_s": 19.1,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10016,
+    "completion_tokens": 440,
+    "cost_usd": 0.0445,
+    "embed_calls": 1,
+    "errors": 0
+   },
+   "score": 1.0,
+   "judge_mode": "ref_abstention_judge",
+   "judge_reasoning": "The generated answer explicitly states the data doesn't contain Elena Vasquez's education or prior work experience. The details it provides (data engineer, joined 2025-09-22, reports to Bob Martinez, Atlas ingestion layer) match the reference. The extra context about Bob's reassignment is not contradicted by the reference and is not offered as an answer to the question."
+  }
+ ],
+ "ingest": {
+  "seconds": 684.1,
+  "llm_calls": 297,
+  "prompt_tokens": 1383299,
+  "completion_tokens": 200923,
+  "cost_usd": 5.8536,
+  "embed_calls": 29,
+  "errors": 0,
+  "llm_calls_per_memory": 3.3
+ },
+ "query": {
+  "accuracy": 0.978,
+  "by_task": {
+   "T1": 1.0,
+   "T2": 1.0,
+   "T3": 1.0,
+   "T4": 0.9,
+   "T5": 0.99
+  },
+  "latency_p50_s": 19.1,
+  "latency_p95_s": 21.11,
+  "read_llm_calls_per_query": 1.0,
+  "read_prompt_tokens_per_query": 11504,
+  "query_errors": 0
+ },
+ "wall_seconds": 1282.9
+}
