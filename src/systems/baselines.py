@@ -93,7 +93,7 @@ class VectorRAG(BaseAdapter):
 class HybridRerank(BaseAdapter):
     name, family, year, kind = "hybrid_rerank", "hybrid retrieval + reranker", 2024, "modern"
     top_k, cand_k = 5, 20
-    reranker_model = __import__("os").environ.get("RERANKER_MODEL", "BAAI/bge-reranker-base")
+    reranker_model = "BAAI/bge-reranker-base"
     _ce = None
 
     def _on_reset(self):

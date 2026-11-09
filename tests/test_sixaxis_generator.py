@@ -27,7 +27,10 @@ def test_deletions_and_poisons_are_paired_with_probes():
     shapes = Counter(x["shape"] for x in d["deletions"])
     assert shapes["single"] >= 1 and shapes["entity"] >= 1
     for c in d["deletions"]:
-        assert c["delete_ids"] and c["probe_question"] and c["control_question"] and c["leak_strings"]
+        assert c["delete_ids"] and c["probe_question"] and c["control_question"] and c["probe_answer"]
+        # leak strings may be empty (a shared city is not a leak) but never non-unique
+        others = " ".join(m["content"].lower() for m in d["memories"] if m["id"] not in set(c["delete_ids"]))
+        assert all(s.lower() not in others for s in c["leak_strings"])
         assert not set(c["control_evidence_ids"]) & set(c["delete_ids"]), "control must not depend on deleted memories"
     for p in d["poisons"]:
         assert p["poison_answer"] != p["trusted_answer"]

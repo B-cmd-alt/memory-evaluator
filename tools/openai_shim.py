@@ -49,6 +49,8 @@ def _model_alias(name: str | None) -> str:
         return "haiku"
     if "opus" in n:
         return "opus"
+    if "sonnet" in n:
+        return "sonnet"   # lets a caller pin Sonnet (the judge) while SHIM_DEFAULT_MODEL selects the generator tier
     return os.environ.get("SHIM_DEFAULT_MODEL", "sonnet")
 
 

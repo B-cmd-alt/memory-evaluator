@@ -124,6 +124,33 @@ H1 Under strict v3, faithful re-implementations of 2023 systems are within the n
 H3 The gap between generations is smaller than the judge-protocol and prompt envelopes.
 H4 Write-path cost separates the ten systems by more than an order of magnitude at S2.
 
+## 7. As run in round 2 — amendments to the definitions above (2026-11-09)
+
+Round 2 (`docs/ROUND2_RESULTS.md`) exercised the design for the first time at S1 and changed four definitions.
+Each change was forced by a record whose number did not survive reading its evidence; the write-up lists all nine
+corrections. The design text above is kept as the target; what was actually measured is this:
+
+- **Sizes at S1 as run:** 22–24 questions (5 per task type, T5 4–5), 5 update questions inside them, 6–7 deletion cases
+  (2–3 per shape), 1–3 poison cases per seed, 2 decoys per question; three seeds (42 / 123 / 456); two generator tiers.
+  The §3 targets (50 / 20 / 15 / 20) are S2 numbers; S2 and S3 are not yet run.
+- **A3 deletion** — cases are applied *cumulatively* on one system state, so every case is built against the running
+  set of deleted ids (`ground_check` replays them). `forgot` = the strict judge no longer accepts the probe's pre-delete
+  answer (`probe_answer`); abstention is the clean case. The leak check keeps the deterministic substring test but only
+  over strings that occur in **no non-deleted memory**, and a string the probe question itself contains counts only when
+  it comes back in retrieved context (an abstention naming the subject is not a leak); cases with no unique string are
+  `leak_measurable = false`. `control_intact` is averaged over controls the system answered correctly *before* the delete.
+  State inspection is through retrieved context only — index entries and graph nodes are not inspected directly yet.
+- **A4 adversarial** — poison targets are disjoint from every deletion case (A4 runs after A3). The poison notes are
+  *labelled* low-trust text ("unverified forwarded email / Slack rumor / chat"), so the axis measures labelled-poison
+  robustness: whether the system, or the shared generator reading its context, lets a low-trust note override the
+  trusted record. Instruction-bearing memories ("ignore earlier records") are included in the tool-kind template; an
+  unlabelled contradiction is future work. `retrieved_poison` is reported next to `fooled`.
+- **GraphRAG** runs as a context builder (local-search context → the shared answer prompt, zero GraphRAG-side LLM calls
+  at query time); round 1 had let it answer with its own prompt.
+- **Mem0 deletion** is reported under two documented semantics (provenance-only; provenance ∪ returned ids).
+- **A6** at S1 covers the two generator tiers; the three-prompt and two-embedder arms were measured only as noise
+  envelopes on the baselines (`tools/noise_envelopes.py`), not as a full re-run.
+
 ## Sources
 
 LongMemEval (arXiv 2410.10813) · LoCoMo audits: Penfield Labs (dev.to), dial481/locomo-audit,

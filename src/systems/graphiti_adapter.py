@@ -53,6 +53,7 @@ class GraphitiAdapter(BaseAdapter):
                 pass
             shutil.rmtree(getattr(self, "_dir", ""), ignore_errors=True)
         self._g = None
+        self._episodes_by_source: dict[str, list[str]] = {}
 
     async def ingest(self, memories):
         from graphiti_core.nodes import EpisodeType
@@ -61,11 +62,31 @@ class GraphitiAdapter(BaseAdapter):
         t0, c0 = time.time(), self.llm.calls
         for m in memories:
             ts = m.timestamp if m.timestamp.tzinfo else m.timestamp.replace(tzinfo=timezone.utc)
-            await self._g.add_episode(name=m.source_id, episode_body=m.content, source=EpisodeType.text,
-                                      source_description="memory note", reference_time=ts)
+            res = await self._g.add_episode(name=m.source_id, episode_body=m.content, source=EpisodeType.text,
+                                            source_description="memory note", reference_time=ts)
+            ep = getattr(res, "episode", None)
+            if ep is not None and getattr(ep, "uuid", None):
+                self._episodes_by_source.setdefault(m.source_id, []).append(ep.uuid)
             self.episodes += 1
         self.memories.extend(memories)
         return self._ingest_stats(len(memories), t0, c0)
+
+    async def delete(self, source_ids):
+        """Native deletion: remove the episodes ingested from these notes (Graphiti drops the edges and the entity
+        nodes that only those episodes supported). The base-class rebuild path is not usable here — it re-ingests
+        through _on_ingest, which this adapter does not implement (the round-2 v1 records show every post-delete
+        query erroring with a closed driver), and a rebuild would also cost ~4 LLM calls per memory per case."""
+        ids = set(source_ids)
+        n = 0
+        for sid in ids:
+            for uuid in self._episodes_by_source.pop(sid, []):
+                try:
+                    await self._g.remove_episode(uuid)
+                    n += 1
+                except Exception:  # noqa: BLE001
+                    pass
+        self.memories = [m for m in self.memories if m.source_id not in ids]
+        return {"deleted": n, "method": "graphiti.remove_episode"}
 
     async def query(self, question, timestamp=None):
         t0 = time.time()
