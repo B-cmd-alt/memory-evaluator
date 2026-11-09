@@ -43,13 +43,17 @@ class Mem0Adapter(BaseAdapter):
         self._m = None
         self._build()
         self.add_results = []
+        self._derived: dict[str, set] = {}
 
     def _on_ingest(self, memories):
         if getattr(self, "_m", None) is None:
             self._build()
         for m in memories:
             r = self._m.add(fmt_mem(m), user_id=self.user_id, metadata={"source_id": m.source_id, "date": m.timestamp.isoformat()})
-            self.add_results.append({"source_id": m.source_id, "ops": [(x.get("event"), x.get("memory")) for x in (r.get("results") or [])]})
+            ops = r.get("results") or []
+            self.add_results.append({"source_id": m.source_id, "ops": [(x.get("event"), x.get("memory"), x.get("id")) for x in ops]})
+            # the memory ids Mem0 created or rewrote for THIS note — what an app would track to honour "delete this note"
+            self._derived.setdefault(m.source_id, set()).update(x["id"] for x in ops if x.get("id") and x.get("event") in ("ADD", "UPDATE"))
 
     async def query(self, question, timestamp=None):
         t0 = time.time()
@@ -60,14 +64,29 @@ class Mem0Adapter(BaseAdapter):
         return self._result(ans, items, "mem0.search", t0, it, ot)
 
     async def delete(self, source_ids):
-        # Mem0 stores EXTRACTED facts, not our source rows; delete every stored memory whose metadata points at a source id.
-        n = 0
+        """Mem0 stores EXTRACTED facts, not our source notes, so "delete this note" has no single mapping. Round-2 v1
+        deleted only memories whose metadata still named the source (provenance): facts Mem0 had MERGED into a memory
+        created from an earlier note kept the earlier note's provenance and survived (81% leak at S1). v2 deletes the
+        union of (a) provenance matches and (b) every memory id Mem0 returned as ADD/UPDATE when the note was added —
+        what an application tracking add() results would do. (b) can over-delete a merged memory; the control
+        questions measure that."""
+        ids = set(source_ids)
+        targets = set()
         allm = self._m.get_all(filters={"user_id": self.user_id})
         for h in (allm.get("results") if isinstance(allm, dict) else allm) or []:
-            if (h.get("metadata") or {}).get("source_id") in set(source_ids):
-                self._m.delete(h["id"]); n += 1
-        self.memories = [m for m in self.memories if m.source_id not in set(source_ids)]
-        return {"deleted": n, "method": "mem0.delete by metadata"}
+            if (h.get("metadata") or {}).get("source_id") in ids:
+                targets.add(h["id"])
+        by_prov = len(targets)
+        for sid in ids:
+            targets |= self._derived.get(sid, set())
+        n = 0
+        for mid in targets:
+            try:
+                self._m.delete(mid); n += 1
+            except Exception:  # noqa: BLE001  (already deleted by an earlier case)
+                pass
+        self.memories = [m for m in self.memories if m.source_id not in ids]
+        return {"deleted": n, "by_provenance": by_prov, "by_returned_ids": len(targets) - by_prov, "method": "mem0.delete provenance ∪ returned ids"}
 
     async def close(self):
         shutil.rmtree(getattr(self, "_dir", ""), ignore_errors=True)

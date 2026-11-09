@@ -160,6 +160,130 @@ def case_explorer(rows) -> str:
     return "".join(out)
 
 
+# ── Round 2 (SixAxis) ──────────────────────────────────────────────────────────────────────────────
+R2 = Path("results/sixaxis")
+AX_COLS = [("A1", "A1 recall"), ("A1_T5", "T5 abstain"), ("A2_current", "A2 current"), ("A2_stale", "A2 stale"), ("A2_FAMA", "FAMA"),
+           ("A3_forgot", "A3 forgot"), ("A3_control_intact", "A3 ctrl ok"), ("A3_leaked", "A3 leaked"), ("A4_fooled", "A4 fooled"),
+           ("A5_calls_per_memory", "write calls/mem"), ("A5_read_tok_per_q", "read tok/q"), ("A5_p50_s", "p50 s"), ("judge_decoy_acceptance", "decoy acc")]
+LABEL = {e.key: e.label for e in REGISTRY}
+
+
+def load_round2():
+    recs = []
+    for p in sorted(R2.glob("*_S*_seed*_rep*.json")):
+        try:
+            d = json.loads(p.read_text())
+        except ValueError:
+            continue
+        if isinstance(d, dict) and d.get("status") == "OK":
+            recs.append(d)
+    summ = json.loads((R2 / "summary.json").read_text()) if (R2 / "summary.json").exists() else None
+    return recs, summ
+
+
+def ms(c, m, pct=True):
+    v = c[m]["mean"]
+    if v is None:
+        return "—"
+    s = f"{v:.2f}" if pct else f"{v:g}"
+    return s + (f" <small>± {c[m]['std']:.2f}</small>" if c[m]["n"] > 1 and c[m]["std"] else "")
+
+
+def round2_table(summ, scale, tier) -> str:
+    cells = sorted([c for c in summ["cells"].values() if c["scale"] == scale and c["tier"] == tier], key=lambda c: -(c["A1"]["mean"] or 0))
+    e = summ["noise_envelopes"].get(f"{scale}|{tier}", {})
+    L = [f"<h3>{esc(scale)} · generator tier <b>{esc(tier)}</b> · {len(cells)} systems · noise envelope {e.get('envelope')} "
+         f"<small>(replication {e.get('replication_std_baselines')} · judge protocol {e.get('judge_protocol_spread')} · answer prompt {e.get('answer_prompt_spread')})</small></h3>",
+         "<table><tr><th>system</th><th>reps</th>" + "".join(f"<th>{h}</th>" for _, h in AX_COLS) + "</tr>"]
+    for c in cells:
+        L.append(f"<tr><td>{esc(LABEL.get(c['system'], c['system']))}</td><td>{c['n_reps']}</td>" +
+                 "".join(f"<td>{ms(c, m, m not in ('A5_calls_per_memory', 'A5_read_tok_per_q', 'A5_p50_s'))}</td>" for m, _ in AX_COLS) + "</tr>")
+    L.append("</table>")
+    h = summ["hypotheses"].get(f"{scale}|{tier}")
+    if h:
+        beat = [LABEL.get(s, s) for s, v in h["H1_evidence"].items() if v["beats_every_2023_by_more_than_envelope"]]
+        ax = ", ".join(f"{LABEL.get(s, s)}: {v['largest_beyond_envelope_axis'] or 'none'}" for s, v in h["H2_evidence"].items())
+        h4 = h["H4_evidence"]
+        L.append(f"<p class='sub'><b>H1</b> — 2026 systems beating every 2023 system on recall by more than the envelope: {esc(beat) if beat else 'none'}. "
+                 f"<b>H2</b> — largest beyond-envelope gain per modern system (vs vector RAG): {esc(ax)}. "
+                 f"<b>H4</b> — write cost spans ×{h4['ratio_max_over_min_nonzero']} between the cheapest non-zero and the most expensive system "
+                 f"(zero-cost: {esc(', '.join(LABEL.get(s, s) for s in h4['zero_cost_systems']))}).</p>")
+    return "".join(L)
+
+
+def round2_cases(recs, tier: str, seed: int) -> str:
+    """A2 / A3 / A4 case panels for one replication (the others are in the records): every system side by side."""
+    rs = {r["system"]: r for r in recs if r.get("tier") == tier and r["seed"] == seed}
+    order = [e.key for e in REGISTRY if e.key in rs]
+    if not order:
+        return ""
+    out = [f"<p class='sub'>Showing seed {seed}, tier {esc(tier)}; the other replications are in <code>results/sixaxis/</code>.</p>"]
+    # A2 — update questions (T4): current / stale / other
+    first = rs[order[0]]
+    t4 = [q for q in first["questions"] if q["task"] == "T4"]
+    out.append("<h3>A2 · update &amp; forgetting — does the answer carry the current value or the superseded one?</h3>")
+    for q in t4:
+        cols = []
+        for k in order:
+            r = next((x for x in rs[k]["questions"] if x["id"] == q["id"]), None)
+            if not r:
+                continue
+            cls = {"current": "ok", "stale": "bad"}.get(r.get("outcome"), "mid")
+            cols.append(f"<div class='sys'><b class='name'>{esc(LABEL[k])}</b><span class='chip {cls}'>{esc(r.get('outcome'))}</span>"
+                        f"<div class='ans'>{esc(r['answer'][:400])}</div><details><summary>judge: {esc(r['judge_mode'])}</summary><pre>{esc(r['judge_reasoning'])}</pre></details></div>")
+        out.append(f"<section class='q q2'><b>{esc(q['id'])} · T4</b><div>{esc(q['question'])}</div><div class='ref'>current: {esc(q['reference'])} · stale: {esc(q.get('stale_answer'))}</div>"
+                   f"<div class='cols'>{''.join(cols)}</div></section>")
+    # A3 — deletion
+    out.append("<h3>A3 · deletion — after the delete request the probe must abstain, the control must still answer, and no deleted string may be served</h3>")
+    for case in first["deletions"]:
+        cols = []
+        for k in order:
+            d = next((x for x in rs[k]["deletions"] if x["id"] == case["id"]), None)
+            if not d:
+                continue
+            fl = ("ok" if d["forgot"] else "bad", "ok" if d["control_intact"] else "bad", "bad" if d["leaked_strings"] else "ok")
+            cols.append(f"<div class='sys'><b class='name'>{esc(LABEL[k])}</b><span class='chip {fl[0]}'>forgot {'✓' if d['forgot'] else '✗'}</span> "
+                        f"<span class='chip {fl[1]}'>control {'✓' if d['control_intact'] else '✗'}</span> <span class='chip {fl[2]}'>leak {'✗ ' + esc(', '.join(d['leaked_strings'])) if d['leaked_strings'] else 'none'}</span>"
+                        f"<div class='ans'><small>probe before:</small> {esc(d['probe_before'][:200])}<br><small>probe after:</small> {esc(d['probe_after'][:300])}</div>"
+                        f"<details><summary>control after · delete result</summary><pre>{esc(d['control_after'][:400])}\n\n{esc(json.dumps(d['delete_result'])[:300])}</pre></details></div>")
+        out.append(f"<section class='q q2'><b>{esc(case['id'])} · {esc(case['shape'])}</b><div>request: {esc(case['request'])}</div>"
+                   f"<div class='ref'>deleted {case['n_deleted']} memor{'y' if case['n_deleted'] == 1 else 'ies'}</div><div class='cols'>{''.join(cols)}</div></section>")
+    # A4 — poisoning
+    out.append("<h3>A4 · adversarial — a low-trust note contradicting the trusted record is ingested; is the answer fooled?</h3>")
+    for case in first["poisons"]:
+        cols = []
+        for k in order:
+            p = next((x for x in rs[k]["poisons"] if x["id"] == case["id"] and "fooled" in x), None)
+            if not p:
+                continue
+            cols.append(f"<div class='sys'><b class='name'>{esc(LABEL[k])}</b><span class='chip {'bad' if p['fooled'] else 'ok'}'>{'fooled' if p['fooled'] else 'held'}</span> "
+                        f"<small>retrieved the poison: {'yes' if p['retrieved_poison'] else 'no'}</small>"
+                        f"<div class='ans'><small>before:</small> {esc(p['before'][:160])}<br><small>after:</small> {esc(p['after'][:300])}</div></div>")
+        out.append(f"<section class='q q2'><b>{esc(case['id'])} · poison</b><div>{esc(case['question'])}</div>"
+                   f"<div class='ref'>trusted: {esc(case['trusted'])} · poison: {esc(case['poison'])}</div><div class='cols'>{''.join(cols)}</div></section>")
+    return "".join(out)
+
+
+def round2_section() -> str:
+    recs, summ = load_round2()
+    if not recs or not summ:
+        return ""
+    tiers = sorted({r.get("tier", "sonnet") for r in recs})
+    scales = sorted({r["scale"] for r in recs})
+    parts = ["<h2>Round 2 — SixAxis (pre-registered: 3 seeds × generator tiers, strict-judge v3 pinned to Sonnet)</h2>",
+             "<p class='sub'>Mean ± std across seeds. A1 recall · A2 update (FAMA = current − stale) · A3 deletion · A4 adversarial · A5 cost · "
+             "judge health = decoy acceptance (should be ~0). GraphRAG runs as a context builder with the shared answer prompt in this round.</p>"]
+    for scale in scales:
+        for tier in tiers:
+            parts.append(round2_table(summ, scale, tier))
+    if summ.get("A6_tier_kendall_tau"):
+        parts.append("<p class='sub'><b>A6 invariance</b> — Kendall τ of the system ranking between tiers: " +
+                     esc(", ".join(f"{k}: {v}" for k, v in summ["A6_tier_kendall_tau"].items())) + "</p>")
+    seed = min(r["seed"] for r in recs if r.get("tier") == tiers[0])
+    parts.append("<h2>Round 2 — case explorer for the update, deletion and adversarial axes</h2>" + round2_cases(recs, tiers[0], seed))
+    return "".join(parts)
+
+
 def render() -> Path:
     rows = load()
     n_ok = sum(1 for r in rows.values() if r["status"] in ("OK", "PARTIAL"))
@@ -173,7 +297,8 @@ def render() -> Path:
              "<h2>Summary</h2>" + summary_table(rows) +
              "<p class='sub'>S1 has a ~7pp inter-run noise envelope (RESULTS_SUMMARY §1): differences inside it are ties. "
              "Round 1 decides feasibility and cost class, not ranking; round 2 (SixAxis, 3 replications, 2 model tiers) ranks.</p>",
-             "<h2>Case explorer</h2><p class='sub'>Same question, every system side by side. Open the context and judge panels to see why a verdict was given.</p>" + case_explorer(rows),
+             round2_section(),
+             "<h2>Round 1 case explorer</h2><p class='sub'>Same question, every system side by side. Open the context and judge panels to see why a verdict was given.</p>" + case_explorer(rows),
              "<footer>Generator: Claude Sonnet via <code>tools/openai_shim.py</code> · embedder bge-small-en-v1.5 · judge strict-v3 (METHODOLOGY.md). "
              "Limitations: human-proxy judge calibration, Claude-family judge only, Letta blocked in this environment, Mastra OM and Generative Agents are faithful re-implementations.</footer>",
              f"</main><script>{JS}</script></body></html>"]

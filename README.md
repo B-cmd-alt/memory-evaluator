@@ -57,6 +57,43 @@ What round 1 established (details and the round-2 roster in [`results/feasibilit
 
 Every row links to its per-question records in [`results/feasibility/`](results/feasibility): question, reference, retrieved context, answer, judge verdict and reasoning, tokens, latency.
 
+## Round 2 — SixAxis at S1 (11 systems × 3 seeded worlds × 2 generator tiers = 66 cells, strict-judge v3 pinned to Sonnet)
+
+Pre-registered in [`experiments/prereg_sixaxis.md`](experiments/prereg_sixaxis.md) before any run; full write-up with
+the per-axis tables, the hypothesis verdicts and the nine benchmark corrections the round forced:
+**[`docs/ROUND2_RESULTS.md`](docs/ROUND2_RESULTS.md)**. Mean ± std over seeds, Sonnet tier; noise envelope 0.06
+(replication std of the baselines; judge-protocol 0.011 and prompt 0.022 are both smaller); decoy acceptance 0.00 on all 66 cells.
+
+| system | A1 recall | A2 current / stale | A3 forgot · ctrl · leak | A4 fooled | write calls/mem | read tok/q |
+|---|---|---|---|---|---|---|
+| Microsoft GraphRAG (context builder) | **1.00** | 1.00 / 0.00 | 1.00 · 0.94 · 0.00 | 0.00 | 3.10 | 11.8K |
+| Mem0 | 0.96 | 0.77 / 0.00 | 1.00 · 1.00 · 0.06 | 0.00 | 1.00 | 2.3K |
+| Mastra OM (re-impl) | 0.96 | 0.85 / 0.00 | 1.00 · 1.00 · 0.00 | 0.00 | 0.11 | 4.5K |
+| Full context | 0.95 | 0.85 / 0.00 | 1.00 · 1.00 · 0.00 | 0.00 | 0 | 4.8K |
+| Hybrid + reranker | 0.88 | 0.92 / 0.00 | 1.00 · 1.00 · 0.00 | 0.00 | 0 | 1.7K |
+| Vector RAG | 0.88 | 0.70 / 0.30 | 1.00 · 1.00 · 0.00 | 0.00 | 0 | 1.7K |
+| A-MEM | 0.88 | 0.83 / 0.17 | 1.00 · 1.00 · 0.00 | 0.00 | 0.99 | 1.7K |
+| Anthropic memory tool (re-impl) | 0.76 | 0.55 / 0.15 | 1.00 · 0.83 · 0.00 | 0.17 | 0.39 | 9.1K |
+| Zep / Graphiti | 0.69 | 0.22 / 0.37 | 1.00 · 0.94 · 0.00 | 0.00 | 4.26 | 1.7K |
+| BM25 | 0.60 | 0.55 / 0.37 | 1.00 · 1.00 · 0.00 | 0.17 | 0 | 1.6K |
+| Generative Agents (re-impl) | 0.41 | 0.15 / 0.15 | 1.00 · 0.67 · **0.45** | **0.83** | 0.12 | 1.9K |
+
+What it says, in one breath: on **recall** the 2023 upper bound (full context) is not beaten — GraphRAG, Mem0 and
+Mastra tie it inside the envelope — while the retrieval-window systems lose on multi-session questions and BM25 falls
+to 0.60 on this harder world; the generations separate on **updates** (every modern system's beyond-envelope gain is
+there; vector RAG and BM25 serve the superseded value 30–37% of the time, Graphiti is the one modern system that is
+worse than 2023 here); **deletion** discriminates on ghost residue (Generative Agents' reflections still name the
+deleted person 45% of the time) and collateral damage, and on *semantics* — Mem0 by provenance alone forgot only 61%
+with 67% leaks until the adapter tracked the ids its `add()` returned; **labelled poison** fools almost nobody whose
+answer path shows the generator the whole note; **write cost** spans ×39. Hypotheses: H2 and H4 hold, H3 is falsified
+(the architecture gap across the full lineage is an order of magnitude larger than the protocol noise), H1 waits for
+S2 and S3. The weaker generator tier flattens the update axis for everyone (Kendall τ 0.60 vs 0.78 on recall).
+
+The benchmark doubted itself first: a deletion-case builder that was not consistent under cumulative application,
+leak strings that other notes legitimately contained, poison probes aimed at deleted memories, two adapter lifecycle
+faults and one lost-record bug were all caught by reading a record's evidence instead of its number, fixed at the
+definition level and re-applied uniformly. They are the first section of the write-up.
+
 ## The interactive app
 
 The same code, hosted on Cloud Run (`app/`, scale-to-zero, one small instance):
@@ -100,11 +137,12 @@ with a *calibrated* judge and ships the per-question evidence instead of a leade
 
 ## Status and limits
 
-Round 1 is complete. Round 2 (three replications, two model tiers, all six axes, GraphRAG as
-context builder) is the next milestone; its hypotheses are pre-registered. Known limits, stated
-up front: the judge's human-proxy calibration uses two careful independent labelers, not paid
-annotators; the judge is Claude-family only; N = 25–50 questions per scale; Mastra OM, the
-Anthropic memory tool and Generative Agents are faithful re-implementations from their public
-descriptions, not vendor code.
+Rounds 1 and 2 (S1) are complete; S2 (753 memories) and S3 (LongMemEval-S anchor) are next, and H1's
+verdict waits for them. Known limits, stated up front: the judge's human-proxy calibration uses two
+careful independent labelers, not paid annotators; the judge is Claude-family only; N = 22–24 questions
+and 1–3 poison probes per S1 seed; A4 measures labelled-poison robustness; Mastra OM, the Anthropic
+memory tool and Generative Agents are faithful re-implementations from their public descriptions, not
+vendor code; Letta is blocked in the build environment. Every number above links to the record that
+produced it.
 
 MIT licensed.
