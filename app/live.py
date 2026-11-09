@@ -65,23 +65,52 @@ def precomputed(qid: str) -> dict:
 
 
 # ── live system pool over the canonical world (lazy, cached per process) ────────────────────────
+# Systems whose ingest makes no model call: safe to pre-warm on every cold start at zero cost. The other
+# two (mastra_om observes with the model, generative_agents scores importance per memory) stay lazy so a
+# cold start never spends budget on its own.
+FREE_INGEST = ("full_context", "bm25", "vector_rag", "hybrid_rerank")
+
+
 class Pool:
     def __init__(self):
         self._sys: dict[str, object] = {}
+        self._inflight: set[str] = set()
         self._lock = threading.Lock()
+
+    async def _build(self, key: str):
+        s = load(key)()
+        await s.reset()
+        await s.ingest(S1_MEMS)
+        with self._lock:
+            self._sys[key] = s
+            self._inflight.discard(key)
+        return s
 
     async def get(self, key: str):
         if key not in LIVE_SYSTEMS:
             raise ValueError(f"{key} is not available live")
-        with self._lock:
-            s = self._sys.get(key)
-        if s is None:
-            s = load(key)()
-            await s.reset()
-            await s.ingest(S1_MEMS)
+        while True:
             with self._lock:
-                self._sys[key] = s
-        return s
+                s = self._sys.get(key)
+                busy = key in self._inflight
+                if s is None and not busy:
+                    self._inflight.add(key)
+            if s is not None:
+                return s
+            if not busy:
+                return await self._build(key)
+            await asyncio.sleep(0.5)  # the warm-up thread is ingesting this one; wait for it
+
+    def warm_in_background(self, keys=FREE_INGEST) -> None:
+        """Cold start: load the embedder/reranker and index the world before the first visitor asks, off the
+        request loop so the judge game and precomputed answers serve immediately."""
+        async def _run():
+            for k in keys:
+                try:
+                    await self.get(k)
+                except Exception as ex:  # noqa: BLE001
+                    print(f"[warm] {k}: {type(ex).__name__}: {ex}")
+        threading.Thread(target=lambda: asyncio.run(_run()), name="pool-warm", daemon=True).start()
 
 
 POOL = Pool()

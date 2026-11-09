@@ -6,6 +6,7 @@ import os
 import pytest
 
 os.environ.setdefault("EVALUATOR_DATA_DIR", "/tmp/memory-evaluator-test-data")
+os.environ.setdefault("EVALUATOR_WARM", "0")
 from fastapi.testclient import TestClient  # noqa: E402
 
 from app import judge_game  # noqa: E402
