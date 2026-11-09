@@ -106,10 +106,12 @@ class Pool:
         request loop so the judge game and precomputed answers serve immediately."""
         async def _run():
             for k in keys:
+                t0 = time.time()
                 try:
                     await self.get(k)
+                    print(f"[warm] {k} ready in {time.time() - t0:.1f}s", flush=True)
                 except Exception as ex:  # noqa: BLE001
-                    print(f"[warm] {k}: {type(ex).__name__}: {ex}")
+                    print(f"[warm] {k} FAILED after {time.time() - t0:.1f}s: {type(ex).__name__}: {ex}", flush=True)
         threading.Thread(target=lambda: asyncio.run(_run()), name="pool-warm", daemon=True).start()
 
 
