@@ -11,7 +11,12 @@ from dataclasses import dataclass, field
 import numpy as np
 
 SHIM_BASE = os.environ.get("OPENAI_BASE_URL", "http://127.0.0.1:8008/v1")
+API_KEY = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENROUTER_API_KEY") or "shim"
+DEFAULT_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini")   # an alias on the shim; a real id on OpenRouter/OpenAI
 EMBED_MODEL = os.environ.get("SHIM_EMBED_MODEL", "BAAI/bge-small-en-v1.5")
+# per-token prices used only when the provider does not report cost itself (OpenRouter does, with usage.include)
+USD_PER_MTOK_IN = float(os.environ.get("LLM_USD_PER_MTOK_IN", "3.0"))
+USD_PER_MTOK_OUT = float(os.environ.get("LLM_USD_PER_MTOK_OUT", "15.0"))
 _FENCE = re.compile(r"^```(?:json)?\s*|\s*```$", re.S)
 
 
@@ -23,17 +28,19 @@ def est_tokens(text: str) -> int:
 class LLM:
     """Minimal chat client over the shim. Counts calls and tokens per adapter (`caller`)."""
     caller: str
-    model: str = "gpt-4o-mini"
+    model: str = DEFAULT_MODEL
     calls: int = 0
     prompt_tokens: int = 0
     completion_tokens: int = 0
+    cost_usd: float = 0.0
     _client: object = field(default=None, repr=False)
 
     def _c(self):
         if self._client is None:
             from openai import OpenAI
-            self._client = OpenAI(base_url=SHIM_BASE, api_key="shim", timeout=600, max_retries=1,
-                                  default_headers={"X-Caller": self.caller})
+            self._client = OpenAI(base_url=SHIM_BASE, api_key=API_KEY, timeout=600, max_retries=1,
+                                  default_headers={"X-Caller": self.caller, "HTTP-Referer": "https://bb.style/projects.html",
+                                                   "X-Title": "Memory System Evaluator"})
         return self._client
 
     def chat(self, system: str, user: str, *, json_mode: bool = False, tools: list | None = None,
@@ -44,10 +51,15 @@ class LLM:
             kw["response_format"] = {"type": "json_object"}
         if tools:
             kw["tools"] = tools
+        if "openrouter" in SHIM_BASE:
+            kw["extra_body"] = {"usage": {"include": True}}
         r = self._c().chat.completions.create(**kw)
         self.calls += 1
-        self.prompt_tokens += r.usage.prompt_tokens or 0
-        self.completion_tokens += r.usage.completion_tokens or 0
+        pt, ct = r.usage.prompt_tokens or 0, r.usage.completion_tokens or 0
+        self.prompt_tokens += pt
+        self.completion_tokens += ct
+        reported = getattr(r.usage, "cost", None)
+        self.cost_usd += float(reported) if reported is not None else (pt * USD_PER_MTOK_IN + ct * USD_PER_MTOK_OUT) / 1e6
         return r.choices[0].message
 
     def text(self, system: str, user: str, **kw) -> str:

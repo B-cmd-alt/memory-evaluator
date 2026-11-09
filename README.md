@@ -2,7 +2,8 @@
 
 **Ten agent-memory systems, one model, one embedder, one calibrated judge — and every number traceable to the question, the retrieved context, the answer and the judge's reasoning that produced it.**
 
-Live evidence page: **[bb.style/projects/memory-evaluator.html](https://bb.style/projects/memory-evaluator.html)**
+**Try it live: [https://memory-evaluator-862698383291.us-central1.run.app](https://memory-evaluator-862698383291.us-central1.run.app)** — be the judge, ask the memory, break the memory (details below).
+Evidence page: **[bb.style/projects/memory-evaluator.html](https://bb.style/projects/memory-evaluator.html)**
 (also at [`site/index.html`](site/index.html), self-contained, opens from a file).
 
 ## Why
@@ -56,11 +57,26 @@ What round 1 established (details and the round-2 roster in [`results/feasibilit
 
 Every row links to its per-question records in [`results/feasibility/`](results/feasibility): question, reference, retrieved context, answer, judge verdict and reasoning, tokens, latency.
 
+## The interactive app
+
+The same code, hosted on Cloud Run (`app/`, scale-to-zero, one small instance):
+
+| tab | what you do | what it costs |
+|---|---|---|
+| **Be the Judge** | Score a (question, reference, answer) triple from the 100-item calibration set, then see what strict-judge v3, two independent human-proxy labelers and a weaker LLM judge said, and *why the item is hard* (false abstention, correct abstention, …). Your vote is stored anonymously and shown as crowd agreement with each judge. | nothing — all precomputed |
+| **Ask the Memory** | Type any question about the S1 world (90 dated engineering-team notes). Six systems answer live — full context, BM25, vector RAG, hybrid + reranker, Mastra-style observational memory, Generative-Agents retrieval — each with the memories it retrieved, latency and dollar cost. The 25 canonical questions also show every round-1 system's recorded answer and strict-judge verdict. | one OpenRouter call per system (Claude Sonnet 5.5) |
+| **Break the Memory** | Inject a fact, an update that supersedes it and a poisoned note, then ask. Each system's answer gets a verdict — current / stale / poisoned / abstained — plus whether it even retrieved your notes. The update axis and the adversarial axis of SixAxis, on a world you wrote. | ingest + one call per system |
+
+Guardrails: a daily spend ledger in GCS (default $1/day) and a per-visitor daily cap on live
+requests; when the budget is spent the judge game and the precomputed answers keep working.
+Votes store a hashed IP and a random session id only. Deploy your own with
+[`deploy.sh`](deploy.sh) (Cloud Build → Artifact Registry → Cloud Run, OpenRouter key from Secret Manager).
+
 ## Run it
 
 ```bash
 pip install -e ".[dev]"            # baselines + re-implementations; add [systems] for Mem0/Graphiti/GraphRAG/A-MEM
-pytest -q                          # 10 tests: adapter contract, generator ground check
+pytest -q                          # 19 tests: adapter contract, generator ground check, the app offline
 
 # every system needs one OpenAI-compatible endpoint; point OPENAI_BASE_URL at your provider,
 # or run the bundled shim (which backs onto the Claude Code CLI and a local bge-small embedder):
@@ -71,6 +87,7 @@ python run_feasibility.py --systems bm25 full_context vector_rag --limit 5     #
 python -m src.data.sixaxis_generator --scale S1 --seed 42                      # a fresh SixAxis world
 python run_sixaxis.py --data results/sixaxis_S1_seed42.json --systems bm25 full_context   # round 2
 python tools/render_site.py                                                    # site/index.html
+uvicorn app.main:app --port 8090                                               # the interactive app, locally
 ```
 
 ## Lineage
