@@ -1,0 +1,10 @@
+# Builds the service image. Submitted by deploy.sh; runs as the same service account the service runs as.
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_IMAGE}", "."]
+images: ["${_IMAGE}"]
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_HIGHCPU_8
+substitutions:
+  _IMAGE: ""
