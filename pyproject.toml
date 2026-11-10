@@ -17,7 +17,7 @@ dependencies = [
 [project.optional-dependencies]
 systems = ["mem0ai>=2.2", "graphiti-core>=0.31", "kuzu>=0.11", "chromadb>=0.5", "graphrag>=3.3",
            "agentic-memory @ git+https://github.com/agiresearch/A-mem.git"]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "httpx>=0.27"]
 
 [tool.setuptools.packages.find]
 include = ["src*", "tools*"]

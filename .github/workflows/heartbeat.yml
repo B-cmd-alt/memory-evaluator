@@ -1,0 +1,28 @@
+# Daily heartbeat for the deployed evaluator: GET /health must answer {"ok": true}.
+# Set the repository variable SERVICE_URL (Settings → Secrets and variables → Actions → Variables) to the
+# Cloud Run URL printed by deploy.sh. Until it is set the job reports "skipped" instead of failing.
+# The service scales to zero, so the first request may be a cold start; hence the retries and long timeout.
+name: Heartbeat
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+permissions: {}
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SERVICE_URL: ${{ vars.SERVICE_URL }}
+    steps:
+      - name: Check /health
+        run: |
+          if [ -z "$SERVICE_URL" ]; then
+            echo "::notice::SERVICE_URL is not set; heartbeat skipped."
+            exit 0
+          fi
+          body="$(curl -fsS --retry 4 --retry-delay 15 --retry-all-errors --max-time 120 "${SERVICE_URL%/}/health")"
+          echo "$body"
+          echo "$body" | jq -e '.ok == true' > /dev/null
+          echo "$body" | jq -e '.live_enabled == true' > /dev/null \
+            || echo "::warning::Service is up but live_enabled is false (no model key mounted)."

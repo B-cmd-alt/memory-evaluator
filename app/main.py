@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
@@ -22,15 +23,16 @@ from . import judge_game, live
 from .budget import budget
 from .config import HAS_KEY, LIVE_SYSTEMS, LLM_MODEL, ROOT
 
-app = FastAPI(title="Memory System Evaluator", docs_url=None, redoc_url=None)
-
-
-@app.on_event("startup")
-async def _warm_pool() -> None:
+@asynccontextmanager
+async def _lifespan(_: FastAPI):
     # Index the world for the zero-cost systems right away (loads the embedder + reranker, ~1-2 min on 1 vCPU)
     # so the first visitor's live question does not pay the cold start. EVALUATOR_WARM=0 disables it (tests).
     if HAS_KEY and os.environ.get("EVALUATOR_WARM", "1") == "1":
         live.POOL.warm_in_background()
+    yield
+
+
+app = FastAPI(title="Memory System Evaluator", docs_url=None, redoc_url=None, lifespan=_lifespan)
 STATIC = Path(__file__).parent / "static"
 SITE = ROOT / "site"
 

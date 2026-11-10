@@ -3,6 +3,7 @@ with a fake LLM. The third-party adapters are exercised by run_feasibility.py ag
 from __future__ import annotations
 
 import asyncio
+import importlib.util
 from datetime import datetime
 
 import pytest
@@ -65,7 +66,7 @@ def test_bm25_retrieves_the_relevant_memory_first():
     assert r.retrieved_context and "Jira" in r.retrieved_context[0].content
 
 
-@pytest.mark.skipif(pytest.importorskip("sentence_transformers", reason="embedder not installed") is None, reason="")
+@pytest.mark.skipif(importlib.util.find_spec("sentence_transformers") is None, reason="embedder not installed")
 def test_vector_rag_retrieves_semantically():
     fake = FakeLLM()
     s = VectorRAG({"llm": fake})
