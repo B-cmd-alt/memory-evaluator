@@ -14,12 +14,20 @@ Per system and replication:
 A6 (invariance across model tier / prompt / embedder) is a re-run of this script against a shim started
 with a different SHIM_DEFAULT_MODEL (TIER=haiku labels the records; the judge stays pinned to Sonnet); it is aggregated by tools/aggregate_sixaxis.py (later).
 
+Cost controls (S2 onward; none of them changes a score):
+  --skip-axes A3 A4   leave deletion / adversarial out of a cell. A system without a native delete rebuilds its whole
+                      index per deletion case, and GraphRAG also re-indexes per poison ingest, so at S2 these axes cost
+                      many full ingests. Skipped axes are recorded in `axes_skipped` and aggregate as "—", never as 0.
+  decoy cache         a decoy verdict depends only on (question, reference, decoy) and the pinned judge, not on the
+                      system, so it is judged once per dataset and reused (<out>/decoy_cache_<scale>_seed<seed>.json).
+
     python run_sixaxis.py --data results/sixaxis_S1_seed42.json --systems bm25 full_context --rep 1
 """
 from __future__ import annotations
 
 import argparse
 import asyncio
+import hashlib
 import json
 import os
 import statistics
@@ -117,10 +125,44 @@ def leaked_strings(case: dict, probe_ans: str, ctrl_ans: str, retrieved: list[di
     return out
 
 
+class DecoyCache:
+    """Decoy verdicts keyed by (question, reference, decoy). Persisted so later systems and reps on the same dataset
+    reuse them; `hits` / `misses` let a record say how many of its verdicts were judged fresh."""
+
+    def __init__(self, path: Path | None):
+        self.path, self.hits, self.misses = path, 0, 0
+        self.d: dict[str, bool] = json.loads(path.read_text()) if path and path.exists() else {}
+
+    @staticmethod
+    def key(q: dict, decoy: str) -> str:
+        return hashlib.sha256(json.dumps([q["task"], q["question"], q["reference_answer"], decoy]).encode()).hexdigest()[:24]
+
+    def get(self, q: dict, decoy: str):
+        v = self.d.get(self.key(q, decoy))
+        if v is not None:
+            self.hits += 1
+        return v
+
+    def put(self, q: dict, decoy: str, v: bool) -> None:
+        self.misses += 1
+        self.d[self.key(q, decoy)] = v
+        if self.path:
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(self.d, indent=0))
+            tmp.replace(self.path)
+
+
+DECOYS = DecoyCache(None)
+
+
 def judge_decoys(q: dict) -> list[bool]:
     """Would the judge accept each decoy as a correct answer? (should be False)"""
     acc = []
     for d in q["decoys"]:
+        cached = DECOYS.get(q, d)
+        if cached is not None:
+            acc.append(cached)
+            continue
         if q["task"] == "T5":
             acc.append(not is_abstain(d) and False)   # a decoy for an abstention question is a confident answer: never accepted by the abstention rule
             continue
@@ -129,6 +171,7 @@ def judge_decoys(q: dict) -> list[bool]:
             continue
         s, _, _ = strict_judge_v3(q["question"], d, q["reference_answer"], judge_fn)
         acc.append(s >= 0.99)
+        DECOYS.put(q, d, acc[-1])
     return acc
 
 
@@ -199,10 +242,10 @@ class Session:
         return out
 
 
-async def run_system(key: str, data: dict, rep: int, batch: int, do_decoys: bool) -> dict:
+async def run_system(key: str, data: dict, rep: int, batch: int, do_decoys: bool, skip_axes: frozenset = frozenset()) -> dict:
     e = BY_KEY[key]
     rec = {"system": key, "label": e.label, "kind": e.kind, "rep": rep, "tier": TIER, "scale": data["meta"]["scale"], "seed": data["meta"]["seed"],
-           "status": "OK", "error": None, "questions": [], "deletions": [], "poisons": []}
+           "status": "OK", "error": None, "axes_skipped": sorted(skip_axes), "questions": [], "deletions": [], "poisons": []}
     t_start = time.time()
     try:
         sysm = load(key)()
@@ -226,6 +269,7 @@ async def run_system(key: str, data: dict, rep: int, batch: int, do_decoys: bool
     rec["ingest"]["llm_calls_per_memory"] = round(rec["ingest"]["llm_calls"] / max(1, len(mems)), 2)
 
     sess = Session(sysm, off)
+    h0, m0 = DECOYS.hits, DECOYS.misses
     # ── A1 / A2 ─────────────────────────────────────────────────────────────────────────────
     for q in data["questions"]:
         ans, items, lat, c = await sess.ask(q["question"])
@@ -235,8 +279,11 @@ async def run_system(key: str, data: dict, rep: int, batch: int, do_decoys: bool
         rec["questions"].append({"id": q["id"], "task": q["task"], "question": q["question"], "reference": q["reference_answer"],
                                  "evidence_ids": q["evidence_ids"], "stale_answer": q.get("stale_answer"), "answer": ans, "retrieved": items,
                                  "latency_s": lat, "read_path": c, "decoys": q["decoys"], "decoy_accepted": decoy_acc, **sc})
-    rec["deletions"] = await sess.a3(data)      # A3 deletion
-    rec["poisons"] = await sess.a4(data)        # A4 adversarial (runs after A3 on the same state; the generator keeps the targets disjoint)
+    rec["decoy_verdicts"] = {"cached": DECOYS.hits - h0, "judged": DECOYS.misses - m0}
+    if "A3" not in skip_axes:
+        rec["deletions"] = await sess.a3(data)      # A3 deletion
+    if "A4" not in skip_axes:
+        rec["poisons"] = await sess.a4(data)        # A4 adversarial (runs after A3 on the same state; the generator keeps the targets disjoint)
     try:
         await sysm.close()
     except Exception:  # noqa: BLE001
@@ -284,6 +331,8 @@ async def main():
     ap.add_argument("--rep", type=int, default=1)
     ap.add_argument("--batch", type=int, default=10)
     ap.add_argument("--no-decoys", action="store_true")
+    ap.add_argument("--skip-axes", nargs="*", default=[], choices=["A3", "A4"], help="leave these axes out of every cell (cost control; see docstring)")
+    ap.add_argument("--no-decoy-cache", action="store_true", help="judge every decoy afresh in every cell")
     ap.add_argument("--out", default="results/sixaxis")
     ap.add_argument("--skip-existing", action="store_true", help="resume: skip systems whose OK record already exists")
     a = ap.parse_args()
@@ -292,13 +341,15 @@ async def main():
     # fails AFTER an hour of compute — the round-2 ms_graphrag records were lost exactly this way
     out = Path(a.out).resolve(); out.mkdir(parents=True, exist_ok=True)
     tag = f"{data['meta']['scale']}_seed{data['meta']['seed']}_{TIER}_rep{a.rep}"
+    global DECOYS
+    DECOYS = DecoyCache(None if a.no_decoy_cache else out / f"decoy_cache_{data['meta']['scale']}_seed{data['meta']['seed']}.json")
     for k in a.systems:
         f = out / f"{k}_{tag}.json"
         if a.skip_existing and f.exists() and json.loads(f.read_text()).get("status") == "OK":
             print(f"=== {k} [{tag}] skipped (OK record exists)", flush=True)
             continue
         print(f"=== {k} [{tag}]", flush=True)
-        r = await run_system(k, data, a.rep, a.batch, not a.no_decoys)
+        r = await run_system(k, data, a.rep, a.batch, not a.no_decoys, frozenset(a.skip_axes))
         (out / f"{k}_{tag}.json").write_text(json.dumps(r, indent=1, default=str))
         print(f"    {r['status']} {json.dumps(r.get('summary', {}).get('A1_recall'))} A2={json.dumps(r.get('summary', {}).get('A2_update'))} "
               f"A4={json.dumps(r.get('summary', {}).get('A4_adversarial'))} judge={json.dumps(r.get('summary', {}).get('judge_health'))} err={r.get('error')}", flush=True)

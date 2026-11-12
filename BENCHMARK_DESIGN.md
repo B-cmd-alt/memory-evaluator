@@ -151,6 +151,14 @@ corrections. The design text above is kept as the target; what was actually meas
 - **A6** at S1 covers the two generator tiers; the three-prompt and two-embedder arms were measured only as noise
   envelopes on the baselines (`tools/noise_envelopes.py`), not as a full re-run.
 
+- **S2 as planned (`tools/run_s2.sh`, not yet run):** one seed (42; 720 trusted memories, 46 questions, 13 deletion
+  cases, 9 poisons). Zero-write baselines run 3 reps; every system that calls the model at ingest runs 1 rep, since
+  extra reps would repeat the same data at full ingest cost. A3 is left out for the four systems without a native
+  delete (anthropic_memory_tool, mastra_om, generative_agents, ms_graphrag), whose every deletion case rebuilds the
+  whole index; A4 is also left out for ms_graphrag, whose poison ingest is a full re-index. Skipped axes are recorded
+  per cell (`axes_skipped`) and report as "—". Decoy verdicts are judged once per dataset and reused (same pinned
+  judge, same inputs). These deviate from the pre-registered 3 reps per cell and are declared here before the run.
+
 ## Sources
 
 LongMemEval (arXiv 2410.10813) · LoCoMo audits: Penfield Labs (dev.to), dial481/locomo-audit,
