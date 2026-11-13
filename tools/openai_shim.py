@@ -95,7 +95,33 @@ def _render(messages: list[dict], tools: list[dict] | None, response_format: dic
     return system, "\n\n".join(transcript) or "(empty)"
 
 
+_LIMIT_MARKERS = ("usage_limit_reached", "hit your 5-hour limit", "hit your weekly limit", "limit · resets")
+_LIMIT_POLL_S = float(os.environ.get("SHIM_LIMIT_POLL_S", "600"))
+_LIMIT_WAIT_S = float(os.environ.get("SHIM_LIMIT_WAIT_H", "8")) * 3600
+
+
+def _is_usage_limit(err: Exception) -> bool:
+    m = str(err)
+    return any(k in m for k in _LIMIT_MARKERS)
+
+
 async def _claude(system: str, prompt: str, model: str, json_schema: dict | None) -> dict:
+    """`claude -p`, waiting out a subscription usage-limit window instead of failing the call. A long benchmark run
+    otherwise crashes mid-cell when the limit is hit (S2 lost an A-MEM cell this way) and its ingest is wasted.
+    Only the usage-limit error is retried; every other error still fails the call at once."""
+    waited = 0.0
+    while True:
+        try:
+            return await _claude_once(system, prompt, model, json_schema)
+        except RuntimeError as e:
+            if not _is_usage_limit(e) or waited >= _LIMIT_WAIT_S:
+                raise
+            _log({"ts": time.time(), "limit_wait_s": _LIMIT_POLL_S, "waited_s": waited, "note": str(e)[-160:]})
+            await asyncio.sleep(_LIMIT_POLL_S)
+            waited += _LIMIT_POLL_S
+
+
+async def _claude_once(system: str, prompt: str, model: str, json_schema: dict | None) -> dict:
     cmd = [shutil.which("claude") or "claude", "-p", "--model", model, "--output-format", "json",
            "--max-turns", "3" if json_schema else "1",   # structured output spends extra turns on its tool
            "--tools", "", "--no-session-persistence", "--system-prompt", system]
