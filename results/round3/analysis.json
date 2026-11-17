@@ -1,0 +1,59 @@
+{
+ "systems": [
+  "bm25"
+ ],
+ "tables": {
+  "bm25": {
+   "A1": 0.828,
+   "A2_current": 0.723,
+   "A2_stale": 0.169,
+   "A2_FAMA": 0.554,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.676,
+     "stale": 0.176,
+     "n": 34
+    },
+    "implicit": {
+     "current": 0.774,
+     "stale": 0.161,
+     "n": 31
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 1.0,
+   "A3_n_valid_controls": 28,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 1.0,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 1.0,
+   "A5_write_calls_per_memory": 0.0,
+   "A5_ingest_usd": 0,
+   "A5_read_prompt_tok_per_q": 1631,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  }
+ },
+ "hypotheses_sonnet": {},
+ "judge_agreement": {}
+}

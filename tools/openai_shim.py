@@ -95,19 +95,19 @@ def _render(messages: list[dict], tools: list[dict] | None, response_format: dic
     return system, "\n\n".join(transcript) or "(empty)"
 
 
-# Optional deterministic prompt cache (SHIM_CACHE=path.jsonl). Identical (model, system, prompt, schema) requests replay the
+# Optional deterministic prompt cache (SHIM_CACHE=path.sqlite). Identical (model, system, prompt, schema) requests replay the
 # stored response instead of calling the model again. Round 3 uses it so a rebuild-on-delete (Mastra OM, Generative Agents)
 # re-sends the unchanged prefix of its ingest for free; every hit is logged with cached=true, so cost tables can report
 # first-call (uncached) cost. Off by default: rounds 1-2 ran without it.
-_CACHE_PATH = os.environ.get("SHIM_CACHE")
-_cache: dict[str, dict] = {}
-if _CACHE_PATH and os.path.exists(_CACHE_PATH):
-    with open(_CACHE_PATH) as _f:
-        for _l in _f:
-            try:
-                _r = json.loads(_l); _cache[_r["k"]] = _r["v"]
-            except (ValueError, KeyError):
-                pass
+_CACHE_PATH = os.environ.get("SHIM_CACHE")   # a SQLite file; several shims (one per runner process) can share it
+
+
+def _cache_db():
+    import sqlite3
+    db = sqlite3.connect(_CACHE_PATH, timeout=60)
+    db.execute("PRAGMA journal_mode=WAL")
+    db.execute("CREATE TABLE IF NOT EXISTS c (k TEXT PRIMARY KEY, v TEXT)")
+    return db
 
 
 def _cache_key(system: str, prompt: str, model: str, json_schema: dict | None) -> str:
@@ -119,13 +119,17 @@ async def _claude_cached(system: str, prompt: str, model: str, json_schema: dict
     if not _CACHE_PATH:
         return await _claude(system, prompt, model, json_schema), False
     k = _cache_key(system, prompt, model, json_schema)
-    if k in _cache:
-        return _cache[k], True
-    data = await _claude(system, prompt, model, json_schema)
-    _cache[k] = data
-    with open(_CACHE_PATH, "a") as f:
-        f.write(json.dumps({"k": k, "v": data}) + "\n")
-    return data, False
+    db = _cache_db()
+    try:
+        row = db.execute("SELECT v FROM c WHERE k = ?", (k,)).fetchone()
+        if row:
+            return json.loads(row[0]), True
+        data = await _claude(system, prompt, model, json_schema)
+        db.execute("INSERT OR IGNORE INTO c VALUES (?, ?)", (k, json.dumps(data)))
+        db.commit()
+        return data, False
+    finally:
+        db.close()
 
 
 async def _claude(system: str, prompt: str, model: str, json_schema: dict | None) -> dict:

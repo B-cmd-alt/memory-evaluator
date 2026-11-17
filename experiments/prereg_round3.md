@@ -85,3 +85,14 @@ over axis × verdict towards 50/50 correct/incorrect, with sampling weights reco
 One synthetic world; one replication of LLM-write systems; Kuzu instead of Neo4j for Graphiti and an OpenAI-compatible shim
 in front of Claude (Graphiti targets OpenAI structured output); Mastra OM, the Anthropic memory tool and Generative Agents are
 re-implementations; leak-measurable cases are the subset whose deleted strings appear in no surviving memory.
+
+## Amendment 1 (2026-11-17, after the first system's records (bm25), before any other system finished)
+
+Reading bm25's "stale" answers showed that some of them are right by the dates. Memory dates are drawn within a session
+week, so a superseding note could carry an *earlier* date than the fact it supersedes. In those items the "stale" value is
+the newer one by date, and the gold is wrong. In the R3 world, 7 of 65 T4 keys (5 strictly earlier, 2 same day) and 1 of 10 T3
+items are affected. Round 2 is affected too: in S1 seeds 123 and 456, 3 of 14 T4 and 3 of 15 T3 items; in S2 seed 42, 1 T4 and 1 T3.
+Rule, applied identically to every system: an item whose supersession is not dated strictly later is **inadmissible** and
+excluded from A1/A2 (`inadmissible_updates()`; `ground_check()` now flags it). The A2 analysis set is therefore **58 keys**
+(stratum sizes reported with the results). The generator now forces superseding notes to be dated strictly later. The R3
+world file stays the one that was run; regenerating it gives a clean world with the same counts.

@@ -158,6 +158,11 @@ class World:
         if subj is None:
             return False
         v = self._new_value(kind, prev["value"] if prev else None)
+        if prev and d <= date.fromisoformat(prev["history"][-1][2]):
+            # an update must be dated strictly after the fact it supersedes: dates are drawn within a session week, so the
+            # superseding note could otherwise carry the EARLIER date and the "stale" value would be the newer one by date
+            # (round 3 found 3 of 14 round-2 S1 T4 items and 7 of 65 R3 items inverted this way)
+            d = date.fromisoformat(prev["history"][-1][2]) + timedelta(days=1)
         if prev and self.scale == "R3" and self.rng.random() < 0.5:
             # implicit update: the note states only the new value, so retrieval must use the date, not the word "from"
             text = {"role": f"{subj} is now {v}, effective {d.isoformat()}.",
@@ -412,6 +417,20 @@ class World:
         return out
 
 
+def inadmissible_updates(data: dict) -> set[str]:
+    """Question ids whose gold depends on a supersession that is not dated strictly later than what it supersedes
+    (T4: current vs stale evidence; T3: [old, current] evidence). Worlds generated before the date fix contain some;
+    analyses exclude them, and ground_check() flags them."""
+    mem = {m["id"]: m for m in data["memories"]}
+    bad = set()
+    for q in data["questions"]:
+        if q["task"] == "T4" and q["stale_evidence_ids"] and mem[q["evidence_ids"][0]]["date"] <= mem[q["stale_evidence_ids"][0]]["date"]:
+            bad.add(q["id"])
+        if q["task"] == "T3" and len(q["evidence_ids"]) == 2 and mem[q["evidence_ids"][1]]["date"] <= mem[q["evidence_ids"][0]]["date"]:
+            bad.add(q["id"])
+    return bad
+
+
 def ground_check(data: dict) -> list[str]:
     """Re-derive each reference from its cited memories alone. Returns a list of problems (empty = ok)."""
     mem = {m["id"]: m for m in data["memories"]}
@@ -442,6 +461,8 @@ def ground_check(data: dict) -> list[str]:
             stale_txt = " ".join(mem[i]["content"] for i in q["stale_evidence_ids"] if i in mem)
             if q["stale_answer"] not in stale_txt:
                 problems.append(f"{q['id']}: stale answer not in stale evidence")
+    for qid in sorted(inadmissible_updates(data)):
+        problems.append(f"{qid}: superseding memory is not dated strictly after the superseded one")
     gone: set[str] = set()   # deletion cases are applied cumulatively by the runner: check them in order
     for c in data["deletions"]:
         if set(c["control_evidence_ids"]) & (set(c["delete_ids"]) | gone):
