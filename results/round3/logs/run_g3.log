@@ -9,3 +9,5 @@ Successfully installed en-core-web-sm-3.8.0
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 [38;5;2m✔ Download and installation successful[0m
 You can now load the package via spacy.load('en_core_web_sm')
+    OK {"T1": 0.9, "T2_nugget_recall": 1.0, "T3": 0.9, "T5_abstention": 1.0, "all_non_update": 0.935} A2={"current": 0.862, "stale": 0, "FAMA": 0.862} A4={"fooled": 0, "retrieved_poison": 1} judge={"decoy_acceptance": 0, "n_decoys": 192} err=None
+=== anthropic_memory_tool [R3_seed42_sonnet_rep1]

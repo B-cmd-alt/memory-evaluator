@@ -1,23 +1,35 @@
 {
  "systems": [
-  "bm25"
+  "bm25",
+  "mem0",
+  "vector_rag"
+ ],
+ "inadmissible_items": [
+  "q_t3_79",
+  "q_t4_26",
+  "q_t4_28",
+  "q_t4_44",
+  "q_t4_54",
+  "q_t4_59",
+  "q_t4_63",
+  "q_t4_70"
  ],
  "tables": {
   "bm25": {
-   "A1": 0.828,
-   "A2_current": 0.723,
-   "A2_stale": 0.169,
-   "A2_FAMA": 0.554,
+   "A1": 0.856,
+   "A2_current": 0.776,
+   "A2_stale": 0.155,
+   "A2_FAMA": 0.621,
    "A2_by_stratum": {
     "explicit": {
-     "current": 0.676,
-     "stale": 0.176,
-     "n": 34
-    },
-    "implicit": {
-     "current": 0.774,
+     "current": 0.71,
      "stale": 0.161,
      "n": 31
+    },
+    "implicit": {
+     "current": 0.852,
+     "stale": 0.148,
+     "n": 27
     }
    },
    "A3_forgot": 1.0,
@@ -52,8 +64,296 @@
    "A5_read_prompt_tok_per_q": 1631,
    "judge_decoy_acceptance": 0,
    "axes": "A1A2A3A4"
+  },
+  "vector_rag": {
+   "A1": 0.95,
+   "A2_current": 0.914,
+   "A2_stale": 0.086,
+   "A2_FAMA": 0.828,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.839,
+     "stale": 0.161,
+     "n": 31
+    },
+    "implicit": {
+     "current": 1.0,
+     "stale": 0.0,
+     "n": 27
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 0.967,
+   "A3_n_valid_controls": 30,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 0.909,
+    "12-23": 1.0,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 0.875
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 1.0,
+   "A5_write_calls_per_memory": 0.0,
+   "A5_ingest_usd": 0,
+   "A5_read_prompt_tok_per_q": 1640,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
+  "mem0": {
+   "A1": 0.967,
+   "A2_current": 0.948,
+   "A2_stale": 0.0,
+   "A2_FAMA": 0.948,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 1.0,
+     "stale": 0.0,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.889,
+     "stale": 0.0,
+     "n": 27
+    }
+   },
+   "A3_forgot": 0.971,
+   "A3_control_intact": 1.0,
+   "A3_n_valid_controls": 30,
+   "A3_leak": 0.273,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 1.0,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 0.917,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 1.0,
+   "A5_write_calls_per_memory": 1.0,
+   "A5_ingest_usd": 2.9788,
+   "A5_read_prompt_tok_per_q": 2234,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
   }
  },
  "hypotheses_sonnet": {},
- "judge_agreement": {}
+ "hypotheses_or__google_gemini-3.8-flash": {},
+ "hypotheses_or__openai_gpt-6.1-terra": {},
+ "sensitivity_no_implicit_role": {
+  "dropped_questions": [
+   "q_t3_83",
+   "q_t3_84",
+   "q_t4_11",
+   "q_t4_14",
+   "q_t4_16",
+   "q_t4_29",
+   "q_t4_31",
+   "q_t4_48",
+   "q_t4_63",
+   "q_t4_65",
+   "q_t4_66"
+  ],
+  "dropped_cases": [
+   "del_intent_33",
+   "del_intent_4",
+   "del_intent_9"
+  ],
+  "tables": {
+   "bm25": {
+    "A1": 0.845,
+    "A2_current": 0.74,
+    "A2_stale": 0.18,
+    "A2_FAMA": 0.56,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.71,
+      "stale": 0.161,
+      "n": 31
+     },
+     "implicit": {
+      "current": 0.789,
+      "stale": 0.211,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 26,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 1.0,
+    "A5_write_calls_per_memory": 0.0,
+    "A5_ingest_usd": 0,
+    "A5_read_prompt_tok_per_q": 1631,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
+   "vector_rag": {
+    "A1": 0.946,
+    "A2_current": 0.9,
+    "A2_stale": 0.1,
+    "A2_FAMA": 0.8,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.839,
+      "stale": 0.161,
+      "n": 31
+     },
+     "implicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 28,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 1.0,
+    "A5_write_calls_per_memory": 0.0,
+    "A5_ingest_usd": 0,
+    "A5_read_prompt_tok_per_q": 1640,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
+   "mem0": {
+    "A1": 0.964,
+    "A2_current": 1.0,
+    "A2_stale": 0.0,
+    "A2_FAMA": 1.0,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 31
+     },
+     "implicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 19
+     }
+    },
+    "A3_forgot": 0.968,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 29,
+    "A3_leak": 0.273,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 0.917,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 1.0,
+    "A5_write_calls_per_memory": 1.0,
+    "A5_ingest_usd": 2.9788,
+    "A5_read_prompt_tok_per_q": 2234,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   }
+  },
+  "hypotheses_sonnet": {},
+  "hypotheses_or__google_gemini-3.8-flash": {},
+  "hypotheses_or__openai_gpt-6.1-terra": {}
+ },
+ "judge_agreement": {
+  "or__google_gemini-3.8-flash": {
+   "n": 452,
+   "kappa_binary": 0.878,
+   "disagreements": 11
+  },
+  "or__openai_gpt-6.1-terra": {
+   "n": 452,
+   "kappa_binary": 0.878,
+   "disagreements": 11
+  }
+ }
 }

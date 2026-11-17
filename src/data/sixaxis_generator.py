@@ -165,7 +165,9 @@ class World:
             d = date.fromisoformat(prev["history"][-1][2]) + timedelta(days=1)
         if prev and self.scale == "R3" and self.rng.random() < 0.5:
             # implicit update: the note states only the new value, so retrieval must use the date, not the word "from"
-            text = {"role": f"{subj} is now {v}, effective {d.isoformat()}.",
+            # (a person can hold two roles, so "X is now <role>" does not entail leaving the old one; "changed" does —
+            # round 3 ran with the first wording, see prereg_round3.md amendment 2)
+            text = {"role": f"{subj}'s role changed on {d.isoformat()}: now {v}.",
                     "tool": f"{subj} now tracks its issues in {v} (as of {d.isoformat()}).",
                     "city": f"{subj} is now based in {v} (since {d.strftime('%B %Y')}).",
                     "budget": f"{subj}'s quarterly budget is {v} as of {d.isoformat()}."}[kind]
@@ -429,6 +431,15 @@ def inadmissible_updates(data: dict) -> set[str]:
         if q["task"] == "T3" and len(q["evidence_ids"]) == 2 and mem[q["evidence_ids"][1]]["date"] <= mem[q["evidence_ids"][0]]["date"]:
             bad.add(q["id"])
     return bad
+
+
+def ambiguous_implicit_roles(data: dict) -> tuple[set[str], set[str]]:
+    """(question ids, deletion-case ids) whose gold or control rests on an implicit role update worded "X is now <role>",
+    which does not entail that the earlier role ended (prereg_round3.md amendment 2: sensitivity analysis, not exclusion)."""
+    amb = {m["id"] for m in data["memories"] if "implicit" in m["topics"] and "role" in m["topics"] and " is now " in m["content"]}
+    qs = {q["id"] for q in data["questions"] if set(q["evidence_ids"]) & amb}
+    cs = {c["id"] for c in data["deletions"] if set(c["control_evidence_ids"]) & amb}
+    return qs, cs
 
 
 def ground_check(data: dict) -> list[str]:

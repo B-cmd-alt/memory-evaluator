@@ -96,3 +96,12 @@ Rule, applied identically to every system: an item whose supersession is not dat
 excluded from A1/A2 (`inadmissible_updates()`; `ground_check()` now flags it). The A2 analysis set is therefore **58 keys**
 (stratum sizes reported with the results). The generator now forces superseding notes to be dated strictly later. The R3
 world file stays the one that was run; regenerating it gives a clean world with the same counts.
+
+## Amendment 2 (2026-11-17, after bm25 / vector_rag / mem0 records and their cross-family re-judge)
+
+The two non-Claude judges disagreed with Sonnet on the same 11 items. Most were intent-case controls where the system
+answered "X holds two roles: A and B". The cause is the implicit *role* template: "X is now <role>" does not entail that the
+earlier role ended, because a person can hold two roles. The tracker, city and budget templates have no such ambiguity.
+This affects 8 of the 58 admissible T4 keys, 2 T3 items and 3 deletion-case controls. These items are **not excluded**: the
+primary analysis keeps them. A **sensitivity analysis** without them is reported next to every verdict, and a verdict
+that differs between the two is flagged. The generator's implicit role wording is now "X's role changed on <date>: now <role>".

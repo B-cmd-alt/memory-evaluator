@@ -91,10 +91,14 @@ def rescore_q(sysname: str, kind: str, q: dict, rj: dict | None) -> tuple[float,
 _DATA = json.load(open("results/sixaxis_R3_seed42.json"))
 from src.data.sixaxis_generator import inadmissible_updates  # noqa: E402
 INADMISSIBLE = inadmissible_updates(_DATA)   # prereg_round3.md amendment 1: excluded from A1/A2 for every system
+from src.data.sixaxis_generator import ambiguous_implicit_roles  # noqa: E402
+AMBIG_Q, AMBIG_C = ambiguous_implicit_roles(_DATA)   # amendment 2: sensitivity analysis drops these
+DROP_Q: set = set()
+DROP_C: set = set()
 
 
 def a2_vectors(rec: dict, rj=None, arm=None, stratum=None):
-    rows = [q for q in t4_rows(rec, arm) if q["id"] not in INADMISSIBLE]
+    rows = [q for q in t4_rows(rec, arm) if q["id"] not in INADMISSIBLE | DROP_Q]
     if arm:   # arm rows lack reference/stale_answer: take them from the main record
         base = {q["id"]: q for q in rec["questions"]}
         rows = [{**q, "reference": base[q["id"]]["reference"], "stale_answer": base[q["id"]]["stale_answer"], "task": "T4"} for q in rows]
@@ -106,7 +110,7 @@ def a2_vectors(rec: dict, rj=None, arm=None, stratum=None):
 
 
 def a3_vectors(rec: dict, rj=None):
-    rows = sorted(rec.get("deletions") or [], key=lambda d: d["id"])
+    rows = sorted([d for d in rec.get("deletions") or [] if d["id"] not in DROP_C], key=lambda d: d["id"])
     def jb(d, field, key):
         if rj is None:
             return d[field]
@@ -191,7 +195,7 @@ def tables(recs: dict) -> dict:
             continue
         r = recs[s]
         qs = r["questions"]
-        a1 = [q["score"] for q in qs if q["task"] != "T4" and q["id"] not in INADMISSIBLE]
+        a1 = [q["score"] for q in qs if q["task"] != "T4" and q["id"] not in INADMISSIBLE | DROP_Q]
         ids, c, st = a2_vectors(r)
         strata = {}
         for k in ("explicit", "implicit"):
@@ -243,6 +247,12 @@ def main():
     res = {"systems": sorted(recs), "inadmissible_items": sorted(INADMISSIBLE), "tables": tables(recs), "hypotheses_sonnet": hypotheses(recs)}
     for name, alt in rj.items():
         res[f"hypotheses_{name}"] = hypotheses(recs, alt)
+    global DROP_Q, DROP_C
+    DROP_Q, DROP_C = AMBIG_Q, AMBIG_C
+    res["sensitivity_no_implicit_role"] = {"dropped_questions": sorted(AMBIG_Q), "dropped_cases": sorted(AMBIG_C),
+                                           "tables": tables(recs), "hypotheses_sonnet": hypotheses(recs),
+                                           **{f"hypotheses_{n}": hypotheses(recs, alt) for n, alt in rj.items()}}
+    DROP_Q, DROP_C = set(), set()
     res["judge_agreement"] = judge_agreement(recs, rj)
     if "zep_graphiti" in recs:
         ir = recs["zep_graphiti"].get("invalidation_report", {})
