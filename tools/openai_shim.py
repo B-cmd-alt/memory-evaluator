@@ -95,6 +95,39 @@ def _render(messages: list[dict], tools: list[dict] | None, response_format: dic
     return system, "\n\n".join(transcript) or "(empty)"
 
 
+# Optional deterministic prompt cache (SHIM_CACHE=path.jsonl). Identical (model, system, prompt, schema) requests replay the
+# stored response instead of calling the model again. Round 3 uses it so a rebuild-on-delete (Mastra OM, Generative Agents)
+# re-sends the unchanged prefix of its ingest for free; every hit is logged with cached=true, so cost tables can report
+# first-call (uncached) cost. Off by default: rounds 1-2 ran without it.
+_CACHE_PATH = os.environ.get("SHIM_CACHE")
+_cache: dict[str, dict] = {}
+if _CACHE_PATH and os.path.exists(_CACHE_PATH):
+    with open(_CACHE_PATH) as _f:
+        for _l in _f:
+            try:
+                _r = json.loads(_l); _cache[_r["k"]] = _r["v"]
+            except (ValueError, KeyError):
+                pass
+
+
+def _cache_key(system: str, prompt: str, model: str, json_schema: dict | None) -> str:
+    import hashlib
+    return hashlib.sha256(json.dumps([model, system, prompt, json_schema], sort_keys=True).encode()).hexdigest()
+
+
+async def _claude_cached(system: str, prompt: str, model: str, json_schema: dict | None) -> tuple[dict, bool]:
+    if not _CACHE_PATH:
+        return await _claude(system, prompt, model, json_schema), False
+    k = _cache_key(system, prompt, model, json_schema)
+    if k in _cache:
+        return _cache[k], True
+    data = await _claude(system, prompt, model, json_schema)
+    _cache[k] = data
+    with open(_CACHE_PATH, "a") as f:
+        f.write(json.dumps({"k": k, "v": data}) + "\n")
+    return data, False
+
+
 async def _claude(system: str, prompt: str, model: str, json_schema: dict | None) -> dict:
     cmd = [shutil.which("claude") or "claude", "-p", "--model", model, "--output-format", "json",
            "--max-turns", "3" if json_schema else "1",   # structured output spends extra turns on its tool
@@ -158,7 +191,7 @@ async def chat(request: Request, x_caller: str | None = Header(default=None)):
     system, prompt = _render(body.get("messages", []), body.get("tools"), rf, body.get("tool_choice"))
     t0 = time.time()
     try:
-        data = await _claude(system, prompt, model, schema)
+        data, cached = await _claude_cached(system, prompt, model, schema)
     except Exception as e:  # noqa: BLE001
         _log({"ts": t0, "caller": x_caller, "model": model, "error": str(e)[:300]})
         return JSONResponse({"error": {"message": str(e), "type": "shim_error"}}, status_code=500)
@@ -182,7 +215,8 @@ async def chat(request: Request, x_caller: str | None = Header(default=None)):
     }
     _log({"ts": t0, "caller": x_caller, "model": model, "latency_s": round(time.time() - t0, 3),
           "prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens,
-          "cost_usd": data.get("total_cost_usd"), "tool_calls": len(tool_calls or []),
+          "cost_usd": 0.0 if cached else data.get("total_cost_usd"), "cost_usd_uncached": data.get("total_cost_usd"), "cached": cached,
+          "tool_calls": len(tool_calls or []),
           "json": bool(rf), "chars_in": len(prompt) + len(system)})
     if body.get("stream"):
         async def gen():

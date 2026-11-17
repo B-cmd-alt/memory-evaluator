@@ -88,9 +88,53 @@ class GraphitiAdapter(BaseAdapter):
         self.memories = [m for m in self.memories if m.source_id not in ids]
         return {"deleted": n, "method": "graphiti.remove_episode"}
 
+    # Round-3 fairness arms, evaluated on ONE ingest (the runner re-asks the T4 questions under each):
+    #   r2       round-2 configuration: Graphiti.search (EDGE_HYBRID_SEARCH_RRF), 5 edges, invalidation shown as a text tag
+    #   default  the library default: Graphiti.search with its default num_results (10)
+    #   filter   fetch 30, drop edges Graphiti marked invalid/expired, keep 10 (what an application reading only current facts does)
+    #   xenc     Graphiti.search_ with its EDGE_HYBRID_SEARCH_CROSS_ENCODER recipe (local BGE cross-encoder), 10 edges
+    read_arm = "r2"
+    read_arms = ("default", "filter", "xenc")
+
+    async def _edges(self, question):
+        arm = self.read_arm
+        if arm == "r2":
+            return await self._g.search(question, num_results=self.top_k)
+        if arm == "default":
+            return await self._g.search(question)
+        if arm == "filter":
+            es = await self._g.search(question, num_results=30)
+            return [e for e in es if getattr(e, "invalid_at", None) is None and getattr(e, "expired_at", None) is None][:10]
+        if arm == "xenc":
+            import copy
+            from graphiti_core.search.search_config_recipes import EDGE_HYBRID_SEARCH_CROSS_ENCODER
+            cfg = copy.deepcopy(EDGE_HYBRID_SEARCH_CROSS_ENCODER); cfg.limit = 10
+            return (await self._g.search_(question, config=cfg)).edges
+        raise ValueError(arm)
+
+    async def invalidation_report(self, data: dict) -> dict:
+        """Diagnostic (no LLM): for every T4 key, the edges whose fact states the SUPERSEDED value — what share did Graphiti
+        mark invalid/expired? Low share = superseded facts stay current in the graph; high share = the failure is retrieval."""
+        rows = []
+        for q in data["questions"]:
+            if q["task"] != "T4":
+                continue
+            es = await self._g.search(q["question"].replace(" (as of today)", ""), num_results=50)
+            st = [e for e in es if q["stale_answer"].lower() in (getattr(e, "fact", "") or "").lower()]
+            cur = [e for e in es if q["reference_answer"].lower() in (getattr(e, "fact", "") or "").lower()]
+            rows.append({"id": q["id"], "stratum": q.get("stratum", ""), "n_stale_edges": len(st),
+                         "n_stale_invalidated": sum(1 for e in st if getattr(e, "invalid_at", None) or getattr(e, "expired_at", None)),
+                         "n_current_edges": len(cur),
+                         "n_current_invalidated": sum(1 for e in cur if getattr(e, "invalid_at", None) or getattr(e, "expired_at", None)),
+                         "stale_facts": [e.fact for e in st][:3], "current_facts": [e.fact for e in cur][:3]})
+        have = [r for r in rows if r["n_stale_edges"]]
+        return {"rows": rows, "keys_with_stale_edge": len(have), "keys": len(rows),
+                "keys_all_stale_invalidated": sum(1 for r in have if r["n_stale_invalidated"] == r["n_stale_edges"]),
+                "keys_with_current_edge": sum(1 for r in rows if r["n_current_edges"])}
+
     async def query(self, question, timestamp=None):
         t0 = time.time()
-        edges = await self._g.search(question, num_results=self.top_k)
+        edges = await self._edges(question)
         items = []
         for e in edges or []:
             fact = getattr(e, "fact", None) or str(e)

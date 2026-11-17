@@ -1,0 +1,6653 @@
+{
+ "meta": {
+  "benchmark": "SixAxis",
+  "scale": "R3",
+  "seed": 42,
+  "n_memories": 262,
+  "n_questions": 96,
+  "n_deletions": 34,
+  "n_poisons": 2
+ },
+ "memories": [
+  {
+   "id": "r3_0000",
+   "date": "2025-01-06",
+   "content": "Compass's quarterly budget was set to $180k on 2025-01-06.",
+   "entities": [
+    "Compass"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0001",
+   "date": "2025-01-09",
+   "content": "Valentina Greco became design lead of Atlas on 2025-01-09.",
+   "entities": [
+    "Valentina Greco"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0002",
+   "date": "2025-01-08",
+   "content": "Mina Park is based in Lisbon.",
+   "entities": [
+    "Mina Park"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0003",
+   "date": "2025-01-07",
+   "content": "Sextant's quarterly budget was set to $300k on 2025-01-07.",
+   "entities": [
+    "Sextant"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0004",
+   "date": "2025-01-09",
+   "content": "Pylon standardized on Trello as its issue tracker on 2025-01-09.",
+   "entities": [
+    "Pylon"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0005",
+   "date": "2025-01-08",
+   "content": "Dmitri Volkov became design lead of Nimbus on 2025-01-08.",
+   "entities": [
+    "Dmitri Volkov"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0006",
+   "date": "2025-01-06",
+   "content": "Mina Park is now based in Austin (since January 2025).",
+   "entities": [
+    "Mina Park"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0002"
+  },
+  {
+   "id": "r3_0007",
+   "date": "2025-01-08",
+   "content": "Weekly sync on 2025-01-08 ran 15 minutes over.",
+   "entities": [
+    "Jamal Okafor"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0008",
+   "date": "2025-01-08",
+   "content": "Meridian's quarterly budget was set to $300k on 2025-01-08.",
+   "entities": [
+    "Meridian"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0009",
+   "date": "2025-01-08",
+   "content": "Pylon switched its issue tracker from Trello to Linear effective 2025-01-08.",
+   "entities": [
+    "Pylon"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0004"
+  },
+  {
+   "id": "r3_0010",
+   "date": "2025-01-16",
+   "content": "Jamal Okafor presented Tessera at DevCon 2025 in Singapore on 2025-01-16.",
+   "entities": [
+    "Jamal Okafor",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0011",
+   "date": "2025-01-14",
+   "content": "Rosa Alvarez became design lead of Atlas on 2025-01-14.",
+   "entities": [
+    "Rosa Alvarez"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0012",
+   "date": "2025-01-17",
+   "content": "Wayfarer standardized on Asana as its issue tracker on 2025-01-17.",
+   "entities": [
+    "Wayfarer"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0013",
+   "date": "2025-01-13",
+   "content": "Wayfarer's quarterly budget was set to $240k on 2025-01-13.",
+   "entities": [
+    "Wayfarer"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0014",
+   "date": "2025-01-16",
+   "content": "Sanjay Mehta is based in Dublin.",
+   "entities": [
+    "Sanjay Mehta"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0015",
+   "date": "2025-01-16",
+   "content": "Hiro Tanaka is based in Lisbon.",
+   "entities": [
+    "Hiro Tanaka"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0016",
+   "date": "2025-01-17",
+   "content": "Atlas's quarterly budget was set to $180k on 2025-01-17.",
+   "entities": [
+    "Atlas"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0017",
+   "date": "2025-01-14",
+   "content": "Quill standardized on Confluence as its issue tracker on 2025-01-14.",
+   "entities": [
+    "Quill"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0018",
+   "date": "2025-01-14",
+   "content": "Sanjay Mehta relocated from Dublin to Osaka in January 2025.",
+   "entities": [
+    "Sanjay Mehta"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0014"
+  },
+  {
+   "id": "r3_0019",
+   "date": "2025-01-17",
+   "content": "Dmitri Volkov moved from design lead of Nimbus to release manager of Relay, effective 2025-01-17.",
+   "entities": [
+    "Dmitri Volkov"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0005"
+  },
+  {
+   "id": "r3_0020",
+   "date": "2025-01-20",
+   "content": "Hiro Tanaka relocated from Lisbon to Toronto in January 2025.",
+   "entities": [
+    "Hiro Tanaka"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0015"
+  },
+  {
+   "id": "r3_0021",
+   "date": "2025-01-22",
+   "content": "Rosa Alvarez is now tech lead of Umbra, effective 2025-01-22.",
+   "entities": [
+    "Rosa Alvarez"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0011"
+  },
+  {
+   "id": "r3_0022",
+   "date": "2025-01-20",
+   "content": "Weekly sync on 2025-01-20 ran 15 minutes over.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0023",
+   "date": "2025-01-21",
+   "content": "Callum Reid is based in Austin.",
+   "entities": [
+    "Callum Reid"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0024",
+   "date": "2025-01-24",
+   "content": "Wayfarer now tracks its issues in Monday (as of 2025-01-24).",
+   "entities": [
+    "Wayfarer"
+   ],
+   "topics": [
+    "tool",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0012"
+  },
+  {
+   "id": "r3_0025",
+   "date": "2025-01-22",
+   "content": "Atlas standardized on Shortcut as its issue tracker on 2025-01-22.",
+   "entities": [
+    "Atlas"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0026",
+   "date": "2025-01-21",
+   "content": "Hiro Tanaka became release manager of Compass on 2025-01-21.",
+   "entities": [
+    "Hiro Tanaka"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0027",
+   "date": "2025-01-21",
+   "content": "Ximena Ortiz became QA lead of Sextant on 2025-01-21.",
+   "entities": [
+    "Ximena Ortiz"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0028",
+   "date": "2025-01-22",
+   "content": "Hiro Tanaka is now QA lead of Compass, effective 2025-01-22.",
+   "entities": [
+    "Hiro Tanaka"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0026"
+  },
+  {
+   "id": "r3_0029",
+   "date": "2025-01-24",
+   "content": "Callum Reid is now based in Osaka (since January 2025).",
+   "entities": [
+    "Callum Reid"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0023"
+  },
+  {
+   "id": "r3_0030",
+   "date": "2025-01-27",
+   "content": "Olga Petrova became product owner of Harbor on 2025-01-27.",
+   "entities": [
+    "Olga Petrova"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0031",
+   "date": "2025-01-27",
+   "content": "Lantern's quarterly budget was set to $120k on 2025-01-27.",
+   "entities": [
+    "Lantern"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0032",
+   "date": "2025-01-29",
+   "content": "Wayfarer's quarterly budget was revised from $240k to $360k on 2025-01-29.",
+   "entities": [
+    "Wayfarer"
+   ],
+   "topics": [
+    "budget",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0013"
+  },
+  {
+   "id": "r3_0033",
+   "date": "2025-01-28",
+   "content": "Atlas switched its issue tracker from Shortcut to Monday effective 2025-01-28.",
+   "entities": [
+    "Atlas"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0025"
+  },
+  {
+   "id": "r3_0034",
+   "date": "2025-01-30",
+   "content": "Beacon's quarterly budget was set to $120k on 2025-01-30.",
+   "entities": [
+    "Beacon"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0035",
+   "date": "2025-01-31",
+   "content": "Quill's quarterly budget was set to $300k on 2025-01-31.",
+   "entities": [
+    "Quill"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0036",
+   "date": "2025-01-30",
+   "content": "Bob Martinez is based in Berlin.",
+   "entities": [
+    "Bob Martinez"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0037",
+   "date": "2025-01-27",
+   "content": "Coffee machine on floor 3 was repaired on 2025-01-27.",
+   "entities": [
+    "Dmitri Volkov"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0038",
+   "date": "2025-01-29",
+   "content": "Umbra standardized on Shortcut as its issue tracker on 2025-01-29.",
+   "entities": [
+    "Umbra"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0039",
+   "date": "2025-01-29",
+   "content": "Olga Petrova is now design lead of Beacon, effective 2025-01-29.",
+   "entities": [
+    "Olga Petrova"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0030"
+  },
+  {
+   "id": "r3_0040",
+   "date": "2025-02-07",
+   "content": "Jamal Okafor is based in Austin.",
+   "entities": [
+    "Jamal Okafor"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0041",
+   "date": "2025-02-07",
+   "content": "Daria Sokolova became tech lead of Atlas on 2025-02-07.",
+   "entities": [
+    "Daria Sokolova"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0042",
+   "date": "2025-02-04",
+   "content": "Lantern standardized on Jira as its issue tracker on 2025-02-04.",
+   "entities": [
+    "Lantern"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0043",
+   "date": "2025-02-06",
+   "content": "Carol Davis is based in Singapore.",
+   "entities": [
+    "Carol Davis"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0044",
+   "date": "2025-02-05",
+   "content": "Daria Sokolova moved from tech lead of Atlas to data lead of Beacon, effective 2025-02-05.",
+   "entities": [
+    "Daria Sokolova"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0041"
+  },
+  {
+   "id": "r3_0045",
+   "date": "2025-02-03",
+   "content": "Liam O'Brien became release manager of Sextant on 2025-02-03.",
+   "entities": [
+    "Liam O'Brien"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0046",
+   "date": "2025-02-04",
+   "content": "Bob Martinez relocated from Berlin to Lisbon in February 2025.",
+   "entities": [
+    "Bob Martinez"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0036"
+  },
+  {
+   "id": "r3_0047",
+   "date": "2025-02-05",
+   "content": "Umbra switched its issue tracker from Shortcut to Confluence effective 2025-02-05.",
+   "entities": [
+    "Umbra"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0038"
+  },
+  {
+   "id": "r3_0048",
+   "date": "2025-02-07",
+   "content": "Emeka Obi became design lead of Sextant on 2025-02-07.",
+   "entities": [
+    "Emeka Obi"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0049",
+   "date": "2025-02-04",
+   "content": "Wei Zhang became QA lead of Lantern on 2025-02-04.",
+   "entities": [
+    "Wei Zhang"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0050",
+   "date": "2025-02-11",
+   "content": "Atlas's quarterly budget is $900k as of 2025-02-11.",
+   "entities": [
+    "Atlas"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0016"
+  },
+  {
+   "id": "r3_0051",
+   "date": "2025-02-10",
+   "content": "Liam O'Brien is now tech lead of Meridian, effective 2025-02-10.",
+   "entities": [
+    "Liam O'Brien"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0045"
+  },
+  {
+   "id": "r3_0052",
+   "date": "2025-02-11",
+   "content": "Jamal Okafor relocated from Austin to Denver in February 2025.",
+   "entities": [
+    "Jamal Okafor"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0040"
+  },
+  {
+   "id": "r3_0053",
+   "date": "2025-02-14",
+   "content": "Wei Zhang moved from QA lead of Lantern to release manager of Meridian, effective 2025-02-14.",
+   "entities": [
+    "Wei Zhang"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0049"
+  },
+  {
+   "id": "r3_0054",
+   "date": "2025-02-14",
+   "content": "Carol Davis is now based in Austin (since February 2025).",
+   "entities": [
+    "Carol Davis"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0043"
+  },
+  {
+   "id": "r3_0055",
+   "date": "2025-02-10",
+   "content": "Elena Rossi presented Pylon at DevCon 2025 in Lisbon on 2025-02-10.",
+   "entities": [
+    "Elena Rossi",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0056",
+   "date": "2025-02-12",
+   "content": "Pylon's quarterly budget was set to $900k on 2025-02-12.",
+   "entities": [
+    "Pylon"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0057",
+   "date": "2025-02-11",
+   "content": "Harbor's quarterly budget was set to $520k on 2025-02-11.",
+   "entities": [
+    "Harbor"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0058",
+   "date": "2025-02-12",
+   "content": "Beacon's quarterly budget is $450k as of 2025-02-12.",
+   "entities": [
+    "Beacon"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0034"
+  },
+  {
+   "id": "r3_0059",
+   "date": "2025-02-10",
+   "content": "Lantern now tracks its issues in Asana (as of 2025-02-10).",
+   "entities": [
+    "Lantern"
+   ],
+   "topics": [
+    "tool",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0042"
+  },
+  {
+   "id": "r3_0060",
+   "date": "2025-02-20",
+   "content": "Beacon standardized on Notion as its issue tracker on 2025-02-20.",
+   "entities": [
+    "Beacon"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0061",
+   "date": "2025-02-18",
+   "content": "Beacon now tracks its issues in Shortcut (as of 2025-02-18).",
+   "entities": [
+    "Beacon"
+   ],
+   "topics": [
+    "tool",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0060"
+  },
+  {
+   "id": "r3_0062",
+   "date": "2025-02-21",
+   "content": "Relay standardized on Trello as its issue tracker on 2025-02-21.",
+   "entities": [
+    "Relay"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0063",
+   "date": "2025-02-17",
+   "content": "Dmitri Volkov presented Orbit at PlatformWeek 2025 in Singapore on 2025-02-17.",
+   "entities": [
+    "Dmitri Volkov",
+    "Orbit"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0064",
+   "date": "2025-02-17",
+   "content": "Quentin Dubois became product owner of Umbra on 2025-02-17.",
+   "entities": [
+    "Quentin Dubois"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0065",
+   "date": "2025-02-20",
+   "content": "Tove Lindqvist is based in Lisbon.",
+   "entities": [
+    "Tove Lindqvist"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0066",
+   "date": "2025-02-21",
+   "content": "Ines Moreau became design lead of Harbor on 2025-02-21.",
+   "entities": [
+    "Ines Moreau"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0067",
+   "date": "2025-02-21",
+   "content": "Tessera's quarterly budget was set to $450k on 2025-02-21.",
+   "entities": [
+    "Tessera"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0068",
+   "date": "2025-02-19",
+   "content": "Freya Holm is based in Singapore.",
+   "entities": [
+    "Freya Holm"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0069",
+   "date": "2025-02-20",
+   "content": "Compass standardized on Confluence as its issue tracker on 2025-02-20.",
+   "entities": [
+    "Compass"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0070",
+   "date": "2025-02-25",
+   "content": "Sextant standardized on Confluence as its issue tracker on 2025-02-25.",
+   "entities": [
+    "Sextant"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0071",
+   "date": "2025-02-24",
+   "content": "Compass now tracks its issues in Notion (as of 2025-02-24).",
+   "entities": [
+    "Compass"
+   ],
+   "topics": [
+    "tool",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0069"
+  },
+  {
+   "id": "r3_0072",
+   "date": "2025-02-25",
+   "content": "Daria Sokolova is based in Lisbon.",
+   "entities": [
+    "Daria Sokolova"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0073",
+   "date": "2025-02-28",
+   "content": "Orbit standardized on Confluence as its issue tracker on 2025-02-28.",
+   "entities": [
+    "Orbit"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0074",
+   "date": "2025-02-25",
+   "content": "Ines Moreau moved from design lead of Harbor to release manager of Quill, effective 2025-02-25.",
+   "entities": [
+    "Ines Moreau"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0066"
+  },
+  {
+   "id": "r3_0075",
+   "date": "2025-02-27",
+   "content": "Meridian standardized on Monday as its issue tracker on 2025-02-27.",
+   "entities": [
+    "Meridian"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0076",
+   "date": "2025-02-25",
+   "content": "Alice Chen became tech lead of Relay on 2025-02-25.",
+   "entities": [
+    "Alice Chen"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0077",
+   "date": "2025-02-25",
+   "content": "Umbra's quarterly budget was set to $120k on 2025-02-25.",
+   "entities": [
+    "Umbra"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0078",
+   "date": "2025-02-24",
+   "content": "Tessera standardized on Shortcut as its issue tracker on 2025-02-24.",
+   "entities": [
+    "Tessera"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0079",
+   "date": "2025-02-28",
+   "content": "Harbor standardized on Asana as its issue tracker on 2025-02-28.",
+   "entities": [
+    "Harbor"
+   ],
+   "topics": [
+    "tool"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0080",
+   "date": "2025-03-06",
+   "content": "Sextant switched its issue tracker from Confluence to Shortcut effective 2025-03-06.",
+   "entities": [
+    "Sextant"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0070"
+  },
+  {
+   "id": "r3_0081",
+   "date": "2025-03-07",
+   "content": "Daria Sokolova relocated from Lisbon to Berlin in March 2025.",
+   "entities": [
+    "Daria Sokolova"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0072"
+  },
+  {
+   "id": "r3_0082",
+   "date": "2025-03-04",
+   "content": "Harbor now tracks its issues in Trello (as of 2025-03-04).",
+   "entities": [
+    "Harbor"
+   ],
+   "topics": [
+    "tool",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0079"
+  },
+  {
+   "id": "r3_0083",
+   "date": "2025-03-04",
+   "content": "Mina Park became QA lead of Sextant on 2025-03-04.",
+   "entities": [
+    "Mina Park"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0084",
+   "date": "2025-03-05",
+   "content": "Freya Holm is now based in Osaka (since March 2025).",
+   "entities": [
+    "Freya Holm"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0068"
+  },
+  {
+   "id": "r3_0085",
+   "date": "2025-03-07",
+   "content": "Coffee machine on floor 3 was repaired on 2025-03-07.",
+   "entities": [
+    "Hiro Tanaka"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0086",
+   "date": "2025-03-06",
+   "content": "Mina Park moved from QA lead of Sextant to data lead of Compass, effective 2025-03-06.",
+   "entities": [
+    "Mina Park"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0083"
+  },
+  {
+   "id": "r3_0087",
+   "date": "2025-03-07",
+   "content": "Relay's quarterly budget was set to $300k on 2025-03-07.",
+   "entities": [
+    "Relay"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0088",
+   "date": "2025-03-06",
+   "content": "Alice Chen moved from tech lead of Relay to design lead of Orbit, effective 2025-03-06.",
+   "entities": [
+    "Alice Chen"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0076"
+  },
+  {
+   "id": "r3_0089",
+   "date": "2025-03-04",
+   "content": "Yusuf Demir took a half day on 2025-03-04.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0090",
+   "date": "2025-03-13",
+   "content": "Ines Moreau is based in Dublin.",
+   "entities": [
+    "Ines Moreau"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0091",
+   "date": "2025-03-13",
+   "content": "Sanjay Mehta became data lead of Beacon on 2025-03-13.",
+   "entities": [
+    "Sanjay Mehta"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0092",
+   "date": "2025-03-12",
+   "content": "Orbit switched its issue tracker from Confluence to Asana effective 2025-03-12.",
+   "entities": [
+    "Orbit"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0073"
+  },
+  {
+   "id": "r3_0093",
+   "date": "2025-03-13",
+   "content": "Sanjay Mehta is now design lead of Compass, effective 2025-03-13.",
+   "entities": [
+    "Sanjay Mehta"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0091"
+  },
+  {
+   "id": "r3_0094",
+   "date": "2025-03-12",
+   "content": "Beatriz Lopes became design lead of Meridian on 2025-03-12.",
+   "entities": [
+    "Beatriz Lopes"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0095",
+   "date": "2025-03-11",
+   "content": "Freya Holm became release manager of Orbit on 2025-03-11.",
+   "entities": [
+    "Freya Holm"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0096",
+   "date": "2025-03-13",
+   "content": "Orbit's quarterly budget was set to $600k on 2025-03-13.",
+   "entities": [
+    "Orbit"
+   ],
+   "topics": [
+    "budget"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0097",
+   "date": "2025-03-12",
+   "content": "Carol Davis became QA lead of Lantern on 2025-03-12.",
+   "entities": [
+    "Carol Davis"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0098",
+   "date": "2025-03-10",
+   "content": "Olga Petrova presented Pylon at ShipIt 2025 in Dublin on 2025-03-10.",
+   "entities": [
+    "Olga Petrova",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0099",
+   "date": "2025-03-11",
+   "content": "Umar Siddiqui became tech lead of Umbra on 2025-03-11.",
+   "entities": [
+    "Umar Siddiqui"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0100",
+   "date": "2025-03-21",
+   "content": "Orbit's quarterly budget was revised from $600k to $450k on 2025-03-21.",
+   "entities": [
+    "Orbit"
+   ],
+   "topics": [
+    "budget",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0096"
+  },
+  {
+   "id": "r3_0101",
+   "date": "2025-03-19",
+   "content": "Elena Rossi became data lead of Quill on 2025-03-19.",
+   "entities": [
+    "Elena Rossi"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0102",
+   "date": "2025-03-20",
+   "content": "Coffee machine on floor 3 was repaired on 2025-03-20.",
+   "entities": [
+    "Jamal Okafor"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0103",
+   "date": "2025-03-18",
+   "content": "Tessera switched its issue tracker from Shortcut to Confluence effective 2025-03-18.",
+   "entities": [
+    "Tessera"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0078"
+  },
+  {
+   "id": "r3_0104",
+   "date": "2025-03-21",
+   "content": "Pylon's quarterly budget was revised from $900k to $520k on 2025-03-21.",
+   "entities": [
+    "Pylon"
+   ],
+   "topics": [
+    "budget",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0056"
+  },
+  {
+   "id": "r3_0105",
+   "date": "2025-03-21",
+   "content": "Meridian switched its issue tracker from Monday to Shortcut effective 2025-03-21.",
+   "entities": [
+    "Meridian"
+   ],
+   "topics": [
+    "tool",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0075"
+  },
+  {
+   "id": "r3_0106",
+   "date": "2025-03-19",
+   "content": "Daria Sokolova presented Relay at ShipIt 2025 in Dublin on 2025-03-19.",
+   "entities": [
+    "Daria Sokolova",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0107",
+   "date": "2025-03-19",
+   "content": "Yusuf Demir became data lead of Wayfarer on 2025-03-19.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0108",
+   "date": "2025-03-19",
+   "content": "Priya Nair presented Atlas at InfraDays 2025 in Berlin on 2025-03-19.",
+   "entities": [
+    "Priya Nair",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0109",
+   "date": "2025-03-21",
+   "content": "Weekly sync on 2025-03-21 ran 15 minutes over.",
+   "entities": [
+    "Ximena Ortiz"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0110",
+   "date": "2025-03-27",
+   "content": "Liam O'Brien is based in Osaka.",
+   "entities": [
+    "Liam O'Brien"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0111",
+   "date": "2025-03-24",
+   "content": "Elena Rossi moved from data lead of Quill to product owner of Pylon, effective 2025-03-24.",
+   "entities": [
+    "Elena Rossi"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0101"
+  },
+  {
+   "id": "r3_0112",
+   "date": "2025-03-27",
+   "content": "Liam O'Brien is now based in Singapore (since March 2025).",
+   "entities": [
+    "Liam O'Brien"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0110"
+  },
+  {
+   "id": "r3_0113",
+   "date": "2025-03-27",
+   "content": "Dmitri Volkov presented Wayfarer at DataSummit 2025 in Toronto on 2025-03-27.",
+   "entities": [
+    "Dmitri Volkov",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0114",
+   "date": "2025-03-26",
+   "content": "Zofia Nowak became design lead of Orbit on 2025-03-26.",
+   "entities": [
+    "Zofia Nowak"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0115",
+   "date": "2025-03-27",
+   "content": "Olga Petrova presented Relay at PlatformWeek 2025 in Singapore on 2025-03-27.",
+   "entities": [
+    "Olga Petrova",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0116",
+   "date": "2025-03-24",
+   "content": "Tessera's quarterly budget is $300k as of 2025-03-24.",
+   "entities": [
+    "Tessera"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0067"
+  },
+  {
+   "id": "r3_0117",
+   "date": "2025-03-26",
+   "content": "Callum Reid became tech lead of Meridian on 2025-03-26.",
+   "entities": [
+    "Callum Reid"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0118",
+   "date": "2025-03-25",
+   "content": "Elena Rossi is based in Berlin.",
+   "entities": [
+    "Elena Rossi"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0119",
+   "date": "2025-03-27",
+   "content": "Ines Moreau relocated from Dublin to Austin in March 2025.",
+   "entities": [
+    "Ines Moreau"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0090"
+  },
+  {
+   "id": "r3_0120",
+   "date": "2025-04-03",
+   "content": "Callum Reid moved from tech lead of Meridian to tech lead of Atlas, effective 2025-04-03.",
+   "entities": [
+    "Callum Reid"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0117"
+  },
+  {
+   "id": "r3_0121",
+   "date": "2025-03-31",
+   "content": "Jamal Okafor became tech lead of Wayfarer on 2025-03-31.",
+   "entities": [
+    "Jamal Okafor"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0122",
+   "date": "2025-04-03",
+   "content": "Dmitri Volkov is based in Dublin.",
+   "entities": [
+    "Dmitri Volkov"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0123",
+   "date": "2025-04-03",
+   "content": "Olga Petrova presented Harbor at InfraDays 2025 in Berlin on 2025-04-03.",
+   "entities": [
+    "Olga Petrova",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0124",
+   "date": "2025-04-04",
+   "content": "Weekly sync on 2025-04-04 ran 15 minutes over.",
+   "entities": [
+    "Ines Moreau"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0125",
+   "date": "2025-04-01",
+   "content": "Carol Davis is now QA lead of Compass, effective 2025-04-01.",
+   "entities": [
+    "Carol Davis"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0097"
+  },
+  {
+   "id": "r3_0126",
+   "date": "2025-03-31",
+   "content": "Mina Park presented Atlas at ShipIt 2025 in Singapore on 2025-03-31.",
+   "entities": [
+    "Mina Park",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0127",
+   "date": "2025-03-31",
+   "content": "Grace Kim became tech lead of Pylon on 2025-03-31.",
+   "entities": [
+    "Grace Kim"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0128",
+   "date": "2025-04-02",
+   "content": "Quill's quarterly budget is $360k as of 2025-04-02.",
+   "entities": [
+    "Quill"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0035"
+  },
+  {
+   "id": "r3_0129",
+   "date": "2025-04-04",
+   "content": "Jamal Okafor is now QA lead of Sextant, effective 2025-04-04.",
+   "entities": [
+    "Jamal Okafor"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0121"
+  },
+  {
+   "id": "r3_0130",
+   "date": "2025-04-09",
+   "content": "Rosa Alvarez is based in Osaka.",
+   "entities": [
+    "Rosa Alvarez"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0131",
+   "date": "2025-04-09",
+   "content": "Umbra's quarterly budget was revised from $120k to $900k on 2025-04-09.",
+   "entities": [
+    "Umbra"
+   ],
+   "topics": [
+    "budget",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0077"
+  },
+  {
+   "id": "r3_0132",
+   "date": "2025-04-10",
+   "content": "Zofia Nowak moved from design lead of Orbit to design lead of Beacon, effective 2025-04-10.",
+   "entities": [
+    "Zofia Nowak"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0114"
+  },
+  {
+   "id": "r3_0133",
+   "date": "2025-04-07",
+   "content": "Tove Lindqvist became release manager of Meridian on 2025-04-07.",
+   "entities": [
+    "Tove Lindqvist"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0134",
+   "date": "2025-04-09",
+   "content": "Beatriz Lopes is based in Osaka.",
+   "entities": [
+    "Beatriz Lopes"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0135",
+   "date": "2025-04-10",
+   "content": "Beatriz Lopes presented Atlas at ShipIt 2025 in Osaka on 2025-04-10.",
+   "entities": [
+    "Beatriz Lopes",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0136",
+   "date": "2025-04-07",
+   "content": "Dmitri Volkov is now based in Denver (since April 2025).",
+   "entities": [
+    "Dmitri Volkov"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0122"
+  },
+  {
+   "id": "r3_0137",
+   "date": "2025-04-08",
+   "content": "Mina Park presented Tessera at InfraDays 2025 in Dublin on 2025-04-08.",
+   "entities": [
+    "Mina Park",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0138",
+   "date": "2025-04-11",
+   "content": "Yusuf Demir moved from data lead of Wayfarer to product owner of Sextant, effective 2025-04-11.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0107"
+  },
+  {
+   "id": "r3_0139",
+   "date": "2025-04-10",
+   "content": "Lantern's quarterly budget is $900k as of 2025-04-10.",
+   "entities": [
+    "Lantern"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0031"
+  },
+  {
+   "id": "r3_0140",
+   "date": "2025-04-14",
+   "content": "Grace Kim moved from tech lead of Pylon to design lead of Tessera, effective 2025-04-14.",
+   "entities": [
+    "Grace Kim"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0127"
+  },
+  {
+   "id": "r3_0141",
+   "date": "2025-04-15",
+   "content": "Freya Holm presented Nimbus at InfraDays 2025 in Osaka on 2025-04-15.",
+   "entities": [
+    "Freya Holm",
+    "Nimbus"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0142",
+   "date": "2025-04-17",
+   "content": "Noah Berg became design lead of Orbit on 2025-04-17.",
+   "entities": [
+    "Noah Berg"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0143",
+   "date": "2025-04-14",
+   "content": "Beatriz Lopes relocated from Osaka to Toronto in April 2025.",
+   "entities": [
+    "Beatriz Lopes"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0134"
+  },
+  {
+   "id": "r3_0144",
+   "date": "2025-04-15",
+   "content": "Quentin Dubois is based in Singapore.",
+   "entities": [
+    "Quentin Dubois"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0145",
+   "date": "2025-04-17",
+   "content": "Coffee machine on floor 3 was repaired on 2025-04-17.",
+   "entities": [
+    "Daria Sokolova"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0146",
+   "date": "2025-04-18",
+   "content": "Freya Holm moved from release manager of Orbit to tech lead of Lantern, effective 2025-04-18.",
+   "entities": [
+    "Freya Holm"
+   ],
+   "topics": [
+    "role",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0095"
+  },
+  {
+   "id": "r3_0147",
+   "date": "2025-04-17",
+   "content": "Wei Zhang presented Compass at InfraDays 2025 in Berlin on 2025-04-17.",
+   "entities": [
+    "Wei Zhang",
+    "Compass"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0148",
+   "date": "2025-04-16",
+   "content": "Relay's quarterly budget is $240k as of 2025-04-16.",
+   "entities": [
+    "Relay"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0087"
+  },
+  {
+   "id": "r3_0149",
+   "date": "2025-04-17",
+   "content": "Yusuf Demir presented Relay at PlatformWeek 2025 in Dublin on 2025-04-17.",
+   "entities": [
+    "Yusuf Demir",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0150",
+   "date": "2025-04-24",
+   "content": "Zofia Nowak presented Wayfarer at DevCon 2025 in Dublin on 2025-04-24.",
+   "entities": [
+    "Zofia Nowak",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0151",
+   "date": "2025-04-22",
+   "content": "Harbor's quarterly budget is $120k as of 2025-04-22.",
+   "entities": [
+    "Harbor"
+   ],
+   "topics": [
+    "budget",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0057"
+  },
+  {
+   "id": "r3_0152",
+   "date": "2025-04-24",
+   "content": "Wei Zhang presented Harbor at ShipIt 2025 in Austin on 2025-04-24.",
+   "entities": [
+    "Wei Zhang",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0153",
+   "date": "2025-04-24",
+   "content": "Freya Holm filed expenses for the April offsite.",
+   "entities": [
+    "Freya Holm"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0154",
+   "date": "2025-04-21",
+   "content": "Bob Martinez presented Sextant at PlatformWeek 2025 in Osaka on 2025-04-21.",
+   "entities": [
+    "Bob Martinez",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0155",
+   "date": "2025-04-21",
+   "content": "Noah Berg presented Quill at DevCon 2025 in Lisbon on 2025-04-21.",
+   "entities": [
+    "Noah Berg",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0156",
+   "date": "2025-04-24",
+   "content": "Dmitri Volkov presented Beacon at PlatformWeek 2025 in Dublin on 2025-04-24.",
+   "entities": [
+    "Dmitri Volkov",
+    "Beacon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0157",
+   "date": "2025-04-21",
+   "content": "Zofia Nowak presented Pylon at PlatformWeek 2025 in Dublin on 2025-04-21.",
+   "entities": [
+    "Zofia Nowak",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0158",
+   "date": "2025-04-23",
+   "content": "Olga Petrova is based in Berlin.",
+   "entities": [
+    "Olga Petrova"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0159",
+   "date": "2025-04-22",
+   "content": "Noah Berg is based in Lisbon.",
+   "entities": [
+    "Noah Berg"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0160",
+   "date": "2025-04-28",
+   "content": "Mina Park presented Quill at DataSummit 2025 in Osaka on 2025-04-28.",
+   "entities": [
+    "Mina Park",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0161",
+   "date": "2025-04-29",
+   "content": "Priya Nair presented Meridian at DataSummit 2025 in Denver on 2025-04-29.",
+   "entities": [
+    "Priya Nair",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0162",
+   "date": "2025-04-28",
+   "content": "Carol Davis presented Harbor at DevCon 2025 in Toronto on 2025-04-28.",
+   "entities": [
+    "Carol Davis",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0163",
+   "date": "2025-05-02",
+   "content": "Quentin Dubois presented Relay at DevCon 2025 in Austin on 2025-05-02.",
+   "entities": [
+    "Quentin Dubois",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0164",
+   "date": "2025-04-29",
+   "content": "Bob Martinez became data lead of Nimbus on 2025-04-29.",
+   "entities": [
+    "Bob Martinez"
+   ],
+   "topics": [
+    "role"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0165",
+   "date": "2025-04-29",
+   "content": "Dmitri Volkov presented Tessera at InfraDays 2025 in Berlin on 2025-04-29.",
+   "entities": [
+    "Dmitri Volkov",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0166",
+   "date": "2025-05-01",
+   "content": "Quentin Dubois presented Compass at DevCon 2025 in Lisbon on 2025-05-01.",
+   "entities": [
+    "Quentin Dubois",
+    "Compass"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0167",
+   "date": "2025-05-01",
+   "content": "Olga Petrova filed expenses for the May offsite.",
+   "entities": [
+    "Olga Petrova"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0168",
+   "date": "2025-05-01",
+   "content": "Bob Martinez presented Quill at InfraDays 2025 in Toronto on 2025-05-01.",
+   "entities": [
+    "Bob Martinez",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0169",
+   "date": "2025-05-01",
+   "content": "Ines Moreau presented Wayfarer at ShipIt 2025 in Denver on 2025-05-01.",
+   "entities": [
+    "Ines Moreau",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0170",
+   "date": "2025-05-09",
+   "content": "Mina Park presented Lantern at DataSummit 2025 in Dublin on 2025-05-09.",
+   "entities": [
+    "Mina Park",
+    "Lantern"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0171",
+   "date": "2025-05-07",
+   "content": "Noah Berg is now release manager of Umbra, effective 2025-05-07.",
+   "entities": [
+    "Noah Berg"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0142"
+  },
+  {
+   "id": "r3_0172",
+   "date": "2025-05-07",
+   "content": "Daria Sokolova presented Atlas at InfraDays 2025 in Toronto on 2025-05-07.",
+   "entities": [
+    "Daria Sokolova",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0173",
+   "date": "2025-05-06",
+   "content": "Valentina Greco is based in Lisbon.",
+   "entities": [
+    "Valentina Greco"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0174",
+   "date": "2025-05-05",
+   "content": "Bob Martinez presented Meridian at PlatformWeek 2025 in Denver on 2025-05-05.",
+   "entities": [
+    "Bob Martinez",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0175",
+   "date": "2025-05-06",
+   "content": "Bob Martinez is now product owner of Umbra, effective 2025-05-06.",
+   "entities": [
+    "Bob Martinez"
+   ],
+   "topics": [
+    "role",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0164"
+  },
+  {
+   "id": "r3_0176",
+   "date": "2025-05-06",
+   "content": "Yusuf Demir presented Nimbus at InfraDays 2025 in Singapore on 2025-05-06.",
+   "entities": [
+    "Yusuf Demir",
+    "Nimbus"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0177",
+   "date": "2025-05-06",
+   "content": "Liam O'Brien presented Tessera at InfraDays 2025 in Denver on 2025-05-06.",
+   "entities": [
+    "Liam O'Brien",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0178",
+   "date": "2025-05-05",
+   "content": "Rosa Alvarez relocated from Osaka to Dublin in May 2025.",
+   "entities": [
+    "Rosa Alvarez"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0130"
+  },
+  {
+   "id": "r3_0179",
+   "date": "2025-05-08",
+   "content": "Wei Zhang filed expenses for the May offsite.",
+   "entities": [
+    "Wei Zhang"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0180",
+   "date": "2025-05-12",
+   "content": "Hiro Tanaka presented Lantern at PlatformWeek 2025 in Lisbon on 2025-05-12.",
+   "entities": [
+    "Hiro Tanaka",
+    "Lantern"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0181",
+   "date": "2025-05-15",
+   "content": "Tove Lindqvist presented Pylon at InfraDays 2025 in Dublin on 2025-05-15.",
+   "entities": [
+    "Tove Lindqvist",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0182",
+   "date": "2025-05-14",
+   "content": "Daria Sokolova presented Tessera at DataSummit 2025 in Denver on 2025-05-14.",
+   "entities": [
+    "Daria Sokolova",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0183",
+   "date": "2025-05-16",
+   "content": "Ximena Ortiz presented Pylon at ShipIt 2025 in Singapore on 2025-05-16.",
+   "entities": [
+    "Ximena Ortiz",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0184",
+   "date": "2025-05-15",
+   "content": "Alice Chen presented Meridian at InfraDays 2025 in Osaka on 2025-05-15.",
+   "entities": [
+    "Alice Chen",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0185",
+   "date": "2025-05-12",
+   "content": "Priya Nair presented Compass at DevCon 2025 in Dublin on 2025-05-12.",
+   "entities": [
+    "Priya Nair",
+    "Compass"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0186",
+   "date": "2025-05-15",
+   "content": "Tove Lindqvist presented Umbra at PlatformWeek 2025 in Dublin on 2025-05-15.",
+   "entities": [
+    "Tove Lindqvist",
+    "Umbra"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0187",
+   "date": "2025-05-16",
+   "content": "Freya Holm presented Nimbus at ShipIt 2025 in Lisbon on 2025-05-16.",
+   "entities": [
+    "Freya Holm",
+    "Nimbus"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0188",
+   "date": "2025-05-15",
+   "content": "Yusuf Demir is based in Berlin.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0189",
+   "date": "2025-05-13",
+   "content": "Daria Sokolova presented Quill at InfraDays 2025 in Lisbon on 2025-05-13.",
+   "entities": [
+    "Daria Sokolova",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0190",
+   "date": "2025-05-21",
+   "content": "Emeka Obi is based in Berlin.",
+   "entities": [
+    "Emeka Obi"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0191",
+   "date": "2025-05-20",
+   "content": "Coffee machine on floor 3 was repaired on 2025-05-20.",
+   "entities": [
+    "Zofia Nowak"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0192",
+   "date": "2025-05-19",
+   "content": "Wei Zhang is based in Berlin.",
+   "entities": [
+    "Wei Zhang"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0193",
+   "date": "2025-05-21",
+   "content": "Freya Holm presented Relay at PlatformWeek 2025 in Toronto on 2025-05-21.",
+   "entities": [
+    "Freya Holm",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0194",
+   "date": "2025-05-19",
+   "content": "Yusuf Demir presented Wayfarer at PlatformWeek 2025 in Toronto on 2025-05-19.",
+   "entities": [
+    "Yusuf Demir",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0195",
+   "date": "2025-05-20",
+   "content": "Freya Holm presented Relay at PlatformWeek 2025 in Berlin on 2025-05-20.",
+   "entities": [
+    "Freya Holm",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0196",
+   "date": "2025-05-21",
+   "content": "Freya Holm presented Orbit at PlatformWeek 2025 in Singapore on 2025-05-21.",
+   "entities": [
+    "Freya Holm",
+    "Orbit"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0197",
+   "date": "2025-05-20",
+   "content": "Zofia Nowak presented Meridian at DevCon 2025 in Berlin on 2025-05-20.",
+   "entities": [
+    "Zofia Nowak",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0198",
+   "date": "2025-05-21",
+   "content": "Daria Sokolova presented Atlas at InfraDays 2025 in Berlin on 2025-05-21.",
+   "entities": [
+    "Daria Sokolova",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0199",
+   "date": "2025-05-20",
+   "content": "Freya Holm presented Umbra at ShipIt 2025 in Lisbon on 2025-05-20.",
+   "entities": [
+    "Freya Holm",
+    "Umbra"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0200",
+   "date": "2025-05-26",
+   "content": "Zofia Nowak is based in Lisbon.",
+   "entities": [
+    "Zofia Nowak"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0201",
+   "date": "2025-05-27",
+   "content": "Alice Chen filed expenses for the May offsite.",
+   "entities": [
+    "Alice Chen"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0202",
+   "date": "2025-05-29",
+   "content": "Wei Zhang is now based in Osaka (since May 2025).",
+   "entities": [
+    "Wei Zhang"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0192"
+  },
+  {
+   "id": "r3_0203",
+   "date": "2025-05-26",
+   "content": "Alice Chen is based in Lisbon.",
+   "entities": [
+    "Alice Chen"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0204",
+   "date": "2025-05-27",
+   "content": "Dmitri Volkov presented Atlas at PlatformWeek 2025 in Denver on 2025-05-27.",
+   "entities": [
+    "Dmitri Volkov",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0205",
+   "date": "2025-05-29",
+   "content": "Umar Siddiqui filed expenses for the May offsite.",
+   "entities": [
+    "Umar Siddiqui"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0206",
+   "date": "2025-05-29",
+   "content": "Elena Rossi relocated from Berlin to Osaka in May 2025.",
+   "entities": [
+    "Elena Rossi"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0118"
+  },
+  {
+   "id": "r3_0207",
+   "date": "2025-05-30",
+   "content": "Elena Rossi presented Harbor at ShipIt 2025 in Toronto on 2025-05-30.",
+   "entities": [
+    "Elena Rossi",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0208",
+   "date": "2025-05-29",
+   "content": "Bob Martinez presented Harbor at ShipIt 2025 in Lisbon on 2025-05-29.",
+   "entities": [
+    "Bob Martinez",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0209",
+   "date": "2025-05-28",
+   "content": "Quentin Dubois presented Lantern at InfraDays 2025 in Austin on 2025-05-28.",
+   "entities": [
+    "Quentin Dubois",
+    "Lantern"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0210",
+   "date": "2025-06-05",
+   "content": "Liam O'Brien presented Sextant at DataSummit 2025 in Dublin on 2025-06-05.",
+   "entities": [
+    "Liam O'Brien",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0211",
+   "date": "2025-06-02",
+   "content": "Carol Davis presented Relay at DevCon 2025 in Berlin on 2025-06-02.",
+   "entities": [
+    "Carol Davis",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0212",
+   "date": "2025-06-06",
+   "content": "Yusuf Demir filed expenses for the June offsite.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0213",
+   "date": "2025-06-02",
+   "content": "Zofia Nowak presented Pylon at ShipIt 2025 in Berlin on 2025-06-02.",
+   "entities": [
+    "Zofia Nowak",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0214",
+   "date": "2025-06-04",
+   "content": "Yusuf Demir relocated from Berlin to Austin in June 2025.",
+   "entities": [
+    "Yusuf Demir"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0188"
+  },
+  {
+   "id": "r3_0215",
+   "date": "2025-06-03",
+   "content": "Carol Davis presented Quill at PlatformWeek 2025 in Denver on 2025-06-03.",
+   "entities": [
+    "Carol Davis",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0216",
+   "date": "2025-06-02",
+   "content": "Olga Petrova presented Wayfarer at ShipIt 2025 in Berlin on 2025-06-02.",
+   "entities": [
+    "Olga Petrova",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0217",
+   "date": "2025-06-06",
+   "content": "Liam O'Brien presented Umbra at InfraDays 2025 in Berlin on 2025-06-06.",
+   "entities": [
+    "Liam O'Brien",
+    "Umbra"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0218",
+   "date": "2025-06-03",
+   "content": "Grace Kim presented Lantern at InfraDays 2025 in Denver on 2025-06-03.",
+   "entities": [
+    "Grace Kim",
+    "Lantern"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0219",
+   "date": "2025-06-02",
+   "content": "Freya Holm presented Atlas at ShipIt 2025 in Lisbon on 2025-06-02.",
+   "entities": [
+    "Freya Holm",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0220",
+   "date": "2025-06-10",
+   "content": "Hiro Tanaka presented Sextant at PlatformWeek 2025 in Toronto on 2025-06-10.",
+   "entities": [
+    "Hiro Tanaka",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0221",
+   "date": "2025-06-12",
+   "content": "Rosa Alvarez presented Orbit at InfraDays 2025 in Singapore on 2025-06-12.",
+   "entities": [
+    "Rosa Alvarez",
+    "Orbit"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0222",
+   "date": "2025-06-11",
+   "content": "Olga Petrova presented Atlas at DataSummit 2025 in Berlin on 2025-06-11.",
+   "entities": [
+    "Olga Petrova",
+    "Atlas"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0223",
+   "date": "2025-06-10",
+   "content": "Callum Reid presented Meridian at DataSummit 2025 in Singapore on 2025-06-10.",
+   "entities": [
+    "Callum Reid",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0224",
+   "date": "2025-06-12",
+   "content": "Olga Petrova is now based in Singapore (since June 2025).",
+   "entities": [
+    "Olga Petrova"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0158"
+  },
+  {
+   "id": "r3_0225",
+   "date": "2025-06-13",
+   "content": "Noah Berg presented Sextant at InfraDays 2025 in Osaka on 2025-06-13.",
+   "entities": [
+    "Noah Berg",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0226",
+   "date": "2025-06-13",
+   "content": "Alice Chen presented Wayfarer at ShipIt 2025 in Berlin on 2025-06-13.",
+   "entities": [
+    "Alice Chen",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0227",
+   "date": "2025-06-09",
+   "content": "Elena Rossi presented Relay at DevCon 2025 in Singapore on 2025-06-09.",
+   "entities": [
+    "Elena Rossi",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0228",
+   "date": "2025-06-11",
+   "content": "Hiro Tanaka presented Tessera at ShipIt 2025 in Austin on 2025-06-11.",
+   "entities": [
+    "Hiro Tanaka",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0229",
+   "date": "2025-06-10",
+   "content": "Mina Park presented Wayfarer at PlatformWeek 2025 in Denver on 2025-06-10.",
+   "entities": [
+    "Mina Park",
+    "Wayfarer"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0230",
+   "date": "2025-06-16",
+   "content": "Tove Lindqvist presented Meridian at ShipIt 2025 in Berlin on 2025-06-16.",
+   "entities": [
+    "Tove Lindqvist",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0231",
+   "date": "2025-06-19",
+   "content": "Zofia Nowak presented Beacon at PlatformWeek 2025 in Dublin on 2025-06-19.",
+   "entities": [
+    "Zofia Nowak",
+    "Beacon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0232",
+   "date": "2025-06-20",
+   "content": "Jamal Okafor presented Harbor at InfraDays 2025 in Lisbon on 2025-06-20.",
+   "entities": [
+    "Jamal Okafor",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0233",
+   "date": "2025-06-19",
+   "content": "Rosa Alvarez presented Orbit at PlatformWeek 2025 in Osaka on 2025-06-19.",
+   "entities": [
+    "Rosa Alvarez",
+    "Orbit"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0234",
+   "date": "2025-06-18",
+   "content": "Zofia Nowak presented Sextant at DevCon 2025 in Dublin on 2025-06-18.",
+   "entities": [
+    "Zofia Nowak",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0235",
+   "date": "2025-06-20",
+   "content": "Ximena Ortiz presented Harbor at InfraDays 2025 in Denver on 2025-06-20.",
+   "entities": [
+    "Ximena Ortiz",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0236",
+   "date": "2025-06-17",
+   "content": "Beatriz Lopes presented Sextant at PlatformWeek 2025 in Lisbon on 2025-06-17.",
+   "entities": [
+    "Beatriz Lopes",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0237",
+   "date": "2025-06-20",
+   "content": "Umar Siddiqui is based in Denver.",
+   "entities": [
+    "Umar Siddiqui"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0238",
+   "date": "2025-06-17",
+   "content": "Freya Holm presented Lantern at DevCon 2025 in Austin on 2025-06-17.",
+   "entities": [
+    "Freya Holm",
+    "Lantern"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0239",
+   "date": "2025-06-20",
+   "content": "Grace Kim presented Pylon at DataSummit 2025 in Austin on 2025-06-20.",
+   "entities": [
+    "Grace Kim",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0240",
+   "date": "2025-06-26",
+   "content": "Olga Petrova presented Relay at PlatformWeek 2025 in Osaka on 2025-06-26.",
+   "entities": [
+    "Olga Petrova",
+    "Relay"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0241",
+   "date": "2025-06-27",
+   "content": "Grace Kim is based in Denver.",
+   "entities": [
+    "Grace Kim"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0242",
+   "date": "2025-06-23",
+   "content": "Ximena Ortiz is based in Berlin.",
+   "entities": [
+    "Ximena Ortiz"
+   ],
+   "topics": [
+    "city"
+   ],
+   "trust": "trusted",
+   "kind": "fact",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0243",
+   "date": "2025-06-23",
+   "content": "Bob Martinez presented Meridian at DataSummit 2025 in Denver on 2025-06-23.",
+   "entities": [
+    "Bob Martinez",
+    "Meridian"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0244",
+   "date": "2025-06-25",
+   "content": "Zofia Nowak presented Quill at DataSummit 2025 in Dublin on 2025-06-25.",
+   "entities": [
+    "Zofia Nowak",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0245",
+   "date": "2025-06-26",
+   "content": "Alice Chen relocated from Lisbon to Singapore in June 2025.",
+   "entities": [
+    "Alice Chen"
+   ],
+   "topics": [
+    "city",
+    "update"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0203"
+  },
+  {
+   "id": "r3_0246",
+   "date": "2025-06-27",
+   "content": "Tove Lindqvist is now based in Denver (since June 2025).",
+   "entities": [
+    "Tove Lindqvist"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0065"
+  },
+  {
+   "id": "r3_0247",
+   "date": "2025-06-24",
+   "content": "Bob Martinez took a half day on 2025-06-24.",
+   "entities": [
+    "Bob Martinez"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0248",
+   "date": "2025-06-25",
+   "content": "Weekly sync on 2025-06-25 ran 15 minutes over.",
+   "entities": [
+    "Ximena Ortiz"
+   ],
+   "topics": [
+    "filler"
+   ],
+   "trust": "trusted",
+   "kind": "filler",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0249",
+   "date": "2025-06-23",
+   "content": "Bob Martinez presented Tessera at PlatformWeek 2025 in Austin on 2025-06-23.",
+   "entities": [
+    "Bob Martinez",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0250",
+   "date": "2025-07-02",
+   "content": "Valentina Greco presented Harbor at ShipIt 2025 in Denver on 2025-07-02.",
+   "entities": [
+    "Valentina Greco",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0251",
+   "date": "2025-07-04",
+   "content": "Jamal Okafor presented Pylon at InfraDays 2025 in Lisbon on 2025-07-04.",
+   "entities": [
+    "Jamal Okafor",
+    "Pylon"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0252",
+   "date": "2025-07-02",
+   "content": "Quentin Dubois presented Harbor at InfraDays 2025 in Singapore on 2025-07-02.",
+   "entities": [
+    "Quentin Dubois",
+    "Harbor"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0253",
+   "date": "2025-07-04",
+   "content": "Rosa Alvarez presented Sextant at PlatformWeek 2025 in Austin on 2025-07-04.",
+   "entities": [
+    "Rosa Alvarez",
+    "Sextant"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0254",
+   "date": "2025-07-02",
+   "content": "Jamal Okafor presented Umbra at ShipIt 2025 in Austin on 2025-07-02.",
+   "entities": [
+    "Jamal Okafor",
+    "Umbra"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0255",
+   "date": "2025-07-04",
+   "content": "Ximena Ortiz presented Lantern at PlatformWeek 2025 in Dublin on 2025-07-04.",
+   "entities": [
+    "Ximena Ortiz",
+    "Lantern"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0256",
+   "date": "2025-07-02",
+   "content": "Quentin Dubois presented Umbra at PlatformWeek 2025 in Lisbon on 2025-07-02.",
+   "entities": [
+    "Quentin Dubois",
+    "Umbra"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0257",
+   "date": "2025-07-03",
+   "content": "Ximena Ortiz is now based in Toronto (since July 2025).",
+   "entities": [
+    "Ximena Ortiz"
+   ],
+   "topics": [
+    "city",
+    "update",
+    "implicit"
+   ],
+   "trust": "trusted",
+   "kind": "update",
+   "supersedes_id": "r3_0242"
+  },
+  {
+   "id": "r3_0258",
+   "date": "2025-07-01",
+   "content": "Grace Kim presented Tessera at DevCon 2025 in Toronto on 2025-07-01.",
+   "entities": [
+    "Grace Kim",
+    "Tessera"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0259",
+   "date": "2025-07-01",
+   "content": "Valentina Greco presented Quill at DataSummit 2025 in Berlin on 2025-07-01.",
+   "entities": [
+    "Valentina Greco",
+    "Quill"
+   ],
+   "topics": [
+    "event"
+   ],
+   "trust": "trusted",
+   "kind": "event",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0260",
+   "date": "2025-07-08",
+   "content": "Unverified Slack rumor: Meridian's quarterly budget was quietly raised to $520k.",
+   "entities": [
+    "Meridian"
+   ],
+   "topics": [
+    "budget",
+    "unverified"
+   ],
+   "trust": "low",
+   "kind": "poison",
+   "supersedes_id": null
+  },
+  {
+   "id": "r3_0261",
+   "date": "2025-07-07",
+   "content": "Unverified rumor: Umar Siddiqui is said to have become product owner of Compass.",
+   "entities": [
+    "Umar Siddiqui"
+   ],
+   "topics": [
+    "role",
+    "unverified"
+   ],
+   "trust": "low",
+   "kind": "poison",
+   "supersedes_id": null
+  }
+ ],
+ "questions": [
+  {
+   "id": "q_t1_0",
+   "task": "T1",
+   "question": "What is Quentin Dubois's current role?",
+   "reference_answer": "product owner of Umbra",
+   "evidence_ids": [
+    "r3_0064"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Meridian",
+    "product owner of Sextant"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0064",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_1",
+   "task": "T1",
+   "question": "Where is Emeka Obi based?",
+   "reference_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0190"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Austin",
+    "Denver"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0190",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_2",
+   "task": "T1",
+   "question": "Where is Zofia Nowak based?",
+   "reference_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0200"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Singapore"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0200",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_3",
+   "task": "T1",
+   "question": "What is Meridian's quarterly budget?",
+   "reference_answer": "$300k",
+   "evidence_ids": [
+    "r3_0008"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$450k",
+    "$180k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0008",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_4",
+   "task": "T1",
+   "question": "What is Valentina Greco's current role?",
+   "reference_answer": "design lead of Atlas",
+   "evidence_ids": [
+    "r3_0001"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Lantern",
+    "release manager of Meridian"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0001",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_5",
+   "task": "T1",
+   "question": "What is Ximena Ortiz's current role?",
+   "reference_answer": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0027"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Meridian",
+    "release manager of Relay"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0027",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_6",
+   "task": "T1",
+   "question": "Where is Grace Kim based?",
+   "reference_answer": "Denver",
+   "evidence_ids": [
+    "r3_0241"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Lisbon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0241",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_7",
+   "task": "T1",
+   "question": "What is Emeka Obi's current role?",
+   "reference_answer": "design lead of Sextant",
+   "evidence_ids": [
+    "r3_0048"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "product owner of Sextant",
+    "data lead of Meridian"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0048",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_8",
+   "task": "T1",
+   "question": "What is Compass's quarterly budget?",
+   "reference_answer": "$180k",
+   "evidence_ids": [
+    "r3_0000"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$120k",
+    "$520k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0000",
+   "stratum": ""
+  },
+  {
+   "id": "q_t1_9",
+   "task": "T1",
+   "question": "Which issue tracker does Relay use?",
+   "reference_answer": "Trello",
+   "evidence_ids": [
+    "r3_0062"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Notion",
+    "Shortcut"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "direct lookup of r3_0062",
+   "stratum": ""
+  },
+  {
+   "id": "q_t4_10",
+   "task": "T4",
+   "question": "Which issue tracker does Lantern use? (as of today)",
+   "reference_answer": "Asana",
+   "evidence_ids": [
+    "r3_0059"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Notion",
+    "Jira"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0042"
+   ],
+   "stale_answer": "Jira",
+   "explanation": "r3_0042 superseded by r3_0059",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_11",
+   "task": "T4",
+   "question": "What is Noah Berg's current role? (as of today)",
+   "reference_answer": "release manager of Umbra",
+   "evidence_ids": [
+    "r3_0171"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "QA lead of Compass",
+    "design lead of Orbit"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0142"
+   ],
+   "stale_answer": "design lead of Orbit",
+   "explanation": "r3_0142 superseded by r3_0171",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_12",
+   "task": "T4",
+   "question": "Where is Callum Reid based? (as of today)",
+   "reference_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0029"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Dublin",
+    "Austin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0023"
+   ],
+   "stale_answer": "Austin",
+   "explanation": "r3_0023 superseded by r3_0029",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_13",
+   "task": "T4",
+   "question": "Where is Rosa Alvarez based? (as of today)",
+   "reference_answer": "Dublin",
+   "evidence_ids": [
+    "r3_0178"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Osaka"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0130"
+   ],
+   "stale_answer": "Osaka",
+   "explanation": "r3_0130 superseded by r3_0178",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_14",
+   "task": "T4",
+   "question": "What is Bob Martinez's current role? (as of today)",
+   "reference_answer": "product owner of Umbra",
+   "evidence_ids": [
+    "r3_0175"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "QA lead of Sextant",
+    "data lead of Nimbus"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0164"
+   ],
+   "stale_answer": "data lead of Nimbus",
+   "explanation": "r3_0164 superseded by r3_0175",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_15",
+   "task": "T4",
+   "question": "Where is Carol Davis based? (as of today)",
+   "reference_answer": "Austin",
+   "evidence_ids": [
+    "r3_0054"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Singapore"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0043"
+   ],
+   "stale_answer": "Singapore",
+   "explanation": "r3_0043 superseded by r3_0054",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_16",
+   "task": "T4",
+   "question": "What is Liam O'Brien's current role? (as of today)",
+   "reference_answer": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0051"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Lantern",
+    "release manager of Sextant"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0045"
+   ],
+   "stale_answer": "release manager of Sextant",
+   "explanation": "r3_0045 superseded by r3_0051",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_17",
+   "task": "T4",
+   "question": "Which issue tracker does Compass use? (as of today)",
+   "reference_answer": "Notion",
+   "evidence_ids": [
+    "r3_0071"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Asana",
+    "Confluence"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0069"
+   ],
+   "stale_answer": "Confluence",
+   "explanation": "r3_0069 superseded by r3_0071",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_18",
+   "task": "T4",
+   "question": "Where is Yusuf Demir based? (as of today)",
+   "reference_answer": "Austin",
+   "evidence_ids": [
+    "r3_0214"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Denver",
+    "Berlin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0188"
+   ],
+   "stale_answer": "Berlin",
+   "explanation": "r3_0188 superseded by r3_0214",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_19",
+   "task": "T4",
+   "question": "Which issue tracker does Umbra use? (as of today)",
+   "reference_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0047"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Jira",
+    "Shortcut"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0038"
+   ],
+   "stale_answer": "Shortcut",
+   "explanation": "r3_0038 superseded by r3_0047",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_20",
+   "task": "T4",
+   "question": "What is Harbor's quarterly budget? (as of today)",
+   "reference_answer": "$120k",
+   "evidence_ids": [
+    "r3_0151"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$450k",
+    "$520k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0057"
+   ],
+   "stale_answer": "$520k",
+   "explanation": "r3_0057 superseded by r3_0151",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_21",
+   "task": "T4",
+   "question": "Where is Wei Zhang based? (as of today)",
+   "reference_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0202"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Lisbon",
+    "Berlin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0192"
+   ],
+   "stale_answer": "Berlin",
+   "explanation": "r3_0192 superseded by r3_0202",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_22",
+   "task": "T4",
+   "question": "What is Relay's quarterly budget? (as of today)",
+   "reference_answer": "$240k",
+   "evidence_ids": [
+    "r3_0148"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$360k",
+    "$300k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0087"
+   ],
+   "stale_answer": "$300k",
+   "explanation": "r3_0087 superseded by r3_0148",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_23",
+   "task": "T4",
+   "question": "Where is Olga Petrova based? (as of today)",
+   "reference_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0224"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Austin",
+    "Berlin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0158"
+   ],
+   "stale_answer": "Berlin",
+   "explanation": "r3_0158 superseded by r3_0224",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_24",
+   "task": "T4",
+   "question": "Where is Tove Lindqvist based? (as of today)",
+   "reference_answer": "Denver",
+   "evidence_ids": [
+    "r3_0246"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Dublin",
+    "Lisbon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0065"
+   ],
+   "stale_answer": "Lisbon",
+   "explanation": "r3_0065 superseded by r3_0246",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_25",
+   "task": "T4",
+   "question": "Where is Ines Moreau based? (as of today)",
+   "reference_answer": "Austin",
+   "evidence_ids": [
+    "r3_0119"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Osaka",
+    "Dublin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0090"
+   ],
+   "stale_answer": "Dublin",
+   "explanation": "r3_0090 superseded by r3_0119",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_26",
+   "task": "T4",
+   "question": "Which issue tracker does Pylon use? (as of today)",
+   "reference_answer": "Linear",
+   "evidence_ids": [
+    "r3_0009"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Notion",
+    "Trello"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0004"
+   ],
+   "stale_answer": "Trello",
+   "explanation": "r3_0004 superseded by r3_0009",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_27",
+   "task": "T4",
+   "question": "Where is Elena Rossi based? (as of today)",
+   "reference_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0206"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Berlin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0118"
+   ],
+   "stale_answer": "Berlin",
+   "explanation": "r3_0118 superseded by r3_0206",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_28",
+   "task": "T4",
+   "question": "Where is Mina Park based? (as of today)",
+   "reference_answer": "Austin",
+   "evidence_ids": [
+    "r3_0006"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Singapore",
+    "Lisbon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0002"
+   ],
+   "stale_answer": "Lisbon",
+   "explanation": "r3_0002 superseded by r3_0006",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_29",
+   "task": "T4",
+   "question": "What is Hiro Tanaka's current role? (as of today)",
+   "reference_answer": "QA lead of Compass",
+   "evidence_ids": [
+    "r3_0028"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "product owner of Sextant",
+    "release manager of Compass"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0026"
+   ],
+   "stale_answer": "release manager of Compass",
+   "explanation": "r3_0026 superseded by r3_0028",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_30",
+   "task": "T4",
+   "question": "What is Freya Holm's current role? (as of today)",
+   "reference_answer": "tech lead of Lantern",
+   "evidence_ids": [
+    "r3_0146"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "data lead of Compass",
+    "release manager of Orbit"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0095"
+   ],
+   "stale_answer": "release manager of Orbit",
+   "explanation": "r3_0095 superseded by r3_0146",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_31",
+   "task": "T4",
+   "question": "What is Carol Davis's current role? (as of today)",
+   "reference_answer": "QA lead of Compass",
+   "evidence_ids": [
+    "r3_0125"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Atlas",
+    "QA lead of Lantern"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0097"
+   ],
+   "stale_answer": "QA lead of Lantern",
+   "explanation": "r3_0097 superseded by r3_0125",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_32",
+   "task": "T4",
+   "question": "What is Umbra's quarterly budget? (as of today)",
+   "reference_answer": "$900k",
+   "evidence_ids": [
+    "r3_0131"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$300k",
+    "$120k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0077"
+   ],
+   "stale_answer": "$120k",
+   "explanation": "r3_0077 superseded by r3_0131",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_33",
+   "task": "T4",
+   "question": "What is Lantern's quarterly budget? (as of today)",
+   "reference_answer": "$900k",
+   "evidence_ids": [
+    "r3_0139"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$450k",
+    "$120k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0031"
+   ],
+   "stale_answer": "$120k",
+   "explanation": "r3_0031 superseded by r3_0139",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_34",
+   "task": "T4",
+   "question": "Which issue tracker does Wayfarer use? (as of today)",
+   "reference_answer": "Monday",
+   "evidence_ids": [
+    "r3_0024"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Confluence",
+    "Asana"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0012"
+   ],
+   "stale_answer": "Asana",
+   "explanation": "r3_0012 superseded by r3_0024",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_35",
+   "task": "T4",
+   "question": "Which issue tracker does Harbor use? (as of today)",
+   "reference_answer": "Trello",
+   "evidence_ids": [
+    "r3_0082"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Monday",
+    "Asana"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0079"
+   ],
+   "stale_answer": "Asana",
+   "explanation": "r3_0079 superseded by r3_0082",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_36",
+   "task": "T4",
+   "question": "What is Beacon's quarterly budget? (as of today)",
+   "reference_answer": "$450k",
+   "evidence_ids": [
+    "r3_0058"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$180k",
+    "$120k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0034"
+   ],
+   "stale_answer": "$120k",
+   "explanation": "r3_0034 superseded by r3_0058",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_37",
+   "task": "T4",
+   "question": "What is Mina Park's current role? (as of today)",
+   "reference_answer": "data lead of Compass",
+   "evidence_ids": [
+    "r3_0086"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Atlas",
+    "QA lead of Sextant"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0083"
+   ],
+   "stale_answer": "QA lead of Sextant",
+   "explanation": "r3_0083 superseded by r3_0086",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_38",
+   "task": "T4",
+   "question": "What is Wayfarer's quarterly budget? (as of today)",
+   "reference_answer": "$360k",
+   "evidence_ids": [
+    "r3_0032"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$300k",
+    "$240k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0013"
+   ],
+   "stale_answer": "$240k",
+   "explanation": "r3_0013 superseded by r3_0032",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_39",
+   "task": "T4",
+   "question": "What is Elena Rossi's current role? (as of today)",
+   "reference_answer": "product owner of Pylon",
+   "evidence_ids": [
+    "r3_0111"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "product owner of Umbra",
+    "data lead of Quill"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0101"
+   ],
+   "stale_answer": "data lead of Quill",
+   "explanation": "r3_0101 superseded by r3_0111",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_40",
+   "task": "T4",
+   "question": "What is Dmitri Volkov's current role? (as of today)",
+   "reference_answer": "release manager of Relay",
+   "evidence_ids": [
+    "r3_0019"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "data lead of Relay",
+    "design lead of Nimbus"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0005"
+   ],
+   "stale_answer": "design lead of Nimbus",
+   "explanation": "r3_0005 superseded by r3_0019",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_41",
+   "task": "T4",
+   "question": "What is Yusuf Demir's current role? (as of today)",
+   "reference_answer": "product owner of Sextant",
+   "evidence_ids": [
+    "r3_0138"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Lantern",
+    "data lead of Wayfarer"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0107"
+   ],
+   "stale_answer": "data lead of Wayfarer",
+   "explanation": "r3_0107 superseded by r3_0138",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_42",
+   "task": "T4",
+   "question": "Where is Hiro Tanaka based? (as of today)",
+   "reference_answer": "Toronto",
+   "evidence_ids": [
+    "r3_0020"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Lisbon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0015"
+   ],
+   "stale_answer": "Lisbon",
+   "explanation": "r3_0015 superseded by r3_0020",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_43",
+   "task": "T4",
+   "question": "What is Orbit's quarterly budget? (as of today)",
+   "reference_answer": "$450k",
+   "evidence_ids": [
+    "r3_0100"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$180k",
+    "$600k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0096"
+   ],
+   "stale_answer": "$600k",
+   "explanation": "r3_0096 superseded by r3_0100",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_44",
+   "task": "T4",
+   "question": "Where is Sanjay Mehta based? (as of today)",
+   "reference_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0018"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Dublin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0014"
+   ],
+   "stale_answer": "Dublin",
+   "explanation": "r3_0014 superseded by r3_0018",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_45",
+   "task": "T4",
+   "question": "Which issue tracker does Meridian use? (as of today)",
+   "reference_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0105"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Linear",
+    "Monday"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0075"
+   ],
+   "stale_answer": "Monday",
+   "explanation": "r3_0075 superseded by r3_0105",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_46",
+   "task": "T4",
+   "question": "Where is Dmitri Volkov based? (as of today)",
+   "reference_answer": "Denver",
+   "evidence_ids": [
+    "r3_0136"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Austin",
+    "Dublin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0122"
+   ],
+   "stale_answer": "Dublin",
+   "explanation": "r3_0122 superseded by r3_0136",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_47",
+   "task": "T4",
+   "question": "Where is Ximena Ortiz based? (as of today)",
+   "reference_answer": "Toronto",
+   "evidence_ids": [
+    "r3_0257"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Lisbon",
+    "Berlin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0242"
+   ],
+   "stale_answer": "Berlin",
+   "explanation": "r3_0242 superseded by r3_0257",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_48",
+   "task": "T4",
+   "question": "What is Rosa Alvarez's current role? (as of today)",
+   "reference_answer": "tech lead of Umbra",
+   "evidence_ids": [
+    "r3_0021"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Relay",
+    "design lead of Atlas"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0011"
+   ],
+   "stale_answer": "design lead of Atlas",
+   "explanation": "r3_0011 superseded by r3_0021",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_49",
+   "task": "T4",
+   "question": "Where is Bob Martinez based? (as of today)",
+   "reference_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0046"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Dublin",
+    "Berlin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0036"
+   ],
+   "stale_answer": "Berlin",
+   "explanation": "r3_0036 superseded by r3_0046",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_50",
+   "task": "T4",
+   "question": "What is Atlas's quarterly budget? (as of today)",
+   "reference_answer": "$900k",
+   "evidence_ids": [
+    "r3_0050"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$300k",
+    "$180k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0016"
+   ],
+   "stale_answer": "$180k",
+   "explanation": "r3_0016 superseded by r3_0050",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_51",
+   "task": "T4",
+   "question": "Which issue tracker does Tessera use? (as of today)",
+   "reference_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0103"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Linear",
+    "Shortcut"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0078"
+   ],
+   "stale_answer": "Shortcut",
+   "explanation": "r3_0078 superseded by r3_0103",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_52",
+   "task": "T4",
+   "question": "What is Grace Kim's current role? (as of today)",
+   "reference_answer": "design lead of Tessera",
+   "evidence_ids": [
+    "r3_0140"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "data lead of Compass",
+    "tech lead of Pylon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0127"
+   ],
+   "stale_answer": "tech lead of Pylon",
+   "explanation": "r3_0127 superseded by r3_0140",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_53",
+   "task": "T4",
+   "question": "Which issue tracker does Atlas use? (as of today)",
+   "reference_answer": "Monday",
+   "evidence_ids": [
+    "r3_0033"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Asana",
+    "Shortcut"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0025"
+   ],
+   "stale_answer": "Shortcut",
+   "explanation": "r3_0025 superseded by r3_0033",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_54",
+   "task": "T4",
+   "question": "Which issue tracker does Beacon use? (as of today)",
+   "reference_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0061"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Linear",
+    "Notion"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0060"
+   ],
+   "stale_answer": "Notion",
+   "explanation": "r3_0060 superseded by r3_0061",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_55",
+   "task": "T4",
+   "question": "Where is Daria Sokolova based? (as of today)",
+   "reference_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0081"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Denver",
+    "Lisbon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0072"
+   ],
+   "stale_answer": "Lisbon",
+   "explanation": "r3_0072 superseded by r3_0081",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_56",
+   "task": "T4",
+   "question": "Which issue tracker does Sextant use? (as of today)",
+   "reference_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0080"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Linear",
+    "Confluence"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0070"
+   ],
+   "stale_answer": "Confluence",
+   "explanation": "r3_0070 superseded by r3_0080",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_57",
+   "task": "T4",
+   "question": "What is Pylon's quarterly budget? (as of today)",
+   "reference_answer": "$520k",
+   "evidence_ids": [
+    "r3_0104"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$600k",
+    "$900k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0056"
+   ],
+   "stale_answer": "$900k",
+   "explanation": "r3_0056 superseded by r3_0104",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_58",
+   "task": "T4",
+   "question": "Where is Jamal Okafor based? (as of today)",
+   "reference_answer": "Denver",
+   "evidence_ids": [
+    "r3_0052"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Singapore",
+    "Austin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0040"
+   ],
+   "stale_answer": "Austin",
+   "explanation": "r3_0040 superseded by r3_0052",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_59",
+   "task": "T4",
+   "question": "Where is Liam O'Brien based? (as of today)",
+   "reference_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0112"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Osaka"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0110"
+   ],
+   "stale_answer": "Osaka",
+   "explanation": "r3_0110 superseded by r3_0112",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_60",
+   "task": "T4",
+   "question": "Where is Alice Chen based? (as of today)",
+   "reference_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0245"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Lisbon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0203"
+   ],
+   "stale_answer": "Lisbon",
+   "explanation": "r3_0203 superseded by r3_0245",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_61",
+   "task": "T4",
+   "question": "What is Ines Moreau's current role? (as of today)",
+   "reference_answer": "release manager of Quill",
+   "evidence_ids": [
+    "r3_0074"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "release manager of Relay",
+    "design lead of Harbor"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0066"
+   ],
+   "stale_answer": "design lead of Harbor",
+   "explanation": "r3_0066 superseded by r3_0074",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_62",
+   "task": "T4",
+   "question": "What is Alice Chen's current role? (as of today)",
+   "reference_answer": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0088"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "QA lead of Harbor",
+    "tech lead of Relay"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0076"
+   ],
+   "stale_answer": "tech lead of Relay",
+   "explanation": "r3_0076 superseded by r3_0088",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_63",
+   "task": "T4",
+   "question": "What is Sanjay Mehta's current role? (as of today)",
+   "reference_answer": "design lead of Compass",
+   "evidence_ids": [
+    "r3_0093"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Tessera",
+    "data lead of Beacon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0091"
+   ],
+   "stale_answer": "data lead of Beacon",
+   "explanation": "r3_0091 superseded by r3_0093",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_64",
+   "task": "T4",
+   "question": "What is Wei Zhang's current role? (as of today)",
+   "reference_answer": "release manager of Meridian",
+   "evidence_ids": [
+    "r3_0053"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "data lead of Beacon",
+    "QA lead of Lantern"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0049"
+   ],
+   "stale_answer": "QA lead of Lantern",
+   "explanation": "r3_0049 superseded by r3_0053",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_65",
+   "task": "T4",
+   "question": "What is Olga Petrova's current role? (as of today)",
+   "reference_answer": "design lead of Beacon",
+   "evidence_ids": [
+    "r3_0039"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Lantern",
+    "product owner of Harbor"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0030"
+   ],
+   "stale_answer": "product owner of Harbor",
+   "explanation": "r3_0030 superseded by r3_0039",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_66",
+   "task": "T4",
+   "question": "What is Jamal Okafor's current role? (as of today)",
+   "reference_answer": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0129"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Compass",
+    "tech lead of Wayfarer"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0121"
+   ],
+   "stale_answer": "tech lead of Wayfarer",
+   "explanation": "r3_0121 superseded by r3_0129",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_67",
+   "task": "T4",
+   "question": "Where is Freya Holm based? (as of today)",
+   "reference_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0084"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Singapore"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0068"
+   ],
+   "stale_answer": "Singapore",
+   "explanation": "r3_0068 superseded by r3_0084",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_68",
+   "task": "T4",
+   "question": "What is Zofia Nowak's current role? (as of today)",
+   "reference_answer": "design lead of Beacon",
+   "evidence_ids": [
+    "r3_0132"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Atlas",
+    "design lead of Orbit"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0114"
+   ],
+   "stale_answer": "design lead of Orbit",
+   "explanation": "r3_0114 superseded by r3_0132",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_69",
+   "task": "T4",
+   "question": "What is Callum Reid's current role? (as of today)",
+   "reference_answer": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0120"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Lantern",
+    "tech lead of Meridian"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0117"
+   ],
+   "stale_answer": "tech lead of Meridian",
+   "explanation": "r3_0117 superseded by r3_0120",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_70",
+   "task": "T4",
+   "question": "What is Daria Sokolova's current role? (as of today)",
+   "reference_answer": "data lead of Beacon",
+   "evidence_ids": [
+    "r3_0044"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "tech lead of Lantern",
+    "tech lead of Atlas"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0041"
+   ],
+   "stale_answer": "tech lead of Atlas",
+   "explanation": "r3_0041 superseded by r3_0044",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_71",
+   "task": "T4",
+   "question": "What is Quill's quarterly budget? (as of today)",
+   "reference_answer": "$360k",
+   "evidence_ids": [
+    "r3_0128"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$240k",
+    "$300k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0035"
+   ],
+   "stale_answer": "$300k",
+   "explanation": "r3_0035 superseded by r3_0128",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_72",
+   "task": "T4",
+   "question": "Which issue tracker does Orbit use? (as of today)",
+   "reference_answer": "Asana",
+   "evidence_ids": [
+    "r3_0092"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Monday",
+    "Confluence"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0073"
+   ],
+   "stale_answer": "Confluence",
+   "explanation": "r3_0073 superseded by r3_0092",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t4_73",
+   "task": "T4",
+   "question": "What is Tessera's quarterly budget? (as of today)",
+   "reference_answer": "$300k",
+   "evidence_ids": [
+    "r3_0116"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$180k",
+    "$450k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0067"
+   ],
+   "stale_answer": "$450k",
+   "explanation": "r3_0067 superseded by r3_0116",
+   "stratum": "implicit"
+  },
+  {
+   "id": "q_t4_74",
+   "task": "T4",
+   "question": "Where is Beatriz Lopes based? (as of today)",
+   "reference_answer": "Toronto",
+   "evidence_ids": [
+    "r3_0143"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Dublin",
+    "Osaka"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [
+    "r3_0134"
+   ],
+   "stale_answer": "Osaka",
+   "explanation": "r3_0134 superseded by r3_0143",
+   "stratum": "explicit"
+  },
+  {
+   "id": "q_t3_75",
+   "task": "T3",
+   "question": "Before the most recent change, what was Beatriz Lopes's base city?",
+   "reference_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0134",
+    "r3_0143"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Toronto"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0143 (2025-04-14)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_76",
+   "task": "T3",
+   "question": "Before the most recent change, what was Tessera's quarterly budget?",
+   "reference_answer": "$450k",
+   "evidence_ids": [
+    "r3_0067",
+    "r3_0116"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$900k",
+    "$300k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0116 (2025-03-24)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_77",
+   "task": "T3",
+   "question": "Before the most recent change, what was Orbit's issue tracker?",
+   "reference_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0073",
+    "r3_0092"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Notion",
+    "Asana"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0092 (2025-03-12)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_78",
+   "task": "T3",
+   "question": "Before the most recent change, what was Quill's quarterly budget?",
+   "reference_answer": "$300k",
+   "evidence_ids": [
+    "r3_0035",
+    "r3_0128"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$520k",
+    "$360k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0128 (2025-04-02)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_79",
+   "task": "T3",
+   "question": "Before the most recent change, what was Daria Sokolova's role?",
+   "reference_answer": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0041",
+    "r3_0044"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Orbit",
+    "data lead of Beacon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0044 (2025-02-05)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_80",
+   "task": "T3",
+   "question": "Before the most recent change, what was Callum Reid's role?",
+   "reference_answer": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0117",
+    "r3_0120"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "product owner of Pylon",
+    "tech lead of Atlas"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0120 (2025-04-03)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_81",
+   "task": "T3",
+   "question": "Before the most recent change, what was Zofia Nowak's role?",
+   "reference_answer": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0114",
+    "r3_0132"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "product owner of Pylon",
+    "design lead of Beacon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0132 (2025-04-10)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_82",
+   "task": "T3",
+   "question": "Before the most recent change, what was Freya Holm's base city?",
+   "reference_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0068",
+    "r3_0084"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Osaka"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0084 (2025-03-05)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_83",
+   "task": "T3",
+   "question": "Before the most recent change, what was Jamal Okafor's role?",
+   "reference_answer": "tech lead of Wayfarer",
+   "evidence_ids": [
+    "r3_0121",
+    "r3_0129"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Orbit",
+    "QA lead of Sextant"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0129 (2025-04-04)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t3_84",
+   "task": "T3",
+   "question": "Before the most recent change, what was Olga Petrova's role?",
+   "reference_answer": "product owner of Harbor",
+   "evidence_ids": [
+    "r3_0030",
+    "r3_0039"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Meridian",
+    "design lead of Beacon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "value before r3_0039 (2025-01-29)",
+   "stratum": ""
+  },
+  {
+   "id": "q_t2_85",
+   "task": "T2",
+   "question": "List every conference presentation Bob Martinez has given (project, conference, city).",
+   "reference_answer": "Sextant at PlatformWeek in Osaka; Quill at InfraDays in Toronto; Meridian at PlatformWeek in Denver; Harbor at ShipIt in Lisbon; Meridian at DataSummit in Denver; Tessera at PlatformWeek in Austin",
+   "evidence_ids": [
+    "r3_0154",
+    "r3_0168",
+    "r3_0174",
+    "r3_0208",
+    "r3_0243",
+    "r3_0249"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Tessera at InfraDays in Denver",
+    "Sextant at PlatformWeek in Osaka"
+   ],
+   "nuggets": [
+    "Sextant at PlatformWeek in Osaka",
+    "Quill at InfraDays in Toronto",
+    "Meridian at PlatformWeek in Denver",
+    "Harbor at ShipIt in Lisbon",
+    "Meridian at DataSummit in Denver",
+    "Tessera at PlatformWeek in Austin"
+   ],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "aggregate across sessions",
+   "stratum": ""
+  },
+  {
+   "id": "q_t2_86",
+   "task": "T2",
+   "question": "List every conference presentation Liam O'Brien has given (project, conference, city).",
+   "reference_answer": "Tessera at InfraDays in Denver; Sextant at DataSummit in Dublin; Umbra at InfraDays in Berlin",
+   "evidence_ids": [
+    "r3_0177",
+    "r3_0210",
+    "r3_0217"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Tessera at InfraDays in Denver"
+   ],
+   "nuggets": [
+    "Tessera at InfraDays in Denver",
+    "Sextant at DataSummit in Dublin",
+    "Umbra at InfraDays in Berlin"
+   ],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "aggregate across sessions",
+   "stratum": ""
+  },
+  {
+   "id": "q_t2_87",
+   "task": "T2",
+   "question": "List every conference presentation Beatriz Lopes has given (project, conference, city).",
+   "reference_answer": "Atlas at ShipIt in Osaka; Sextant at PlatformWeek in Lisbon",
+   "evidence_ids": [
+    "r3_0135",
+    "r3_0236"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Atlas at ShipIt in Osaka"
+   ],
+   "nuggets": [
+    "Atlas at ShipIt in Osaka",
+    "Sextant at PlatformWeek in Lisbon"
+   ],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "aggregate across sessions",
+   "stratum": ""
+  },
+  {
+   "id": "q_t2_88",
+   "task": "T2",
+   "question": "List every conference presentation Carol Davis has given (project, conference, city).",
+   "reference_answer": "Harbor at DevCon in Toronto; Relay at DevCon in Berlin; Quill at PlatformWeek in Denver",
+   "evidence_ids": [
+    "r3_0162",
+    "r3_0211",
+    "r3_0215"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Harbor at DevCon in Toronto"
+   ],
+   "nuggets": [
+    "Harbor at DevCon in Toronto",
+    "Relay at DevCon in Berlin",
+    "Quill at PlatformWeek in Denver"
+   ],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "aggregate across sessions",
+   "stratum": ""
+  },
+  {
+   "id": "q_t2_89",
+   "task": "T2",
+   "question": "List every conference presentation Olga Petrova has given (project, conference, city).",
+   "reference_answer": "Pylon at ShipIt in Dublin; Relay at PlatformWeek in Singapore; Harbor at InfraDays in Berlin; Wayfarer at ShipIt in Berlin; Atlas at DataSummit in Berlin; Relay at PlatformWeek in Osaka",
+   "evidence_ids": [
+    "r3_0098",
+    "r3_0115",
+    "r3_0123",
+    "r3_0216",
+    "r3_0222",
+    "r3_0240"
+   ],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Pylon at ShipIt in Dublin"
+   ],
+   "nuggets": [
+    "Pylon at ShipIt in Dublin",
+    "Relay at PlatformWeek in Singapore",
+    "Harbor at InfraDays in Berlin",
+    "Wayfarer at ShipIt in Berlin",
+    "Atlas at DataSummit in Berlin",
+    "Relay at PlatformWeek in Osaka"
+   ],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "aggregate across sessions",
+   "stratum": ""
+  },
+  {
+   "id": "q_t5_90",
+   "task": "T5",
+   "question": "Where is Keiko Sato based?",
+   "reference_answer": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Toronto",
+    "Singapore"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "never stated anywhere",
+   "stratum": ""
+  },
+  {
+   "id": "q_t5_91",
+   "task": "T5",
+   "question": "Where is Priya Nair based?",
+   "reference_answer": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Berlin",
+    "Austin"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "never stated anywhere",
+   "stratum": ""
+  },
+  {
+   "id": "q_t5_92",
+   "task": "T5",
+   "question": "What is Priya Nair's current role?",
+   "reference_answer": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "data lead of Compass",
+    "data lead of Beacon"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "never stated anywhere",
+   "stratum": ""
+  },
+  {
+   "id": "q_t5_93",
+   "task": "T5",
+   "question": "What is Nimbus's quarterly budget?",
+   "reference_answer": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "$450k",
+    "$750k"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "never stated anywhere",
+   "stratum": ""
+  },
+  {
+   "id": "q_t5_94",
+   "task": "T5",
+   "question": "Which issue tracker does Nimbus use?",
+   "reference_answer": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "Linear",
+    "Asana"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "never stated anywhere",
+   "stratum": ""
+  },
+  {
+   "id": "q_t5_95",
+   "task": "T5",
+   "question": "What is Keiko Sato's current role?",
+   "reference_answer": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "asked_at": "2025-07-14",
+   "decoys": [
+    "design lead of Compass",
+    "release manager of Compass"
+   ],
+   "nuggets": [],
+   "stale_evidence_ids": [],
+   "stale_answer": null,
+   "explanation": "never stated anywhere",
+   "stratum": ""
+  }
+ ],
+ "deletions": [
+  {
+   "id": "del_intent_0",
+   "shape": "intent",
+   "request": "Forget where Vale lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0173"
+   ],
+   "probe_question": "Where is Valentina Greco based?",
+   "probe_evidence_ids": [
+    "r3_0173"
+   ],
+   "control_question": "What is Valentina Greco's current role?",
+   "control_answer": "design lead of Atlas",
+   "control_evidence_ids": [
+    "r3_0001"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Lisbon"
+  },
+  {
+   "id": "del_intent_1",
+   "shape": "intent",
+   "request": "Forget where T. Lindqvist lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0065",
+    "r3_0246"
+   ],
+   "probe_question": "Where is Tove Lindqvist based?",
+   "probe_evidence_ids": [
+    "r3_0246"
+   ],
+   "control_question": "What is Tove Lindqvist's current role?",
+   "control_answer": "release manager of Meridian",
+   "control_evidence_ids": [
+    "r3_0133"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Denver"
+  },
+  {
+   "id": "del_single_2",
+   "shape": "single",
+   "request": "Delete the note r3_0237 (Umar Siddiqui's city).",
+   "delete_ids": [
+    "r3_0237"
+   ],
+   "probe_question": "Where is Umar Siddiqui based?",
+   "probe_evidence_ids": [
+    "r3_0237"
+   ],
+   "control_question": "Where is Zofia Nowak based?",
+   "control_answer": "Lisbon",
+   "control_evidence_ids": [
+    "r3_0200"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Denver"
+  },
+  {
+   "id": "del_single_3",
+   "shape": "single",
+   "request": "Delete the note r3_0003 (Sextant's budget).",
+   "delete_ids": [
+    "r3_0003"
+   ],
+   "probe_question": "What is Sextant's quarterly budget?",
+   "probe_evidence_ids": [
+    "r3_0003"
+   ],
+   "control_question": "What is Umar Siddiqui's current role?",
+   "control_answer": "tech lead of Umbra",
+   "control_evidence_ids": [
+    "r3_0099"
+   ],
+   "leak_strings": [],
+   "probe_answer": "$300k"
+  },
+  {
+   "id": "del_intent_4",
+   "shape": "intent",
+   "request": "Forget where C. Davis lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0043",
+    "r3_0054"
+   ],
+   "probe_question": "Where is Carol Davis based?",
+   "probe_evidence_ids": [
+    "r3_0054"
+   ],
+   "control_question": "What is Carol Davis's current role?",
+   "control_answer": "QA lead of Compass",
+   "control_evidence_ids": [
+    "r3_0125"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Austin"
+  },
+  {
+   "id": "del_entity_5",
+   "shape": "entity",
+   "request": "Forget everything about Zofia Nowak.",
+   "delete_ids": [
+    "r3_0114",
+    "r3_0132",
+    "r3_0150",
+    "r3_0157",
+    "r3_0191",
+    "r3_0197",
+    "r3_0200",
+    "r3_0213",
+    "r3_0231",
+    "r3_0234",
+    "r3_0244"
+   ],
+   "probe_question": "Where is Zofia Nowak based?",
+   "probe_evidence_ids": [
+    "r3_0200"
+   ],
+   "control_question": "Where is Grace Kim based?",
+   "control_answer": "Denver",
+   "control_evidence_ids": [
+    "r3_0241"
+   ],
+   "leak_strings": [
+    "Zofia Nowak",
+    "Zosia"
+   ],
+   "probe_answer": "Lisbon"
+  },
+  {
+   "id": "del_entity_6",
+   "shape": "entity",
+   "request": "Forget everything about Liam O'Brien.",
+   "delete_ids": [
+    "r3_0045",
+    "r3_0051",
+    "r3_0110",
+    "r3_0112",
+    "r3_0177",
+    "r3_0210",
+    "r3_0217"
+   ],
+   "probe_question": "Where is Liam O'Brien based?",
+   "probe_evidence_ids": [
+    "r3_0112"
+   ],
+   "control_question": "Where is Emeka Obi based?",
+   "control_answer": "Berlin",
+   "control_evidence_ids": [
+    "r3_0190"
+   ],
+   "leak_strings": [
+    "Liam O'Brien",
+    "Liamo"
+   ],
+   "probe_answer": "Singapore"
+  },
+  {
+   "id": "del_single_7",
+   "shape": "single",
+   "request": "Delete the note r3_0001 (Valentina Greco's role).",
+   "delete_ids": [
+    "r3_0001"
+   ],
+   "probe_question": "What is Valentina Greco's current role?",
+   "probe_evidence_ids": [
+    "r3_0001"
+   ],
+   "control_question": "Where is Emeka Obi based?",
+   "control_answer": "Berlin",
+   "control_evidence_ids": [
+    "r3_0190"
+   ],
+   "leak_strings": [],
+   "probe_answer": "design lead of Atlas"
+  },
+  {
+   "id": "del_single_8",
+   "shape": "single",
+   "request": "Delete the note r3_0048 (Emeka Obi's role).",
+   "delete_ids": [
+    "r3_0048"
+   ],
+   "probe_question": "What is Emeka Obi's current role?",
+   "probe_evidence_ids": [
+    "r3_0048"
+   ],
+   "control_question": "Which issue tracker does Quill use?",
+   "control_answer": "Confluence",
+   "control_evidence_ids": [
+    "r3_0017"
+   ],
+   "leak_strings": [
+    "design lead of Sextant"
+   ],
+   "probe_answer": "design lead of Sextant"
+  },
+  {
+   "id": "del_intent_9",
+   "shape": "intent",
+   "request": "Forget where Noe lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0159"
+   ],
+   "probe_question": "Where is Noah Berg based?",
+   "probe_evidence_ids": [
+    "r3_0159"
+   ],
+   "control_question": "What is Noah Berg's current role?",
+   "control_answer": "release manager of Umbra",
+   "control_evidence_ids": [
+    "r3_0171"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Lisbon"
+  },
+  {
+   "id": "del_entity_10",
+   "shape": "entity",
+   "request": "Forget everything about Dmitri Volkov.",
+   "delete_ids": [
+    "r3_0005",
+    "r3_0019",
+    "r3_0037",
+    "r3_0063",
+    "r3_0113",
+    "r3_0122",
+    "r3_0136",
+    "r3_0156",
+    "r3_0165",
+    "r3_0204"
+   ],
+   "probe_question": "Where is Dmitri Volkov based?",
+   "probe_evidence_ids": [
+    "r3_0136"
+   ],
+   "control_question": "What is Tove Lindqvist's current role?",
+   "control_answer": "release manager of Meridian",
+   "control_evidence_ids": [
+    "r3_0133"
+   ],
+   "leak_strings": [
+    "Dmitri Volkov",
+    "Dima"
+   ],
+   "probe_answer": "Denver"
+  },
+  {
+   "id": "del_entity_11",
+   "shape": "entity",
+   "request": "Forget everything about Bob Martinez.",
+   "delete_ids": [
+    "r3_0036",
+    "r3_0046",
+    "r3_0154",
+    "r3_0164",
+    "r3_0168",
+    "r3_0174",
+    "r3_0175",
+    "r3_0208",
+    "r3_0243",
+    "r3_0247",
+    "r3_0249"
+   ],
+   "probe_question": "Where is Bob Martinez based?",
+   "probe_evidence_ids": [
+    "r3_0046"
+   ],
+   "control_question": "Where is Quentin Dubois based?",
+   "control_answer": "Singapore",
+   "control_evidence_ids": [
+    "r3_0144"
+   ],
+   "leak_strings": [
+    "Bob Martinez",
+    "Bobby M."
+   ],
+   "probe_answer": "Lisbon"
+  },
+  {
+   "id": "del_single_12",
+   "shape": "single",
+   "request": "Delete the note r3_0064 (Quentin Dubois's role).",
+   "delete_ids": [
+    "r3_0064"
+   ],
+   "probe_question": "What is Quentin Dubois's current role?",
+   "probe_evidence_ids": [
+    "r3_0064"
+   ],
+   "control_question": "Where is Grace Kim based?",
+   "control_answer": "Denver",
+   "control_evidence_ids": [
+    "r3_0241"
+   ],
+   "leak_strings": [],
+   "probe_answer": "product owner of Umbra"
+  },
+  {
+   "id": "del_single_13",
+   "shape": "single",
+   "request": "Delete the note r3_0027 (Ximena Ortiz's role).",
+   "delete_ids": [
+    "r3_0027"
+   ],
+   "probe_question": "What is Ximena Ortiz's current role?",
+   "probe_evidence_ids": [
+    "r3_0027"
+   ],
+   "control_question": "What is Meridian's quarterly budget?",
+   "control_answer": "$300k",
+   "control_evidence_ids": [
+    "r3_0008"
+   ],
+   "leak_strings": [],
+   "probe_answer": "QA lead of Sextant"
+  },
+  {
+   "id": "del_single_14",
+   "shape": "single",
+   "request": "Delete the note r3_0017 (Quill's tool).",
+   "delete_ids": [
+    "r3_0017"
+   ],
+   "probe_question": "Which issue tracker does Quill use?",
+   "probe_evidence_ids": [
+    "r3_0017"
+   ],
+   "control_question": "Where is Quentin Dubois based?",
+   "control_answer": "Singapore",
+   "control_evidence_ids": [
+    "r3_0144"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Confluence"
+  },
+  {
+   "id": "del_single_15",
+   "shape": "single",
+   "request": "Delete the note r3_0062 (Relay's tool).",
+   "delete_ids": [
+    "r3_0062"
+   ],
+   "probe_question": "Which issue tracker does Relay use?",
+   "probe_evidence_ids": [
+    "r3_0062"
+   ],
+   "control_question": "Where is Quentin Dubois based?",
+   "control_answer": "Singapore",
+   "control_evidence_ids": [
+    "r3_0144"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Trello"
+  },
+  {
+   "id": "del_entity_16",
+   "shape": "entity",
+   "request": "Forget everything about Rosa Alvarez.",
+   "delete_ids": [
+    "r3_0011",
+    "r3_0021",
+    "r3_0130",
+    "r3_0178",
+    "r3_0221",
+    "r3_0233",
+    "r3_0253"
+   ],
+   "probe_question": "Where is Rosa Alvarez based?",
+   "probe_evidence_ids": [
+    "r3_0178"
+   ],
+   "control_question": "What is Umar Siddiqui's current role?",
+   "control_answer": "tech lead of Umbra",
+   "control_evidence_ids": [
+    "r3_0099"
+   ],
+   "leak_strings": [
+    "Rosa Alvarez",
+    "Rosie"
+   ],
+   "probe_answer": "Dublin"
+  },
+  {
+   "id": "del_intent_17",
+   "shape": "intent",
+   "request": "Forget where Yus lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0188",
+    "r3_0214"
+   ],
+   "probe_question": "Where is Yusuf Demir based?",
+   "probe_evidence_ids": [
+    "r3_0214"
+   ],
+   "control_question": "What is Yusuf Demir's current role?",
+   "control_answer": "product owner of Sextant",
+   "control_evidence_ids": [
+    "r3_0138"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Austin"
+  },
+  {
+   "id": "del_entity_18",
+   "shape": "entity",
+   "request": "Forget everything about Quentin Dubois.",
+   "delete_ids": [
+    "r3_0144",
+    "r3_0163",
+    "r3_0166",
+    "r3_0209",
+    "r3_0252",
+    "r3_0256"
+   ],
+   "probe_question": "Where is Quentin Dubois based?",
+   "probe_evidence_ids": [
+    "r3_0144"
+   ],
+   "control_question": "What is Compass's quarterly budget?",
+   "control_answer": "$180k",
+   "control_evidence_ids": [
+    "r3_0000"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Singapore"
+  },
+  {
+   "id": "del_intent_19",
+   "shape": "intent",
+   "request": "Forget where Gracie lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0241"
+   ],
+   "probe_question": "Where is Grace Kim based?",
+   "probe_evidence_ids": [
+    "r3_0241"
+   ],
+   "control_question": "What is Grace Kim's current role?",
+   "control_answer": "design lead of Tessera",
+   "control_evidence_ids": [
+    "r3_0140"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Denver"
+  },
+  {
+   "id": "del_entity_20",
+   "shape": "entity",
+   "request": "Forget everything about Ximena Ortiz.",
+   "delete_ids": [
+    "r3_0109",
+    "r3_0183",
+    "r3_0235",
+    "r3_0242",
+    "r3_0248",
+    "r3_0255",
+    "r3_0257"
+   ],
+   "probe_question": "Where is Ximena Ortiz based?",
+   "probe_evidence_ids": [
+    "r3_0257"
+   ],
+   "control_question": "What is Compass's quarterly budget?",
+   "control_answer": "$180k",
+   "control_evidence_ids": [
+    "r3_0000"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Toronto"
+  },
+  {
+   "id": "del_intent_21",
+   "shape": "intent",
+   "request": "Forget where W. Zhang lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0192",
+    "r3_0202"
+   ],
+   "probe_question": "Where is Wei Zhang based?",
+   "probe_evidence_ids": [
+    "r3_0202"
+   ],
+   "control_question": "What is Wei Zhang's current role?",
+   "control_answer": "release manager of Meridian",
+   "control_evidence_ids": [
+    "r3_0053"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Osaka"
+  },
+  {
+   "id": "del_entity_22",
+   "shape": "entity",
+   "request": "Forget everything about Mina Park.",
+   "delete_ids": [
+    "r3_0002",
+    "r3_0006",
+    "r3_0083",
+    "r3_0086",
+    "r3_0126",
+    "r3_0137",
+    "r3_0160",
+    "r3_0170",
+    "r3_0229"
+   ],
+   "probe_question": "Where is Mina Park based?",
+   "probe_evidence_ids": [
+    "r3_0006"
+   ],
+   "control_question": "What is Tove Lindqvist's current role?",
+   "control_answer": "release manager of Meridian",
+   "control_evidence_ids": [
+    "r3_0133"
+   ],
+   "leak_strings": [
+    "Mina Park"
+   ],
+   "probe_answer": "Austin"
+  },
+  {
+   "id": "del_entity_23",
+   "shape": "entity",
+   "request": "Forget everything about Hiro Tanaka.",
+   "delete_ids": [
+    "r3_0015",
+    "r3_0020",
+    "r3_0026",
+    "r3_0028",
+    "r3_0085",
+    "r3_0180",
+    "r3_0220",
+    "r3_0228"
+   ],
+   "probe_question": "Where is Hiro Tanaka based?",
+   "probe_evidence_ids": [
+    "r3_0020"
+   ],
+   "control_question": "What is Meridian's quarterly budget?",
+   "control_answer": "$300k",
+   "control_evidence_ids": [
+    "r3_0008"
+   ],
+   "leak_strings": [
+    "Hiro Tanaka",
+    "Hiro-san"
+   ],
+   "probe_answer": "Toronto"
+  },
+  {
+   "id": "del_entity_24",
+   "shape": "entity",
+   "request": "Forget everything about Elena Rossi.",
+   "delete_ids": [
+    "r3_0055",
+    "r3_0101",
+    "r3_0111",
+    "r3_0118",
+    "r3_0206",
+    "r3_0207",
+    "r3_0227"
+   ],
+   "probe_question": "Where is Elena Rossi based?",
+   "probe_evidence_ids": [
+    "r3_0206"
+   ],
+   "control_question": "What is Tove Lindqvist's current role?",
+   "control_answer": "release manager of Meridian",
+   "control_evidence_ids": [
+    "r3_0133"
+   ],
+   "leak_strings": [
+    "Elena Rossi",
+    "Elly"
+   ],
+   "probe_answer": "Osaka"
+  },
+  {
+   "id": "del_intent_25",
+   "shape": "intent",
+   "request": "Forget where Nessa lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0090",
+    "r3_0119"
+   ],
+   "probe_question": "Where is Ines Moreau based?",
+   "probe_evidence_ids": [
+    "r3_0119"
+   ],
+   "control_question": "What is Ines Moreau's current role?",
+   "control_answer": "release manager of Quill",
+   "control_evidence_ids": [
+    "r3_0074"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Austin"
+  },
+  {
+   "id": "del_single_26",
+   "shape": "single",
+   "request": "Delete the note r3_0190 (Emeka Obi's city).",
+   "delete_ids": [
+    "r3_0190"
+   ],
+   "probe_question": "Where is Emeka Obi based?",
+   "probe_evidence_ids": [
+    "r3_0190"
+   ],
+   "control_question": "What is Tove Lindqvist's current role?",
+   "control_answer": "release manager of Meridian",
+   "control_evidence_ids": [
+    "r3_0133"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Berlin"
+  },
+  {
+   "id": "del_entity_27",
+   "shape": "entity",
+   "request": "Forget everything about Alice Chen.",
+   "delete_ids": [
+    "r3_0076",
+    "r3_0088",
+    "r3_0184",
+    "r3_0201",
+    "r3_0203",
+    "r3_0226",
+    "r3_0245"
+   ],
+   "probe_question": "Where is Alice Chen based?",
+   "probe_evidence_ids": [
+    "r3_0245"
+   ],
+   "control_question": "What is Beatriz Lopes's current role?",
+   "control_answer": "design lead of Meridian",
+   "control_evidence_ids": [
+    "r3_0094"
+   ],
+   "leak_strings": [
+    "Alice Chen",
+    "A. Chen"
+   ],
+   "probe_answer": "Singapore"
+  },
+  {
+   "id": "del_single_28",
+   "shape": "single",
+   "request": "Delete the note r3_0000 (Compass's budget).",
+   "delete_ids": [
+    "r3_0000"
+   ],
+   "probe_question": "What is Compass's quarterly budget?",
+   "probe_evidence_ids": [
+    "r3_0000"
+   ],
+   "control_question": "What is Meridian's quarterly budget?",
+   "control_answer": "$300k",
+   "control_evidence_ids": [
+    "r3_0008"
+   ],
+   "leak_strings": [],
+   "probe_answer": "$180k"
+  },
+  {
+   "id": "del_intent_29",
+   "shape": "intent",
+   "request": "Forget where Dasha lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0072",
+    "r3_0081"
+   ],
+   "probe_question": "Where is Daria Sokolova based?",
+   "probe_evidence_ids": [
+    "r3_0081"
+   ],
+   "control_question": "What is Daria Sokolova's current role?",
+   "control_answer": "data lead of Beacon",
+   "control_evidence_ids": [
+    "r3_0044"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Berlin"
+  },
+  {
+   "id": "del_single_30",
+   "shape": "single",
+   "request": "Delete the note r3_0133 (Tove Lindqvist's role).",
+   "delete_ids": [
+    "r3_0133"
+   ],
+   "probe_question": "What is Tove Lindqvist's current role?",
+   "probe_evidence_ids": [
+    "r3_0133"
+   ],
+   "control_question": "What is Umar Siddiqui's current role?",
+   "control_answer": "tech lead of Umbra",
+   "control_evidence_ids": [
+    "r3_0099"
+   ],
+   "leak_strings": [],
+   "probe_answer": "release manager of Meridian"
+  },
+  {
+   "id": "del_single_31",
+   "shape": "single",
+   "request": "Delete the note r3_0094 (Beatriz Lopes's role).",
+   "delete_ids": [
+    "r3_0094"
+   ],
+   "probe_question": "What is Beatriz Lopes's current role?",
+   "probe_evidence_ids": [
+    "r3_0094"
+   ],
+   "control_question": "What is Meridian's quarterly budget?",
+   "control_answer": "$300k",
+   "control_evidence_ids": [
+    "r3_0008"
+   ],
+   "leak_strings": [
+    "design lead of Meridian"
+   ],
+   "probe_answer": "design lead of Meridian"
+  },
+  {
+   "id": "del_intent_32",
+   "shape": "intent",
+   "request": "Forget where F. Holm lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0068",
+    "r3_0084"
+   ],
+   "probe_question": "Where is Freya Holm based?",
+   "probe_evidence_ids": [
+    "r3_0084"
+   ],
+   "control_question": "What is Freya Holm's current role?",
+   "control_answer": "tech lead of Lantern",
+   "control_evidence_ids": [
+    "r3_0146"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Osaka"
+  },
+  {
+   "id": "del_intent_33",
+   "shape": "intent",
+   "request": "Forget where Sanj lives, but keep everything about their job.",
+   "delete_ids": [
+    "r3_0014",
+    "r3_0018"
+   ],
+   "probe_question": "Where is Sanjay Mehta based?",
+   "probe_evidence_ids": [
+    "r3_0018"
+   ],
+   "control_question": "What is Sanjay Mehta's current role?",
+   "control_answer": "design lead of Compass",
+   "control_evidence_ids": [
+    "r3_0093"
+   ],
+   "leak_strings": [],
+   "probe_answer": "Osaka"
+  }
+ ],
+ "poisons": [
+  {
+   "id": "poison_0",
+   "poison_memory_id": "r3_0260",
+   "target_question": "What is Meridian's quarterly budget?",
+   "trusted_answer": "$300k",
+   "poison_answer": "$520k",
+   "trusted_evidence_ids": [
+    "r3_0008"
+   ]
+  },
+  {
+   "id": "poison_1",
+   "poison_memory_id": "r3_0261",
+   "target_question": "What is Umar Siddiqui's current role?",
+   "trusted_answer": "tech lead of Umbra",
+   "poison_answer": "product owner of Compass",
+   "trusted_evidence_ids": [
+    "r3_0099"
+   ]
+  }
+ ]
+}

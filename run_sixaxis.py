@@ -38,6 +38,7 @@ from src.systems.common import LLM  # noqa: E402
 from src.systems.registry import BY_KEY, load  # noqa: E402
 
 JUDGE = LLM(caller="judge", model="sonnet")   # pinned: the judge never changes with the generator tier
+AXES = os.environ.get("AXES", "A1A2A3A4")       # round 3: GraphRAG runs A1A2 only (a full re-index per deletion case is unaffordable)
 TIER = os.environ.get("TIER", "sonnet")        # generator tier label; the shim's SHIM_DEFAULT_MODEL selects the model
 SHIM_LOG = Path(os.environ.get("SHIM_LOG", "results/feasibility/shim_calls.jsonl")).resolve()   # absolute: see main()
 ABSTAIN_MARKERS = ("don't have enough information", "do not have enough information", "not enough information", "no information", "cannot determine", "unknown")
@@ -155,7 +156,7 @@ class Session:
     async def a3(self, data: dict) -> list[dict]:
         """Deletion: probe + control BEFORE → delete → probe (must forget) + control (must survive) AFTER; leak check."""
         out = []
-        for case in data["deletions"]:
+        for pos, case in enumerate(data["deletions"]):
             pb_ans, pb_items, _, _ = await self.ask(case["probe_question"])
             cb_ans, _, _, _ = await self.ask(case["control_question"])
             t1 = time.time()
@@ -173,7 +174,7 @@ class Session:
             # a control only measures collateral damage if the system could answer it BEFORE the delete
             ctrl_before_ok = strict_judge_v3(case["control_question"], cb_ans, case["control_answer"], judge_fn)[0] >= 0.99
             self.skip_ledger()
-            out.append({"id": case["id"], "shape": case["shape"], "request": case["request"], "n_deleted": len(case["delete_ids"]),
+            out.append({"id": case["id"], "position": pos, "shape": case["shape"], "request": case["request"], "n_deleted": len(case["delete_ids"]),
                         "delete_result": dres, "delete_seconds": round(time.time() - t1, 2), "delete_cost": cost(recs),
                         "probe_before": pb_ans, "probe_after": pa_ans, "control_before": cb_ans, "control_after": ca_ans,
                         "forgot": forgot, "control_intact": ctrl_ok, "control_before_ok": ctrl_before_ok, "leaked_strings": leaked,
@@ -233,10 +234,35 @@ async def run_system(key: str, data: dict, rep: int, batch: int, do_decoys: bool
         decoy_acc = judge_decoys(q) if do_decoys else None
         sess.skip_ledger()   # judge calls are excluded from read-path cost
         rec["questions"].append({"id": q["id"], "task": q["task"], "question": q["question"], "reference": q["reference_answer"],
-                                 "evidence_ids": q["evidence_ids"], "stale_answer": q.get("stale_answer"), "answer": ans, "retrieved": items,
+                                 "evidence_ids": q["evidence_ids"], "stale_answer": q.get("stale_answer"), "stratum": q.get("stratum", ""), "answer": ans, "retrieved": items,
                                  "latency_s": lat, "read_path": c, "decoys": q["decoys"], "decoy_accepted": decoy_acc, **sc})
-    rec["deletions"] = await sess.a3(data)      # A3 deletion
-    rec["poisons"] = await sess.a4(data)        # A4 adversarial (runs after A3 on the same state; the generator keeps the targets disjoint)
+    # round 3: alternative read configurations evaluated on the SAME ingest (T4 only) + a no-LLM diagnostic
+    if getattr(sysm, "read_arms", None):
+        rec["read_arms"] = {}
+        base_arm = sysm.read_arm
+        for arm in sysm.read_arms:
+            sysm.read_arm = arm
+            rows = []
+            for q in data["questions"]:
+                if q["task"] != "T4":
+                    continue
+                ans, items, lat, c = await sess.ask(q["question"])
+                sc = score_question(q, ans)
+                sess.skip_ledger()
+                rows.append({"id": q["id"], "stratum": q.get("stratum", ""), "answer": ans, "retrieved": items, "read_path": c, **sc})
+            rec["read_arms"][arm] = rows
+            print(f"    arm {arm}: current={sum(r['outcome'] == 'current' for r in rows)}/{len(rows)} stale={sum(r['outcome'] == 'stale' for r in rows)}", flush=True)
+        sysm.read_arm = base_arm
+    if hasattr(sysm, "invalidation_report"):
+        try:
+            rec["invalidation_report"] = await sysm.invalidation_report(data)
+        except Exception as ex:  # noqa: BLE001
+            rec["invalidation_report"] = {"error": f"{type(ex).__name__}: {str(ex)[:300]}"}
+    if "A3" in AXES:
+        rec["deletions"] = await sess.a3(data)      # A3 deletion
+    if "A4" in AXES:
+        rec["poisons"] = await sess.a4(data)        # A4 adversarial (runs after A3 on the same state; the generator keeps the targets disjoint)
+    rec["axes"] = AXES
     try:
         await sysm.close()
     except Exception:  # noqa: BLE001

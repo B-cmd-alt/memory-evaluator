@@ -34,6 +34,18 @@ NICKS = {"Bob Martinez": "Bobby M.", "Alice Chen": "A. Chen", "Dmitri Volkov": "
 ASK = {"role": "What is {s}'s current role?", "tool": "Which issue tracker does {s} use?", "city": "Where is {s} based?",
        "budget": "What is {s}'s quarterly budget?"}
 PERSON_KINDS, PROJECT_KINDS = ("role", "city"), ("tool", "budget")
+# Round 3 (scale "R3", a dedicated A2/A3 world): more subjects so >= 50 keys get a superseding update and >= 30 deletion
+# cases fit. Separate lists so the S1/S2 worlds (rng.sample over PEOPLE/PROJECTS) stay byte-identical.
+PEOPLE_R3 = PEOPLE + ["Quentin Dubois", "Rosa Alvarez", "Sanjay Mehta", "Tove Lindqvist", "Umar Siddiqui", "Valentina Greco",
+                      "Wei Zhang", "Ximena Ortiz", "Yusuf Demir", "Zofia Nowak", "Arjun Rao", "Beatriz Lopes", "Callum Reid",
+                      "Daria Sokolova", "Emeka Obi", "Freya Holm"]
+PROJECTS_R3 = PROJECTS + ["Nimbus", "Pylon", "Relay", "Sextant", "Tessera", "Umbra", "Vertex", "Wayfarer"]
+NICKS_R3 = {**NICKS, "Carol Davis": "C. Davis", "Elena Rossi": "Elly", "Farid Haddad": "Fari", "Ines Moreau": "Nessa",
+            "Jamal Okafor": "J.O.", "Keiko Sato": "Kei", "Liam O'Brien": "Liamo", "Olga Petrova": "Olya", "Priya Nair": "P. Nair",
+            "Quentin Dubois": "Q", "Rosa Alvarez": "Rosie", "Sanjay Mehta": "Sanj", "Tove Lindqvist": "T. Lindqvist",
+            "Umar Siddiqui": "Umi", "Valentina Greco": "Vale", "Wei Zhang": "W. Zhang", "Ximena Ortiz": "Xime", "Yusuf Demir": "Yus",
+            "Zofia Nowak": "Zosia", "Arjun Rao": "AJ", "Beatriz Lopes": "Bia", "Callum Reid": "Cal R.", "Daria Sokolova": "Dasha",
+            "Emeka Obi": "Meks", "Freya Holm": "F. Holm"}
 
 
 @dataclass
@@ -61,6 +73,7 @@ class Question:
     stale_evidence_ids: list[str] = field(default_factory=list)
     stale_answer: str | None = None
     explanation: str = ""
+    stratum: str = ""               # R3 T4: "explicit" (update note names the old value) | "implicit" (it does not)
 
 
 @dataclass
@@ -93,13 +106,15 @@ class World:
     def __init__(self, seed: int, scale: str):
         self.rng = random.Random(seed)
         self.scale = scale
-        n_people, n_projects, self.n_sessions, self.per_session = {"S1": (6, 3, 12, 7), "S2": (14, 7, 60, 12)}[scale]
-        self.people = self.rng.sample(PEOPLE, n_people)
-        self.projects = self.rng.sample(PROJECTS, n_projects)
+        n_people, n_projects, self.n_sessions, self.per_session = {"S1": (6, 3, 12, 7), "S2": (14, 7, 60, 12), "R3": (30, 15, 26, 10)}[scale]
+        self.people = self.rng.sample(PEOPLE_R3 if scale == "R3" else PEOPLE, n_people)
+        self.projects = self.rng.sample(PROJECTS_R3 if scale == "R3" else PROJECTS, n_projects)
+        self.nicks = NICKS_R3 if scale == "R3" else NICKS
+        self.weights = [4, 3, 3, 3, 1, 1] if scale == "R3" else [3, 2, 2, 2, 3, 3]   # R3: facts and updates, few events/filler
         n_hold = 1 if scale == "S1" else 2
         self.holdout = set(self.people[-n_hold:]) | {self.projects[-1]}   # only in events/filler -> abstention candidates
         self.p_update, self.max_updates = 0.5, 1
-        self.p_key_updatable = 0.4           # share of (kind, subject) keys that may ever be superseded -> the rest stay stable
+        self.p_key_updatable = 0.75 if scale == "R3" else 0.4          # share of (kind, subject) keys that may ever be superseded -> the rest stay stable
         self.may_update: set[tuple] = set()
         self.start = date(2025, 1, 6)
         self.mems: list[Mem] = []
@@ -143,7 +158,14 @@ class World:
         if subj is None:
             return False
         v = self._new_value(kind, prev["value"] if prev else None)
-        if prev:
+        if prev and self.scale == "R3" and self.rng.random() < 0.5:
+            # implicit update: the note states only the new value, so retrieval must use the date, not the word "from"
+            text = {"role": f"{subj} is now {v}, effective {d.isoformat()}.",
+                    "tool": f"{subj} now tracks its issues in {v} (as of {d.isoformat()}).",
+                    "city": f"{subj} is now based in {v} (since {d.strftime('%B %Y')}).",
+                    "budget": f"{subj}'s quarterly budget is {v} as of {d.isoformat()}."}[kind]
+            m = self._emit(d, text, [subj], [kind, "update", "implicit"], kind="update", supersedes=prev["mem_id"])
+        elif prev:
             text = {"role": f"{subj} moved from {prev['value']} to {v}, effective {d.isoformat()}.",
                     "tool": f"{subj} switched its issue tracker from {prev['value']} to {v} effective {d.isoformat()}.",
                     "city": f"{subj} relocated from {prev['value']} to {v} in {d.strftime('%B %Y')}.",
@@ -179,7 +201,7 @@ class World:
             d = self.start + timedelta(days=7 * si)
             for _ in range(self.per_session):
                 d_i = d + timedelta(days=rng.randint(0, 4))
-                kind = rng.choices(["role", "tool", "city", "budget", "event", "filler"], weights=[3, 2, 2, 2, 3, 3])[0]
+                kind = rng.choices(["role", "tool", "city", "budget", "event", "filler"], weights=self.weights)[0]
                 if kind == "event":
                     self._event(d_i)
                 elif kind == "filler":
@@ -196,21 +218,25 @@ class World:
         d2 = stale if stale else self.rng.choice([v for v in others if v != d1] or others)
         return [d1, d2]
 
-    def questions(self, per_task: int) -> list[Question]:
+    def questions(self, per_task) -> list[Question]:
+        """per_task: an int (same count for every task) or a dict {"T1": n, ...} (R3 asks every updated key in T4)."""
+        n = per_task if isinstance(per_task, dict) else {t: per_task for t in ("T1", "T2", "T3", "T4", "T5")}
         rng, qs = self.rng, []
         end = (self.start + timedelta(days=7 * self.n_sessions + 7)).isoformat()
         stable = [(k, s) for k, s in self.state.items() if len(s["history"]) == 1]
         updated = [(k, s) for k, s in self.state.items() if len(s["history"]) >= 2]
         rng.shuffle(stable); rng.shuffle(updated)
-        for (kind, subj), s in stable[:per_task]:
+        for (kind, subj), s in stable[:n["T1"]]:
             qs.append(Question(f"q_t1_{len(qs)}", "T1", ASK[kind].format(s=subj), s["value"], [s["mem_id"]], end, self._decoys(kind, s["value"]),
                                explanation=f"direct lookup of {s['mem_id']}"))
-        for (kind, subj), s in updated[:per_task]:
+        mem_by_id = {m.id: m for m in self.mems}
+        for (kind, subj), s in updated[:n["T4"]]:
             cur_id, cur_v, _ = s["history"][-1]
             old_id, old_v, _ = s["history"][-2]
+            stratum = ("implicit" if "implicit" in mem_by_id[cur_id].topics else "explicit") if self.scale == "R3" else ""
             qs.append(Question(f"q_t4_{len(qs)}", "T4", ASK[kind].format(s=subj) + " (as of today)", cur_v, [cur_id], end, self._decoys(kind, cur_v, old_v),
-                               stale_evidence_ids=[old_id], stale_answer=old_v, explanation=f"{old_id} superseded by {cur_id}"))
-        for (kind, subj), s in list(reversed(updated))[:per_task]:   # same superseded keys, asked the other way round
+                               stale_evidence_ids=[old_id], stale_answer=old_v, explanation=f"{old_id} superseded by {cur_id}", stratum=stratum))
+        for (kind, subj), s in list(reversed(updated))[:n["T3"]]:   # same superseded keys, asked the other way round
             cur_id, cur_v, cur_d = s["history"][-1]
             old_id, old_v, _ = s["history"][-2]
             attr = {"role": "role", "tool": "issue tracker", "city": "base city", "budget": "quarterly budget"}[kind]
@@ -218,7 +244,7 @@ class World:
                                self._decoys(kind, old_v, cur_v), explanation=f"value before {cur_id} ({cur_d})"))
         ev = [(p, lst) for p, lst in self.events.items() if len(lst) >= 2]
         rng.shuffle(ev)
-        for p, lst in ev[:per_task]:
+        for p, lst in ev[:n["T2"]]:
             nug = [f"{pr} at {cf} in {c}" for _, pr, cf, c, _ in lst]
             others = [x for pp, l2 in ev if pp != p for x in l2]
             d1 = f"{others[0][1]} at {others[0][2]} in {others[0][3]}" if others else "no presentations"
@@ -229,7 +255,7 @@ class World:
         cands = [(k, p) for p in self.people for k in PERSON_KINDS if (k, p) not in self.state]
         cands += [(k, pr) for pr in self.projects for k in PROJECT_KINDS if (k, pr) not in self.state]
         rng.shuffle(cands)
-        for kind, subj in cands[:per_task]:
+        for kind, subj in cands[:n["T5"]]:
             vals = sorted({s["value"] for (k, _), s in self.state.items() if k == kind}) or [self._new_value(kind, None)]
             qs.append(Question(f"q_t5_{len(qs)}", "T5", ASK[kind].format(s=subj), ABSTAIN, [], end, [rng.choice(vals), self._new_value(kind, None)],
                                explanation="never stated anywhere"))
@@ -294,6 +320,74 @@ class World:
             dl = set(c.delete_ids)
             others = " ".join(m.content.lower() for m in self.mems if m.id not in dl)
             c.leak_strings = [s for s in dict.fromkeys(c.leak_strings) if s.lower() not in others]
+        return out
+
+    def deletions_interleaved(self, counts: dict[str, int]) -> list[DeletionCase]:
+        """R3: >= 30 cumulative cases with the three shapes INTERLEAVED in a seeded random order (so case position is not
+        confounded with shape), built in run order against the running delete set. Intent cases delete the person's whole
+        city history (an earlier, superseded city note would otherwise still answer "where is X based")."""
+        rng, out, gone = self.rng, [], set()
+        order = [sh for sh, k in counts.items() for _ in range(k)]
+        rng.shuffle(order)
+        singles = [(k, s) for k, s in self.state.items() if len(s["history"]) == 1]   # any never-superseded fact
+        rng.shuffle(singles)
+        people = [p for p in self.people if ("city", p) in self.state]
+        rng.shuffle(people)
+        used: set = set()
+        alive = lambda ids: not (set(ids) & gone)  # noqa: E731
+
+        def ctrl_for(exclude_ids: set):
+            """a surviving stable fact (controls may repeat across cases; what matters is that no delete up to and including
+            this case removes it — ground_check replays that)."""
+            pool = [(k2, s2) for k2, s2 in singles if s2["mem_id"] not in gone and s2["mem_id"] not in exclude_ids and k2 not in used]
+            if not pool:
+                return None
+            k2, s2 = rng.choice(pool)
+            return ASK[k2[0]].format(s=k2[1]), s2["value"], [s2["mem_id"]]
+
+        for sh in order:
+            if sh == "single":
+                pick = next(((k, s) for k, s in singles if k not in used and s["mem_id"] not in gone), None)
+                if not pick:
+                    continue
+                (kind, subj), s = pick
+                used.add((kind, subj))
+                c = ctrl_for({s["mem_id"]})
+                if not c:
+                    continue
+                out.append(DeletionCase(f"del_single_{len(out)}", "single", f"Delete the note {s['mem_id']} ({subj}'s {kind}).", [s["mem_id"]],
+                                        ASK[kind].format(s=subj), [s["mem_id"]], *c, [s["value"]], probe_answer=s["value"]))
+                gone.add(s["mem_id"])
+            elif sh == "entity":
+                p = next((x for x in people if ("entity", x) not in used and alive([self.state[("city", x)]["mem_id"]])), None)
+                if not p:
+                    continue
+                used.add(("entity", p))
+                ids = [m.id for m in self.mems if p in m.entities and m.id not in gone]
+                c = ctrl_for(set(ids))
+                if not c:
+                    continue
+                out.append(DeletionCase(f"del_entity_{len(out)}", "entity", f"Forget everything about {p}.", ids, f"Where is {p} based?",
+                                        [self.state[("city", p)]["mem_id"]], *c, [p, self.nicks.get(p, p)], probe_answer=self.state[("city", p)]["value"]))
+                gone.update(ids)
+            else:
+                p = next((x for x in people if x in self.nicks and ("role", x) in self.state and ("intent", x) not in used and ("entity", x) not in used
+                          and alive([h[0] for h in self.state[("city", x)]["history"]] + [self.state[("role", x)]["mem_id"]])), None)
+                if not p:
+                    continue
+                used.add(("intent", p))
+                cids = [h[0] for h in self.state[("city", p)]["history"]]
+                rs = self.state[("role", p)]
+                if rs["mem_id"] in cids:
+                    continue
+                out.append(DeletionCase(f"del_intent_{len(out)}", "intent", f"Forget where {self.nicks[p]} lives, but keep everything about their job.", cids,
+                                        f"Where is {p} based?", [self.state[("city", p)]["mem_id"]], f"What is {p}'s current role?", rs["value"], [rs["mem_id"]],
+                                        [h[1] for h in self.state[("city", p)]["history"]], probe_answer=self.state[("city", p)]["value"]))
+                gone.update(cids)
+        for c in out:
+            dl = set(c.delete_ids)
+            others = " ".join(m.content.lower() for m in self.mems if m.id not in dl)
+            c.leak_strings = [x for x in dict.fromkeys(c.leak_strings) if x.lower() not in others]
         return out
 
     # ── poisoning cases ──────────────────────────────────────────────────────────────────────
@@ -377,12 +471,12 @@ def ground_check(data: dict) -> list[str]:
 
 
 def generate(scale: str = "S1", seed: int = 42, per_task: int | None = None, del_per_shape: int | None = None, n_poison: int | None = None) -> dict:
-    per_task = per_task or {"S1": 5, "S2": 10}[scale]
-    del_per_shape = del_per_shape or {"S1": 3, "S2": 5}[scale]
-    n_poison = n_poison or {"S1": 6, "S2": 20}[scale]
+    per_task = per_task or {"S1": 5, "S2": 10, "R3": {"T1": 10, "T2": 5, "T3": 10, "T4": 80, "T5": 6}}[scale]
+    del_per_shape = del_per_shape or {"S1": 3, "S2": 5, "R3": 12}[scale]
+    n_poison = n_poison or {"S1": 6, "S2": 20, "R3": 6}[scale]
     w = World(seed, scale).build()
     qs = w.questions(per_task)
-    dels = w.deletions(del_per_shape)
+    dels = (w.deletions_interleaved({"single": del_per_shape, "entity": 11, "intent": 11}) if scale == "R3" else w.deletions(del_per_shape))
     pois = w.poisons(n_poison, deleted=set().union(*[set(d.delete_ids) for d in dels]) if dels else set())   # poison memories are appended AFTER every question's asked_at
     data = {"meta": {"benchmark": "SixAxis", "scale": scale, "seed": seed, "n_memories": len(w.mems),
                      "n_questions": len(qs), "n_deletions": len(dels), "n_poisons": len(pois)},
