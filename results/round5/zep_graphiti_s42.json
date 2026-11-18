@@ -1,0 +1,3674 @@
+{
+ "arm": "zep_graphiti",
+ "system": "zep_graphiti",
+ "delete_method": "native remove_episode",
+ "role": "native",
+ "seed": 42,
+ "reader": "anthropic/claude-sonnet-5.5",
+ "settings": {
+  "GA_FREEZE_RECENCY": "1",
+  "GRAPHITI_READ_ARM": "xenc",
+  "MASTRA_REFLECT_TOKENS": "40000",
+  "MEM0_DELETE_MODE": null,
+  "MEMTOOL_DELETE_MODE": null,
+  "SHIM_DEFAULT_MODEL": "haiku"
+ },
+ "status": "OK",
+ "error": null,
+ "cases": [
+  {
+   "id": "del_intent_0",
+   "position": 0,
+   "shape": "intent",
+   "request": "Forget where Vale lives, but keep everything about their job.",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 49.5,
+   "delete_cost": {
+    "llm_calls": 4,
+    "prompt_tokens": 18467,
+    "completion_tokens": 6581,
+    "provider_cached_tokens": 0,
+    "usd": 0.0058
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Valentina Greco based?",
+     "reference": "Lisbon",
+     "before": {
+      "answer": "Valentina Greco is based in Lisbon (as of 2025-05-06).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context shows Valentina Greco presenting at conferences in Berlin (DataSummit 2025) and Denver (ShipIt 2025), but it doesn't state where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only shows where Valentina Greco presented: Quill at DataSummit 2025 in Berlin (2025-07-01) and Harbor at ShipIt 2025 in Denver (2025-07-02). It doesn't say where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only says where Valentina Greco presented (Harbor at ShipIt 2025 in Denver, Quill at DataSummit 2025 in Berlin). It doesn't say where she is based.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Valentina Greco live in?",
+     "reference": "Lisbon",
+     "before": {
+      "answer": "Valentina Greco lives in Lisbon (as of 2025-05-06). The context records no later relocation, even though she presented in Berlin and Denver, which were conference trips.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says Valentina Greco presented at conferences in Berlin (DataSummit 2025) and Denver (ShipIt 2025) and became design lead of Atlas, but it doesn't say where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only shows where Valentina Greco presented (Berlin for DataSummit 2025 and Denver for ShipIt 2025), not where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only says Valentina Greco presented at conferences in Denver (ShipIt 2025) and Berlin (DataSummit 2025), which doesn't show where she lives.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Lisbon?",
+     "reference": "Valentina Greco",
+     "before": {
+      "answer": "Currently based in Lisbon (facts with no invalidation date):\n- Hiro Tanaka\n- Valentina Greco\n- Zofia Nowak\n- Mina Park\n\nPreviously based in Lisbon (marked invalid):\n- Tove Lindqvist (2025-02-20 to 2025-06-01)\n- Alice Chen (2025-05-26 to 2025-06-01)\n- Daria Sokolova (2025-02-25 to 2025-03-01). She also presented Quill at InfraDays 2025 in Lisbon on 2025-05-13.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Currently based in Lisbon (no invalidation date):\n\n- Noah Berg\n- Hiro Tanaka\n- Zofia Nowak\n- Mina Park\n\nPreviously based there, but no longer valid: Tove Lindqvist (ended 2025-06-01), Alice Chen (ended 2025-06-01), and Daria Sokolova (ended 2025-03-01).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only says where events took place (Lisbon hosted ShipIt, PlatformWeek, and InfraDays 2025) and where some people are based (Callum Reid in Osaka, Olga Petrova in Berlin, Beatriz Lopes in Osaka). It doesn't say that anyone is based in Lisbon.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists where events were held (Lisbon hosted ShipIt, PlatformWeek, InfraDays, and DevCon 2025), but it doesn't say that anyone is based in Lisbon. The stated locations are Berlin (Olga Petrova, no longer valid), Osaka (Beatriz Lopes), and Austin (Callum Reid and Jamal Okafor).",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Valentina Greco is the design lead of Atlas, a role she has held since 2025-01-09. Nothing in the context says it has ended."
+  },
+  {
+   "id": "del_intent_1",
+   "position": 1,
+   "shape": "intent",
+   "request": "Forget where T. Lindqvist lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 72.7,
+   "delete_cost": {
+    "llm_calls": 7,
+    "prompt_tokens": 40050,
+    "completion_tokens": 12422,
+    "provider_cached_tokens": 0,
+    "usd": 0.0102
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Tove Lindqvist based?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Tove Lindqvist is based in Denver, and has been since June 2025. Before that she was based in Lisbon (from February 2025 until June 2025).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences Tove Lindqvist presented at (Dublin and Berlin, plus a conflicting Denver entry for PlatformWeek 2025), and none of it states where she is based.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only shows where Tove Lindqvist presented at events (Dublin for PlatformWeek and InfraDays, Berlin for ShipIt), which doesn't indicate where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences where Tove Lindqvist presented (Dublin and Berlin), which are event locations, not where she is based.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Tove Lindqvist live in?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Tove Lindqvist lives in Denver. She has been based there since June 2025, after previously being based in Lisbon.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context shows Tove Lindqvist presenting at events in Dublin and Berlin, but it doesn't say where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences where Tove Lindqvist presented (Dublin, Berlin), which are event locations, not where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences where Tove Lindqvist presented (Dublin and Berlin), which doesn't indicate where she lives.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Denver?",
+     "reference": "Tove Lindqvist",
+     "before": {
+      "answer": "Based on the context, these people are based in Denver:\n\n- **Tove Lindqvist** (since June 2025)\n- **Umar Siddiqui** (as of 2025-06-20)\n- **Grace Kim** (as of 2025-06-27)\n\nTwo other records also point to Denver but have invalidation dates, so they are less certain:\n\n- **Dmitri Volkov** (April 2025; the record was invalidated 2025-04-03)\n- **Jamal Okafor** (relocated from Austin in February 2025; the record was invalidated 2025-02-07)\n\nThose two records have been superseded, so I wouldn't count them as currently based in Denver.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, these people are based in Denver:\n\n- **Umar Siddiqui** (valid from 2025-06-20)\n- **Grace Kim** (valid from 2025-06-27)\n- **Dmitri Volkov**: the record says he was based in Denver from April 2025, but it is marked invalid as of 2025-04-03, so it may no longer be current.\n\n**Jamal Okafor** is not included. His move to Denver in February 2025 was superseded by the record that he is based in Austin (from 2025-02-07).\n\nLiam O'Brien and Mina Park only presented at events in Denver, which doesn't show they live there.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "No one is currently based in Denver according to the context. Jamal Okafor's relocation to Denver was invalidated on 2025-02-07 and replaced by the fact that he is based in Austin. The Denver events (PlatformWeek and InfraDays 2025) were conferences, not residences.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, no one is currently based in Denver. Jamal Okafor's Denver relocation was only valid from 2025-02-01 to 2025-02-07, and he is now recorded as based in Austin. The other Denver mentions (ShipIt, DataSummit, and InfraDays 2025) are events, not residences.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. The context shows no later change to it."
+  },
+  {
+   "id": "del_single_2",
+   "position": 2,
+   "shape": "single",
+   "request": "Delete the note r3_0237 (Umar Siddiqui's city).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 33.6,
+   "delete_cost": {
+    "llm_calls": 3,
+    "prompt_tokens": 13470,
+    "completion_tokens": 3436,
+    "provider_cached_tokens": 0,
+    "usd": 0.0031
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Umar Siddiqui based?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Umar Siddiqui is based in Denver.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says only that Umar Siddiqui became tech lead of Umbra on 2025-03-11. It doesn't say where he is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says Umar Siddiqui became tech lead of Umbra on 2025-03-11, but it doesn't say where he is based. The locations mentioned are only where ShipIt 2025 was held, which doesn't indicate his location.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context says Umar Siddiqui became tech lead of Umbra on 2025-03-11, but it doesn't say where he is based. The mentions of ShipIt 2025 locations refer to where the event was held, not where he lives or works.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Umar Siddiqui live in?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Umar Siddiqui lives in Denver.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says Umar Siddiqui became tech lead of Umbra on 2025-03-11, but it doesn't say which city he lives in.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says Umar Siddiqui became tech lead of Umbra on 2025-03-11, but it doesn't say where he lives. The cities mentioned (Denver, Lisbon, Dublin, Austin, Osaka) are only locations of ShipIt 2025 events.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context says Umar Siddiqui became tech lead of Umbra on 2025-03-11, but it doesn't mention where he lives.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Denver?",
+     "reference": "Umar Siddiqui",
+     "before": {
+      "answer": "Based on the context, these people are based in Denver:\n\n- **Umar Siddiqui** (valid from 2025-06-20)\n- **Grace Kim** (valid from 2025-06-27)\n\nTwo others have Denver records that are no longer valid:\n\n- **Dmitri Volkov** was based in Denver from April 2025, but that record is marked invalid as of 2025-04-03.\n- **Jamal Okafor** relocated to Denver from Austin in February 2025, but that record is marked invalid as of 2025-02-07.\n\nIf the invalidated records count, the list also includes Dmitri Volkov and Jamal Okafor. Mina Park presented at PlatformWeek 2025 in Denver, but the context doesn't say she is based there.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Grace Kim is based in Denver (valid from 2025-06-27).\n\nDmitri Volkov's Denver record was invalidated on 2025-04-03, and Jamal Okafor's Denver relocation was invalidated on 2025-02-07 (his current record says Austin). Neither is confirmed as Denver-based now. Mina Park and Dmitri presented at PlatformWeek in Denver, but that doesn't establish where they are based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "No one is currently based in Denver according to the context. Jamal Okafor's relocation to Denver was invalidated on 2025-02-07 and replaced by the fact that he is based in Austin. The Denver events (PlatformWeek and InfraDays 2025) were conferences, not residences.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, no one is currently based in Denver. Jamal Okafor's Denver relocation was only valid from 2025-02-01 to 2025-02-07, and he is now recorded as based in Austin. The other Denver mentions (ShipIt, DataSummit, and InfraDays 2025) are events, not residences.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Zofia Nowak is based in Lisbon (as of 2025-05-26)."
+  },
+  {
+   "id": "del_single_3",
+   "position": 3,
+   "shape": "single",
+   "request": "Delete the note r3_0003 (Sextant's budget).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 30.1,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 9375,
+    "completion_tokens": 4191,
+    "provider_cached_tokens": 0,
+    "usd": 0.0031
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Sextant's quarterly budget?",
+     "reference": "$300k",
+     "before": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "How much money does Sextant get per quarter?",
+     "reference": "$300k",
+     "before": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context covers Sextant's issue tracker, staffing changes, and conference presentations, but says nothing about its funding or budget per quarter.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Which projects have a quarterly budget of $300k?",
+     "reference": "Sextant",
+     "before": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Umar Siddiqui is the tech lead of Umbra, a role he took on 2025-03-11. The context shows no later change to it."
+  },
+  {
+   "id": "del_intent_4",
+   "position": 4,
+   "shape": "intent",
+   "request": "Forget where C. Davis lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 60.6,
+   "delete_cost": {
+    "llm_calls": 6,
+    "prompt_tokens": 33100,
+    "completion_tokens": 9786,
+    "provider_cached_tokens": 0,
+    "usd": 0.0079
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Carol Davis based?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Carol Davis is based in Austin. She moved there in February 2025 (valid 2025-02-01), which is earlier than the Singapore entry's validity date of 2025-02-06 but the two conflict. The Singapore record is dated later (2025-02-06), so it may be the more recent one. The context doesn't clearly resolve which is current, but going by the most recent validity date, she is based in Singapore.\n\n**Answer: Singapore** (with some uncertainty, since the Austin entry conflicts with it and the dates are only five days apart).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists Carol Davis's roles (QA lead of Lantern, then Compass) and where she presented (Toronto, Berlin, Denver), but it never says where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists Carol Davis's roles (QA lead of Lantern, then Compass) and where she presented (Toronto, Berlin, Denver), but it never says where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context describes Carol Davis's roles (QA lead of Lantern, then Compass) and conferences she presented at (Toronto, Berlin, Denver), but it never states where she is based.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Carol Davis live in?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Carol Davis most likely lives in Singapore. The latest-dated location fact (2025-02-06) says she is based in Singapore, which comes after the earlier statement that she was based in Austin from 2025-02-01.\n\nHer conference presentations in Toronto, Denver, and Berlin are travel for events and don't change where she lives. The context also doesn't say whether she has moved since February 2025.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only mentions cities where Carol Davis presented at conferences (Toronto, Berlin, Denver), not where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only mentions cities where Carol Davis presented at conferences (Toronto, Berlin, Denver), not where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only covers where Carol Davis presented (Denver, Toronto, Berlin) and her QA lead roles, and none of it says where she lives. Conference locations don't show her residence. The only relocation mentioned is Jamal Okafor's, not hers.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Austin?",
+     "reference": "Carol Davis",
+     "before": {
+      "answer": "Based in Austin per the context:\n\n- **Callum Reid** (since 2025-01-21)\n- **Jamal Okafor** (since 2025-02-07)\n- **Carol Davis** (since February 2025)\n\nMina Park was listed as Austin-based, but that record was invalidated on 2025-01-08, so she likely isn't current.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, the people based in Austin are:\n\n- **Callum Reid** (valid 2025-01-21)\n- **Jamal Okafor** (valid 2025-02-07)\n\nMina Park's Austin location was marked invalid as of 2025-01-08, so she is likely no longer based there. The Austin events (PlatformWeek, DataSummit, ShipIt) were conferences, not residences. Hiro Tanaka presented in Austin but is based in Lisbon.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Callum Reid (valid 2025-01-21) and Jamal Okafor (valid 2025-02-07) are based in Austin.\n\nCallum's earlier Osaka record was invalidated on 2025-01-21, which is when the Austin record took over. DataSummit 2025 was also held in Austin, but that is an event location and not a person's base.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Callum Reid and Jamal Okafor are based in Austin.\n\nCallum Reid's Austin location is valid from 2025-01-21, superseding his earlier Osaka base. Jamal Okafor's is valid from 2025-02-07.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Carol Davis is currently QA lead of Compass, a role she took on 2025-04-01. It followed her earlier role as QA lead of Lantern, which began 2025-03-12. Nothing in the context shows a later change."
+  },
+  {
+   "id": "del_entity_5",
+   "position": 5,
+   "shape": "entity",
+   "request": "Forget everything about Zofia Nowak.",
+   "n_deleted": 10,
+   "delete_result": {
+    "deleted": 10,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 286.2,
+   "delete_cost": {
+    "llm_calls": 63,
+    "prompt_tokens": 341339,
+    "completion_tokens": 126418,
+    "provider_cached_tokens": 0,
+    "usd": 0.0967
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Zofia Nowak based?",
+     "reference": "Lisbon",
+     "before": {
+      "answer": "Zofia Nowak is based in Lisbon (as of 2025-05-26).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context mentions Daria Sokolova's location (Lisbon), but nothing about Zofia Nowak.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Pylon at PlatformWeek 2025 in Dublin on 2025-04-21?",
+     "reference": "Zofia Nowak",
+     "before": {
+      "answer": "Zofia Nowak presented Pylon at PlatformWeek 2025 in Dublin on 2025-04-21.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows no one presenting Pylon at PlatformWeek 2025 in Dublin. Pylon was presented by Olga Petrova at ShipIt 2025 and by Tove Lindqvist at InfraDays 2025. The only PlatformWeek 2025 presentation on 2025-04-21 was not recorded; Yusuf Demir's Relay talk was on 2025-04-17, and that record was marked invalid as of 2025-04-21.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context shows Pylon being presented at ShipIt 2025 (Olga Petrova), InfraDays 2025 (Tove Lindqvist, Jamal Okafor), and DataSummit 2025 (Grace Kim), but no record of Pylon being presented at PlatformWeek 2025 in Dublin on 2025-04-21. The only PlatformWeek 2025 presentations listed are Relay (Yusuf Demir, 2025-04-17) and Umbra (Tove Lindqvist, 2025-05-15).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Pylon presented at ShipIt 2025 (Olga Petrova) and InfraDays 2025 (Tove Lindqvist, Jamal Okafor), but nothing about Pylon at PlatformWeek 2025 on 2025-04-21. The only PlatformWeek 2025 entries are Relay (Yusuf Demir, Olga Petrova) and Umbra (Tove Lindqvist).",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Wayfarer at DevCon 2025 in Dublin on 2025-04-24?",
+     "reference": "Zofia Nowak",
+     "before": {
+      "answer": "Zofia Nowak presented Wayfarer at DevCon 2025 in Dublin on 2025-04-24.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists no presentation of Wayfarer at DevCon 2025 in Dublin on 2025-04-24.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows Wayfarer presentations only at ShipIt 2025 (Olga Petrova, Ines Moreau) and PlatformWeek 2025 (Yusuf Demir). No record shows anyone presenting Wayfarer at DevCon 2025 in Dublin, and nothing covers 2025-04-24. The only DevCon 2025 Dublin entries are Priya Nair presenting Compass on 2025-05-12 and the event itself being held on that date.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Wayfarer presented at ShipIt 2025 and PlatformWeek 2025, and Compass at DevCon 2025 in Dublin, but nothing about Wayfarer at DevCon 2025 on 2025-04-24.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the design lead of Beacon?",
+     "reference": "Zofia Nowak",
+     "before": {
+      "answer": "Zofia Nowak is the current design lead of Beacon. She took the role effective 2025-04-10, which is later than Olga Petrova's appointment on 2025-01-29.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Olga Petrova is the design lead of Beacon, as of 2025-01-29. The context doesn't show anyone replacing her in that role. Sanjay Mehta and Daria Sokolova are listed as data leads of Beacon, which is a different role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Olga Petrova is the design lead of Beacon (since 2025-01-29). Nothing in the context shows that role changing afterward.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Olga Petrova is the design lead of Beacon, as of 2025-01-29. Nothing in the context shows that role ending or being reassigned.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Grace Kim is based in Denver."
+  },
+  {
+   "id": "del_entity_6",
+   "position": 6,
+   "shape": "entity",
+   "request": "Forget everything about Liam O'Brien.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 195.0,
+   "delete_cost": {
+    "llm_calls": 34,
+    "prompt_tokens": 188109,
+    "completion_tokens": 66510,
+    "provider_cached_tokens": 0,
+    "usd": 0.0519
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Liam O'Brien based?",
+     "reference": "Singapore",
+     "before": {
+      "answer": "Liam O'Brien is based in Osaka (since 2025-03-27). The earlier Singapore record was superseded on that date.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Tessera at InfraDays 2025 in Denver on 2025-05-06?",
+     "reference": "Liam O'Brien",
+     "before": {
+      "answer": "Liam O'Brien presented Tessera at InfraDays 2025 in Denver on 2025-05-06.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context has no record of a Tessera presentation at InfraDays 2025 in Denver on 2025-05-06. InfraDays 2025 appears in Denver only with presentations dated 2025-06-03 (later marked invalid), and the other InfraDays 2025 Tessera talks are on 2025-04-08 (Mina Park) and 2025-04-29 (Dmitri Volkov, in Berlin).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context shows no record of anyone presenting Tessera at InfraDays 2025 in Denver on 2025-05-06. InfraDays 2025 in Denver is recorded on 2025-06-03 (where Grace Kim presented Lantern), and Tessera presentations are recorded only at DataSummit 2025 and DevCon 2025.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Tessera was presented at DataSummit 2025 (Denver) by Daria Sokolova and at DevCon 2025 by Jamal Okafor (Singapore) and Grace Kim (Toronto). The only InfraDays 2025 in Denver presentation was Lantern, by Grace Kim on 2025-06-03. Nothing records Tessera being presented at InfraDays 2025 on 2025-05-06.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Sextant at DataSummit 2025 in Dublin on 2025-06-05?",
+     "reference": "Liam O'Brien",
+     "before": {
+      "answer": "Liam O'Brien presented Sextant at DataSummit 2025 in Dublin on 2025-06-05.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of anyone presenting Sextant at DataSummit 2025 in Dublin on 2025-06-05. DataSummit 2025 in Dublin appears only with Mina Park presenting Lantern on 2025-05-09. The Sextant presentations are all at PlatformWeek 2025 or InfraDays 2025, on other dates.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention a DataSummit 2025 event. It only records Sextant presentations at PlatformWeek 2025 in Lisbon (Beatriz Lopes, 2025-06-17) and InfraDays 2025 in Osaka (Noah Berg, 2025-06-13).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of a DataSummit 2025 event in Dublin on 2025-06-05. Sextant was presented by Noah Berg at InfraDays 2025 in Osaka (2025-06-13) and by Beatriz Lopes at PlatformWeek 2025 in Lisbon (2025-06-17), but neither matches the event, location, or date in the question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the tech lead of Meridian?",
+     "reference": "Liam O'Brien",
+     "before": {
+      "answer": "I don't have enough information to answer this question definitively.\n\n- Liam O'Brien became tech lead of Meridian on 2025-02-10.\n- Callum Reid took over on 2025-03-26, which implies Liam's tenure ended then, though that isn't stated.\n- Callum moved to tech lead of Atlas on 2025-04-03, ending his Meridian role.\n\nNo later record names a successor. The last confirmed tech lead was Callum Reid, until 2025-04-03. Whether Liam resumed the role or someone else took over isn't stated.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Callum Reid was tech lead of Meridian from 2025-03-26 until 2025-04-03, when he moved to tech lead of Atlas. The context doesn't name a later Meridian tech lead, so as of now there's no known current tech lead of Meridian. The most recent known one is Callum Reid, and that role ended on 2025-04-03.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Callum Reid became tech lead of Meridian on 2025-03-26, but that role ended on 2025-04-03 when he moved to tech lead of Atlas. The context doesn't name anyone who took over as tech lead of Meridian after that, so I don't have enough information to say who currently holds the role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nCallum Reid was Meridian's tech lead from 2025-03-26 until he moved to Atlas on 2025-04-03. The context doesn't name anyone who took over Meridian's tech lead role after that date, so the current tech lead isn't stated.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Emeka Obi is based in Berlin."
+  },
+  {
+   "id": "del_single_7",
+   "position": 7,
+   "shape": "single",
+   "request": "Delete the note r3_0001 (Valentina Greco's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 33.0,
+   "delete_cost": {
+    "llm_calls": 3,
+    "prompt_tokens": 13552,
+    "completion_tokens": 3336,
+    "provider_cached_tokens": 0,
+    "usd": 0.003
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Valentina Greco's current role?",
+     "reference": "design lead of Atlas",
+     "before": {
+      "answer": "Valentina Greco is the design lead of Atlas, a role she took on 2025-01-09. Nothing in the context says she has left it.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only says Valentina Greco presented Harbor at ShipIt 2025 (Denver, 2025-07-02) and Quill at DataSummit 2025 (Berlin, 2025-07-01). It doesn't state her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only shows that Valentina Greco presented Quill at DataSummit 2025 in Berlin (2025-07-01) and Harbor at ShipIt 2025 in Denver (2025-07-02). It doesn't state any role or job title for her.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only says Valentina Greco presented Quill at DataSummit 2025 in Berlin (2025-07-01) and Harbor at ShipIt 2025 in Denver (2025-07-02). It doesn't state any role or job title for her.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What job does Valentina Greco hold right now?",
+     "reference": "design lead of Atlas",
+     "before": {
+      "answer": "Valentina Greco is the design lead of Atlas, a role she has held since 2025-01-09. Nothing in the context says it has ended or changed.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only says Valentina Greco presented Quill at DataSummit 2025 in Berlin and Harbor at ShipIt 2025 in Denver. It doesn't state her job or title.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only says Valentina Greco presented Quill at DataSummit 2025 in Berlin and Harbor at ShipIt 2025 in Denver. It doesn't state her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only shows that Valentina Greco presented Quill at DataSummit 2025 in Berlin (2025-07-01) and Harbor at ShipIt 2025 in Denver (2025-07-02). It says nothing about her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is the design lead of Atlas?",
+     "reference": "Valentina Greco",
+     "before": {
+      "answer": "Rosa Alvarez is the design lead of Atlas. She took over on 2025-01-14, after Valentina Greco, who had held the role since 2025-01-09. Nothing in the context shows a later change.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Rosa Alvarez is the design lead of Atlas, effective 2025-01-14. Nothing in the context shows that role ending or changing hands.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only mentions tech leads of Atlas (Daria Sokolova, then Callum Reid) and does not name a design lead for Atlas.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context gives the tech lead of Atlas (Callum Reid since 2025-04-03, previously Daria Sokolova) but doesn't mention a design lead for Atlas.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Emeka Obi is based in Berlin."
+  },
+  {
+   "id": "del_single_8",
+   "position": 8,
+   "shape": "single",
+   "request": "Delete the note r3_0048 (Emeka Obi's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 30.1,
+   "delete_cost": {
+    "llm_calls": 3,
+    "prompt_tokens": 13211,
+    "completion_tokens": 3275,
+    "provider_cached_tokens": 0,
+    "usd": 0.0029
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Emeka Obi's current role?",
+     "reference": "design lead of Sextant",
+     "before": {
+      "answer": "Emeka Obi is the design lead of Sextant, a role he has held since 2025-02-07. Nothing in the context says it has ended.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only says Emeka Obi is based in Berlin (valid 2025-05-21) and doesn't mention his role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What job does Emeka Obi hold right now?",
+     "reference": "design lead of Sextant",
+     "before": {
+      "answer": "Emeka Obi is the design lead of Sextant, a role he has held since 2025-02-07. Nothing in the context says it has ended.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only says Emeka Obi is based in Berlin (as of 2025-05-21) and doesn't mention his job.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is the design lead of Sextant?",
+     "reference": "Emeka Obi",
+     "before": {
+      "answer": "Emeka Obi has been design lead of Sextant since 2025-02-07.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only covers QA lead and PlatformWeek presenters for Sextant, and design leads for other projects (Orbit, Nimbus, Beacon), but none for Sextant.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says Yusuf Demir is product owner of Sextant, and that Noah Berg and Beatriz Lopes presented it at conferences, but it names no design lead for Sextant.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context says Yusuf Demir became product owner of Sextant, and that Beatriz Lopes and Noah Berg presented Sextant at conferences, but it doesn't name a design lead for Sextant.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Quill uses Confluence as its issue tracker. It standardized on it on 2025-01-14, and nothing in the context shows a later change."
+  },
+  {
+   "id": "del_intent_9",
+   "position": 9,
+   "shape": "intent",
+   "request": "Forget where Noe lives, but keep everything about their job.",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 56.5,
+   "delete_cost": {
+    "llm_calls": 4,
+    "prompt_tokens": 18416,
+    "completion_tokens": 8561,
+    "provider_cached_tokens": 0,
+    "usd": 0.0062
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Noah Berg based?",
+     "reference": "Lisbon",
+     "before": {
+      "answer": "Noah Berg is based in Lisbon (as of 2025-04-22).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context describes Noah Berg's roles (design lead of Orbit, release manager of Umbra) and the conferences where he presented (DevCon 2025 in Lisbon, InfraDays 2025 in Osaka), but it doesn't say where he is based.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context describes Noah Berg's roles (design lead of Orbit, release manager of Umbra) and the conferences where he presented (DevCon in Lisbon, InfraDays in Osaka), but none of it states where he is based. Event locations don't establish residence.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists roles Noah Berg held and conferences where he presented (Lisbon for DevCon 2025, Osaka for InfraDays 2025), but it doesn't say where he is based.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Noah Berg live in?",
+     "reference": "Lisbon",
+     "before": {
+      "answer": "Noah Berg lives in Lisbon.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context records where Noah Berg presented (Lisbon for DevCon 2025, Osaka for InfraDays 2025) and his role changes, but it never states which city he lives in. The only residence information is about Ines Moreau.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context records where Noah Berg presented at events (Lisbon, Osaka) and his project roles, but it never states which city he lives in.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context only lists where Noah Berg presented (Lisbon, Osaka) and his role changes. Those are event locations, not his residence, and nothing states which city he lives in.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Lisbon?",
+     "reference": "Noah Berg",
+     "before": {
+      "answer": "Currently based in Lisbon (no invalidation date): Noah Berg, Hiro Tanaka, and Mina Park.\n\nPreviously based in Lisbon, but no longer valid: Alice Chen (invalid 2025-06-01) and Daria Sokolova (invalid 2025-03-01).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Currently based in Lisbon: **Hiro Tanaka**, **Mina Park**, and **Bob Martinez**.\n\n- Bob's Lisbon move (Feb 2025) came after his Berlin listing (Jan 30, 2025), so Lisbon is his latest location.\n- Alice Chen and Daria Sokolova were listed in Lisbon only for short periods, and both entries are now marked invalid.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only says where events took place (Lisbon hosted ShipIt, PlatformWeek, and InfraDays 2025) and where some people are based (Callum Reid in Osaka, Olga Petrova in Berlin, Beatriz Lopes in Osaka). It doesn't say that anyone is based in Lisbon.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists where events were held (Lisbon hosted ShipIt, PlatformWeek, InfraDays, and DevCon 2025), but it doesn't say that anyone is based in Lisbon. The stated locations are Berlin (Olga Petrova, no longer valid), Osaka (Beatriz Lopes), and Austin (Callum Reid and Jamal Okafor).",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Noah Berg's current role is release manager of Umbra (since 2025-05-07). This is his most recent role change; the earlier design lead role at Orbit began on 2025-04-17."
+  },
+  {
+   "id": "del_entity_10",
+   "position": 10,
+   "shape": "entity",
+   "request": "Forget everything about Dmitri Volkov.",
+   "n_deleted": 9,
+   "delete_result": {
+    "deleted": 9,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 217.1,
+   "delete_cost": {
+    "llm_calls": 47,
+    "prompt_tokens": 215906,
+    "completion_tokens": 85274,
+    "provider_cached_tokens": 0,
+    "usd": 0.0646
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Dmitri Volkov based?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Dmitri Volkov is based in Dublin. That has been his base since 2025-04-03, when it replaced the earlier Denver entry. His 2025-05-27 Denver appearance was a presentation at PlatformWeek 2025, not a change of base.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says Dmitri Volkov gave an Orbit presentation at PlatformWeek 2025 in Singapore on 2025-02-17, but that only shows where the event was held, not where he is based.",
+      "recovered": false,
+      "context_leak": [
+       "Dmitri Volkov"
+      ]
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only says Dmitri Volkov presented Orbit at PlatformWeek 2025 in Singapore on 2025-02-17, which is where the event was held, not where he is based.",
+      "recovered": false,
+      "context_leak": [
+       "Dmitri Volkov"
+      ]
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Dmitri Volkov. It only says Olga Petrova was based in Berlin, and that fact is no longer valid after 2025-06-01.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Orbit at PlatformWeek 2025 in Singapore on 2025-02-17?",
+     "reference": "Dmitri Volkov",
+     "before": {
+      "answer": "Dmitri Volkov presented Orbit at PlatformWeek 2025 in Singapore on 2025-02-17.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Dmitri Volkov presented Orbit at PlatformWeek 2025 in Singapore on 2025-02-17.",
+      "recovered": true,
+      "context_leak": [
+       "Dmitri Volkov"
+      ]
+     },
+     "end": {
+      "answer": "Dmitri Volkov presented Orbit at PlatformWeek 2025 in Singapore on 2025-02-17.",
+      "recovered": true,
+      "context_leak": [
+       "Dmitri Volkov"
+      ]
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows Orbit was presented at PlatformWeek 2025 in Singapore by Freya Holm on 2025-05-21, not on 2025-02-17. No record covers an Orbit presentation on 2025-02-17.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Wayfarer at DataSummit 2025 in Toronto on 2025-03-27?",
+     "reference": "Dmitri Volkov",
+     "before": {
+      "answer": "Dmitri Volkov presented Wayfarer at DataSummit 2025 in Toronto on 2025-03-27.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context doesn't mention DataSummit 2025 or any Wayfarer presentation on 2025-03-27. It only covers presentations at PlatformWeek 2025 and ShipIt 2025.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention DataSummit 2025 or any Wayfarer presentation on 2025-03-27. It only records Wayfarer presentations at PlatformWeek 2025 (Yusuf Demir, Toronto, 2025-05-19) and ShipIt 2025 (Ines Moreau, Denver, 2025-05-01; Olga Petrova, Berlin, 2025-06-02).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention DataSummit 2025 or any Wayfarer presentation on 2025-03-27. It only covers presentations at ShipIt 2025 (Ines Moreau, Olga Petrova) and PlatformWeek 2025 in Toronto (Yusuf Demir).",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the release manager of Relay?",
+     "reference": "Dmitri Volkov",
+     "before": {
+      "answer": "Dmitri Volkov is the release manager of Relay, effective 2025-01-17. Nothing in the context shows anyone replacing him in that role.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says who presented Relay and who was its tech lead (a role that ended), but it never names a release manager for Relay.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says who presented Relay (Carol Davis at DevCon 2025, Freya Holm at PlatformWeek 2025), but it doesn't name a release manager for Relay.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context says who presented Relay (Carol Davis at DevCon 2025, Freya Holm at PlatformWeek 2025), but it doesn't name a release manager of Relay. The release manager roles it lists are for Umbra, Meridian, Orbit, and Quill.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. The context shows no later change to it."
+  },
+  {
+   "id": "del_entity_11",
+   "position": 11,
+   "shape": "entity",
+   "request": "Forget everything about Bob Martinez.",
+   "n_deleted": 11,
+   "delete_result": {
+    "deleted": 11,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 206.7,
+   "delete_cost": {
+    "llm_calls": 52,
+    "prompt_tokens": 264121,
+    "completion_tokens": 84866,
+    "provider_cached_tokens": 0,
+    "usd": 0.0682
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Bob Martinez based?",
+     "reference": "Lisbon",
+     "before": {
+      "answer": "Bob Martinez is based in Lisbon. He relocated there from Berlin in February 2025 (effective 2025-02-01), which ended his time in Berlin.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Sextant at PlatformWeek 2025 in Osaka on 2025-04-21?",
+     "reference": "Bob Martinez",
+     "before": {
+      "answer": "Bob Martinez presented Sextant at PlatformWeek 2025 in Osaka on 2025-04-21.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of anyone presenting Sextant at PlatformWeek 2025 in Osaka on 2025-04-21. The Sextant presentations at PlatformWeek 2025 are dated 2025-06-10, 2025-06-17, and 2025-07-04, and none of them match that date. The records also disagree on the city, listing Osaka, Austin, Lisbon, and Toronto.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention any Sextant presentation at PlatformWeek 2025 in Osaka on 2025-04-21. Beatriz Lopes presented Sextant at PlatformWeek 2025 in Lisbon on 2025-06-17. Olga Petrova presented Relay at PlatformWeek in Osaka on 2025-06-26.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Beatriz Lopes presented Sextant at PlatformWeek 2025 on 2025-06-17, and it gives conflicting locations for that event (Osaka and Lisbon). Nothing in the context places a Sextant presentation at PlatformWeek 2025 in Osaka on 2025-04-21. Noah Berg's Sextant talk was at InfraDays 2025, not PlatformWeek.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Quill at InfraDays 2025 in Toronto on 2025-05-01?",
+     "reference": "Bob Martinez",
+     "before": {
+      "answer": "Bob Martinez presented Quill at InfraDays 2025 in Toronto on 2025-05-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says InfraDays 2025 was held in Lisbon (Daria Sokolova presented Quill on 2025-05-13) and, in one entry, in Toronto (where Atlas, not Quill, was presented on 2025-05-07). No record shows anyone presenting Quill at InfraDays 2025 in Toronto on 2025-05-01.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says InfraDays 2025 in Toronto featured Atlas (on 2025-05-07), not Quill, and the only Quill presentation at InfraDays 2025 was by Daria Sokolova in Lisbon on 2025-05-13. Nothing mentions a Quill presenter in Toronto on 2025-05-01.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says InfraDays 2025 was held in Toronto (valid 2025-05-07 \u2192 2025-05-13), but it names no Quill presenter there. The only Quill presentation at InfraDays 2025 is the one in Lisbon on 2025-05-13 by Daria Sokolova. Nothing records a Quill presentation in Toronto on 2025-05-01.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the product owner of Umbra?",
+     "reference": "Bob Martinez",
+     "before": {
+      "answer": "Bob Martinez is the current product owner of Umbra. He took over on 2025-05-06, replacing Quentin Dubois, who had held the role since 2025-02-17.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Quentin Dubois became product owner of Umbra on 2025-02-17.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says Umar Siddiqui became tech lead of Umbra and Noah Berg became release manager, but it doesn't name a product owner of Umbra.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists Umbra's tech lead (Umar Siddiqui), its release manager (Noah Berg), and several presenters, but it doesn't name a product owner for Umbra.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Quentin Dubois is based in Singapore (as of 2025-04-15)."
+  },
+  {
+   "id": "del_single_12",
+   "position": 12,
+   "shape": "single",
+   "request": "Delete the note r3_0064 (Quentin Dubois's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 30.9,
+   "delete_cost": {
+    "llm_calls": 3,
+    "prompt_tokens": 13448,
+    "completion_tokens": 3223,
+    "provider_cached_tokens": 0,
+    "usd": 0.0029
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Quentin Dubois's current role?",
+     "reference": "product owner of Umbra",
+     "before": {
+      "answer": "Quentin Dubois is the product owner of Umbra, a role he took on 2025-02-17. The context shows no later change to that role.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context describes Quentin Dubois's conference presentations (Relay, Umbra, Compass, Lantern, Harbor) and that he is based in Singapore, but it never states his job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What job does Quentin Dubois hold right now?",
+     "reference": "product owner of Umbra",
+     "before": {
+      "answer": "Quentin Dubois is the product owner of Umbra, a role he took on 2025-02-17. The context shows no later change to that role.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says Quentin Dubois is based in Singapore and lists the talks he presented at conferences, but it never states his job or title.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is the product owner of Umbra?",
+     "reference": "Quentin Dubois",
+     "before": {
+      "answer": "Quentin Dubois became product owner of Umbra on 2025-02-17.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only says Umar Siddiqui became tech lead of Umbra (2025-03-11) and lists who presented Umbra at conferences. It names no product owner for Umbra.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists Umbra's tech lead (Umar Siddiqui), its release manager (Noah Berg), and its presenters at conferences, but it doesn't name a product owner for Umbra. The only product owner mentioned is Olga Petrova, and that is for Harbor, not Umbra.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists Umbra's tech lead (Umar Siddiqui), its release manager (Noah Berg), and several presenters, but it doesn't name a product owner for Umbra.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Grace Kim is based in Denver."
+  },
+  {
+   "id": "del_single_13",
+   "position": 13,
+   "shape": "single",
+   "request": "Delete the note r3_0027 (Ximena Ortiz's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 28.2,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 9043,
+    "completion_tokens": 2111,
+    "provider_cached_tokens": 0,
+    "usd": 0.002
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Ximena Ortiz's current role?",
+     "reference": "QA lead of Sextant",
+     "before": {
+      "answer": "Ximena Ortiz is the QA lead of Sextant, a role she has held since 2025-01-21. The context records no later change to that role.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says where Ximena Ortiz is based (Toronto since July 2025) and which talks she gave (Pylon, Harbor, Lantern), but it never states her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What job does Ximena Ortiz hold right now?",
+     "reference": "QA lead of Sextant",
+     "before": {
+      "answer": "Ximena Ortiz is the QA lead of Sextant, a role she has held since 2025-01-21. The context shows no later change to that role.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says where Ximena Ortiz is based (Toronto since July 2025) and which conferences she presented at (Pylon at ShipIt 2025, Harbor at InfraDays 2025, Lantern at PlatformWeek 2025), but it doesn't state her job or job title.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is the QA lead of Sextant?",
+     "reference": "Ximena Ortiz",
+     "before": {
+      "answer": "Jamal Okafor is the QA lead of Sextant. His role change took effect on 2025-04-04, which is the latest record for that position. It follows Ximena Ortiz (2025-01-21) and Mina Park (2025-03-04 to 2025-03-06).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Jamal Okafor is the QA lead of Sextant. He took the role on 2025-04-04, after Mina Park left it on 2025-03-06 to become data lead of Compass.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Jamal Okafor is the QA lead of Sextant, as of 2025-04-04.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Jamal Okafor is the QA lead of Sextant, effective 2025-04-04. Nothing in the context shows that role ending or changing.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": false,
+   "control_after_ok": false,
+   "control_after": "I don't have enough information to answer this question."
+  },
+  {
+   "id": "del_single_14",
+   "position": 14,
+   "shape": "single",
+   "request": "Delete the note r3_0017 (Quill's tool).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 34.6,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 9138,
+    "completion_tokens": 2712,
+    "provider_cached_tokens": 0,
+    "usd": 0.0023
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Which issue tracker does Quill use?",
+     "reference": "Confluence",
+     "before": {
+      "answer": "Quill uses Confluence as its issue tracker. It standardized on it on 2025-01-14, and nothing in the context shows a later change.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Quill or its issue tracker.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Quill; it only covers Umbra, Beacon, Lantern, Sextant, Compass, Orbit, Pylon, and Atlas.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Quill. It only covers Umbra, Sextant, Lantern, Tessera, Atlas, Beacon, and Pylon.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What software does Quill track its issues in?",
+     "reference": "Confluence",
+     "before": {
+      "answer": "Quill tracks its issues in Confluence (standardized on 2025-01-14).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only mentions that Valentina Greco presented Quill at DataSummit 2025, and says nothing about which software Quill uses to track its issues.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only mentions that Valentina Greco presented Quill at DataSummit 2025; it says nothing about which software Quill uses to track its issues.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Which projects use Confluence as their issue tracker?",
+     "reference": "Quill",
+     "before": {
+      "answer": "Currently, Confluence is the issue tracker for **Umbra** (since 2025-02-05), **Quill** (since 2025-01-14) and **Tessera** (since 2025-03-18).\n\nThe other projects have stopped using it:\n- **Compass:** its Confluence record ended 2025-02-24.\n- **Sextant:** it moved to Shortcut on 2025-03-06.\n- **Orbit:** it moved to Asana on 2025-03-12.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, the projects currently using Confluence as their issue tracker are:\n\n- **Umbra**: switched from Shortcut to Confluence on 2025-02-05, with no later change recorded.\n- **Tessera**: switched from Shortcut to Confluence on 2025-03-18, with no later change recorded.\n\nThe others no longer use it:\n- **Orbit**: moved to Asana on 2025-03-12.\n- **Sextant**: moved to Shortcut on 2025-03-06.\n- **Compass**: its Confluence standardization (2025-02-20) was marked invalid as of 2025-02-24, and the context doesn't say what replaced it.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Based on the context, the projects currently using Confluence as their issue tracker are:\n\n- **Umbra**: switched from Shortcut to Confluence on 2025-02-05, with no later change recorded.\n- **Tessera**: switched from Shortcut to Confluence on 2025-03-18, with no later change recorded.\n\nThe others no longer use it:\n- **Orbit**: moved to Asana on 2025-03-12.\n- **Sextant**: moved to Shortcut on 2025-03-06.\n- **Compass**: its Confluence standardization (2025-02-20) was marked invalid as of 2025-02-24, and the context doesn't say what replaced it.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, the projects currently using Confluence as their issue tracker are:\n\n- **Umbra**: switched from Shortcut to Confluence effective 2025-02-05 (no end date).\n- **Tessera**: switched from Shortcut to Confluence effective 2025-03-18.\n\nThe others no longer use it:\n- **Compass**: moved to Notion on 2025-02-24.\n- **Orbit**: moved to Asana on 2025-03-12.\n- **Sextant**: moved to Shortcut on 2025-03-06.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Quentin Dubois is based in Singapore (as of 2025-04-15)."
+  },
+  {
+   "id": "del_single_15",
+   "position": 15,
+   "shape": "single",
+   "request": "Delete the note r3_0062 (Relay's tool).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 33.8,
+   "delete_cost": {
+    "llm_calls": 3,
+    "prompt_tokens": 13397,
+    "completion_tokens": 3016,
+    "provider_cached_tokens": 0,
+    "usd": 0.0028
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Which issue tracker does Relay use?",
+     "reference": "Trello",
+     "before": {
+      "answer": "Relay uses Trello as its issue tracker (standardized on it as of 2025-02-21).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Relay's issue tracker.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Relay's issue tracker.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Relay, only Umbra, Sextant, Lantern, Compass, Atlas, Tessera, and Pylon.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What software does Relay track its issues in?",
+     "reference": "Trello",
+     "before": {
+      "answer": "Relay tracks its issues in Trello (standardized on 2025-02-21).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only says Relay was presented at DevCon 2025 in Austin by Quentin Dubois, and it doesn't mention which tool Relay uses to track its issues.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context covers Lantern, Compass, Beacon, Harbor, Tessera, Umbra, and Wayfarer, but says nothing about Relay.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention Relay's issue tracker.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Which projects use Trello as their issue tracker?",
+     "reference": "Relay",
+     "before": {
+      "answer": "Based on the context, Relay (since 2025-02-21) and Harbor (since 2025-03-04) use Trello as their issue tracker.\n\nPylon no longer does: it moved from Trello to Linear effective 2025-01-10.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, only **Harbor** currently uses Trello as its issue tracker (as of 2025-03-04).\n\nPylon used Trello but switched to Linear effective 2025-01-10, so it no longer qualifies.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Based on the context, only **Harbor** currently uses Trello as its issue tracker (as of 2025-03-04).\n\nPylon used Trello but switched to Linear effective 2025-01-10, so it no longer qualifies.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, only **Harbor** currently uses Trello as its issue tracker (as of 2025-03-04).\n\nPylon used Trello earlier but switched to Linear effective 2025-01-10, so it no longer does.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Quentin Dubois is based in Singapore (as of 2025-04-15)."
+  },
+  {
+   "id": "del_entity_16",
+   "position": 16,
+   "shape": "entity",
+   "request": "Forget everything about Rosa Alvarez.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 117.0,
+   "delete_cost": {
+    "llm_calls": 30,
+    "prompt_tokens": 158098,
+    "completion_tokens": 45054,
+    "provider_cached_tokens": 0,
+    "usd": 0.0379
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Rosa Alvarez based?",
+     "reference": "Dublin",
+     "before": {
+      "answer": "Rosa Alvarez is based in Dublin. She relocated there from Osaka in May 2025, which invalidated the earlier Osaka record. The June 2025 PlatformWeek presentation in Osaka was a conference appearance and doesn't change her base.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Orbit at InfraDays 2025 in Singapore on 2025-06-12?",
+     "reference": "Rosa Alvarez",
+     "before": {
+      "answer": "Rosa Alvarez presented Orbit at InfraDays 2025 in Singapore on 2025-06-12.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows Orbit being presented at PlatformWeek 2025 in Singapore (by Dmitri Volkov on 2025-02-17 and by Freya Holm on 2025-05-21), not at InfraDays 2025. The InfraDays 2025 presentations listed are Nimbus (Yusuf Demir, 2025-05-06) and Harbor (Quentin Dubois, 2025-07-02). Nothing mentions an Orbit presentation at InfraDays on 2025-06-12.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context doesn't show anyone presenting Orbit at InfraDays 2025 in Singapore. Orbit was presented at PlatformWeek 2025 in Singapore (by Freya Holm and by Dmitri Volkov, on different dates). InfraDays 2025 in Singapore on 2025-05-06 had Yusuf Demir presenting Nimbus. The later InfraDays 2025 entry places the event in Lisbon on 2025-06-20, with Jamal Okafor presenting Harbor. Nothing in the context covers 2025-06-12.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Freya Holm presented Orbit, but at PlatformWeek 2025 on 2025-05-21, not at InfraDays 2025. InfraDays 2025 was held on 2025-05-06 (with another record showing a presentation on 2025-05-07), and nothing in the context describes an Orbit presentation at InfraDays on 2025-06-12.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Orbit at PlatformWeek 2025 in Osaka on 2025-06-19?",
+     "reference": "Rosa Alvarez",
+     "before": {
+      "answer": "Rosa Alvarez presented Orbit at PlatformWeek 2025 in Osaka on 2025-06-19.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Olga Petrova presented Relay at PlatformWeek 2025 in Osaka on 2025-06-26, and that Freya Holm presented Orbit at PlatformWeek 2025 in Singapore on 2025-05-21. Nothing mentions an Orbit presentation in Osaka on 2025-06-19.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Freya Holm presented Orbit at PlatformWeek 2025 in Singapore on 2025-05-21, and Olga Petrova presented Relay at PlatformWeek 2025 in Osaka on 2025-06-26. Nothing records an Orbit presentation at PlatformWeek 2025 in Osaka on 2025-06-19.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Olga Petrova presented at PlatformWeek 2025 in Osaka on 2025-06-26, and that Relay was presented there that day. Orbit was presented in Singapore by Freya Holm on 2025-05-21. Nothing in the context mentions an Orbit presentation in Osaka on 2025-06-19.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the tech lead of Umbra?",
+     "reference": "Rosa Alvarez",
+     "before": {
+      "answer": "Umar Siddiqui is the tech lead of Umbra. He took over on 2025-03-11, replacing Rosa Alvarez, who had held the role since 2025-01-22.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Umar Siddiqui is the tech lead of Umbra, having become so on 2025-03-11. Nothing in the context shows that role changing afterward.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Umar Siddiqui is the tech lead of Umbra. He took the role on 2025-03-11, and nothing in the context shows a later change.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Umar Siddiqui is the tech lead of Umbra, having become so on 2025-03-11.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Umar Siddiqui is the tech lead of Umbra, a role he took on 2025-03-11. Nothing in the context indicates that it has ended."
+  },
+  {
+   "id": "del_intent_17",
+   "position": 17,
+   "shape": "intent",
+   "request": "Forget where Yus lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 49.4,
+   "delete_cost": {
+    "llm_calls": 8,
+    "prompt_tokens": 36979,
+    "completion_tokens": 12152,
+    "provider_cached_tokens": 0,
+    "usd": 0.0099
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Yusuf Demir based?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Yusuf Demir is based in Austin. He relocated there in June 2025, after previously being based in Berlin.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only mentions where Yusuf Demir presented at events (Singapore for InfraDays 2025, Toronto for PlatformWeek 2025), not where he is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only lists where Yusuf Demir presented (Singapore, Dublin, Toronto) and his job roles, but doesn't say where he is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context describes Yusuf Demir's roles (data lead of Wayfarer, then product owner of Sextant) and conference presentations in Dublin, Singapore, and Toronto, but it never states where he is based.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Yusuf Demir live in?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Yusuf Demir lives in Austin. He relocated there from Berlin in June 2025, and the Berlin record was closed out as of 2025-06-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists the cities where Yusuf Demir presented at events (Dublin, Toronto, Singapore), but none of it says where he lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists cities where Yusuf Demir presented at conferences (Dublin, Toronto, Singapore), but none of it says where he lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists the conferences Yusuf Demir presented at (Dublin, Singapore, Toronto) and his role changes, but it never states where he lives.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Austin?",
+     "reference": "Yusuf Demir",
+     "before": {
+      "answer": "Based on the context, these people are based in Austin:\n\n- **Callum Reid** (valid 2025-01-21)\n- **Jamal Okafor** (valid 2025-02-07)\n\nMina Park's Austin location was marked invalid as of 2025-01-08, so she is not currently counted. Hiro Tanaka and Grace Kim only presented at events held in Austin (ShipIt 2025 and DataSummit 2025). That doesn't make them based there, and Hiro Tanaka is listed as based in Lisbon.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, these people are based in Austin:\n\n- **Callum Reid** (valid 2025-01-21)\n- **Jamal Okafor** (valid 2025-02-07)\n\nMina Park's Austin location was marked invalid as of 2025-01-08, so she is not currently counted. Hiro Tanaka and Grace Kim only presented at events held in Austin (ShipIt 2025 and DataSummit 2025). That doesn't make them based there, and Hiro Tanaka is listed as based in Lisbon.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Callum Reid (valid 2025-01-21) and Jamal Okafor (valid 2025-02-07) are based in Austin.\n\nCallum's earlier Osaka record was invalidated on 2025-01-21, which is when the Austin record took over. DataSummit 2025 was also held in Austin, but that is an event location and not a person's base.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Callum Reid and Jamal Okafor are based in Austin.\n\nCallum Reid's Austin location is valid from 2025-01-21, superseding his earlier Osaka base. Jamal Okafor's is valid from 2025-02-07.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Yusuf Demir is the product owner of Sextant. He moved into that role on 2025-04-11 from his previous position as data lead of Wayfarer."
+  },
+  {
+   "id": "del_entity_18",
+   "position": 18,
+   "shape": "entity",
+   "request": "Forget everything about Quentin Dubois.",
+   "n_deleted": 6,
+   "delete_result": {
+    "deleted": 6,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 118.1,
+   "delete_cost": {
+    "llm_calls": 32,
+    "prompt_tokens": 152320,
+    "completion_tokens": 49710,
+    "provider_cached_tokens": 0,
+    "usd": 0.04
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Quentin Dubois based?",
+     "reference": "Singapore",
+     "before": {
+      "answer": "Quentin Dubois is based in Singapore (as of 2025-04-15).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Compass at DevCon 2025 in Lisbon on 2025-05-01?",
+     "reference": "Quentin Dubois",
+     "before": {
+      "answer": "Quentin Dubois presented Compass at DevCon 2025 in Lisbon on 2025-05-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Priya Nair presented Compass at DevCon 2025 on 2025-05-12, in Dublin in one record. Nothing shows Compass being presented in Lisbon, and nothing shows a Compass presentation on 2025-05-01. The Lisbon records for DevCon 2025 concern Noah Berg (Quill) and Elena Rossi (Pylon), and the two records give conflicting locations for the event.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Priya Nair presented Compass at DevCon 2025 in Dublin on 2025-05-12. The only DevCon 2025 Lisbon record is Noah Berg presenting Quill on 2025-04-21, and that record is marked invalid from 2025-04-24. Nothing shows Compass being presented in Lisbon on 2025-05-01.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context doesn't show Compass being presented at DevCon 2025 in Lisbon. The Lisbon records (valid 2025-04-21 \u2192 2025-04-28, later invalidated) show Noah Berg presenting Quill. Compass at DevCon 2025 was presented by Priya Nair in Dublin on 2025-05-12. Wei Zhang presented Compass at InfraDays 2025 in Berlin on 2025-04-17.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Relay at DevCon 2025 in Austin on 2025-05-02?",
+     "reference": "Quentin Dubois",
+     "before": {
+      "answer": "Quentin Dubois presented Relay at DevCon 2025 in Austin on 2025-05-02.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context doesn't show anyone presenting Relay at DevCon 2025 in Austin on 2025-05-02. Relay presentations at DevCon 2025 were by Carol Davis on 2025-06-02 (Berlin in one record) and Elena Rossi on 2025-06-09 (Singapore). The Austin entries are on 2025-06-17, and they concern Freya Holm, who presented Lantern (not Relay).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of Relay being presented at DevCon 2025 in Austin on 2025-05-02. Carol Davis presented Relay at DevCon 2025 on 2025-06-02 (one record places it in Berlin). Freya Holm presented Lantern at DevCon 2025 in Austin on 2025-06-17.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context doesn't show anyone presenting Relay at DevCon 2025 in Austin on 2025-05-02. Relay was presented at DevCon 2025 in Berlin by Carol Davis on 2025-06-02. The Austin DevCon 2025 entry is Freya Holm presenting Lantern on 2025-06-17.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": false,
+   "control_after_ok": false,
+   "control_after": "I don't have enough information to answer this question. The context covers Compass's issue tracker, presentations, and team roles, but it says nothing about its quarterly budget."
+  },
+  {
+   "id": "del_intent_19",
+   "position": 19,
+   "shape": "intent",
+   "request": "Forget where Gracie lives, but keep everything about their job.",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 31.1,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 8987,
+    "completion_tokens": 2165,
+    "provider_cached_tokens": 0,
+    "usd": 0.002
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Grace Kim based?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Grace Kim is based in Denver.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says Grace Kim presented in Denver, Austin, and Toronto, but those are conference locations, not where she is based.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says Grace Kim presented in Denver, Austin, and Toronto, but those are conference locations, not where she is based.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists Grace Kim's roles (tech lead of Pylon, then design lead of Tessera) and her conference talks in Denver, Austin, and Toronto, but it never says where she is based.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Grace Kim live in?",
+     "reference": "Denver",
+     "before": {
+      "answer": "Grace Kim lives in Denver. The context states she is based in Denver (valid 2025-06-27), and she presented in Denver on 2025-06-03. Her later presentations in Austin and Toronto were conference trips, not relocations.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only lists cities where Grace Kim gave presentations (Denver, Austin, Toronto), which doesn't tell us where she lives.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only lists cities where Grace Kim gave presentations (Denver, Austin, Toronto), which doesn't tell us where she lives.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows where Grace Kim presented (Denver, Austin, Toronto), but those are conference locations, not where she lives.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Denver?",
+     "reference": "Grace Kim",
+     "before": {
+      "answer": "Grace Kim is based in Denver (as of 2025-06-27).\n\nJamal Okafor briefly relocated to Denver in February 2025, but that record was invalidated on 2025-02-07 and he is listed as based in Austin. Mina Park presented at PlatformWeek in Denver, but that doesn't say she is based there.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Jamal Okafor is the only person the context places in Denver. He relocated there from Austin in February 2025. The record saying he is based in Austin (valid 2025-02-07) conflicts with this, and the relocation entry was marked invalid as of 2025-02-07, so the context is ambiguous about his current location.\n\nMina Park presented at PlatformWeek 2025 in Denver, but that was a conference visit, and the context does not say she is based there.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "No one is currently based in Denver according to the context. Jamal Okafor's relocation to Denver was invalidated on 2025-02-07 and replaced by the fact that he is based in Austin. The Denver events (PlatformWeek and InfraDays 2025) were conferences, not residences.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, no one is currently based in Denver. Jamal Okafor's Denver relocation was only valid from 2025-02-01 to 2025-02-07, and he is now recorded as based in Austin. The other Denver mentions (ShipIt, DataSummit, and InfraDays 2025) are events, not residences.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Grace Kim is currently design lead of Tessera, a role she took on 2025-04-14 after moving from tech lead of Pylon."
+  },
+  {
+   "id": "del_entity_20",
+   "position": 20,
+   "shape": "entity",
+   "request": "Forget everything about Ximena Ortiz.",
+   "n_deleted": 5,
+   "delete_result": {
+    "deleted": 5,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 76.9,
+   "delete_cost": {
+    "llm_calls": 23,
+    "prompt_tokens": 117173,
+    "completion_tokens": 32608,
+    "provider_cached_tokens": 0,
+    "usd": 0.0276
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Ximena Ortiz based?",
+     "reference": "Toronto",
+     "before": {
+      "answer": "Ximena Ortiz is based in Toronto (since July 2025). She was previously based in Berlin, which is no longer valid as of 2025-07-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Pylon at ShipIt 2025 in Singapore on 2025-05-16?",
+     "reference": "Ximena Ortiz",
+     "before": {
+      "answer": "Ximena Ortiz presented Pylon at ShipIt 2025 in Singapore on 2025-05-16.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows Pylon was presented at ShipIt 2025 only by Olga Petrova in Dublin (2025-03-10), and that fact stops being valid in May 2025. The only Singapore entry for ShipIt 2025 is Mina Park presenting Atlas on 2025-03-31, which is a different product. Nothing records who presented Pylon at ShipIt 2025 in Singapore on 2025-05-16.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Olga Petrova presented Pylon at ShipIt 2025, but in Dublin on 2025-03-10, not in Singapore on 2025-05-16. The only Singapore event mentioned is InfraDays 2025, where Nimbus (not Pylon) was presented on 2025-05-06.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Pylon presented at ShipIt 2025 only by Olga Petrova on 2025-03-10 (in Dublin), and nothing about a ShipIt 2025 presentation in Singapore on 2025-05-16.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Harbor at InfraDays 2025 in Denver on 2025-06-20?",
+     "reference": "Ximena Ortiz",
+     "before": {
+      "answer": "Ximena Ortiz presented Harbor at InfraDays 2025 in Denver on 2025-06-20.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Jamal Okafor presented Harbor at InfraDays 2025 on 2025-06-20, but the context places that event in Lisbon, not Denver. Denver is only associated with InfraDays 2025 on 2025-06-03, when Grace Kim presented Lantern, not Harbor.\n\nThe question's premise (Denver on 2025-06-20) doesn't match the records. The closest match is Jamal Okafor, who presented Harbor at InfraDays 2025 in Lisbon on that date.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Jamal Okafor presented Harbor at InfraDays 2025 on 2025-06-20, but the context places that event in Lisbon, not Denver. Denver appears only for ShipIt 2025 (Valentina Greco, 2025-07-02). The question's premise of a Denver location for InfraDays doesn't match the records, so the answer based on date and event is Jamal Okafor.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says Jamal Okafor presented Harbor at InfraDays 2025 in Lisbon on 2025-06-20. The only InfraDays 2025 event in Denver was on 2025-06-03, where Grace Kim presented Lantern. No record shows Harbor being presented in Denver on 2025-06-20.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": false,
+   "control_after_ok": false,
+   "control_after": "I don't have enough information to answer this question. The context covers Compass's issue tracker, presentations, and team roles, but it says nothing about its quarterly budget."
+  },
+  {
+   "id": "del_intent_21",
+   "position": 21,
+   "shape": "intent",
+   "request": "Forget where W. Zhang lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 48.6,
+   "delete_cost": {
+    "llm_calls": 6,
+    "prompt_tokens": 33401,
+    "completion_tokens": 8246,
+    "provider_cached_tokens": 0,
+    "usd": 0.0072
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Wei Zhang based?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Wei Zhang is based in Berlin. The earlier record placing them in Osaka (from May 2025) was invalidated on 2025-05-19, when the Berlin record became valid.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context describes Wei Zhang's roles (QA lead of Lantern, then release manager of Meridian) and conference presentations (InfraDays 2025 in Berlin, ShipIt 2025 in Austin), but it doesn't say where Wei Zhang is based. Event locations alone don't indicate a home location.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only mentions conferences Wei Zhang presented at (Berlin and Austin) and their roles on Lantern and Meridian, but it doesn't say where Wei Zhang is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context gives Wei Zhang's roles (release manager of Meridian) and conference appearances (Berlin on 2025-04-17, Austin on 2025-04-24), but it doesn't state where Wei Zhang is based.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Wei Zhang live in?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Wei Zhang lives in Berlin. The Osaka record (valid from 2025-05-01) was invalidated on 2025-05-19, the same date the Berlin record became valid.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context mentions cities only as locations of events Wei Zhang presented at (Austin, Berlin, Lisbon, Denver), not where Wei Zhang lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists where Wei Zhang presented (Austin, Berlin) and role changes, but it doesn't say which city Wei Zhang lives in.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context covers Wei Zhang's roles and conference presentations (InfraDays 2025 in Berlin, ShipIt 2025 in Austin), but none of it states where Wei Zhang lives. Presenting at a conference in a city doesn't indicate residence.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Osaka?",
+     "reference": "Wei Zhang",
+     "before": {
+      "answer": "Currently based in Osaka (per the context):\n\n- **Beatriz Lopes** (since 2025-04-09)\n- **Freya Holm** (since March 2025)\n- **Elena Rossi** (since May 2025)\n\nNot included, because their Osaka entries were invalidated:\n- Wei Zhang (invalid 2025-05-19)\n- Callum Reid (invalid 2025-01-21; he is listed as based in Austin from that date)\n\nPlatformWeek 2025 and InfraDays 2025 were events held in Osaka, not people.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, these people are currently based in Osaka:\n\n- **Beatriz Lopes** (since 2025-04-09)\n- **Freya Holm** (since March 2025)\n- **Elena Rossi** (since May 2025)\n\nTwo others were previously listed in Osaka, but those records are no longer valid:\n- Sanjay Mehta (invalidated 2025-01-16)\n- Callum Reid (invalidated 2025-01-21, now listed in Austin)\n\nPlatformWeek 2025 and InfraDays 2025 were also held in Osaka, but they are events rather than people.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Beatriz Lopes is the only person the context shows as currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka from January 2025, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, **Beatriz Lopes** is the only person currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Wei Zhang is currently the release manager of Meridian, a role effective 2025-02-14. Wei Zhang was previously QA lead of Lantern, from 2025-02-04 until the move to Meridian."
+  },
+  {
+   "id": "del_entity_22",
+   "position": 22,
+   "shape": "entity",
+   "request": "Forget everything about Mina Park.",
+   "n_deleted": 9,
+   "delete_result": {
+    "deleted": 9,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 141.1,
+   "delete_cost": {
+    "llm_calls": 37,
+    "prompt_tokens": 179087,
+    "completion_tokens": 47096,
+    "provider_cached_tokens": 0,
+    "usd": 0.0409
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Mina Park based?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Mina Park is based in Lisbon. The earlier Austin location (valid from 2025-01-01) was superseded on 2025-01-08, when the Lisbon record became valid.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Atlas at ShipIt 2025 in Singapore on 2025-03-31?",
+     "reference": "Mina Park",
+     "before": {
+      "answer": "Mina Park presented Atlas at ShipIt 2025 in Singapore on 2025-03-31.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows no presentation of Atlas at ShipIt 2025 in Singapore on 2025-03-31. ShipIt 2025 was in Lisbon, with Beatriz Lopes presenting Atlas on 2025-04-10 and Freya Holm on 2025-06-02. The only Singapore event was PlatformWeek 2025, where Olga Petrova presented on 2025-03-27.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context doesn't show anyone presenting Atlas at ShipIt 2025 in Singapore on 2025-03-31. The related records are:\n- ShipIt 2025 was in Lisbon, with Freya Holm presenting Atlas on 2025-06-02.\n- Beatriz Lopes presented Atlas at ShipIt 2025 on 2025-04-10, with no location given.\n- Singapore appears only for PlatformWeek 2025 on 2025-03-27, where Olga Petrova presented.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Atlas at ShipIt 2025 presented by Beatriz Lopes in Osaka (2025-04-10) and by Freya Holm in Lisbon (2025-06-02), but nothing about a presentation in Singapore on 2025-03-31.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Tessera at InfraDays 2025 in Dublin on 2025-04-08?",
+     "reference": "Mina Park",
+     "before": {
+      "answer": "Mina Park presented Tessera at InfraDays 2025 in Dublin on 2025-04-08.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows Tove Lindqvist presenting Pylon at InfraDays 2025 in Dublin (2025-05-15), but no record of anyone presenting Tessera at InfraDays 2025 in Dublin on 2025-04-08.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context records no presentation of Tessera at InfraDays 2025 in Dublin on 2025-04-08. The only Dublin entry is Tove Lindqvist presenting Pylon on 2025-05-15, and Tessera appears only at DevCon 2025 and DataSummit 2025.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows Tessera presented at DevCon 2025 (Jamal Okafor in Singapore, Grace Kim in Toronto) and at DataSummit 2025 (Daria Sokolova in Denver). The only InfraDays 2025 presentation in Dublin was Pylon, by Tove Lindqvist, on 2025-05-15. Nothing records Tessera at InfraDays 2025 on 2025-04-08.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the data lead of Compass?",
+     "reference": "Mina Park",
+     "before": {
+      "answer": "Mina Park is the data lead of Compass, effective 2025-03-06 (she moved there from QA lead of Sextant).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists design lead, QA lead, and release manager roles for Compass, but no data lead of Compass. The data lead roles mentioned are for Beacon and Wayfarer (and Quill).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists Sanjay Mehta as design lead of Compass and Carol Davis as QA lead of Compass, but it doesn't name a data lead of Compass. Sanjay Mehta became data lead of Beacon, not Compass.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists Compass roles for Sanjay Mehta (design lead) and Carol Davis (QA lead), and says Priya Nair presented Compass at DevCon 2025, but it names no data lead of Compass. The data lead roles it mentions are for Beacon (Daria Sokolova, then Sanjay Mehta) and Wayfarer (Yusuf Demir).",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. Nothing in the context says it has ended."
+  },
+  {
+   "id": "del_entity_23",
+   "position": 23,
+   "shape": "entity",
+   "request": "Forget everything about Hiro Tanaka.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 122.4,
+   "delete_cost": {
+    "llm_calls": 25,
+    "prompt_tokens": 126453,
+    "completion_tokens": 35410,
+    "provider_cached_tokens": 0,
+    "usd": 0.0299
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Hiro Tanaka based?",
+     "reference": "Toronto",
+     "before": {
+      "answer": "Lisbon. The most recent record of where he is based (valid from 2025-01-16) says Lisbon, and the earlier \"relocated from Lisbon\" entry was invalidated that same day. The memory also still holds an unretracted \"relocated to Toronto in January 2025\" entry, so the records conflict somewhat.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Lantern at PlatformWeek 2025 in Lisbon on 2025-05-12?",
+     "reference": "Hiro Tanaka",
+     "before": {
+      "answer": "Hiro Tanaka presented Lantern at PlatformWeek 2025 in Lisbon on 2025-05-12.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of Lantern being presented at PlatformWeek 2025 in Lisbon on 2025-05-12. The Lantern presentations listed are Grace Kim at InfraDays 2025 (2025-06-03) and Freya Holm at DevCon 2025 in Austin (2025-06-17). The PlatformWeek 2025 in Lisbon entry is Beatriz Lopes presenting Sextant on 2025-06-17.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows no Lantern presentation at PlatformWeek 2025 in Lisbon on 2025-05-12. Lantern was presented by Grace Kim at InfraDays 2025 (2025-06-03) and by Freya Holm at DevCon 2025 in Austin (2025-06-17). The only Lisbon entry for PlatformWeek 2025 is Beatriz Lopes presenting Sextant on 2025-06-17.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context says PlatformWeek 2025 in Lisbon included Beatriz Lopes's presentation on 2025-06-17, but it doesn't say what she presented. Nothing is recorded for Lisbon on 2025-05-12, and the Lantern presentations listed were at DevCon (Freya Holm) and InfraDays (Grace Kim).",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Sextant at PlatformWeek 2025 in Toronto on 2025-06-10?",
+     "reference": "Hiro Tanaka",
+     "before": {
+      "answer": "Hiro Tanaka presented Sextant at PlatformWeek 2025 in Toronto on 2025-06-10.\n\n(Note: the Toronto fact was later marked invalid as of 2025-06-17, since the context indicates PlatformWeek 2025 was held in Lisbon when Beatriz Lopes presented Sextant. But for the 2025-06-10 date as asked, the answer is Hiro Tanaka.)",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context shows Sextant was presented by Beatriz Lopes at PlatformWeek 2025 in Lisbon (2025-06-17) and by Noah Berg at InfraDays 2025 in Osaka (2025-06-13). PlatformWeek 2025 in Toronto had Yusuf Demir (Wayfarer, 2025-05-19) and Freya Holm (Relay, 2025-05-21). Nothing records a Sextant presentation in Toronto on 2025-06-10.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context shows Sextant was presented by Beatriz Lopes at PlatformWeek 2025 in Lisbon (2025-06-17) and by Noah Berg at InfraDays 2025 in Osaka (2025-06-13). PlatformWeek 2025 in Toronto had Yusuf Demir (Wayfarer, 2025-05-19) and Freya Holm (Relay, 2025-05-21). Nothing records a Sextant presentation in Toronto on 2025-06-10.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows Sextant presentations at PlatformWeek 2025 only by Beatriz Lopes, on 2025-06-17, and that event is placed in Lisbon. Noah Berg presented Sextant at InfraDays 2025 in Osaka on 2025-06-13. Nothing records a Sextant presentation in Toronto on 2025-06-10.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the QA lead of Compass?",
+     "reference": "Hiro Tanaka",
+     "before": {
+      "answer": "Carol Davis is the QA lead of Compass. She took the role on 2025-04-01, after Hiro Tanaka, who had held it since 2025-01-22.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Carol Davis is the QA lead of Compass, as of 2025-04-01.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Carol Davis is the QA lead of Compass, as of 2025-04-01.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Carol Davis is the QA lead of Compass, a role she took on 2025-04-01.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": false,
+   "control_after_ok": false,
+   "control_after": "I don't have enough information to answer this question."
+  },
+  {
+   "id": "del_entity_24",
+   "position": 24,
+   "shape": "entity",
+   "request": "Forget everything about Elena Rossi.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 107.6,
+   "delete_cost": {
+    "llm_calls": 28,
+    "prompt_tokens": 125909,
+    "completion_tokens": 34207,
+    "provider_cached_tokens": 0,
+    "usd": 0.0296
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Elena Rossi based?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Elena Rossi is based in Osaka. She relocated there from Berlin in May 2025.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Pylon at DevCon 2025 in Lisbon on 2025-02-10?",
+     "reference": "Elena Rossi",
+     "before": {
+      "answer": "Elena Rossi presented Pylon at DevCon 2025 in Lisbon on 2025-02-10.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of Pylon being presented at DevCon 2025 in Lisbon on 2025-02-10. The only DevCon 2025 entry in Lisbon is Noah Berg presenting Quill on 2025-04-21, and it is a different talk and date.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't mention anyone presenting Pylon at DevCon 2025 in Lisbon on 2025-02-10. The only DevCon 2025 entry covers Noah Berg presenting Quill on 2025-04-21.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context says DevCon 2025 was held in Lisbon, but it contains no record of anyone presenting Pylon there, and nothing dated 2025-02-10.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Harbor at ShipIt 2025 in Toronto on 2025-05-30?",
+     "reference": "Elena Rossi",
+     "before": {
+      "answer": "Elena Rossi presented Harbor at ShipIt 2025 in Toronto on 2025-05-30.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context shows no presentation of Harbor at ShipIt 2025 in Toronto on 2025-05-30. ShipIt 2025 appears in Austin (Wei Zhang, 2025-04-24) and Denver (Valentina Greco, 2025-07-02), and Toronto is associated only with DevCon 2025 (Carol Davis, 2025-04-28).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context has no record of Harbor being presented at ShipIt 2025 in Toronto on 2025-05-30. ShipIt 2025 appears only in Austin, with Wei Zhang presenting on 2025-04-24 and Valentina Greco on 2025-07-02. Toronto appears only with DevCon 2025 (Carol Davis, 2025-04-28) and PlatformWeek 2025 (Relay, Freya Holm, 2025-05-21).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context has no record of a Harbor presentation at ShipIt 2025 in Toronto on 2025-05-30. The closest entries are Wei Zhang at ShipIt 2025 on 2025-04-24 (listed with Austin as the location, and later superseded) and Valentina Greco at ShipIt 2025 in Denver on 2025-07-02. Carol Davis presented at DevCon 2025 in Toronto on 2025-04-28, which is a different event and date.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the product owner of Pylon?",
+     "reference": "Elena Rossi",
+     "before": {
+      "answer": "Elena Rossi is the product owner of Pylon, effective 2025-03-24, when she moved over from being data lead of Quill.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context mentions Pylon's tech lead (Grace Kim, until 2025-04-14) and Olga Petrova becoming product owner of Harbor, but it doesn't state who the product owner of Pylon is.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context mentions Pylon's tech lead (Grace Kim, until 2025-04-14) and Olga Petrova becoming product owner of Harbor, but it doesn't state who the product owner of Pylon is.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context doesn't name a product owner of Pylon. It mentions Grace Kim as tech lead (briefly, in 2025), and several people who presented Pylon, but none as its product owner. Olga Petrova and Yusuf Demir are product owners of other projects (Harbor and Sextant).",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. Nothing in the context says it has ended."
+  },
+  {
+   "id": "del_intent_25",
+   "position": 25,
+   "shape": "intent",
+   "request": "Forget where Nessa lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 36.4,
+   "delete_cost": {
+    "llm_calls": 5,
+    "prompt_tokens": 22112,
+    "completion_tokens": 5056,
+    "provider_cached_tokens": 0,
+    "usd": 0.0047
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Ines Moreau based?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Ines Moreau is based in Dublin. The record of her relocating from Dublin to Austin was invalidated on 2025-03-13, and the \"based in Dublin\" fact became valid on that same date.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context doesn't state where Ines Moreau is based. It only says she presented Wayfarer at ShipIt 2025 in Denver on 2025-05-01, and a presentation location doesn't establish where someone lives or works.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context doesn't state where Ines Moreau is based. It only says she presented Wayfarer at ShipIt 2025 in Denver on 2025-05-01, and a presentation location doesn't establish where someone lives or works.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context gives Ines Moreau's roles (design lead of Harbor, then release manager of Quill) and says she presented Wayfarer at ShipIt 2025, but it doesn't say where she is based. The ShipIt 2025 location is also inconsistent across the records (Denver, Dublin, Lisbon, Berlin), and a conference location doesn't indicate where someone lives or works.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Ines Moreau live in?",
+     "reference": "Austin",
+     "before": {
+      "answer": "Ines Moreau lives in Dublin. The record of her relocating to Austin was invalidated on 2025-03-13, and the \"based in Dublin\" fact is valid from that date.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context records Ines Moreau's roles (design lead of Harbor, then release manager of Quill) and her presentation at ShipIt 2025, but it doesn't say where she lives. Denver and Lisbon appear only as locations of the ShipIt 2025 event, not as her residence.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context records Ines Moreau's roles (design lead of Harbor, then release manager of Quill) and her presentation at ShipIt 2025, but it doesn't say where she lives. Denver and Lisbon appear only as locations of the ShipIt 2025 event, not as her residence.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context says Ines Moreau presented Wayfarer at ShipIt 2025 in Denver, but presenting at an event doesn't show where she lives. No fact states her city of residence.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Austin?",
+     "reference": "Ines Moreau",
+     "before": {
+      "answer": "Callum Reid and Jamal Okafor are based in Austin.\n\n(DevCon 2025 and DataSummit 2025 were also held in Austin, but those are events, not people based there.)",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, Callum Reid and Jamal Okafor are based in Austin.\n\n- Callum Reid: Austin (valid from 2025-01-21). The earlier record placing him in Osaka was invalidated on that date.\n- Jamal Okafor: Austin (valid from 2025-02-07).",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Callum Reid (valid 2025-01-21) and Jamal Okafor (valid 2025-02-07) are based in Austin.\n\nCallum's earlier Osaka record was invalidated on 2025-01-21, which is when the Austin record took over. DataSummit 2025 was also held in Austin, but that is an event location and not a person's base.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Callum Reid and Jamal Okafor are based in Austin.\n\nCallum Reid's Austin location is valid from 2025-01-21, superseding his earlier Osaka base. Jamal Okafor's is valid from 2025-02-07.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Ines Moreau is currently the release manager of Quill, a role she has held since 2025-02-25. Before that she was design lead of Harbor, from 2025-02-21 to 2025-02-25."
+  },
+  {
+   "id": "del_single_26",
+   "position": 26,
+   "shape": "single",
+   "request": "Delete the note r3_0190 (Emeka Obi's city).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 40.0,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 21978,
+    "completion_tokens": 4302,
+    "provider_cached_tokens": 0,
+    "usd": 0.0039
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Emeka Obi based?",
+     "reference": "Berlin",
+     "before": {
+      "answer": "Emeka Obi is based in Berlin (as of 2025-05-21, per the memory context).",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Emeka Obi live in?",
+     "reference": "Berlin",
+     "before": {
+      "answer": "Emeka Obi lives in Berlin.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Berlin?",
+     "reference": "Emeka Obi",
+     "before": {
+      "answer": "Emeka Obi is currently based in Berlin (valid from 2025-05-21, with no end date).\n\nOlga Petrova was also based in Berlin, but that fact became invalid on 2025-06-01, so it no longer applies.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Olga Petrova is the only person the context places in Berlin, and that fact is no longer valid. It was valid from 2025-04-23 and marked invalid on 2025-06-01. So no one is currently recorded as based in Berlin.\n\nThe other Berlin mentions concern events (DataSummit 2025, InfraDays 2025, DevCon 2025), not where people are based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Olga Petrova was based in Berlin from 2025-04-23 until 2025-06-01. She has been based in Singapore since June 2025, so the context lists no one as currently based in Berlin.\n\nPriya Nair and Valentina Greco appear only as presenters at Berlin events, which doesn't show they live there.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Olga Petrova is the only person the context lists as based in Berlin, and that fact is no longer valid: it ran from 2025-04-23 to 2025-06-01. The other Berlin entries are events (DevCon, ShipIt, InfraDays, DataSummit) held there, not people's locations. Jamal Okafor and Callum Reid are based in Austin.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. Nothing in the context says it has ended."
+  },
+  {
+   "id": "del_entity_27",
+   "position": 27,
+   "shape": "entity",
+   "request": "Forget everything about Alice Chen.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 87.0,
+   "delete_cost": {
+    "llm_calls": 23,
+    "prompt_tokens": 109297,
+    "completion_tokens": 27640,
+    "provider_cached_tokens": 0,
+    "usd": 0.0244
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Alice Chen based?",
+     "reference": "Singapore",
+     "before": {
+      "answer": "Alice Chen is based in Singapore. She relocated there from Lisbon in June 2025, and the earlier Lisbon records are no longer valid as of 2025-06-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Meridian at InfraDays 2025 in Osaka on 2025-05-15?",
+     "reference": "Alice Chen",
+     "before": {
+      "answer": "Alice Chen presented Meridian at InfraDays 2025 in Osaka on 2025-05-15.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.\n\nThe context shows InfraDays 2025 in Osaka, where Freya Holm presented Nimbus on 2025-04-15. Meridian was presented at DataSummit 2025 by Priya Nair and Callum Reid, and at ShipIt 2025 by Tove Lindqvist. Nothing links anyone to presenting Meridian at InfraDays 2025 on 2025-05-15.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context shows no one presenting Meridian at InfraDays 2025 in Osaka. Freya Holm presented Nimbus there on 2025-04-15, and Noah Berg presented Sextant there on 2025-06-13. Nothing is recorded for 2025-05-15.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context shows no Meridian presentation at InfraDays 2025 in Osaka. InfraDays 2025 in Osaka had Freya Holm presenting Nimbus (2025-04-15) and Noah Berg presenting Sextant (2025-06-13). Meridian was presented at DataSummit 2025 and ShipIt 2025, and nothing is recorded for 2025-05-15.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "event",
+     "question": "Who presented Wayfarer at ShipIt 2025 in Berlin on 2025-06-13?",
+     "reference": "Alice Chen",
+     "before": {
+      "answer": "Alice Chen presented Wayfarer at ShipIt 2025 in Berlin on 2025-06-13.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context shows no Wayfarer presentation at ShipIt 2025 in Berlin on 2025-06-13. The only Berlin Wayfarer presentation was by Olga Petrova on 2025-06-02.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context shows no Wayfarer presentation at ShipIt 2025 in Berlin on 2025-06-13. The only Berlin Wayfarer presentation was by Olga Petrova on 2025-06-02.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Olga Petrova presented Wayfarer at ShipIt 2025 in Berlin. The record is dated 2025-06-02, not 2025-06-13, but it is the only Berlin presentation of Wayfarer in the context, and it was valid from 2025-06-02 through 2025-07-02. That window includes 2025-06-13.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "role",
+     "question": "Who is the design lead of Orbit?",
+     "reference": "Alice Chen",
+     "before": {
+      "answer": "Noah Berg is the design lead of Orbit. He took over on 2025-04-17, after Alice Chen, who had held the role since 2025-03-06.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Noah Berg is the design lead of Orbit, as of 2025-04-17.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Noah Berg is the design lead of Orbit, as of 2025-04-17.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Noah Berg is the design lead of Orbit, as of 2025-04-17.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Beatriz Lopes is the design lead of Meridian, a role she has held since 2025-03-12. The context records no later change to it."
+  },
+  {
+   "id": "del_single_28",
+   "position": 28,
+   "shape": "single",
+   "request": "Delete the note r3_0000 (Compass's budget).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 16.3,
+   "delete_cost": {
+    "llm_calls": 1,
+    "prompt_tokens": 4398,
+    "completion_tokens": 853,
+    "provider_cached_tokens": 0,
+    "usd": 0.0009
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Compass's quarterly budget?",
+     "reference": "$180k",
+     "before": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "How much money does Compass get per quarter?",
+     "reference": "$180k",
+     "before": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Which projects have a quarterly budget of $180k?",
+     "reference": "Compass",
+     "before": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": false,
+   "control_after_ok": false,
+   "control_after": "I don't have enough information to answer this question."
+  },
+  {
+   "id": "del_intent_29",
+   "position": 29,
+   "shape": "intent",
+   "request": "Forget where Dasha lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 49.0,
+   "delete_cost": {
+    "llm_calls": 6,
+    "prompt_tokens": 33121,
+    "completion_tokens": 8540,
+    "provider_cached_tokens": 0,
+    "usd": 0.0073
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Daria Sokolova based?",
+     "reference": "Berlin",
+     "before": {
+      "answer": "Daria Sokolova is based in Berlin. She relocated there from Lisbon in March 2025, and the earlier Lisbon-based fact was marked invalid as of 2025-03-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists her roles (data lead of Beacon, formerly tech lead of Atlas) and conference talks in Lisbon, Denver, Berlin, and Toronto, but none of it states where she lives or is based.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists her roles (data lead of Beacon, formerly tech lead of Atlas) and conference talks in Lisbon, Denver, Berlin, and Toronto, but none of it states where she lives or is based.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists conference talks in Lisbon, Denver, Berlin, Toronto, and Dublin, but those are event locations, not where she lives or works.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Daria Sokolova live in?",
+     "reference": "Berlin",
+     "before": {
+      "answer": "Daria Sokolova lives in Berlin. She relocated there from Lisbon in March 2025, and the Lisbon-based records were marked invalid as of 2025-03-01. Her later talks in Lisbon (InfraDays 2025, May 2025) were conference appearances, not a change of residence.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only lists cities where Daria Sokolova presented at conferences (Lisbon, Berlin, Denver, Dublin, Toronto), not where she lives.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only lists cities where Daria Sokolova presented at conferences (Lisbon, Berlin, Denver, Dublin, Toronto), not where she lives.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences where Daria Sokolova presented (Lisbon, Berlin, Toronto, Dublin, Denver), and those are event locations, not where she lives.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Berlin?",
+     "reference": "Daria Sokolova",
+     "before": {
+      "answer": "Olga Petrova is the only person the context lists as based in Berlin, and that entry was only valid from 2025-04-23 to 2025-06-01. It has since expired, so no one is currently recorded as Berlin-based.\n\nValentina Greco (DataSummit 2025) and Priya Nair (InfraDays 2025) presented at events in Berlin, but that doesn't show they live there.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Olga Petrova is the only person the context places in Berlin, and that fact was valid only from 2025-04-23 to 2025-06-01. The context doesn't show anyone currently based there.\n\nThe other Berlin mentions are conferences (InfraDays, DevCon, DataSummit), not residences.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Olga Petrova was based in Berlin from 2025-04-23 until 2025-06-01. She has been based in Singapore since June 2025, so the context lists no one as currently based in Berlin.\n\nPriya Nair and Valentina Greco appear only as presenters at Berlin events, which doesn't show they live there.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Olga Petrova is the only person the context lists as based in Berlin, and that fact is no longer valid: it ran from 2025-04-23 to 2025-06-01. The other Berlin entries are events (DevCon, ShipIt, InfraDays, DataSummit) held there, not people's locations. Jamal Okafor and Callum Reid are based in Austin.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Daria Sokolova is currently data lead of Beacon, a role she has held since 2025-02-08, when she moved over from being tech lead of Atlas."
+  },
+  {
+   "id": "del_single_30",
+   "position": 30,
+   "shape": "single",
+   "request": "Delete the note r3_0133 (Tove Lindqvist's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 26.9,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 8913,
+    "completion_tokens": 1836,
+    "provider_cached_tokens": 0,
+    "usd": 0.0018
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Tove Lindqvist's current role?",
+     "reference": "release manager of Meridian",
+     "before": {
+      "answer": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. The context records no later change to it.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only covers Tove Lindqvist's conference talks (Meridian at ShipIt 2025 in Berlin, Umbra at PlatformWeek 2025 in Dublin, Pylon at InfraDays 2025 in Dublin) and says nothing about her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only covers Tove Lindqvist's conference talks (Meridian at ShipIt 2025 in Berlin, Umbra at PlatformWeek 2025 in Dublin, Pylon at InfraDays 2025 in Dublin) and says nothing about her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only shows that Tove Lindqvist presented talks (Pylon, Umbra, Meridian) at conferences in 2025, and it says nothing about her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What job does Tove Lindqvist hold right now?",
+     "reference": "release manager of Meridian",
+     "before": {
+      "answer": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07. The context shows no later change to that role.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only covers Tove Lindqvist's conference presentations in 2025 (Meridian at ShipIt 2025, Umbra at PlatformWeek 2025, and Pylon at InfraDays 2025). It says nothing about her job title or employer.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only covers Tove Lindqvist's conference presentations in 2025 (Meridian at ShipIt 2025, Umbra at PlatformWeek 2025, and Pylon at InfraDays 2025). It says nothing about her job title or employer.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only records Tove Lindqvist presenting at conferences (Pylon at InfraDays 2025, Meridian at ShipIt 2025, Umbra at PlatformWeek 2025). It doesn't state her job title or employer.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is the release manager of Meridian?",
+     "reference": "Tove Lindqvist",
+     "before": {
+      "answer": "Tove Lindqvist is the current release manager of Meridian, as of 2025-04-07. She followed Wei Zhang, who held the role from 2025-02-14.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Wei Zhang is the release manager of Meridian, effective 2025-02-14. Before that, Wei Zhang was QA lead of Lantern.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Wei Zhang is the release manager of Meridian, effective 2025-02-14.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Wei Zhang is the release manager of Meridian, effective 2025-02-14. Nothing in the context shows that role ending or being reassigned.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Umar Siddiqui is the tech lead of Umbra, a role he took on 2025-03-11. The context records no later change."
+  },
+  {
+   "id": "del_single_31",
+   "position": 31,
+   "shape": "single",
+   "request": "Delete the note r3_0094 (Beatriz Lopes's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 34.3,
+   "delete_cost": {
+    "llm_calls": 2,
+    "prompt_tokens": 8897,
+    "completion_tokens": 1826,
+    "provider_cached_tokens": 0,
+    "usd": 0.0018
+   },
+   "leak_measurable": true,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "What is Beatriz Lopes's current role?",
+     "reference": "design lead of Meridian",
+     "before": {
+      "answer": "Beatriz Lopes is the design lead of Meridian, a role she has held since 2025-03-12. The context records no later change to it.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says Beatriz Lopes presented Atlas at ShipIt 2025 and Sextant at PlatformWeek 2025, and covers her moves between Osaka and Toronto. It never states her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says Beatriz Lopes presented Atlas at ShipIt 2025 and Sextant at PlatformWeek 2025, and covers her moves between Osaka and Toronto. It never states her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context describes where Beatriz Lopes lived and which talks she gave (Atlas at ShipIt 2025, Sextant at PlatformWeek 2025), but it never states her job title or role.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "What job does Beatriz Lopes hold right now?",
+     "reference": "design lead of Meridian",
+     "before": {
+      "answer": "Beatriz Lopes is the design lead of Meridian. She took that role on 2025-03-12, and nothing in the context says it has changed since.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context says where Beatriz Lopes lived and what she presented (Atlas, Sextant), but it never states her job or title.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context says where Beatriz Lopes lived and what she presented (Atlas, Sextant), but it never states her job or title.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context describes where Beatriz Lopes lived and which talks she gave (Atlas at ShipIt 2025, Sextant at PlatformWeek 2025), but it never states her job title or employer.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is the design lead of Meridian?",
+     "reference": "Beatriz Lopes",
+     "before": {
+      "answer": "Beatriz Lopes is the design lead of Meridian. She took the role on 2025-03-12, and nothing in the context says it has ended or been reassigned.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists Meridian's tech lead (Callum Reid, until 2025-04-03) and its release manager (Wei Zhang), but it doesn't mention a design lead for Meridian.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists Meridian's tech lead (Callum Reid, until 2025-04-03) and its release manager (Wei Zhang), but it doesn't mention a design lead for Meridian.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists Meridian's tech lead (Callum Reid, until 2025-04-03), its release manager (Wei Zhang), and who presented it at conferences, but it never names a design lead for Meridian.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": false,
+   "control_after_ok": false,
+   "control_after": "I don't have enough information to answer this question."
+  },
+  {
+   "id": "del_intent_32",
+   "position": 32,
+   "shape": "intent",
+   "request": "Forget where F. Holm lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 50.8,
+   "delete_cost": {
+    "llm_calls": 6,
+    "prompt_tokens": 27115,
+    "completion_tokens": 7624,
+    "provider_cached_tokens": 0,
+    "usd": 0.0065
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Freya Holm based?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Freya Holm is based in Osaka (since March 2025). The earlier Singapore location was valid only until 2025-03-01.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context lists Freya Holm's roles (release manager of Orbit, then tech lead of Lantern) and her conference presentations in Toronto, Singapore, Berlin, Lisbon, and Austin, but it doesn't say where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context lists the events Freya Holm presented at (Singapore, Lisbon, Austin, and others) and her role change to tech lead of Lantern, but it never says where she is based.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context lists where Freya Holm presented (Toronto, Singapore, Berlin, Lisbon, Osaka), but those are event locations, not where she is based.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Freya Holm live in?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Freya Holm lives in Osaka. She was based in Singapore until 2025-03-01, and since March 2025 she has been based in Osaka. Nothing in the context says she has moved since.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences where Freya Holm presented (Lisbon, Toronto, Berlin, Singapore, Austin), which are event locations and don't indicate where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context only lists conferences where Freya Holm presented (Lisbon, Toronto, Berlin, Singapore, Austin), which are event locations and don't indicate where she lives.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context only lists cities where Freya Holm presented at conferences (Lisbon, Berlin, Singapore, Osaka), which doesn't indicate where she lives.",
+      "recovered": true,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Osaka?",
+     "reference": "Freya Holm",
+     "before": {
+      "answer": "Based on the context, these people are currently based in Osaka:\n\n- **Beatriz Lopes** (valid from 2025-04-09, no invalidation)\n- **Freya Holm** (since March 2025, no invalidation)\n\nSanjay Mehta and Callum Reid were listed as Osaka-based, but those facts were invalidated in January 2025. Callum Reid is later listed as based in Austin.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Based on the context, only **Beatriz Lopes** is currently listed as based in Osaka (valid from 2025-04-09, with no end date).\n\nSanjay Mehta's and Callum Reid's Osaka entries were both marked invalid in January 2025. Callum Reid is later listed as based in Austin.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Beatriz Lopes is the only person the context shows as currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka from January 2025, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, **Beatriz Lopes** is the only person currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Freya Holm is currently the tech lead of Lantern, a role she has held since 2025-04-18. Before that she was release manager of Orbit, from 2025-03-11 until that date."
+  },
+  {
+   "id": "del_intent_33",
+   "position": 33,
+   "shape": "intent",
+   "request": "Forget where Sanj lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "graphiti.remove_episode"
+   },
+   "delete_seconds": 42.8,
+   "delete_cost": {
+    "llm_calls": 5,
+    "prompt_tokens": 21778,
+    "completion_tokens": 5064,
+    "provider_cached_tokens": 0,
+    "usd": 0.0046
+   },
+   "leak_measurable": false,
+   "probes": [
+    {
+     "kind": "direct",
+     "question": "Where is Sanjay Mehta based?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Sanjay Mehta is based in Dublin. That is the most recent valid fact (2025-01-16), and it supersedes the earlier Osaka entries, which were invalidated on that date.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context gives Sanjay Mehta's roles (data lead of Beacon, then design lead of Compass) but nothing about where he is based. The locations mentioned relate only to where DevCon 2025 was held.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context gives Sanjay Mehta's roles (data lead of Beacon, then design lead of Compass) but nothing about where he is based. The locations mentioned relate only to where DevCon 2025 was held.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context describes Sanjay Mehta's roles (data lead of Beacon, then design lead of Compass) but doesn't say where he is based. The locations mentioned relate to DevCon 2025 venues, not his residence or office.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "paraphrase",
+     "question": "Which city does Sanjay Mehta live in?",
+     "reference": "Osaka",
+     "before": {
+      "answer": "Dublin. The most recent valid fact (2025-01-16) says Sanjay Mehta is based in Dublin, while the earlier Osaka statements were invalidated on that date.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "I don't have enough information to answer this question. The context describes Sanjay Mehta's roles (data lead of Beacon, then design lead of Compass) but doesn't say where he lives. The cities mentioned relate to where DevCon 2025 was held, not his residence.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "I don't have enough information to answer this question. The context describes Sanjay Mehta's roles (data lead of Beacon, then design lead of Compass) but doesn't say where he lives. The cities mentioned relate to where DevCon 2025 was held, not his residence.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "I don't have enough information to answer this question. The context covers Sanjay Mehta's roles (data lead of Beacon, then design lead of Compass), but says nothing about where he lives.",
+      "recovered": false,
+      "context_leak": []
+     }
+    },
+    {
+     "kind": "reverse",
+     "question": "Who is based in Osaka?",
+     "reference": "Sanjay Mehta",
+     "before": {
+      "answer": "Based on the context, only **Beatriz Lopes** is currently listed as based in Osaka (valid from 2025-04-09, with no end date).\n\nSanjay Mehta's and Callum Reid's Osaka entries were both marked invalid in January 2025. Callum Reid is later listed as based in Austin.",
+      "recovered": true,
+      "context_leak": []
+     },
+     "after": {
+      "answer": "Beatriz Lopes is the only person the context shows as currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka from January 2025, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "end": {
+      "answer": "Beatriz Lopes is the only person the context shows as currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka from January 2025, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     },
+     "purge": {
+      "answer": "Based on the context, **Beatriz Lopes** is the only person currently based in Osaka (valid from 2025-04-09, with no end date).\n\nCallum Reid was listed in Osaka, but that fact was invalidated on 2025-01-21 when he moved to Austin.",
+      "recovered": false,
+      "context_leak": []
+     }
+    }
+   ],
+   "control_before_ok": true,
+   "control_after_ok": true,
+   "control_after": "Sanjay Mehta is currently design lead of Compass, a role that began on 2025-03-14. It is his most recent role change, following his data lead role at Beacon on 2025-03-13."
+  }
+ ],
+ "ingest": {
+  "seconds": 4170.4,
+  "llm_calls": 1015,
+  "prompt_tokens": 5811598,
+  "completion_tokens": 699353,
+  "provider_cached_tokens": 0,
+  "usd": 1.0805
+ },
+ "purge": {
+  "seconds": 1544.7,
+  "llm_calls": 541,
+  "prompt_tokens": 3142072,
+  "completion_tokens": 353073,
+  "provider_cached_tokens": 0,
+  "usd": 0.566
+ },
+ "errors": {
+  "probe_calls_failed": 0,
+  "deletes_failed": 0
+ },
+ "wall_seconds": 10993.1
+}
