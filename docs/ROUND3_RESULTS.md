@@ -59,9 +59,9 @@ Two judge-boundary cases also showed up in the records. Neither changes any verd
 
 | comparison (LLM-branch items only) | n | κ at 0.5 | κ at the 0.99 decision threshold |
 |---|---|---|---|
-| Sonnet vs GPT-6.1-terra, round-3 records (questions + A3) | 1,201 | **0.927** | 0.872 |
-| Sonnet vs Gemini-3.8-flash, round-3 records (questions + A3) | 1,201 | **0.934** | 0.866 |
-| same, A1/A2 question items only | 652 | 0.98 / 0.99 | 0.84 / 0.83 |
+| Sonnet vs GPT-6.1-terra, round-3 records (questions + A3) | 1,350 | **0.932** | 0.874 |
+| Sonnet vs Gemini-3.8-flash, round-3 records (questions + A3) | 1,350 | **0.937** | 0.869 |
+| same, A1/A2 question items only (GPT / Gemini) | 732 | 0.98 / 0.99 | 0.85 / 0.84 |
 | Sonnet / GPT / Gemini strict-v3 vs proxy labels, calibration set (all 100) | 100 | 0.92 / 0.87 / 0.91 | |
 | same, calibration LLM-branch items only | 52 | 0.89 / 0.77 / 0.89 (CIs ≈ ±0.2) | |
 
@@ -86,25 +86,28 @@ Primary pass: 58 admissible keys (31 explicit, 27 implicit). Sensitivity pass: 5
 | BM25 | 0.78 | 0.16 | 0.62 | 0.71 / 0.16 | 0.85 / 0.15 | **−0.38 [−0.57, −0.21]** | 0.56 | **−0.44 [−0.66, −0.24]** |
 | Zep / Graphiti (round-2 read config) | 0.38 | 0.26 | 0.12 | 0.45 / 0.26 | 0.30 / 0.26 | **−0.88 [−1.09, −0.67]** | 0.22 | **−0.78 [−0.98, −0.58]** |
 | Generative Agents | 0.21 | 0.03 | 0.17 | 0.19 / 0.03 | 0.22 / 0.04 | **−0.83 [−0.95, −0.71]** | 0.18 | **−0.82 [−0.94, −0.68]** |
-| Anthropic memory tool | *pending* | | | | | | | |
+| Anthropic memory tool | 0.62 | 0.29 | 0.33 | 0.68 / 0.26 | 0.56 / 0.33 | **−0.67 [−0.90, −0.45]** | 0.40 | **−0.60 [−0.84, −0.36]** |
 
 What survives at this N, in this world:
 
 - **No system beats the 2023 upper bound on updates.** Full context is at the top. Hybrid + reranker and Mem0 are
   indistinguishable from it in both passes (CI reaches 0). Mastra and GraphRAG are below it in the primary pass and
   indistinguishable from it once the ambiguous role items are dropped.
-- **Four systems are below full context in both passes:** vector RAG, BM25, Graphiti and Generative Agents. Their contexts can
-  miss the newer note: a top-5 lexical or vector window, an edge graph that drops or never extracts facts, and
-  importance-weighted reflections.
+- **Five systems are below full context in both passes:** vector RAG, BM25, the Anthropic memory tool, Graphiti and Generative
+  Agents. Their contexts can miss the newer note: a top-5 lexical or vector window, model-written files that are not
+  updated, an edge graph that drops or never extracts facts, and importance-weighted reflections.
+- **The memory tool has the highest stale rate of any system (0.29).** Its answers say "no later change is recorded in my
+  notes". The model filing the notes did not record the later change in the files it wrote, so the newer value is never
+  read back.
 - **Vector RAG's stale answers are retrieval misses.** In all 5 stale records the newer value is absent from the top-5
   context. All 5 are in the explicit stratum and cover four people (two are the same person with the same retrieved set);
   on implicit updates vector RAG is never stale.
 
 ### Hypotheses (Sonnet judge; identical verdicts under GPT and Gemini and in the sensitivity pass)
 
-| | claim | estimate [95% CI] | McNemar p (Holm, 4 of 5 tested so far) | verdict |
+| | claim | estimate [95% CI] | McNemar p (Holm over H5–H9) | verdict |
 |---|---|---|---|---|
-| **H5** | stale(vector RAG) > stale(hybrid + reranker) | +0.086 [+0.017, +0.155] | 0.063 (0.19) | **CI excludes 0, not significant after Holm.** Five discordant keys, all in the predicted direction |
+| **H5** | stale(vector RAG) > stale(hybrid + reranker) | +0.086 [+0.017, +0.155] | 0.063 (0.25) | **CI excludes 0, not significant after Holm.** Five discordant keys, all in the predicted direction |
 | **H6** | H5 also within the implicit stratum | 0.00 [0, 0] | 1.0 | **unresolved.** Vector RAG is never stale on implicit updates |
 | **H7** | Graphiti's best read arm has lower FAMA than vector RAG | −0.379 [−0.586, −0.172] | < 0.001 on "current" (< 0.001) | **holds** (−0.34 to −0.36 under the other judges and the sensitivity pass) |
 
@@ -146,7 +149,7 @@ quality through that shim is a plausible contributor to the missing facts and is
 | Zep / Graphiti | 1.00 | 1.00 (21) | 0 | native `remove_episode` |
 | Mem0 (provenance ∪ returned ids) | 0.97 | 1.00 (30) | 3 (27%, CI 0–55%) | native, by tracked ids |
 | Generative Agents | 0.91 | 1.00 (3)‡ | 2 (18%, CI 0–45%) | rebuild of raw memories; reflections survive |
-| Anthropic memory tool | *pending* | | | file edits by the model |
+| Anthropic memory tool | 1.00 | 0.96 (24) | 0 | rebuild: the model re-files every remaining note |
 
 § The one miss is an intent control on an ambiguous role item and disappears in the sensitivity pass. † The three misses are
 hedged abstentions that state the correct value (see above). ‡ Generative Agents answered only 3 controls correctly *before*
@@ -164,7 +167,10 @@ any delete, so its collateral-damage number is uninformative.
 
   Deleting a note's returned ids does not reach facts that were merged across notes. This is round 2's delete-semantics
   problem one level further down.
-- **H9** (the memory tool loses more valid controls than full context): *pending.*
+- **H9** (the memory tool loses more valid controls than full context): −0.04 [−0.13, 0.00] over 24 paired valid controls,
+  McNemar p = 1.0. **Unresolved.** It lost one control (an entity case: after re-filing, its files no longer contained
+  Meridian's budget). Round 2's "one valid control in six" does not reproduce at this N; one in 24 is consistent with a small
+  effect and with none.
 - **Deletion by case position** (controls intact, cases 0–11 / 12–23 / 24–33): no system degrades in later cases. Vector RAG's
   one miss is in the first third, and Mastra's hedged abstentions are in the later two thirds. Position does not confound shape,
   because shapes are interleaved.
@@ -172,7 +178,7 @@ any delete, so its collateral-damage number is uninformative.
 ## A1, A4, A5 (reported for completeness)
 
 - **A1** (T1/T2/T3/T5, admissible): GraphRAG 1.00, hybrid 0.98, Mem0 0.97, full context / vector RAG / Mastra 0.95, BM25 0.86,
-  Graphiti 0.63, Generative Agents 0.30. This is the same picture as round 2. Decoy acceptance is 0.00 on every record
+  the memory tool 0.85, Graphiti 0.63, Generative Agents 0.30. This is the same picture as round 2. Decoy acceptance is 0.00 on every record
   (192 decoys each).
 - **A4** (exploratory, 2 poison notes): **no system was actually fooled.** The three "fooled" flags (Generative Agents 2/2,
   Graphiti 1/2) are all answers that abstain and mention the poison value as an unverified rumor. The fooled rule (poison
@@ -181,9 +187,10 @@ any delete, so its collateral-damage number is uninformative.
   Slack claims …"). The same rule produced round 2's A4 numbers, so **round 2's Generative Agents "fooled 0.83" may be the same
   artifact**. Those records are not in this repository, so it cannot be re-checked here.
 - **A5** (first ingest, measured): write LLM calls per memory are 0 for full context, BM25, vector RAG and hybrid; Mastra
-  0.12; Generative Agents 0.12; Mem0 1.0; GraphRAG 2.8; Graphiti 3.85. Ingest dollars at Sonnet rates through the CLI, for
-  262 memories: Mastra $1.1, Mem0 $3.0, GraphRAG $14.7, Graphiti $18.9. Read prompt tokens per query: retrieval systems and
-  Mem0 1.6–2.2K, full context 11.5K, Mastra 11.0K, GraphRAG 12.2K.
+  0.12; Generative Agents 0.12; Mem0 1.0; memory tool 0.39; GraphRAG 2.8; Graphiti 3.85. Ingest dollars at Sonnet rates through the
+  CLI, for 262 memories: Mastra $1.1, Mem0 $3.0, the memory tool $3.2, GraphRAG $14.7, Graphiti $18.9. Read prompt tokens
+  per query: retrieval systems and Mem0 1.6–2.2K, full context 11.5K, Mastra 11.0K, GraphRAG 12.2K, the memory tool 19.5K
+  (several model calls per query).
 
 ## What round 3 changes about round 2
 
@@ -193,9 +200,10 @@ any delete, so its collateral-damage number is uninformative.
 | "Vector RAG and BM25 serve the superseded value 30–37% of the time" | 9% and 16%; for vector RAG only on explicit "moved from" notes. The reranker's advantage is in the predicted direction but not significant after Holm |
 | "Graphiti is worse than 2023 systems on updates; superseded edges stay valid" | The ranking **holds** (H7). The mechanism holds only for the round-2 read config; with better read configs the gap is mostly missing facts |
 | "Generative Agents' reflections still name the deleted person 45% of the time" | 18% (2/11), CI 0–45%: neither confirmed nor excluded. Plus 3/34 cases where the deleted city is still answered |
+| "Model-managed files lose one valid control in six" (memory tool) | 1 in 24, H9 unresolved. Its larger problem is updates: stale 0.29, FAMA 0.33 |
 | "Mem0 leaks 6% even with id tracking" | 27% (3/11, CI 0–55%): merged facts carry the deleted name |
 | "Labelled poison fools almost nobody whose answer path shows the generator the whole note; Generative Agents fooled 0.83" | Nobody is fooled here; the fooled rule flags abstentions that mention the rumor, and round 2's 0.83 may be that artifact |
-| strict-v3 judge "κ = 0.87 vs human proxy" (Claude-only) | The verdicts are judge-robust across three families (κ 0.87–0.93 on 1,201 round-3 items); the proxy-label κ is still not a human κ |
+| strict-v3 judge "κ = 0.87 vs human proxy" (Claude-only) | The verdicts are judge-robust across three families (κ 0.87–0.94 on 1,350 round-3 items); the proxy-label κ is still not a human κ |
 
 ## Human labels
 

@@ -104,8 +104,9 @@ All findings are inside one synthetic ~4K-token world (262 dated notes):
 
 - **On updates, no system beats the 2023 upper bound.** Full context scores FAMA 1.00. Hybrid + reranker and Mem0 are
   indistinguishable from it. Mastra and GraphRAG are below it in the primary analysis (−0.10, −0.16) and indistinguishable once
-  8 ambiguous items are set aside. Four systems are below it either way (primary Δ FAMA): vector RAG −0.17 [−0.31, −0.03],
-  BM25 −0.38, Graphiti −0.88, Generative Agents −0.83.
+  8 ambiguous items are set aside. Five systems are below it either way (primary Δ FAMA): vector RAG −0.17 [−0.31, −0.03],
+  BM25 −0.38, the Anthropic memory tool −0.67 (it does not record later changes in its own files; stale 0.29), Graphiti −0.88,
+  Generative Agents −0.83.
 - **Graphiti's update deficit holds (H7), but the cause depends on its read configuration.** With round 2's 5-edge read,
   surviving old edges produce stale answers. It invalidates an old edge in 38 of 48 keys but retires all of them in only 5.
   With its best recipe (FAMA 0.45 vs vector RAG's 0.83), the gap is mostly facts missing from the graph.
@@ -113,8 +114,9 @@ All findings are inside one synthetic ~4K-token world (262 dated notes):
   All of vector RAG's stale answers come from notes worded "moved from A to B", and every one is a retrieval miss.
 - **Deletion: Mem0 (3/11) and Generative Agents (2/11) are the systems that leak**, with wide CIs. Mem0 leaks through facts it
   merged across notes; Generative Agents through reflections, and it still answers with a deleted city in 3 of 34 cases.
-  Rebuild-based systems are clean.
-- **Judge-robust:** the Sonnet verdicts agree with GPT-6.1 and Gemini-3.8 at κ 0.87–0.93 on 1,201 round-3 judgements, and no
+  Rebuild-based systems are clean. Collateral damage is small everywhere; the memory tool lost 1 of 24 valid controls, and
+  H9 is unresolved.
+- **Judge-robust:** the Sonnet verdicts agree with GPT-6.1 and Gemini-3.8 at κ 0.87–0.94 on 1,350 round-3 judgements, and no
   hypothesis flips.
 - **Two more gold problems, and one A4 artifact, were found.**
   - Updates dated before what they supersede. This also invalidates 3 of the 9 round-2 update items in S1 seeds 123 and 456.
@@ -130,8 +132,8 @@ All findings are inside one synthetic ~4K-token world (262 dated notes):
 2. **What separates memory systems is whether their context reliably contains the newest relevant note, and how deletion
    propagates through what they derive.**
    - A reranker and a fact store (Mem0) keep the newest note in front of the generator.
-   - A top-k window (BM25, vector), an edge graph that misses or keeps facts (Graphiti) and importance-weighted reflections
-     (Generative Agents) do not.
+   - A top-k window (BM25, vector), model-written files that are not updated (the memory tool), an edge graph that misses or
+     keeps facts (Graphiti) and importance-weighted reflections (Generative Agents) do not.
    - Extraction and reflection create derived text that a per-note delete does not reach.
 3. **The evaluation moves results as much as the systems do.** Over rounds 2 and 3, eleven corrections had to be made by
    reading per-item evidence. One of them, a gold-label error (updates dated before what they supersede), had inflated a

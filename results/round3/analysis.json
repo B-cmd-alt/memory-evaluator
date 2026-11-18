@@ -1,5 +1,6 @@
 {
  "systems": [
+  "anthropic_memory_tool",
   "bm25",
   "full_context",
   "generative_agents",
@@ -321,6 +322,56 @@
    "judge_decoy_acceptance": 0,
    "axes": "A1A2A3A4"
   },
+  "anthropic_memory_tool": {
+   "A1": 0.845,
+   "A2_current": 0.621,
+   "A2_stale": 0.293,
+   "A2_FAMA": 0.328,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.677,
+     "stale": 0.258,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.556,
+     "stale": 0.333,
+     "n": 27
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 0.958,
+   "A3_n_valid_controls": 24,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 0.9,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 0.909
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 0.0,
+   "A5_write_calls_per_memory": 0.39,
+   "A5_ingest_usd": 3.1829,
+   "A5_read_prompt_tok_per_q": 19541,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
   "mem0": {
    "A1": 0.967,
    "A2_current": 0.948,
@@ -468,7 +519,7 @@
    ],
    "verdict": "holds (CI) but not after Holm",
    "p_mcnemar": 0.0625,
-   "p_holm": 0.1875
+   "p_holm": 0.25
   },
   "H6": {
    "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
@@ -558,6 +609,20 @@
    "verdict": "unresolved",
    "p_mcnemar": 0.5,
    "p_holm": 1.0
+  },
+  "H9": {
+   "claim": "control_intact(memory tool) < control_intact(full_context)",
+   "n": 24,
+   "memory_tool": 0.958,
+   "full_context": 1.0,
+   "diff": -0.042,
+   "ci95": [
+    -0.125,
+    0.0
+   ],
+   "verdict": "unresolved",
+   "p_mcnemar": 1.0,
+   "p_holm": 1.0
   }
  },
  "hypotheses_or__google_gemini-3.8-flash": {
@@ -573,7 +638,7 @@
    ],
    "verdict": "holds (CI) but not after Holm",
    "p_mcnemar": 0.0625,
-   "p_holm": 0.1875
+   "p_holm": 0.25
   },
   "H6": {
    "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
@@ -662,6 +727,20 @@
    },
    "verdict": "unresolved",
    "p_mcnemar": 0.5,
+   "p_holm": 1.0
+  },
+  "H9": {
+   "claim": "control_intact(memory tool) < control_intact(full_context)",
+   "n": 25,
+   "memory_tool": 0.96,
+   "full_context": 1.0,
+   "diff": -0.04,
+   "ci95": [
+    -0.12,
+    0.0
+   ],
+   "verdict": "unresolved",
+   "p_mcnemar": 1.0,
    "p_holm": 1.0
   }
  },
@@ -678,7 +757,7 @@
    ],
    "verdict": "holds (CI) but not after Holm",
    "p_mcnemar": 0.0625,
-   "p_holm": 0.1875
+   "p_holm": 0.25
   },
   "H6": {
    "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
@@ -767,6 +846,20 @@
    },
    "verdict": "unresolved",
    "p_mcnemar": 0.5,
+   "p_holm": 1.0
+  },
+  "H9": {
+   "claim": "control_intact(memory tool) < control_intact(full_context)",
+   "n": 25,
+   "memory_tool": 0.96,
+   "full_context": 1.0,
+   "diff": -0.04,
+   "ci95": [
+    -0.12,
+    0.0
+   ],
+   "verdict": "unresolved",
+   "p_mcnemar": 1.0,
    "p_holm": 1.0
   }
  },
@@ -1090,6 +1183,56 @@
     "judge_decoy_acceptance": 0,
     "axes": "A1A2A3A4"
    },
+   "anthropic_memory_tool": {
+    "A1": 0.852,
+    "A2_current": 0.68,
+    "A2_stale": 0.28,
+    "A2_FAMA": 0.4,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.677,
+      "stale": 0.258,
+      "n": 31
+     },
+     "implicit": {
+      "current": 0.684,
+      "stale": 0.316,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 0.958,
+    "A3_n_valid_controls": 24,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 0.9,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 0.909
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 0.0,
+    "A5_write_calls_per_memory": 0.39,
+    "A5_ingest_usd": 3.1829,
+    "A5_read_prompt_tok_per_q": 19541,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
    "mem0": {
     "A1": 0.964,
     "A2_current": 1.0,
@@ -1237,7 +1380,7 @@
     ],
     "verdict": "holds (CI) but not after Holm",
     "p_mcnemar": 0.0625,
-    "p_holm": 0.1875
+    "p_holm": 0.25
    },
    "H6": {
     "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
@@ -1271,7 +1414,7 @@
     ],
     "verdict": "holds",
     "p_mcnemar": 0.0003,
-    "p_holm": 0.0012
+    "p_holm": 0.0015
    },
    "H8": {
     "claim": "leak(generative_agents) > leak(every rebuild system)",
@@ -1326,6 +1469,20 @@
     },
     "verdict": "unresolved",
     "p_mcnemar": 0.5,
+    "p_holm": 1.0
+   },
+   "H9": {
+    "claim": "control_intact(memory tool) < control_intact(full_context)",
+    "n": 24,
+    "memory_tool": 0.958,
+    "full_context": 1.0,
+    "diff": -0.042,
+    "ci95": [
+     -0.125,
+     0.0
+    ],
+    "verdict": "unresolved",
+    "p_mcnemar": 1.0,
     "p_holm": 1.0
    }
   },
@@ -1342,7 +1499,7 @@
     ],
     "verdict": "holds (CI) but not after Holm",
     "p_mcnemar": 0.0625,
-    "p_holm": 0.1875
+    "p_holm": 0.25
    },
    "H6": {
     "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
@@ -1376,7 +1533,7 @@
     ],
     "verdict": "holds",
     "p_mcnemar": 0.0003,
-    "p_holm": 0.0012
+    "p_holm": 0.0015
    },
    "H8": {
     "claim": "leak(generative_agents) > leak(every rebuild system)",
@@ -1431,6 +1588,20 @@
     },
     "verdict": "unresolved",
     "p_mcnemar": 0.5,
+    "p_holm": 1.0
+   },
+   "H9": {
+    "claim": "control_intact(memory tool) < control_intact(full_context)",
+    "n": 24,
+    "memory_tool": 0.958,
+    "full_context": 1.0,
+    "diff": -0.042,
+    "ci95": [
+     -0.125,
+     0.0
+    ],
+    "verdict": "unresolved",
+    "p_mcnemar": 1.0,
     "p_holm": 1.0
    }
   },
@@ -1447,7 +1618,7 @@
     ],
     "verdict": "holds (CI) but not after Holm",
     "p_mcnemar": 0.0625,
-    "p_holm": 0.1875
+    "p_holm": 0.25
    },
    "H6": {
     "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
@@ -1481,7 +1652,7 @@
     ],
     "verdict": "holds",
     "p_mcnemar": 0.0003,
-    "p_holm": 0.0012
+    "p_holm": 0.0015
    },
    "H8": {
     "claim": "leak(generative_agents) > leak(every rebuild system)",
@@ -1537,21 +1708,35 @@
     "verdict": "unresolved",
     "p_mcnemar": 0.5,
     "p_holm": 1.0
+   },
+   "H9": {
+    "claim": "control_intact(memory tool) < control_intact(full_context)",
+    "n": 24,
+    "memory_tool": 0.958,
+    "full_context": 1.0,
+    "diff": -0.042,
+    "ci95": [
+     -0.125,
+     0.0
+    ],
+    "verdict": "unresolved",
+    "p_mcnemar": 1.0,
+    "p_holm": 1.0
    }
   }
  },
  "judge_agreement": {
   "or__google_gemini-3.8-flash": {
-   "n": 1201,
-   "kappa_binary": 0.934,
-   "kappa_at_decision_threshold": 0.866,
-   "disagreements": 22
+   "n": 1350,
+   "kappa_binary": 0.937,
+   "kappa_at_decision_threshold": 0.869,
+   "disagreements": 25
   },
   "or__openai_gpt-6.1-terra": {
-   "n": 1201,
-   "kappa_binary": 0.927,
-   "kappa_at_decision_threshold": 0.872,
-   "disagreements": 24
+   "n": 1350,
+   "kappa_binary": 0.932,
+   "kappa_at_decision_threshold": 0.874,
+   "disagreements": 27
   }
  },
  "graphiti_invalidation": {
