@@ -1,0 +1,478 @@
+{
+ "cells": {
+  "bm25@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.842,
+     "acc_item": 0.805,
+     "fama": 0.634,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.64,
+      "T3": 0.8,
+      "T4": 0.769,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.069,
+     "hedged_but_contains_reference": 5,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00116,
+     "read_usd_per_query_list": 0.00116,
+     "read_prompt_tokens_per_query": 282
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.848,
+     "acc_item": 0.827,
+     "fama": 0.667,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.64,
+      "T3": 0.8,
+      "T4": 0.801,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.073,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00127,
+     "read_usd_per_query_list": 0.00127,
+     "read_prompt_tokens_per_query": 241
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.845,
+     "acc_item": 0.816,
+     "fama": 0.651,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.64,
+      "T3": 0.8,
+      "T4": 0.785,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.081,
+     "hedged_but_contains_reference": 8,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 282
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.854,
+     "acc_item": 0.827,
+     "fama": 0.667,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.64,
+      "T3": 0.833,
+      "T4": 0.796,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.069,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 4e-05,
+     "read_usd_per_query_list": 4e-05,
+     "read_prompt_tokens_per_query": 201
+    }
+   },
+   "evidence_in_context": 0.797,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "bm25_k20@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.947,
+     "acc_item": 0.953,
+     "fama": 0.968,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 0.9,
+      "T4": 0.968,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 3,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00223,
+     "read_usd_per_query_list": 0.00223,
+     "read_prompt_tokens_per_query": 790
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.953,
+     "acc_item": 0.975,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 0.9,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.028,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00118,
+     "read_usd_per_query_list": 0.00118,
+     "read_prompt_tokens_per_query": 750
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.978,
+     "acc_item": 0.982,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 0.9,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 3,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 790
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.973,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 0.9,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.016,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 572
+    }
+   },
+   "evidence_in_context": 0.989,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "mastra_om@10K": {
+   "seeds": [
+    42
+   ],
+   "status": {
+    "42": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 96,
+     "acc_macro": 0.96,
+     "acc_item": 0.979,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.8,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00243,
+     "read_usd_per_query_list": 0.02061,
+     "read_prompt_tokens_per_query": 9956
+    },
+    "google/gemini-3.8-flash": {
+     "n": 96,
+     "acc_macro": 0.977,
+     "acc_item": 0.979,
+     "fama": 0.985,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.985,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00258,
+     "read_usd_per_query_list": 0.00844,
+     "read_prompt_tokens_per_query": 8891
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 96,
+     "acc_macro": 0.977,
+     "acc_item": 0.979,
+     "fama": 0.985,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.985,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00022,
+     "read_usd_per_query_list": 0.00108,
+     "read_prompt_tokens_per_query": 9956
+    },
+    "openai/gpt-6-luna": {
+     "n": 96,
+     "acc_macro": 0.973,
+     "acc_item": 0.988,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 0.967,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00084,
+     "read_usd_per_query_list": 0.00068,
+     "read_prompt_tokens_per_query": 6554
+    }
+   },
+   "evidence_in_context": null,
+   "ingest": {
+    "llm_calls_per_memory": 0.1,
+    "usd_per_store": 0.01,
+    "seconds": 61
+   },
+   "store_tokens": 9881
+  }
+ },
+ "hypotheses": {
+  "H10": {
+   "claim": "acc(minmem) > acc(full_context_hdr) at 800K, Sonnet",
+   "n": 0,
+   "verdict": "not run",
+   "also": {
+    "minmem - full_context": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "hybrid_k20 - full_context_hdr": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "hybrid_k20 - full_context": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "full_context_hdr - full_context": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "crossover_rung_by_reader": {
+    "claude-sonnet-5.5": "none up to 800K",
+    "gemini-3.8-flash": "none up to 800K",
+    "claude-haiku-5.5": "none up to 800K",
+    "gpt-6-luna": "none up to 800K"
+   },
+   "p_holm": null
+  },
+  "H11": {
+   "claim": "(minmem - full_context_hdr) larger for Haiku than Sonnet at 200K",
+   "n": 0,
+   "verdict": "not run",
+   "p_holm": null
+  },
+  "H12": {
+   "claim": "acc(minmem) - acc(X) > -0.05 for every LLM-write X at 50K, Sonnet",
+   "parts": {
+    "mem0": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "ms_graphrag": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "zep_graphiti": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "anthropic_memory_tool": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "mastra_om": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "generative_agents": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "verdict": "not run",
+   "not_run": [
+    "mem0",
+    "ms_graphrag",
+    "zep_graphiti",
+    "anthropic_memory_tool",
+    "mastra_om",
+    "generative_agents"
+   ],
+   "secondary_hybrid_k20": {
+    "mem0": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "ms_graphrag": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "zep_graphiti": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "anthropic_memory_tool": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "mastra_om": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "generative_agents": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "secondary_fama": {
+    "mem0": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "ms_graphrag": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "zep_graphiti": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "anthropic_memory_tool": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "mastra_om": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "generative_agents": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "secondary_other_rungs": {
+    "mastra_om@10K": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "p_holm": null
+  },
+  "H13": {
+   "claim": "FAMA(vector_rag) at 10K > at 3.2M, Sonnet",
+   "n": 0,
+   "verdict": "not run",
+   "secondary": {
+    "bm25": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "vector_k20": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "bm25_k20": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "hybrid_k20": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "minmem": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "secondary_did_minmem_vs_vector_k20": {
+    "n": 0,
+    "verdict": "not run"
+   },
+   "p_holm": null
+  },
+  "H14": {
+   "claim": "acc(minmem_nohdr) > acc(hybrid_k20) at 3.2M, pooled readers",
+   "n": 0,
+   "verdict": "not run",
+   "secondary": {
+    "minmem - minmem_nohdr FAMA @800K Haiku": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "order step": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "cue step": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "p_holm": null
+  }
+ }
+}

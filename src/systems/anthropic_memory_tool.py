@@ -39,6 +39,11 @@ _SYS_QUERY = ("You answer questions using ONLY your memory directory at /memorie
               "answer, say \"I don't have enough information to answer this question.\"")
 
 
+_SYS_FORGET = ("You maintain a file-based memory under /memories using the memory tool. The user asked you to FORGET the notes "
+               "below. Remove everything your files record from them, in every file, including summaries and indexes that "
+               "repeat it; keep everything that came from other notes. View files before editing. When done, reply 'DONE'.")
+
+
 class MemoryToolAdapter(BaseAdapter):
     name, family, year, kind = "anthropic_memory_tool", "model-managed files", 2025, "modern"
     batch = 10
@@ -118,6 +123,18 @@ class MemoryToolAdapter(BaseAdapter):
         ans = self._loop(_SYS_QUERY, f"Question: {question}", self.max_turns_query, model=READER.get())   # the reader drives the query loop
         items = [self._item(f"viewed {p}", p, 1.0) for p in self.viewed]
         return self._result(ans, items, "memory_tool", t0, 0, 0)
+
+    async def delete(self, source_ids):
+        """Default: rebuild (the model re-files every remaining note). MEMTOOL_DELETE_MODE=model_edit is the path a
+        model-managed file memory actually has: the model is shown the notes to forget and edits its own files."""
+        if os.environ.get("MEMTOOL_DELETE_MODE") != "model_edit":
+            return await super().delete(source_ids)
+        ids = set(source_ids)
+        gone = [m for m in self.memories if m.source_id in ids]
+        if gone:
+            self._loop(_SYS_FORGET, "Notes to forget:\n" + "\n".join(fmt_mem(m) for m in gone), self.max_turns_ingest)
+        self.memories = [m for m in self.memories if m.source_id not in ids]
+        return {"deleted": len(gone), "method": "model edits its own files"}
 
     def snapshot(self) -> dict:
         return {os.path.relpath(os.path.join(r, f), self._root): open(os.path.join(r, f)).read()

@@ -17,7 +17,10 @@ from src.systems.common import SHIM_BASE, fmt_mem
 
 class Mem0Adapter(BaseAdapter):
     name, family, year, kind = "mem0", "extracted-facts memory layer", 2024, "modern"
-    top_k = 5
+    # mem0ai 2.x names this parameter `top_k` (default 20). Rounds 1-3 passed `limit=5`, which the library ignored, so Mem0
+    # has always read its default of 20 memories here. Round 4 keeps 20 (its matched controls are the k=20 arms) and now
+    # passes it explicitly. See docs/ERRATA.md.
+    top_k = 20
     user_id = "u1"
 
     def _build(self):
@@ -57,7 +60,7 @@ class Mem0Adapter(BaseAdapter):
 
     async def query(self, question, timestamp=None):
         t0 = time.time()
-        res = self._m.search(question, filters={"user_id": self.user_id}, limit=self.top_k)
+        res = self._m.search(question, filters={"user_id": self.user_id}, top_k=self.top_k)
         hits = res.get("results") if isinstance(res, dict) else res
         items = [self._item(h.get("memory", ""), str((h.get("metadata") or {}).get("source_id", h.get("id"))), h.get("score") or 0.0) for h in (hits or [])]
         ans, it, ot = self._answer("\n".join(x.content for x in items), question)
@@ -72,13 +75,14 @@ class Mem0Adapter(BaseAdapter):
         questions measure that."""
         ids = set(source_ids)
         targets = set()
-        allm = self._m.get_all(filters={"user_id": self.user_id})
+        allm = self._m.get_all(filters={"user_id": self.user_id}, top_k=1_000_000)   # the default returns only 20 (ERRATA)
         for h in (allm.get("results") if isinstance(allm, dict) else allm) or []:
             if (h.get("metadata") or {}).get("source_id") in ids:
                 targets.add(h["id"])
         by_prov = len(targets)
-        for sid in ids:
-            targets |= self._derived.get(sid, set())
+        if __import__("os").environ.get("MEM0_DELETE_MODE") != "provenance":   # round 5 runs both semantics as separate arms
+            for sid in ids:
+                targets |= self._derived.get(sid, set())
         n = 0
         for mid in targets:
             try:

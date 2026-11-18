@@ -1,0 +1,16 @@
+=== bm25 s42 t0 (260 notes, ~9881 tokens)
+    OK claude-sonnet-5.5: acc 0.80 FAMA 0.60 | gemini-3.8-flash: acc 0.80 FAMA 0.60 | claude-haiku-5.5: acc 0.78 FAMA 0.57 | gpt-6-luna: acc 0.80 FAMA 0.62 | ingest 0 calls $0
+=== bm25_k20 s42 t0 (260 notes, ~9881 tokens)
+    OK claude-sonnet-5.5: acc 0.96 FAMA 0.97 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 1.00 FAMA 1.00 | gpt-6-luna: acc 0.99 FAMA 1.00 | ingest 0 calls $0
+=== vector_rag s42 t0 (260 notes, ~9881 tokens)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+    OK claude-sonnet-5.5: acc 0.92 FAMA 0.83 | gemini-3.8-flash: acc 0.93 FAMA 0.85 | claude-haiku-5.5: acc 0.91 FAMA 0.82 | gpt-6-luna: acc 0.92 FAMA 0.83 | ingest 0 calls $0
+=== vector_k20 s42 t0 (260 notes, ~9881 tokens)
+    OK claude-sonnet-5.5: acc 1.00 FAMA 1.00 | gemini-3.8-flash: acc 1.00 FAMA 1.00 | claude-haiku-5.5: acc 0.99 FAMA 0.98 | gpt-6-luna: acc 0.99 FAMA 0.98 | ingest 0 calls $0
+=== hybrid_rerank s42 t0 (260 notes, ~9881 tokens)
+    OK claude-sonnet-5.5: acc 0.97 FAMA 0.97 | gemini-3.8-flash: acc 0.99 FAMA 1.00 | claude-haiku-5.5: acc 0.95 FAMA 0.94 | gpt-6-luna: acc 0.99 FAMA 1.00 | ingest 0 calls $0
+=== hybrid_k20 s42 t0 (260 notes, ~9881 tokens)
+    OK claude-sonnet-5.5: acc 0.98 FAMA 1.00 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 0.98 FAMA 0.97 | gpt-6-luna: acc 1.00 FAMA 1.00 | ingest 0 calls $0
+=== minmem_nohdr s42 t0 (260 notes, ~9881 tokens)
+    OK claude-sonnet-5.5: acc 0.98 FAMA 1.00 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 0.98 FAMA 0.97 | gpt-6-luna: acc 1.00 FAMA 1.00 | ingest 0 calls $0
+=== minmem_order s42 t0 (260 notes, ~9881 tokens)

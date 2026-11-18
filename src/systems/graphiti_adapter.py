@@ -152,3 +152,29 @@ class GraphitiAdapter(BaseAdapter):
             except Exception:  # noqa: BLE001
                 pass
         shutil.rmtree(getattr(self, "_dir", ""), ignore_errors=True)
+
+
+class GraphitiNeo4jAdapter(GraphitiAdapter):
+    """Round 5, Part B: Graphiti on the stack it targets — Neo4j, and an OpenAI model with JSON-schema output for the
+    write path (model ids containing "/" pass through the shim to the provider natively). Embedder and reranker stay as
+    in every other arm, so only the graph store and the write model differ from `zep_graphiti`.
+    Neo4j community has one database: a cell clears it on build, so cells must run one at a time."""
+    name = "zep_graphiti_neo4j"
+
+    async def _build(self):
+        import os
+        from graphiti_core import Graphiti
+        from graphiti_core.cross_encoder.bge_reranker_client import BGERerankerClient
+        from graphiti_core.embedder.openai import OpenAIEmbedder, OpenAIEmbedderConfig
+        from graphiti_core.llm_client.config import LLMConfig
+        from graphiti_core.llm_client.openai_generic_client import OpenAIGenericClient
+        from graphiti_core.utils.maintenance.graph_data_operations import clear_data
+        self._dir = ""
+        llm = OpenAIGenericClient(config=LLMConfig(api_key="shim", base_url=SHIM_BASE, model=os.environ.get("GRAPHITI_MODEL", "openai/gpt-6.1-terra"),
+                                                   small_model=os.environ.get("GRAPHITI_SMALL_MODEL", "openai/gpt-6-luna")))
+        emb = OpenAIEmbedder(config=OpenAIEmbedderConfig(api_key="shim", base_url=SHIM_BASE, embedding_model="bge-small", embedding_dim=384))
+        self._g = Graphiti(os.environ.get("NEO4J_URI", "bolt://127.0.0.1:7687"), os.environ.get("NEO4J_USER", "neo4j"),
+                           os.environ.get("NEO4J_PASSWORD", ""), llm_client=llm, embedder=emb, cross_encoder=BGERerankerClient())
+        await clear_data(self._g.driver)
+        await self._g.build_indices_and_constraints()
+        self.episodes = 0

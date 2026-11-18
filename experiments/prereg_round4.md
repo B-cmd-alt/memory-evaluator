@@ -190,3 +190,10 @@ Haiku readers only. A cell that cannot run because of the cap is reported as not
 8. Smaller: task-macro accuracy as the primary metric; cluster bootstrap by update key; Holm on one-sided p-values with
    conjunctions by largest p; per-reader false-abstention rates and judge-free signals; H15's sampling, unit and judge
    specified; a larger name pool, so no middle-initial names are needed.
+
+## Amendment 1 (2026-11-18, while the 10K rung was running; no Mem0 cell had finished)
+
+The round-5 pre-commit review found that the Mem0 adapter's read size was never 5: mem0ai 2.x names the parameter `top_k`
+(default 20), and the adapter passed `limit=5`, which the library ignored. Mem0 therefore reads 20 memories, in rounds 1–3 and
+in the Mem0 cell already running here. Round 4 keeps 20 and now passes it explicitly. Nothing in the design changes: Mem0's
+matched comparators are the k = 20 arms (`hybrid_k20`, `minmem`), which is what H12 already uses. See `docs/ERRATA.md`.

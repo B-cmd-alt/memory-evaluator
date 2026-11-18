@@ -89,6 +89,20 @@ class GenerativeAgentsMemory(BaseAdapter):
             return (x - x.min()) / (x.max() - x.min()) if x.max() > x.min() else np.zeros_like(x)
         return norm(rec) + norm(imp) + norm(rel)
 
+    async def delete(self, source_ids):
+        """Drop the raw memories IN PLACE; reflections are memories in the stream and stay (the paper has no delete).
+        Rounds 2-3 inherited the base rebuild, which re-ingested the surviving reflections as if they were new notes: it
+        re-rated everything and wrote fresh reflections on every delete, so reflections multiplied. See docs/ERRATA.md."""
+        ids = set(source_ids)
+        keep = [i for i, m in enumerate(self.memories) if m.source_id not in ids]
+        n = len(self.memories) - len(keep)
+        self.memories = [self.memories[i] for i in keep]
+        self._imp = [self._imp[i] for i in keep]
+        self._vecs = Embedder.get().encode([m.content for m in self.memories]) if self.memories else None
+        for sid in ids:
+            self._last_access.pop(sid, None)
+        return {"deleted": n, "method": "drop raw memories in place; reflections stay"}
+
     async def query(self, question, timestamp=None):
         t0 = time.time()
         if not self.memories:
