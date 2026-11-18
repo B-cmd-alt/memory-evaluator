@@ -237,7 +237,9 @@ def judge_agreement(recs: dict, rj: dict) -> dict:
                     k = f"{s}|{key}|{d['id']}"
                     if k in alt:
                         a.append(float(d[field] if not inv else not d[field])); b.append(float(alt[k]["score"] >= 0.99))
+        # outcomes use score >= 0.99; kappa at 0.5 is the calibration-set convention, kappa at 0.99 the decision threshold
         out[name] = {"n": len(a), "kappa_binary": round(kappa_binary(a, b), 3) if a else None,
+                     "kappa_at_decision_threshold": round(kappa_binary(a, b, thr=0.99), 3) if a else None,
                      "disagreements": sum((x >= 0.5) != (y >= 0.5) for x, y in zip(a, b))}
     return out
 
@@ -256,7 +258,16 @@ def main():
     res["judge_agreement"] = judge_agreement(recs, rj)
     if "zep_graphiti" in recs:
         ir = recs["zep_graphiti"].get("invalidation_report", {})
-        res["graphiti_invalidation"] = {k: v for k, v in ir.items() if k != "rows"}
+        rows = [r for r in ir.get("rows", []) if r["id"] not in INADMISSIBLE]   # admissible keys only
+        have = [r for r in rows if r["n_stale_edges"]]
+        res["graphiti_invalidation"] = {"keys": len(rows), "keys_with_stale_edge": len(have),
+                                        "keys_all_stale_invalidated": sum(r["n_stale_invalidated"] == r["n_stale_edges"] for r in have),
+                                        "keys_any_stale_invalidated": sum(r["n_stale_invalidated"] > 0 for r in have),
+                                        "keys_with_current_edge": sum(1 for r in rows if r["n_current_edges"])}
+        res["graphiti_arm_outcomes"] = {}
+        for arm in [None] + list(recs["zep_graphiti"].get("read_arms") or {}):
+            _, c, st = a2_vectors(recs["zep_graphiti"], arm=arm)
+            res["graphiti_arm_outcomes"][arm or "r2"] = {"current": sum(c), "stale": sum(st), "other": len(c) - sum(c) - sum(st)}
     (R3 / "analysis.json").write_text(json.dumps(res, indent=1))
     print(json.dumps({k: v for k, v in res.items() if k != "tables"}, indent=1)[:6000])
 

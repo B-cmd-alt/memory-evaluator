@@ -1544,18 +1544,43 @@
   "or__google_gemini-3.8-flash": {
    "n": 1201,
    "kappa_binary": 0.934,
+   "kappa_at_decision_threshold": 0.866,
    "disagreements": 22
   },
   "or__openai_gpt-6.1-terra": {
    "n": 1201,
    "kappa_binary": 0.927,
+   "kappa_at_decision_threshold": 0.872,
    "disagreements": 24
   }
  },
  "graphiti_invalidation": {
-  "keys_with_stale_edge": 55,
-  "keys": 65,
+  "keys": 58,
+  "keys_with_stale_edge": 48,
   "keys_all_stale_invalidated": 5,
-  "keys_with_current_edge": 56
+  "keys_any_stale_invalidated": 38,
+  "keys_with_current_edge": 49
+ },
+ "graphiti_arm_outcomes": {
+  "r2": {
+   "current": 22,
+   "stale": 15,
+   "other": 21
+  },
+  "default": {
+   "current": 29,
+   "stale": 7,
+   "other": 22
+  },
+  "filter": {
+   "current": 30,
+   "stale": 12,
+   "other": 16
+  },
+  "xenc": {
+   "current": 30,
+   "stale": 4,
+   "other": 24
+  }
  }
 }

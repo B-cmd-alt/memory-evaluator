@@ -105,3 +105,8 @@ earlier role ended, because a person can hold two roles. The tracker, city and b
 This affects 8 of the 58 admissible T4 keys, 2 T3 items and 3 deletion-case controls. These items are **not excluded**: the
 primary analysis keeps them. A **sensitivity analysis** without them is reported next to every verdict, and a verdict
 that differs between the two is flagged. The generator's implicit role wording is now "X's role changed on <date>: now <role>".
+
+## Erratum to amendment 1 (2026-11-18)
+
+The round-2 counts in amendment 1 read "3 of 14 T4 and 3 of 15 T3 items". The correct figures are 3 of the 9 T4 items and 3 of
+the 9 T3 items in S1 seeds 123 and 456, which is 3 of 14 T4 across all three S1 seeds. The R3 counts and the rule are unchanged.

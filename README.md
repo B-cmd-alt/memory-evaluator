@@ -100,34 +100,43 @@ Pre-registered in [`experiments/prereg_round3.md`](experiments/prereg_round3.md)
 round finished); write-up: **[`docs/ROUND3_RESULTS.md`](docs/ROUND3_RESULTS.md)**. Round 3 exists because round 2's update and
 deletion differences rested on 5 and 6–7 items per seed. Paired item-level statistics, Holm-corrected.
 
-- **On updates, the 2023 upper bound is not beaten either.** Full context scores FAMA 1.00. Hybrid + reranker and Mem0 tie it,
-  and Mastra and GraphRAG tie it once 8 ambiguous items are set aside. Systems fall below when their context can miss the
-  newest note: vector RAG −0.20 [−0.36, −0.04], BM25 −0.44, Graphiti −0.78, Generative Agents −0.82.
-- **Graphiti's update failure is real and now explained.** In 50 of the 55 keys whose superseded fact is still in the graph,
-  that fact was never fully invalidated. Its best read configuration (FAMA 0.45) is still far below vector RAG (0.83).
-  Round 2's 5-edge configuration had exaggerated the gap.
-- **The reranker's stale-answer advantage is real in direction but not significant after Holm** (+0.09, p = 0.06). All of
-  vector RAG's stale answers come from notes worded "moved from A to B", and every one is a retrieval miss.
-- **Deletion: Mem0 leaks the deleted person's name in 3 of 11 measurable cases**, through facts it merged into other
-  people's memories. Generative Agents still answers with a deleted city in 3 of 34 cases. Rebuild-based systems are clean.
-- **Judge-robust:** the Sonnet verdicts agree with GPT-6.1 and Gemini-3.8 at κ = 0.93 on 1,201 round-3 judgements, and no
+All findings are inside one synthetic ~4K-token world (262 dated notes):
+
+- **On updates, no system beats the 2023 upper bound.** Full context scores FAMA 1.00. Hybrid + reranker and Mem0 are
+  indistinguishable from it. Mastra and GraphRAG are below it in the primary analysis (−0.10, −0.16) and indistinguishable once
+  8 ambiguous items are set aside. Four systems are below it either way (primary Δ FAMA): vector RAG −0.17 [−0.31, −0.03],
+  BM25 −0.38, Graphiti −0.88, Generative Agents −0.83.
+- **Graphiti's update deficit holds (H7), but the cause depends on its read configuration.** With round 2's 5-edge read,
+  surviving old edges produce stale answers. It invalidates an old edge in 38 of 48 keys but retires all of them in only 5.
+  With its best recipe (FAMA 0.45 vs vector RAG's 0.83), the gap is mostly facts missing from the graph.
+- **The reranker's stale-answer advantage is in the predicted direction but not significant after Holm** (+0.09, p = 0.06).
+  All of vector RAG's stale answers come from notes worded "moved from A to B", and every one is a retrieval miss.
+- **Deletion: Mem0 (3/11) and Generative Agents (2/11) are the systems that leak**, with wide CIs. Mem0 leaks through facts it
+  merged across notes; Generative Agents through reflections, and it still answers with a deleted city in 3 of 34 cases.
+  Rebuild-based systems are clean.
+- **Judge-robust:** the Sonnet verdicts agree with GPT-6.1 and Gemini-3.8 at κ 0.87–0.93 on 1,201 round-3 judgements, and no
   hypothesis flips.
-- **Two more gold problems were found and fixed**: updates dated before what they supersede, and implicit role updates that
-  do not entail the old role ended. The first also invalidates 3 of the 9 round-2 S1 update items in seeds 123 and 456.
+- **Two more gold problems, and one A4 artifact, were found.**
+  - Updates dated before what they supersede. This also invalidates 3 of the 9 round-2 update items in S1 seeds 123 and 456.
+  - Implicit role updates that do not entail the old role ended.
+  - The A4 "fooled" rule flags abstentions that mention the rumor; no system was actually fooled.
 
 ## What the whole study concludes
 
-1. **At the scales where a memory store still fits in a context window, no memory system beats putting everything in the
-   prompt, on recall or on updates.** What memory systems buy there is cost: 1.6K vs 11.5K read tokens per query.
+1. **Where a memory store still fits in a context window, no memory system we tested beats putting everything in the
+   prompt, on recall or on updates.** This rests on synthetic worlds of 3.5K–28K tokens and, for updates, on one world.
+   What the retrieval systems and Mem0 buy there is read cost: 1.6–2.2K vs 11.5K prompt tokens per query. Mastra (11K) and
+   GraphRAG (12K) do not save read tokens either.
 2. **What separates memory systems is whether their context reliably contains the newest relevant note, and how deletion
-   propagates through what they derive.** A reranker, an LLM-maintained log (Mastra) and a fact store (Mem0) keep the newest
-   note in front of the generator. A top-k window (BM25, vector), an edge graph that does not retire facts (Graphiti) and
-   importance-weighted reflections (Generative Agents) do not. Extraction and reflection create derived text that a
-   per-note delete does not reach.
+   propagates through what they derive.**
+   - A reranker and a fact store (Mem0) keep the newest note in front of the generator.
+   - A top-k window (BM25, vector), an edge graph that misses or keeps facts (Graphiti) and importance-weighted reflections
+     (Generative Agents) do not.
+   - Extraction and reflection create derived text that a per-note delete does not reach.
 3. **The evaluation moves results as much as the systems do.** Over rounds 2 and 3, eleven corrections had to be made by
    reading per-item evidence. One of them, a gold-label error (updates dated before what they supersede), had inflated a
-   round-2 headline. A calibrated judge
-   was necessary, and it was not sufficient.
+   round-2 headline; an A4 scoring rule may have produced another. A calibrated judge was necessary, and it was not
+   sufficient.
 
 ## The interactive app
 
