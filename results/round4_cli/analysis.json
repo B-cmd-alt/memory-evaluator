@@ -1,0 +1,920 @@
+{
+ "dir": "results/round4_cli",
+ "cells": {
+  "bm25@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.847,
+     "acc_item": 0.823,
+     "fama": 0.661,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.64,
+      "T3": 0.8,
+      "T4": 0.796,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.069,
+     "hedged_but_contains_reference": 5,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.786,
+     "acc_item": 0.676,
+     "fama": 0.457,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 0.64,
+      "T3": 0.8,
+      "T4": 0.591,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.199,
+     "hedged_but_contains_reference": 32,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 0.797,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "bm25_k20@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.972,
+     "acc_item": 0.982,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 0.9,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 3,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.923,
+     "acc_item": 0.835,
+     "fama": 0.78,
+     "by_task": {
+      "T1": 0.933,
+      "T2": 1.0,
+      "T3": 0.9,
+      "T4": 0.78,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.13,
+     "hedged_but_contains_reference": 29,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 0.989,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "hybrid_k20@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.992,
+     "acc_item": 0.993,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.922,
+     "acc_item": 0.81,
+     "fama": 0.731,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 0.933,
+      "T4": 0.731,
+      "T5": 0.944
+     },
+     "false_abstention_rate": 0.159,
+     "hedged_but_contains_reference": 39,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "hybrid_rerank@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.981,
+     "acc_item": 0.983,
+     "fama": 0.984,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.956,
+      "T3": 1.0,
+      "T4": 0.984,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.931,
+     "acc_item": 0.797,
+     "fama": 0.699,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.956,
+      "T3": 1.0,
+      "T4": 0.699,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.175,
+     "hedged_but_contains_reference": 43,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 0.992,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "minmem@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.987,
+     "acc_item": 0.993,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.933,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.008,
+     "hedged_but_contains_reference": 2,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.968,
+     "acc_item": 0.978,
+     "fama": 0.984,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.984,
+      "T5": 0.889
+     },
+     "false_abstention_rate": 0.008,
+     "hedged_but_contains_reference": 2,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "minmem_noexp@10K": {
+   "seeds": [
+    7,
+    42
+   ],
+   "status": {
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 188,
+     "acc_macro": 0.98,
+     "acc_item": 0.989,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 2,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 188,
+     "acc_macro": 0.942,
+     "acc_item": 0.963,
+     "fama": 0.976,
+     "by_task": {
+      "T1": 0.95,
+      "T2": 1.0,
+      "T3": 0.95,
+      "T4": 0.976,
+      "T5": 0.833
+     },
+     "false_abstention_rate": 0.006,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9792
+  },
+  "minmem_nohdr@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.992,
+     "acc_item": 0.993,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.931,
+     "acc_item": 0.821,
+     "fama": 0.742,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 0.967,
+      "T4": 0.742,
+      "T5": 0.944
+     },
+     "false_abstention_rate": 0.146,
+     "hedged_but_contains_reference": 36,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "minmem_order@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.987,
+     "acc_item": 0.993,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.933,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.945,
+     "acc_item": 0.867,
+     "fama": 0.812,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.812,
+      "T5": 0.944
+     },
+     "false_abstention_rate": 0.073,
+     "hedged_but_contains_reference": 18,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "vector_k20@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.999,
+     "acc_item": 0.996,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.941,
+     "acc_item": 0.803,
+     "fama": 0.704,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.704,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.159,
+     "hedged_but_contains_reference": 39,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "vector_rag@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.974,
+     "acc_item": 0.952,
+     "fama": 0.887,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.967,
+      "T3": 1.0,
+      "T4": 0.935,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.886,
+     "acc_item": 0.783,
+     "fama": 0.656,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 0.967,
+      "T3": 0.967,
+      "T4": 0.71,
+      "T5": 0.889
+     },
+     "false_abstention_rate": 0.146,
+     "hedged_but_contains_reference": 31,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0,
+     "read_usd_per_query_list": 0.0,
+     "read_prompt_tokens_per_query": 0
+    }
+   },
+   "evidence_in_context": 0.95,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 9
+   },
+   "store_tokens": 9801
+  }
+ },
+ "hypotheses": {
+  "H10": {
+   "claim": "acc(minmem) > acc(full_context_hdr) at 800K, Sonnet",
+   "n": 0,
+   "verdict": "not run",
+   "also": {
+    "minmem - full_context": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "hybrid_k20 - full_context_hdr": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "hybrid_k20 - full_context": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "full_context_hdr - full_context": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "crossover_rung_by_reader": {
+    "claude-sonnet-5.5": "none up to 800K",
+    "gemini-3.8-flash": "none up to 800K",
+    "claude-haiku-5.5": "none up to 800K",
+    "gpt-6-luna": "none up to 800K"
+   },
+   "p_holm": null
+  },
+  "H11": {
+   "claim": "(minmem - full_context_hdr) larger for Haiku than Sonnet at 200K",
+   "n": 0,
+   "verdict": "not run",
+   "p_holm": null
+  },
+  "H12": {
+   "claim": "acc(minmem) - acc(X) > -0.05 for every LLM-write X at 50K, Sonnet",
+   "parts": {
+    "mem0": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "ms_graphrag": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "zep_graphiti": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "anthropic_memory_tool": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "mastra_om": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "generative_agents": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "verdict": "not run",
+   "not_run": [
+    "mem0",
+    "ms_graphrag",
+    "zep_graphiti",
+    "anthropic_memory_tool",
+    "mastra_om",
+    "generative_agents"
+   ],
+   "secondary_hybrid_k20": {
+    "mem0": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "ms_graphrag": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "zep_graphiti": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "anthropic_memory_tool": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "mastra_om": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "generative_agents": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "secondary_fama": {
+    "mem0": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "ms_graphrag": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "zep_graphiti": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "anthropic_memory_tool": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "mastra_om": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "generative_agents": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "secondary_other_rungs": {},
+   "p_holm": null
+  },
+  "H13": {
+   "claim": "FAMA(vector_rag) at 10K > at 3.2M, Sonnet",
+   "n": 0,
+   "verdict": "not run",
+   "secondary": {
+    "bm25": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "vector_k20": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "bm25_k20": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "hybrid_k20": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "minmem": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "secondary_did_minmem_vs_vector_k20": {
+    "n": 0,
+    "verdict": "not run"
+   },
+   "p_holm": null
+  },
+  "H14": {
+   "claim": "acc(minmem_nohdr) > acc(hybrid_k20) at 3.2M, pooled readers",
+   "pooled_readers": [
+    "claude-sonnet-5.5",
+    "gemini-3.8-flash",
+    "claude-haiku-5.5",
+    "gpt-6-luna"
+   ],
+   "registered_pool_complete": true,
+   "n": 0,
+   "verdict": "not run",
+   "secondary": {
+    "minmem - minmem_nohdr FAMA @800K Haiku": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "order step": {
+     "n": 0,
+     "verdict": "not run"
+    },
+    "cue step": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   },
+   "p_holm": null
+  },
+  "H15": {
+   "claim": "LongMemEval-S, Sonnet: acc(minmem) - acc(hybrid_k20) > -0.03",
+   "n": 0,
+   "verdict": "not run",
+   "systems": {},
+   "vs_full_context": {},
+   "p_holm": null
+  }
+ },
+ "path_check": {
+  "other_dir": "results/round4",
+  "total": {
+   "n": 5108,
+   "agree": 4637,
+   "rate": 0.9078
+  },
+  "cells": {
+   "bm25@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 257,
+    "acc_here": 0.833,
+    "acc_other": 0.814
+   },
+   "bm25@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 217,
+    "acc_here": 0.678,
+    "acc_other": 0.826
+   },
+   "bm25_k20@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 254,
+    "acc_here": 0.981,
+    "acc_other": 0.951
+   },
+   "bm25_k20@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 219,
+    "acc_here": 0.826,
+    "acc_other": 0.981
+   },
+   "hybrid_k20@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 258,
+    "acc_here": 0.992,
+    "acc_other": 0.977
+   },
+   "hybrid_k20@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 209,
+    "acc_here": 0.799,
+    "acc_other": 0.992
+   },
+   "hybrid_rerank@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 254,
+    "acc_here": 0.985,
+    "acc_other": 0.97
+   },
+   "hybrid_rerank@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 207,
+    "acc_here": 0.788,
+    "acc_other": 0.973
+   },
+   "minmem@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 261,
+    "acc_here": 0.992,
+    "acc_other": 0.981
+   },
+   "minmem@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 258,
+    "acc_here": 0.977,
+    "acc_other": 1.0
+   },
+   "minmem_noexp@10K/claude-sonnet-5.5": {
+    "n": 178,
+    "agree": 174,
+    "acc_here": 0.989,
+    "acc_other": 0.966
+   },
+   "minmem_noexp@10K/claude-haiku-5.5": {
+    "n": 178,
+    "agree": 171,
+    "acc_here": 0.961,
+    "acc_other": 1.0
+   },
+   "minmem_nohdr@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 259,
+    "acc_here": 0.992,
+    "acc_other": 0.981
+   },
+   "minmem_nohdr@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 211,
+    "acc_here": 0.811,
+    "acc_other": 0.989
+   },
+   "minmem_order@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 262,
+    "acc_here": 0.992,
+    "acc_other": 0.985
+   },
+   "minmem_order@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 226,
+    "acc_here": 0.86,
+    "acc_other": 0.989
+   },
+   "vector_k20@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 262,
+    "acc_here": 0.996,
+    "acc_other": 0.996
+   },
+   "vector_k20@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 208,
+    "acc_here": 0.792,
+    "acc_other": 0.996
+   },
+   "vector_rag@10K/claude-sonnet-5.5": {
+    "n": 264,
+    "agree": 258,
+    "acc_here": 0.951,
+    "acc_other": 0.943
+   },
+   "vector_rag@10K/claude-haiku-5.5": {
+    "n": 264,
+    "agree": 212,
+    "acc_here": 0.773,
+    "acc_other": 0.939
+   }
+  }
+ }
+}
