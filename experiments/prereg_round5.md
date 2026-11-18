@@ -141,3 +141,29 @@ record was discarded unread. **Part A now runs through the `claude -p` subscript
 shim, with `sonnet` as the reader and judge and `haiku` as the write model. Part A needs only Claude models, so it is
 internally consistent on this path; its numbers are not pooled with any OpenRouter-path number. Part B (which needs an OpenAI
 model) and the rest of round 4 (which needs four reader families) wait for credit.
+
+## Amendment 2 (2026-11-18, after reading six seed-42 records; before any seed-7 or seed-2026 record is read)
+
+**What was seen.** Reading every seed-42 probe that the pre-registered rule counts as residue (46 probes over `mem0`,
+`memory_tool_edit` and `generative_agents`) showed that the purge adjustment does not remove all of the string rule's false
+positives. In about a quarter of them the deleted string is in the end-state answer for a reason that has nothing to do with
+the deleted notes, and is absent from the purge answer only because the wording differed. Typical case: "forget where Noah
+Berg lives" (Lisbon); the end-state answer declines and adds that he *presented at a conference in Lisbon* (a surviving
+note); the purge answer declines without saying so. The control arms cannot show this noise: their end-state and purge
+prompts are identical, so the cached answer is identical and their floor is zero by construction.
+
+**What is added.** A second residue measure, **disclosure-adjusted residue**, reported next to the pre-registered one:
+
+- For every probe answer at the **after**, **end** and **purge** stages that contains the deleted string, a judge (Sonnet,
+  through the same path) is shown the case's deleted notes, the question and the answer, and decides whether the answer
+  *discloses a fact that the deleted notes state*. A mention that the deleted notes do not make (another event, another
+  person's fact, a talk location rather than a home city) is not a disclosure. `tools/disclosure_judge.py`.
+- disclosed(stage) = string in answer ∧ judge says disclosed. Disclosure-adjusted residue = recovered **before** (string
+  rule, unchanged) ∧ disclosed(**end**) ∧ ¬disclosed(**purge**).
+- The judge is checked against my hand labels of the 46 seed-42 probes (made before the judge was run) and the agreement is
+  reported.
+
+**How results are reported.** H16–H18 are tested as registered (string rule) and again on the disclosure-adjusted measure.
+The registered verdict stays the registered verdict. The adjusted measure is declared here as the one the write-up's
+descriptive rates rely on, and its results are also given for seeds 7 and 2026 alone, which were not seen when this rule was
+written. Where the two measures give different verdicts, both are stated.
