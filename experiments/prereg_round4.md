@@ -197,3 +197,11 @@ The round-5 pre-commit review found that the Mem0 adapter's read size was never 
 (default 20), and the adapter passed `limit=5`, which the library ignored. Mem0 therefore reads 20 memories, in rounds 1–3 and
 in the Mem0 cell already running here. Round 4 keeps 20 and now passes it explicitly. Nothing in the design changes: Mem0's
 matched comparators are the k = 20 arms (`hybrid_k20`, `minmem`), which is what H12 already uses. See `docs/ERRATA.md`.
+
+## Amendment 2 (2026-11-18): the run stopped at the 10K rung for lack of provider credit
+
+The OpenRouter account held $70 in total and was exhausted after 34 cells (the 10K rung: every zero-write arm except
+`full_context_hdr` for three seeds, plus Mastra OM, Generative Agents and the memory tool for seed 42). No completed cell
+contains a failed answer. Runners were stopped as soon as calls were refused; cells in progress were discarded and will be
+re-run. Nothing in the design changes. The 10K-rung cells were looked at when the run stopped (see the commit that adds
+this amendment); they are the rung on which no hypothesis has a primary test.

@@ -86,14 +86,20 @@ async def main():
     out = Path(a.out).resolve(); out.mkdir(parents=True, exist_ok=True)
     items = sample(json.load(open(DATA)), a.n)
     L.score = score_lme
+    # questions outer, systems inner: one haystack is embedded once for every retrieval arm, and the two full-context arms
+    # run back to back so the second reads the provider's prompt cache of the first
+    recs = {}
     for k in a.systems:
         f = out / f"{k}.json"
-        rec = json.loads(f.read_text()) if f.exists() else {"system": k, "readers": a.readers, "questions": [], "ingest_usd": 0.0, "read": {}}
-        done = {q["id"] for q in rec["questions"]}
-        for n, x in enumerate(items):
-            if x["question_id"] in done:
+        recs[k] = json.loads(f.read_text()) if f.exists() else {"system": k, "readers": a.readers, "questions": [], "ingest_usd": 0.0, "read": {}}
+    for n, x in enumerate(items):
+        world = None
+        for k in a.systems:
+            rec = recs[k]
+            if any(q["id"] == x["question_id"] for q in rec["questions"]):
                 continue
-            cell = await L.run_cell(k, to_world(x), a.readers, a.workers)
+            world = world or to_world(x)
+            cell = await L.run_cell(k, world, a.readers, a.workers)
             if not cell.get("questions"):   # blocked or failed ingest; a failed ANSWER is kept with score None and excluded pairwise
                 print(f"    {k} {x['question_id']} {cell['status']} {cell['error']}", flush=True)
                 continue
@@ -105,12 +111,13 @@ async def main():
                 agg = rec["read"].setdefault(r, {"llm_calls": 0, "prompt_tokens": 0, "usd": 0.0})
                 for kk in agg:
                     agg[kk] += c[kk]
-            if (n + 1) % 10 == 0 or n + 1 == len(items):
-                f.write_text(json.dumps(rec, indent=1, default=str))
-                acc = {r.split("/")[-1]: round(sum((q["by_reader"][r]["score"] or 0) >= 0.99 for q in rec["questions"]) / len(rec["questions"]), 3) for r in a.readers}
-                print(f"=== {k} {len(rec['questions'])}/{len(items)} {acc}", flush=True)
-        f.write_text(json.dumps(rec, indent=1, default=str))
-
+        from src.systems.common import Embedder
+        Embedder.get().__dict__.pop("_cache", None)   # each question has its own haystack: do not keep 30K embeddings alive
+        if (n + 1) % 5 == 0 or n + 1 == len(items):
+            for k, rec in recs.items():
+                (out / f"{k}.json").write_text(json.dumps(rec, indent=1, default=str))
+            line = {k: round(sum((q["by_reader"][a.readers[0]]["score"] or 0) >= 0.99 for q in rec["questions"]) / max(1, len(rec["questions"])), 3) for k, rec in recs.items()}
+            print(f"=== {n + 1}/{len(items)} {a.readers[0].split('/')[-1]}: {line}", flush=True)
 
 if __name__ == "__main__":
     asyncio.run(main())

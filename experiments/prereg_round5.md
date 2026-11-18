@@ -132,3 +132,12 @@ OpenAI's schema-constrained output. Part B removes them.
 ## Budget
 
 Shares round 4's $1,000 hard cap and ledger.
+
+## Amendment 1 (2026-11-18, before any round-5 record exists)
+
+The OpenRouter account ran out of credit while round 4 was on its second rung (it held $70 in total; the $1,000 cap was a
+ceiling on spending, not a balance). One round-5 arm (`minmem`, seed 42) had started and failed on refused calls; its partial
+record was discarded unread. **Part A now runs through the `claude -p` subscription path**, which rounds 1–3 used: the same
+shim, with `sonnet` as the reader and judge and `haiku` as the write model. Part A needs only Claude models, so it is
+internally consistent on this path; its numbers are not pooled with any OpenRouter-path number. Part B (which needs an OpenAI
+model) and the rest of round 4 (which needs four reader families) wait for credit.

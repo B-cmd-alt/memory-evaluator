@@ -1,5 +1,60 @@
 {
  "cells": {
+  "anthropic_memory_tool@10K": {
+   "seeds": [
+    42
+   ],
+   "status": {
+    "42": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 96,
+     "acc_macro": 0.934,
+     "acc_item": 0.948,
+     "fama": 0.969,
+     "by_task": {
+      "T1": 0.7,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.969,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.03996,
+     "read_usd_per_query_list": 0.03995,
+     "read_prompt_tokens_per_query": 18772
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 96,
+     "acc_macro": 0.948,
+     "acc_item": 0.938,
+     "fama": 0.938,
+     "by_task": {
+      "T1": 0.8,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.938,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00203,
+     "read_usd_per_query_list": 0.00203,
+     "read_prompt_tokens_per_query": 18694
+    }
+   },
+   "evidence_in_context": null,
+   "ingest": {
+    "llm_calls_per_memory": 0.419,
+    "usd_per_store": 0.124,
+    "seconds": 431
+   },
+   "store_tokens": 9881
+  },
   "bm25@10K": {
    "seeds": [
     7,
@@ -194,6 +249,386 @@
    },
    "store_tokens": 9801
   },
+  "full_context@10K": {
+   "seeds": [
+    2026
+   ],
+   "status": {
+    "2026": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 91,
+     "acc_macro": 1.0,
+     "acc_item": 1.0,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00247,
+     "read_usd_per_query_list": 0.02101,
+     "read_prompt_tokens_per_query": 10162
+    },
+    "google/gemini-3.8-flash": {
+     "n": 91,
+     "acc_macro": 1.0,
+     "acc_item": 1.0,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00198,
+     "read_usd_per_query_list": 0.00816,
+     "read_prompt_tokens_per_query": 9382
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 91,
+     "acc_macro": 1.0,
+     "acc_item": 1.0,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00021,
+     "read_usd_per_query_list": 0.00109,
+     "read_prompt_tokens_per_query": 10162
+    },
+    "openai/gpt-6-luna": {
+     "n": 91,
+     "acc_macro": 0.97,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 0.95,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.013,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00091,
+     "read_usd_per_query_list": 0.00074,
+     "read_prompt_tokens_per_query": 7117
+    }
+   },
+   "evidence_in_context": null,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9820
+  },
+  "generative_agents@10K": {
+   "seeds": [
+    42
+   ],
+   "status": {
+    "42": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 96,
+     "acc_macro": 0.432,
+     "acc_item": 0.307,
+     "fama": 0.2,
+     "by_task": {
+      "T1": 0.1,
+      "T2": 0.5,
+      "T3": 0.3,
+      "T4": 0.262,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.694,
+     "hedged_but_contains_reference": 2,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00176,
+     "read_usd_per_query_list": 0.00176,
+     "read_prompt_tokens_per_query": 565
+    },
+    "google/gemini-3.8-flash": {
+     "n": 96,
+     "acc_macro": 0.438,
+     "acc_item": 0.328,
+     "fama": 0.277,
+     "by_task": {
+      "T1": 0.1,
+      "T2": 0.5,
+      "T3": 0.3,
+      "T4": 0.292,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.694,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00133,
+     "read_usd_per_query_list": 0.00133,
+     "read_prompt_tokens_per_query": 450
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 96,
+     "acc_macro": 0.415,
+     "acc_item": 0.307,
+     "fama": 0.246,
+     "by_task": {
+      "T1": 0.1,
+      "T2": 0.5,
+      "T3": 0.2,
+      "T4": 0.277,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.694,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.0001,
+     "read_usd_per_query_list": 0.0001,
+     "read_prompt_tokens_per_query": 565
+    },
+    "openai/gpt-6-luna": {
+     "n": 96,
+     "acc_macro": 0.438,
+     "acc_item": 0.328,
+     "fama": 0.277,
+     "by_task": {
+      "T1": 0.1,
+      "T2": 0.5,
+      "T3": 0.3,
+      "T4": 0.292,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.694,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 6e-05,
+     "read_usd_per_query_list": 6e-05,
+     "read_prompt_tokens_per_query": 379
+    }
+   },
+   "evidence_in_context": null,
+   "ingest": {
+    "llm_calls_per_memory": 0.115,
+    "usd_per_store": 0.007,
+    "seconds": 65
+   },
+   "store_tokens": 9881
+  },
+  "hybrid_k20@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.971,
+     "acc_item": 0.978,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00231,
+     "read_usd_per_query_list": 0.00231,
+     "read_prompt_tokens_per_query": 825
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.973,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.016,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00123,
+     "read_usd_per_query_list": 0.00123,
+     "read_prompt_tokens_per_query": 758
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.998,
+     "acc_item": 0.993,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 825
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.993,
+     "acc_item": 0.996,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 588
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "hybrid_rerank@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.977,
+     "acc_item": 0.969,
+     "fama": 0.962,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.956,
+      "T3": 1.0,
+      "T4": 0.962,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00122,
+     "read_usd_per_query_list": 0.00122,
+     "read_prompt_tokens_per_query": 291
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.984,
+     "acc_item": 0.994,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.956,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00126,
+     "read_usd_per_query_list": 0.00126,
+     "read_prompt_tokens_per_query": 247
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.978,
+     "acc_item": 0.973,
+     "fama": 0.968,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.956,
+      "T3": 1.0,
+      "T4": 0.968,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.024,
+     "hedged_but_contains_reference": 6,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 9e-05,
+     "read_prompt_tokens_per_query": 291
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.991,
+     "acc_item": 0.998,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 0.956,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 4e-05,
+     "read_usd_per_query_list": 4e-05,
+     "read_prompt_tokens_per_query": 207
+    }
+   },
+   "evidence_in_context": 0.992,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
   "mastra_om@10K": {
    "seeds": [
     42
@@ -286,6 +721,588 @@
     "seconds": 61
    },
    "store_tokens": 9881
+  },
+  "minmem@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.978,
+     "acc_item": 0.982,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00237,
+     "read_usd_per_query_list": 0.00237,
+     "read_prompt_tokens_per_query": 859
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.973,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.016,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00143,
+     "read_usd_per_query_list": 0.00143,
+     "read_prompt_tokens_per_query": 785
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 1.0,
+     "acc_item": 1.0,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 859
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.978,
+     "acc_item": 0.982,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.02,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 613
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "minmem_noexp@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.977,
+     "acc_item": 0.978,
+     "fama": 0.984,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.984,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00236,
+     "read_usd_per_query_list": 0.00236,
+     "read_prompt_tokens_per_query": 858
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.973,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.016,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00142,
+     "read_usd_per_query_list": 0.00142,
+     "read_prompt_tokens_per_query": 784
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.999,
+     "acc_item": 0.996,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 858
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.979,
+     "acc_item": 0.986,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.016,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 612
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "minmem_nohdr@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.972,
+     "acc_item": 0.982,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00231,
+     "read_usd_per_query_list": 0.00231,
+     "read_prompt_tokens_per_query": 826
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.973,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.016,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00125,
+     "read_usd_per_query_list": 0.00125,
+     "read_prompt_tokens_per_query": 759
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.991,
+     "acc_item": 0.989,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 0.967,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 826
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.993,
+     "acc_item": 0.996,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 589
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "minmem_order@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.973,
+     "acc_item": 0.986,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.9,
+      "T2": 1.0,
+      "T3": 0.967,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00231,
+     "read_usd_per_query_list": 0.00231,
+     "read_prompt_tokens_per_query": 826
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.972,
+     "acc_item": 0.982,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.867,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.02,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00133,
+     "read_usd_per_query_list": 0.00133,
+     "read_prompt_tokens_per_query": 759
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.981,
+     "acc_item": 0.989,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 0.944
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 826
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.991,
+     "acc_item": 0.989,
+     "fama": 0.989,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.989,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 1,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 589
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "vector_k20@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.999,
+     "acc_item": 0.996,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00231,
+     "read_usd_per_query_list": 0.00231,
+     "read_prompt_tokens_per_query": 843
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.993,
+     "acc_item": 0.996,
+     "fama": 1.0,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 1.0,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00123,
+     "read_usd_per_query_list": 0.00123,
+     "read_prompt_tokens_per_query": 758
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.999,
+     "acc_item": 0.996,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00014,
+     "read_usd_per_query_list": 0.00014,
+     "read_prompt_tokens_per_query": 843
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.999,
+     "acc_item": 0.996,
+     "fama": 0.995,
+     "by_task": {
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.995,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.0,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 592
+    }
+   },
+   "evidence_in_context": 1.0,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 0
+   },
+   "store_tokens": 9801
+  },
+  "vector_rag@10K": {
+   "seeds": [
+    7,
+    42,
+    2026
+   ],
+   "status": {
+    "2026": "OK",
+    "42": "OK",
+    "7": "OK"
+   },
+   "readers": {
+    "anthropic/claude-sonnet-5.5": {
+     "n": 279,
+     "acc_macro": 0.972,
+     "acc_item": 0.944,
+     "fama": 0.876,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.967,
+      "T3": 1.0,
+      "T4": 0.925,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00122,
+     "read_usd_per_query_list": 0.00122,
+     "read_prompt_tokens_per_query": 291
+    },
+    "google/gemini-3.8-flash": {
+     "n": 279,
+     "acc_macro": 0.976,
+     "acc_item": 0.959,
+     "fama": 0.892,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.967,
+      "T3": 1.0,
+      "T4": 0.946,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.004,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 0.00131,
+     "read_usd_per_query_list": 0.00131,
+     "read_prompt_tokens_per_query": 243
+    },
+    "anthropic/claude-haiku-5.5": {
+     "n": 279,
+     "acc_macro": 0.971,
+     "acc_item": 0.941,
+     "fama": 0.866,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.967,
+      "T3": 1.0,
+      "T4": 0.919,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.024,
+     "hedged_but_contains_reference": 4,
+     "errors": 0,
+     "read_usd_per_query_billed": 8e-05,
+     "read_usd_per_query_list": 8e-05,
+     "read_prompt_tokens_per_query": 291
+    },
+    "openai/gpt-6-luna": {
+     "n": 279,
+     "acc_macro": 0.96,
+     "acc_item": 0.944,
+     "fama": 0.882,
+     "by_task": {
+      "T1": 0.967,
+      "T2": 0.967,
+      "T3": 0.933,
+      "T4": 0.935,
+      "T5": 1.0
+     },
+     "false_abstention_rate": 0.012,
+     "hedged_but_contains_reference": 0,
+     "errors": 0,
+     "read_usd_per_query_billed": 4e-05,
+     "read_usd_per_query_list": 4e-05,
+     "read_prompt_tokens_per_query": 205
+    }
+   },
+   "evidence_in_context": 0.95,
+   "ingest": {
+    "llm_calls_per_memory": 0.0,
+    "usd_per_store": 0.0,
+    "seconds": 7
+   },
+   "store_tokens": 9801
   }
  },
  "hypotheses": {
@@ -415,9 +1432,56 @@
     }
    },
    "secondary_other_rungs": {
+    "anthropic_memory_tool@10K": {
+     "n": 96,
+     "clusters": 86,
+     "estimate": 0.02,
+     "ci95": [
+      -0.006,
+      0.069
+     ],
+     "p_one_sided": 0.0,
+     "by_seed": {
+      "42": 0.02
+     },
+     "arms": [
+      "minmem@10K/claude-sonnet-5.5",
+      "anthropic_memory_tool@10K/claude-sonnet-5.5"
+     ]
+    },
     "mastra_om@10K": {
-     "n": 0,
-     "verdict": "not run"
+     "n": 96,
+     "clusters": 86,
+     "estimate": -0.006,
+     "ci95": [
+      -0.067,
+      0.054
+     ],
+     "p_one_sided": 0.0709,
+     "by_seed": {
+      "42": -0.006
+     },
+     "arms": [
+      "minmem@10K/claude-sonnet-5.5",
+      "mastra_om@10K/claude-sonnet-5.5"
+     ]
+    },
+    "generative_agents@10K": {
+     "n": 96,
+     "clusters": 86,
+     "estimate": 0.522,
+     "ci95": [
+      0.425,
+      0.61
+     ],
+     "p_one_sided": 0.0,
+     "by_seed": {
+      "42": 0.522
+     },
+     "arms": [
+      "minmem@10K/claude-sonnet-5.5",
+      "generative_agents@10K/claude-sonnet-5.5"
+     ]
     }
    },
    "p_holm": null
