@@ -94,6 +94,41 @@ leak strings that other notes legitimately contained, poison probes aimed at del
 faults and one lost-record bug were all caught by reading a record's evidence instead of its number, fixed at the
 definition level and re-applied uniformly. They are the first section of the write-up.
 
+## Round 3 — the A2/A3 closing round (one world, 58 update keys, 34 deletion cases, three judge families)
+
+Pre-registered in [`experiments/prereg_round3.md`](experiments/prereg_round3.md) (two amendments, both committed before the
+round finished); write-up: **[`docs/ROUND3_RESULTS.md`](docs/ROUND3_RESULTS.md)**. Round 3 exists because round 2's update and
+deletion differences rested on 5 and 6–7 items per seed. Paired item-level statistics, Holm-corrected.
+
+- **On updates, the 2023 upper bound is not beaten either.** Full context scores FAMA 1.00. Hybrid + reranker and Mem0 tie it,
+  and Mastra and GraphRAG tie it once 8 ambiguous items are set aside. Systems fall below when their context can miss the
+  newest note: vector RAG −0.20 [−0.36, −0.04], BM25 −0.44, Graphiti −0.78, Generative Agents −0.82.
+- **Graphiti's update failure is real and now explained.** In 50 of the 55 keys whose superseded fact is still in the graph,
+  that fact was never fully invalidated. Its best read configuration (FAMA 0.45) is still far below vector RAG (0.83).
+  Round 2's 5-edge configuration had exaggerated the gap.
+- **The reranker's stale-answer advantage is real in direction but not significant after Holm** (+0.09, p = 0.06). All of
+  vector RAG's stale answers come from notes worded "moved from A to B", and every one is a retrieval miss.
+- **Deletion: Mem0 leaks the deleted person's name in 3 of 11 measurable cases**, through facts it merged into other
+  people's memories. Generative Agents still answers with a deleted city in 3 of 34 cases. Rebuild-based systems are clean.
+- **Judge-robust:** the Sonnet verdicts agree with GPT-6.1 and Gemini-3.8 at κ = 0.93 on 1,201 round-3 judgements, and no
+  hypothesis flips.
+- **Two more gold problems were found and fixed**: updates dated before what they supersede, and implicit role updates that
+  do not entail the old role ended. The first also invalidates 3 of the 9 round-2 S1 update items in seeds 123 and 456.
+
+## What the whole study concludes
+
+1. **At the scales where a memory store still fits in a context window, no memory system beats putting everything in the
+   prompt, on recall or on updates.** What memory systems buy there is cost: 1.6K vs 11.5K read tokens per query.
+2. **What separates memory systems is whether their context reliably contains the newest relevant note, and how deletion
+   propagates through what they derive.** A reranker, an LLM-maintained log (Mastra) and a fact store (Mem0) keep the newest
+   note in front of the generator. A top-k window (BM25, vector), an edge graph that does not retire facts (Graphiti) and
+   importance-weighted reflections (Generative Agents) do not. Extraction and reflection create derived text that a
+   per-note delete does not reach.
+3. **The evaluation moves results as much as the systems do.** Over rounds 2 and 3, eleven corrections had to be made by
+   reading per-item evidence. One of them, a gold-label error (updates dated before what they supersede), had inflated a
+   round-2 headline. A calibrated judge
+   was necessary, and it was not sufficient.
+
 ## The interactive app
 
 The same code, hosted on Cloud Run (`app/`, scale-to-zero, one small instance):
@@ -137,9 +172,11 @@ with a *calibrated* judge and ships the per-question evidence instead of a leade
 
 ## Status and limits
 
-Rounds 1 and 2 (S1) are complete; S2 (753 memories) and S3 (LongMemEval-S anchor) are next, and H1's
-verdict waits for them. Known limits, stated up front: the judge's human-proxy calibration uses two
-careful independent labelers, not paid annotators; the judge is Claude-family only; N = 22–24 questions
+Rounds 1, 2 (S1) and 3 (the A2/A3 closing round) are complete. The full S2/S3 matrix is deliberately not run: round 3
+showed that the recall axis is settled at these scales, and the remaining open questions are scale beyond a context window and
+real human labels. Known limits, stated up front: the judge's human-proxy calibration uses two
+careful independent LLM labelers, not humans (a blind 100-item human set is exported in `results/round3/human_labels/`);
+verdicts are cross-checked by GPT and Gemini judges; N = 22–24 questions
 and 1–3 poison probes per S1 seed; A4 measures labelled-poison robustness; Mastra OM, the Anthropic
 memory tool and Generative Agents are faithful re-implementations from their public descriptions, not
 vendor code; Letta is blocked in the build environment. Every number above links to the record that

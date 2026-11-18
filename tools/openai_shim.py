@@ -163,8 +163,11 @@ def _parse_tool_calls(text: str) -> list[dict] | None:
     calls = obj.get("tool_calls") if isinstance(obj, dict) else None
     if not calls:
         return None
-    return [{"id": f"call_{uuid.uuid4().hex[:12]}", "type": "function",
-             "function": {"name": c.get("name"), "arguments": json.dumps(c.get("arguments", {}))}} for c in calls]
+    # deterministic ids (hash of the call, not uuid4): a tool-call id is echoed into the next prompt, so a random id would
+    # make every later turn of a tool loop miss the prompt cache (round 3 lost the memory-tool replay to this)
+    import hashlib
+    return [{"id": "call_" + hashlib.sha256(f"{i}|{c.get('name')}|{json.dumps(c.get('arguments', {}), sort_keys=True)}".encode()).hexdigest()[:12],
+             "type": "function", "function": {"name": c.get("name"), "arguments": json.dumps(c.get("arguments", {}))}} for i, c in enumerate(calls)]
 
 
 def _log_failure(rec: dict) -> None:
