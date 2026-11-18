@@ -207,3 +207,34 @@ amendment said every zero-write arm except `full_context_hdr` had three seeds; t
 contains a failed answer. Runners were stopped as soon as calls were refused; cells in progress were discarded and will be
 re-run. Nothing in the design changes. The 10K-rung cells were looked at when the run stopped (see the commit that adds
 this amendment); they are the rung on which no hypothesis has a primary test.
+
+## Amendment 3 (2026-11-18, before any cell named here is run): Claude-reader cells move to the subscription path
+
+No OpenRouter credit has arrived. The cells below need only Claude models and short prompts, so they run now through the
+`claude -p` subscription path that rounds 1–3 used (same shim, same prompts; `sonnet` reader and judge, `haiku` reader and
+write model). They are written to `results/round4_cli/` and are **never pooled with the OpenRouter cells** in
+`results/round4/`. The ten retrieval arms at 10K exist on both paths for the two Claude readers; their agreement is reported
+as a path check.
+
+**Runs on the subscription path, as registered otherwise:**
+
+- Every retrieval arm (`bm25`, `vector_rag`, `hybrid_rerank`, the three k = 20 arms and the four MinMem arms) on all five
+  rungs, three seeds, Sonnet and Haiku readers.
+- The LLM-write systems at 10K and 50K, three seeds (the cells H12's primary test needs), in the order Mastra OM,
+  Generative Agents, memory tool, Mem0, GraphRAG, Graphiti. A cell that does not finish is reported as not run.
+- `full_context` and `full_context_hdr` at 10K and 50K.
+- LongMemEval-S (H15): the retrieval arms first, then the two full-context arms with the Sonnet reader if the subscription's
+  limits allow.
+
+**What this does to each hypothesis:**
+
+| | status on this path |
+|---|---|
+| H12 (50K, Sonnet, MinMem vs LLM-write systems) | primary test as registered |
+| H13 (vector RAG, FAMA at 3.2M vs 10K, Sonnet) | primary test as registered |
+| H15 (LongMemEval-S, Sonnet, MinMem vs `hybrid_k20`) | primary test as registered |
+| H14 (3.2M, `minmem_nohdr` vs `hybrid_k20`, pooled over readers) | run pooled over the **two** Claude readers and labelled so; the four-reader test waits for credit |
+| H10, H11 (full context at 800K and 200K) | **not run on this path**: a 200K–800K-token prompt per question cannot be sent through it. They wait for credit and are otherwise reported as not run |
+
+Holm still counts six primary tests. Not available on this path, and reported as not done unless credit arrives: the Gemini
+and GPT readers, the 20% GPT re-judge of this round, full context above 50K, and the LLM-write systems above 50K.
