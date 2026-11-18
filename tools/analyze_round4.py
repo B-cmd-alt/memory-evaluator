@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Round-4 analysis (experiments/prereg_round4.md): the scale-ladder tables and H10-H15.
 
-    python -m tools.analyze_round4            # writes results/round4/analysis.json and prints the summary
+    python -m tools.analyze_round4                               # the OpenRouter-path cells, results/round4
+    R4_DIR=results/round4_cli python -m tools.analyze_round4     # the subscription-path cells (amendment 3)
+Writes <dir>/analysis.json and prints the summary. The two directories are never pooled.
 
 Metrics and statistics exactly as pre-registered: item score (binary for T1/T3/T4/T5, nugget recall for T2), task-macro
 accuracy (primary) and item-mean accuracy, FAMA over T4, a cluster bootstrap (update keys within seed, 10,000 resamples,
@@ -11,13 +13,14 @@ Failed answers have no score and drop out pairwise.
 from __future__ import annotations
 
 import json
+import os
 import re
 from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
 
-R4 = Path("results/round4")
+R4 = Path(os.environ.get("R4_DIR", "results/round4"))
 SONNET, GEMINI, HAIKU, LUNA = "anthropic/claude-sonnet-5.5", "google/gemini-3.8-flash", "anthropic/claude-haiku-5.5", "openai/gpt-6-luna"
 READERS = [SONNET, GEMINI, HAIKU, LUNA]
 RUNGS = [0, 50000, 200000, 800000, 3200000]
@@ -135,6 +138,13 @@ def contrast(cells, arms: list[tuple], coef: list[float], metric: str = "acc", s
     (predict=+1: estimate > -margin). Returns estimate, CI, p, n, per-seed direction."""
     data = [items(cells, s, r, rd, seeds) for s, r, rd in arms]
     # arms on different rungs / readers share items by (seed, qid): the core questions are identical on every rung
+    out = contrast_data(data, coef, metric, margin, predict)
+    if out.get("n"):
+        out["arms"] = [f"{s}@{RUNG_NAME[r]}/{(rd if isinstance(rd, str) else 'pooled').split('/')[-1]}" for s, r, rd in arms]
+    return out
+
+
+def contrast_data(data: list[dict], coef: list[float], metric: str = "acc", margin: float = 0.0, predict: int = +1) -> dict:
     P = Paired(data)
     if not P.n:
         return {"n": 0, "verdict": "not run"}
@@ -148,7 +158,8 @@ def contrast(cells, arms: list[tuple], coef: list[float], metric: str = "acc", s
         Ps = Paired([{k: v for k, v in d.items() if k[0] == s} for d in data])
         by_seed[int(s)] = round(sum(c * Ps.stat(i, metric) for i, c in enumerate(coef)), 3) if Ps.n else None
     return {"n": P.n, "clusters": P.n_clusters, "estimate": round(float(est), 3), "ci95": [round(float(lo), 3), round(float(hi), 3)],
-            "p_one_sided": round(p, 4), "by_seed": by_seed, "arms": [f"{s}@{RUNG_NAME[r]}/{(rd if isinstance(rd, str) else 'pooled').split('/')[-1]}" for s, r, rd in arms]}
+            "p_one_sided": round(p, 4), "by_seed": by_seed, "item_mean": [round(P.item_mean(i), 3) for i in range(len(data))],
+            "macro": [round(P.macro(i), 3) for i in range(len(data))]}
 
 
 def verdict(c: dict, predict: int = +1, margin: float = 0.0) -> str:
@@ -203,6 +214,61 @@ def cell_table(cells) -> dict:
     return T
 
 
+def load_lme() -> dict:
+    out = {}
+    for f in sorted((R4 / "lme").glob("*.json")):
+        r = json.loads(f.read_text())
+        if r.get("questions"):
+            out[r["system"]] = r
+    return out
+
+
+def lme_items(lme: dict, system: str, reader: str) -> dict:
+    """(0, qid) -> item; every LongMemEval question is its own cluster."""
+    out = {}
+    for q in lme.get(system, {}).get("questions", []):
+        b = q["by_reader"].get(reader)
+        if b is None or b["score"] is None:
+            continue
+        out[(0, q["id"])] = {"task": q["task"], "cluster": q["id"], "seed": 0, "score": float(b["score"] >= 0.99), "fama": 0.0, "stratum": q.get("stratum")}
+    return out
+
+
+def lme_summary(lme: dict, system: str, reader: str) -> dict:
+    it = lme_items(lme, system, reader)
+    P = Paired([it])
+    by = defaultdict(list)
+    for v in it.values():
+        by[v["stratum"]].append(v["score"])
+    asked = sum(1 for q in lme[system]["questions"] if reader in q["by_reader"])
+    return {"n": P.n, "failed": asked - P.n, "acc_macro": round(P.macro(0), 3), "acc_item": round(P.item_mean(0), 3),
+            "by_question_type": {k: [round(float(np.mean(v)), 3), len(v)] for k, v in sorted(by.items())}}
+
+
+def path_check(cells) -> dict | None:
+    """Amendment 3: the same cell on the other path (OpenRouter vs claude -p), item-level agreement of the binary score."""
+    other = Path("results/round4") if R4.name != "round4" else Path("results/round4_cli")
+    out = {}
+    for (system, rung), by_seed in sorted(cells.items()):
+        for seed, rec in by_seed.items():
+            f = other / f"{system}_s{seed}_t{rung}.json"
+            if not f.exists():
+                continue
+            o = {q["id"]: q for q in json.loads(f.read_text()).get("questions", [])}
+            for rd in (SONNET, HAIKU):
+                pairs = [(float(q["by_reader"][rd]["score"] >= 0.99), float(o[q["id"]]["by_reader"][rd]["score"] >= 0.99)) for q in rec["questions"]
+                         if q["id"] in o and q["task"] != "T2" and q["by_reader"].get(rd, {}).get("score") is not None and o[q["id"]]["by_reader"].get(rd, {}).get("score") is not None]
+                if pairs:
+                    a = out.setdefault(f"{system}@{RUNG_NAME[rung]}/{rd.split('/')[-1]}", {"n": 0, "agree": 0, "acc_here": 0.0, "acc_other": 0.0})
+                    a["n"] += len(pairs); a["agree"] += sum(x == y for x, y in pairs); a["acc_here"] += sum(x for x, _ in pairs); a["acc_other"] += sum(y for _, y in pairs)
+    if not out:
+        return None
+    for a in out.values():
+        a["acc_here"] = round(a["acc_here"] / a["n"], 3); a["acc_other"] = round(a["acc_other"] / a["n"], 3)
+    tot = {"n": sum(a["n"] for a in out.values()), "agree": sum(a["agree"] for a in out.values())}
+    return {"other_dir": str(other), "total": {**tot, "rate": round(tot["agree"] / tot["n"], 4)}, "cells": out}
+
+
 def hypotheses(cells) -> dict:
     H, P = {}, {}
     # H10: crossover at 800K, Sonnet, matched cue
@@ -251,12 +317,23 @@ def hypotheses(cells) -> dict:
                 "secondary_did_minmem_vs_vector_k20": contrast(cells, [("vector_k20", 0, SONNET), ("vector_k20", 3200000, SONNET), ("minmem", 0, SONNET), ("minmem", 3200000, SONNET)], [1, -1, -1, 1], metric="fama")}
     P["H13"] = c.get("p_one_sided")
     # H14: expansion at matched k, 3.2M, pooled readers
-    c = contrast(cells, [("minmem_nohdr", 3200000, READERS), ("hybrid_k20", 3200000, READERS)], [1, -1])
-    H["H14"] = {"claim": "acc(minmem_nohdr) > acc(hybrid_k20) at 3.2M, pooled readers", **c, "verdict": verdict(c),
+    pool = [r for r in READERS if items(cells, "minmem_nohdr", 3200000, r) and items(cells, "hybrid_k20", 3200000, r)] or READERS
+    c = contrast(cells, [("minmem_nohdr", 3200000, pool), ("hybrid_k20", 3200000, pool)], [1, -1])
+    H["H14"] = {"claim": "acc(minmem_nohdr) > acc(hybrid_k20) at 3.2M, pooled readers", "pooled_readers": [r.split("/")[-1] for r in pool],
+                "registered_pool_complete": len(pool) == len(READERS), **c, "verdict": verdict(c),
                 "secondary": {"minmem - minmem_nohdr FAMA @800K Haiku": contrast(cells, [("minmem", 800000, HAIKU), ("minmem_nohdr", 800000, HAIKU)], [1, -1], metric="fama"),
                               "order step": contrast(cells, [("minmem_order", 800000, HAIKU), ("minmem_nohdr", 800000, HAIKU)], [1, -1], metric="fama"),
                               "cue step": contrast(cells, [("minmem", 800000, HAIKU), ("minmem_order", 800000, HAIKU)], [1, -1], metric="fama")}}
     P["H14"] = c.get("p_one_sided")
+    # H15: LongMemEval-S, Sonnet, non-inferiority of minmem to hybrid_k20 (margin 0.03)
+    lme = load_lme()
+    c = contrast_data([lme_items(lme, "minmem", SONNET), lme_items(lme, "hybrid_k20", SONNET)], [1, -1], margin=0.03)
+    H["H15"] = {"claim": "LongMemEval-S, Sonnet: acc(minmem) - acc(hybrid_k20) > -0.03", **c, "verdict": verdict(c, margin=0.03),
+                "systems": {k: {rd.split("/")[-1]: lme_summary(lme, k, rd) for rd in READERS if lme_items(lme, k, rd)} for k in lme},
+                "vs_full_context": {f"{a} - {b} / {rd.split('/')[-1]}": contrast_data([lme_items(lme, a, rd), lme_items(lme, b, rd)], [1, -1])
+                                    for rd in READERS for a in ("minmem", "hybrid_k20") for b in ("full_context", "full_context_hdr")
+                                    if lme_items(lme, a, rd) and lme_items(lme, b, rd)}}
+    P["H15"] = c.get("p_one_sided")
     adj = holm(P)
     for h in H:
         H[h]["p_holm"] = adj.get(h)
@@ -267,7 +344,7 @@ def hypotheses(cells) -> dict:
 
 def main():
     cells = load()
-    res = {"cells": cell_table(cells), "hypotheses": hypotheses(cells)}
+    res = {"dir": str(R4), "cells": cell_table(cells), "hypotheses": hypotheses(cells), "path_check": path_check(cells)}
     (R4 / "analysis.json").write_text(json.dumps(res, indent=1))
     # compact ladder print: task-macro accuracy, Sonnet | Haiku
     systems = list(dict.fromkeys(s for s, _ in cells))
@@ -282,6 +359,8 @@ def main():
             print(f"{s:22s}{row}")
     for h, v in res["hypotheses"].items():
         print(h, v["verdict"], v.get("estimate"), v.get("ci95"), "p", v.get("p_one_sided"), "holm", v.get("p_holm"), "n", v.get("n"))
+    if res["path_check"]:
+        print("path check vs", res["path_check"]["other_dir"], res["path_check"]["total"])
 
 
 if __name__ == "__main__":
