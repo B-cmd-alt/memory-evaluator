@@ -1,0 +1,4255 @@
+{
+ "system": "hybrid_rerank",
+ "label": "Hybrid search + reranker",
+ "seed": 2026,
+ "rung": 0,
+ "store_tokens": 9820,
+ "n_memories": 260,
+ "readers": [
+  "anthropic/claude-sonnet-5.5",
+  "anthropic/claude-haiku-5.5"
+ ],
+ "write_model": "haiku",
+ "status": "OK",
+ "error": null,
+ "ingest": {
+  "seconds": 0.0,
+  "llm_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "provider_cached_tokens": 0,
+  "usd": 0,
+  "llm_calls_per_memory": 0.0
+ },
+ "read": {
+  "seconds": 286.8,
+  "by_reader": {
+   "anthropic/claude-sonnet-5.5": {
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "provider_cached_tokens": 0,
+    "usd": 0
+   },
+   "anthropic/claude-haiku-5.5": {
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "provider_cached_tokens": 0,
+    "usd": 0
+   }
+  },
+  "other_models": {
+   "llm_calls": 182,
+   "prompt_tokens": 300532,
+   "completion_tokens": 27248,
+   "provider_cached_tokens": 0,
+   "usd": 0.697
+  }
+ },
+ "questions": [
+  {
+   "id": "q_t1_0",
+   "task": "T1",
+   "stratum": "",
+   "question": "Which issue tracker does Umbra use?",
+   "reference": "Jira",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0045"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-05] Umbra standardized on Jira as its issue tracker on 2025-02-05.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03.",
+    "[2025-03-05] Wayfarer standardized on Shortcut as its issue tracker on 2025-03-05.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Umbra uses Jira as its issue tracker (standardized on 2025-02-05).",
+     "in_tok": 1638,
+     "out_tok": 31,
+     "latency_s": 6.58,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jira, matching the reference. The added standardization date is extra detail that doesn't contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jira",
+     "in_tok": 1655,
+     "out_tok": 5,
+     "latency_s": 3.19,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "Generated answer 'Jira' exactly matches the reference 'Jira'.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_1",
+   "task": "T1",
+   "stratum": "",
+   "question": "Where is Mina Park based?",
+   "reference": "Denver",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0072"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-04-18] Mina Park moved from QA lead of Pylon to tech lead of Nimbus, effective 2025-04-18.",
+    "[2025-05-12] Mina Park presented Meridian at ShipIt 2025 in Dublin on 2025-05-12.",
+    "[2025-06-26] Mina Park presented Umbra at ShipIt 2025 in Lisbon on 2025-06-26.",
+    "[2025-03-21] Mina Park became QA lead of Pylon on 2025-03-21."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Mina Park is based in Denver.",
+     "in_tok": 1638,
+     "out_tok": 14,
+     "latency_s": 5.9,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park is based in Denver, which matches the reference exactly.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Mina Park is based in Denver.",
+     "in_tok": 1666,
+     "out_tok": 14,
+     "latency_s": 3.72,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park is based in Denver, which matches the reference exactly.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_2",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Wayfarer's quarterly budget?",
+   "reference": "$360k",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0047"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-07] Wayfarer's quarterly budget was set to $360k on 2025-02-07.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-03-17] Meridian's quarterly budget was set to $600k on 2025-03-17.",
+    "[2025-01-10] Beacon's quarterly budget is $520k as of 2025-01-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wayfarer's quarterly budget is $360k, set on 2025-02-07.",
+     "in_tok": 1625,
+     "out_tok": 30,
+     "latency_s": 8.29,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference. The added date (2025-02-07) is extra detail that does not contradict the reference.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wayfarer's quarterly budget is $360k (set on 2025-02-07).",
+     "in_tok": 1646,
+     "out_tok": 30,
+     "latency_s": 3.81,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference. The added date detail does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_3",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Wei Zhang's current role?",
+   "reference": "tech lead of Pylon",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0123"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-03] Wei Zhang became tech lead of Pylon on 2025-04-03.",
+    "[2025-02-20] Alice Chen became release manager of Beacon on 2025-02-20.",
+    "[2025-03-12] Wei Zhang is now based in Lisbon (since March 2025).",
+    "[2025-04-25] Ximena Ortiz's role changed on 2025-04-25: now data lead of Atlas.",
+    "[2025-04-10] Wei Zhang took a half day on 2025-04-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wei Zhang is the tech lead of Pylon, a role they took on 2025-04-03. No later entry in the context records a change to that role.",
+     "in_tok": 1619,
+     "out_tok": 48,
+     "latency_s": 10.6,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is the tech lead of Pylon, matching the reference. The added start date and note about no later change do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wei Zhang is the tech lead of Pylon, according to the record dated 2025-04-03. The context has no later role change, but it is from 2025, so the role may have changed since.",
+     "in_tok": 1644,
+     "out_tok": 212,
+     "latency_s": 3.82,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is the tech lead of Pylon, matching the reference. The added caveat about the 2025 date possibly being outdated does not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_4",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Callum Reid's current role?",
+   "reference": "data lead of Orbit",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0152"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-22] Callum Reid became data lead of Orbit on 2025-04-22.",
+    "[2025-03-18] Jamal Okafor moved from QA lead of Atlas to release manager of Quill, effective 2025-03-18.",
+    "[2025-04-18] Callum Reid relocated from Lisbon to Berlin in April 2025.",
+    "[2025-01-10] Priya Nair became release manager of Atlas on 2025-01-10.",
+    "[2025-03-13] Jamal Okafor became QA lead of Atlas on 2025-03-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Callum Reid is the data lead of Orbit, a role he took on 2025-04-22. He also relocated from Lisbon to Berlin in April 2025.",
+     "in_tok": 1634,
+     "out_tok": 54,
+     "latency_s": 12.86,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid is the data lead of Orbit, matching the reference. The extra details about the start date and relocation do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Callum Reid is the data lead of Orbit, according to the most recent record (2025-04-22). The memory contains no later role change, but that entry is from April 2025, so it may be out of date.",
+     "in_tok": 1655,
+     "out_tok": 258,
+     "latency_s": 4.46,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid is the data lead of Orbit, matching the reference. The added caveat about the record possibly being out of date does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_5",
+   "task": "T1",
+   "stratum": "",
+   "question": "Where is Beatriz Lopes based?",
+   "reference": "Denver",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0242"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-06-24] Beatriz Lopes is based in Denver.",
+    "[2025-02-27] Beatriz Lopes became product owner of Wayfarer on 2025-02-27.",
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-01-13] Zofia Nowak is based in Denver.",
+    "[2025-05-05] Emeka Obi is based in Berlin."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beatriz Lopes is based in Denver.",
+     "in_tok": 1581,
+     "out_tok": 18,
+     "latency_s": 8.51,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Beatriz Lopes is based in Denver, which matches the reference exactly.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Denver.",
+     "in_tok": 1601,
+     "out_tok": 6,
+     "latency_s": 3.34,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer 'Denver.' matches the reference 'Denver' exactly; the only difference is trailing punctuation.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_6",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Bob Martinez's current role?",
+   "reference": "release manager of Umbra",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0001"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-09] Bob Martinez became release manager of Umbra on 2025-01-09.",
+    "[2025-03-12] Bob Martinez relocated from Berlin to Denver in March 2025.",
+    "[2025-02-13] Carol Davis moved from QA lead of Nimbus to QA lead of Meridian, effective 2025-02-13.",
+    "[2025-02-25] Farid Haddad became tech lead of Quill on 2025-02-25.",
+    "[2025-04-14] Quentin Dubois became QA lead of Beacon on 2025-04-14."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Bob Martinez is the release manager of Umbra (since 2025-01-09). He also relocated from Berlin to Denver in March 2025, but that was a move, not a role change.",
+     "in_tok": 1635,
+     "out_tok": 60,
+     "latency_s": 8.95,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez is the release manager of Umbra, matching the reference. The extra detail about relocating from Berlin to Denver doesn't contradict it and is explicitly noted as not a role change.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Bob Martinez is the release manager of Umbra, according to the latest record (2025-01-09). The context has no later role change, but that record is from early 2025, so his role may have changed since.",
+     "in_tok": 1658,
+     "out_tok": 261,
+     "latency_s": 4.04,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez is the release manager of Umbra, matching the reference. The added caveat about the record's age doesn't contradict or alter the core fact.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_7",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Dmitri Volkov's current role?",
+   "reference": "release manager of Orbit",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0143"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-15] Dmitri Volkov became release manager of Orbit on 2025-04-15.",
+    "[2025-02-05] Daria Sokolova moved from data lead of Wayfarer to design lead of Sextant, effective 2025-02-05.",
+    "[2025-01-28] Daria Sokolova became data lead of Wayfarer on 2025-01-28.",
+    "[2025-01-10] Priya Nair became release manager of Atlas on 2025-01-10.",
+    "[2025-06-13] Dmitri Volkov relocated from Dublin to Osaka in June 2025."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Dmitri Volkov is the release manager of Orbit, a role he took on 2025-04-15. The context shows no later role change. It does note that he relocated from Dublin to Osaka in June 2025.",
+     "in_tok": 1644,
+     "out_tok": 68,
+     "latency_s": 8.49,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov is the release manager of Orbit, matching the reference. The extra details (start date, relocation) do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Dmitri Volkov is the release manager of Orbit, a role he took on 2025-04-15. The context has no later record, so this may not reflect his role today.",
+     "in_tok": 1668,
+     "out_tok": 159,
+     "latency_s": 3.61,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov is the release manager of Orbit, matching the reference. The added start date and caveat about possibly outdated info don't contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_8",
+   "task": "T1",
+   "stratum": "",
+   "question": "Where is Tove Lindqvist based?",
+   "reference": "Lisbon",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0106"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-21] Tove Lindqvist is based in Lisbon.",
+    "[2025-04-17] Tove Lindqvist's role changed on 2025-04-17: now product owner of Tessera.",
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-07-01] Tove Lindqvist presented Atlas at InfraDays 2025 in Dublin on 2025-07-01.",
+    "[2025-06-13] Tove Lindqvist presented Umbra at PlatformWeek 2025 in Denver on 2025-06-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tove Lindqvist is based in Lisbon (per the 2025-03-21 entry). The later entries mention talks in Denver and Dublin, but those were presentations at events, not changes of base.",
+     "in_tok": 1636,
+     "out_tok": 66,
+     "latency_s": 7.74,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Tove Lindqvist is based in Lisbon, matching the reference. The extra context about Denver and Dublin talks doesn't contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Lisbon.",
+     "in_tok": 1658,
+     "out_tok": 8,
+     "latency_s": 3.12,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer 'Lisbon.' matches the reference 'Lisbon' exactly; the trailing period is immaterial.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_9",
+   "task": "T1",
+   "stratum": "",
+   "question": "Which issue tracker does Relay use?",
+   "reference": "Jira",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0101"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-20] Relay standardized on Jira as its issue tracker on 2025-03-20.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-05] Wayfarer standardized on Shortcut as its issue tracker on 2025-03-05.",
+    "[2025-03-20] Orbit standardized on Trello as its issue tracker on 2025-03-20."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Relay uses Jira as its issue tracker (standardized on 2025-03-20).",
+     "in_tok": 1633,
+     "out_tok": 30,
+     "latency_s": 8.77,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Relay uses Jira, matching the reference. The added standardization date is extra detail and does not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jira.",
+     "in_tok": 1655,
+     "out_tok": 6,
+     "latency_s": 3.13,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer 'Jira.' matches the reference 'Jira' exactly; the trailing period is immaterial.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t4_10",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Quentin Dubois based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0204"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-12] Quentin Dubois is based in Osaka.",
+    "[2025-05-27] Quentin Dubois relocated from Osaka to Denver in May 2025.",
+    "[2025-06-09] Quentin Dubois presented Quill at DataSummit 2025 in Denver on 2025-06-09.",
+    "[2025-07-04] Quentin Dubois presented Compass at ShipIt 2025 in Denver on 2025-07-04.",
+    "[2025-05-21] Quentin Dubois presented Compass at DataSummit 2025 in Singapore on 2025-05-21."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Quentin Dubois is based in Denver. He relocated there from Osaka in May 2025, and later events in June and July 2025 were also held in Denver. The context contains no later move.",
+     "in_tok": 1651,
+     "out_tok": 60,
+     "latency_s": 7.56,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Quentin Dubois is based in Denver, matching the reference. Extra details about relocating from Osaka and later events do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Denver. The most recent record says he relocated from Osaka to Denver in May 2025. The context has nothing newer, so he may have moved since then.",
+     "in_tok": 1674,
+     "out_tok": 158,
+     "latency_s": 3.65,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Denver, matching the reference. The added caveat about a possible later move and the Osaka-to-Denver detail don't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_11",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Orbit use? (as of today)",
+   "reference": "Shortcut",
+   "stale_answer": "Trello",
+   "evidence_ids": [
+    "r3_0117"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-20] Orbit standardized on Trello as its issue tracker on 2025-03-20.",
+    "[2025-03-26] Orbit switched its issue tracker from Trello to Shortcut effective 2025-03-26.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Orbit uses **Shortcut**. It switched from Trello to Shortcut effective 2025-03-26, and the context shows no later change.",
+     "in_tok": 1643,
+     "out_tok": 48,
+     "latency_s": 7.85,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Shortcut, matching the reference. The added detail about switching from Trello on 2025-03-26 doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Orbit uses **Shortcut**. It switched from Trello to Shortcut effective 2025-03-26, and the context has no later change. That record is over a year old, so it may be out of date.",
+     "in_tok": 1662,
+     "out_tok": 237,
+     "latency_s": 4.86,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Orbit uses Shortcut, matching the reference. The extra details about the switch from Trello and the staleness caveat do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_12",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Jamal Okafor's current role? (as of today)",
+   "reference": "release manager of Quill",
+   "stale_answer": "QA lead of Atlas",
+   "evidence_ids": [
+    "r3_0107"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-18] Jamal Okafor moved from QA lead of Atlas to release manager of Quill, effective 2025-03-18.",
+    "[2025-03-13] Jamal Okafor became QA lead of Atlas on 2025-03-13.",
+    "[2025-01-23] Jamal Okafor relocated from Austin to Singapore in January 2025.",
+    "[2025-01-22] Jamal Okafor is based in Austin.",
+    "[2025-05-09] Jamal Okafor presented Compass at DevCon 2025 in Singapore on 2025-05-09."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Jamal Okafor is the release manager of Quill. He moved into that role from QA lead of Atlas, effective 2025-03-18. Nothing in the context shows a later change.",
+     "in_tok": 1644,
+     "out_tok": 60,
+     "latency_s": 7.97,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jamal Okafor is the release manager of Quill, matching the reference. The extra detail about his prior role and effective date does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jamal Okafor's most recent recorded role is **release manager of Quill**, effective 2025-03-18. Memory has no entries after that date, so I can't confirm this is still his role as of today (2026-11-18).",
+     "in_tok": 1662,
+     "out_tok": 481,
+     "latency_s": 5.39,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the role as release manager of Quill, matching the reference. The caveat about not being able to confirm it as of today does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_13",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Olga Petrova based? (as of today)",
+   "reference": "Austin",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0050"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-05] Olga Petrova is based in Lisbon.",
+    "[2025-02-12] Olga Petrova relocated from Lisbon to Austin in February 2025.",
+    "[2025-04-04] Olga Petrova moved from QA lead of Umbra to release manager of Wayfarer, effective 2025-04-04.",
+    "[2025-03-25] Olga Petrova became QA lead of Umbra on 2025-03-25.",
+    "[2025-02-28] Mina Park is based in Denver."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Olga Petrova is based in Austin. She relocated there from Lisbon in February 2025, and no later entry records another move.",
+     "in_tok": 1625,
+     "out_tok": 42,
+     "latency_s": 8.42,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Olga Petrova is based in Austin, matching the reference. The extra detail about relocating from Lisbon doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Austin. Olga Petrova relocated from Lisbon to Austin in February 2025, and the context has no later record of a move.",
+     "in_tok": 1640,
+     "out_tok": 43,
+     "latency_s": 2.89,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Austin, matching the reference. The extra detail about relocating from Lisbon in February 2025 doesn't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_14",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Tessera use? (as of today)",
+   "reference": "Confluence",
+   "stale_answer": "Asana",
+   "evidence_ids": [
+    "r3_0083"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-24] Tessera standardized on Asana as its issue tracker on 2025-02-24.",
+    "[2025-03-07] Tessera now tracks its issues in Confluence (as of 2025-03-07).",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tessera uses Confluence as its issue tracker. It switched from Asana to Confluence on 2025-03-07, and nothing later in the context changes that.",
+     "in_tok": 1640,
+     "out_tok": 53,
+     "latency_s": 8.42,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Tessera uses Confluence as its issue tracker, matching the reference. The extra detail about switching from Asana does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Tessera uses **Confluence**, according to the most recent entry (2025-03-07). The context has no later record, so I can't confirm this is still true as of today (2026-11-18).",
+     "in_tok": 1656,
+     "out_tok": 326,
+     "latency_s": 4.7,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Tessera uses Confluence, matching the reference. The added caveat about no later record does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_15",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Sanjay Mehta based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Denver",
+   "evidence_ids": [
+    "r3_0161"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-24] Sanjay Mehta is based in Denver.",
+    "[2025-05-01] Sanjay Mehta relocated from Denver to Osaka in May 2025.",
+    "[2025-02-03] Sanjay Mehta moved from release manager of Relay to tech lead of Wayfarer, effective 2025-02-03.",
+    "[2025-05-30] Sanjay Mehta presented Quill at PlatformWeek 2025 in Singapore on 2025-05-30.",
+    "[2025-06-17] Sanjay Mehta presented Umbra at DataSummit 2025 in Austin on 2025-06-17."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sanjay Mehta is based in Osaka. He relocated there from Denver in May 2025, and nothing in the context records a later move.",
+     "in_tok": 1666,
+     "out_tok": 46,
+     "latency_s": 10.37,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Sanjay Mehta is based in Osaka, matching the reference. The extra relocation details from Denver do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Osaka, according to the most recent record (relocated from Denver in May 2025). The context has nothing newer, so he may have moved since then.",
+     "in_tok": 1686,
+     "out_tok": 229,
+     "latency_s": 5.6,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka, matching the reference. The added note about the May 2025 relocation and possible later moves is a hedge and does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_16",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Compass use? (as of today)",
+   "reference": "Confluence",
+   "stale_answer": "Notion",
+   "evidence_ids": [
+    "r3_0127"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-04-04] Compass now tracks its issues in Confluence (as of 2025-04-04).",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Compass uses Confluence as its issue tracker. It switched from Notion to Confluence on 2025-04-04, the latest update in the context.",
+     "in_tok": 1636,
+     "out_tok": 48,
+     "latency_s": 10.16,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Compass uses Confluence, matching the reference. The extra detail about switching from Notion on 2025-04-04 doesn't contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Compass uses **Confluence**, according to the most recent record (2025-04-04). That record is over a year old, so it may not reflect the current setup.",
+     "in_tok": 1657,
+     "out_tok": 195,
+     "latency_s": 4.11,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Compass uses Confluence, matching the reference. The added caveat about the record's age does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_17",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Yusuf Demir's current role? (as of today)",
+   "reference": "tech lead of Sextant",
+   "stale_answer": "product owner of Pylon",
+   "evidence_ids": [
+    "r3_0096"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-12] Yusuf Demir's role changed on 2025-03-12: now tech lead of Sextant.",
+    "[2025-02-28] Yusuf Demir became product owner of Pylon on 2025-02-28.",
+    "[2025-02-10] Yusuf Demir relocated from Denver to Lisbon in February 2025.",
+    "[2025-06-25] Yusuf Demir took a half day on 2025-06-25.",
+    "[2025-01-13] Yusuf Demir is based in Denver."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Yusuf Demir's most recent recorded role change is tech lead of Sextant, effective 2025-03-12. Before that, he became product owner of Pylon on 2025-02-28. The context shows no later change, so his current role is **tech lead of Sextant**, though the records stop in mid-2025 and I can't confirm nothing has changed since.",
+     "in_tok": 1627,
+     "out_tok": 115,
+     "latency_s": 10.89,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Yusuf Demir's current role is tech lead of Sextant, matching the reference. The extra details (dates, prior role) and the caveat about records ending in mid-2025 do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Yusuf Demir is the tech lead of Sextant, according to the most recent role change on 2025-03-12. The memory has no records after that date, so this may not reflect his role today.",
+     "in_tok": 1643,
+     "out_tok": 234,
+     "latency_s": 4.13,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Yusuf Demir is the tech lead of Sextant, matching the reference. The added caveat about the date of the last record does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_18",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Umbra's quarterly budget? (as of today)",
+   "reference": "$240k",
+   "stale_answer": "$750k",
+   "evidence_ids": [
+    "r3_0054"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-14] Umbra's quarterly budget is $240k as of 2025-02-14.",
+    "[2025-01-29] Umbra's quarterly budget was set to $750k on 2025-01-29.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Umbra's quarterly budget is $240k, based on the most recent entry (2025-02-14), which supersedes the earlier $750k set on 2025-01-29.",
+     "in_tok": 1628,
+     "out_tok": 56,
+     "latency_s": 10.03,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $240k as Umbra's current quarterly budget, matching the reference. The extra context about the superseded $750k figure does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "The latest recorded value is **$240k**, set on 2025-02-14. The memory has no entries after that date, so I don't have enough information to confirm it's still the budget as of today (2026-11-18).",
+     "in_tok": 1648,
+     "out_tok": 410,
+     "latency_s": 4.4,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_19",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Lantern use? (as of today)",
+   "reference": "Notion",
+   "stale_answer": "Monday",
+   "evidence_ids": [
+    "r3_0066"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-21] Lantern switched its issue tracker from Monday to Notion effective 2025-02-21.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-04-04] Compass now tracks its issues in Confluence (as of 2025-04-04)."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Lantern uses **Notion** as its issue tracker. It switched from Monday to Notion effective 2025-02-21, and nothing later in the context changes that.",
+     "in_tok": 1635,
+     "out_tok": 54,
+     "latency_s": 6.83,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Notion as Lantern's issue tracker, matching the reference. The extra detail about switching from Monday does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Notion. Lantern switched to Notion effective 2025-02-21, and the context has no later Lantern entry, so this is the most recent record, though I can't confirm whether it changed after that date.",
+     "in_tok": 1658,
+     "out_tok": 349,
+     "latency_s": 4.53,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Notion, matching the reference. The added caveat about the date and possible later changes does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_20",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Yusuf Demir based? (as of today)",
+   "reference": "Lisbon",
+   "stale_answer": "Denver",
+   "evidence_ids": [
+    "r3_0059"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-13] Yusuf Demir is based in Denver.",
+    "[2025-02-10] Yusuf Demir relocated from Denver to Lisbon in February 2025.",
+    "[2025-03-12] Yusuf Demir's role changed on 2025-03-12: now tech lead of Sextant.",
+    "[2025-02-28] Yusuf Demir became product owner of Pylon on 2025-02-28.",
+    "[2025-06-25] Yusuf Demir took a half day on 2025-06-25."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Yusuf Demir is based in Lisbon. He relocated there from Denver in February 2025, and nothing later in the context mentions another move.",
+     "in_tok": 1620,
+     "out_tok": 48,
+     "latency_s": 7.73,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Yusuf Demir is based in Lisbon, matching the reference. The extra detail about relocating from Denver in February 2025 does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Lisbon. He relocated there from Denver in February 2025, which is the most recent location in the context. Since that record is nearly two years old, he may have moved since then, but the context doesn't show it.",
+     "in_tok": 1638,
+     "out_tok": 209,
+     "latency_s": 3.75,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Lisbon, matching the reference. The extra details about the move from Denver and the caveat about possible staleness don't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_21",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Beacon's quarterly budget? (as of today)",
+   "reference": "$520k",
+   "stale_answer": "$750k",
+   "evidence_ids": [
+    "r3_0008"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-10] Beacon's quarterly budget is $520k as of 2025-01-10.",
+    "[2025-01-09] Beacon's quarterly budget was set to $750k on 2025-01-09.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beacon's quarterly budget is $520k. This is the most recent update, dated 2025-01-10, and it supersedes the earlier $750k set on 2025-01-09.",
+     "in_tok": 1628,
+     "out_tok": 59,
+     "latency_s": 5.66,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $520k, matching the reference. The extra context about superseding the earlier $750k figure is consistent and does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "$520k, per the most recent record dated 2025-01-10. The context has no later update, so this may not reflect any change made since then.",
+     "in_tok": 1648,
+     "out_tok": 255,
+     "latency_s": 4.14,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $520k, matching the reference. The added caveat about the record date (2025-01-10) and possible later changes does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_22",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Carol Davis based? (as of today)",
+   "reference": "Lisbon",
+   "stale_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0028"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-24] Carol Davis is now based in Lisbon (since January 2025).",
+    "[2025-01-23] Carol Davis is based in Singapore.",
+    "[2025-02-13] Carol Davis moved from QA lead of Nimbus to QA lead of Meridian, effective 2025-02-13.",
+    "[2025-06-02] Carol Davis presented Pylon at DataSummit 2025 in Singapore on 2025-06-02.",
+    "[2025-02-12] Carol Davis became QA lead of Nimbus on 2025-02-12."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Carol Davis is based in Lisbon. The latest location entry (2025-01-24) says she moved there in January 2025, replacing the earlier Singapore entry. Her 2025-06-02 DataSummit presentation was in Singapore, but that was a talk, not a relocation. Nothing in the context records a later move.",
+     "in_tok": 1640,
+     "out_tok": 106,
+     "latency_s": 7.77,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Carol Davis is based in Lisbon, matching the reference. The extra details about the move and the Singapore talk do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Carol Davis is based in Lisbon. The most recent memory entry (2025-01-24) says she moved there in January 2025, replacing the earlier Singapore location.",
+     "in_tok": 1659,
+     "out_tok": 57,
+     "latency_s": 3.15,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Carol Davis is based in Lisbon, matching the reference. The extra detail about moving from Singapore is consistent and does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_23",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Noah Berg's current role? (as of today)",
+   "reference": "data lead of Tessera",
+   "stale_answer": "QA lead of Atlas",
+   "evidence_ids": [
+    "r3_0135"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-28] Noah Berg became QA lead of Atlas on 2025-03-28.",
+    "[2025-04-10] Noah Berg moved from QA lead of Atlas to data lead of Tessera, effective 2025-04-10.",
+    "[2025-04-21] Noah Berg is now based in Toronto (since April 2025).",
+    "[2025-04-11] Noah Berg is based in Osaka.",
+    "[2025-06-20] Noah Berg presented Tessera at DataSummit 2025 in Denver on 2025-06-20."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Noah Berg is the data lead of Tessera. He moved into that role from QA lead of Atlas on 2025-04-10, and the most recent related record shows him presenting Tessera at DataSummit 2025 on 2025-06-20. The context contains no later role change.",
+     "in_tok": 1634,
+     "out_tok": 89,
+     "latency_s": 8.69,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Noah Berg is the data lead of Tessera, matching the reference. The extra details (prior QA lead role, DataSummit 2025 presentation) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Noah Berg's most recent recorded role is **data lead of Tessera**, effective 2025-04-10. The context has no later role changes, but it also doesn't confirm that this is still the case as of 2026-11-18.",
+     "in_tok": 1651,
+     "out_tok": 436,
+     "latency_s": 5.01,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Noah Berg's role is data lead of Tessera, matching the reference. The added caveat about not confirming the role is still current doesn't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_24",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Daria Sokolova's current role? (as of today)",
+   "reference": "design lead of Sextant",
+   "stale_answer": "data lead of Wayfarer",
+   "evidence_ids": [
+    "r3_0040"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-05] Daria Sokolova moved from data lead of Wayfarer to design lead of Sextant, effective 2025-02-05.",
+    "[2025-01-28] Daria Sokolova became data lead of Wayfarer on 2025-01-28.",
+    "[2025-04-10] Daria Sokolova is now based in Denver (since April 2025).",
+    "[2025-04-15] Dmitri Volkov became release manager of Orbit on 2025-04-15.",
+    "[2025-05-07] Daria Sokolova presented Tessera at ShipIt 2025 in Austin on 2025-05-07."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Daria Sokolova is design lead of Sextant. She moved to that role from data lead of Wayfarer on 2025-02-05, and nothing in the context shows a later change.",
+     "in_tok": 1657,
+     "out_tok": 59,
+     "latency_s": 7.5,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Daria Sokolova is design lead of Sextant, matching the reference. The extra detail about her prior role and the move date does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent recorded role is design lead of Sextant, effective 2025-02-05, but the context has no entries after that date, so I can't confirm it still holds as of 2026-11-18.",
+     "in_tok": 1680,
+     "out_tok": 406,
+     "latency_s": 4.75,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_25",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Hiro Tanaka's current role? (as of today)",
+   "reference": "data lead of Nimbus",
+   "stale_answer": "tech lead of Sextant",
+   "evidence_ids": [
+    "r3_0025"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-16] Hiro Tanaka became tech lead of Sextant on 2025-01-16.",
+    "[2025-01-20] Hiro Tanaka moved from tech lead of Sextant to data lead of Nimbus, effective 2025-01-20.",
+    "[2025-04-24] Hiro Tanaka relocated from Denver to Berlin in April 2025.",
+    "[2025-01-31] Sanjay Mehta became release manager of Relay on 2025-01-31.",
+    "[2025-04-22] Hiro Tanaka is based in Denver."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Hiro Tanaka is the data lead of Nimbus. They moved into that role from tech lead of Sextant on 2025-01-20, and nothing later in the context changes it. The April 2025 relocation to Berlin affects where they're based, not their role.",
+     "in_tok": 1646,
+     "out_tok": 85,
+     "latency_s": 8.47,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Hiro Tanaka is the data lead of Nimbus, which matches the reference. The extra details about the prior role and the Berlin relocation don't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "The most recent role in the context is **data lead of Nimbus**, effective 2025-01-20. The context has no entries after April 2025, so I can't confirm whether that role still holds as of 2026-11-18.",
+     "in_tok": 1661,
+     "out_tok": 411,
+     "latency_s": 4.95,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer identifies 'data lead of Nimbus' as the most recent role, matching the reference. The caveat about not confirming it as of today does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_26",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Elena Rossi based? (as of today)",
+   "reference": "Austin",
+   "stale_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0061"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-18] Elena Rossi is now based in Austin (since February 2025).",
+    "[2025-02-10] Elena Rossi is based in Singapore.",
+    "[2025-02-10] Elena Rossi's role changed on 2025-02-10: now QA lead of Pylon.",
+    "[2025-05-22] Elena Rossi presented Vertex at InfraDays 2025 in Toronto on 2025-05-22.",
+    "[2025-06-19] Elena Rossi presented Umbra at InfraDays 2025 in Toronto on 2025-06-19."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Elena Rossi is based in Austin. She moved there in February 2025 (noted 2025-02-18), replacing the earlier Singapore entry from 2025-02-10. The context contains no later location update.",
+     "in_tok": 1639,
+     "out_tok": 68,
+     "latency_s": 7.83,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi is based in Austin, matching the reference. The extra details about the move and the earlier Singapore entry do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Elena Rossi was based in Austin, according to the most recent record (2025-02-18). The memory has no entries after that date, so she may have moved since, and I can't confirm her location as of today (2026-11-18).",
+     "in_tok": 1661,
+     "out_tok": 296,
+     "latency_s": 4.3,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.9,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi was based in Austin, matching the reference. It adds a caveat that the record is dated 2025-02-18 and she may have moved, which slightly hedges but does not contradict the reference.",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_27",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Sanjay Mehta's current role? (as of today)",
+   "reference": "tech lead of Wayfarer",
+   "stale_answer": "release manager of Relay",
+   "evidence_ids": [
+    "r3_0044"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-03] Sanjay Mehta moved from release manager of Relay to tech lead of Wayfarer, effective 2025-02-03.",
+    "[2025-01-31] Sanjay Mehta became release manager of Relay on 2025-01-31.",
+    "[2025-05-01] Sanjay Mehta relocated from Denver to Osaka in May 2025.",
+    "[2025-06-17] Sanjay Mehta presented Umbra at DataSummit 2025 in Austin on 2025-06-17.",
+    "[2025-04-24] Sanjay Mehta is based in Denver."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sanjay Mehta is the tech lead of Wayfarer. He took that role on 2025-02-03, moving over from release manager of Relay. The context shows no later role change, though it only runs through June 2025, so I can't confirm nothing has changed since.",
+     "in_tok": 1653,
+     "out_tok": 85,
+     "latency_s": 8.24,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Sanjay Mehta is tech lead of Wayfarer, matching the reference. The extra details (start date, prior role, caveat about context ending June 2025) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Based on the latest record, Sanjay Mehta is the **tech lead of Wayfarer**, effective 2025-02-03. The memory has no entries after June 2025, so I can't confirm that this is still his role as of 2026-11-18.",
+     "in_tok": 1672,
+     "out_tok": 461,
+     "latency_s": 6.29,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Sanjay Mehta is tech lead of Wayfarer, matching the reference. The caveat about not confirming beyond June 2025 does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_28",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Zofia Nowak's current role? (as of today)",
+   "reference": "data lead of Wayfarer",
+   "stale_answer": "tech lead of Orbit",
+   "evidence_ids": [
+    "r3_0151"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-05] Zofia Nowak became tech lead of Orbit on 2025-03-05.",
+    "[2025-04-21] Zofia Nowak moved from tech lead of Orbit to data lead of Wayfarer, effective 2025-04-21.",
+    "[2025-01-31] Zofia Nowak is now based in Osaka (since January 2025).",
+    "[2025-01-13] Zofia Nowak is based in Denver.",
+    "[2025-05-22] Zofia Nowak presented Nimbus at DataSummit 2025 in Berlin on 2025-05-22."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Zofia Nowak is the data lead of Wayfarer. She moved into that role from tech lead of Orbit on 2025-04-21, and nothing later in the context shows another change.",
+     "in_tok": 1647,
+     "out_tok": 61,
+     "latency_s": 8.71,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Zofia Nowak is the data lead of Wayfarer, which matches the reference. The extra detail about the prior role and the move date does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent record says Zofia Nowak became data lead of Wayfarer effective 2025-04-21, but the context has nothing after that date, so I can't confirm that role still holds as of 2026-11-18.",
+     "in_tok": 1667,
+     "out_tok": 501,
+     "latency_s": 5.59,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_29",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Carol Davis's current role? (as of today)",
+   "reference": "QA lead of Meridian",
+   "stale_answer": "QA lead of Nimbus",
+   "evidence_ids": [
+    "r3_0053"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-13] Carol Davis moved from QA lead of Nimbus to QA lead of Meridian, effective 2025-02-13.",
+    "[2025-02-12] Carol Davis became QA lead of Nimbus on 2025-02-12.",
+    "[2025-01-24] Carol Davis is now based in Lisbon (since January 2025).",
+    "[2025-06-02] Carol Davis presented Pylon at DataSummit 2025 in Singapore on 2025-06-02.",
+    "[2025-01-23] Carol Davis is based in Singapore."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Carol Davis is currently QA lead of Meridian. She moved to that role from QA lead of Nimbus on 2025-02-13, and the context records no later role change.",
+     "in_tok": 1638,
+     "out_tok": 56,
+     "latency_s": 8.17,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Carol Davis is currently QA lead of Meridian, matching the reference. The extra detail about the prior Nimbus role and the 2025-02-13 move does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Based on the most recent record, Carol Davis is QA lead of Meridian (since 2025-02-13). The records don't go past that date, so I can't confirm this is still her role as of today, 2026-11-18.",
+     "in_tok": 1659,
+     "out_tok": 489,
+     "latency_s": 5.12,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Carol Davis is QA lead of Meridian, matching the reference. The caveat about records not extending past 2025-02-13 is extra hedging and does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_30",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Meridian's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "stale_answer": "$600k",
+   "evidence_ids": [
+    "r3_0105"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-21] Meridian's quarterly budget was revised from $600k to $360k on 2025-03-21.",
+    "[2025-03-17] Meridian's quarterly budget was set to $600k on 2025-03-17.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-04-11] Meridian now tracks its issues in Notion (as of 2025-04-11)."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Meridian's quarterly budget is **$360k**. It was set to $600k on 2025-03-17 and revised down to $360k on 2025-03-21. The context has no later change.",
+     "in_tok": 1639,
+     "out_tok": 60,
+     "latency_s": 8.89,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference exactly. The extra history about the earlier $600k value and the revision does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Meridian's quarterly budget was last recorded as **$360k**, revised on 2025-03-21. The context has no later budget change, but the latest entry is over a year old as of today (2026-11-18), so it may no longer be current.",
+     "in_tok": 1659,
+     "out_tok": 301,
+     "latency_s": 4.32,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference. The added caveat about the entry's age does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_31",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Rosa Alvarez's current role? (as of today)",
+   "reference": "release manager of Pylon",
+   "stale_answer": "product owner of Atlas",
+   "evidence_ids": [
+    "r3_0163"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-03] Rosa Alvarez's role changed on 2025-05-03: now release manager of Pylon.",
+    "[2025-05-02] Rosa Alvarez became product owner of Atlas on 2025-05-02.",
+    "[2025-05-09] Rosa Alvarez relocated from Austin to Toronto in May 2025.",
+    "[2025-04-09] Rosa Alvarez presented Umbra at DevCon 2025 in Denver on 2025-04-09.",
+    "[2025-04-23] Rosa Alvarez is based in Austin."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Rosa Alvarez is the release manager of Pylon. That role change, dated 2025-05-03, is the most recent role entry in the context. It came one day after she became product owner of Atlas on 2025-05-02.\n\nThe context has no later updates, so I can't confirm the role is still current as of today (2026-11-18).",
+     "in_tok": 1640,
+     "out_tok": 104,
+     "latency_s": 9.95,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Rosa Alvarez is the release manager of Pylon, matching the reference. The extra details about dates and the caveat about no later updates do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Rosa Alvarez is the **release manager of Pylon**, per the most recent role change recorded on 2025-05-03. The context has no later role change, but it is from 2025, so her role may have changed since then.",
+     "in_tok": 1662,
+     "out_tok": 273,
+     "latency_s": 4.69,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states her role is release manager of Pylon, matching the reference. The added caveat that the role may have changed since 2025 does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_32",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Farid Haddad based? (as of today)",
+   "reference": "Toronto",
+   "stale_answer": "Austin",
+   "evidence_ids": [
+    "r3_0041"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-28] Farid Haddad is based in Austin.",
+    "[2025-02-04] Farid Haddad relocated from Austin to Toronto in February 2025.",
+    "[2025-06-02] Farid Haddad presented Relay at DataSummit 2025 in Dublin on 2025-06-02.",
+    "[2025-02-25] Farid Haddad became tech lead of Quill on 2025-02-25.",
+    "[2025-07-01] Farid Haddad presented Beacon at InfraDays 2025 in Lisbon on 2025-07-01."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Farid Haddad is based in Toronto. He relocated there from Austin in February 2025, and nothing later in the context indicates another move.",
+     "in_tok": 1636,
+     "out_tok": 46,
+     "latency_s": 9.58,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Farid Haddad is based in Toronto, matching the reference. The extra detail about relocating from Austin does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Toronto. Farid Haddad relocated there from Austin in February 2025, and the context has no later record of a move.",
+     "in_tok": 1657,
+     "out_tok": 39,
+     "latency_s": 3.57,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Toronto, matching the reference. The extra detail about relocating from Austin in February 2025 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_33",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Alice Chen's current role? (as of today)",
+   "reference": "product owner of Compass",
+   "stale_answer": "release manager of Beacon",
+   "evidence_ids": [
+    "r3_0082"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-20] Alice Chen became release manager of Beacon on 2025-02-20.",
+    "[2025-03-04] Alice Chen moved from release manager of Beacon to product owner of Compass, effective 2025-03-04.",
+    "[2025-06-16] Alice Chen presented Quill at ShipIt 2025 in Denver on 2025-06-16.",
+    "[2025-02-24] Alice Chen presented Wayfarer at DataSummit 2025 in Denver on 2025-02-24.",
+    "[2025-01-06] Alice Chen took a half day on 2025-01-06."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Alice Chen's most recent recorded role is product owner of Compass, effective 2025-03-04. Nothing later in the context shows a further change, so that is her current role as far as the records go.",
+     "in_tok": 1650,
+     "out_tok": 62,
+     "latency_s": 9.4,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Alice Chen's current role is product owner of Compass, matching the reference. The added effective date and the caveat about no later changes do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Alice Chen is the product owner of Compass. That is the most recent role change in the context, effective 2025-03-04. The context has no later role change, but it also doesn't confirm that she still holds the role as of today (2026-11-18).",
+     "in_tok": 1675,
+     "out_tok": 349,
+     "latency_s": 5.36,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Alice Chen is the product owner of Compass, matching the reference. The added caveat about not confirming the role as of today does not contradict the reference or change the core answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_34",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Lantern's quarterly budget? (as of today)",
+   "reference": "$300k",
+   "stale_answer": "$180k",
+   "evidence_ids": [
+    "r3_0099"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-12] Lantern's quarterly budget is $300k as of 2025-03-12.",
+    "[2025-03-05] Lantern's quarterly budget was set to $180k on 2025-03-05.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Lantern's quarterly budget is $300k, per the most recent entry (2025-03-12), which supersedes the earlier $180k set on 2025-03-05.",
+     "in_tok": 1628,
+     "out_tok": 55,
+     "latency_s": 7.64,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $300k, matching the reference. The extra context about the superseded $180k figure does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent record for Lantern is $300k, set on 2025-03-12, but the context has nothing from after that date, so I can't confirm it's still the budget as of today (2026-11-18).",
+     "in_tok": 1651,
+     "out_tok": 345,
+     "latency_s": 4.59,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_35",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Rosa Alvarez based? (as of today)",
+   "reference": "Toronto",
+   "stale_answer": "Austin",
+   "evidence_ids": [
+    "r3_0173"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-23] Rosa Alvarez is based in Austin.",
+    "[2025-05-09] Rosa Alvarez relocated from Austin to Toronto in May 2025.",
+    "[2025-05-03] Rosa Alvarez's role changed on 2025-05-03: now release manager of Pylon.",
+    "[2025-05-02] Rosa Alvarez became product owner of Atlas on 2025-05-02.",
+    "[2025-06-19] Rosa Alvarez presented Meridian at DataSummit 2025 in Lisbon on 2025-06-19."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Rosa Alvarez is based in Toronto. She relocated there from Austin in May 2025, and nothing later in the context indicates another move.",
+     "in_tok": 1646,
+     "out_tok": 48,
+     "latency_s": 6.36,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Rosa Alvarez is based in Toronto, matching the reference. The extra detail about relocating from Austin in May 2025 doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Rosa Alvarez is based in Toronto. She relocated from Austin in May 2025. The context has no later record of a move, so this may not reflect her location as of today (2026-11-18).",
+     "in_tok": 1663,
+     "out_tok": 169,
+     "latency_s": 4.4,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Rosa Alvarez is based in Toronto, matching the reference. The extra details about the May 2025 move from Austin and the caveat about possible staleness don't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_36",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Vertex use? (as of today)",
+   "reference": "Shortcut",
+   "stale_answer": "Trello",
+   "evidence_ids": [
+    "r3_0079"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-24] Vertex standardized on Trello as its issue tracker on 2025-02-24.",
+    "[2025-02-28] Vertex now tracks its issues in Shortcut (as of 2025-02-28).",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Vertex uses **Shortcut**. It switched from Trello to Shortcut on 2025-02-28, and nothing later in the context changes that.",
+     "in_tok": 1637,
+     "out_tok": 50,
+     "latency_s": 6.45,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Vertex uses Shortcut, which matches the reference. The extra detail about switching from Trello does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Vertex uses **Shortcut**, according to the most recent entry (2025-02-28). The context has no later update, but that record is from roughly 21 months ago, so it may be out of date.",
+     "in_tok": 1657,
+     "out_tok": 205,
+     "latency_s": 3.86,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Vertex uses Shortcut, matching the reference. The caveat about the record possibly being outdated does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_37",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Pylon use? (as of today)",
+   "reference": "Asana",
+   "stale_answer": "Notion",
+   "evidence_ids": [
+    "r3_0042"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-24] Pylon standardized on Notion as its issue tracker on 2025-01-24.",
+    "[2025-02-03] Pylon now tracks its issues in Asana (as of 2025-02-03).",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Pylon uses Asana. It switched from Notion to Asana on 2025-02-03, and nothing later in the context changes that.",
+     "in_tok": 1639,
+     "out_tok": 44,
+     "latency_s": 5.53,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Pylon uses Asana, matching the reference. The extra detail about switching from Notion is not contradicted by the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Pylon uses **Asana**, according to the most recent entry (2025-02-03). The context has no later record, so I can't confirm whether that's still current as of today.",
+     "in_tok": 1654,
+     "out_tok": 260,
+     "latency_s": 4.7,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Asana, matching the reference. The caveat about not confirming it is current does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_38",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Emeka Obi's current role? (as of today)",
+   "reference": "data lead of Beacon",
+   "stale_answer": "tech lead of Quill",
+   "evidence_ids": [
+    "r3_0119"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-12] Emeka Obi became tech lead of Quill on 2025-02-12.",
+    "[2025-03-27] Emeka Obi's role changed on 2025-03-27: now data lead of Beacon.",
+    "[2025-06-04] Emeka Obi presented Compass at DevCon 2025 in Lisbon on 2025-06-04.",
+    "[2025-03-06] Emeka Obi presented Wayfarer at PlatformWeek 2025 in Toronto on 2025-03-06.",
+    "[2025-05-28] Emeka Obi presented Lantern at DevCon 2025 in Berlin on 2025-05-28."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Emeka Obi's current role is data lead of Beacon. The role change on 2025-03-27 is the most recent role change in the context. The later entries are only conference presentations, not role changes.",
+     "in_tok": 1669,
+     "out_tok": 62,
+     "latency_s": 6.5,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Emeka Obi's current role is data lead of Beacon, matching the reference. The extra explanation about role changes and conference entries does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Emeka Obi is the data lead of Beacon, per the most recent role change recorded on 2025-03-27. The memory has no later role updates, so I can't confirm this is still the case as of 2026-11-18.",
+     "in_tok": 1689,
+     "out_tok": 313,
+     "latency_s": 4.65,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Emeka Obi is the data lead of Beacon, matching the reference. The caveat about possible later changes does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_39",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Nimbus use? (as of today)",
+   "reference": "Asana",
+   "stale_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0098"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-12] Nimbus now tracks its issues in Asana (as of 2025-03-12).",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-03-26] Orbit switched its issue tracker from Trello to Shortcut effective 2025-03-26."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Nimbus uses **Asana**. The most recent entry (2025-03-12) says it tracks issues there, which supersedes the earlier 2025-03-03 note about Confluence.",
+     "in_tok": 1642,
+     "out_tok": 62,
+     "latency_s": 5.4,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Nimbus uses Asana, which matches the reference. The extra detail about superseding an earlier Confluence note does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Asana. The most recent entry (2025-03-12) says Nimbus moved its issues to Asana. The context has no later changes, though it's from over a year ago, so this may be out of date.",
+     "in_tok": 1666,
+     "out_tok": 231,
+     "latency_s": 4.67,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Asana, matching the reference. The added caveat about the context possibly being out of date does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_40",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Orbit's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "stale_answer": "$120k",
+   "evidence_ids": [
+    "r3_0065"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-18] Orbit's quarterly budget is $900k as of 2025-02-18.",
+    "[2025-02-14] Orbit's quarterly budget was set to $120k on 2025-02-14.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Orbit's quarterly budget is $900k, per the most recent entry (2025-02-18), which supersedes the earlier $120k set on 2025-02-14.",
+     "in_tok": 1630,
+     "out_tok": 55,
+     "latency_s": 6.41,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Orbit's quarterly budget is $900k, matching the reference. The extra context about the superseded $120k figure doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent record is $900k as of 2025-02-18, but nothing in the context covers the period up to today (2026-11-18).",
+     "in_tok": 1648,
+     "out_tok": 494,
+     "latency_s": 5.13,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_41",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Ximena Ortiz based? (as of today)",
+   "reference": "Dublin",
+   "stale_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0004"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-10] Ximena Ortiz is now based in Dublin (since January 2025).",
+    "[2025-01-09] Ximena Ortiz is based in Osaka.",
+    "[2025-04-25] Ximena Ortiz's role changed on 2025-04-25: now data lead of Atlas.",
+    "[2025-04-11] Ximena Ortiz presented Compass at PlatformWeek 2025 in Berlin on 2025-04-11.",
+    "[2025-04-18] Ximena Ortiz became release manager of Tessera on 2025-04-18."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Ximena Ortiz is based in Dublin. She moved there in January 2025, and nothing later in the context indicates another move.",
+     "in_tok": 1645,
+     "out_tok": 43,
+     "latency_s": 7.87,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Ximena Ortiz is based in Dublin, matching the reference. The extra detail about moving in January 2025 does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Ximena Ortiz is based in Dublin, according to the most recent record (2025-01-10). That record is almost two years old, so it may no longer be current.",
+     "in_tok": 1658,
+     "out_tok": 172,
+     "latency_s": 3.37,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Ximena Ortiz is based in Dublin, matching the reference. The caveat about the record being old does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_42",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Sextant's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "stale_answer": "$120k",
+   "evidence_ids": [
+    "r3_0012"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-17] Sextant's quarterly budget was revised from $120k to $900k on 2025-01-17.",
+    "[2025-01-08] Sextant's quarterly budget was set to $120k on 2025-01-08.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-17] Meridian's quarterly budget was set to $600k on 2025-03-17.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sextant's quarterly budget is $900k. It was set to $120k on 2025-01-08 and revised to $900k on 2025-01-17, and the context shows no later changes.",
+     "in_tok": 1634,
+     "out_tok": 60,
+     "latency_s": 8.51,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $900k, matching the reference. The extra history (set to $120k, then revised to $900k) does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Sextant's quarterly budget was last recorded as **$900,000**, set on 2025-01-17. The context has no later entries, so I can't confirm it is still current as of 2026-11-18.",
+     "in_tok": 1656,
+     "out_tok": 367,
+     "latency_s": 4.66,
+     "ref_in_answer": false,
+     "stale_in_answer": false,
+     "score": 0.9,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $900,000, which matches the reference $900k. It adds a caveat that the figure was set on 2025-01-17 and may not be current, but it does not contradict the reference. The hedge slightly weakens the direct answer to 'as of today'.",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_43",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Callum Reid based? (as of today)",
+   "reference": "Berlin",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0148"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-16] Callum Reid is based in Lisbon.",
+    "[2025-04-18] Callum Reid relocated from Lisbon to Berlin in April 2025.",
+    "[2025-05-06] Callum Reid presented Orbit at ShipIt 2025 in Toronto on 2025-05-06.",
+    "[2025-04-22] Callum Reid became data lead of Orbit on 2025-04-22.",
+    "[2025-01-13] Zofia Nowak is based in Denver."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Callum Reid is based in Berlin. He relocated there from Lisbon in April 2025, and nothing later in the context indicates another move.",
+     "in_tok": 1615,
+     "out_tok": 47,
+     "latency_s": 9.12,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid is based in Berlin, which matches the reference. The extra detail about relocating from Lisbon doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Based on the most recent record, Callum Reid is based in **Berlin**, where he relocated in April 2025. The latest entry is from 2025, so this may be out of date as of today (2026-11-18).",
+     "in_tok": 1635,
+     "out_tok": 328,
+     "latency_s": 4.4,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid is based in Berlin, matching the reference. The caveat about the record possibly being out of date does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_44",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Wei Zhang based? (as of today)",
+   "reference": "Lisbon",
+   "stale_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0094"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-12] Wei Zhang is now based in Lisbon (since March 2025).",
+    "[2025-03-11] Wei Zhang is based in Singapore.",
+    "[2025-01-30] Wei Zhang presented Orbit at DevCon 2025 in Denver on 2025-01-30.",
+    "[2025-05-30] Wei Zhang presented Nimbus at DataSummit 2025 in Denver on 2025-05-30.",
+    "[2025-04-10] Wei Zhang presented Tessera at PlatformWeek 2025 in Denver on 2025-04-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wei Zhang is based in Lisbon. The most recent location update (2025-03-12) says they moved there in March 2025, replacing the earlier Singapore entry. The later Denver entries are conference presentations, not a change of base.",
+     "in_tok": 1652,
+     "out_tok": 77,
+     "latency_s": 9.03,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is based in Lisbon, matching the reference. The extra details about the move date, the earlier Singapore entry, and the Denver conference entries do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wei Zhang is based in Lisbon, according to the most recent record (2025-03-12). That record is over a year old, so it may no longer be current.",
+     "in_tok": 1669,
+     "out_tok": 177,
+     "latency_s": 3.94,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is based in Lisbon, matching the reference. The caveat that the record may be outdated does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_45",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Relay's quarterly budget? (as of today)",
+   "reference": "$600k",
+   "stale_answer": "$180k",
+   "evidence_ids": [
+    "r3_0113"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-24] Relay's quarterly budget was revised from $180k to $600k on 2025-03-24.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-12] Lantern's quarterly budget is $300k as of 2025-03-12.",
+    "[2025-03-05] Lantern's quarterly budget was set to $180k on 2025-03-05."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Relay's quarterly budget is $600k. It was revised from $180k to $600k on 2025-03-24, and the context shows no later change.",
+     "in_tok": 1636,
+     "out_tok": 47,
+     "latency_s": 8.38,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $600k, matching the reference. The extra detail about the revision from $180k on 2025-03-24 doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Relay's quarterly budget is **$600k**, per the most recent entry (revised from $180k on 2025-03-24). The context has no later updates, so I can't confirm whether it has changed since then.",
+     "in_tok": 1652,
+     "out_tok": 287,
+     "latency_s": 4.56,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $600k, matching the reference. The added revision history and the caveat about no later updates do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_46",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Keiko Sato's current role? (as of today)",
+   "reference": "tech lead of Compass",
+   "stale_answer": "product owner of Relay",
+   "evidence_ids": [
+    "r3_0131"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-07] Keiko Sato's role changed on 2025-04-07: now tech lead of Compass.",
+    "[2025-03-28] Keiko Sato became product owner of Relay on 2025-03-28.",
+    "[2025-06-26] Keiko Sato took a half day on 2025-06-26.",
+    "[2025-06-26] Keiko Sato presented Wayfarer at InfraDays 2025 in Denver on 2025-06-26.",
+    "[2025-01-24] Keiko Sato presented Umbra at DevCon 2025 in Osaka on 2025-01-24."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Keiko Sato's current role, based on the most recent role change (2025-04-07), is **tech lead of Compass**. The context shows no later change, though it only covers events through mid-2025.",
+     "in_tok": 1655,
+     "out_tok": 62,
+     "latency_s": 7.92,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Keiko Sato's current role is tech lead of Compass, matching the reference exactly. The added caveat about the context's date coverage does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Keiko Sato is the tech lead of Compass, according to the most recent recorded role change (2025-04-07). The memory has no later entries, so I can't confirm whether this has changed since then.",
+     "in_tok": 1667,
+     "out_tok": 355,
+     "latency_s": 4.36,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Keiko Sato is the tech lead of Compass, matching the reference. The caveat about no later entries does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_47",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Noah Berg based? (as of today)",
+   "reference": "Toronto",
+   "stale_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0150"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-11] Noah Berg is based in Osaka.",
+    "[2025-04-21] Noah Berg is now based in Toronto (since April 2025).",
+    "[2025-04-10] Noah Berg moved from QA lead of Atlas to data lead of Tessera, effective 2025-04-10.",
+    "[2025-03-28] Noah Berg became QA lead of Atlas on 2025-03-28.",
+    "[2025-06-20] Noah Berg presented Tessera at DataSummit 2025 in Denver on 2025-06-20."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Noah Berg is based in Toronto. He moved there in April 2025, per the most recent location entry (2025-04-21), which superseded the earlier Osaka entry.",
+     "in_tok": 1629,
+     "out_tok": 57,
+     "latency_s": 8.11,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Noah Berg is based in Toronto, matching the reference. The extra detail about the April 2025 move and the earlier Osaka entry does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Noah Berg is based in Toronto. The most recent record (April 2025) says so, but the context has nothing newer, so it may be out of date as of today.",
+     "in_tok": 1649,
+     "out_tok": 162,
+     "latency_s": 3.57,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Toronto, matching the reference. The added caveat about possible staleness does not change or contradict the core fact.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_48",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Mina Park's current role? (as of today)",
+   "reference": "tech lead of Nimbus",
+   "stale_answer": "QA lead of Pylon",
+   "evidence_ids": [
+    "r3_0145"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-18] Mina Park moved from QA lead of Pylon to tech lead of Nimbus, effective 2025-04-18.",
+    "[2025-03-21] Mina Park became QA lead of Pylon on 2025-03-21.",
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-06-26] Mina Park presented Umbra at ShipIt 2025 in Lisbon on 2025-06-26.",
+    "[2025-05-12] Mina Park presented Meridian at ShipIt 2025 in Dublin on 2025-05-12."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Mina Park is currently the tech lead of Nimbus, a role she took on 2025-04-18 after moving from QA lead of Pylon. The later records only show her presenting at ShipIt 2025 (Meridian in Dublin, Umbra in Lisbon), and none of them mention a role change. The context doesn't cover anything after June 2025, so I can't confirm whether this is still accurate as of today.",
+     "in_tok": 1647,
+     "out_tok": 135,
+     "latency_s": 8.38,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park is currently tech lead of Nimbus, matching the reference. The extra details about the role's start date and the caveat about records ending in June 2025 do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent record (2025-04-18) lists her as tech lead of Nimbus, but that is over a year before today (2026-11-18), so it may no longer be current.",
+     "in_tok": 1667,
+     "out_tok": 425,
+     "latency_s": 5.03,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_49",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Valentina Greco based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0064"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-20] Valentina Greco is based in Singapore.",
+    "[2025-02-21] Valentina Greco relocated from Singapore to Denver in February 2025.",
+    "[2025-04-30] Valentina Greco presented Compass at ShipIt 2025 in Singapore on 2025-04-30.",
+    "[2025-05-13] Valentina Greco presented Compass at ShipIt 2025 in Austin on 2025-05-13.",
+    "[2025-05-15] Valentina Greco presented Nimbus at PlatformWeek 2025 in Lisbon on 2025-05-15."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Valentina Greco is based in Denver. She relocated there from Singapore in February 2025. The later entries (Singapore, Austin, Lisbon) are conference presentations, not moves.",
+     "in_tok": 1650,
+     "out_tok": 131,
+     "latency_s": 8.1,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Valentina Greco is based in Denver, which matches the reference. The extra details about relocating from Singapore and the later entries being conference presentations do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Denver. Her most recent recorded location is her relocation from Singapore to Denver in February 2025, and the context has no later update.",
+     "in_tok": 1674,
+     "out_tok": 271,
+     "latency_s": 3.92,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Denver, matching the reference. The extra context about her relocation from Singapore in February 2025 doesn't contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_50",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Tove Lindqvist's current role? (as of today)",
+   "reference": "product owner of Tessera",
+   "stale_answer": "product owner of Orbit",
+   "evidence_ids": [
+    "r3_0147"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-17] Tove Lindqvist's role changed on 2025-04-17: now product owner of Tessera.",
+    "[2025-03-19] Tove Lindqvist became product owner of Orbit on 2025-03-19.",
+    "[2025-06-27] Tove Lindqvist presented Sextant at InfraDays 2025 in Osaka on 2025-06-27.",
+    "[2025-06-13] Tove Lindqvist presented Umbra at PlatformWeek 2025 in Denver on 2025-06-13.",
+    "[2025-03-21] Tove Lindqvist is based in Lisbon."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tove Lindqvist's most recent role change in the context is product owner of Tessera, effective 2025-04-17. This follows her becoming product owner of Orbit on 2025-03-19. Nothing later in the context indicates a different role, so her current role is **product owner of Tessera**.\n\nThe context only goes up to mid-2025, so I can't confirm whether anything has changed since then.",
+     "in_tok": 1660,
+     "out_tok": 126,
+     "latency_s": 9.11,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states her current role is product owner of Tessera, matching the reference. The extra details about Orbit and the context's time limit do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "The most recent recorded role is **product owner of Tessera**, as of 2025-04-17. The memory has no entries after that date, so I can't confirm it's still her role as of today (2026-11-18).",
+     "in_tok": 1677,
+     "out_tok": 455,
+     "latency_s": 4.88,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.9,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states 'product owner of Tessera' as her most recent recorded role, matching the reference. It adds a caveat that it cannot confirm this is still current, which is a minor hedge but does not contradict the reference.",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_51",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Zofia Nowak based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Denver",
+   "evidence_ids": [
+    "r3_0034"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-13] Zofia Nowak is based in Denver.",
+    "[2025-01-31] Zofia Nowak is now based in Osaka (since January 2025).",
+    "[2025-04-21] Zofia Nowak moved from tech lead of Orbit to data lead of Wayfarer, effective 2025-04-21.",
+    "[2025-05-22] Zofia Nowak presented Nimbus at DataSummit 2025 in Berlin on 2025-05-22.",
+    "[2025-04-02] Zofia Nowak presented Meridian at DataSummit 2025 in Austin on 2025-04-02."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Zofia Nowak is based in Osaka. The latest location in the context is from 2025-01-31, when she moved there from Denver. Nothing later contradicts it, but the information is from early 2025, so it may be out of date.",
+     "in_tok": 1655,
+     "out_tok": 74,
+     "latency_s": 10.13,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Zofia Nowak is based in Osaka, matching the reference. The caveat about the data being from early 2025 doesn't contradict the answer.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Osaka. The most recent record says she has been based there since January 2025. The memory has no later update, so she may have moved since then.",
+     "in_tok": 1678,
+     "out_tok": 156,
+     "latency_s": 3.43,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka, matching the reference. The added caveat about possible later moves does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_52",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Hiro Tanaka based? (as of today)",
+   "reference": "Berlin",
+   "stale_answer": "Denver",
+   "evidence_ids": [
+    "r3_0156"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-22] Hiro Tanaka is based in Denver.",
+    "[2025-04-24] Hiro Tanaka relocated from Denver to Berlin in April 2025.",
+    "[2025-01-20] Hiro Tanaka moved from tech lead of Sextant to data lead of Nimbus, effective 2025-01-20.",
+    "[2025-04-11] Hiro Tanaka presented Sextant at DataSummit 2025 in Lisbon on 2025-04-11.",
+    "[2025-03-27] Hiro Tanaka presented Orbit at DevCon 2025 in Denver on 2025-03-27."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Hiro Tanaka is based in Berlin. The most recent entry (2025-04-24) says Hiro relocated from Denver to Berlin in April 2025, which supersedes the earlier note that placed Hiro in Denver. The context contains nothing later that would indicate another move.",
+     "in_tok": 1664,
+     "out_tok": 94,
+     "latency_s": 8.22,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Hiro Tanaka is based in Berlin, which matches the reference. The extra detail about relocating from Denver is consistent and does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Hiro Tanaka is based in Berlin. They relocated there from Denver in April 2025.",
+     "in_tok": 1684,
+     "out_tok": 115,
+     "latency_s": 3.35,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Hiro Tanaka is based in Berlin, matching the reference. The extra detail about relocating from Denver in April 2025 doesn't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_53",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Freya Holm's current role? (as of today)",
+   "reference": "product owner of Umbra",
+   "stale_answer": "data lead of Orbit",
+   "evidence_ids": [
+    "r3_0033"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-29] Freya Holm's role changed on 2025-01-29: now product owner of Umbra.",
+    "[2025-01-28] Freya Holm became data lead of Orbit on 2025-01-28.",
+    "[2025-02-21] Freya Holm is based in Austin.",
+    "[2025-03-31] Freya Holm presented Beacon at DevCon 2025 in Lisbon on 2025-03-31.",
+    "[2025-06-04] Freya Holm presented Sextant at DataSummit 2025 in Toronto on 2025-06-04."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Freya Holm's most recent recorded role change is product owner of Umbra, effective 2025-01-29. It came one day after she became data lead of Orbit (2025-01-28). Later entries (the Beacon and Sextant presentations, and her Austin location) don't mention any role change. So the latest role on record is **product owner of Umbra**, though the context doesn't confirm whether it still holds as of today (2026-11-18).",
+     "in_tok": 1642,
+     "out_tok": 140,
+     "latency_s": 8.75,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states her latest role is product owner of Umbra, matching the reference. The caveat about not confirming it still holds today is a hedge and does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "The most recent recorded role is **product owner of Umbra** (as of 2025-01-29). The context has no entries after that date, so I can't confirm it's still her role as of 2026-11-18.",
+     "in_tok": 1659,
+     "out_tok": 592,
+     "latency_s": 5.15,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the role is product owner of Umbra, matching the reference. The caveat about not confirming it as of today does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_54",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Quill use? (as of today)",
+   "reference": "Shortcut",
+   "stale_answer": "Trello",
+   "evidence_ids": [
+    "r3_0006"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-10] Quill standardized on Trello as its issue tracker on 2025-01-10.",
+    "[2025-01-11] Quill switched its issue tracker from Trello to Shortcut effective 2025-01-11.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-04-04] Compass now tracks its issues in Confluence (as of 2025-04-04)."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Quill uses Shortcut. It switched from Trello to Shortcut effective 2025-01-11, and nothing later in the context changes that.",
+     "in_tok": 1637,
+     "out_tok": 48,
+     "latency_s": 7.05,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Quill uses Shortcut, matching the reference. The extra detail about switching from Trello does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Quill uses **Shortcut**, per the most recent entry (effective 2025-01-11). The context has no later change for Quill, but its latest record is from January 2025, so a switch after that wouldn't appear here.",
+     "in_tok": 1658,
+     "out_tok": 247,
+     "latency_s": 3.86,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Quill uses Shortcut, matching the reference. The added caveat about the record date does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_55",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Tessera's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "stale_answer": "$750k",
+   "evidence_ids": [
+    "r3_0068"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-22] Tessera's quarterly budget is $360k as of 2025-02-22.",
+    "[2025-02-21] Tessera's quarterly budget was set to $750k on 2025-02-21.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tessera's quarterly budget is $360k. This is the most recent entry, dated 2025-02-22, and it supersedes the $750k set the day before.",
+     "in_tok": 1631,
+     "out_tok": 52,
+     "latency_s": 7.0,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $360k, matching the reference. The extra detail about the date and the superseded $750k figure does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "$360k, per the most recent record dated 2025-02-22. The context has no later update, so this may not reflect the current budget.",
+     "in_tok": 1648,
+     "out_tok": 323,
+     "latency_s": 4.61,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $360k, matching the reference exactly. The added caveat about the record date and possible staleness does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_56",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Ximena Ortiz's current role? (as of today)",
+   "reference": "data lead of Atlas",
+   "stale_answer": "release manager of Tessera",
+   "evidence_ids": [
+    "r3_0158"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-18] Ximena Ortiz became release manager of Tessera on 2025-04-18.",
+    "[2025-04-25] Ximena Ortiz's role changed on 2025-04-25: now data lead of Atlas.",
+    "[2025-01-10] Ximena Ortiz is now based in Dublin (since January 2025).",
+    "[2025-01-09] Ximena Ortiz is based in Osaka.",
+    "[2025-04-11] Ximena Ortiz presented Compass at PlatformWeek 2025 in Berlin on 2025-04-11."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Ximena Ortiz is currently the data lead of Atlas, a role she took on 2025-04-25. It replaced her earlier role as release manager of Tessera, which began 2025-04-18.",
+     "in_tok": 1645,
+     "out_tok": 66,
+     "latency_s": 8.46,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states she is currently the data lead of Atlas, matching the reference. The extra details about dates and her prior release manager role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent recorded role is data lead of Atlas, as of 2025-04-25, but the context has nothing after that date, so I can't confirm it's still her current role as of today (2026-11-18).",
+     "in_tok": 1663,
+     "out_tok": 456,
+     "latency_s": 4.77,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_57",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Umar Siddiqui based? (as of today)",
+   "reference": "Lisbon",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0184"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-16] Umar Siddiqui is based in Berlin.",
+    "[2025-05-17] Umar Siddiqui is now based in Lisbon (since May 2025).",
+    "[2025-03-28] Umar Siddiqui moved from product owner of Compass to product owner of Lantern, effective 2025-03-28.",
+    "[2025-05-02] Umar Siddiqui presented Compass at DataSummit 2025 in Osaka on 2025-05-02.",
+    "[2025-04-24] Umar Siddiqui presented Wayfarer at InfraDays 2025 in Austin on 2025-04-24."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Umar Siddiqui is based in Lisbon. The most recent record (2025-05-17) says he moved there in May 2025, replacing the earlier Berlin entry from 2025-05-16. Nothing in the context shows a later move, though the records are over a year old as of today.",
+     "in_tok": 1661,
+     "out_tok": 91,
+     "latency_s": 9.33,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Umar Siddiqui is based in Lisbon, matching the reference. The extra details about the move and the age of the records do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Lisbon, according to the most recent record (2025-05-17). The memory contains nothing newer, so this may be out of date as of 2026-11-18.",
+     "in_tok": 1682,
+     "out_tok": 335,
+     "latency_s": 4.24,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Lisbon, matching the reference. The caveat about the record possibly being out of date does not change the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_58",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Jamal Okafor based? (as of today)",
+   "reference": "Singapore",
+   "stale_answer": "Austin",
+   "evidence_ids": [
+    "r3_0027"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-22] Jamal Okafor is based in Austin.",
+    "[2025-01-23] Jamal Okafor relocated from Austin to Singapore in January 2025.",
+    "[2025-03-18] Jamal Okafor moved from QA lead of Atlas to release manager of Quill, effective 2025-03-18.",
+    "[2025-05-09] Jamal Okafor presented Compass at DevCon 2025 in Singapore on 2025-05-09.",
+    "[2025-06-02] Jamal Okafor presented Pylon at PlatformWeek 2025 in Berlin on 2025-06-02."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Jamal Okafor is based in Singapore. He relocated there from Austin in January 2025, and nothing later in the context indicates another move. His June 2025 presentation in Berlin was a conference appearance, not a relocation.",
+     "in_tok": 1655,
+     "out_tok": 75,
+     "latency_s": 9.17,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jamal Okafor is based in Singapore, matching the reference. The extra details about relocating from Austin and the Berlin conference don't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Singapore. He relocated there from Austin in January 2025, and the context has no later record of a move. The most recent entries are from mid-2025, so his location may have changed since then.",
+     "in_tok": 1675,
+     "out_tok": 237,
+     "latency_s": 5.64,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Singapore, matching the reference. The extra context about relocation and the caveat about possibly outdated info does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_59",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Pylon's quarterly budget? (as of today)",
+   "reference": "$240k",
+   "stale_answer": "$450k",
+   "evidence_ids": [
+    "r3_0110"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-28] Pylon's quarterly budget is $240k as of 2025-03-28.",
+    "[2025-03-13] Pylon's quarterly budget was set to $450k on 2025-03-13.",
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Pylon's quarterly budget is $240k. This is the most recent figure on record, set on 2025-03-28, and it replaced the earlier $450k from 2025-03-13.",
+     "in_tok": 1629,
+     "out_tok": 60,
+     "latency_s": 6.72,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $240k as the current quarterly budget, matching the reference. The extra detail about the earlier $450k figure and dates is consistent context and does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent record is $240k as of 2025-03-28, but it predates today (2026-11-18) by about 1.5 years, and the context has no later entries.",
+     "in_tok": 1649,
+     "out_tok": 498,
+     "latency_s": 5.51,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_60",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Dmitri Volkov based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Dublin",
+   "evidence_ids": [
+    "r3_0223"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-26] Dmitri Volkov is based in Dublin.",
+    "[2025-06-13] Dmitri Volkov relocated from Dublin to Osaka in June 2025.",
+    "[2025-05-22] Dmitri Volkov presented Sextant at DevCon 2025 in Singapore on 2025-05-22.",
+    "[2025-07-01] Dmitri Volkov presented Vertex at ShipIt 2025 in Austin on 2025-07-01.",
+    "[2025-04-15] Dmitri Volkov became release manager of Orbit on 2025-04-15."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Dmitri Volkov is based in Osaka. He relocated there from Dublin in June 2025, and nothing in the context indicates a later move.",
+     "in_tok": 1650,
+     "out_tok": 49,
+     "latency_s": 8.77,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov is based in Osaka, matching the reference. The extra detail about relocating from Dublin does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Osaka, Japan. He relocated there from Dublin in June 2025. The memory context has no later record, so he may have moved since then.",
+     "in_tok": 1669,
+     "out_tok": 215,
+     "latency_s": 3.56,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka (Japan), matching the reference. The extra details about the move from Dublin and the caveat about possible later moves do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_61",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Beacon use? (as of today)",
+   "reference": "Monday",
+   "stale_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0024"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-13] Beacon standardized on Confluence as its issue tracker on 2025-01-13.",
+    "[2025-01-20] Beacon now tracks its issues in Monday (as of 2025-01-20).",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beacon uses Monday as its issue tracker. It switched from Confluence on 2025-01-20, and the context shows no later change.",
+     "in_tok": 1637,
+     "out_tok": 45,
+     "latency_s": 6.46,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Beacon uses Monday as its issue tracker, matching the reference. The extra detail about switching from Confluence on 2025-01-20 does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beacon uses **Monday**, according to the most recent record (2025-01-20). The context has no later entry, so I can't confirm whether this is still the case as of today (2026-11-18).",
+     "in_tok": 1658,
+     "out_tok": 226,
+     "latency_s": 4.24,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Beacon uses Monday, matching the reference. The caveat about not confirming the current status does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_62",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Daria Sokolova based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Austin",
+   "evidence_ids": [
+    "r3_0130"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-10] Daria Sokolova is now based in Denver (since April 2025).",
+    "[2025-03-27] Daria Sokolova is based in Austin.",
+    "[2025-02-05] Daria Sokolova moved from data lead of Wayfarer to design lead of Sextant, effective 2025-02-05.",
+    "[2025-06-16] Daria Sokolova presented Orbit at ShipIt 2025 in Lisbon on 2025-06-16.",
+    "[2025-05-07] Daria Sokolova presented Tessera at ShipIt 2025 in Austin on 2025-05-07."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Daria Sokolova is based in Denver, per the most recent location record (April 2025). The later entries only mention conference presentations in Austin and Lisbon, and they don't say she moved. Nothing in the context records a change after Denver, though the information is from some time ago.",
+     "in_tok": 1657,
+     "out_tok": 87,
+     "latency_s": 7.15,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Daria Sokolova is based in Denver, matching the reference. The hedging about the data's age and the conference mentions in Austin and Lisbon does not contradict the answer.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Denver, according to the most recent record (2025-04-10). Nothing in the context is newer, so this may be out of date as of today (2026-11-18).",
+     "in_tok": 1673,
+     "out_tok": 283,
+     "latency_s": 4.63,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Denver, matching the reference. The added caveat about possible staleness doesn't contradict or change the core answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_63",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Olga Petrova's current role? (as of today)",
+   "reference": "release manager of Wayfarer",
+   "stale_answer": "QA lead of Umbra",
+   "evidence_ids": [
+    "r3_0126"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-04] Olga Petrova moved from QA lead of Umbra to release manager of Wayfarer, effective 2025-04-04.",
+    "[2025-03-25] Olga Petrova became QA lead of Umbra on 2025-03-25.",
+    "[2025-02-12] Olga Petrova relocated from Lisbon to Austin in February 2025.",
+    "[2025-02-10] Elena Rossi's role changed on 2025-02-10: now QA lead of Pylon.",
+    "[2025-03-07] Tessera now tracks its issues in Confluence (as of 2025-03-07)."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Olga Petrova is the release manager of Wayfarer. She moved into that role from QA lead of Umbra on 2025-04-04. The context shows no later changes.",
+     "in_tok": 1655,
+     "out_tok": 56,
+     "latency_s": 8.34,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Olga Petrova is the release manager of Wayfarer, which matches the reference. The extra details about her previous role and the move date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. The most recent record (2025-04-04) lists Olga Petrova as release manager of Wayfarer, but nothing in the context covers her role as of today, 2026-11-18.",
+     "in_tok": 1674,
+     "out_tok": 355,
+     "latency_s": 5.24,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_64",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Sextant use? (as of today)",
+   "reference": "Confluence",
+   "stale_answer": "Linear",
+   "evidence_ids": [
+    "r3_0124"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-02] Sextant switched its issue tracker from Linear to Confluence effective 2025-04-02.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-02-24] Vertex standardized on Trello as its issue tracker on 2025-02-24.",
+    "[2025-01-24] Pylon standardized on Notion as its issue tracker on 2025-01-24."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sextant uses Confluence as its issue tracker. It switched from Linear to Confluence effective 2025-04-02, and nothing later in the context changes that.",
+     "in_tok": 1643,
+     "out_tok": 54,
+     "latency_s": 6.99,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Confluence is the issue tracker, matching the reference. The extra detail about the switch from Linear on 2025-04-02 doesn't contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Sextant uses **Confluence**, according to the most recent entry (2025-04-02). The context has no later change, but that record is over a year old as of today (2026-11-18), so it may be out of date.",
+     "in_tok": 1663,
+     "out_tok": 283,
+     "latency_s": 4.53,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Sextant uses Confluence, matching the reference. The added caveat that the record may be outdated does not change or contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_65",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Bob Martinez based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0090"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-06] Bob Martinez is based in Berlin.",
+    "[2025-03-12] Bob Martinez relocated from Berlin to Denver in March 2025.",
+    "[2025-01-09] Bob Martinez became release manager of Umbra on 2025-01-09.",
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-04-22] Hiro Tanaka is based in Denver."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Bob Martinez is based in Denver. He relocated there from Berlin in March 2025, per the most recent record about his location.",
+     "in_tok": 1593,
+     "out_tok": 42,
+     "latency_s": 8.92,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez is based in Denver, matching the reference. The added detail about relocating from Berlin in March 2025 doesn't contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Bob Martinez is based in **Denver**, according to the most recent record (March 12, 2025). That record is over a year old, so he may have moved since then.",
+     "in_tok": 1613,
+     "out_tok": 215,
+     "latency_s": 4.04,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Denver, matching the reference. The added caveat about the record's age does not contradict the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_66",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Umar Siddiqui's current role? (as of today)",
+   "reference": "product owner of Lantern",
+   "stale_answer": "product owner of Compass",
+   "evidence_ids": [
+    "r3_0116"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-28] Umar Siddiqui moved from product owner of Compass to product owner of Lantern, effective 2025-03-28.",
+    "[2025-03-05] Umar Siddiqui became product owner of Compass on 2025-03-05.",
+    "[2025-01-09] Bob Martinez became release manager of Umbra on 2025-01-09.",
+    "[2025-05-17] Umar Siddiqui is now based in Lisbon (since May 2025).",
+    "[2025-04-24] Umar Siddiqui presented Wayfarer at InfraDays 2025 in Austin on 2025-04-24."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Umar Siddiqui is currently the product owner of Lantern. He moved from product owner of Compass to Lantern on 2025-03-28. The context shows no later role change, though it does note he has been based in Lisbon since May 2025.",
+     "in_tok": 1658,
+     "out_tok": 78,
+     "latency_s": 8.86,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states he is currently the product owner of Lantern, matching the reference. The extra details about the move from Compass and the Lisbon location do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "The latest recorded role is **product owner of Lantern**, effective 2025-03-28. The context has no entries after May 2025, so I can't confirm whether he still holds this role as of 2026-11-18. I don't have enough information to answer this question for today.",
+     "in_tok": 1675,
+     "out_tok": 448,
+     "latency_s": 4.7,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_67",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Elena Rossi's current role? (as of today)",
+   "reference": "QA lead of Pylon",
+   "stale_answer": "tech lead of Orbit",
+   "evidence_ids": [
+    "r3_0051"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-10] Elena Rossi's role changed on 2025-02-10: now QA lead of Pylon.",
+    "[2025-02-05] Elena Rossi became tech lead of Orbit on 2025-02-05.",
+    "[2025-02-18] Elena Rossi is now based in Austin (since February 2025).",
+    "[2025-02-25] Elena Rossi took a half day on 2025-02-25.",
+    "[2025-07-03] Elena Rossi presented Meridian at DevCon 2025 in Singapore on 2025-07-03."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Elena Rossi's most recent recorded role change is QA lead of Pylon (2025-02-10). It came after she became tech lead of Orbit (2025-02-05). Nothing later in the context changes it, so QA lead of Pylon is the latest known role. The context is only current through July 2025, so it may be out of date as of today.",
+     "in_tok": 1634,
+     "out_tok": 109,
+     "latency_s": 9.16,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi's current role is QA lead of Pylon, matching the reference. The additional detail about the earlier Orbit role and the caveat about the context's currency do not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Based on the most recent record, Elena Rossi was QA lead of Pylon as of 2025-02-10. No later role change appears in the context, but that record is about 21 months old, so it may no longer be current.",
+     "in_tok": 1656,
+     "out_tok": 468,
+     "latency_s": 5.11,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.9,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi is QA lead of Pylon, matching the reference's key fact. It adds a caveat that the record is dated and may be outdated, which is hedging but doesn't contradict the reference. Slightly under 1.0 because of the hedge.",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_68",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Wayfarer use? (as of today)",
+   "reference": "Trello",
+   "stale_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0089"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-06] Wayfarer now tracks its issues in Trello (as of 2025-03-06).",
+    "[2025-03-05] Wayfarer standardized on Shortcut as its issue tracker on 2025-03-05.",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wayfarer uses Trello. It was the most recent update (2025-03-06), and it came after Wayfarer's earlier switch to Shortcut on 2025-03-05.",
+     "in_tok": 1639,
+     "out_tok": 60,
+     "latency_s": 9.15,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wayfarer uses Trello, matching the reference. The extra detail about an earlier switch to Shortcut is consistent with Trello being the latest tracker and does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wayfarer uses **Trello**, according to the most recent record (2025-03-06). The context has no later entry, so this may be out of date as of today (2026-11-18).",
+     "in_tok": 1666,
+     "out_tok": 300,
+     "latency_s": 4.07,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Trello, matching the reference. The caveat that the record may be out of date does not change or contradict the core fact.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_69",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Meridian use? (as of today)",
+   "reference": "Notion",
+   "stale_answer": "Jira",
+   "evidence_ids": [
+    "r3_0138"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-02] Meridian standardized on Jira as its issue tracker on 2025-04-02.",
+    "[2025-04-11] Meridian now tracks its issues in Notion (as of 2025-04-11).",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-04-04] Compass now tracks its issues in Confluence (as of 2025-04-04)."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Meridian uses **Notion**. It switched from Jira (2025-04-02) to Notion on 2025-04-11, and that is the most recent entry in the context.",
+     "in_tok": 1636,
+     "out_tok": 55,
+     "latency_s": 8.28,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Meridian uses Notion, matching the reference. The extra detail about the earlier switch from Jira is additional context and does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Meridian uses **Notion**, according to the most recent entry (2025-04-11). The context has no later entries, so this may be out of date for today (2026-11-18).",
+     "in_tok": 1650,
+     "out_tok": 224,
+     "latency_s": 3.98,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Meridian uses Notion, matching the reference. The caveat about possible staleness does not contradict or change the answer.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t3_70",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Meridian's issue tracker?",
+   "reference": "Jira",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0129",
+    "r3_0138"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-02] Meridian standardized on Jira as its issue tracker on 2025-04-02.",
+    "[2025-04-11] Meridian now tracks its issues in Notion (as of 2025-04-11).",
+    "[2025-02-10] Lantern standardized on Monday as its issue tracker on 2025-02-10.",
+    "[2025-01-11] Quill switched its issue tracker from Trello to Shortcut effective 2025-01-11.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (to Notion on 2025-04-11), Meridian's issue tracker was Jira, which it standardized on on 2025-04-02.",
+     "in_tok": 1647,
+     "out_tok": 53,
+     "latency_s": 8.11,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the issue tracker before the most recent change was Jira, matching the reference. The extra details about the Notion switch and the standardization date do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jira. Meridian standardized on Jira on 2025-04-02, and it switched to Notion on 2025-04-11.",
+     "in_tok": 1662,
+     "out_tok": 121,
+     "latency_s": 3.48,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jira as the tracker before the switch to Notion, which matches the reference. The added dates are extra detail and do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_71",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Wayfarer's issue tracker?",
+   "reference": "Shortcut",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0081",
+    "r3_0089"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-05] Wayfarer standardized on Shortcut as its issue tracker on 2025-03-05.",
+    "[2025-03-06] Wayfarer now tracks its issues in Trello (as of 2025-03-06).",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03.",
+    "[2025-02-21] Lantern switched its issue tracker from Monday to Notion effective 2025-02-21.",
+    "[2025-01-13] Beacon standardized on Confluence as its issue tracker on 2025-01-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (Trello, 2025-03-06), Wayfarer's issue tracker was Shortcut, standardized on 2025-03-05.",
+     "in_tok": 1652,
+     "out_tok": 53,
+     "latency_s": 8.07,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Wayfarer's issue tracker before the most recent change was Shortcut, which matches the reference. The extra details (Trello change, dates) don't contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Shortcut. Wayfarer switched from Shortcut to Trello on 2025-03-06.",
+     "in_tok": 1673,
+     "out_tok": 125,
+     "latency_s": 4.27,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Shortcut as the previous issue tracker, matching the reference. The extra detail about the switch to Trello is consistent with the question and does not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_72",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Elena Rossi's role?",
+   "reference": "tech lead of Orbit",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0048",
+    "r3_0051"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-02-05] Elena Rossi became tech lead of Orbit on 2025-02-05.",
+    "[2025-02-10] Elena Rossi's role changed on 2025-02-10: now QA lead of Pylon.",
+    "[2025-06-24] Elena Rossi presented Tessera at InfraDays 2025 in Toronto on 2025-06-24.",
+    "[2025-07-03] Elena Rossi presented Meridian at DevCon 2025 in Singapore on 2025-07-03.",
+    "[2025-02-18] Elena Rossi is now based in Austin (since February 2025)."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent role change (2025-02-10, to QA lead of Pylon), Elena Rossi was tech lead of Orbit, a role she took on 2025-02-05.",
+     "in_tok": 1653,
+     "out_tok": 60,
+     "latency_s": 6.62,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi was tech lead of Orbit before the most recent change, matching the reference. The extra dates and the new role are additional detail that does not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Elena Rossi was the **tech lead of Orbit** before her change to QA lead of Pylon on 2025-02-10.",
+     "in_tok": 1677,
+     "out_tok": 159,
+     "latency_s": 3.53,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi was the tech lead of Orbit before the change, which matches the reference. The extra detail about the move to QA lead of Pylon does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_73",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Umar Siddiqui's role?",
+   "reference": "product owner of Compass",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0080",
+    "r3_0116"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-28] Umar Siddiqui moved from product owner of Compass to product owner of Lantern, effective 2025-03-28.",
+    "[2025-03-05] Umar Siddiqui became product owner of Compass on 2025-03-05.",
+    "[2025-04-24] Umar Siddiqui presented Wayfarer at InfraDays 2025 in Austin on 2025-04-24.",
+    "[2025-05-17] Umar Siddiqui is now based in Lisbon (since May 2025).",
+    "[2025-06-02] Umar Siddiqui presented Orbit at PlatformWeek 2025 in Austin on 2025-06-02."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (the move to Lantern on 2025-03-28), Umar Siddiqui was product owner of Compass, a role he had held since 2025-03-05.",
+     "in_tok": 1673,
+     "out_tok": 58,
+     "latency_s": 7.1,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Umar Siddiqui was product owner of Compass before the most recent change, which matches the reference. The extra dates and the move to Lantern are additional detail and do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before his most recent change on 2025-03-28, Umar Siddiqui was the product owner of Compass.",
+     "in_tok": 1693,
+     "out_tok": 108,
+     "latency_s": 3.16,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Umar Siddiqui was the product owner of Compass before the change, matching the reference. The added date is extra detail that does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_74",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Bob Martinez's base city?",
+   "reference": "Berlin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0086",
+    "r3_0090"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-03-06] Bob Martinez is based in Berlin.",
+    "[2025-03-12] Bob Martinez relocated from Berlin to Denver in March 2025.",
+    "[2025-01-09] Bob Martinez became release manager of Umbra on 2025-01-09.",
+    "[2025-02-18] Elena Rossi is now based in Austin (since February 2025).",
+    "[2025-04-23] Rosa Alvarez is based in Austin."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Berlin. Bob Martinez was based in Berlin before relocating to Denver in March 2025.",
+     "in_tok": 1607,
+     "out_tok": 35,
+     "latency_s": 8.64,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Berlin, matching the reference. The added detail about relocating to Denver in March 2025 is consistent with the question's premise of a recent change and does not contradict the reference.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Bob Martinez was based in Berlin before the most recent change. He relocated from Berlin to Denver in March 2025.",
+     "in_tok": 1629,
+     "out_tok": 42,
+     "latency_s": 3.65,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez was based in Berlin before the most recent change, matching the reference. The added detail about relocating to Denver is consistent and does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_75",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Sextant's issue tracker?",
+   "reference": "Linear",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0122",
+    "r3_0124"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-02] Sextant switched its issue tracker from Linear to Confluence effective 2025-04-02.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03.",
+    "[2025-01-11] Quill switched its issue tracker from Trello to Shortcut effective 2025-01-11.",
+    "[2025-02-05] Daria Sokolova moved from data lead of Wayfarer to design lead of Sextant, effective 2025-02-05."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (2025-04-02, to Confluence), Sextant's issue tracker was **Linear**, standardized on 2025-03-31.",
+     "in_tok": 1664,
+     "out_tok": 52,
+     "latency_s": 8.51,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the prior issue tracker was Linear, matching the reference. The extra details (dates, change to Confluence) don't contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Linear.\n\nSextant standardized on Linear as its issue tracker on 2025-03-31, and that was its tracker until it switched to Confluence on 2025-04-02.",
+     "in_tok": 1678,
+     "out_tok": 59,
+     "latency_s": 3.56,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Linear was the issue tracker before the most recent change, matching the reference. The extra details about the dates and the switch to Confluence don't contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_76",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Olga Petrova's role?",
+   "reference": "QA lead of Umbra",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0112",
+    "r3_0126"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-04] Olga Petrova moved from QA lead of Umbra to release manager of Wayfarer, effective 2025-04-04.",
+    "[2025-03-25] Olga Petrova became QA lead of Umbra on 2025-03-25.",
+    "[2025-02-12] Olga Petrova relocated from Lisbon to Austin in February 2025.",
+    "[2025-02-05] Olga Petrova is based in Lisbon.",
+    "[2025-04-25] Ximena Ortiz's role changed on 2025-04-25: now data lead of Atlas."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "QA lead of Umbra. Olga Petrova held that role from 2025-03-25 until she moved to release manager of Wayfarer on 2025-04-04.",
+     "in_tok": 1645,
+     "out_tok": 55,
+     "latency_s": 9.23,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states 'QA lead of Umbra', matching the reference exactly. The extra dates and the later move to release manager of Wayfarer are additional detail that doesn't contradict the reference.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Olga Petrova was the **QA lead of Umbra** before her move to release manager of Wayfarer on 2025-04-04.",
+     "in_tok": 1660,
+     "out_tok": 217,
+     "latency_s": 3.86,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states she was QA lead of Umbra before the change, matching the reference. The extra detail about the move to release manager of Wayfarer does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_77",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Daria Sokolova's base city?",
+   "reference": "Austin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0118",
+    "r3_0130"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-04-10] Daria Sokolova is now based in Denver (since April 2025).",
+    "[2025-03-27] Daria Sokolova is based in Austin.",
+    "[2025-05-07] Daria Sokolova presented Tessera at ShipIt 2025 in Austin on 2025-05-07.",
+    "[2025-02-05] Daria Sokolova moved from data lead of Wayfarer to design lead of Sextant, effective 2025-02-05.",
+    "[2025-01-28] Daria Sokolova became data lead of Wayfarer on 2025-01-28."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Austin. The most recent change in base city was the move to Denver (April 2025), and before that she was based in Austin (as of 2025-03-27).",
+     "in_tok": 1649,
+     "out_tok": 48,
+     "latency_s": 8.66,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Austin as the base city before the most recent change (move to Denver), matching the reference. Extra details do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Austin.",
+     "in_tok": 1667,
+     "out_tok": 69,
+     "latency_s": 4.42,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer 'Austin.' matches the reference 'Austin' exactly; the trailing period is immaterial.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_78",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Beacon's issue tracker?",
+   "reference": "Confluence",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0014",
+    "r3_0024"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-01-13] Beacon standardized on Confluence as its issue tracker on 2025-01-13.",
+    "[2025-01-20] Beacon now tracks its issues in Monday (as of 2025-01-20).",
+    "[2025-03-04] Alice Chen moved from release manager of Beacon to product owner of Compass, effective 2025-03-04.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (Monday, 2025-01-20), Beacon's issue tracker was Confluence, standardized on 2025-01-13.",
+     "in_tok": 1652,
+     "out_tok": 50,
+     "latency_s": 6.68,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the issue tracker was Confluence, matching the reference. The added dates are extra detail and do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beacon's issue tracker was **Confluence** before it switched to Monday on 2025-01-20.",
+     "in_tok": 1667,
+     "out_tok": 129,
+     "latency_s": 3.24,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Confluence as Beacon's prior issue tracker, matching the reference. The added detail about switching to Monday on 2025-01-20 doesn't contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_79",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Dmitri Volkov's base city?",
+   "reference": "Dublin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0205",
+    "r3_0223"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-26] Dmitri Volkov is based in Dublin.",
+    "[2025-06-13] Dmitri Volkov relocated from Dublin to Osaka in June 2025.",
+    "[2025-04-15] Dmitri Volkov became release manager of Orbit on 2025-04-15.",
+    "[2025-07-01] Dmitri Volkov presented Vertex at ShipIt 2025 in Austin on 2025-07-01.",
+    "[2025-05-22] Dmitri Volkov presented Sextant at DevCon 2025 in Singapore on 2025-05-22."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Dublin. Dmitri Volkov was based in Dublin until he relocated to Osaka in June 2025.",
+     "in_tok": 1652,
+     "out_tok": 39,
+     "latency_s": 7.82,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dublin, matching the reference. The extra detail about relocating to Osaka in June 2025 is consistent with the question's premise of a recent change and does not contradict the reference.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Dublin. Dmitri Volkov relocated from Dublin to Osaka in June 2025, so Dublin was his base city before that change.",
+     "in_tok": 1673,
+     "out_tok": 114,
+     "latency_s": 2.69,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dublin, matching the reference. The added detail about relocating to Osaka in June 2025 doesn't contradict the reference and is consistent with Dublin being the base city before the most recent change.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t2_80",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Elena Rossi has given (project, conference, city).",
+   "reference": "Vertex at InfraDays in Toronto; Meridian at DataSummit in Singapore; Umbra at InfraDays in Toronto; Tessera at InfraDays in Toronto; Meridian at DevCon in Singapore",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0194",
+    "r3_0221",
+    "r3_0230",
+    "r3_0247",
+    "r3_0250"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-07-03] Elena Rossi presented Meridian at DevCon 2025 in Singapore on 2025-07-03.",
+    "[2025-06-24] Elena Rossi presented Tessera at InfraDays 2025 in Toronto on 2025-06-24.",
+    "[2025-06-19] Elena Rossi presented Umbra at InfraDays 2025 in Toronto on 2025-06-19.",
+    "[2025-05-22] Elena Rossi presented Vertex at InfraDays 2025 in Toronto on 2025-05-22.",
+    "[2025-06-12] Elena Rossi presented Meridian at DataSummit 2025 in Singapore on 2025-06-12."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Elena Rossi's conference presentations, in chronological order:\n\n1. Vertex, InfraDays 2025, Toronto (2025-05-22)\n2. Meridian, DataSummit 2025, Singapore (2025-06-12)\n3. Umbra, InfraDays 2025, Toronto (2025-06-19)\n4. Tessera, InfraDays 2025, Toronto (2025-06-24)\n5. Meridian, DevCon 2025, Singapore (2025-07-03)",
+     "in_tok": 1693,
+     "out_tok": 166,
+     "latency_s": 7.68,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "5/5 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "| Project | Conference | City |\n|---|---|---|\n| Vertex | InfraDays 2025 | Toronto |\n| Umbra | InfraDays 2025 | Toronto |\n| Meridian | DataSummit 2025 | Singapore |\n| Tessera | InfraDays 2025 | Toronto |\n| Meridian | DevCon 2025 | Singapore |",
+     "in_tok": 1719,
+     "out_tok": 346,
+     "latency_s": 4.56,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "5/5 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_81",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Zofia Nowak has given (project, conference, city).",
+   "reference": "Meridian at DataSummit in Austin; Nimbus at DataSummit in Berlin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0125",
+    "r3_0193"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-22] Zofia Nowak presented Nimbus at DataSummit 2025 in Berlin on 2025-05-22.",
+    "[2025-04-02] Zofia Nowak presented Meridian at DataSummit 2025 in Austin on 2025-04-02.",
+    "[2025-01-13] Zofia Nowak is based in Denver.",
+    "[2025-04-21] Zofia Nowak moved from tech lead of Orbit to data lead of Wayfarer, effective 2025-04-21.",
+    "[2025-03-05] Zofia Nowak became tech lead of Orbit on 2025-03-05."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Zofia Nowak has given two conference presentations:\n\n1. **Meridian**, DataSummit 2025, Austin (2025-04-02)\n2. **Nimbus**, DataSummit 2025, Berlin (2025-05-22)",
+     "in_tok": 1671,
+     "out_tok": 81,
+     "latency_s": 6.38,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "2/2 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "- Nimbus, DataSummit 2025, Berlin\n- Meridian, DataSummit 2025, Austin",
+     "in_tok": 1690,
+     "out_tok": 122,
+     "latency_s": 4.53,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "2/2 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_82",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Jamal Okafor has given (project, conference, city).",
+   "reference": "Compass at DevCon in Singapore; Pylon at PlatformWeek in Berlin; Wayfarer at ShipIt in Toronto",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0172",
+    "r3_0214",
+    "r3_0218"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-06-02] Jamal Okafor presented Pylon at PlatformWeek 2025 in Berlin on 2025-06-02.",
+    "[2025-05-09] Jamal Okafor presented Compass at DevCon 2025 in Singapore on 2025-05-09.",
+    "[2025-01-22] Jamal Okafor is based in Austin.",
+    "[2025-06-05] Jamal Okafor presented Wayfarer at ShipIt 2025 in Toronto on 2025-06-05.",
+    "[2025-03-18] Jamal Okafor moved from QA lead of Atlas to release manager of Quill, effective 2025-03-18."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Jamal Okafor's conference presentations, in chronological order:\n\n1. **Compass** at DevCon 2025, Singapore (2025-05-09)\n2. **Pylon** at PlatformWeek 2025, Berlin (2025-06-02)\n3. **Wayfarer** at ShipIt 2025, Toronto (2025-06-05)",
+     "in_tok": 1679,
+     "out_tok": 118,
+     "latency_s": 6.37,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "3/3 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jamal Okafor has given these conference presentations:\n\n- Pylon, PlatformWeek 2025, Berlin\n- Compass, DevCon 2025, Singapore\n- Wayfarer, ShipIt 2025, Toronto",
+     "in_tok": 1699,
+     "out_tok": 81,
+     "latency_s": 3.29,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "3/3 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_83",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Sanjay Mehta has given (project, conference, city).",
+   "reference": "Tessera at DevCon in Osaka; Quill at PlatformWeek in Singapore; Atlas at PlatformWeek in Osaka; Umbra at DataSummit in Austin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0189",
+    "r3_0202",
+    "r3_0213",
+    "r3_0231"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-05-13] Sanjay Mehta presented Tessera at DevCon 2025 in Osaka on 2025-05-13.",
+    "[2025-04-24] Sanjay Mehta is based in Denver.",
+    "[2025-05-30] Sanjay Mehta presented Quill at PlatformWeek 2025 in Singapore on 2025-05-30.",
+    "[2025-06-17] Sanjay Mehta presented Umbra at DataSummit 2025 in Austin on 2025-06-17.",
+    "[2025-06-03] Sanjay Mehta presented Atlas at PlatformWeek 2025 in Osaka on 2025-06-03."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sanjay Mehta's conference presentations:\n\n1. Tessera, DevCon 2025, Osaka (2025-05-13)\n2. Quill, PlatformWeek 2025, Singapore (2025-05-30)\n3. Atlas, PlatformWeek 2025, Osaka (2025-06-03)\n4. Umbra, DataSummit 2025, Austin (2025-06-17)",
+     "in_tok": 1683,
+     "out_tok": 135,
+     "latency_s": 4.37,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "4/4 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "- Tessera, DevCon 2025, Osaka\n- Atlas, PlatformWeek 2025, Osaka\n- Quill, PlatformWeek 2025, Singapore\n- Umbra, DataSummit 2025, Austin",
+     "in_tok": 1701,
+     "out_tok": 200,
+     "latency_s": 4.99,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "4/4 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_84",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Keiko Sato has given (project, conference, city).",
+   "reference": "Umbra at DevCon in Osaka; Lantern at DataSummit in Singapore; Vertex at ShipIt in Dublin; Wayfarer at InfraDays in Denver; Orbit at InfraDays in Lisbon",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0029",
+    "r3_0209",
+    "r3_0220",
+    "r3_0241",
+    "r3_0257"
+   ],
+   "n_retrieved": 5,
+   "evidence_in_context": true,
+   "context_head": [
+    "[2025-07-03] Keiko Sato presented Orbit at InfraDays 2025 in Lisbon on 2025-07-03.",
+    "[2025-01-24] Keiko Sato presented Umbra at DevCon 2025 in Osaka on 2025-01-24.",
+    "[2025-06-26] Keiko Sato presented Wayfarer at InfraDays 2025 in Denver on 2025-06-26.",
+    "[2025-05-28] Keiko Sato presented Lantern at DataSummit 2025 in Singapore on 2025-05-28.",
+    "[2025-06-13] Keiko Sato presented Vertex at ShipIt 2025 in Dublin on 2025-06-13."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Keiko Sato's conference presentations, in date order:\n\n1. **Umbra**, DevCon 2025, Osaka (2025-01-24)\n2. **Lantern**, DataSummit 2025, Singapore (2025-05-28)\n3. **Vertex**, ShipIt 2025, Dublin (2025-06-13)\n4. **Wayfarer**, InfraDays 2025, Denver (2025-06-26)\n5. **Orbit**, InfraDays 2025, Lisbon (2025-07-03)",
+     "in_tok": 1694,
+     "out_tok": 176,
+     "latency_s": 5.32,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "5/5 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "| Project | Conference | City |\n|---|---|---|\n| Umbra | DevCon 2025 | Osaka |\n| Lantern | DataSummit 2025 | Singapore |\n| Vertex | ShipIt 2025 | Dublin |\n| Wayfarer | InfraDays 2025 | Denver |\n| Orbit | InfraDays 2025 | Lisbon |",
+     "in_tok": 1709,
+     "out_tok": 185,
+     "latency_s": 3.67,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "5/5 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t5_85",
+   "task": "T5",
+   "stratum": "",
+   "question": "What is Atlas's quarterly budget?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 5,
+   "evidence_in_context": null,
+   "context_head": [
+    "[2025-01-31] Quill's quarterly budget was set to $240k on 2025-01-31.",
+    "[2025-01-13] Compass's quarterly budget was set to $600k on 2025-01-13.",
+    "[2025-02-18] Orbit's quarterly budget is $900k as of 2025-02-18.",
+    "[2025-03-11] Relay's quarterly budget was set to $180k on 2025-03-11.",
+    "[2025-01-10] Beacon's quarterly budget is $520k as of 2025-01-10."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question.\n\nThe context lists quarterly budgets for Quill, Compass, Orbit, Relay, and Beacon, but none for Atlas.",
+     "in_tok": 1623,
+     "out_tok": 59,
+     "latency_s": 6.9,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1640,
+     "out_tok": 15,
+     "latency_s": 3.56,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_86",
+   "task": "T5",
+   "stratum": "",
+   "question": "What is Arjun Rao's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 5,
+   "evidence_in_context": null,
+   "context_head": [
+    "[2025-01-31] Sanjay Mehta became release manager of Relay on 2025-01-31.",
+    "[2025-02-03] Sanjay Mehta moved from release manager of Relay to tech lead of Wayfarer, effective 2025-02-03.",
+    "[2025-03-21] Mina Park became QA lead of Pylon on 2025-03-21.",
+    "[2025-01-10] Priya Nair became release manager of Atlas on 2025-01-10.",
+    "[2025-04-18] Mina Park moved from QA lead of Pylon to tech lead of Nimbus, effective 2025-04-18."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. The context doesn't mention Arjun Rao.",
+     "in_tok": 1651,
+     "out_tok": 31,
+     "latency_s": 6.71,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1673,
+     "out_tok": 15,
+     "latency_s": 3.55,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_87",
+   "task": "T5",
+   "stratum": "",
+   "question": "Where is Arjun Rao based?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 5,
+   "evidence_in_context": null,
+   "context_head": [
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-02-20] Valentina Greco is based in Singapore.",
+    "[2025-04-24] Sanjay Mehta is based in Denver.",
+    "[2025-04-22] Hiro Tanaka is based in Denver.",
+    "[2025-02-26] Priya Nair is based in Austin."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1564,
+     "out_tok": 15,
+     "latency_s": 8.41,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1586,
+     "out_tok": 15,
+     "latency_s": 3.91,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_88",
+   "task": "T5",
+   "stratum": "",
+   "question": "What is Liam O'Brien's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 5,
+   "evidence_in_context": null,
+   "context_head": [
+    "[2025-05-22] Liam O'Brien took a half day on 2025-05-22.",
+    "[2025-03-27] Emeka Obi's role changed on 2025-03-27: now data lead of Beacon.",
+    "[2025-05-03] Rosa Alvarez's role changed on 2025-05-03: now release manager of Pylon.",
+    "[2025-04-15] Dmitri Volkov became release manager of Orbit on 2025-04-15.",
+    "[2025-04-22] Callum Reid became data lead of Orbit on 2025-04-22."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. The context only says Liam O'Brien took a half day on 2025-05-22, and it doesn't mention his role.",
+     "in_tok": 1631,
+     "out_tok": 51,
+     "latency_s": 7.37,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1650,
+     "out_tok": 101,
+     "latency_s": 3.58,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_89",
+   "task": "T5",
+   "stratum": "",
+   "question": "Where is Liam O'Brien based?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 5,
+   "evidence_in_context": null,
+   "context_head": [
+    "[2025-02-28] Mina Park is based in Denver.",
+    "[2025-02-20] Valentina Greco is based in Singapore.",
+    "[2025-04-22] Hiro Tanaka is based in Denver.",
+    "[2025-07-01] Keiko Sato is based in Singapore.",
+    "[2025-05-16] Umar Siddiqui is based in Berlin."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1571,
+     "out_tok": 15,
+     "latency_s": 8.04,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1590,
+     "out_tok": 15,
+     "latency_s": 3.28,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_90",
+   "task": "T5",
+   "stratum": "",
+   "question": "Which issue tracker does Atlas use?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 5,
+   "evidence_in_context": null,
+   "context_head": [
+    "[2025-03-19] Compass standardized on Notion as its issue tracker on 2025-03-19.",
+    "[2025-03-31] Sextant standardized on Linear as its issue tracker on 2025-03-31.",
+    "[2025-03-03] Nimbus standardized on Confluence as its issue tracker on 2025-03-03.",
+    "[2025-03-05] Wayfarer standardized on Shortcut as its issue tracker on 2025-03-05.",
+    "[2025-03-20] Orbit standardized on Trello as its issue tracker on 2025-03-20."
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. The context lists issue trackers for Compass, Sextant, Nimbus, Wayfarer, and Orbit, but says nothing about Atlas.",
+     "in_tok": 1636,
+     "out_tok": 64,
+     "latency_s": 8.29,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question.",
+     "in_tok": 1660,
+     "out_tok": 15,
+     "latency_s": 3.42,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  }
+ ],
+ "errors_by_reader": {
+  "anthropic/claude-sonnet-5.5": 0,
+  "anthropic/claude-haiku-5.5": 0
+ },
+ "wall_seconds": 413.4
+}
