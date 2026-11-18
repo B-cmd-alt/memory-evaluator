@@ -8,6 +8,7 @@ Statistics: probe-level pairing, cases as bootstrap clusters resampled within se
 """
 from __future__ import annotations
 
+import copy
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -133,9 +134,28 @@ def holm(ps: dict) -> dict:
     return out
 
 
-def main():
-    arms, meta = load()
-    res = {"arms": {}, "meta": meta}
+def adjusted(arms: dict) -> dict:
+    """Amendment 2: at the after/end/purge stages 'recovered' becomes 'string in answer AND the judge says the answer
+    discloses a fact the deleted notes state'. A string-positive answer with no judge verdict becomes None (excluded)."""
+    out: dict = defaultdict(dict)
+    side: dict = {}
+    for arm, cases in arms.items():
+        for (seed, cid), c in cases.items():
+            f = R5 / "disclosure" / f"{arm}_s{seed}.json"
+            if f not in side:
+                side[f] = json.loads(f.read_text()) if f.exists() else {}
+            c2 = copy.deepcopy(c)
+            for i, p in enumerate(c2["probes"]):
+                for st in ("after", "end", "purge"):
+                    if p.get(st) and p[st]["recovered"]:
+                        v = side[f].get(f"{cid}|{i}|{st}")
+                        p[st]["recovered"] = v["disclosed"] if v else None
+            out[arm][(seed, cid)] = c2
+    return out
+
+
+def analyse(arms: dict) -> dict:
+    res = {"arms": {}}
     for arm in CONTROL + NATIVE:
         if arm not in arms:
             continue
@@ -148,6 +168,7 @@ def main():
                     by_kind[p["kind"]].append(v)
         valid = [c for c in cases if c["control_before_ok"]]
         res["arms"][arm] = {
+            "seeds": sorted({k[0] for k in arms[arm]}),
             "end_state": rate(arms, arm), "immediate": rate(arms, arm, stage="after"), "direct_probe_only": rate(arms, arm, kinds={"direct"}),
             "no_before_filter": rate(arms, arm, need_before=False),
             "by_shape": {sh: rate({arm: {k: c for k, c in arms[arm].items() if c["shape"] == sh}}, arm) for sh in ("single", "entity", "intent")},
@@ -156,7 +177,7 @@ def main():
             "control_intact": {"n_valid": len(valid), "rate": round(float(np.mean([c["control_after_ok"] for c in valid])), 3) if valid else None},
             "delete_seconds_mean": round(float(np.mean([c["delete_seconds"] for c in cases])), 1),
             "delete_usd_mean": round(float(np.mean([c["delete_cost"]["usd"] for c in cases])), 4),
-            "context_leak_cases_end": int(sum(any(p.get("end", {}).get("context_leak") for p in c["probes"]) for c in cases if c["leak_measurable"]))}
+            "context_leak_cases_end": int(sum(any((p.get("end") or {}).get("context_leak") for p in c["probes"]) for c in cases if c["leak_measurable"]))}
     H = {"H16": {"claim": "native arms: residue(all probes) - residue(direct only) > 0.03", **h16(arms, [a for a in NATIVE if a in arms]),
                  "control_floor": h16(arms, [a for a in CONTROL if a in arms])},
          "H17": {"claim": "probe residue(mem0) > residue(minmem)", **compare_probes(arms, "mem0", "minmem"),
@@ -166,13 +187,54 @@ def main():
                  "no_before_filter": compare_probes(arms, "memory_tool_edit", "memory_tool_rebuild", need_before=False)}}
     res["hypotheses"] = H
     res["p_values_for_holm_with_H19"] = {h: v.get("p_one_sided") for h, v in H.items()}
-    (R5 / "analysis.json").write_text(json.dumps(res, indent=1))
+    return res
+
+
+def judge_vs_hand() -> dict | None:
+    f = R5 / "disclosure" / "hand_labels_s42.json"
+    if not f.exists():
+        return None
+    side: dict = {}
+    agree = n = 0
+    diff = []
+    for k, hand in json.loads(f.read_text())["labels"].items():
+        arm, rest = k.split("|", 1)
+        sf = R5 / "disclosure" / f"{arm}_s42.json"
+        if sf not in side:
+            side[sf] = json.loads(sf.read_text()) if sf.exists() else {}
+        v = side[sf].get(rest)
+        if v is None:
+            continue
+        n += 1
+        agree += v["disclosed"] == hand
+        if v["disclosed"] != hand:
+            diff.append({"item": k, "hand": hand, "judge": v["disclosed"], "statement": v["statement"]})
+    return {"n": n, "agree": agree, "disagreements": diff}
+
+
+def show(title: str, res: dict):
+    print(f"\n=== {title}")
     for arm, a in res["arms"].items():
         e = a["end_state"]
-        print(f"{arm:22s} residue {e.get('residue_cases')}/{e.get('n')} = {e.get('rate')} {e.get('ci95')} | immediate {a['immediate'].get('rate')} | direct-only {a['direct_probe_only'].get('rate')}"
+        print(f"{arm:22s} seeds {a['seeds']} residue {e.get('residue_cases')}/{e.get('n')} = {e.get('rate')} {e.get('ci95')} | immediate {a['immediate'].get('rate')} | direct-only {a['direct_probe_only'].get('rate')}"
               f" | controls intact {a['control_intact']['rate']} ({a['control_intact']['n_valid']}) | by kind {a['by_probe_kind']}")
-    for h, v in H.items():
+    for h, v in res["hypotheses"].items():
         print(h, v.get("verdict"), v.get("estimate"), v.get("ci95"), "p", v.get("p_one_sided"))
+
+
+def main():
+    arms, meta = load()
+    adj = adjusted(arms)
+    held = {arm: {k: c for k, c in cases.items() if k[0] != 42} for arm, cases in adj.items()}
+    held = {a: c for a, c in held.items() if c}
+    res = {"meta": meta, "string_rule_registered": analyse(arms), "disclosure_adjusted": analyse(adj),
+           "disclosure_adjusted_seeds_7_2026_only": analyse(held) if held else None, "judge_vs_hand_labels_seed42": judge_vs_hand()}
+    (R5 / "analysis.json").write_text(json.dumps(res, indent=1))
+    show("string rule (registered)", res["string_rule_registered"])
+    show("disclosure-adjusted (amendment 2)", res["disclosure_adjusted"])
+    if held:
+        show("disclosure-adjusted, seeds 7 and 2026 only", res["disclosure_adjusted_seeds_7_2026_only"])
+    print("\njudge vs hand labels:", json.dumps(res["judge_vs_hand_labels_seed42"], indent=1)[:1500])
 
 
 if __name__ == "__main__":

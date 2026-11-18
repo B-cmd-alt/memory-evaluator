@@ -200,8 +200,10 @@ matched comparators are the k = 20 arms (`hybrid_k20`, `minmem`), which is what 
 
 ## Amendment 2 (2026-11-18): the run stopped at the 10K rung for lack of provider credit
 
-The OpenRouter account held $70 in total and was exhausted after 34 cells (the 10K rung: every zero-write arm except
-`full_context_hdr` for three seeds, plus Mastra OM, Generative Agents and the memory tool for seed 42). No completed cell
+The OpenRouter account held $70 in total and was exhausted after 34 cells, all on the 10K rung: the ten retrieval arms (BM25, vector, hybrid and MinMem, with their
+matched variants) for three seeds, `full_context` for seed 2026 only, and Mastra OM, Generative Agents and the memory tool
+for seed 42. `full_context` for seeds 42 and 7 and `full_context_hdr` for every seed did not run. (An earlier wording of this
+amendment said every zero-write arm except `full_context_hdr` had three seeds; that overstated `full_context`.) No completed cell
 contains a failed answer. Runners were stopped as soon as calls were refused; cells in progress were discarded and will be
 re-run. Nothing in the design changes. The 10K-rung cells were looked at when the run stopped (see the commit that adds
 this amendment); they are the rung on which no hypothesis has a primary test.

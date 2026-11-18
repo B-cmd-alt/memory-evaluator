@@ -1,0 +1,1488 @@
+{
+ "meta": {
+  "full_context": [
+   {
+    "seed": 42,
+    "status": "OK",
+    "errors": {
+     "probe_calls_failed": 0,
+     "deletes_failed": 0
+    },
+    "delete_method": "drop + rebuild (nothing derived)"
+   }
+  ],
+  "generative_agents": [
+   {
+    "seed": 42,
+    "status": "OK",
+    "errors": {
+     "probe_calls_failed": 0,
+     "deletes_failed": 0
+    },
+    "delete_method": "drop raw memories in place; reflections stay"
+   }
+  ],
+  "mastra_om": [
+   {
+    "seed": 42,
+    "status": "OK",
+    "errors": {
+     "probe_calls_failed": 0,
+     "deletes_failed": 0
+    },
+    "delete_method": "re-observe the remaining notes (a purge per case)"
+   }
+  ],
+  "mem0": [
+   {
+    "seed": 42,
+    "status": "OK",
+    "errors": {
+     "probe_calls_failed": 0,
+     "deletes_failed": 0
+    },
+    "delete_method": "delete every memory id add() returned for the note"
+   }
+  ],
+  "memory_tool_edit": [
+   {
+    "seed": 42,
+    "status": "OK",
+    "errors": {
+     "probe_calls_failed": 0,
+     "deletes_failed": 0
+    },
+    "delete_method": "the model edits its own files"
+   }
+  ],
+  "minmem": [
+   {
+    "seed": 42,
+    "status": "OK",
+    "errors": {
+     "probe_calls_failed": 0,
+     "deletes_failed": 0
+    },
+    "delete_method": "drop + rebuild indexes (nothing derived)"
+   }
+  ]
+ },
+ "string_rule_registered": {
+  "arms": {
+   "full_context": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.0
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.0
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "reverse": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "role": {
+      "n": 9,
+      "rate": 0.0
+     }
+    },
+    "probes_recovered_before": 1.0,
+    "control_intact": {
+     "n_valid": 33,
+     "rate": 0.97
+    },
+    "delete_seconds_mean": 15.1,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 0
+   },
+   "minmem": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.0
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.0
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "reverse": {
+      "n": 21,
+      "rate": 0.0
+     },
+     "role": {
+      "n": 9,
+      "rate": 0.0
+     }
+    },
+    "probes_recovered_before": 0.982,
+    "control_intact": {
+     "n_valid": 34,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 18.0,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 0
+   },
+   "mastra_om": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 1,
+     "rate": 0.029,
+     "ci95": [
+      0.0,
+      0.088
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.0
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.0
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "reverse": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "role": {
+      "n": 8,
+      "rate": 0.0
+     }
+    },
+    "probes_recovered_before": 0.991,
+    "control_intact": {
+     "n_valid": 32,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 79.9,
+    "delete_usd_mean": 0.0142,
+    "context_leak_cases_end": 0
+   },
+   "mem0": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 12,
+     "rate": 0.353,
+     "ci95": [
+      0.206,
+      0.529
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 12,
+     "rate": 0.353,
+     "ci95": [
+      0.206,
+      0.5
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 7,
+     "rate": 0.206,
+     "ci95": [
+      0.088,
+      0.353
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 12,
+     "rate": 0.353,
+     "ci95": [
+      0.206,
+      0.529
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 2,
+      "rate": 0.167,
+      "ci95": [
+       0.0,
+       0.417
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 4,
+      "rate": 0.364,
+      "ci95": [
+       0.091,
+       0.636
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 6,
+      "rate": 0.545,
+      "ci95": [
+       0.273,
+       0.818
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.206
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.091
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.217
+     },
+     "reverse": {
+      "n": 22,
+      "rate": 0.364
+     },
+     "role": {
+      "n": 9,
+      "rate": 0.111
+     }
+    },
+    "probes_recovered_before": 0.991,
+    "control_intact": {
+     "n_valid": 34,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 16.3,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 5
+   },
+   "generative_agents": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 14,
+     "residue_cases": 7,
+     "rate": 0.5,
+     "ci95": [
+      0.214,
+      0.786
+     ]
+    },
+    "immediate": {
+     "n": 14,
+     "residue_cases": 8,
+     "rate": 0.571,
+     "ci95": [
+      0.286,
+      0.786
+     ]
+    },
+    "direct_probe_only": {
+     "n": 9,
+     "residue_cases": 5,
+     "rate": 0.556,
+     "ci95": [
+      0.222,
+      0.889
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 8,
+     "rate": 0.235,
+     "ci95": [
+      0.088,
+      0.382
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 1,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 8,
+      "residue_cases": 5,
+      "rate": 0.625,
+      "ci95": [
+       0.25,
+       0.875
+      ]
+     },
+     "intent": {
+      "n": 5,
+      "residue_cases": 2,
+      "rate": 0.4,
+      "ci95": [
+       0.0,
+       0.8
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 9,
+      "rate": 0.556
+     },
+     "event": {
+      "n": 3,
+      "rate": 0.667
+     },
+     "paraphrase": {
+      "n": 4,
+      "rate": 0.5
+     },
+     "reverse": {
+      "n": 5,
+      "rate": 0.4
+     },
+     "role": {
+      "n": 3,
+      "rate": 0.333
+     }
+    },
+    "probes_recovered_before": 0.216,
+    "control_intact": {
+     "n_valid": 7,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 6.5,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 5
+   },
+   "memory_tool_edit": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 25,
+     "residue_cases": 5,
+     "rate": 0.2,
+     "ci95": [
+      0.04,
+      0.36
+     ]
+    },
+    "immediate": {
+     "n": 25,
+     "residue_cases": 5,
+     "rate": 0.2,
+     "ci95": [
+      0.04,
+      0.36
+     ]
+    },
+    "direct_probe_only": {
+     "n": 20,
+     "residue_cases": 4,
+     "rate": 0.2,
+     "ci95": [
+      0.05,
+      0.4
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 5,
+     "rate": 0.147,
+     "ci95": [
+      0.029,
+      0.265
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 8,
+      "residue_cases": 1,
+      "rate": 0.125,
+      "ci95": [
+       0.0,
+       0.375
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 1,
+      "rate": 0.091,
+      "ci95": [
+       0.0,
+       0.273
+      ]
+     },
+     "intent": {
+      "n": 6,
+      "residue_cases": 3,
+      "rate": 0.5,
+      "ci95": [
+       0.167,
+       0.833
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 20,
+      "rate": 0.2
+     },
+     "event": {
+      "n": 15,
+      "rate": 0.067
+     },
+     "paraphrase": {
+      "n": 13,
+      "rate": 0.308
+     },
+     "reverse": {
+      "n": 13,
+      "rate": 0.077
+     },
+     "role": {
+      "n": 6,
+      "rate": 0.167
+     }
+    },
+    "probes_recovered_before": 0.604,
+    "control_intact": {
+     "n_valid": 22,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 52.3,
+    "delete_usd_mean": 0.0042,
+    "context_leak_cases_end": 0
+   }
+  },
+  "hypotheses": {
+   "H16": {
+    "claim": "native arms: residue(all probes) - residue(direct only) > 0.03",
+    "n_case_arm_pairs": 63,
+    "residue_all_probes": 0.333,
+    "residue_direct_only": 0.254,
+    "estimate": 0.079,
+    "ci95": [
+     0.016,
+     0.159
+    ],
+    "margin": 0.03,
+    "p_one_sided": 0.0365,
+    "verdict": "unresolved",
+    "control_floor": {
+     "n_case_arm_pairs": 102,
+     "residue_all_probes": 0.0,
+     "residue_direct_only": 0.0,
+     "estimate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "margin": 0.03,
+     "p_one_sided": 1.0,
+     "verdict": "falsified"
+    }
+   },
+   "H17": {
+    "claim": "probe residue(mem0) > residue(minmem)",
+    "n_probes": 109,
+    "n_cases": 34,
+    "rate_mem0": 0.211,
+    "rate_minmem": 0.0,
+    "estimate": 0.211,
+    "ci95": [
+     0.104,
+     0.33
+    ],
+    "p_one_sided": 0.0,
+    "verdict": "holds",
+    "secondary": {
+     "generative_agents": {
+      "n_probes": 23,
+      "n_cases": 14,
+      "rate_generative_agents": 0.522,
+      "rate_minmem": 0.0,
+      "estimate": 0.522,
+      "ci95": [
+       0.227,
+       0.783
+      ],
+      "p_one_sided": 0.0001,
+      "verdict": "holds"
+     },
+     "zep_graphiti": {
+      "n": 0,
+      "verdict": "not run"
+     },
+     "memory_tool_edit": {
+      "n_probes": 65,
+      "n_cases": 25,
+      "rate_memory_tool_edit": 0.169,
+      "rate_minmem": 0.0,
+      "estimate": 0.169,
+      "ci95": [
+       0.034,
+       0.318
+      ],
+      "p_one_sided": 0.0031,
+      "verdict": "holds"
+     }
+    },
+    "no_before_filter": {
+     "n_probes": 111,
+     "n_cases": 34,
+     "rate_mem0": 0.207,
+     "rate_minmem": 0.0,
+     "estimate": 0.207,
+     "ci95": [
+      0.102,
+      0.324
+     ],
+     "p_one_sided": 0.0,
+     "verdict": "holds"
+    }
+   },
+   "H18": {
+    "claim": "probe residue(memory_tool_edit) > residue(memory_tool_rebuild)",
+    "n": 0,
+    "verdict": "not run",
+    "no_before_filter": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   }
+  },
+  "p_values_for_holm_with_H19": {
+   "H16": 0.0365,
+   "H17": 0.0,
+   "H18": null
+  }
+ },
+ "disclosure_adjusted": {
+  "arms": {
+   "full_context": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.0
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.0
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "reverse": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "role": {
+      "n": 9,
+      "rate": 0.0
+     }
+    },
+    "probes_recovered_before": 1.0,
+    "control_intact": {
+     "n_valid": 33,
+     "rate": 0.97
+    },
+    "delete_seconds_mean": 15.1,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 0
+   },
+   "minmem": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.0
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.0
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "reverse": {
+      "n": 21,
+      "rate": 0.0
+     },
+     "role": {
+      "n": 9,
+      "rate": 0.0
+     }
+    },
+    "probes_recovered_before": 0.982,
+    "control_intact": {
+     "n_valid": 34,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 18.0,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 0
+   },
+   "mastra_om": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 0,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.0
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.0
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "reverse": {
+      "n": 23,
+      "rate": 0.0
+     },
+     "role": {
+      "n": 8,
+      "rate": 0.0
+     }
+    },
+    "probes_recovered_before": 0.991,
+    "control_intact": {
+     "n_valid": 32,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 79.9,
+    "delete_usd_mean": 0.0142,
+    "context_leak_cases_end": 0
+   },
+   "mem0": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 34,
+     "residue_cases": 9,
+     "rate": 0.265,
+     "ci95": [
+      0.118,
+      0.412
+     ]
+    },
+    "immediate": {
+     "n": 34,
+     "residue_cases": 11,
+     "rate": 0.324,
+     "ci95": [
+      0.176,
+      0.471
+     ]
+    },
+    "direct_probe_only": {
+     "n": 34,
+     "residue_cases": 7,
+     "rate": 0.206,
+     "ci95": [
+      0.088,
+      0.353
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 9,
+     "rate": 0.265,
+     "ci95": [
+      0.118,
+      0.412
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 12,
+      "residue_cases": 2,
+      "rate": 0.167,
+      "ci95": [
+       0.0,
+       0.417
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 4,
+      "rate": 0.364,
+      "ci95": [
+       0.091,
+       0.636
+      ]
+     },
+     "intent": {
+      "n": 11,
+      "residue_cases": 3,
+      "rate": 0.273,
+      "ci95": [
+       0.0,
+       0.545
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 34,
+      "rate": 0.206
+     },
+     "event": {
+      "n": 22,
+      "rate": 0.091
+     },
+     "paraphrase": {
+      "n": 23,
+      "rate": 0.217
+     },
+     "reverse": {
+      "n": 22,
+      "rate": 0.227
+     },
+     "role": {
+      "n": 9,
+      "rate": 0.111
+     }
+    },
+    "probes_recovered_before": 0.991,
+    "control_intact": {
+     "n_valid": 34,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 16.3,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 5
+   },
+   "generative_agents": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 14,
+     "residue_cases": 6,
+     "rate": 0.429,
+     "ci95": [
+      0.214,
+      0.714
+     ]
+    },
+    "immediate": {
+     "n": 14,
+     "residue_cases": 6,
+     "rate": 0.429,
+     "ci95": [
+      0.214,
+      0.714
+     ]
+    },
+    "direct_probe_only": {
+     "n": 9,
+     "residue_cases": 4,
+     "rate": 0.444,
+     "ci95": [
+      0.111,
+      0.778
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 7,
+     "rate": 0.206,
+     "ci95": [
+      0.088,
+      0.353
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 1,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "entity": {
+      "n": 8,
+      "residue_cases": 5,
+      "rate": 0.625,
+      "ci95": [
+       0.25,
+       0.875
+      ]
+     },
+     "intent": {
+      "n": 5,
+      "residue_cases": 1,
+      "rate": 0.2,
+      "ci95": [
+       0.0,
+       0.6
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 9,
+      "rate": 0.444
+     },
+     "event": {
+      "n": 3,
+      "rate": 0.667
+     },
+     "paraphrase": {
+      "n": 4,
+      "rate": 0.25
+     },
+     "reverse": {
+      "n": 5,
+      "rate": 0.2
+     },
+     "role": {
+      "n": 3,
+      "rate": 0.333
+     }
+    },
+    "probes_recovered_before": 0.216,
+    "control_intact": {
+     "n_valid": 7,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 6.5,
+    "delete_usd_mean": 0.0,
+    "context_leak_cases_end": 5
+   },
+   "memory_tool_edit": {
+    "seeds": [
+     42
+    ],
+    "end_state": {
+     "n": 25,
+     "residue_cases": 2,
+     "rate": 0.08,
+     "ci95": [
+      0.0,
+      0.2
+     ]
+    },
+    "immediate": {
+     "n": 25,
+     "residue_cases": 2,
+     "rate": 0.08,
+     "ci95": [
+      0.0,
+      0.2
+     ]
+    },
+    "direct_probe_only": {
+     "n": 20,
+     "residue_cases": 1,
+     "rate": 0.05,
+     "ci95": [
+      0.0,
+      0.15
+     ]
+    },
+    "no_before_filter": {
+     "n": 34,
+     "residue_cases": 2,
+     "rate": 0.059,
+     "ci95": [
+      0.0,
+      0.147
+     ]
+    },
+    "by_shape": {
+     "single": {
+      "n": 8,
+      "residue_cases": 1,
+      "rate": 0.125,
+      "ci95": [
+       0.0,
+       0.375
+      ]
+     },
+     "entity": {
+      "n": 11,
+      "residue_cases": 1,
+      "rate": 0.091,
+      "ci95": [
+       0.0,
+       0.273
+      ]
+     },
+     "intent": {
+      "n": 6,
+      "residue_cases": 0,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "by_probe_kind": {
+     "direct": {
+      "n": 20,
+      "rate": 0.05
+     },
+     "event": {
+      "n": 15,
+      "rate": 0.067
+     },
+     "paraphrase": {
+      "n": 13,
+      "rate": 0.077
+     },
+     "reverse": {
+      "n": 13,
+      "rate": 0.077
+     },
+     "role": {
+      "n": 6,
+      "rate": 0.167
+     }
+    },
+    "probes_recovered_before": 0.604,
+    "control_intact": {
+     "n_valid": 22,
+     "rate": 1.0
+    },
+    "delete_seconds_mean": 52.3,
+    "delete_usd_mean": 0.0042,
+    "context_leak_cases_end": 0
+   }
+  },
+  "hypotheses": {
+   "H16": {
+    "claim": "native arms: residue(all probes) - residue(direct only) > 0.03",
+    "n_case_arm_pairs": 63,
+    "residue_all_probes": 0.222,
+    "residue_direct_only": 0.19,
+    "estimate": 0.032,
+    "ci95": [
+     0.0,
+     0.079
+    ],
+    "margin": 0.03,
+    "p_one_sided": 0.4006,
+    "verdict": "unresolved",
+    "control_floor": {
+     "n_case_arm_pairs": 102,
+     "residue_all_probes": 0.0,
+     "residue_direct_only": 0.0,
+     "estimate": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "margin": 0.03,
+     "p_one_sided": 1.0,
+     "verdict": "falsified"
+    }
+   },
+   "H17": {
+    "claim": "probe residue(mem0) > residue(minmem)",
+    "n_probes": 109,
+    "n_cases": 34,
+    "rate_mem0": 0.183,
+    "rate_minmem": 0.0,
+    "estimate": 0.183,
+    "ci95": [
+     0.078,
+     0.303
+    ],
+    "p_one_sided": 0.0,
+    "verdict": "holds",
+    "secondary": {
+     "generative_agents": {
+      "n_probes": 23,
+      "n_cases": 14,
+      "rate_generative_agents": 0.391,
+      "rate_minmem": 0.0,
+      "estimate": 0.391,
+      "ci95": [
+       0.136,
+       0.667
+      ],
+      "p_one_sided": 0.0002,
+      "verdict": "holds"
+     },
+     "zep_graphiti": {
+      "n": 0,
+      "verdict": "not run"
+     },
+     "memory_tool_edit": {
+      "n_probes": 65,
+      "n_cases": 25,
+      "rate_memory_tool_edit": 0.077,
+      "rate_minmem": 0.0,
+      "estimate": 0.077,
+      "ci95": [
+       0.0,
+       0.2
+      ],
+      "p_one_sided": 0.1273,
+      "verdict": "unresolved"
+     }
+    },
+    "no_before_filter": {
+     "n_probes": 111,
+     "n_cases": 34,
+     "rate_mem0": 0.18,
+     "rate_minmem": 0.0,
+     "estimate": 0.18,
+     "ci95": [
+      0.075,
+      0.299
+     ],
+     "p_one_sided": 0.0,
+     "verdict": "holds"
+    }
+   },
+   "H18": {
+    "claim": "probe residue(memory_tool_edit) > residue(memory_tool_rebuild)",
+    "n": 0,
+    "verdict": "not run",
+    "no_before_filter": {
+     "n": 0,
+     "verdict": "not run"
+    }
+   }
+  },
+  "p_values_for_holm_with_H19": {
+   "H16": 0.4006,
+   "H17": 0.0,
+   "H18": null
+  }
+ },
+ "disclosure_adjusted_seeds_7_2026_only": null,
+ "judge_vs_hand_labels_seed42": {
+  "n": 46,
+  "agree": 46,
+  "disagreements": []
+ }
+}
