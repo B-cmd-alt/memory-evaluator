@@ -115,7 +115,16 @@ def _cache_key(system: str, prompt: str, model: str, json_schema: dict | None) -
     return hashlib.sha256(json.dumps([model, system, prompt, json_schema], sort_keys=True).encode()).hexdigest()
 
 
+# `claude -p` adds the real calendar date to every prompt ("Today's date is ..."), which no flag removes. A reader that sees
+# it treats "as of today" questions about a corpus that ends in 2025 as unanswerable (Haiku: 48% of round-4 update
+# answers cited the real date; see docs/ERRATA.md). This line is appended to every system prompt on this backend, and is
+# part of the cache key. SHIM_CLI_DATE_NOTE=0 reproduces the earlier behaviour.
+_CLI_DATE_NOTE = ("\n\n(Note from the test harness: the software that delivers this prompt may attach the real calendar date. "
+                  "That date is not part of the task. Ignore it, and do not treat it as \"today\".)") if os.environ.get("SHIM_CLI_DATE_NOTE", "1") != "0" else ""
+
+
 async def _claude_cached(system: str, prompt: str, model: str, json_schema: dict | None) -> tuple[dict, bool]:
+    system = (system or "") + _CLI_DATE_NOTE
     if not _CACHE_PATH:
         return await _claude(system, prompt, model, json_schema), False
     k = _cache_key(system, prompt, model, json_schema)
