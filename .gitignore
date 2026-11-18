@@ -13,3 +13,8 @@ results/round4/logs/shim_cache.sqlite*
 results/round4/logs/shim_*.jsonl
 data/
 results/round5/logs/shim_*.jsonl
+results/round5/logs/shim_cache_cli.sqlite*
+# runner and shim console logs are rewritten while runs are live; the per-arm JSON records are the evidence
+results/round5/logs/*.log
+results/round4/logs/run_lme.log
+results/round4/logs/shim_lme.log
