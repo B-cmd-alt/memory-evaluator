@@ -1,3 +1,7 @@
 === zep_graphiti [R3_seed42_sonnet_rep1]
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 41327.85it/s]
+    arm default: current=29/65 stale=8
+    arm filter: current=30/65 stale=18
+    arm xenc: current=30/65 stale=4
+    OK {"T1": 0.5, "T2_nugget_recall": 0.567, "T3": 0.5, "T5_abstention": 1.0, "all_non_update": 0.608} A2={"current": 0.338, "stale": 0.246, "FAMA": 0.092} A4={"fooled": 0.5, "retrieved_poison": 0.5} judge={"decoy_acceptance": 0, "n_decoys": 192} err=None

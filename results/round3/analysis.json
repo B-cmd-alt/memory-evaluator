@@ -1,8 +1,14 @@
 {
  "systems": [
   "bm25",
+  "full_context",
+  "generative_agents",
+  "hybrid_rerank",
+  "mastra_om",
   "mem0",
-  "vector_rag"
+  "ms_graphrag",
+  "vector_rag",
+  "zep_graphiti"
  ],
  "inadmissible_items": [
   "q_t3_79",
@@ -15,6 +21,56 @@
   "q_t4_70"
  ],
  "tables": {
+  "full_context": {
+   "A1": 0.95,
+   "A2_current": 1.0,
+   "A2_stale": 0.0,
+   "A2_FAMA": 1.0,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 1.0,
+     "stale": 0.0,
+     "n": 31
+    },
+    "implicit": {
+     "current": 1.0,
+     "stale": 0.0,
+     "n": 27
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 1.0,
+   "A3_n_valid_controls": 31,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 1.0,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 0.0,
+   "A5_write_calls_per_memory": 0.0,
+   "A5_ingest_usd": 0,
+   "A5_read_prompt_tok_per_q": 11508,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
   "bm25": {
    "A1": 0.856,
    "A2_current": 0.776,
@@ -115,6 +171,156 @@
    "judge_decoy_acceptance": 0,
    "axes": "A1A2A3A4"
   },
+  "hybrid_rerank": {
+   "A1": 0.978,
+   "A2_current": 0.948,
+   "A2_stale": 0.0,
+   "A2_FAMA": 0.948,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 1.0,
+     "stale": 0.0,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.889,
+     "stale": 0.0,
+     "n": 27
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 1.0,
+   "A3_n_valid_controls": 32,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 1.0,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 1.0,
+   "A5_write_calls_per_memory": 0.0,
+   "A5_ingest_usd": 0,
+   "A5_read_prompt_tok_per_q": 1642,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
+  "mastra_om": {
+   "A1": 0.95,
+   "A2_current": 0.897,
+   "A2_stale": 0.0,
+   "A2_FAMA": 0.897,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.968,
+     "stale": 0.0,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.815,
+     "stale": 0.0,
+     "n": 27
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 0.9,
+   "A3_n_valid_controls": 30,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 0.833,
+    "24-98": 0.875
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 0.833
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 0.909
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.0,
+   "A4_label_survives": 0.0,
+   "A5_write_calls_per_memory": 0.12,
+   "A5_ingest_usd": 1.092,
+   "A5_read_prompt_tok_per_q": 10958,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
+  "generative_agents": {
+   "A1": 0.3,
+   "A2_current": 0.207,
+   "A2_stale": 0.034,
+   "A2_FAMA": 0.173,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.194,
+     "stale": 0.032,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.222,
+     "stale": 0.037,
+     "n": 27
+    }
+   },
+   "A3_forgot": 0.912,
+   "A3_control_intact": 1.0,
+   "A3_n_valid_controls": 3,
+   "A3_leak": 0.182,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 1.0,
+    "24-98": null
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 0.818,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 0.909,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 1.0,
+   "A4_label_survives": 1.0,
+   "A5_write_calls_per_memory": 0.12,
+   "A5_ingest_usd": 0.2782,
+   "A5_read_prompt_tok_per_q": 2136,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
   "mem0": {
    "A1": 0.967,
    "A2_current": 0.948,
@@ -164,11 +370,406 @@
    "A5_read_prompt_tok_per_q": 2234,
    "judge_decoy_acceptance": 0,
    "axes": "A1A2A3A4"
+  },
+  "zep_graphiti": {
+   "A1": 0.628,
+   "A2_current": 0.379,
+   "A2_stale": 0.259,
+   "A2_FAMA": 0.12,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.452,
+     "stale": 0.258,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.296,
+     "stale": 0.259,
+     "n": 27
+    }
+   },
+   "A3_forgot": 1.0,
+   "A3_control_intact": 1.0,
+   "A3_n_valid_controls": 21,
+   "A3_leak": 0.0,
+   "A3_n_leak_measurable": 11,
+   "A3_control_intact_by_position": {
+    "0-11": 1.0,
+    "12-23": 1.0,
+    "24-98": 1.0
+   },
+   "A3_n": 34,
+   "A3_by_shape": {
+    "single": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "entity": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    },
+    "intent": {
+     "forgot": 1.0,
+     "control_intact": 1.0
+    }
+   },
+   "A4_fooled": 0.5,
+   "A4_label_survives": 0.5,
+   "A5_write_calls_per_memory": 3.85,
+   "A5_ingest_usd": 18.9389,
+   "A5_read_prompt_tok_per_q": 1671,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2A3A4"
+  },
+  "ms_graphrag": {
+   "A1": 1.0,
+   "A2_current": 0.845,
+   "A2_stale": 0.0,
+   "A2_FAMA": 0.845,
+   "A2_by_stratum": {
+    "explicit": {
+     "current": 0.935,
+     "stale": 0.0,
+     "n": 31
+    },
+    "implicit": {
+     "current": 0.741,
+     "stale": 0.0,
+     "n": 27
+    }
+   },
+   "A3_forgot": null,
+   "A3_control_intact": null,
+   "A3_n_valid_controls": 0,
+   "A3_leak": null,
+   "A3_n_leak_measurable": 0,
+   "A3_control_intact_by_position": {},
+   "A3_n": 0,
+   "A3_by_shape": {},
+   "A4_fooled": null,
+   "A4_label_survives": null,
+   "A5_write_calls_per_memory": 2.79,
+   "A5_ingest_usd": 14.7279,
+   "A5_read_prompt_tok_per_q": 12239,
+   "judge_decoy_acceptance": 0,
+   "axes": "A1A2"
   }
  },
- "hypotheses_sonnet": {},
- "hypotheses_or__google_gemini-3.8-flash": {},
- "hypotheses_or__openai_gpt-6.1-terra": {},
+ "hypotheses_sonnet": {
+  "H5": {
+   "claim": "stale(vector_rag) > stale(hybrid_rerank)",
+   "n": 58,
+   "stale_vector_rag": 0.086,
+   "stale_hybrid_rerank": 0.0,
+   "diff": 0.086,
+   "ci95": [
+    0.017,
+    0.155
+   ],
+   "verdict": "holds (CI) but not after Holm",
+   "p_mcnemar": 0.0625,
+   "p_holm": 0.1875
+  },
+  "H6": {
+   "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
+   "n": 27,
+   "stale_vector_rag": 0.0,
+   "stale_hybrid_rerank": 0.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "verdict": "unresolved",
+   "p_mcnemar": 1.0,
+   "p_holm": 1.0
+  },
+  "H7": {
+   "claim": "FAMA(graphiti best arm) < FAMA(vector_rag)",
+   "n": 58,
+   "best_arm": "xenc",
+   "FAMA_by_arm": {
+    "r2": 0.121,
+    "default": 0.379,
+    "filter": 0.31,
+    "xenc": 0.448
+   },
+   "FAMA_vector_rag": 0.828,
+   "diff": -0.379,
+   "ci95": [
+    -0.586,
+    -0.172
+   ],
+   "verdict": "holds",
+   "p_mcnemar": 0.0,
+   "p_holm": 0.0
+  },
+  "H8": {
+   "claim": "leak(generative_agents) > leak(every rebuild system)",
+   "n": 11,
+   "leak_generative_agents": 0.182,
+   "vs": {
+    "full_context": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "bm25": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "vector_rag": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "hybrid_rerank": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "mastra_om": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    }
+   },
+   "verdict": "unresolved",
+   "p_mcnemar": 0.5,
+   "p_holm": 1.0
+  }
+ },
+ "hypotheses_or__google_gemini-3.8-flash": {
+  "H5": {
+   "claim": "stale(vector_rag) > stale(hybrid_rerank)",
+   "n": 58,
+   "stale_vector_rag": 0.086,
+   "stale_hybrid_rerank": 0.0,
+   "diff": 0.086,
+   "ci95": [
+    0.017,
+    0.155
+   ],
+   "verdict": "holds (CI) but not after Holm",
+   "p_mcnemar": 0.0625,
+   "p_holm": 0.1875
+  },
+  "H6": {
+   "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
+   "n": 27,
+   "stale_vector_rag": 0.0,
+   "stale_hybrid_rerank": 0.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "verdict": "unresolved",
+   "p_mcnemar": 1.0,
+   "p_holm": 1.0
+  },
+  "H7": {
+   "claim": "FAMA(graphiti best arm) < FAMA(vector_rag)",
+   "n": 58,
+   "best_arm": "xenc",
+   "FAMA_by_arm": {
+    "r2": 0.121,
+    "default": 0.379,
+    "filter": 0.328,
+    "xenc": 0.466
+   },
+   "FAMA_vector_rag": 0.828,
+   "diff": -0.362,
+   "ci95": [
+    -0.552,
+    -0.155
+   ],
+   "verdict": "holds",
+   "p_mcnemar": 0.0,
+   "p_holm": 0.0
+  },
+  "H8": {
+   "claim": "leak(generative_agents) > leak(every rebuild system)",
+   "n": 11,
+   "leak_generative_agents": 0.182,
+   "vs": {
+    "full_context": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "bm25": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "vector_rag": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "hybrid_rerank": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "mastra_om": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    }
+   },
+   "verdict": "unresolved",
+   "p_mcnemar": 0.5,
+   "p_holm": 1.0
+  }
+ },
+ "hypotheses_or__openai_gpt-6.1-terra": {
+  "H5": {
+   "claim": "stale(vector_rag) > stale(hybrid_rerank)",
+   "n": 58,
+   "stale_vector_rag": 0.086,
+   "stale_hybrid_rerank": 0.0,
+   "diff": 0.086,
+   "ci95": [
+    0.017,
+    0.155
+   ],
+   "verdict": "holds (CI) but not after Holm",
+   "p_mcnemar": 0.0625,
+   "p_holm": 0.1875
+  },
+  "H6": {
+   "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
+   "n": 27,
+   "stale_vector_rag": 0.0,
+   "stale_hybrid_rerank": 0.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "verdict": "unresolved",
+   "p_mcnemar": 1.0,
+   "p_holm": 1.0
+  },
+  "H7": {
+   "claim": "FAMA(graphiti best arm) < FAMA(vector_rag)",
+   "n": 58,
+   "best_arm": "xenc",
+   "FAMA_by_arm": {
+    "r2": 0.121,
+    "default": 0.379,
+    "filter": 0.328,
+    "xenc": 0.466
+   },
+   "FAMA_vector_rag": 0.828,
+   "diff": -0.362,
+   "ci95": [
+    -0.552,
+    -0.155
+   ],
+   "verdict": "holds",
+   "p_mcnemar": 0.0,
+   "p_holm": 0.0
+  },
+  "H8": {
+   "claim": "leak(generative_agents) > leak(every rebuild system)",
+   "n": 11,
+   "leak_generative_agents": 0.182,
+   "vs": {
+    "full_context": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "bm25": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "vector_rag": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "hybrid_rerank": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    },
+    "mastra_om": {
+     "leak_other": 0.0,
+     "diff": 0.182,
+     "ci95": [
+      0.0,
+      0.455
+     ],
+     "verdict": "unresolved"
+    }
+   },
+   "verdict": "unresolved",
+   "p_mcnemar": 0.5,
+   "p_holm": 1.0
+  }
+ },
  "sensitivity_no_implicit_role": {
   "dropped_questions": [
    "q_t3_83",
@@ -189,6 +790,56 @@
    "del_intent_9"
   ],
   "tables": {
+   "full_context": {
+    "A1": 0.946,
+    "A2_current": 1.0,
+    "A2_stale": 0.0,
+    "A2_FAMA": 1.0,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 31
+     },
+     "implicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 29,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 0.0,
+    "A5_write_calls_per_memory": 0.0,
+    "A5_ingest_usd": 0,
+    "A5_read_prompt_tok_per_q": 11508,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
    "bm25": {
     "A1": 0.845,
     "A2_current": 0.74,
@@ -289,6 +940,156 @@
     "judge_decoy_acceptance": 0,
     "axes": "A1A2A3A4"
    },
+   "hybrid_rerank": {
+    "A1": 0.976,
+    "A2_current": 1.0,
+    "A2_stale": 0.0,
+    "A2_FAMA": 1.0,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 31
+     },
+     "implicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 30,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 1.0,
+    "A5_write_calls_per_memory": 0.0,
+    "A5_ingest_usd": 0,
+    "A5_read_prompt_tok_per_q": 1642,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
+   "mastra_om": {
+    "A1": 0.946,
+    "A2_current": 0.98,
+    "A2_stale": 0.0,
+    "A2_FAMA": 0.98,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.968,
+      "stale": 0.0,
+      "n": 31
+     },
+     "implicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 0.897,
+    "A3_n_valid_controls": 29,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 0.833,
+     "24-98": 0.875
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 0.833
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 0.909
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.0,
+    "A4_label_survives": 0.0,
+    "A5_write_calls_per_memory": 0.12,
+    "A5_ingest_usd": 1.092,
+    "A5_read_prompt_tok_per_q": 10958,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
+   "generative_agents": {
+    "A1": 0.321,
+    "A2_current": 0.22,
+    "A2_stale": 0.04,
+    "A2_FAMA": 0.18,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.194,
+      "stale": 0.032,
+      "n": 31
+     },
+     "implicit": {
+      "current": 0.263,
+      "stale": 0.053,
+      "n": 19
+     }
+    },
+    "A3_forgot": 0.903,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 2,
+    "A3_leak": 0.182,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": null
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 0.818,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 0.875,
+      "control_intact": null
+     }
+    },
+    "A4_fooled": 1.0,
+    "A4_label_survives": 1.0,
+    "A5_write_calls_per_memory": 0.12,
+    "A5_ingest_usd": 0.2782,
+    "A5_read_prompt_tok_per_q": 2136,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
    "mem0": {
     "A1": 0.964,
     "A2_current": 1.0,
@@ -338,22 +1139,423 @@
     "A5_read_prompt_tok_per_q": 2234,
     "judge_decoy_acceptance": 0,
     "axes": "A1A2A3A4"
+   },
+   "zep_graphiti": {
+    "A1": 0.673,
+    "A2_current": 0.42,
+    "A2_stale": 0.2,
+    "A2_FAMA": 0.22,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.452,
+      "stale": 0.258,
+      "n": 31
+     },
+     "implicit": {
+      "current": 0.368,
+      "stale": 0.105,
+      "n": 19
+     }
+    },
+    "A3_forgot": 1.0,
+    "A3_control_intact": 1.0,
+    "A3_n_valid_controls": 20,
+    "A3_leak": 0.0,
+    "A3_n_leak_measurable": 11,
+    "A3_control_intact_by_position": {
+     "0-11": 1.0,
+     "12-23": 1.0,
+     "24-98": 1.0
+    },
+    "A3_n": 31,
+    "A3_by_shape": {
+     "single": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "entity": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     },
+     "intent": {
+      "forgot": 1.0,
+      "control_intact": 1.0
+     }
+    },
+    "A4_fooled": 0.5,
+    "A4_label_survives": 0.5,
+    "A5_write_calls_per_memory": 3.85,
+    "A5_ingest_usd": 18.9389,
+    "A5_read_prompt_tok_per_q": 1671,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2A3A4"
+   },
+   "ms_graphrag": {
+    "A1": 1.0,
+    "A2_current": 0.96,
+    "A2_stale": 0.0,
+    "A2_FAMA": 0.96,
+    "A2_by_stratum": {
+     "explicit": {
+      "current": 0.935,
+      "stale": 0.0,
+      "n": 31
+     },
+     "implicit": {
+      "current": 1.0,
+      "stale": 0.0,
+      "n": 19
+     }
+    },
+    "A3_forgot": null,
+    "A3_control_intact": null,
+    "A3_n_valid_controls": 0,
+    "A3_leak": null,
+    "A3_n_leak_measurable": 0,
+    "A3_control_intact_by_position": {},
+    "A3_n": 0,
+    "A3_by_shape": {},
+    "A4_fooled": null,
+    "A4_label_survives": null,
+    "A5_write_calls_per_memory": 2.79,
+    "A5_ingest_usd": 14.7279,
+    "A5_read_prompt_tok_per_q": 12239,
+    "judge_decoy_acceptance": 0,
+    "axes": "A1A2"
    }
   },
-  "hypotheses_sonnet": {},
-  "hypotheses_or__google_gemini-3.8-flash": {},
-  "hypotheses_or__openai_gpt-6.1-terra": {}
+  "hypotheses_sonnet": {
+   "H5": {
+    "claim": "stale(vector_rag) > stale(hybrid_rerank)",
+    "n": 50,
+    "stale_vector_rag": 0.1,
+    "stale_hybrid_rerank": 0.0,
+    "diff": 0.1,
+    "ci95": [
+     0.02,
+     0.18
+    ],
+    "verdict": "holds (CI) but not after Holm",
+    "p_mcnemar": 0.0625,
+    "p_holm": 0.1875
+   },
+   "H6": {
+    "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
+    "n": 19,
+    "stale_vector_rag": 0.0,
+    "stale_hybrid_rerank": 0.0,
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "verdict": "unresolved",
+    "p_mcnemar": 1.0,
+    "p_holm": 1.0
+   },
+   "H7": {
+    "claim": "FAMA(graphiti best arm) < FAMA(vector_rag)",
+    "n": 50,
+    "best_arm": "xenc",
+    "FAMA_by_arm": {
+     "r2": 0.22,
+     "default": 0.38,
+     "filter": 0.34,
+     "xenc": 0.46
+    },
+    "FAMA_vector_rag": 0.8,
+    "diff": -0.34,
+    "ci95": [
+     -0.56,
+     -0.1
+    ],
+    "verdict": "holds",
+    "p_mcnemar": 0.0003,
+    "p_holm": 0.0012
+   },
+   "H8": {
+    "claim": "leak(generative_agents) > leak(every rebuild system)",
+    "n": 11,
+    "leak_generative_agents": 0.182,
+    "vs": {
+     "full_context": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "bm25": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "vector_rag": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "hybrid_rerank": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "mastra_om": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     }
+    },
+    "verdict": "unresolved",
+    "p_mcnemar": 0.5,
+    "p_holm": 1.0
+   }
+  },
+  "hypotheses_or__google_gemini-3.8-flash": {
+   "H5": {
+    "claim": "stale(vector_rag) > stale(hybrid_rerank)",
+    "n": 50,
+    "stale_vector_rag": 0.1,
+    "stale_hybrid_rerank": 0.0,
+    "diff": 0.1,
+    "ci95": [
+     0.02,
+     0.18
+    ],
+    "verdict": "holds (CI) but not after Holm",
+    "p_mcnemar": 0.0625,
+    "p_holm": 0.1875
+   },
+   "H6": {
+    "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
+    "n": 19,
+    "stale_vector_rag": 0.0,
+    "stale_hybrid_rerank": 0.0,
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "verdict": "unresolved",
+    "p_mcnemar": 1.0,
+    "p_holm": 1.0
+   },
+   "H7": {
+    "claim": "FAMA(graphiti best arm) < FAMA(vector_rag)",
+    "n": 50,
+    "best_arm": "xenc",
+    "FAMA_by_arm": {
+     "r2": 0.22,
+     "default": 0.38,
+     "filter": 0.36,
+     "xenc": 0.46
+    },
+    "FAMA_vector_rag": 0.8,
+    "diff": -0.34,
+    "ci95": [
+     -0.56,
+     -0.1
+    ],
+    "verdict": "holds",
+    "p_mcnemar": 0.0003,
+    "p_holm": 0.0012
+   },
+   "H8": {
+    "claim": "leak(generative_agents) > leak(every rebuild system)",
+    "n": 11,
+    "leak_generative_agents": 0.182,
+    "vs": {
+     "full_context": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "bm25": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "vector_rag": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "hybrid_rerank": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "mastra_om": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     }
+    },
+    "verdict": "unresolved",
+    "p_mcnemar": 0.5,
+    "p_holm": 1.0
+   }
+  },
+  "hypotheses_or__openai_gpt-6.1-terra": {
+   "H5": {
+    "claim": "stale(vector_rag) > stale(hybrid_rerank)",
+    "n": 50,
+    "stale_vector_rag": 0.1,
+    "stale_hybrid_rerank": 0.0,
+    "diff": 0.1,
+    "ci95": [
+     0.02,
+     0.18
+    ],
+    "verdict": "holds (CI) but not after Holm",
+    "p_mcnemar": 0.0625,
+    "p_holm": 0.1875
+   },
+   "H6": {
+    "claim": "stale(vector_rag) > stale(hybrid_rerank) [implicit stratum]",
+    "n": 19,
+    "stale_vector_rag": 0.0,
+    "stale_hybrid_rerank": 0.0,
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "verdict": "unresolved",
+    "p_mcnemar": 1.0,
+    "p_holm": 1.0
+   },
+   "H7": {
+    "claim": "FAMA(graphiti best arm) < FAMA(vector_rag)",
+    "n": 50,
+    "best_arm": "xenc",
+    "FAMA_by_arm": {
+     "r2": 0.22,
+     "default": 0.38,
+     "filter": 0.36,
+     "xenc": 0.46
+    },
+    "FAMA_vector_rag": 0.8,
+    "diff": -0.34,
+    "ci95": [
+     -0.56,
+     -0.1
+    ],
+    "verdict": "holds",
+    "p_mcnemar": 0.0003,
+    "p_holm": 0.0012
+   },
+   "H8": {
+    "claim": "leak(generative_agents) > leak(every rebuild system)",
+    "n": 11,
+    "leak_generative_agents": 0.182,
+    "vs": {
+     "full_context": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "bm25": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "vector_rag": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "hybrid_rerank": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     },
+     "mastra_om": {
+      "leak_other": 0.0,
+      "diff": 0.182,
+      "ci95": [
+       0.0,
+       0.455
+      ],
+      "verdict": "unresolved"
+     }
+    },
+    "verdict": "unresolved",
+    "p_mcnemar": 0.5,
+    "p_holm": 1.0
+   }
+  }
  },
  "judge_agreement": {
   "or__google_gemini-3.8-flash": {
-   "n": 452,
-   "kappa_binary": 0.878,
-   "disagreements": 11
+   "n": 1201,
+   "kappa_binary": 0.934,
+   "disagreements": 22
   },
   "or__openai_gpt-6.1-terra": {
-   "n": 452,
-   "kappa_binary": 0.878,
-   "disagreements": 11
+   "n": 1201,
+   "kappa_binary": 0.927,
+   "disagreements": 24
   }
+ },
+ "graphiti_invalidation": {
+  "keys_with_stale_edge": 55,
+  "keys": 65,
+  "keys_all_stale_invalidated": 5,
+  "keys_with_current_edge": 56
  }
 }
