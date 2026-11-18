@@ -64,6 +64,22 @@ class FullContextBaseline(BaseAdapter):
         return self._result(ans, items, "full", t0, it, ot)
 
 
+class FullContextTrailer(FullContextBaseline):
+    """Full context plus the same one-line latest-wins cue MinMem appends (round 4 control: is MinMem's edge the cue?)."""
+    name = "full_context_hdr"
+
+    async def query(self, question, timestamp=None):
+        from src.systems.minmem import TRAILER
+        t0 = time.time()
+        mems = sorted(self.memories, key=lambda m: m.timestamp)
+        ans, it, ot = self._answer("\n".join(fmt_mem(m) for m in mems) + "\n" + TRAILER, question)
+        return self._result(ans, [self._item(f"(all {len(mems)} memories in context + trailer)", "all", 1.0)], "full+trailer", t0, it, ot)
+
+
+class BM25K20(BM25Baseline):
+    name, top_k = "bm25_k20", 20
+
+
 class VectorRAG(BaseAdapter):
     name, family, year, kind = "vector_rag", "dense retrieval", 2023, "classic"
     top_k = 5
@@ -90,6 +106,10 @@ class VectorRAG(BaseAdapter):
         return self._result(ans, items, "dense", t0, it, ot)
 
 
+class VectorK20(VectorRAG):
+    name, top_k = "vector_k20", 20
+
+
 class HybridRerank(BaseAdapter):
     name, family, year, kind = "hybrid_rerank", "hybrid retrieval + reranker", 2024, "modern"
     top_k, cand_k = 5, 20
@@ -106,6 +126,13 @@ class HybridRerank(BaseAdapter):
         self._bm._on_ingest(memories)
         self._vr._on_ingest(memories)
 
+    @staticmethod
+    def _ce_lock():
+        import threading
+        if not hasattr(HybridRerank, "_lock"):
+            HybridRerank._lock = threading.Lock()
+        return HybridRerank._lock
+
     def _cross_encoder(self):
         if HybridRerank._ce is None:
             from sentence_transformers import CrossEncoder
@@ -116,12 +143,21 @@ class HybridRerank(BaseAdapter):
         t0 = time.time()
         cands = {i for i, _ in self._bm._rank(question, self.cand_k)} | {i for i, _ in self._vr._rank(question, self.cand_k)}
         cands = sorted(cands)
-        if cands:
-            scores = self._cross_encoder().predict([(question, self.memories[i].content) for i in cands])
+        cache = self.__dict__.setdefault("_hits_cache", {})   # reader-independent; round 4 asks each question once per reader
+        if (question, len(self.memories)) in cache:
+            hits = cache[(question, len(self.memories))]
+        elif cands:
+            with self._ce_lock():
+                scores = self._cross_encoder().predict([(question, self.memories[i].content) for i in cands])
             order = np.argsort(-np.asarray(scores))[: self.top_k]
-            hits = [(cands[j], float(scores[j])) for j in order]
+            hits = cache[(question, len(self.memories))] = [(cands[j], float(scores[j])) for j in order]
         else:
             hits = []
         items = [self._item(fmt_mem(self.memories[i]), self.memories[i].source_id, s, self.memories[i].timestamp) for i, s in hits]
         ans, it, ot = self._answer("\n".join(x.content for x in items), question)
         return self._result(ans, items, "hybrid+rerank", t0, it, ot)
+
+
+class HybridK20(HybridRerank):
+    """Same candidates and reranker as hybrid_rerank, but 20 notes in context: the matched-k control for MinMem."""
+    name, top_k = "hybrid_k20", 20

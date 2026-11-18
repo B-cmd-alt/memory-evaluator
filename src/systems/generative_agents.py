@@ -97,8 +97,9 @@ class GenerativeAgentsMemory(BaseAdapter):
         now = timestamp or max(m.timestamp for m in self.memories)
         s = self._scores(question, now)
         idx = np.argsort(-s)[: self.top_k]
-        for i in idx:
-            self._last_access[self.memories[i].source_id] = now   # retrieval refreshes recency (paper semantics)
+        if not __import__("os").environ.get("GA_FREEZE_RECENCY"):   # round 4 asks each question once per reader: a refresh would
+            for i in idx:                                            # make reader 2 see a different stream than reader 1
+                self._last_access[self.memories[i].source_id] = now   # retrieval refreshes recency (paper semantics)
         items = [self._item(fmt_mem(self.memories[i]), self.memories[i].source_id, float(s[i]), self.memories[i].timestamp) for i in idx]
         ans, it, ot = self._answer("\n".join(x.content for x in items), question)
         return self._result(ans, items, "recency+importance+relevance", t0, it, ot)

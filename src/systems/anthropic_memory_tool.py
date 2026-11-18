@@ -89,10 +89,10 @@ class MemoryToolAdapter(BaseAdapter):
         except Exception as e:  # noqa: BLE001
             return f"error: {type(e).__name__}: {e}"
 
-    def _loop(self, system: str, user: str, max_turns: int) -> str:
+    def _loop(self, system: str, user: str, max_turns: int, model: str | None = None) -> str:
         msgs = [{"role": "system", "content": system}, {"role": "user", "content": user}]
         for _ in range(max_turns):
-            msg = self.llm.chat("", "", messages=msgs, tools=[TOOL])
+            msg = self.llm.chat("", "", messages=msgs, tools=[TOOL], model=model)
             calls = getattr(msg, "tool_calls", None)
             if not calls:
                 return (msg.content or "").strip()
@@ -114,7 +114,8 @@ class MemoryToolAdapter(BaseAdapter):
     async def query(self, question, timestamp=None):
         t0 = time.time()
         self.viewed = []
-        ans = self._loop(_SYS_QUERY, f"Question: {question}", self.max_turns_query)
+        from src.systems.common import READER
+        ans = self._loop(_SYS_QUERY, f"Question: {question}", self.max_turns_query, model=READER.get())   # the reader drives the query loop
         items = [self._item(f"viewed {p}", p, 1.0) for p in self.viewed]
         return self._result(ans, items, "memory_tool", t0, 0, 0)
 

@@ -93,7 +93,7 @@ class GraphitiAdapter(BaseAdapter):
     #   default  the library default: Graphiti.search with its default num_results (10)
     #   filter   fetch 30, drop edges Graphiti marked invalid/expired, keep 10 (what an application reading only current facts does)
     #   xenc     Graphiti.search_ with its EDGE_HYBRID_SEARCH_CROSS_ENCODER recipe (local BGE cross-encoder), 10 edges
-    read_arm = "r2"
+    read_arm = __import__("os").environ.get("GRAPHITI_READ_ARM", "r2")   # round 4 pre-registers "xenc", round 3's best arm
     read_arms = ("default", "filter", "xenc")
 
     async def _edges(self, question):

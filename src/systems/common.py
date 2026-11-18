@@ -19,6 +19,9 @@ def est_tokens(text: str) -> int:
     return max(1, len(text) // 4)
 
 
+_TL = threading.local()
+
+
 @dataclass
 class LLM:
     """Minimal chat client over the shim. Counts calls and tokens per adapter (`caller`)."""
@@ -32,7 +35,7 @@ class LLM:
     def _c(self):
         if self._client is None:
             from openai import OpenAI
-            self._client = OpenAI(base_url=SHIM_BASE, api_key="shim", timeout=600, max_retries=1,
+            self._client = OpenAI(base_url=SHIM_BASE, api_key="shim", timeout=1500, max_retries=2,
                                   default_headers={"X-Caller": self.caller})
         return self._client
 
@@ -48,6 +51,7 @@ class LLM:
         self.calls += 1
         self.prompt_tokens += r.usage.prompt_tokens or 0
         self.completion_tokens += r.usage.completion_tokens or 0
+        _TL.usage = (r.usage.prompt_tokens or 0, r.usage.completion_tokens or 0)   # this thread's last call (counters above are shared)
         return r.choices[0].message
 
     def text(self, system: str, user: str, **kw) -> str:
@@ -65,6 +69,7 @@ class Embedder:
     """In-process sentence-transformers embedder; the same model the shim serves."""
     _inst = None
     _lock = threading.Lock()
+    _enc_lock = threading.Lock()
 
     def __init__(self):
         from sentence_transformers import SentenceTransformer
@@ -79,11 +84,25 @@ class Embedder:
         return cls._inst
 
     def encode(self, texts: list[str]) -> np.ndarray:
+        """Embeddings are cached by text for the life of the process: at the larger round-4 rungs several systems index
+        the same ~100K notes, and re-embedding them per system would dominate wall-clock time."""
         self.calls += 1
         if not texts:
             return np.zeros((0, 384), dtype=np.float32)
-        return np.asarray(self.model.encode(texts, normalize_embeddings=True, batch_size=64), dtype=np.float32)
+        cache = self.__dict__.setdefault("_cache", {})
+        new = [t for t in dict.fromkeys(texts) if t not in cache]
+        if new:
+            with self._enc_lock:
+                vecs = np.asarray(self.model.encode(new, normalize_embeddings=True, batch_size=128, show_progress_bar=False), dtype=np.float32)
+            cache.update(zip(new, vecs))
+        return np.stack([cache[t] for t in texts])
 
+
+# Round 4: the model that ANSWERS (the "reader") can differ from the model a system uses to WRITE its memory. The runner
+# sets READER per query (a full provider id, e.g. "openai/gpt-6.1-terra"); None keeps the client's own model (rounds 1-3).
+import contextvars  # noqa: E402
+
+READER: contextvars.ContextVar = contextvars.ContextVar("reader_model", default=None)
 
 GENERATION_SYSTEM = "You answer questions from memory context. Be concise and specific."
 GENERATION_PROMPT = """Given the following context retrieved from memory, answer the question.
@@ -100,9 +119,9 @@ Answer:"""
 def answer_from_context(llm: LLM, context: str, question: str) -> tuple[str, int, int]:
     """The ONE answer prompt shared by every system (the MemDelta fixed-generator rule)."""
     prompt = GENERATION_PROMPT.format(context=context or "(empty)", question=question)
-    before = (llm.prompt_tokens, llm.completion_tokens)
-    ans = llm.text(GENERATION_SYSTEM, prompt)
-    return ans, llm.prompt_tokens - before[0], llm.completion_tokens - before[1]
+    ans = llm.text(GENERATION_SYSTEM, prompt, model=READER.get())
+    it, ot = getattr(_TL, "usage", (0, 0))
+    return ans, it, ot
 
 
 def fmt_mem(m) -> str:

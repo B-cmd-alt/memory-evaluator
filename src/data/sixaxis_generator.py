@@ -529,3 +529,166 @@ if __name__ == "__main__":
     out = a.out or f"results/sixaxis_{a.scale}_seed{a.seed}.json"
     json.dump(d, open(out, "w"), indent=1)
     print(out, d["meta"])
+
+
+# ── Round 4: the scale ladder ─────────────────────────────────────────────────────────────────────────────────────
+# One CORE world (the R3 configuration, post-fix: updates dated strictly later, unambiguous role wording) whose
+# questions and gold never change, embedded in a growing amount of HARD noise: other people and projects with their
+# own facts, updates and presentations, written with the same templates and value vocabularies and spread over the
+# same dates. Noise entities are disjoint from core entities by full name, so no core gold changes; they share first
+# names, surnames, cities, tools, roles and conferences with the core, which is what makes retrieval harder.
+_FIRST = ("Aaron Abigail Adele Adrian Aiko Akira Alan Alba Aldo Alma Amara Amir Anders Andre Anika Anton Aria Arlo Asha Astrid "
+          "Basil Bella Benno Bianca Boris Bram Brenna Bruno Camila Carmen Cedric Chiara Clara Colm Cora Cyrus Dahlia Damon Dana Dario "
+          "Delia Dev Diego Dina Dora Edgar Edith Eli Elsa Emil Enzo Erin Esme Ewan Fabian Faye Felix Fern Finn Flora "
+          "Gael Gemma Gideon Gita Greta Gus Hana Hector Heidi Hugo Ida Igor Ilse Imani Ingrid Irene Isak Ivo Jada Jorge "
+          "Kai Kira Lars Leila Lena Leon Lior Luca Maeve Malik Mara Milo Nadia Nico Nora Omar Otto Paloma Rafael Selma").split()
+_LAST = ("Abbas Acosta Adler Ahn Akhtar Amato Andersson Aoki Arslan Baker Banerjee Barros Bauer Becker Bianchi Blanc Bose Brandt Bruno Castillo "
+         "Cho Clarke Cohen Costa Cruz Dalton Das Diaz Dogan Duarte Eklund Engel Farah Ferrari Fischer Flores Fontaine Fujita Gallo Garcia "
+         "Gomez Greene Gupta Hahn Hale Hansen Haruki Hayes Herrera Hoang Ibarra Ito Ivanov Jansen Jensen Joshi Kaya Keller Khan Klein "
+         "Kovac Kumar Lang Larsen Leclerc Lim Lopez Lund Maier Malik Marino Mendez Meyer Mori Nakamura Navarro Ng Novak Nunez Olsen "
+         "Ortega Pereira Popov Quinn Ramos Reyes Ricci Romero Russo Sanchez Santos Schmidt Silva Singh Suzuki Tamm Torres Vargas Weber Yilmaz").split()
+_FIRST_X = ("Abel Ada Agnes Alec Amos Anya Ari Beau Bea Cato Cleo Dax Dion Eamon Eira Elio Ember Ezra Fay Gia "
+            "Hale Hope Idris Ines Jax Juno Kian Lark Lyra Mace Nell Nyx Odin Opal Pax Remy Sage Tess Uma Zane").split()
+_LAST_X = ("Abara Agarwal Alvi Asante Bello Bjork Calder Chavez Dasgupta Demir Ekwueme Faber Galvez Halloran Idowu Jarvi Kader Kowalski Lindholm Mbeki "
+           "Nakata Oyelaran Pagano Qureshi Rahal Sorensen Takeda Ueda Varga Whitlock Xiong Yamada Zubiri Arce Bozic Cavallo Drummond Esposito Ferreira Hartono").split()
+_SYL_A = "Ar Bel Cor Dra El Fen Gal Hal Ir Jun Kel Lor Mir Nor Or Pra Quo Ras Sol Tar Ul Vel Wen Xan Yor Zel".split()
+_SYL_B = "ix on ara eth is um ora yn ax el ion us ada ek or".split()
+
+
+def _noise_entities(core_people: set[str], core_projects: set[str], rng: random.Random):
+    """Endless generators of noise person and project names, disjoint from the core by full name / by substring."""
+    def people():
+        # the core's own first names and surnames are in the pools, so noise people collide with core people on either
+        # token ("Alice Navarro", "Gideon Chen") without ever being the same person; a core first+last pair is never
+        # reused, with or without a middle initial
+        firsts = list(dict.fromkeys(list(_FIRST) + list(_FIRST_X) + [p.split()[0] for p in sorted(core_people)]))
+        lasts = list(dict.fromkeys(list(_LAST) + list(_LAST_X) + [p.split(" ", 1)[1] for p in sorted(core_people)]))
+        pairs = [(f, l) for f in firsts for l in lasts if f"{f} {l}" not in core_people]
+        rng.shuffle(pairs)
+        for f, l in pairs:
+            yield f"{f} {l}"
+        for mid in "ABCDEFGHJKLMNPRSTVW":
+            for f, l in pairs:
+                yield f"{f} {mid}. {l}"
+
+    def projects():
+        names = [a + b for a in _SYL_A for b in _SYL_B] + [a + b + c.lower() for a in _SYL_A for b in _SYL_B for c in _SYL_A]
+        seen = set()
+        rng.shuffle(names)
+        for n in names:
+            if n not in seen and not any(c.lower() in n.lower() or n.lower() in c.lower() for c in core_projects):
+                seen.add(n)
+                yield n
+    return people(), projects()
+
+
+def _noise_notes(n_target: int, core: "World", rng: random.Random) -> list[Mem]:
+    people, projects = _noise_entities(set(PEOPLE_R3), set(PROJECTS_R3), rng)
+    days = 7 * core.n_sessions + 4
+    out: list[Mem] = []
+    proj_pool: list[str] = list(core.projects)   # roles and presentations may reference core projects (cross-links)
+    core_people, core_projects = list(core.people), list(core.projects)
+
+    def emit(d: date, text: str, ents: list[str], topics: list[str], kind: str = "fact"):
+        out.append(Mem(id=f"n{len(out):07d}", date=d.isoformat(), content=text, entities=ents, topics=topics, kind=kind))
+
+    def day(lo: int = 0) -> date:
+        return core.start + timedelta(days=rng.randint(lo, days))
+
+    def fact(kind: str, subj: str):
+        vals = {"role": lambda: f"{rng.choice(ROLES)} of {rng.choice(proj_pool)}", "tool": lambda: rng.choice(TOOLS),
+                "city": lambda: rng.choice(CITIES), "budget": lambda: f"${rng.choice(BUDGETS)}k"}[kind]
+        d, v = day(), vals()
+        emit(d, {"role": f"{subj} became {v} on {d.isoformat()}.", "tool": f"{subj} standardized on {v} as its issue tracker on {d.isoformat()}.",
+                 "city": f"{subj} is based in {v}.", "budget": f"{subj}'s quarterly budget was set to {v} on {d.isoformat()}."}[kind], [subj], [kind])
+        if rng.random() < 0.45 and (d - core.start).days < days - 1:
+            v2 = vals()
+            while v2 == v:
+                v2 = vals()
+            d2 = core.start + timedelta(days=rng.randint((d - core.start).days + 1, days))
+            if rng.random() < 0.5:
+                text = {"role": f"{subj}'s role changed on {d2.isoformat()}: now {v2}.", "tool": f"{subj} now tracks its issues in {v2} (as of {d2.isoformat()}).",
+                        "city": f"{subj} is now based in {v2} (since {d2.strftime('%B %Y')}).", "budget": f"{subj}'s quarterly budget is {v2} as of {d2.isoformat()}."}[kind]
+            else:
+                text = {"role": f"{subj} moved from {v} to {v2}, effective {d2.isoformat()}.",
+                        "tool": f"{subj} switched its issue tracker from {v} to {v2} effective {d2.isoformat()}.",
+                        "city": f"{subj} relocated from {v} to {v2} in {d2.strftime('%B %Y')}.",
+                        "budget": f"{subj}'s quarterly budget was revised from {v} to {v2} on {d2.isoformat()}."}[kind]
+            emit(d2, text, [subj], [kind, "update"], kind="update")
+
+    while len(out) < n_target:
+        if rng.random() < 0.3:
+            pr = next(projects)
+            proj_pool.append(pr)
+            for kind in PROJECT_KINDS:
+                if rng.random() < 0.85:
+                    fact(kind, pr)
+        else:
+            p = next(people)
+            for kind in PERSON_KINDS:
+                if rng.random() < 0.85:
+                    fact(kind, p)
+            for _ in range(rng.choice([0, 1, 1, 2, 3])):
+                d = day()
+                emit(d, f"{p} presented {rng.choice(proj_pool)} at {rng.choice(CONFS)} {d.year} in {rng.choice(CITIES)} on {d.isoformat()}.", [p], ["event"], kind="event")
+            if rng.random() < 0.5:
+                d = day()
+                emit(d, rng.choice([f"{p} took a half day on {d.isoformat()}.", f"{p} filed expenses for the {d.strftime('%B')} offsite."]), [p], ["filler"], kind="filler")
+            if rng.random() < 0.4:
+                # a MENTION: a noise person's note that names a core person or project without stating any fact a core
+                # question asks about (no city, role, tracker, budget value or presentation). The count of mentions of
+                # each core entity grows with the rung, so a subject-name match is no longer an answer key at scale.
+                d = day()
+                if rng.random() < 0.67:
+                    c = rng.choice(core_people)
+                    text = rng.choice([f"{p} had a 1:1 with {c} on {d.isoformat()}.", f"{p} cc'd {c} on the {d.strftime('%B')} planning thread.",
+                                       f"{p} thanked {c} for reviewing a draft on {d.isoformat()}.",
+                                       f"{p} asked {c} about the role description for an open position on {d.isoformat()}."])
+                else:
+                    c = rng.choice(core_projects)
+                    text = rng.choice([f"{p} asked a question about {c}'s roadmap on {d.isoformat()}.", f"{p} reviewed a design doc for {c} on {d.isoformat()}.",
+                                       f"{p} filed a ticket against {c} on {d.isoformat()}.",
+                                       f"{p} asked whether {c}'s budget review had been scheduled, on {d.isoformat()}."])
+                emit(d, text, [p, c], ["mention"], kind="mention")
+    return out[:n_target]
+
+
+def store_tokens(memories: list[dict]) -> int:
+    """Token estimate of the whole store as the full-context baseline renders it ('[date] content' per line).
+    Calibrated on the Claude tokenizer: these notes are dates and proper names, which tokenise at ~2 chars/token, not the
+    usual 4 (measured: 1,527 notes = 56.8K prompt tokens). GPT counts the same store ~30% smaller."""
+    return sum(len(m["content"]) + 14 for m in memories) // 2
+
+
+def generate_ladder(seed: int = 42, target_tokens: int = 0) -> dict:
+    """A ladder rung: the core world for `seed` plus enough hard noise to reach `target_tokens` (0 = core only).
+    Questions and gold are identical on every rung of a seed; noise for a larger rung extends the smaller rung's noise."""
+    w = World(seed, "R3").build()
+    qs = w.questions({"T1": 10, "T2": 5, "T3": 10, "T4": 80, "T5": 6})
+    core = [asdict(m) for m in w.mems]
+    core_tok = store_tokens(core)
+    noise: list[dict] = []
+    if target_tokens > core_tok:
+        nrng = random.Random(f"noise-{seed}")
+        per_note = 37   # ~ (60 chars + 14) / 2, measured on the templates
+        n = int((target_tokens - core_tok) / per_note * 1.02) + 50
+        cand = [asdict(m) for m in _noise_notes(n, w, nrng)]
+        tot, k = core_tok, 0
+        for m in cand:   # a prefix of one deterministic stream: rungs are nested
+            if tot >= target_tokens:
+                break
+            tot += (len(m["content"]) + 14) // 2
+            k += 1
+        noise = cand[:k]
+    mems = sorted(core + noise, key=lambda m: (m["date"], m["id"]))
+    data = {"meta": {"benchmark": "SixAxis", "scale": "R4", "seed": seed, "target_tokens": target_tokens, "store_tokens": store_tokens(mems),
+                     "n_memories": len(mems), "n_core": len(core), "n_noise": len(noise), "n_questions": len(qs)},
+            "memories": mems, "questions": [asdict(q) for q in qs], "deletions": [], "poisons": []}
+    probs = ground_check(data)
+    core_ents = set(w.people) | set(w.projects)
+    for m in noise:   # noise must never be about a core entity (cross-links name core projects only inside a noise person's role/event)
+        if m["entities"][0] in core_ents:
+            probs.append(f"{m['id']}: noise subject is a core entity")
+    if probs:
+        raise AssertionError("ground check failed:\n" + "\n".join(probs[:20]))
+    return data

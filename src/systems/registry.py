@@ -31,6 +31,15 @@ REGISTRY: tuple[Entry, ...] = (
     Entry("anthropic_memory_tool", "src.systems.anthropic_memory_tool.MemoryToolAdapter", "Anthropic memory tool (files)", "model-managed files", 2025, "modern", "self-managed", "faithful re-implementation",
           "memory_20250818 command set, client-executed"),
     Entry("generative_agents", "src.systems.generative_agents.GenerativeAgentsMemory", "Generative Agents memory stream", "scored stream + reflection", 2023, "classic", "stream", "faithful re-implementation"),
+    Entry("minmem", "src.systems.minmem.MinMem", "MinMem (reference design)", "hybrid + entity expansion + latest-wins ordering", 2026, "modern", "retrieval", "this repository",
+          "no LLM on the write path; pre-registered in experiments/prereg_round4.md"),
+    Entry("minmem_noexp", "src.systems.minmem.MinMemNoExpansion", "MinMem without entity expansion", "ablation", 2026, "modern", "retrieval", "this repository"),
+    Entry("minmem_nohdr", "src.systems.minmem.MinMemNoHeader", "MinMem: expansion only (reranker order, no trailer)", "ablation", 2026, "modern", "retrieval", "this repository"),
+    Entry("minmem_order", "src.systems.minmem.MinMemOrderOnly", "MinMem: expansion + oldest-first order (no trailer)", "ablation", 2026, "modern", "retrieval", "this repository"),
+    Entry("hybrid_k20", "src.systems.baselines.HybridK20", "Hybrid search + reranker, top-20", "control", 2024, "modern", "retrieval", "baseline"),
+    Entry("bm25_k20", "src.systems.baselines.BM25K20", "BM25 top-20", "control", 2023, "baseline", "retrieval", "baseline"),
+    Entry("vector_k20", "src.systems.baselines.VectorK20", "Vector RAG top-20", "control", 2023, "classic", "retrieval", "baseline"),
+    Entry("full_context_hdr", "src.systems.baselines.FullContextTrailer", "Full context + latest-wins trailer", "control", 2023, "baseline", "compression", "baseline"),
     Entry("a_mem", "src.systems.amem_adapter.AMemAdapter", "A-MEM", "agentic note network", 2025, "modern", "stream", "official package"),
 )
 
