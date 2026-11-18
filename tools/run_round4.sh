@@ -19,6 +19,6 @@ for rung in $RUNGS; do
   # full context cannot be run beyond the readers' window
   sys="$SYSTEMS"; [ "$rung" -gt 900000 ] && sys="${SYSTEMS//full_context/}"
   [ -z "${sys// /}" ] && continue
-  python3 run_ladder.py --seed "$SEED" --rung "$rung" --systems $sys --workers "${WORKERS:-8}" --out "$OUT" ${READERS:+--readers $READERS} || echo "[round4] $TAG rung $rung exited non-zero"
+  python3 run_ladder.py ${LIMIT:+--limit $LIMIT} --seed "$SEED" --rung "$rung" --systems $sys --workers "${WORKERS:-8}" --out "$OUT" ${READERS:+--readers $READERS} || echo "[round4] $TAG rung $rung exited non-zero"
 done
 echo "[round4] $TAG done"
