@@ -1,0 +1,506 @@
+{
+ "judge": "or:openai/gpt-6.1-terra",
+ "cost_usd": 0.0317,
+ "items": {
+  "000:LME_C:a06e4cfe": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "001:LME_A:1c549ce4": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "002:S2_E:s2_q30": {
+   "score": 0.0,
+   "mode": "ref_abstention_judge",
+   "reasoning": "The generated answer fabricates a headcount of 12, which is not documented in the reference."
+  },
+  "003:LME_C:gpt4_93159ced": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "004:LME_A:031748ae": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "005:LME_D:a06e4cfe": {
+   "score": 0.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer does not provide the reference ratio of 3:1 and instead says the preference is unknown."
+  },
+  "006:LME_A:2311e44b_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "007:LME_C:69fee5aa": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "008:LME_C:6b168ec8": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "009:S2_E:s2_q13": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer correctly gives both the rollout duration and its start date and time. The deployment method is not required by the question."
+  },
+  "010:LME_C:195a1a1b": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The suggestions are mostly relaxing and screen-free, but they do not mention the preference to finish before 9:30 pm."
+  },
+  "011:S1_C:s1_q08": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer correctly identifies the shared logging library and Atlas as its original developer."
+  },
+  "012:LME_C:ef66a6e5": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states that the user played two sports competitively."
+  },
+  "013:LME_A:8077ef71": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "014:S2_DnoR:s2_q12": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer includes all key facts: Ling Zhao built the dashboard, it surfaces p50/p95/p99 latency, and async notifications reduced median delivery latency by 340 ms. The omitted dates are not requested."
+  },
+  "015:LME_D:8077ef71": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "016:LME_D:2318644b": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives a difference near $270, but says it is over $270 rather than exactly $270."
+  },
+  "017:S2_E:s2_q06": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "018:S2_C:s2_q27": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "019:S2_C:s2_q08": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "020:S2_C:s2_q24": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The target, prior target, and Kafka-related reason are present, but the answer does not state that the migration consumed more capacity than planned."
+  },
+  "021:LME_C:2ebe6c92": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "022:S2_DnoR:s2_q27": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "023:S2_E:s2_q17": {
+   "score": 0.25,
+   "mode": "normal_judge",
+   "reasoning": "The answer mentions 6 critical issues but fails to give the requested count of 8 non-critical issues, instead claiming it is unspecified."
+  },
+  "024:LME_A:26bdc477": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives the correct count of five trips."
+  },
+  "025:S1_E:s1_q09": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "026:LME_A:e831120c": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives the correct combined total of three and a half weeks."
+  },
+  "027:S1_A:s1_q20": {
+   "score": 0.5,
+   "mode": "normal_judge",
+   "reasoning": "Correctly says Kafka is not being used and the decision was reversed, but incorrectly names RabbitMQ instead of Redis and adds an unsupported rationale."
+  },
+  "028:S2_E:s2_q28": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "029:LME_C:2133c1b5_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "030:S1_DnoR:s1_q22": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "031:S1_E:s1_q22": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "032:LME_D:603deb26": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states 10 times."
+  },
+  "033:LME_C:e6041065": {
+   "score": 0.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer does not provide the reference answer of 40% and instead says the percentage cannot be calculated."
+  },
+  "034:S1_E:s1_q11": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "035:S1_C:s1_q15": {
+   "score": 0.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer omits the completion date and incorrectly says it is unspecified."
+  },
+  "036:LME_A:gpt4_93159ced_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "037:LME_A:2ebe6c92": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "038:LME_C:8077ef71": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "039:LME_A:6b168ec8": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "040:S1_C:s1_q18": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer captures the main facts but omits the March 19, 2026 date and that Carol was reassigned full-time."
+  },
+  "041:LME_A:gpt4_372c3eed_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "042:S2_A:s2_q02": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer includes both required endpoints and the Kubernetes convention."
+  },
+  "043:LME_A:ef66a6e5": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states that the number of sports is two."
+  },
+  "044:LME_C:1faac195": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states that Emily lives in Denver."
+  },
+  "045:S1_C:s1_q06": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "046:S2_C:s2_q28": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "047:S1_E:s1_q21": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "048:S1_E:s1_q24": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "049:LME_A:6e984302": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "050:LME_C:e5ba910e_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "051:LME_D:60d45044": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "052:S2_E:s2_q04": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "053:S1_A:s1_q14": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer correctly gives both the original $180,000 budget and the revised $240,000 budget."
+  },
+  "054:S2_C:s2_q30": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "055:S1_DnoR:s1_q10": {
+   "score": 0.5,
+   "mode": "normal_judge",
+   "reasoning": "The position and team size are correct, but the answer omits the promotion date, an important part of the question."
+  },
+  "056:S2_DnoR:s2_q30": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "057:S1_A:s1_q06": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "058:S1_DnoR:s1_q25": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "059:S2_DnoR:s2_q25": {
+   "score": 0.0,
+   "mode": "ref_abstention_judge",
+   "reasoning": "The generated answer fabricates a vendor selection, cost figures, and a migration plan; the reference documents no final decision."
+  },
+  "060:S2_DnoR:s2_q28": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "061:LME_D:2698e78f": {
+   "score": 0.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer says every two weeks, contradicting the reference of every week."
+  },
+  "062:LME_C:gpt4_5dcc0aab": {
+   "score": 0.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer denies the referenced event and does not identify the white Adidas sneakers."
+  },
+  "063:LME_D:1faac195": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states that Emily lives in Denver."
+  },
+  "064:LME_A:gpt4_93159ced": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "065:S1_DnoR:s1_q01": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly identifies Linear."
+  },
+  "066:S2_E:s2_q20": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The current and previous launch dates are correct, but the answer omits when each was set and adds an unsupported reason for the delay."
+  },
+  "067:S2_E:s2_q05": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer includes the correct combined latency and both component latencies."
+  },
+  "068:LME_C:18dcd5a5": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states that the party will face 4 mummies."
+  },
+  "069:LME_C:1c549ce4": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "070:S1_C:s1_q13": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives the correct percentage."
+  },
+  "071:S2_A:s2_q21": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "072:S1_DnoR:s1_q09": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer correctly states the 6.5-point improvement and both the baseline and post-fix precision values."
+  },
+  "073:S2_A:s2_q23": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The current 45% target is correct, but the previous target and timing of the increase are omitted."
+  },
+  "074:S1_DnoR:s1_q02": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer exactly matches the reference budget of $480,000."
+  },
+  "075:S1_DnoR:s1_q13": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer exactly matches the reference."
+  },
+  "076:S1_A:s1_q08": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer correctly identifies Atlas's shared logging library and the Atlas project as its origin."
+  },
+  "077:S1_E:s1_q23": {
+   "score": 1.0,
+   "mode": "ref_abstention_judge",
+   "reasoning": "The generated answer says the specific vulnerabilities are not documented and does not fabricate details."
+  },
+  "078:LME_D:6a1eabeb": {
+   "score": 0.0,
+   "mode": "normal_judge",
+   "reasoning": "The answer incorrectly identifies 27:12 as the personal best and describes the correct time, 25:50, as a goal."
+  },
+  "079:LME_A:3d86fd0a": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer includes all key facts from the reference."
+  },
+  "080:LME_D:2ebe6c92": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "081:S2_A:s2_q07": {
+   "score": 0.5,
+   "mode": "normal_judge",
+   "reasoning": "The Sofia\u2013Liam pair is correctly identified, but Kenji and Jordan\u2019s mentor\u2013mentee roles are reversed. The dates are also omitted."
+  },
+  "082:LME_A:gpt4_5dcc0aab": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "083:LME_C:6e984302": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The modeling tool set matches the reference\u2019s set of sculpting tools, though the answer adds unverified items."
+  },
+  "084:LME_A:1faac195": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states that Emily lives in Denver."
+  },
+  "085:LME_C:b5ef892d": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer correctly states the total of 8 days."
+  },
+  "086:S2_DnoR:s2_q11": {
+   "score": 0.5,
+   "mode": "normal_judge",
+   "reasoning": "The Atlas migration tools are correct, but its actual date is missing. The answer incorrectly denies Beacon's testing-tool migration and omits its date."
+  },
+  "087:LME_D:c4ea545c": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer clearly includes the reference\u2019s affirmative answer."
+  },
+  "088:S1_C:s1_q25": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "089:LME_C:gpt4_372c3eed_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "090:S2_DnoR:s2_q08": {
+   "score": 0.0,
+   "mode": "false_abstention",
+   "reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  "091:S1_C:s1_q24": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "092:S1_DnoR:s1_q23": {
+   "score": 1.0,
+   "mode": "ref_abstention_judge",
+   "reasoning": "The generated answer explicitly says the vulnerability types are unspecified. Its claim about a 30-day remediation window is not supported by the reference, but it does not fabricate the specific vulnerabilities."
+  },
+  "093:LME_D:eeda8a6d_abs": {
+   "score": 1.0,
+   "mode": "abstention_correct",
+   "reasoning": "REF=abstention, ANS=abstention"
+  },
+  "094:LME_D:b5ef892d": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives the reference total of 8 days."
+  },
+  "095:LME_D:0ddfec37_abs": {
+   "score": 0.0,
+   "mode": "ref_abstention_judge",
+   "reasoning": "Although it says footballs are not mentioned, it adds an unsupported count of 15 baseballs and a Mike Trout anecdote."
+  },
+  "096:LME_D:gpt4_d12ceb0e": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives the reference average of 59.6 years."
+  },
+  "097:S2_DnoR:s2_q26": {
+   "score": 0.0,
+   "mode": "ref_abstention_judge",
+   "reasoning": "The generated answer fabricates specific test results and a conclusion, whereas no results are documented."
+  },
+  "098:S1_DnoR:s1_q17": {
+   "score": 1.0,
+   "mode": "normal_judge",
+   "reasoning": "The generated answer gives the correct current planned launch date. The prior schedule changes are supplementary context."
+  },
+  "099:S2_A:s2_q01": {
+   "score": 0.75,
+   "mode": "normal_judge",
+   "reasoning": "The amount and lead investor are correct, but the answer omits Bessemer and the two angel investors."
+  }
+ }
+}

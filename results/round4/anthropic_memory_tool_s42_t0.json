@@ -1,0 +1,4205 @@
+{
+ "system": "anthropic_memory_tool",
+ "label": "Anthropic memory tool (files)",
+ "seed": 42,
+ "rung": 0,
+ "store_tokens": 9881,
+ "n_memories": 260,
+ "readers": [
+  "anthropic/claude-sonnet-5.5",
+  "anthropic/claude-haiku-5.5"
+ ],
+ "write_model": "haiku",
+ "status": "OK",
+ "error": null,
+ "ingest": {
+  "seconds": 431.1,
+  "llm_calls": 109,
+  "prompt_tokens": 689841,
+  "completion_tokens": 109420,
+  "provider_cached_tokens": 0,
+  "usd": 0.1237,
+  "llm_calls_per_memory": 0.419
+ },
+ "read": {
+  "seconds": 707.8,
+  "by_reader": {
+   "anthropic/claude-sonnet-5.5": {
+    "llm_calls": 290,
+    "prompt_tokens": 1802092,
+    "completion_tokens": 23149,
+    "provider_cached_tokens": 0,
+    "usd": 3.8357
+   },
+   "anthropic/claude-haiku-5.5": {
+    "llm_calls": 289,
+    "prompt_tokens": 1794648,
+    "completion_tokens": 31095,
+    "provider_cached_tokens": 0,
+    "usd": 0.195
+   }
+  },
+  "other_models": {
+   "llm_calls": 0,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "provider_cached_tokens": 0,
+   "usd": 0
+  }
+ },
+ "questions": [
+  {
+   "id": "q_t1_0",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Quentin Dubois's current role?",
+   "reference": "product owner of Umbra",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0064"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Quentin Dubois's only recorded role is product owner of Umbra, which he took on 2025-02-17. His entry has no later role change.\n\nBob Martinez was named product owner of Umbra on 2025-05-06. That suggests Quentin may no longer hold the role, but the notes never say he was moved or what he does now. So the latest recorded role is Umbra product owner, and it may be out of date.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.84,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.75,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer identifies 'product owner of Umbra' as Quentin's latest recorded role, which matches the reference. However, it hedges, saying Quentin may no longer hold the role because Bob Martinez was named product owner later. The reference states the role as current, so this hedging weaken",
+     "outcome": "wrong"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Quentin Dubois is the product owner of Umbra, a role he took on 2025-02-17. My notes record no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.37,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Quentin Dubois is the product owner of Umbra, which matches the reference. The added start date and note about no later role change do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_1",
+   "task": "T1",
+   "stratum": "",
+   "question": "Where is Emeka Obi based?",
+   "reference": "Berlin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0190"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Emeka Obi is based in Berlin. That comes from a note dated 2025-05-21, and I found no later note that changes it.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.87,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Emeka Obi is based in Berlin, which matches the reference. The added note about a 2025-05-21 source does not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Emeka Obi is based in Berlin (noted 2025-05-21). My notes show no later location change for Emeka Obi.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.02,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Emeka Obi is based in Berlin, which matches the reference. The added date note and the statement about no later location change do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_2",
+   "task": "T1",
+   "stratum": "",
+   "question": "Where is Zofia Nowak based?",
+   "reference": "Lisbon",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0200"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Zofia Nowak is based in Lisbon. That comes from a note dated 2025-05-26, and it's the only residence note for her. Her other entries are conference talks, such as Dublin and Berlin, and those are event locations, not where she lives.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.92,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Zofia Nowak is based in Lisbon, which matches the reference. The extra details about the note date and conference talks do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Zofia Nowak is based in **Lisbon**, according to a note recorded on 2025-05-26. I found no later note changing her location.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.38,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Zofia Nowak is based in Lisbon, which matches the reference exactly. The added details about the note date do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_3",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Meridian's quarterly budget?",
+   "reference": "$300k",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0008"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Meridian's quarterly budget is $300k. It was set on 2025-01-08, and the budget file shows no revisions since then.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.3,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $300k, which matches the reference. The extra details (set date, no revisions) don't contradict the reference.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Meridian's quarterly budget is $300k. It was set on 2025-01-08, and I found no later revision in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.71,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $300k, which matches the reference. The added detail about the date it was set and no later revision does not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_4",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Valentina Greco's current role?",
+   "reference": "design lead of Atlas",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0001"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "The only role I have for Valentina Greco is design lead of Atlas, which she became on 2025-01-09. Rosa Alvarez succeeded her as Atlas design lead on 2025-01-14, and my notes don't record a new role for Valentina after that. So I can't say what her current role is. Design lead of Atlas is her last recorded role, and it appears to have ended in January 2025.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 6.1,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.25,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer mentions 'design lead of Atlas' as her last recorded role, but it explicitly says that role ended in January 2025 when Rosa Alvarez succeeded her, and it declines to give a current role. This contradicts the reference, which states design lead of Atlas is her current role. The c",
+     "outcome": "wrong"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "The records don't show a current role for Valentina Greco. Her only recorded role is design lead of Atlas, from 2025-01-09. Rosa Alvarez succeeded her in that position on 2025-01-14, so that role is no longer current. Her last known location is Lisbon (noted 2025-05-06), and she presented Quill at DataSummit in Berlin on 2025-07-01 and Harbor at ShipIt in Denver on 2025-07-02, but those are event appearances, not roles.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.44,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.25,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The reference gives the current role as design lead of Atlas. The generated answer mentions that role but says it is no longer current because Rosa Alvarez succeeded her, and it says no current role is recorded. That contradicts the reference's claim that this is her current role, so only the role n",
+     "outcome": "wrong"
+    }
+   }
+  },
+  {
+   "id": "q_t1_5",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Ximena Ortiz's current role?",
+   "reference": "QA lead of Sextant",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0027"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have a current role recorded for Ximena Ortiz. The only role in my notes is QA lead of Sextant, which she took on 2025-01-21. Mina Park replaced her in that role on 2025-03-04, and I have no later role for her. My notes do show she is based in Toronto as of July 2025.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.94,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.15,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer mentions 'QA lead of Sextant' but says she no longer holds it (replaced by Mina Park) and that no current role is recorded. This contradicts the reference's claim that it is her current role, so the answer is effectively wrong despite naming the role.",
+     "outcome": "wrong"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have a current role on record for Ximena Ortiz. Her last recorded role was QA lead of Sextant, starting 2025-01-21, but Mina Park replaced her in that role on 2025-03-04, and no later role appears in my notes. Her current location is Toronto (since July 2025), but that is a residence, not a role.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.68,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.25,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The reference says her current role is QA lead of Sextant. The generated answer names that role but says she was replaced on 2025-03-04 and that no current role is on record. This contradicts the reference's claim that it is her current role, so the answer is mostly wrong even though the role title ",
+     "outcome": "wrong"
+    }
+   }
+  },
+  {
+   "id": "q_t1_6",
+   "task": "T1",
+   "stratum": "",
+   "question": "Where is Grace Kim based?",
+   "reference": "Denver",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0241"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Grace Kim is based in Denver. This comes from a note dated 2025-06-27, and it's her current location. Her later Toronto appearance (DevCon, 2025-07-01) was an event presentation, not a move.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.09,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Grace Kim is based in Denver, which matches the reference. The extra detail about the Toronto event does not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Grace Kim is based in Denver. Her location was noted on 2025-06-27.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.75,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Grace Kim is based in Denver, matching the reference. The added date does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_7",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Emeka Obi's current role?",
+   "reference": "design lead of Sextant",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0048"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Emeka Obi is the design lead of Sextant. He took the role on 2025-02-07, and I found no later role change for him in the notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.82,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Emeka Obi is the design lead of Sextant, which matches the reference. The added start date and note about no later role change do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Emeka Obi's current role is **design lead of Sextant**, which he took on 2025-02-07. My notes show no later role change for him.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.13,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the role is design lead of Sextant, which matches the reference. The added start date and note about no later change do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_8",
+   "task": "T1",
+   "stratum": "",
+   "question": "What is Compass's quarterly budget?",
+   "reference": "$180k",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0000"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Compass's quarterly budget is $180k. It was set on 2025-01-06, and the notes show no revisions since then.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.55,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $180k, which matches the reference. The extra details (set date, no revisions) don't contradict the reference.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Compass's quarterly budget is $180k. It was set on 2025-01-06, and I have no record of a revision since then.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.32,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the $180k quarterly budget, which matches the reference. The added detail about the 2025-01-06 date and no revision does not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t1_9",
+   "task": "T1",
+   "stratum": "",
+   "question": "Which issue tracker does Relay use?",
+   "reference": "Trello",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0062"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Relay uses Trello as its issue tracker. It was standardized on Trello on 2025-02-21, and the notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.52,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Relay uses Trello, which matches the reference. The added detail about the 2025-02-21 standardization does not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Relay uses Trello. Its issue tracker was standardized on Trello on 2025-02-21, and that is the current entry in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.9,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Relay uses Trello, which matches the reference. The added date and note about it being the current entry do not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t4_10",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Lantern use? (as of today)",
+   "reference": "Asana",
+   "stale_answer": "Jira",
+   "evidence_ids": [
+    "r3_0059"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Lantern uses **Asana** as its issue tracker. It switched from Jira to Asana on 2025-02-10, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.56,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer names Asana, which matches the reference. The added detail about switching from Jira on 2025-02-10 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Lantern uses Asana. Its issue tracker changed from Jira to Asana on 2025-02-10, and my notes don't record any later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.73,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Lantern uses Asana, which matches the reference. The added detail about the switch from Jira on 2025-02-10 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_11",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Noah Berg's current role? (as of today)",
+   "reference": "release manager of Umbra",
+   "stale_answer": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0171"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Noah Berg is the release manager of Umbra. This role took effect on 2025-05-07 and replaced his earlier post as design lead of Orbit, which he had held since 2025-04-17.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.13,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Noah Berg is the release manager of Umbra, which matches the reference. The extra details about dates and his earlier role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Noah Berg is the **release manager of Umbra**. He moved there from design lead of Orbit, effective 2025-05-07, and I have no later role change on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.83,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Noah Berg is the release manager of Umbra, which matches the reference exactly. The extra details about his move from design lead of Orbit are additional context and do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_12",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Callum Reid based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Austin",
+   "evidence_ids": [
+    "r3_0029"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Callum Reid is based in Osaka. The notes say he has lived there since January 2025, and they replace his earlier Austin location. His only later mention is a talk in Singapore on 2025-06-10, which the notes mark as an event location and not a move.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.27,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid is based in Osaka, which matches the reference. The extra details about Austin and Singapore do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Callum Reid is based in **Osaka**, which he has been since January 2025 (noted 2025-01-24). This supersedes his earlier location in Austin. I found no later record of him relocating.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.66,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka, which matches the reference. The extra details (since January 2025, earlier in Austin) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_13",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Rosa Alvarez based? (as of today)",
+   "reference": "Dublin",
+   "stale_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0178"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Rosa Alvarez is based in Dublin. She relocated there from Osaka in May 2025, and that is the latest residence note in my files. Her later appearances, such as InfraDays Singapore, PlatformWeek Osaka and PlatformWeek Austin, were event presentations. They don't change where she lives.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.36,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Rosa Alvarez is based in Dublin, which matches the reference. The extra details about her relocation and event appearances do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Rosa Alvarez is based in Dublin. She relocated there from Osaka in May 2025, and no later note records a move. Her recent presentations in Singapore, Osaka and Austin were events, not changes of residence.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.82,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Rosa Alvarez is based in Dublin, which matches the reference. The added details about relocating from Osaka and her presentations do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_14",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Bob Martinez's current role? (as of today)",
+   "reference": "product owner of Umbra",
+   "stale_answer": "data lead of Nimbus",
+   "evidence_ids": [
+    "r3_0175"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Bob Martinez is the product owner of Umbra. The change took effect on 2025-05-06 and replaced his earlier role as data lead of Nimbus, which he'd held since 2025-04-29. Nothing later in the files changes it.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.23,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez is the product owner of Umbra, which matches the reference. The extra details about dates and his earlier role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Bob Martinez's current role is **product owner of Umbra**, effective 2025-05-06. That change superseded his earlier role as data lead of Nimbus (2025-04-29). My records show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.99,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez's current role is product owner of Umbra, which matches the reference. The extra details (effective date, earlier role) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_15",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Carol Davis based? (as of today)",
+   "reference": "Austin",
+   "stale_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0054"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Carol Davis is based in Austin. She has been there since February 2025, according to a note dated 2025-02-14. It replaced an earlier note that put her in Singapore. Her later entries are conference presentations in Toronto, Berlin and Denver. Those entries record where the events were held, not where she lives.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.31,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Carol Davis is based in Austin, which matches the reference. The extra details (the February 2025 note, the earlier Singapore note, the conference locations) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Carol Davis is based in Austin, Texas... wait, the notes only say Austin; I'll state it as Austin.\n\nCarol Davis is based in Austin (since February 2025, per the latest note from 2025-02-14). Her earlier location, Singapore, was superseded.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.31,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 0.95,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer says Carol Davis is based in Austin, which matches the reference. It briefly mentions 'Austin, Texas' and then corrects itself to say only Austin. The extra detail about Singapore being superseded does not contradict the reference. The self-correction text is messy but harmless.",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_16",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Liam O'Brien's current role? (as of today)",
+   "reference": "tech lead of Meridian",
+   "stale_answer": "release manager of Sextant",
+   "evidence_ids": [
+    "r3_0051"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have a record of Liam O'Brien's current role. His last recorded role was tech lead of Meridian, which he held from 2025-02-10. Callum Reid replaced him in that role on 2025-03-26. Before that he was release manager of Sextant, from 2025-02-03. The files list no new role for him after 2025-03-26.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.94,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 0.15,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The reference says Liam O'Brien's current role is tech lead of Meridian. The generated answer says he was tech lead of Meridian but was replaced by Callum Reid on 2025-03-26, and that it has no record of a current role. That contradicts the reference's claim that this is his current role. It does me",
+     "outcome": "other"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have a current role for Liam O'Brien. The most recent role in my records is tech lead of Meridian, which he took on 2025-02-10. Callum Reid replaced him as Meridian tech lead on 2025-03-26, and my notes don't record any role for him after that.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.06,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.15,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The reference says Liam O'Brien's current role is tech lead of Meridian. The generated answer mentions that role but says he was replaced by Callum Reid on 2025-03-26 and that it has no current role on record. That contradicts the reference's claim that he currently holds the role, so the answer is ",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_17",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Compass use? (as of today)",
+   "reference": "Notion",
+   "stale_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0071"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Compass uses **Notion** as its issue tracker. It switched from Confluence to Notion on 2025-02-24, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.32,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Compass uses Notion as its issue tracker, which matches the reference. The extra detail about switching from Confluence on 2025-02-24 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Compass uses Notion. Its tracker switched from Confluence to Notion on 2025-02-24, and my notes have no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.7,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Compass uses Notion, which matches the reference. The added detail about switching from Confluence on 2025-02-24 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_18",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Yusuf Demir based? (as of today)",
+   "reference": "Austin",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0214"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Yusuf Demir is based in Austin. He relocated there from Berlin in June 2025, according to a note dated 2025-06-04, and nothing later changes that.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.15,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Yusuf Demir is based in Austin, which matches the reference. The extra details about relocating from Berlin do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Yusuf Demir is based in Austin. He relocated from Berlin to Austin on 2025-06-04, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.05,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Yusuf Demir is based in Austin, which matches the reference. The extra relocation details do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_19",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Umbra use? (as of today)",
+   "reference": "Confluence",
+   "stale_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0047"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Umbra uses **Confluence** as its issue tracker. It switched from Shortcut to Confluence on 2025-02-05, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.66,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Confluence as Umbra's issue tracker, which matches the reference. The extra detail about switching from Shortcut does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Umbra uses Confluence. It switched from Shortcut to Confluence on 2025-02-05, and my notes don't record any later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.29,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Umbra uses Confluence, which matches the reference. The added details about switching from Shortcut and the date do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_20",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Harbor's quarterly budget? (as of today)",
+   "reference": "$120k",
+   "stale_answer": "$520k",
+   "evidence_ids": [
+    "r3_0151"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Harbor's quarterly budget is currently **$120k**. It was set at $520k on 2025-02-11 and revised down to $120k on 2025-04-22.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.6,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $120k, which matches the reference. The extra history (set at $520k, revised to $120k) does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Harbor's quarterly budget is $120k. It was revised from $520k to $120k on 2025-04-22, and my notes have no later revision. I don't have a record of \"today's\" date, so I can't confirm nothing changed after my latest entry.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.7,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Harbor's quarterly budget is $120k, matching the reference. The extra details about the revision history and the caveat about today's date do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_21",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Wei Zhang based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0202"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wei Zhang is based in Osaka. The notes say they've been there since May 2025 (noted 2025-05-29), which replaced an earlier note that put them in Berlin. I found no later location note for them.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.13,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is based in Osaka, which matches the reference. The extra details about the move from Berlin and the note dates do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wei Zhang is based in Osaka. The most recent location note (2025-05-29) moved Wei from Berlin, where they had been based since 2025-05-19, to Osaka.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.98,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is based in Osaka, which matches the reference. The extra detail about moving from Berlin does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_22",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Relay's quarterly budget? (as of today)",
+   "reference": "$240k",
+   "stale_answer": "$300k",
+   "evidence_ids": [
+    "r3_0148"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Relay's quarterly budget is **$240k**. It was set at $300k on 2025-03-07 and revised down to $240k on 2025-04-16. The notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.67,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Relay's quarterly budget is $240k, which matches the reference. The extra history (set at $300k, revised down to $240k) does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Relay's quarterly budget is **$240k**. It was revised from $300k to $240k on 2025-04-16, and no later revision appears in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.65,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $240k, which matches the reference. The extra detail about the revision from $300k does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_23",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Olga Petrova based? (as of today)",
+   "reference": "Singapore",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0224"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Olga Petrova is based in Singapore. She has been there since June 2025, according to a note dated 2025-06-12. That note replaced her earlier Berlin location.\n\nHer later appearance at PlatformWeek in Osaka (2025-06-26) was a conference presentation. It doesn't change where she lives.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.94,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Olga Petrova is based in Singapore, which matches the reference. The extra details (June 2025 note, earlier Berlin location, Osaka conference) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Olga Petrova is based in **Singapore**. Her move there in June 2025 (noted 2025-06-12) superseded her earlier Berlin base. My notes have no later change to her location.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.4,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Singapore, matching the reference. The extra details about the June 2025 move and the earlier Berlin base do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_24",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Tove Lindqvist based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0246"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tove Lindqvist is based in Denver. She has been there since June 2025, according to a note dated 2025-06-27. That note replaces the earlier record that had her in Lisbon.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.69,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer says Tove Lindqvist is based in Denver, which matches the reference. The extra details (since June 2025, replacing the earlier Lisbon record) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Tove Lindqvist is based in Denver. Her move there from Lisbon was recorded on 2025-06-27, and no later note changes it.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.36,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Tove Lindqvist is based in Denver, which matches the reference. The extra details about the move from Lisbon and the date do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_25",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Ines Moreau based? (as of today)",
+   "reference": "Austin",
+   "stale_answer": "Dublin",
+   "evidence_ids": [
+    "r3_0119"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Ines Moreau is based in Austin. She moved there from Dublin in March 2025, according to a note dated 2025-03-27. Nothing later in the memory files changes that. Her presentation at ShipIt in Denver on 2025-05-01 was an event appearance, not a move.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.2,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Ines Moreau is based in Austin, which matches the reference. The extra details (move from Dublin, Denver event) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Ines Moreau is based in Austin. She relocated from Dublin to Austin in March 2025, and the people file records no later location change for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.16,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Ines Moreau is based in Austin, which matches the reference. The extra details about relocating from Dublin do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_26",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Pylon use? (as of today)",
+   "reference": "Linear",
+   "stale_answer": "Trello",
+   "evidence_ids": [
+    "r3_0009"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Pylon uses **Linear**. It switched from Trello to Linear on 2025-01-10, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.79,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Pylon uses Linear, which matches the reference. The extra detail about switching from Trello on 2025-01-10 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Pylon uses **Linear**. It switched from Trello to Linear effective 2025-01-10, and my notes list that as the current tracker.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.84,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Pylon uses Linear, which matches the reference. The extra detail about switching from Trello is additional and does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_27",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Elena Rossi based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0206"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Elena Rossi is based in Osaka. She relocated there from Berlin in May 2025, according to a note dated 2025-05-29. Her later entries are conference talks, including DevCon Singapore on 2025-06-09, and those don't change where she lives.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.76,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi is based in Osaka, which matches the reference. The extra details (relocation from Berlin, conference talks) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Elena Rossi is based in **Osaka**. Her most recent residence note, from 2025-05-29, records a relocation from Berlin to Osaka in May 2025. Her later entries are event presentations, which don't count as residence updates.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.08,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi is based in Osaka, matching the reference exactly. The extra details about relocating from Berlin do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_28",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Mina Park based? (as of today)",
+   "reference": "Austin",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0006"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Mina Park is based in Austin. The notes say she has been there since January 2025, when she moved from Lisbon. Her later appearances in Singapore, Dublin, Osaka and Denver were event presentations, not moves.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.93,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park is based in Austin, which matches the reference. The extra details (moved from Lisbon in January 2025, later events were presentations) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Mina Park is based in **Austin**, according to the latest residence note (since January 2025, noted 2025-01-09). That note superseded an earlier Lisbon entry. Her later event appearances in Denver, Osaka, and Dublin are not residence updates.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.18,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park is based in Austin, which matches the reference. The extra details about the residence note, the earlier Lisbon entry, and the event appearances do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_29",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Hiro Tanaka's current role? (as of today)",
+   "reference": "QA lead of Compass",
+   "stale_answer": "release manager of Compass",
+   "evidence_ids": [
+    "r3_0028"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Hiro Tanaka is the QA lead of Compass. That role took effect on 2025-01-22, and it replaced his earlier role as release manager of Compass, which he took on 2025-01-21. My notes show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.98,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Hiro Tanaka is the QA lead of Compass, which matches the reference. The extra details about dates and his earlier role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Hiro Tanaka's current role is **QA lead of Compass**. He moved there on 2025-01-22, replacing his brief stint as release manager of Compass (appointed 2025-01-21).",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.39,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current role is QA lead of Compass, which matches the reference exactly. The extra details about dates and a prior release manager role don't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_30",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Freya Holm's current role? (as of today)",
+   "reference": "tech lead of Lantern",
+   "stale_answer": "release manager of Orbit",
+   "evidence_ids": [
+    "r3_0146"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Freya Holm is the tech lead of Lantern. She moved to that role from release manager of Orbit, effective 2025-04-18. Nothing later in the notes changes it.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.78,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Freya Holm is the tech lead of Lantern, which matches the reference. The extra details about her previous role and the effective date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Freya Holm's current role is **tech lead of Lantern**, effective 2025-04-18. She moved there from release manager of Orbit, and no later role change is recorded.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.75,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Freya Holm is tech lead of Lantern, which matches the reference. The extra details (effective date, previous role) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_31",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Carol Davis's current role? (as of today)",
+   "reference": "QA lead of Compass",
+   "stale_answer": "QA lead of Lantern",
+   "evidence_ids": [
+    "r3_0125"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Carol Davis is the QA lead of Compass. The role took effect on 2025-04-01, and the note recording it is dated 2025-04-04. It replaced her earlier role as QA lead of Lantern, which she took on 2025-03-12. I found no later role change for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.24,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Carol Davis is QA lead of Compass, which matches the reference. The extra details about dates and her earlier role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Carol Davis's current role is QA lead of Compass. She moved there on 2025-04-01 (noted 2025-04-04), replacing her earlier role as QA lead of Lantern.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.23,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Carol Davis is QA lead of Compass, which matches the reference. The extra details about the move date and her earlier role at Lantern do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_32",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Umbra's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "stale_answer": "$120k",
+   "evidence_ids": [
+    "r3_0131"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Umbra's quarterly budget is **$900k**. It was originally set at $120k on 2025-02-25 and revised to $900k on 2025-04-09. My notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.83,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $900k as Umbra's current quarterly budget, matching the reference. The extra history (originally $120k, revised on 2025-04-09) doesn't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Umbra's quarterly budget is $900k. It was revised from $120k to $900k on 2025-04-09, and I have no later revision on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.03,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $900k, which matches the reference. The added revision history (from $120k on 2025-04-09) does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_33",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Lantern's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "stale_answer": "$120k",
+   "evidence_ids": [
+    "r3_0139"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Lantern's quarterly budget is currently **$900k**. It started at $120k, set on 2025-01-27, and was revised to $900k on 2025-04-10.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.69,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $900k, matching the reference. The extra history (the earlier $120k budget and the revision dates) does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Lantern's quarterly budget is $900k. It was revised from $120k to $900k on 2025-04-10, and that is the latest figure in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.19,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $900k, which matches the reference. The added revision history does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_34",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Wayfarer use? (as of today)",
+   "reference": "Monday",
+   "stale_answer": "Asana",
+   "evidence_ids": [
+    "r3_0024"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wayfarer uses **Monday** as its issue tracker. It switched from Asana to Monday on 2025-01-24, and Monday is the most recent entry in the notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.86,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Monday, which matches the reference. The added details about the switch from Asana are extra and do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wayfarer uses Monday. It switched from Asana to Monday on 2025-01-24, and my notes don't record any later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.26,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer says Wayfarer uses Monday, which matches the reference. The added detail about switching from Asana on 2025-01-24 doesn't contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_35",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Harbor use? (as of today)",
+   "reference": "Trello",
+   "stale_answer": "Asana",
+   "evidence_ids": [
+    "r3_0082"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Harbor uses Trello. It switched from Asana to Trello on 2025-03-04, and that is the most recent change in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.39,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer says Harbor uses Trello, which matches the reference. The extra detail about switching from Asana on 2025-03-04 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Harbor uses Trello. Per my notes, it switched from Asana to Trello on 2025-03-04, and that is still the current entry.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.18,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Harbor uses Trello, which matches the reference. The extra detail about switching from Asana on 2025-03-04 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_36",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Beacon's quarterly budget? (as of today)",
+   "reference": "$450k",
+   "stale_answer": "$120k",
+   "evidence_ids": [
+    "r3_0058"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beacon's quarterly budget is currently **$450k**. It was first set at $120k on 2025-01-30, then revised to $450k on 2025-02-12.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.55,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $450k, which matches the reference. The extra history (initial $120k, revision on 2025-02-12) doesn't contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beacon's quarterly budget is **$450k**. It was raised from $120k on 2025-02-12, and I have no later revision on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.75,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $450k, which matches the reference. The extra detail about the raise from $120k on 2025-02-12 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_37",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Mina Park's current role? (as of today)",
+   "reference": "data lead of Compass",
+   "stale_answer": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0086"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Mina Park is the data lead of Compass. She moved to that role from QA lead of Sextant on 2025-03-06. The notes show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.5,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park is the data lead of Compass, which matches the reference. The extra details about her earlier role and the move date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Mina Park's current role is **data lead of Compass**. She moved there from QA lead of Sextant, effective 2025-03-06. No later role change for her appears in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.35,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Mina Park's current role is data lead of Compass, which matches the reference. The extra details about her previous role and the move date do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_38",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Wayfarer's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "stale_answer": "$240k",
+   "evidence_ids": [
+    "r3_0032"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wayfarer's quarterly budget is **$360k**. It was set at $240k on 2025-01-13, then revised to $360k on 2025-01-29. The files show no later changes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.04,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, which matches the reference. The extra history (set at $240k, then revised to $360k) does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wayfarer's quarterly budget is **$360k**. It was set at $240k on 2025-01-13 and revised to $360k on 2025-01-29, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.65,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference. The extra history (an earlier $240k, revised on 2025-01-29) doesn't contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_39",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Elena Rossi's current role? (as of today)",
+   "reference": "product owner of Pylon",
+   "stale_answer": "data lead of Quill",
+   "evidence_ids": [
+    "r3_0111"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Elena Rossi is the product owner of Pylon. She moved from data lead of Quill to that role on 2025-03-24, and the notes show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.56,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Elena Rossi is the product owner of Pylon, which matches the reference. The extra details about her earlier role and the move date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Elena Rossi's current role is **product owner of Pylon**. She moved there from data lead of Quill, effective 2025-03-24.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.42,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states her current role is product owner of Pylon, which matches the reference. The extra detail about her move from data lead of Quill does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_40",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Dmitri Volkov's current role? (as of today)",
+   "reference": "release manager of Relay",
+   "stale_answer": "design lead of Nimbus",
+   "evidence_ids": [
+    "r3_0019"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Dmitri Volkov is currently the release manager of Relay. He moved into that role from design lead of Nimbus, effective 2025-01-17. I found no later role change for him. His other entries are event presentations and a location note.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.08,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov is currently the release manager of Relay, which matches the reference. The extra details about his previous role and the effective date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Dmitri Volkov's most recent recorded role is **release manager of Relay**, effective 2025-01-17. He had been design lead of Nimbus from 2025-01-08 before that move. My notes have no later role change, so this is the latest I have, though I can't confirm it is still current today.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.78,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov's most recent role is release manager of Relay, which matches the reference. The extra history and the hedge about whether it is still current do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_41",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Yusuf Demir's current role? (as of today)",
+   "reference": "product owner of Sextant",
+   "stale_answer": "data lead of Wayfarer",
+   "evidence_ids": [
+    "r3_0138"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Yusuf Demir is currently the product owner of Sextant. He moved there from data lead of Wayfarer, effective 2025-04-11. I found no later role change in the memory files.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.85,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Yusuf Demir is currently the product owner of Sextant, which matches the reference. The extra details about the move from Wayfarer do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Yusuf Demir's current role is **product owner of Sextant**, effective 2025-04-11. He moved there from data lead of Wayfarer, and I have no later role change recorded for him.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.33,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current role is product owner of Sextant, matching the reference. The extra details (effective date, previous role) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_42",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Hiro Tanaka based? (as of today)",
+   "reference": "Toronto",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0020"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Hiro Tanaka is based in Toronto. He moved there from Lisbon in January 2025, and nothing in my notes says he has moved since. His later appearances at events in Lisbon, Toronto and Austin were presentations, not relocations.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.59,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Hiro Tanaka is based in Toronto, which matches the reference. The extra details about moving from Lisbon and later event appearances do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Hiro Tanaka is based in Toronto. He relocated there from Lisbon in January 2025 (noted 2025-01-20), and no later residence update appears in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.48,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Toronto as Hiro Tanaka's base, which matches the reference. The extra details about relocating from Lisbon and the note date do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_43",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Orbit's quarterly budget? (as of today)",
+   "reference": "$450k",
+   "stale_answer": "$600k",
+   "evidence_ids": [
+    "r3_0100"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Orbit's current quarterly budget is **$450k**. It was first set at $600k on 2025-03-13 and revised down to $450k on 2025-03-21.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.67,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $450k, which matches the reference. The extra history about the earlier $600k budget and the revision does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Orbit's quarterly budget is $450k. It was revised from $600k to $450k on 2025-03-21, and I have no later revision on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.22,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $450k, matching the reference. The added revision history does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_44",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Sanjay Mehta based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Dublin",
+   "evidence_ids": [
+    "r3_0018"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sanjay Mehta is based in Osaka. He moved there from Dublin in January 2025 (noted 2025-01-17). I found no later location note for him.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.75,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Sanjay Mehta is based in Osaka, which matches the reference. The extra details about moving from Dublin in January 2025 do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Sanjay Mehta is based in **Osaka**. He relocated there from Dublin in January 2025, and my notes contain no later location change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.18,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka, which matches the reference. The added details about relocating from Dublin in January 2025 do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_45",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Meridian use? (as of today)",
+   "reference": "Shortcut",
+   "stale_answer": "Monday",
+   "evidence_ids": [
+    "r3_0105"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Meridian uses **Shortcut** as its issue tracker. It switched from Monday to Shortcut on 2025-03-21, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.6,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Meridian uses Shortcut, which matches the reference. The extra details about switching from Monday and the date do not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Meridian uses **Shortcut**. It switched from Monday to Shortcut on 2025-03-21, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.76,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Meridian uses Shortcut, which matches the reference. The extra details about the switch from Monday and the date do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_46",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Dmitri Volkov based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Dublin",
+   "evidence_ids": [
+    "r3_0136"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Dmitri Volkov is based in Denver. He has been there since April 2025, when he moved from Dublin (noted 2025-04-07). The notes don't record any later move. His conference talks in other cities are event appearances, not relocations.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.45,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov is based in Denver, which matches the reference. The extra details (move from Dublin in April 2025, conference talks not being relocations) don't contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Dmitri Volkov is based in Denver, where he has been since April 2025 (noted 2025-04-07). This supersedes his earlier Dublin location (noted 2025-04-03). I found no later location update in the memory.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.96,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Dmitri Volkov is based in Denver, which matches the reference. The extra details about dates and the earlier Dublin location do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_47",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Ximena Ortiz based? (as of today)",
+   "reference": "Toronto",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0257"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Ximena Ortiz is based in Toronto. She relocated there in July 2025 (noted 2025-07-03), and that replaces her earlier Berlin location. Her 2025-07-04 presentation at PlatformWeek in Dublin was an event appearance, so it doesn't change where she is based.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.02,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states she is based in Toronto, which matches the reference. The extra details about her relocation and the Dublin event do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Ximena Ortiz is based in Toronto, where she relocated in July 2025 (noted 2025-07-03). This supersedes her earlier Berlin location from June 2025.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.45,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Toronto, which matches the reference. The extra details about her relocation do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_48",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Rosa Alvarez's current role? (as of today)",
+   "reference": "tech lead of Umbra",
+   "stale_answer": "design lead of Atlas",
+   "evidence_ids": [
+    "r3_0021"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Rosa Alvarez is the tech lead of Umbra. That role took effect on 2025-01-22 and replaced her earlier role as design lead of Atlas. Nothing later in the notes changes it. Her later entries cover a move to Dublin and conference presentations, not a new role.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.06,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Rosa Alvarez is the tech lead of Umbra, which matches the reference. The extra details about the start date and her earlier role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Rosa Alvarez is the **tech lead of Umbra**, a role she took on 2025-01-22. It supersedes her earlier position as design lead of Atlas (from 2025-01-14). I found no later role change for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.85,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Rosa Alvarez is the tech lead of Umbra, which matches the reference. The extra details (start date, earlier role) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_49",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Bob Martinez based? (as of today)",
+   "reference": "Lisbon",
+   "stale_answer": "Berlin",
+   "evidence_ids": [
+    "r3_0046"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Bob Martinez is based in Lisbon. He moved there from Berlin in February 2025, according to a note dated 2025-02-04. Later notes only mention him presenting at events in other cities, and those aren't changes of residence.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.01,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Bob Martinez is based in Lisbon, which matches the reference. The extra details about moving from Berlin and later event presentations do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Bob Martinez is based in **Lisbon**. He relocated there from Berlin in February 2025 (noted 2025-02-04). I found no later residence update; his more recent entries are event presentations and a role change, which don't indicate a move.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.27,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer says Bob Martinez is based in Lisbon, which matches the reference. The extra details about relocating from Berlin and the lack of later updates do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_50",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Atlas's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "stale_answer": "$180k",
+   "evidence_ids": [
+    "r3_0050"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Atlas's quarterly budget is currently **$900k**. It was first set at $180k on 2025-01-17, then revised to $900k on 2025-02-11. The notes show no revisions after that.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.33,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $900k, which matches the reference. The extra history about the earlier $180k figure and the revision date does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Atlas's quarterly budget is **$900k**. It was revised from $180k on 2025-02-11, and that is the latest entry in my records.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.6,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $900k, matching the reference. The added details (revised from $180k on 2025-02-11) do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_51",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Tessera use? (as of today)",
+   "reference": "Confluence",
+   "stale_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0103"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tessera uses **Confluence** as its issue tracker. It switched from Shortcut to Confluence on 2025-03-18, and the notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.95,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer says Confluence, which matches the reference. The extra detail about the switch from Shortcut on 2025-03-18 doesn't contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Tessera uses **Confluence**. It switched from Shortcut on 2025-03-18, and my notes list that as the current tracker.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.08,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Confluence as the current issue tracker, which matches the reference. The extra detail about switching from Shortcut on 2025-03-18 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_52",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Grace Kim's current role? (as of today)",
+   "reference": "design lead of Tessera",
+   "stale_answer": "tech lead of Pylon",
+   "evidence_ids": [
+    "r3_0140"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Grace Kim is the design lead of Tessera. She moved to that role from tech lead of Pylon on 2025-04-14. Nothing later in the notes changes it.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.61,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Grace Kim is the design lead of Tessera, which matches the reference. The extra detail about moving from tech lead of Pylon does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Grace Kim's current role is **design lead of Tessera**, effective 2025-04-14. Her earlier role as tech lead of Pylon (from 2025-03-31) was superseded by that move. My notes show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.78,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Grace Kim's current role is design lead of Tessera, which matches the reference. The extra details about the effective date and her earlier role do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_53",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Atlas use? (as of today)",
+   "reference": "Monday",
+   "stale_answer": "Shortcut",
+   "evidence_ids": [
+    "r3_0033"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Atlas uses **Monday** as its issue tracker. It switched from Shortcut to Monday on 2025-01-28, and that is the most recent change in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.54,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Atlas uses Monday, which matches the reference. The added detail about the switch from Shortcut on 2025-01-28 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Atlas uses Monday. It switched from Shortcut to Monday effective 2025-01-28, and that is the most recent entry in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.32,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Atlas uses Monday, which matches the reference. The extra detail about the switch from Shortcut on 2025-01-28 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_54",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Which issue tracker does Beacon use? (as of today)",
+   "reference": "Shortcut",
+   "stale_answer": "Notion",
+   "evidence_ids": [
+    "r3_0061"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beacon uses **Shortcut** as its issue tracker. It switched from Notion to Shortcut on 2025-02-21, and my notes show no later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.89,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer names Shortcut as Beacon's issue tracker, which matches the reference. The extra detail about switching from Notion on 2025-02-21 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beacon uses Shortcut. Its tracker moved from Notion to Shortcut on 2025-02-21, and my notes don't record any later change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.33,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Beacon uses Shortcut, which matches the reference. The added detail about the move from Notion and the caveat about later changes does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_55",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Daria Sokolova based? (as of today)",
+   "reference": "Berlin",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0081"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Daria Sokolova is based in Berlin. She moved there from Lisbon in March 2025, according to a note dated 2025-03-07. Her later entries are only conference presentations, which don't change where she lives.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.39,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Daria Sokolova is based in Berlin, which matches the reference. The extra details about moving from Lisbon do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Daria Sokolova is based in **Berlin**. She relocated there from Lisbon in March 2025, and my notes have no later change of location.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.83,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Daria Sokolova is based in Berlin, which matches the reference. The added details about relocating from Lisbon do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_56",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Sextant use? (as of today)",
+   "reference": "Shortcut",
+   "stale_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0080"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sextant uses **Shortcut** as its issue tracker. It switched from Confluence to Shortcut on 2025-03-06, and that is the latest change in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.66,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer names Shortcut as the issue tracker, which matches the reference. The extra detail about switching from Confluence on 2025-03-06 does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Sextant uses Shortcut. Its tracker was switched from Confluence to Shortcut on 2025-03-06, and that is the most recent entry in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.45,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Sextant uses Shortcut, which matches the reference. The extra detail about the switch from Confluence on 2025-03-06 does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_57",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Pylon's quarterly budget? (as of today)",
+   "reference": "$520k",
+   "stale_answer": "$900k",
+   "evidence_ids": [
+    "r3_0104"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Pylon's quarterly budget is currently **$520k**. It was originally set at $900k on 2025-02-12 and revised down to $520k on 2025-03-21.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.55,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $520k, which matches the reference. The extra history about the earlier $900k budget and the revision does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Pylon's quarterly budget is **$520k**. It was originally set at $900k on 2025-02-12, then revised to $520k on 2025-03-21. My notes have no later revision, so this is the current figure as of today.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.23,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $520k, which matches the reference. The added history ($900k revised to $520k) does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_58",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Jamal Okafor based? (as of today)",
+   "reference": "Denver",
+   "stale_answer": "Austin",
+   "evidence_ids": [
+    "r3_0052"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Jamal Okafor is based in Denver. He relocated there from Austin in February 2025, with the move noted on 2025-02-11. His later appearances in Singapore, Lisbon and Austin were event presentations, not changes of residence.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.11,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jamal Okafor is based in Denver, which matches the reference. The extra details (relocation from Austin, event appearances) don't contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jamal Okafor is based in **Denver**. He relocated there from Austin in February 2025, and I have no later note that changes this. His recent event presentations in Lisbon and Austin are event locations, not residence changes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.6,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jamal Okafor is based in Denver, which matches the reference. The extra details (relocation from Austin, event locations) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_59",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Liam O'Brien based? (as of today)",
+   "reference": "Singapore",
+   "stale_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0112"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Liam O'Brien is based in Singapore. He has lived there since March 2025 (noted 2025-03-28), after a spell in Osaka. His later conference talks were event appearances, not moves.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.72,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Liam O'Brien is based in Singapore, which matches the reference. The extra details (since March 2025, previously Osaka) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Liam O'Brien is based in **Singapore**, according to the most recent note (2025-03-28), which says he has been there since March 2025. It supersedes his earlier Osaka entry. My notes have no later change to his location.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.85,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Singapore, matching the reference. The extra details about notes and the earlier Osaka entry do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_60",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Alice Chen based? (as of today)",
+   "reference": "Singapore",
+   "stale_answer": "Lisbon",
+   "evidence_ids": [
+    "r3_0245"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Alice Chen is based in Singapore. She relocated there from Lisbon in June 2025 (noted 2025-06-26). I found no later note that changes this.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.6,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Alice Chen is based in Singapore, which matches the reference. The extra details about relocating from Lisbon in June 2025 do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Alice Chen is based in Singapore. She relocated from Lisbon in June 2025 (noted 2025-06-26), and that is her most recent location in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.17,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Alice Chen is based in Singapore, which matches the reference. The extra detail about relocating from Lisbon does not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_61",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Ines Moreau's current role? (as of today)",
+   "reference": "release manager of Quill",
+   "stale_answer": "design lead of Harbor",
+   "evidence_ids": [
+    "r3_0074"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Ines Moreau is the release manager of Quill. She moved to that role from design lead of Harbor, effective 2025-02-25. I found no later role change for her in the notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.79,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Ines Moreau is the release manager of Quill, which matches the reference. The extra details about her earlier role and the effective date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Ines Moreau's current role is release manager of Quill. She moved there from design lead of Harbor, effective 2025-02-25.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.19,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the reference fact, that Ines Moreau is release manager of Quill. The extra detail about moving from design lead of Harbor does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_62",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Alice Chen's current role? (as of today)",
+   "reference": "design lead of Orbit",
+   "stale_answer": "tech lead of Relay",
+   "evidence_ids": [
+    "r3_0088"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to say what Alice Chen's current role is.\n\nHer last recorded role was design lead of Orbit, which she held from 2025-03-06. Zofia Nowak replaced her in that role on 2025-03-26. Before that she was tech lead of Relay, from 2025-02-25. The memory files record no new role for her after 2025-03-26.\n\nThe files only add that she is based in Singapore as of June 2025.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 6.4,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to say Alice Chen's current role. Her last recorded role was design lead of Orbit, effective 2025-03-06. That was superseded on 2025-03-26, when Zofia Nowak became Orbit design lead, and my notes have no later role change for Alice. (Her current location is recorded as Singapore, since June 2025.)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.19,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.0,
+     "judge_mode": "false_abstention",
+     "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_63",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Sanjay Mehta's current role? (as of today)",
+   "reference": "design lead of Compass",
+   "stale_answer": "data lead of Beacon",
+   "evidence_ids": [
+    "r3_0093"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Sanjay Mehta is the design lead of Compass. The role took effect on 2025-03-14 and replaced his earlier role as data lead of Beacon, which he'd held since 2025-03-13.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.79,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Sanjay Mehta is the design lead of Compass, which matches the reference. The extra details about dates and his earlier role do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Sanjay Mehta's current role is **design lead of Compass**. This was recorded on 2025-03-14, superseding his earlier role as data lead of Beacon.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.22,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Sanjay Mehta's current role is design lead of Compass, which matches the reference exactly. The extra details (recorded date, earlier role as data lead of Beacon) do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_64",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Wei Zhang's current role? (as of today)",
+   "reference": "release manager of Meridian",
+   "stale_answer": "QA lead of Lantern",
+   "evidence_ids": [
+    "r3_0053"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Wei Zhang is the release manager of Meridian. This role took effect on 2025-02-14, when Wei moved from QA lead of Lantern. The memory files show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.98,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Wei Zhang is the release manager of Meridian, which matches the reference. The extra details (start date, previous role) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Wei Zhang's current role is **release manager of Meridian**. They moved there from QA lead of Lantern, effective 2025-02-14, and no later role change is recorded in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.33,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Wei Zhang's current role is release manager of Meridian, which matches the reference. The extra details about the move from QA lead of Lantern do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_65",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Olga Petrova's current role? (as of today)",
+   "reference": "design lead of Beacon",
+   "stale_answer": "product owner of Harbor",
+   "evidence_ids": [
+    "r3_0039"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Olga Petrova is the design lead of Beacon. That role started on 2025-01-29, when it replaced her earlier role as product owner of Harbor. My notes show no later role change for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.9,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Olga Petrova is the design lead of Beacon, which matches the reference. The extra details about the start date and her earlier role do not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Olga Petrova's most recent recorded role is **design lead of Beacon**, effective 2025-01-29.\n\nHowever, the records also show Zofia Nowak becoming design lead of Beacon on 2025-04-10, which suggests Olga may no longer hold that role. The file doesn't explicitly say Olga left it, so I can't confirm her current role with certainty.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.93,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 0.5,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer names 'design lead of Beacon' as Olga's most recent recorded role, which matches the reference. It then suggests she may no longer hold the role because Zofia Nowak became design lead on 2025-04-10, and it declines to confirm her current role. That hedging undercuts the referenc",
+     "outcome": "other"
+    }
+   }
+  },
+  {
+   "id": "q_t4_66",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Jamal Okafor's current role? (as of today)",
+   "reference": "QA lead of Sextant",
+   "stale_answer": "tech lead of Wayfarer",
+   "evidence_ids": [
+    "r3_0129"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Jamal Okafor is the QA lead of Sextant. He took the role on 2025-04-04, and it replaced his earlier role as tech lead of Wayfarer. I found no later role change in the notes. His more recent entries are only event presentations.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.94,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Jamal Okafor is the QA lead of Sextant, which matches the reference. The extra details (start date, previous role) do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Jamal Okafor's current role is **QA lead of Sextant**. He moved there on 2025-04-04, succeeding his earlier role as tech lead of Wayfarer (which he took on 2025-03-31).",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.86,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current role as QA lead of Sextant, which matches the reference. The extra details about dates and his earlier role do not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_67",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "Where is Freya Holm based? (as of today)",
+   "reference": "Osaka",
+   "stale_answer": "Singapore",
+   "evidence_ids": [
+    "r3_0084"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Freya Holm is based in Osaka. She has been there since March 2025, according to a note dated 2025-03-05. That note replaced an earlier one that had her in Singapore.\n\nHer later entries are talks at events in Lisbon, Austin, Berlin, Toronto and Singapore. The notes mark those as event locations, not moves, and I found no later relocation.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.43,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Freya Holm is based in Osaka, which matches the reference. The extra details about the move from Singapore and later event talks do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Freya Holm is based in Osaka, Japan. Her move there from Singapore was noted on 2025-03-05, and no later residence update exists in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.78,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Freya Holm is based in Osaka, Japan, which matches the reference. The added details about the move from Singapore and the lack of a later update do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_68",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Zofia Nowak's current role? (as of today)",
+   "reference": "design lead of Beacon",
+   "stale_answer": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0132"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Zofia Nowak is the design lead of Beacon. She moved into that role from design lead of Orbit, effective 2025-04-10. The notes I have, which run through early July 2025, show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 8.73,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Zofia Nowak is the design lead of Beacon, which matches the reference. The extra details about her prior role and the date of the change do not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Zofia Nowak is the **design lead of Beacon**. She moved there from design lead of Orbit, effective 2025-04-10, and I have no later role change on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.54,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Zofia Nowak is design lead of Beacon, which matches the reference. The extra details about the move from Orbit do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_69",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Callum Reid's current role? (as of today)",
+   "reference": "tech lead of Atlas",
+   "stale_answer": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0120"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Callum Reid is the tech lead of Atlas. He moved to that role from tech lead of Meridian, effective 2025-04-03. I found no later role change in the notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.88,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid is tech lead of Atlas, which matches the reference. The extra details about the move from Meridian and the effective date do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Callum Reid's current role is **tech lead of Atlas**, effective 2025-04-03. This replaced his earlier role as tech lead of Meridian, which he had held from 2025-03-26. My notes show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.85,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Callum Reid's current role is tech lead of Atlas, which matches the reference. The extra details (dates, previous role) do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_70",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "What is Daria Sokolova's current role? (as of today)",
+   "reference": "data lead of Beacon",
+   "stale_answer": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0044"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Daria Sokolova is the data lead of Beacon. She moved from tech lead of Atlas to that role on 2025-02-08, and the notes show no later role change.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.8,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Daria Sokolova is the data lead of Beacon, which matches the reference. The added details about her earlier role and the move date do not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Daria Sokolova's current role is **data lead of Beacon**. She moved there from tech lead of Atlas, effective 2025-02-08 (noted 2025-02-08). Her most recent role entry is that move, and no later role change is recorded.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.3,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states her current role is data lead of Beacon, which matches the reference. The extra details about the previous role and the effective date do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_71",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Quill's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "stale_answer": "$300k",
+   "evidence_ids": [
+    "r3_0128"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Quill's quarterly budget is currently **$360k**. It started at $300k on 2025-01-31 and was revised to $360k on 2025-04-02.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.57,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $360k, which matches the reference. The extra history (started at $300k, revised on 2025-04-02) does not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Quill's quarterly budget is **$360k**. It was revised from $300k to $360k on 2025-04-02, and I have no later revision on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.16,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $360k, which matches the reference. The added revision details do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_72",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Which issue tracker does Orbit use? (as of today)",
+   "reference": "Asana",
+   "stale_answer": "Confluence",
+   "evidence_ids": [
+    "r3_0092"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Orbit uses **Asana** as its issue tracker. It switched from Confluence to Asana on 2025-03-12, and that is the most recent change in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.76,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Asana, which matches the reference. The added detail about switching from Confluence on 2025-03-12 does not contradict the reference. Confluence is not really an issue tracker, but that does not change the core answer.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Orbit uses Asana. Its tracker switched from Confluence to Asana, effective 2025-03-12, and that is still the current entry in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.05,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Orbit uses Asana, which matches the reference. The added detail about the switch from Confluence is extra and does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_73",
+   "task": "T4",
+   "stratum": "implicit",
+   "question": "What is Tessera's quarterly budget? (as of today)",
+   "reference": "$300k",
+   "stale_answer": "$450k",
+   "evidence_ids": [
+    "r3_0116"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tessera's quarterly budget is currently **$300k**. It was set at $450k on 2025-02-21 and revised down to $300k on 2025-03-24. I found no later changes in my notes.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.98,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the current quarterly budget is $300k, which matches the reference. The extra history (set at $450k, then revised down) does not contradict the reference.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Tessera's quarterly budget is $300k. It was revised from $450k to $300k on 2025-03-24, and I have no later revision on record.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.8,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the quarterly budget is $300k, matching the reference. The added revision history does not contradict the reference.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t4_74",
+   "task": "T4",
+   "stratum": "explicit",
+   "question": "Where is Beatriz Lopes based? (as of today)",
+   "reference": "Toronto",
+   "stale_answer": "Osaka",
+   "evidence_ids": [
+    "r3_0143"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beatriz Lopes is based in Toronto. She moved there from Osaka in April 2025, and the note is dated 2025-04-14. Her later appearance at PlatformWeek in Lisbon on 2025-06-17 was a conference talk, not a move.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.19,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Beatriz Lopes is based in Toronto, which matches the reference. The extra details about the move from Osaka and the Lisbon talk do not contradict it.",
+     "outcome": "current"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beatriz Lopes is based in Toronto. She relocated there from Osaka in April 2025 (noted 2025-04-14), and no later note changes that.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.59,
+     "ref_in_answer": true,
+     "stale_in_answer": true,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Toronto, matching the reference. The extra relocation details do not contradict it.",
+     "outcome": "current"
+    }
+   }
+  },
+  {
+   "id": "q_t3_75",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Beatriz Lopes's base city?",
+   "reference": "Osaka",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0134",
+    "r3_0143"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (the April 2025 move to Toronto), Beatriz Lopes was based in **Osaka**. The memory notes show her in Osaka on 2025-04-09 and relocating to Toronto on 2025-04-14.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.91,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka, which matches the reference. The extra details about the move to Toronto do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beatriz Lopes's base city was **Osaka** before her most recent change. She relocated from Osaka to Toronto in April 2025 (noted 2025-04-14).",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.32,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Osaka as the base city before the most recent change, matching the reference. The extra details about relocating to Toronto in April 2025 do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_76",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Tessera's quarterly budget?",
+   "reference": "$450k",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0067",
+    "r3_0116"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Tessera's quarterly budget was $450k before the most recent change. It was set at $450k on 2025-02-21. On 2025-03-24 it was revised to $300k, which is the current figure.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.78,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the budget before the most recent change was $450k, which matches the reference. The extra details (set on 2025-02-21, revised to $300k on 2025-03-24) do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before its most recent change (on 2025-03-24), Tessera's quarterly budget was **$450k**. It was revised down to $300k on that date.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.73,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $450k as the budget before the most recent change, matching the reference. The extra details (date, revision to $300k) do not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_77",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Orbit's issue tracker?",
+   "reference": "Confluence",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0073",
+    "r3_0092"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change (to Asana on 2025-03-12), Orbit's issue tracker was Confluence. It had been the tracker since 2025-02-28.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.71,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Orbit's issue tracker before the most recent change was Confluence, which matches the reference. The extra details (change to Asana on 2025-03-12, tracker since 2025-02-28) do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before the most recent change, Orbit's issue tracker was Confluence. It switched to Asana, effective 2025-03-12.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.1,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Orbit's previous issue tracker was Confluence, which matches the reference. The added detail about the switch to Asana does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_78",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Quill's quarterly budget?",
+   "reference": "$300k",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0035",
+    "r3_0128"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Quill's quarterly budget was $300k before the most recent change. It was set at $300k on 2025-01-31, then revised to $360k on 2025-04-02.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.83,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states $300k as the budget before the most recent change, which matches the reference. The extra dates and the revision to $360k do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Quill's quarterly budget before the most recent change was **$300k**. It was revised to $360k on 2025-04-02.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.27,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the pre-change budget as $300k, which matches the reference. The added detail about the revision to $360k is extra and does not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_79",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Daria Sokolova's role?",
+   "reference": "tech lead of Atlas",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0041",
+    "r3_0044"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Daria Sokolova's most recent role change was on 2025-02-08, when she moved from tech lead of Atlas to data lead of Beacon. Before that change, she was **tech lead of Atlas**. She had held that role since 2025-02-07.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.93,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Daria Sokolova was tech lead of Atlas before the most recent change, which matches the reference. The extra details (dates, the move to data lead of Beacon) do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before her most recent role change, Daria Sokolova was **tech lead of Atlas**. She became tech lead on 2025-02-07 and moved to data lead of Beacon effective 2025-02-08.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.54,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states she was tech lead of Atlas before the change, which matches the reference. The added dates and the new role (data lead of Beacon) do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_80",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Callum Reid's role?",
+   "reference": "tech lead of Meridian",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0117",
+    "r3_0120"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Callum Reid's most recent change was on 2025-04-03. He moved from tech lead of Meridian to tech lead of Atlas. So before that change, he was **tech lead of Meridian**, a role he had held since 2025-03-26.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.99,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that before the most recent change Callum Reid was tech lead of Meridian, which matches the reference. The extra details about dates and the move to Atlas do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before his most recent change, Callum Reid was **tech lead of Meridian**. He held that role from 2025-03-26 until he moved to tech lead of Atlas, effective 2025-04-03.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 2.76,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Callum Reid was tech lead of Meridian, which matches the reference. The added dates and the move to Atlas do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_81",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Zofia Nowak's role?",
+   "reference": "design lead of Orbit",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0114",
+    "r3_0132"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Zofia Nowak's most recent role change was on 2025-04-10, when she moved to design lead of Beacon. Before that she was design lead of Orbit, a role she held from 2025-03-26.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.07,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that before the most recent change she was design lead of Orbit, which matches the reference. The extra details (dates, the move to Beacon) do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before her most recent role change, Zofia Nowak was the **design lead of Orbit**. She had taken that role on 2025-03-26, and she moved to design lead of Beacon effective 2025-04-10.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.85,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that Zofia Nowak was design lead of Orbit before her most recent change, which matches the reference. The extra dates and the move to Beacon do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_82",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Freya Holm's base city?",
+   "reference": "Singapore",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0068",
+    "r3_0084"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before the most recent change, Freya Holm was based in Singapore. The notes dated 2025-02-19 show her there. A note dated 2025-03-05 then shows her in Osaka since March 2025, and Osaka is her current base.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.5,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Freya Holm was based in Singapore before the most recent change, which matches the reference. The extra details about Osaka and the note dates do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Freya Holm's base city before her most recent change was **Singapore**. Her record shows she was based there as of 2025-02-19, and she moved to Osaka in March 2025 (noted 2025-03-05), which is her current location.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.36,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states Singapore, matching the reference. The extra details about Osaka and the dates do not contradict the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_83",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Jamal Okafor's role?",
+   "reference": "tech lead of Wayfarer",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0121",
+    "r3_0129"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Jamal Okafor's most recent role change was on 2025-04-04, when he became QA lead of Sextant. Before that he was tech lead of Wayfarer, a role he took on 2025-03-31.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.93,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that before the most recent change he was tech lead of Wayfarer, which matches the reference. The extra dates and the new QA lead role do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before his most recent role change (effective 2025-04-04), Jamal Okafor was **tech lead of Wayfarer**, a role he had held since 2025-03-31. He then moved to QA lead of Sextant.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.58,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states the role was 'tech lead of Wayfarer', which matches the reference exactly. The extra details (dates, the move to QA lead of Sextant) do not contradict it.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t3_84",
+   "task": "T3",
+   "stratum": "",
+   "question": "Before the most recent change, what was Olga Petrova's role?",
+   "reference": "product owner of Harbor",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0030",
+    "r3_0039"
+   ],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Before her most recent role change, Olga Petrova was **product owner of Harbor**. She held that role from 2025-01-27. On 2025-01-29 she became design lead of Beacon, which replaced the Harbor role.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.96,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states that her prior role was product owner of Harbor, which matches the reference. The extra details (dates, the move to design lead of Beacon) do not contradict it.",
+     "outcome": "correct"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Before the most recent change, Olga Petrova was the **product owner of Harbor**. She took that role on 2025-01-27, and on 2025-01-29 she moved to design lead of Beacon.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.0,
+     "ref_in_answer": true,
+     "stale_in_answer": false,
+     "score": 1.0,
+     "judge_mode": "normal_judge",
+     "judge_reasoning": "The generated answer states she was product owner of Harbor, which matches the reference. The extra dates and the move to design lead of Beacon do not contradict it, though they cannot be verified from the reference.",
+     "outcome": "correct"
+    }
+   }
+  },
+  {
+   "id": "q_t2_85",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Bob Martinez has given (project, conference, city).",
+   "reference": "Sextant at PlatformWeek in Osaka; Quill at InfraDays in Toronto; Meridian at PlatformWeek in Denver; Harbor at ShipIt in Lisbon; Meridian at DataSummit in Denver; Tessera at PlatformWeek in Austin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0154",
+    "r3_0168",
+    "r3_0174",
+    "r3_0208",
+    "r3_0243",
+    "r3_0249"
+   ],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Bob Martinez has given six conference presentations:\n\n| Date | Project | Conference | City |\n|---|---|---|---|\n| 2025-04-21 | Sextant | PlatformWeek 2025 | Osaka |\n| 2025-05-01 | Quill | InfraDays 2025 | Toronto |\n| 2025-05-05 | Meridian | PlatformWeek 2025 | Denver |\n| 2025-05-29 | Harbor | ShipIt 2025 | Lisbon |\n| 2025-06-23 | Meridian | DataSummit 2025 | Denver |\n| 2025-06-23 | Tessera | PlatformWeek 2025 | Austin |",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.11,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "6/6 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Bob Martinez has six conference presentations on record:\n\n1. **Sextant** at PlatformWeek 2025, Osaka (2025-04-21)\n2. **Quill** at InfraDays 2025, Toronto (2025-05-01)\n3. **Meridian** at PlatformWeek 2025, Denver (2025-05-05)\n4. **Harbor** at ShipIt 2025, Lisbon (2025-05-29)\n5. **Meridian** at DataSummit 2025, Denver (2025-06-23)\n6. **Tessera** at PlatformWeek 2025, Austin (2025-06-23)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.18,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "6/6 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_86",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Liam O'Brien has given (project, conference, city).",
+   "reference": "Tessera at InfraDays in Denver; Sextant at DataSummit in Dublin; Umbra at InfraDays in Berlin",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0177",
+    "r3_0210",
+    "r3_0217"
+   ],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Liam O'Brien has given three conference presentations:\n\n1. **Tessera** at InfraDays 2025 in **Denver** (2025-05-06)\n2. **Sextant** at DataSummit 2025 in **Dublin** (2025-06-05)\n3. **Umbra** at InfraDays 2025 in **Berlin** (2025-06-06)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.53,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "3/3 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Liam O'Brien has given three conference presentations:\n\n1. **Tessera**, InfraDays 2025, Denver (2025-05-06)\n2. **Sextant**, DataSummit 2025, Dublin (2025-06-05)\n3. **Umbra**, InfraDays 2025, Berlin (2025-06-06)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.57,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "3/3 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_87",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Beatriz Lopes has given (project, conference, city).",
+   "reference": "Atlas at ShipIt in Osaka; Sextant at PlatformWeek in Lisbon",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0135",
+    "r3_0236"
+   ],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Beatriz Lopes has given two conference presentations:\n\n1. **Atlas** at ShipIt 2025 in **Osaka** (2025-04-10)\n2. **Sextant** at PlatformWeek 2025 in **Lisbon** (2025-06-17)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.69,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "2/2 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Beatriz Lopes has given two conference presentations, per my meetings and people notes:\n\n1. **Atlas**, ShipIt 2025, Osaka (2025-04-10)\n2. **Sextant**, PlatformWeek 2025, Lisbon (2025-06-17)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.99,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "2/2 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_88",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Carol Davis has given (project, conference, city).",
+   "reference": "Harbor at DevCon in Toronto; Relay at DevCon in Berlin; Quill at PlatformWeek in Denver",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0162",
+    "r3_0211",
+    "r3_0215"
+   ],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Carol Davis has given three conference presentations:\n\n1. **Harbor** at DevCon 2025 in **Toronto** (2025-04-28)\n2. **Relay** at DevCon 2025 in **Berlin** (2025-06-02)\n3. **Quill** at PlatformWeek 2025 in **Denver** (2025-06-03)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.24,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "3/3 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Carol Davis has given three conference presentations, per the meetings log:\n\n1. **Harbor**, DevCon 2025, Toronto (2025-04-28)\n2. **Relay**, DevCon 2025, Berlin (2025-06-02)\n3. **Quill**, PlatformWeek 2025, Denver (2025-06-03)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.23,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "3/3 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t2_89",
+   "task": "T2",
+   "stratum": "",
+   "question": "List every conference presentation Olga Petrova has given (project, conference, city).",
+   "reference": "Pylon at ShipIt in Dublin; Relay at PlatformWeek in Singapore; Harbor at InfraDays in Berlin; Wayfarer at ShipIt in Berlin; Atlas at DataSummit in Berlin; Relay at PlatformWeek in Osaka",
+   "stale_answer": null,
+   "evidence_ids": [
+    "r3_0098",
+    "r3_0115",
+    "r3_0123",
+    "r3_0216",
+    "r3_0222",
+    "r3_0240"
+   ],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "Olga Petrova has given these conference presentations:\n\n| Date | Project | Conference | City |\n|---|---|---|---|\n| 2025-03-10 | Pylon | ShipIt 2025 | Dublin |\n| 2025-03-27 | Relay | PlatformWeek 2025 | Singapore |\n| 2025-04-03 | Harbor | InfraDays 2025 | Berlin |\n| 2025-06-02 | Wayfarer | ShipIt 2025 | Berlin |\n| 2025-06-11 | Atlas | DataSummit 2025 | Berlin |\n| 2025-06-26 | Relay | PlatformWeek 2025 | Osaka |",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.87,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "6/6 nuggets"
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "Olga Petrova has given six conference presentations, per the meetings log:\n\n1. **Pylon**: ShipIt 2025, Dublin (2025-03-10)\n2. **Relay**: PlatformWeek 2025, Singapore (2025-03-27)\n3. **Harbor**: InfraDays 2025, Berlin (2025-04-03)\n4. **Wayfarer**: ShipIt 2025, Berlin (2025-06-02)\n5. **Atlas**: DataSummit 2025, Berlin (2025-06-11)\n6. **Relay**: PlatformWeek 2025, Osaka (2025-06-26)",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 5.49,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "nugget",
+     "judge_reasoning": "6/6 nuggets"
+    }
+   }
+  },
+  {
+   "id": "q_t5_90",
+   "task": "T5",
+   "stratum": "",
+   "question": "Where is Keiko Sato based?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. My memory files don't mention anyone named Keiko Sato.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.62,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this. Keiko Sato doesn't appear in my memory files: I checked the index, the people log, and the meetings log, and none of them mention her or any location for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.82,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_91",
+   "task": "T5",
+   "stratum": "",
+   "question": "Where is Priya Nair based?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. My notes on Priya Nair only record conference talks, which are event locations and not where she lives. These are Atlas at InfraDays in Berlin, Meridian at DataSummit in Denver, and Compass at DevCon in Dublin. They don't say where she is based.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.19,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this. My memory only records Priya Nair as a presenter at events, in Berlin, Dublin, and Denver. Those are event locations, not where she lives, and I have no residence entry for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.22,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_92",
+   "task": "T5",
+   "stratum": "",
+   "question": "What is Priya Nair's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. Priya Nair appears in my notes only as a conference presenter: Atlas at InfraDays Berlin on 2025-03-19, Meridian at DataSummit Denver on 2025-04-29, and Compass at DevCon Dublin on 2025-05-12. The notes don't record any role for her.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.18,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this. Priya Nair's only entries in my memory are event presentations: Atlas at InfraDays 2025 in Berlin (2025-03-19), Meridian at DataSummit 2025 in Denver (2025-04-29), and Compass at DevCon 2025 in Dublin (2025-05-12). None of these records a role.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.05,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_93",
+   "task": "T5",
+   "stratum": "",
+   "question": "What is Nimbus's quarterly budget?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/budgets.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. The budgets file lists quarterly budgets for Compass, Sextant, Meridian, Wayfarer, Atlas, Lantern, Beacon, Harbor, Pylon, Quill, Tessera, Umbra, Relay and Orbit, but not for Nimbus. Nimbus shows up in my notes only as a talk topic at InfraDays 2025 and ShipIt 2025 events.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 6.75,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this. My budget records cover 14 projects (Compass, Sextant, Meridian, Wayfarer, Atlas, Lantern, Beacon, Harbor, Pylon, Quill, Tessera, Umbra, Relay, Orbit), and Nimbus isn't one of them. My notes mention Nimbus only as the subject of an InfraDays talk in Osaka on 2025-04-15.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.22,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_94",
+   "task": "T5",
+   "stratum": "",
+   "question": "Which issue tracker does Nimbus use?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 3,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/tools.md",
+    "viewed /memories/meetings.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. My notes list issue trackers for many projects, but none for Nimbus. Nimbus appears only in the meeting log, where it was presented at InfraDays and ShipIt events. Those entries don't say which tracker it uses.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 7.41,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this. My issue tracker records (in tools.md) cover Pylon, Quill, Wayfarer, Atlas, Umbra, Lantern, Beacon, Compass, Relay, Tessera, Sextant, Meridian, Orbit, and Harbor, but none for Nimbus. The only Nimbus entry I found is a talk at InfraDays 2025 in Osaka on 2025-04-15.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 3.83,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  },
+  {
+   "id": "q_t5_95",
+   "task": "T5",
+   "stratum": "",
+   "question": "What is Keiko Sato's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "stale_answer": null,
+   "evidence_ids": [],
+   "n_retrieved": 2,
+   "evidence_in_context": null,
+   "context_head": [
+    "viewed /memories/index.md",
+    "viewed /memories/people.md"
+   ],
+   "by_reader": {
+    "anthropic/claude-sonnet-5.5": {
+     "answer": "I don't have enough information to answer this question. My memory files have no entry for Keiko Sato.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.04,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    },
+    "anthropic/claude-haiku-5.5": {
+     "answer": "I don't have enough information to answer this question. Keiko Sato doesn't appear in my memory files, including the people, meetings, budgets, and tools records.",
+     "in_tok": 0,
+     "out_tok": 0,
+     "latency_s": 4.86,
+     "ref_in_answer": null,
+     "stale_in_answer": null,
+     "score": 1.0,
+     "outcome": "correct",
+     "judge_mode": "abstention",
+     "judge_reasoning": ""
+    }
+   }
+  }
+ ],
+ "errors_by_reader": {
+  "anthropic/claude-sonnet-5.5": 0,
+  "anthropic/claude-haiku-5.5": 0
+ },
+ "wall_seconds": 1160.3
+}

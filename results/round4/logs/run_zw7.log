@@ -1,0 +1,94 @@
+=== bm25 s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.87 FAMA 0.79 | gemini-3.8-flash: acc 0.91 FAMA 0.85 | claude-haiku-5.5: acc 0.90 FAMA 0.84 | gpt-6-luna: acc 0.90 FAMA 0.84 | ingest 0 calls $0
+=== bm25_k20 s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.97 FAMA 0.98 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 0.98 FAMA 0.97 | gpt-6-luna: acc 1.00 FAMA 1.00 | ingest 0 calls $0
+=== vector_rag s7 t0 (260 notes, ~9703 tokens)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+    OK claude-sonnet-5.5: acc 0.96 FAMA 0.89 | gemini-3.8-flash: acc 0.97 FAMA 0.90 | claude-haiku-5.5: acc 0.96 FAMA 0.89 | gpt-6-luna: acc 0.96 FAMA 0.90 | ingest 0 calls $0
+=== vector_k20 s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 1.00 FAMA 1.00 | gemini-3.8-flash: acc 0.99 FAMA 1.00 | claude-haiku-5.5: acc 1.00 FAMA 1.00 | gpt-6-luna: acc 1.00 FAMA 1.00 | ingest 0 calls $0
+=== hybrid_rerank s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.96 FAMA 0.95 | gemini-3.8-flash: acc 0.99 FAMA 1.00 | claude-haiku-5.5: acc 0.97 FAMA 0.97 | gpt-6-luna: acc 1.00 FAMA 1.00 | ingest 0 calls $0
+=== hybrid_k20 s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.97 FAMA 0.98 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 1.00 FAMA 1.00 | gpt-6-luna: acc 0.99 FAMA 1.00 | ingest 0 calls $0
+=== minmem_nohdr s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.98 FAMA 1.00 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 1.00 FAMA 1.00 | gpt-6-luna: acc 0.99 FAMA 1.00 | ingest 0 calls $0
+=== minmem_order s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.99 FAMA 1.00 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 0.99 FAMA 0.98 | gpt-6-luna: acc 0.99 FAMA 0.98 | ingest 0 calls $0
+=== minmem s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.99 FAMA 1.00 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 1.00 FAMA 1.00 | gpt-6-luna: acc 0.99 FAMA 1.00 | ingest 0 calls $0
+=== minmem_noexp s7 t0 (260 notes, ~9703 tokens)
+    OK claude-sonnet-5.5: acc 0.99 FAMA 1.00 | gemini-3.8-flash: acc 0.98 FAMA 1.00 | claude-haiku-5.5: acc 1.00 FAMA 1.00 | gpt-6-luna: acc 0.99 FAMA 1.00 | ingest 0 calls $0
+=== full_context s7 t0 (260 notes, ~9703 tokens)
+Traceback (most recent call last):
+  File "/home/user/memory-evaluator/run_ladder.py", line 273, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 196, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 119, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 726, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/user/memory-evaluator/run_ladder.py", line 266, in main
+    rec = await run_cell(k, data, a.readers, a.workers)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/memory-evaluator/run_ladder.py", line 212, in run_cell
+    verdicts = dict(zip(answers, pool.map(lambda kv: score(next(q for q in qs if q["id"] == kv[0][0]), kv[1]["answer"]), answers.items())))
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 625, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 318, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 460, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/user/memory-evaluator/run_ladder.py", line 212, in <lambda>
+    verdicts = dict(zip(answers, pool.map(lambda kv: score(next(q for q in qs if q["id"] == kv[0][0]), kv[1]["answer"]), answers.items())))
+                                                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/memory-evaluator/run_ladder.py", line 70, in score
+    return {**out0, **_score(q, answer)}
+                      ~~~~~~^^^^^^^^^^^
+  File "/home/user/memory-evaluator/run_ladder.py", line 82, in _score
+    s, why, mode = strict_judge_v3(q["question"], answer, q["reference_answer"], judge_fn)
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/memory-evaluator/src/evaluation/strict_judge.py", line 174, in strict_judge_v3
+    r = llm_judge_fn(prompt)
+  File "/home/user/memory-evaluator/run_ladder.py", line 53, in judge_fn
+    r = _JUDGE.llm.json("You are a strict, careful answer judge. Reply with JSON only.", prompt)
+  File "/home/user/memory-evaluator/src/systems/common.py", line 61, in json
+    t = _FENCE.sub("", self.text(system, user, json_mode=True, **kw))
+                       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/memory-evaluator/src/systems/common.py", line 58, in text
+    return (self.chat(system, user, **kw).content or "").strip()
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/memory-evaluator/src/systems/common.py", line 50, in chat
+    r = self._c().chat.completions.create(**kw)
+  File "/usr/local/lib/python3.13/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/openai/_base_client.py", line 1148, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': "openrouter 402: {'message': 'This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.', 'code': 402, 'metadata': {'reason': 'in_flight_budget_exhausted', 'limit_source': 'openrouter_in_flight_budget', 'remedy_hint': 'Retry after your in-flight requests settle (see the Retry-After header). Adding credits at https://openrouter.ai/", 'type': 'shim_error'}}
+[round4] zw7 rung 0 exited non-zero
+=== bm25 s7 t50000 (1369 notes, ~50312 tokens)

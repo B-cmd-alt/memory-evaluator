@@ -30,7 +30,7 @@ class MastraObservationalMemory(BaseAdapter):
     name, family, year, kind = "mastra_om", "observation log (no retrieval)", 2026, "modern"
     retrieves = False
     batch = 10
-    reflect_tokens = 4000
+    reflect_tokens = int(__import__("os").environ.get("MASTRA_REFLECT_TOKENS", "4000"))   # round 4 sets Mastra's published 40K
 
     def _on_reset(self):
         self.log: list[str] = []

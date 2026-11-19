@@ -34,6 +34,18 @@ NICKS = {"Bob Martinez": "Bobby M.", "Alice Chen": "A. Chen", "Dmitri Volkov": "
 ASK = {"role": "What is {s}'s current role?", "tool": "Which issue tracker does {s} use?", "city": "Where is {s} based?",
        "budget": "What is {s}'s quarterly budget?"}
 PERSON_KINDS, PROJECT_KINDS = ("role", "city"), ("tool", "budget")
+# Round 3 (scale "R3", a dedicated A2/A3 world): more subjects so >= 50 keys get a superseding update and >= 30 deletion
+# cases fit. Separate lists so the S1/S2 worlds (rng.sample over PEOPLE/PROJECTS) stay byte-identical.
+PEOPLE_R3 = PEOPLE + ["Quentin Dubois", "Rosa Alvarez", "Sanjay Mehta", "Tove Lindqvist", "Umar Siddiqui", "Valentina Greco",
+                      "Wei Zhang", "Ximena Ortiz", "Yusuf Demir", "Zofia Nowak", "Arjun Rao", "Beatriz Lopes", "Callum Reid",
+                      "Daria Sokolova", "Emeka Obi", "Freya Holm"]
+PROJECTS_R3 = PROJECTS + ["Nimbus", "Pylon", "Relay", "Sextant", "Tessera", "Umbra", "Vertex", "Wayfarer"]
+NICKS_R3 = {**NICKS, "Carol Davis": "C. Davis", "Elena Rossi": "Elly", "Farid Haddad": "Fari", "Ines Moreau": "Nessa",
+            "Jamal Okafor": "J.O.", "Keiko Sato": "Kei", "Liam O'Brien": "Liamo", "Olga Petrova": "Olya", "Priya Nair": "P. Nair",
+            "Quentin Dubois": "Q", "Rosa Alvarez": "Rosie", "Sanjay Mehta": "Sanj", "Tove Lindqvist": "T. Lindqvist",
+            "Umar Siddiqui": "Umi", "Valentina Greco": "Vale", "Wei Zhang": "W. Zhang", "Ximena Ortiz": "Xime", "Yusuf Demir": "Yus",
+            "Zofia Nowak": "Zosia", "Arjun Rao": "AJ", "Beatriz Lopes": "Bia", "Callum Reid": "Cal R.", "Daria Sokolova": "Dasha",
+            "Emeka Obi": "Meks", "Freya Holm": "F. Holm"}
 
 
 @dataclass
@@ -61,6 +73,7 @@ class Question:
     stale_evidence_ids: list[str] = field(default_factory=list)
     stale_answer: str | None = None
     explanation: str = ""
+    stratum: str = ""               # R3 T4: "explicit" (update note names the old value) | "implicit" (it does not)
 
 
 @dataclass
@@ -93,13 +106,15 @@ class World:
     def __init__(self, seed: int, scale: str):
         self.rng = random.Random(seed)
         self.scale = scale
-        n_people, n_projects, self.n_sessions, self.per_session = {"S1": (6, 3, 12, 7), "S2": (14, 7, 60, 12)}[scale]
-        self.people = self.rng.sample(PEOPLE, n_people)
-        self.projects = self.rng.sample(PROJECTS, n_projects)
+        n_people, n_projects, self.n_sessions, self.per_session = {"S1": (6, 3, 12, 7), "S2": (14, 7, 60, 12), "R3": (30, 15, 26, 10)}[scale]
+        self.people = self.rng.sample(PEOPLE_R3 if scale == "R3" else PEOPLE, n_people)
+        self.projects = self.rng.sample(PROJECTS_R3 if scale == "R3" else PROJECTS, n_projects)
+        self.nicks = NICKS_R3 if scale == "R3" else NICKS
+        self.weights = [4, 3, 3, 3, 1, 1] if scale == "R3" else [3, 2, 2, 2, 3, 3]   # R3: facts and updates, few events/filler
         n_hold = 1 if scale == "S1" else 2
         self.holdout = set(self.people[-n_hold:]) | {self.projects[-1]}   # only in events/filler -> abstention candidates
         self.p_update, self.max_updates = 0.5, 1
-        self.p_key_updatable = 0.4           # share of (kind, subject) keys that may ever be superseded -> the rest stay stable
+        self.p_key_updatable = 0.75 if scale == "R3" else 0.4          # share of (kind, subject) keys that may ever be superseded -> the rest stay stable
         self.may_update: set[tuple] = set()
         self.start = date(2025, 1, 6)
         self.mems: list[Mem] = []
@@ -143,7 +158,21 @@ class World:
         if subj is None:
             return False
         v = self._new_value(kind, prev["value"] if prev else None)
-        if prev:
+        if prev and d <= date.fromisoformat(prev["history"][-1][2]):
+            # an update must be dated strictly after the fact it supersedes: dates are drawn within a session week, so the
+            # superseding note could otherwise carry the EARLIER date and the "stale" value would be the newer one by date
+            # (round 3 found 3 of 14 round-2 S1 T4 items and 7 of 65 R3 items inverted this way)
+            d = date.fromisoformat(prev["history"][-1][2]) + timedelta(days=1)
+        if prev and self.scale == "R3" and self.rng.random() < 0.5:
+            # implicit update: the note states only the new value, so retrieval must use the date, not the word "from"
+            # (a person can hold two roles, so "X is now <role>" does not entail leaving the old one; "changed" does —
+            # round 3 ran with the first wording, see prereg_round3.md amendment 2)
+            text = {"role": f"{subj}'s role changed on {d.isoformat()}: now {v}.",
+                    "tool": f"{subj} now tracks its issues in {v} (as of {d.isoformat()}).",
+                    "city": f"{subj} is now based in {v} (since {d.strftime('%B %Y')}).",
+                    "budget": f"{subj}'s quarterly budget is {v} as of {d.isoformat()}."}[kind]
+            m = self._emit(d, text, [subj], [kind, "update", "implicit"], kind="update", supersedes=prev["mem_id"])
+        elif prev:
             text = {"role": f"{subj} moved from {prev['value']} to {v}, effective {d.isoformat()}.",
                     "tool": f"{subj} switched its issue tracker from {prev['value']} to {v} effective {d.isoformat()}.",
                     "city": f"{subj} relocated from {prev['value']} to {v} in {d.strftime('%B %Y')}.",
@@ -179,7 +208,7 @@ class World:
             d = self.start + timedelta(days=7 * si)
             for _ in range(self.per_session):
                 d_i = d + timedelta(days=rng.randint(0, 4))
-                kind = rng.choices(["role", "tool", "city", "budget", "event", "filler"], weights=[3, 2, 2, 2, 3, 3])[0]
+                kind = rng.choices(["role", "tool", "city", "budget", "event", "filler"], weights=self.weights)[0]
                 if kind == "event":
                     self._event(d_i)
                 elif kind == "filler":
@@ -196,21 +225,25 @@ class World:
         d2 = stale if stale else self.rng.choice([v for v in others if v != d1] or others)
         return [d1, d2]
 
-    def questions(self, per_task: int) -> list[Question]:
+    def questions(self, per_task) -> list[Question]:
+        """per_task: an int (same count for every task) or a dict {"T1": n, ...} (R3 asks every updated key in T4)."""
+        n = per_task if isinstance(per_task, dict) else {t: per_task for t in ("T1", "T2", "T3", "T4", "T5")}
         rng, qs = self.rng, []
         end = (self.start + timedelta(days=7 * self.n_sessions + 7)).isoformat()
         stable = [(k, s) for k, s in self.state.items() if len(s["history"]) == 1]
         updated = [(k, s) for k, s in self.state.items() if len(s["history"]) >= 2]
         rng.shuffle(stable); rng.shuffle(updated)
-        for (kind, subj), s in stable[:per_task]:
+        for (kind, subj), s in stable[:n["T1"]]:
             qs.append(Question(f"q_t1_{len(qs)}", "T1", ASK[kind].format(s=subj), s["value"], [s["mem_id"]], end, self._decoys(kind, s["value"]),
                                explanation=f"direct lookup of {s['mem_id']}"))
-        for (kind, subj), s in updated[:per_task]:
+        mem_by_id = {m.id: m for m in self.mems}
+        for (kind, subj), s in updated[:n["T4"]]:
             cur_id, cur_v, _ = s["history"][-1]
             old_id, old_v, _ = s["history"][-2]
+            stratum = ("implicit" if "implicit" in mem_by_id[cur_id].topics else "explicit") if self.scale == "R3" else ""
             qs.append(Question(f"q_t4_{len(qs)}", "T4", ASK[kind].format(s=subj) + " (as of today)", cur_v, [cur_id], end, self._decoys(kind, cur_v, old_v),
-                               stale_evidence_ids=[old_id], stale_answer=old_v, explanation=f"{old_id} superseded by {cur_id}"))
-        for (kind, subj), s in list(reversed(updated))[:per_task]:   # same superseded keys, asked the other way round
+                               stale_evidence_ids=[old_id], stale_answer=old_v, explanation=f"{old_id} superseded by {cur_id}", stratum=stratum))
+        for (kind, subj), s in list(reversed(updated))[:n["T3"]]:   # same superseded keys, asked the other way round
             cur_id, cur_v, cur_d = s["history"][-1]
             old_id, old_v, _ = s["history"][-2]
             attr = {"role": "role", "tool": "issue tracker", "city": "base city", "budget": "quarterly budget"}[kind]
@@ -218,7 +251,7 @@ class World:
                                self._decoys(kind, old_v, cur_v), explanation=f"value before {cur_id} ({cur_d})"))
         ev = [(p, lst) for p, lst in self.events.items() if len(lst) >= 2]
         rng.shuffle(ev)
-        for p, lst in ev[:per_task]:
+        for p, lst in ev[:n["T2"]]:
             nug = [f"{pr} at {cf} in {c}" for _, pr, cf, c, _ in lst]
             others = [x for pp, l2 in ev if pp != p for x in l2]
             d1 = f"{others[0][1]} at {others[0][2]} in {others[0][3]}" if others else "no presentations"
@@ -229,7 +262,7 @@ class World:
         cands = [(k, p) for p in self.people for k in PERSON_KINDS if (k, p) not in self.state]
         cands += [(k, pr) for pr in self.projects for k in PROJECT_KINDS if (k, pr) not in self.state]
         rng.shuffle(cands)
-        for kind, subj in cands[:per_task]:
+        for kind, subj in cands[:n["T5"]]:
             vals = sorted({s["value"] for (k, _), s in self.state.items() if k == kind}) or [self._new_value(kind, None)]
             qs.append(Question(f"q_t5_{len(qs)}", "T5", ASK[kind].format(s=subj), ABSTAIN, [], end, [rng.choice(vals), self._new_value(kind, None)],
                                explanation="never stated anywhere"))
@@ -296,6 +329,74 @@ class World:
             c.leak_strings = [s for s in dict.fromkeys(c.leak_strings) if s.lower() not in others]
         return out
 
+    def deletions_interleaved(self, counts: dict[str, int]) -> list[DeletionCase]:
+        """R3: >= 30 cumulative cases with the three shapes INTERLEAVED in a seeded random order (so case position is not
+        confounded with shape), built in run order against the running delete set. Intent cases delete the person's whole
+        city history (an earlier, superseded city note would otherwise still answer "where is X based")."""
+        rng, out, gone = self.rng, [], set()
+        order = [sh for sh, k in counts.items() for _ in range(k)]
+        rng.shuffle(order)
+        singles = [(k, s) for k, s in self.state.items() if len(s["history"]) == 1]   # any never-superseded fact
+        rng.shuffle(singles)
+        people = [p for p in self.people if ("city", p) in self.state]
+        rng.shuffle(people)
+        used: set = set()
+        alive = lambda ids: not (set(ids) & gone)  # noqa: E731
+
+        def ctrl_for(exclude_ids: set):
+            """a surviving stable fact (controls may repeat across cases; what matters is that no delete up to and including
+            this case removes it — ground_check replays that)."""
+            pool = [(k2, s2) for k2, s2 in singles if s2["mem_id"] not in gone and s2["mem_id"] not in exclude_ids and k2 not in used]
+            if not pool:
+                return None
+            k2, s2 = rng.choice(pool)
+            return ASK[k2[0]].format(s=k2[1]), s2["value"], [s2["mem_id"]]
+
+        for sh in order:
+            if sh == "single":
+                pick = next(((k, s) for k, s in singles if k not in used and s["mem_id"] not in gone), None)
+                if not pick:
+                    continue
+                (kind, subj), s = pick
+                used.add((kind, subj))
+                c = ctrl_for({s["mem_id"]})
+                if not c:
+                    continue
+                out.append(DeletionCase(f"del_single_{len(out)}", "single", f"Delete the note {s['mem_id']} ({subj}'s {kind}).", [s["mem_id"]],
+                                        ASK[kind].format(s=subj), [s["mem_id"]], *c, [s["value"]], probe_answer=s["value"]))
+                gone.add(s["mem_id"])
+            elif sh == "entity":
+                p = next((x for x in people if ("entity", x) not in used and alive([self.state[("city", x)]["mem_id"]])), None)
+                if not p:
+                    continue
+                used.add(("entity", p))
+                ids = [m.id for m in self.mems if p in m.entities and m.id not in gone]
+                c = ctrl_for(set(ids))
+                if not c:
+                    continue
+                out.append(DeletionCase(f"del_entity_{len(out)}", "entity", f"Forget everything about {p}.", ids, f"Where is {p} based?",
+                                        [self.state[("city", p)]["mem_id"]], *c, [p, self.nicks.get(p, p)], probe_answer=self.state[("city", p)]["value"]))
+                gone.update(ids)
+            else:
+                p = next((x for x in people if x in self.nicks and ("role", x) in self.state and ("intent", x) not in used and ("entity", x) not in used
+                          and alive([h[0] for h in self.state[("city", x)]["history"]] + [self.state[("role", x)]["mem_id"]])), None)
+                if not p:
+                    continue
+                used.add(("intent", p))
+                cids = [h[0] for h in self.state[("city", p)]["history"]]
+                rs = self.state[("role", p)]
+                if rs["mem_id"] in cids:
+                    continue
+                out.append(DeletionCase(f"del_intent_{len(out)}", "intent", f"Forget where {self.nicks[p]} lives, but keep everything about their job.", cids,
+                                        f"Where is {p} based?", [self.state[("city", p)]["mem_id"]], f"What is {p}'s current role?", rs["value"], [rs["mem_id"]],
+                                        [h[1] for h in self.state[("city", p)]["history"]], probe_answer=self.state[("city", p)]["value"]))
+                gone.update(cids)
+        for c in out:
+            dl = set(c.delete_ids)
+            others = " ".join(m.content.lower() for m in self.mems if m.id not in dl)
+            c.leak_strings = [x for x in dict.fromkeys(c.leak_strings) if x.lower() not in others]
+        return out
+
     # ── poisoning cases ──────────────────────────────────────────────────────────────────────
     def poisons(self, n: int, deleted: set[str] | None = None) -> list[PoisonCase]:
         """Poison probes run AFTER the deletion cases on the same system state, so a poison must not target a
@@ -316,6 +417,29 @@ class World:
             m = self._emit(last + timedelta(days=rng.randint(1, 5)), text, [pr], [kind, "unverified"], kind="poison", trust="low")
             out.append(PoisonCase(f"poison_{i}", m.id, ASK[kind].format(s=pr), s["value"], bad, [s["mem_id"]]))
         return out
+
+
+def inadmissible_updates(data: dict) -> set[str]:
+    """Question ids whose gold depends on a supersession that is not dated strictly later than what it supersedes
+    (T4: current vs stale evidence; T3: [old, current] evidence). Worlds generated before the date fix contain some;
+    analyses exclude them, and ground_check() flags them."""
+    mem = {m["id"]: m for m in data["memories"]}
+    bad = set()
+    for q in data["questions"]:
+        if q["task"] == "T4" and q["stale_evidence_ids"] and mem[q["evidence_ids"][0]]["date"] <= mem[q["stale_evidence_ids"][0]]["date"]:
+            bad.add(q["id"])
+        if q["task"] == "T3" and len(q["evidence_ids"]) == 2 and mem[q["evidence_ids"][1]]["date"] <= mem[q["evidence_ids"][0]]["date"]:
+            bad.add(q["id"])
+    return bad
+
+
+def ambiguous_implicit_roles(data: dict) -> tuple[set[str], set[str]]:
+    """(question ids, deletion-case ids) whose gold or control rests on an implicit role update worded "X is now <role>",
+    which does not entail that the earlier role ended (prereg_round3.md amendment 2: sensitivity analysis, not exclusion)."""
+    amb = {m["id"] for m in data["memories"] if "implicit" in m["topics"] and "role" in m["topics"] and " is now " in m["content"]}
+    qs = {q["id"] for q in data["questions"] if set(q["evidence_ids"]) & amb}
+    cs = {c["id"] for c in data["deletions"] if set(c["control_evidence_ids"]) & amb}
+    return qs, cs
 
 
 def ground_check(data: dict) -> list[str]:
@@ -348,6 +472,8 @@ def ground_check(data: dict) -> list[str]:
             stale_txt = " ".join(mem[i]["content"] for i in q["stale_evidence_ids"] if i in mem)
             if q["stale_answer"] not in stale_txt:
                 problems.append(f"{q['id']}: stale answer not in stale evidence")
+    for qid in sorted(inadmissible_updates(data)):
+        problems.append(f"{qid}: superseding memory is not dated strictly after the superseded one")
     gone: set[str] = set()   # deletion cases are applied cumulatively by the runner: check them in order
     for c in data["deletions"]:
         if set(c["control_evidence_ids"]) & (set(c["delete_ids"]) | gone):
@@ -377,12 +503,12 @@ def ground_check(data: dict) -> list[str]:
 
 
 def generate(scale: str = "S1", seed: int = 42, per_task: int | None = None, del_per_shape: int | None = None, n_poison: int | None = None) -> dict:
-    per_task = per_task or {"S1": 5, "S2": 10}[scale]
-    del_per_shape = del_per_shape or {"S1": 3, "S2": 5}[scale]
-    n_poison = n_poison or {"S1": 6, "S2": 20}[scale]
+    per_task = per_task or {"S1": 5, "S2": 10, "R3": {"T1": 10, "T2": 5, "T3": 10, "T4": 80, "T5": 6}}[scale]
+    del_per_shape = del_per_shape or {"S1": 3, "S2": 5, "R3": 12}[scale]
+    n_poison = n_poison or {"S1": 6, "S2": 20, "R3": 6}[scale]
     w = World(seed, scale).build()
     qs = w.questions(per_task)
-    dels = w.deletions(del_per_shape)
+    dels = (w.deletions_interleaved({"single": del_per_shape, "entity": 11, "intent": 11}) if scale == "R3" else w.deletions(del_per_shape))
     pois = w.poisons(n_poison, deleted=set().union(*[set(d.delete_ids) for d in dels]) if dels else set())   # poison memories are appended AFTER every question's asked_at
     data = {"meta": {"benchmark": "SixAxis", "scale": scale, "seed": seed, "n_memories": len(w.mems),
                      "n_questions": len(qs), "n_deletions": len(dels), "n_poisons": len(pois)},
@@ -403,3 +529,166 @@ if __name__ == "__main__":
     out = a.out or f"results/sixaxis_{a.scale}_seed{a.seed}.json"
     json.dump(d, open(out, "w"), indent=1)
     print(out, d["meta"])
+
+
+# ── Round 4: the scale ladder ─────────────────────────────────────────────────────────────────────────────────────
+# One CORE world (the R3 configuration, post-fix: updates dated strictly later, unambiguous role wording) whose
+# questions and gold never change, embedded in a growing amount of HARD noise: other people and projects with their
+# own facts, updates and presentations, written with the same templates and value vocabularies and spread over the
+# same dates. Noise entities are disjoint from core entities by full name, so no core gold changes; they share first
+# names, surnames, cities, tools, roles and conferences with the core, which is what makes retrieval harder.
+_FIRST = ("Aaron Abigail Adele Adrian Aiko Akira Alan Alba Aldo Alma Amara Amir Anders Andre Anika Anton Aria Arlo Asha Astrid "
+          "Basil Bella Benno Bianca Boris Bram Brenna Bruno Camila Carmen Cedric Chiara Clara Colm Cora Cyrus Dahlia Damon Dana Dario "
+          "Delia Dev Diego Dina Dora Edgar Edith Eli Elsa Emil Enzo Erin Esme Ewan Fabian Faye Felix Fern Finn Flora "
+          "Gael Gemma Gideon Gita Greta Gus Hana Hector Heidi Hugo Ida Igor Ilse Imani Ingrid Irene Isak Ivo Jada Jorge "
+          "Kai Kira Lars Leila Lena Leon Lior Luca Maeve Malik Mara Milo Nadia Nico Nora Omar Otto Paloma Rafael Selma").split()
+_LAST = ("Abbas Acosta Adler Ahn Akhtar Amato Andersson Aoki Arslan Baker Banerjee Barros Bauer Becker Bianchi Blanc Bose Brandt Bruno Castillo "
+         "Cho Clarke Cohen Costa Cruz Dalton Das Diaz Dogan Duarte Eklund Engel Farah Ferrari Fischer Flores Fontaine Fujita Gallo Garcia "
+         "Gomez Greene Gupta Hahn Hale Hansen Haruki Hayes Herrera Hoang Ibarra Ito Ivanov Jansen Jensen Joshi Kaya Keller Khan Klein "
+         "Kovac Kumar Lang Larsen Leclerc Lim Lopez Lund Maier Malik Marino Mendez Meyer Mori Nakamura Navarro Ng Novak Nunez Olsen "
+         "Ortega Pereira Popov Quinn Ramos Reyes Ricci Romero Russo Sanchez Santos Schmidt Silva Singh Suzuki Tamm Torres Vargas Weber Yilmaz").split()
+_FIRST_X = ("Abel Ada Agnes Alec Amos Anya Ari Beau Bea Cato Cleo Dax Dion Eamon Eira Elio Ember Ezra Fay Gia "
+            "Hale Hope Idris Ines Jax Juno Kian Lark Lyra Mace Nell Nyx Odin Opal Pax Remy Sage Tess Uma Zane").split()
+_LAST_X = ("Abara Agarwal Alvi Asante Bello Bjork Calder Chavez Dasgupta Demir Ekwueme Faber Galvez Halloran Idowu Jarvi Kader Kowalski Lindholm Mbeki "
+           "Nakata Oyelaran Pagano Qureshi Rahal Sorensen Takeda Ueda Varga Whitlock Xiong Yamada Zubiri Arce Bozic Cavallo Drummond Esposito Ferreira Hartono").split()
+_SYL_A = "Ar Bel Cor Dra El Fen Gal Hal Ir Jun Kel Lor Mir Nor Or Pra Quo Ras Sol Tar Ul Vel Wen Xan Yor Zel".split()
+_SYL_B = "ix on ara eth is um ora yn ax el ion us ada ek or".split()
+
+
+def _noise_entities(core_people: set[str], core_projects: set[str], rng: random.Random):
+    """Endless generators of noise person and project names, disjoint from the core by full name / by substring."""
+    def people():
+        # the core's own first names and surnames are in the pools, so noise people collide with core people on either
+        # token ("Alice Navarro", "Gideon Chen") without ever being the same person; a core first+last pair is never
+        # reused, with or without a middle initial
+        firsts = list(dict.fromkeys(list(_FIRST) + list(_FIRST_X) + [p.split()[0] for p in sorted(core_people)]))
+        lasts = list(dict.fromkeys(list(_LAST) + list(_LAST_X) + [p.split(" ", 1)[1] for p in sorted(core_people)]))
+        pairs = [(f, l) for f in firsts for l in lasts if f"{f} {l}" not in core_people]
+        rng.shuffle(pairs)
+        for f, l in pairs:
+            yield f"{f} {l}"
+        for mid in "ABCDEFGHJKLMNPRSTVW":
+            for f, l in pairs:
+                yield f"{f} {mid}. {l}"
+
+    def projects():
+        names = [a + b for a in _SYL_A for b in _SYL_B] + [a + b + c.lower() for a in _SYL_A for b in _SYL_B for c in _SYL_A]
+        seen = set()
+        rng.shuffle(names)
+        for n in names:
+            if n not in seen and not any(c.lower() in n.lower() or n.lower() in c.lower() for c in core_projects):
+                seen.add(n)
+                yield n
+    return people(), projects()
+
+
+def _noise_notes(n_target: int, core: "World", rng: random.Random) -> list[Mem]:
+    people, projects = _noise_entities(set(PEOPLE_R3), set(PROJECTS_R3), rng)
+    days = 7 * core.n_sessions + 4
+    out: list[Mem] = []
+    proj_pool: list[str] = list(core.projects)   # roles and presentations may reference core projects (cross-links)
+    core_people, core_projects = list(core.people), list(core.projects)
+
+    def emit(d: date, text: str, ents: list[str], topics: list[str], kind: str = "fact"):
+        out.append(Mem(id=f"n{len(out):07d}", date=d.isoformat(), content=text, entities=ents, topics=topics, kind=kind))
+
+    def day(lo: int = 0) -> date:
+        return core.start + timedelta(days=rng.randint(lo, days))
+
+    def fact(kind: str, subj: str):
+        vals = {"role": lambda: f"{rng.choice(ROLES)} of {rng.choice(proj_pool)}", "tool": lambda: rng.choice(TOOLS),
+                "city": lambda: rng.choice(CITIES), "budget": lambda: f"${rng.choice(BUDGETS)}k"}[kind]
+        d, v = day(), vals()
+        emit(d, {"role": f"{subj} became {v} on {d.isoformat()}.", "tool": f"{subj} standardized on {v} as its issue tracker on {d.isoformat()}.",
+                 "city": f"{subj} is based in {v}.", "budget": f"{subj}'s quarterly budget was set to {v} on {d.isoformat()}."}[kind], [subj], [kind])
+        if rng.random() < 0.45 and (d - core.start).days < days - 1:
+            v2 = vals()
+            while v2 == v:
+                v2 = vals()
+            d2 = core.start + timedelta(days=rng.randint((d - core.start).days + 1, days))
+            if rng.random() < 0.5:
+                text = {"role": f"{subj}'s role changed on {d2.isoformat()}: now {v2}.", "tool": f"{subj} now tracks its issues in {v2} (as of {d2.isoformat()}).",
+                        "city": f"{subj} is now based in {v2} (since {d2.strftime('%B %Y')}).", "budget": f"{subj}'s quarterly budget is {v2} as of {d2.isoformat()}."}[kind]
+            else:
+                text = {"role": f"{subj} moved from {v} to {v2}, effective {d2.isoformat()}.",
+                        "tool": f"{subj} switched its issue tracker from {v} to {v2} effective {d2.isoformat()}.",
+                        "city": f"{subj} relocated from {v} to {v2} in {d2.strftime('%B %Y')}.",
+                        "budget": f"{subj}'s quarterly budget was revised from {v} to {v2} on {d2.isoformat()}."}[kind]
+            emit(d2, text, [subj], [kind, "update"], kind="update")
+
+    while len(out) < n_target:
+        if rng.random() < 0.3:
+            pr = next(projects)
+            proj_pool.append(pr)
+            for kind in PROJECT_KINDS:
+                if rng.random() < 0.85:
+                    fact(kind, pr)
+        else:
+            p = next(people)
+            for kind in PERSON_KINDS:
+                if rng.random() < 0.85:
+                    fact(kind, p)
+            for _ in range(rng.choice([0, 1, 1, 2, 3])):
+                d = day()
+                emit(d, f"{p} presented {rng.choice(proj_pool)} at {rng.choice(CONFS)} {d.year} in {rng.choice(CITIES)} on {d.isoformat()}.", [p], ["event"], kind="event")
+            if rng.random() < 0.5:
+                d = day()
+                emit(d, rng.choice([f"{p} took a half day on {d.isoformat()}.", f"{p} filed expenses for the {d.strftime('%B')} offsite."]), [p], ["filler"], kind="filler")
+            if rng.random() < 0.4:
+                # a MENTION: a noise person's note that names a core person or project without stating any fact a core
+                # question asks about (no city, role, tracker, budget value or presentation). The count of mentions of
+                # each core entity grows with the rung, so a subject-name match is no longer an answer key at scale.
+                d = day()
+                if rng.random() < 0.67:
+                    c = rng.choice(core_people)
+                    text = rng.choice([f"{p} had a 1:1 with {c} on {d.isoformat()}.", f"{p} cc'd {c} on the {d.strftime('%B')} planning thread.",
+                                       f"{p} thanked {c} for reviewing a draft on {d.isoformat()}.",
+                                       f"{p} asked {c} about the role description for an open position on {d.isoformat()}."])
+                else:
+                    c = rng.choice(core_projects)
+                    text = rng.choice([f"{p} asked a question about {c}'s roadmap on {d.isoformat()}.", f"{p} reviewed a design doc for {c} on {d.isoformat()}.",
+                                       f"{p} filed a ticket against {c} on {d.isoformat()}.",
+                                       f"{p} asked whether {c}'s budget review had been scheduled, on {d.isoformat()}."])
+                emit(d, text, [p, c], ["mention"], kind="mention")
+    return out[:n_target]
+
+
+def store_tokens(memories: list[dict]) -> int:
+    """Token estimate of the whole store as the full-context baseline renders it ('[date] content' per line).
+    Calibrated on the Claude tokenizer: these notes are dates and proper names, which tokenise at ~2 chars/token, not the
+    usual 4 (measured: 1,527 notes = 56.8K prompt tokens). GPT counts the same store ~30% smaller."""
+    return sum(len(m["content"]) + 14 for m in memories) // 2
+
+
+def generate_ladder(seed: int = 42, target_tokens: int = 0) -> dict:
+    """A ladder rung: the core world for `seed` plus enough hard noise to reach `target_tokens` (0 = core only).
+    Questions and gold are identical on every rung of a seed; noise for a larger rung extends the smaller rung's noise."""
+    w = World(seed, "R3").build()
+    qs = w.questions({"T1": 10, "T2": 5, "T3": 10, "T4": 80, "T5": 6})
+    core = [asdict(m) for m in w.mems]
+    core_tok = store_tokens(core)
+    noise: list[dict] = []
+    if target_tokens > core_tok:
+        nrng = random.Random(f"noise-{seed}")
+        per_note = 37   # ~ (60 chars + 14) / 2, measured on the templates
+        n = int((target_tokens - core_tok) / per_note * 1.02) + 50
+        cand = [asdict(m) for m in _noise_notes(n, w, nrng)]
+        tot, k = core_tok, 0
+        for m in cand:   # a prefix of one deterministic stream: rungs are nested
+            if tot >= target_tokens:
+                break
+            tot += (len(m["content"]) + 14) // 2
+            k += 1
+        noise = cand[:k]
+    mems = sorted(core + noise, key=lambda m: (m["date"], m["id"]))
+    data = {"meta": {"benchmark": "SixAxis", "scale": "R4", "seed": seed, "target_tokens": target_tokens, "store_tokens": store_tokens(mems),
+                     "n_memories": len(mems), "n_core": len(core), "n_noise": len(noise), "n_questions": len(qs)},
+            "memories": mems, "questions": [asdict(q) for q in qs], "deletions": [], "poisons": []}
+    probs = ground_check(data)
+    core_ents = set(w.people) | set(w.projects)
+    for m in noise:   # noise must never be about a core entity (cross-links name core projects only inside a noise person's role/event)
+        if m["entities"][0] in core_ents:
+            probs.append(f"{m['id']}: noise subject is a core entity")
+    if probs:
+        raise AssertionError("ground check failed:\n" + "\n".join(probs[:20]))
+    return data

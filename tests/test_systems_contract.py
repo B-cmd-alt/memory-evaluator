@@ -34,9 +34,10 @@ def mems():
                                    "The release train moves to Thursdays."], start=1)]
 
 
-def test_registry_has_twelve_entries_with_unique_keys():
-    assert len(registry.REGISTRY) == 12
-    assert len({e.key for e in registry.REGISTRY}) == 12
+def test_registry_has_twelve_systems_plus_round4_arms_with_unique_keys():
+    systems = [e for e in registry.REGISTRY if e.family not in ("ablation", "control") and e.key != "minmem"]
+    assert len(systems) == 12
+    assert len({e.key for e in registry.REGISTRY}) == len(registry.REGISTRY)
     for e in registry.REGISTRY:
         assert registry.load(e.key) is not None
 

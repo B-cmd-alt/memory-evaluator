@@ -1,0 +1,115 @@
+[
+ {
+  "comparison": "claude:sonnet (strict v3) vs proxy_avg",
+  "kappa_binary": 0.915,
+  "kappa_weighted": 0.895,
+  "mean_judge": 0.575,
+  "mean_proxy": 0.62,
+  "n_llm_calls": 52,
+  "n_errors": 0,
+  "cost_usd": 1.8326
+ },
+ {
+  "comparison": "or:openai/gpt-6.1-terra (strict v3) vs proxy_avg",
+  "kappa_binary": 0.871,
+  "kappa_weighted": 0.842,
+  "mean_judge": 0.585,
+  "mean_proxy": 0.62,
+  "n_llm_calls": 52,
+  "n_errors": 0,
+  "cost_usd": 0.0317
+ },
+ {
+  "comparison": "or:google/gemini-3.8-flash (strict v3) vs proxy_avg",
+  "kappa_binary": 0.914,
+  "kappa_weighted": 0.879,
+  "mean_judge": 0.603,
+  "mean_proxy": 0.62,
+  "n_llm_calls": 52,
+  "n_errors": 0,
+  "cost_usd": 0.0486
+ },
+ {
+  "comparison": "claude:sonnet vs or:openai/gpt-6.1-terra",
+  "kappa_binary": 0.916,
+  "kappa_weighted": 0.927
+ },
+ {
+  "comparison": "claude:sonnet vs or:google/gemini-3.8-flash",
+  "kappa_binary": 0.958,
+  "kappa_weighted": 0.933
+ },
+ {
+  "comparison": "or:openai/gpt-6.1-terra vs or:google/gemini-3.8-flash",
+  "kappa_binary": 0.958,
+  "kappa_weighted": 0.953
+ },
+ {
+  "comparison": "[LLM-branch only, n=52] claude:sonnet vs proxy_avg",
+  "kappa_binary": 0.892,
+  "kappa_binary_ci95": [
+   0.706,
+   1.0
+  ],
+  "judge_pass_proxy_fail": 0,
+  "judge_fail_proxy_pass": 2
+ },
+ {
+  "comparison": "[LLM-branch only, n=52] or:openai/gpt-6.1-terra vs proxy_avg",
+  "kappa_binary": 0.769,
+  "kappa_binary_ci95": [
+   0.508,
+   0.95
+  ],
+  "judge_pass_proxy_fail": 2,
+  "judge_fail_proxy_pass": 2
+ },
+ {
+  "comparison": "[LLM-branch only, n=52] or:google/gemini-3.8-flash vs proxy_avg",
+  "kappa_binary": 0.885,
+  "kappa_binary_ci95": [
+   0.68,
+   1.0
+  ],
+  "judge_pass_proxy_fail": 1,
+  "judge_fail_proxy_pass": 1
+ },
+ {
+  "comparison": "[LLM-branch only, n=52] claude:sonnet vs or:openai/gpt-6.1-terra",
+  "kappa_binary": 0.784,
+  "kappa_binary_ci95": [
+   0.545,
+   0.95
+  ],
+  "disagreements": [
+   "027:S1_A:s1_q20",
+   "081:S2_A:s2_q07",
+   "086:S2_DnoR:s2_q11",
+   "095:LME_D:0ddfec37_abs"
+  ]
+ },
+ {
+  "comparison": "[LLM-branch only, n=52] claude:sonnet vs or:google/gemini-3.8-flash",
+  "kappa_binary": 0.892,
+  "kappa_binary_ci95": [
+   0.708,
+   1.0
+  ],
+  "disagreements": [
+   "027:S1_A:s1_q20",
+   "081:S2_A:s2_q07"
+  ]
+ },
+ {
+  "comparison": "[LLM-branch only, n=52] or:openai/gpt-6.1-terra vs or:google/gemini-3.8-flash",
+  "kappa_binary": 0.885,
+  "kappa_binary_ci95": [
+   0.678,
+   1.0
+  ],
+  "disagreements": [
+   "086:S2_DnoR:s2_q11",
+   "095:LME_D:0ddfec37_abs"
+  ]
+ }
+]

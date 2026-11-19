@@ -1,0 +1,5498 @@
+{
+ "system": "anthropic_memory_tool",
+ "label": "Anthropic memory tool (files)",
+ "kind": "modern",
+ "rep": 1,
+ "tier": "sonnet",
+ "scale": "R3",
+ "seed": 42,
+ "status": "OK",
+ "error": null,
+ "questions": [
+  {
+   "id": "q_t1_0",
+   "task": "T1",
+   "question": "What is Quentin Dubois's current role?",
+   "reference": "product owner of Umbra",
+   "evidence_ids": [
+    "r3_0064"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "The memory files don't list a current role for Quentin Dubois. He was product owner of Umbra from 2025-02-17, but Bob Martinez took over that role effective 2025-05-06. No later role is recorded for him. He was last noted as based in Singapore (2025-04-15).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.74,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18952,
+    "completion_tokens": 248,
+    "cost_usd": 0.0654
+   },
+   "decoys": [
+    "tech lead of Meridian",
+    "product owner of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says Quentin Dubois is currently product owner of Umbra. The generated answer says he no longer holds that role (Bob Martinez took over) and that no current role is recorded, which contradicts the reference."
+  },
+  {
+   "id": "q_t1_1",
+   "task": "T1",
+   "question": "Where is Emeka Obi based?",
+   "reference": "Berlin",
+   "evidence_ids": [
+    "r3_0190"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The memory files only list Emeka Obi as design lead of Sextant (since 2025-02-07) and don't record a location for him.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.47,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18952,
+    "completion_tokens": 146,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Austin",
+    "Denver"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t1_2",
+   "task": "T1",
+   "question": "Where is Zofia Nowak based?",
+   "reference": "Lisbon",
+   "evidence_ids": [
+    "r3_0200"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Zofia Nowak is based in Lisbon (per the 2025-05-26 note).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.61,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18947,
+    "completion_tokens": 121,
+    "cost_usd": 0.0641
+   },
+   "decoys": [
+    "Berlin",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Zofia Nowak is based in Lisbon, matching the reference. The added note date is extra detail and does not contradict anything."
+  },
+  {
+   "id": "q_t1_3",
+   "task": "T1",
+   "question": "What is Meridian's quarterly budget?",
+   "reference": "$300k",
+   "evidence_ids": [
+    "r3_0008"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.77,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17991,
+    "completion_tokens": 118,
+    "cost_usd": 0.0602
+   },
+   "decoys": [
+    "$450k",
+    "$180k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Meridian's quarterly budget is $300k, matching the reference. The added date (2025-01-08) is extra detail that doesn't contradict it."
+  },
+  {
+   "id": "q_t1_4",
+   "task": "T1",
+   "question": "What is Valentina Greco's current role?",
+   "reference": "design lead of Atlas",
+   "evidence_ids": [
+    "r3_0001"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "The memory notes don't list a current role for Valentina Greco. She became design lead of Atlas on 2025-01-09, but Rosa Alvarez replaced her in that role on 2025-01-14. No later role is recorded. The notes do say she is based in Lisbon (as of 2025-05-06).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.73,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18953,
+    "completion_tokens": 284,
+    "cost_usd": 0.0658
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "release manager of Meridian"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.1,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says her current role is design lead of Atlas. The generated answer says no current role is listed and that Rosa Alvarez replaced her days after she took the role, which contradicts the reference. It only mentions the reference role as a past one."
+  },
+  {
+   "id": "q_t1_5",
+   "task": "T1",
+   "question": "What is Ximena Ortiz's current role?",
+   "reference": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0027"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Ximena Ortiz's memory notes list no current role. She became QA lead of Sextant on 2025-01-21, but Jamal Okafor replaced her in that role effective 2025-04-04, and no later role is recorded for her. She is currently based in Toronto, having moved from Berlin in July 2025.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.33,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18963,
+    "completion_tokens": 193,
+    "cost_usd": 0.0649
+   },
+   "decoys": [
+    "tech lead of Meridian",
+    "release manager of Relay"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says Ximena Ortiz is currently QA lead of Sextant. The generated answer says she held that role from 2025-01-21 but was replaced by Jamal Okafor on 2025-04-04 and has no current role. It mentions the role only as a past one, so it contradicts the reference's claim that it is her current role."
+  },
+  {
+   "id": "q_t1_6",
+   "task": "T1",
+   "question": "Where is Grace Kim based?",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0241"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Grace Kim is based in Denver (per the 2025-06-27 note). No earlier location is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.75,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18949,
+    "completion_tokens": 127,
+    "cost_usd": 0.0642
+   },
+   "decoys": [
+    "Berlin",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Grace Kim is based in Denver, which matches the reference. The extra details about the note date and no earlier location don't contradict it."
+  },
+  {
+   "id": "q_t1_7",
+   "task": "T1",
+   "question": "What is Emeka Obi's current role?",
+   "reference": "design lead of Sextant",
+   "evidence_ids": [
+    "r3_0048"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Emeka Obi is the design lead of Sextant, a role held since 2025-02-07.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.37,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18958,
+    "completion_tokens": 122,
+    "cost_usd": 0.0641
+   },
+   "decoys": [
+    "product owner of Sextant",
+    "data lead of Meridian"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Emeka Obi is the design lead of Sextant, matching the reference. The added start date is extra detail that doesn't contradict it."
+  },
+  {
+   "id": "q_t1_8",
+   "task": "T1",
+   "question": "What is Compass's quarterly budget?",
+   "reference": "$180k",
+   "evidence_ids": [
+    "r3_0000"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Compass's quarterly budget is $180k (set 2025-01-06).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.68,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17982,
+    "completion_tokens": 117,
+    "cost_usd": 0.0602
+   },
+   "decoys": [
+    "$120k",
+    "$520k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $180k, matching the reference. The added date (set 2025-01-06) is extra detail that does not contradict the reference."
+  },
+  {
+   "id": "q_t1_9",
+   "task": "T1",
+   "question": "Which issue tracker does Relay use?",
+   "reference": "Trello",
+   "evidence_ids": [
+    "r3_0062"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Relay uses Trello (standardized 2025-02-21).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.49,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17985,
+    "completion_tokens": 113,
+    "cost_usd": 0.0602
+   },
+   "decoys": [
+    "Notion",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Relay uses Trello, matching the reference. The added standardization date is extra detail and does not contradict it."
+  },
+  {
+   "id": "q_t4_10",
+   "task": "T4",
+   "question": "Which issue tracker does Lantern use? (as of today)",
+   "reference": "Asana",
+   "evidence_ids": [
+    "r3_0059"
+   ],
+   "stale_answer": "Jira",
+   "stratum": "implicit",
+   "answer": "Lantern uses Jira (standardized 2025-02-04). No later change is recorded in my notes.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.79,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18005,
+    "completion_tokens": 126,
+    "cost_usd": 0.0603
+   },
+   "decoys": [
+    "Notion",
+    "Jira"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer says Jira, but the reference says Asana. It contradicts the reference and names the wrong tracker."
+  },
+  {
+   "id": "q_t4_11",
+   "task": "T4",
+   "question": "What is Noah Berg's current role? (as of today)",
+   "reference": "release manager of Umbra",
+   "evidence_ids": [
+    "r3_0171"
+   ],
+   "stale_answer": "design lead of Orbit",
+   "stratum": "implicit",
+   "answer": "Noah Berg is currently the release manager of Umbra (effective 2025-05-07). He has also been the design lead of Orbit since 2025-04-17, and no later note records a change to either role.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.09,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18966,
+    "completion_tokens": 154,
+    "cost_usd": 0.0645
+   },
+   "decoys": [
+    "QA lead of Compass",
+    "design lead of Orbit"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Noah Berg is currently the release manager of Umbra, matching the reference. The extra detail about being design lead of Orbit does not contradict the reference."
+  },
+  {
+   "id": "q_t4_12",
+   "task": "T4",
+   "question": "Where is Callum Reid based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0029"
+   ],
+   "stale_answer": "Austin",
+   "stratum": "implicit",
+   "answer": "Callum Reid is based in Osaka (since January 2025, per the 2025-01-24 note, which superseded an earlier note saying Austin).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.89,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18967,
+    "completion_tokens": 139,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Dublin",
+    "Austin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Osaka, matching the reference. The extra detail about the earlier Austin note and the date does not contradict it."
+  },
+  {
+   "id": "q_t4_13",
+   "task": "T4",
+   "question": "Where is Rosa Alvarez based? (as of today)",
+   "reference": "Dublin",
+   "evidence_ids": [
+    "r3_0178"
+   ],
+   "stale_answer": "Osaka",
+   "stratum": "explicit",
+   "answer": "Rosa Alvarez is based in Dublin. She relocated from Osaka in May 2025, per the 2025-05-05 note, and no later location is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.94,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18964,
+    "completion_tokens": 145,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Toronto",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Rosa Alvarez is based in Dublin, matching the reference. The extra detail about relocating from Osaka does not contradict it."
+  },
+  {
+   "id": "q_t4_14",
+   "task": "T4",
+   "question": "What is Bob Martinez's current role? (as of today)",
+   "reference": "product owner of Umbra",
+   "evidence_ids": [
+    "r3_0175"
+   ],
+   "stale_answer": "data lead of Nimbus",
+   "stratum": "implicit",
+   "answer": "Bob Martinez's most recent recorded role is product owner of Umbra, effective 2025-05-06. He replaced Quentin Dubois, though the note doesn't mention him explicitly. He also became data lead of Nimbus on 2025-04-29, and I found no note saying he left that role. He is based in Lisbon.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 7.05,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18963,
+    "completion_tokens": 328,
+    "cost_usd": 0.0662
+   },
+   "decoys": [
+    "QA lead of Sextant",
+    "data lead of Nimbus"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.85,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Bob Martinez's most recent role is product owner of Umbra, which matches the reference. The extra claims (also data lead of Nimbus, no note of leaving, based in Lisbon) are not in the reference and slightly hedge on whether he currently holds another role, but they do not contradict the core answer."
+  },
+  {
+   "id": "q_t4_15",
+   "task": "T4",
+   "question": "Where is Carol Davis based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0054"
+   ],
+   "stale_answer": "Singapore",
+   "stratum": "implicit",
+   "answer": "Carol Davis is based in Singapore (per the 2025-02-06 note; no later location change is recorded).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.93,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18963,
+    "completion_tokens": 127,
+    "cost_usd": 0.0642
+   },
+   "decoys": [
+    "Toronto",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says Austin; generated says Singapore, which contradicts the reference."
+  },
+  {
+   "id": "q_t4_16",
+   "task": "T4",
+   "question": "What is Liam O'Brien's current role? (as of today)",
+   "reference": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0051"
+   ],
+   "stale_answer": "release manager of Sextant",
+   "stratum": "implicit",
+   "answer": "Liam O'Brien is the release manager of Sextant, a role he has held since 2025-02-03.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.71,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18973,
+    "completion_tokens": 125,
+    "cost_usd": 0.0642
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "release manager of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says Liam O'Brien is tech lead of Meridian, but the generated answer says he is release manager of Sextant. Both the role and the project differ, so it contradicts the reference."
+  },
+  {
+   "id": "q_t4_17",
+   "task": "T4",
+   "question": "Which issue tracker does Compass use? (as of today)",
+   "reference": "Notion",
+   "evidence_ids": [
+    "r3_0071"
+   ],
+   "stale_answer": "Confluence",
+   "stratum": "implicit",
+   "answer": "Compass uses **Notion** as its issue tracker. It switched from Confluence on 2025-02-24, and the memory notes don't give a reason for the change.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.76,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18002,
+    "completion_tokens": 144,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "Asana",
+    "Confluence"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Compass uses Notion, matching the reference. The extra detail about the switch from Confluence does not contradict it."
+  },
+  {
+   "id": "q_t4_18",
+   "task": "T4",
+   "question": "Where is Yusuf Demir based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0214"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "explicit",
+   "answer": "Yusuf Demir is based in Austin. He relocated from Berlin in June 2025 (note 2025-06-04).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.01,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18967,
+    "completion_tokens": 132,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Denver",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Yusuf Demir is based in Austin, matching the reference. The extra detail about relocating from Berlin does not contradict it."
+  },
+  {
+   "id": "q_t4_19",
+   "task": "T4",
+   "question": "Which issue tracker does Umbra use? (as of today)",
+   "reference": "Confluence",
+   "evidence_ids": [
+    "r3_0047"
+   ],
+   "stale_answer": "Shortcut",
+   "stratum": "explicit",
+   "answer": "Umbra uses Confluence as its issue tracker. It switched from Shortcut effective 2025-02-05, and the notes give no reason for the change.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 7.88,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18005,
+    "completion_tokens": 142,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "Jira",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Confluence is Umbra's issue tracker, matching the reference. The extra details about the switch from Shortcut do not contradict it."
+  },
+  {
+   "id": "q_t4_20",
+   "task": "T4",
+   "question": "What is Harbor's quarterly budget? (as of today)",
+   "reference": "$120k",
+   "evidence_ids": [
+    "r3_0151"
+   ],
+   "stale_answer": "$520k",
+   "stratum": "implicit",
+   "answer": "Harbor's quarterly budget is $120k (as of 2025-04-22; no earlier budget noted).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.84,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18007,
+    "completion_tokens": 128,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "$450k",
+    "$520k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Harbor's quarterly budget is $120k, matching the reference exactly. The added date note and 'no earlier budget noted' caveat do not contradict the reference."
+  },
+  {
+   "id": "q_t4_21",
+   "task": "T4",
+   "question": "Where is Wei Zhang based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0202"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "implicit",
+   "answer": "Wei Zhang is based in Osaka (since May 2025, per the 2025-05-29 note). No earlier location is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.21,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18965,
+    "completion_tokens": 135,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Lisbon",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Wei Zhang is based in Osaka, matching the reference. The extra details about timing and no earlier location do not contradict it."
+  },
+  {
+   "id": "q_t4_22",
+   "task": "T4",
+   "question": "What is Relay's quarterly budget? (as of today)",
+   "reference": "$240k",
+   "evidence_ids": [
+    "r3_0148"
+   ],
+   "stale_answer": "$300k",
+   "stratum": "implicit",
+   "answer": "Relay's quarterly budget is $240k (as of 2025-04-16; no earlier budget noted).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.9,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17998,
+    "completion_tokens": 127,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "$360k",
+    "$300k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Relay's quarterly budget is $240k, matching the reference exactly. The added date note and 'no earlier budget noted' caveat do not contradict the reference."
+  },
+  {
+   "id": "q_t4_23",
+   "task": "T4",
+   "question": "Where is Olga Petrova based? (as of today)",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0224"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "implicit",
+   "answer": "Olga Petrova is based in Singapore. She has been there since June 2025, per the note dated 2025-06-12, which replaced an earlier note placing her in Berlin.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.93,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18961,
+    "completion_tokens": 148,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Austin",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Olga Petrova is based in Singapore, matching the reference. The extra details about the June 2025 note and the earlier Berlin location do not contradict it."
+  },
+  {
+   "id": "q_t4_24",
+   "task": "T4",
+   "question": "Where is Tove Lindqvist based? (as of today)",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0246"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "implicit",
+   "answer": "Tove Lindqvist is based in Denver. She has been there since June 2025, per the note dated 2025-06-27, which superseded an earlier note that had her in Lisbon.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.1,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18968,
+    "completion_tokens": 150,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Dublin",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Tove Lindqvist is based in Denver, matching the reference. The extra details about the June 2025 note and the earlier Lisbon location do not contradict the reference."
+  },
+  {
+   "id": "q_t4_25",
+   "task": "T4",
+   "question": "Where is Ines Moreau based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0119"
+   ],
+   "stale_answer": "Dublin",
+   "stratum": "explicit",
+   "answer": "Ines Moreau is based in Austin. She relocated there from Dublin in March 2025, per the 2025-03-27 note.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.63,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18968,
+    "completion_tokens": 134,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Osaka",
+    "Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Ines Moreau is based in Austin, matching the reference. The extra relocation detail (from Dublin in March 2025) does not contradict it."
+  },
+  {
+   "id": "q_t4_26",
+   "task": "T4",
+   "question": "Which issue tracker does Pylon use? (as of today)",
+   "reference": "Linear",
+   "evidence_ids": [
+    "r3_0009"
+   ],
+   "stale_answer": "Trello",
+   "stratum": "explicit",
+   "answer": "Pylon uses Trello. It standardized on Trello on 2025-01-09, after briefly switching to Linear on 2025-01-08.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.1,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18006,
+    "completion_tokens": 139,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "Notion",
+    "Trello"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference answer is Linear, but the generated answer says Pylon currently uses Trello and only mentions Linear as a brief earlier switch. This contradicts the reference's current answer."
+  },
+  {
+   "id": "q_t4_27",
+   "task": "T4",
+   "question": "Where is Elena Rossi based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0206"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "explicit",
+   "answer": "Elena Rossi is based in Osaka. She relocated there from Berlin in May 2025, per the 2025-05-29 note.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.52,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18966,
+    "completion_tokens": 135,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Toronto",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Elena Rossi is based in Osaka, matching the reference. The extra relocation detail (from Berlin in May 2025) doesn't contradict it."
+  },
+  {
+   "id": "q_t4_28",
+   "task": "T4",
+   "question": "Where is Mina Park based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0006"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "implicit",
+   "answer": "Mina Park is based in Lisbon. A note dated 2025-01-08 supersedes the earlier note that placed her in Austin. The notes don't say when she moved, and nothing later changes her location.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.1,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18963,
+    "completion_tokens": 157,
+    "cost_usd": 0.0645
+   },
+   "decoys": [
+    "Singapore",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer says Lisbon, contradicting the reference answer of Austin. It acknowledges Austin only as a superseded earlier location, so the final answer is wrong."
+  },
+  {
+   "id": "q_t4_29",
+   "task": "T4",
+   "question": "What is Hiro Tanaka's current role? (as of today)",
+   "reference": "QA lead of Compass",
+   "evidence_ids": [
+    "r3_0028"
+   ],
+   "stale_answer": "release manager of Compass",
+   "stratum": "implicit",
+   "answer": "Hiro Tanaka's latest recorded role is release manager of Compass, which he has held since 2025-01-21. He also became Compass QA lead on 2025-01-22, but Carol Davis replaced him in that role on 2025-04-01.\n\nThe notes don't say whether the QA lead role replaced the release manager role or was in addition to it. If it replaced it, I have no record of a current role. No note shows him leaving the release manager role.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.2,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18974,
+    "completion_tokens": 461,
+    "cost_usd": 0.0676
+   },
+   "decoys": [
+    "product owner of Sextant",
+    "release manager of Compass"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says current role is QA lead of Compass. Generated says latest role is release manager and that Carol Davis replaced him as QA lead on 2025-04-01, so it contradicts the reference by saying he no longer holds the QA lead role."
+  },
+  {
+   "id": "q_t4_30",
+   "task": "T4",
+   "question": "What is Freya Holm's current role? (as of today)",
+   "reference": "tech lead of Lantern",
+   "evidence_ids": [
+    "r3_0146"
+   ],
+   "stale_answer": "release manager of Orbit",
+   "stratum": "explicit",
+   "answer": "Freya Holm is currently the tech lead of Lantern, effective 2025-04-18. She moved to that role from being Orbit release manager.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.13,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18962,
+    "completion_tokens": 138,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "data lead of Compass",
+    "release manager of Orbit"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Freya Holm is currently the tech lead of Lantern, matching the reference. The extra details about the effective date and her previous role as Orbit release manager do not contradict it."
+  },
+  {
+   "id": "q_t4_31",
+   "task": "T4",
+   "question": "What is Carol Davis's current role? (as of today)",
+   "reference": "QA lead of Compass",
+   "evidence_ids": [
+    "r3_0125"
+   ],
+   "stale_answer": "QA lead of Lantern",
+   "stratum": "implicit",
+   "answer": "Carol Davis is currently QA lead of both Compass (effective 2025-04-01, replacing Hiro Tanaka) and Lantern (effective 2025-03-12, replacing Wei Zhang). She is based in Singapore.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.53,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18963,
+    "completion_tokens": 170,
+    "cost_usd": 0.0646
+   },
+   "decoys": [
+    "tech lead of Atlas",
+    "QA lead of Lantern"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.75,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes the reference fact (QA lead of Compass) but adds an unreferenced second role (QA lead of Lantern) and extra details such as location, which the reference does not support. The core fact matches and nothing contradicts it, though the added claims are unverified."
+  },
+  {
+   "id": "q_t4_32",
+   "task": "T4",
+   "question": "What is Umbra's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "evidence_ids": [
+    "r3_0131"
+   ],
+   "stale_answer": "$120k",
+   "stratum": "explicit",
+   "answer": "Umbra's quarterly budget is $900k. It was revised on 2025-04-09 from $120k, which had been set on 2025-02-25.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.94,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18006,
+    "completion_tokens": 140,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "$300k",
+    "$120k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the current quarterly budget is $900k, matching the reference. The additional history (revised from $120k) does not contradict the reference."
+  },
+  {
+   "id": "q_t4_33",
+   "task": "T4",
+   "question": "What is Lantern's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "evidence_ids": [
+    "r3_0139"
+   ],
+   "stale_answer": "$120k",
+   "stratum": "implicit",
+   "answer": "Lantern's quarterly budget is $900k (as of 2025-04-10). It was previously $120k, set 2025-01-27, and was superseded on 2025-04-10.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.12,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18005,
+    "completion_tokens": 150,
+    "cost_usd": 0.0606
+   },
+   "decoys": [
+    "$450k",
+    "$120k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the current quarterly budget is $900k, matching the reference. The extra history (previously $120k) is additional context and does not contradict the reference."
+  },
+  {
+   "id": "q_t4_34",
+   "task": "T4",
+   "question": "Which issue tracker does Wayfarer use? (as of today)",
+   "reference": "Monday",
+   "evidence_ids": [
+    "r3_0024"
+   ],
+   "stale_answer": "Asana",
+   "stratum": "implicit",
+   "answer": "Wayfarer uses **Monday** as its issue tracker. It was switched from Asana, which was standardized on 2025-01-17, to Monday per a 2025-01-24 note. No later change is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.44,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18010,
+    "completion_tokens": 161,
+    "cost_usd": 0.0607
+   },
+   "decoys": [
+    "Confluence",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Monday as the issue tracker, matching the reference. The extra history about the switch from Asana does not contradict it."
+  },
+  {
+   "id": "q_t4_35",
+   "task": "T4",
+   "question": "Which issue tracker does Harbor use? (as of today)",
+   "reference": "Trello",
+   "evidence_ids": [
+    "r3_0082"
+   ],
+   "stale_answer": "Asana",
+   "stratum": "implicit",
+   "answer": "Harbor uses Asana (standardized 2025-02-28). No later change is noted.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.3,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18009,
+    "completion_tokens": 121,
+    "cost_usd": 0.0603
+   },
+   "decoys": [
+    "Monday",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says Trello; generated says Asana, which contradicts the reference."
+  },
+  {
+   "id": "q_t4_36",
+   "task": "T4",
+   "question": "What is Beacon's quarterly budget? (as of today)",
+   "reference": "$450k",
+   "evidence_ids": [
+    "r3_0058"
+   ],
+   "stale_answer": "$120k",
+   "stratum": "implicit",
+   "answer": "Beacon's quarterly budget is $120k (set 2025-01-30). No later revisions are noted.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.3,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18006,
+    "completion_tokens": 127,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "$180k",
+    "$120k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states $120k, which contradicts the reference value of $450k. The claim that no later revisions exist does not fix the mismatch."
+  },
+  {
+   "id": "q_t4_37",
+   "task": "T4",
+   "question": "What is Mina Park's current role? (as of today)",
+   "reference": "data lead of Compass",
+   "evidence_ids": [
+    "r3_0086"
+   ],
+   "stale_answer": "QA lead of Sextant",
+   "stratum": "explicit",
+   "answer": "I don't have enough information to answer this question.\n\nThe memory files only list Mina Park's conference presentations (Atlas, Tessera, Quill, Lantern and Wayfarer) and her location, which is Lisbon as of the 2025-01-08 note. They record no job title or role for her.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.59,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18961,
+    "completion_tokens": 218,
+    "cost_usd": 0.0651
+   },
+   "decoys": [
+    "design lead of Atlas",
+    "QA lead of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t4_38",
+   "task": "T4",
+   "question": "What is Wayfarer's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "evidence_ids": [
+    "r3_0032"
+   ],
+   "stale_answer": "$240k",
+   "stratum": "explicit",
+   "answer": "Wayfarer's quarterly budget is $360k. It was revised on 2025-01-29 from the earlier $240k set on 2025-01-13.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.19,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18015,
+    "completion_tokens": 142,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "$300k",
+    "$240k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the budget is $360k, matching the reference. The added revision history (previous $240k) does not contradict it."
+  },
+  {
+   "id": "q_t4_39",
+   "task": "T4",
+   "question": "What is Elena Rossi's current role? (as of today)",
+   "reference": "product owner of Pylon",
+   "evidence_ids": [
+    "r3_0111"
+   ],
+   "stale_answer": "data lead of Quill",
+   "stratum": "explicit",
+   "answer": "Elena Rossi is the product owner of Pylon, a role she has held since 2025-03-24, when she moved over from being data lead of Quill. No later change to her role appears in the notes.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.81,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18962,
+    "completion_tokens": 152,
+    "cost_usd": 0.0645
+   },
+   "decoys": [
+    "product owner of Umbra",
+    "data lead of Quill"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Elena Rossi is the product owner of Pylon, matching the reference. The extra details about when she moved and her previous role do not contradict it."
+  },
+  {
+   "id": "q_t4_40",
+   "task": "T4",
+   "question": "What is Dmitri Volkov's current role? (as of today)",
+   "reference": "release manager of Relay",
+   "evidence_ids": [
+    "r3_0019"
+   ],
+   "stale_answer": "design lead of Nimbus",
+   "stratum": "explicit",
+   "answer": "Dmitri Volkov is currently the release manager of Relay, effective 2025-01-17. He moved to that role from design lead of Nimbus, and no later role change is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.89,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18977,
+    "completion_tokens": 150,
+    "cost_usd": 0.0645
+   },
+   "decoys": [
+    "data lead of Relay",
+    "design lead of Nimbus"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Dmitri Volkov is currently the release manager of Relay, matching the reference. The extra details (effective date, prior role, no later change) do not contradict it."
+  },
+  {
+   "id": "q_t4_41",
+   "task": "T4",
+   "question": "What is Yusuf Demir's current role? (as of today)",
+   "reference": "product owner of Sextant",
+   "evidence_ids": [
+    "r3_0138"
+   ],
+   "stale_answer": "data lead of Wayfarer",
+   "stratum": "explicit",
+   "answer": "Yusuf Demir is currently the product owner of Sextant, effective 2025-04-11. He previously served as data lead of Wayfarer.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.19,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18975,
+    "completion_tokens": 139,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "design lead of Lantern",
+    "data lead of Wayfarer"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Yusuf Demir is currently the product owner of Sextant, matching the reference. The extra details (effective date, previous data lead role at Wayfarer) do not contradict the reference."
+  },
+  {
+   "id": "q_t4_42",
+   "task": "T4",
+   "question": "Where is Hiro Tanaka based? (as of today)",
+   "reference": "Toronto",
+   "evidence_ids": [
+    "r3_0020"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "explicit",
+   "answer": "Hiro Tanaka is based in Toronto. He relocated there from Lisbon in January 2025, per the 2025-01-20 note.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.92,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18971,
+    "completion_tokens": 138,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Berlin",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Hiro Tanaka is based in Toronto, which matches the reference. The extra detail about relocating from Lisbon in January 2025 does not contradict the reference."
+  },
+  {
+   "id": "q_t4_43",
+   "task": "T4",
+   "question": "What is Orbit's quarterly budget? (as of today)",
+   "reference": "$450k",
+   "evidence_ids": [
+    "r3_0100"
+   ],
+   "stale_answer": "$600k",
+   "stratum": "explicit",
+   "answer": "Orbit's quarterly budget is $600k (set 2025-03-13). The notes show no revisions since then.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.38,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17999,
+    "completion_tokens": 129,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "$180k",
+    "$600k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated states $600k, which contradicts the reference's $450k. The key fact (the budget amount) is wrong."
+  },
+  {
+   "id": "q_t4_44",
+   "task": "T4",
+   "question": "Where is Sanjay Mehta based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0018"
+   ],
+   "stale_answer": "Dublin",
+   "stratum": "explicit",
+   "answer": "Sanjay Mehta is based in Dublin, per the latest note (2025-01-16). An earlier note (2025-01-14) said he had moved from Dublin to Osaka, but the later note supersedes it. The notes don't explain whether he moved back or the Osaka note was wrong.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.44,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18969,
+    "completion_tokens": 186,
+    "cost_usd": 0.0648
+   },
+   "decoys": [
+    "Toronto",
+    "Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference answer is Osaka, but the generated answer states Dublin as the current location and dismisses the Osaka note as superseded, which contradicts the reference."
+  },
+  {
+   "id": "q_t4_45",
+   "task": "T4",
+   "question": "Which issue tracker does Meridian use? (as of today)",
+   "reference": "Shortcut",
+   "evidence_ids": [
+    "r3_0105"
+   ],
+   "stale_answer": "Monday",
+   "stratum": "explicit",
+   "answer": "Meridian uses Monday as its issue tracker (standardized 2025-02-27). No later change is noted.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.73,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18000,
+    "completion_tokens": 128,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "Linear",
+    "Monday"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says Meridian uses Shortcut; generated says Monday, which contradicts the reference."
+  },
+  {
+   "id": "q_t4_46",
+   "task": "T4",
+   "question": "Where is Dmitri Volkov based? (as of today)",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0136"
+   ],
+   "stale_answer": "Dublin",
+   "stratum": "implicit",
+   "answer": "Dmitri Volkov is based in Denver (since April 2025, per the 2025-04-07 note; he was previously in Dublin).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.63,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18981,
+    "completion_tokens": 136,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Austin",
+    "Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Denver as Dmitri Volkov's current base, matching the reference. The extra details about the move date and his previous location in Dublin do not contradict it."
+  },
+  {
+   "id": "q_t4_47",
+   "task": "T4",
+   "question": "Where is Ximena Ortiz based? (as of today)",
+   "reference": "Toronto",
+   "evidence_ids": [
+    "r3_0257"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "implicit",
+   "answer": "Ximena Ortiz is based in Toronto. She moved there from Berlin in July 2025 (note 2025-07-03), and no later location note appears in the files.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.47,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18969,
+    "completion_tokens": 145,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Lisbon",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Ximena Ortiz is based in Toronto, matching the reference. The extra detail about moving from Berlin in July 2025 does not contradict it."
+  },
+  {
+   "id": "q_t4_48",
+   "task": "T4",
+   "question": "What is Rosa Alvarez's current role? (as of today)",
+   "reference": "tech lead of Umbra",
+   "evidence_ids": [
+    "r3_0021"
+   ],
+   "stale_answer": "design lead of Atlas",
+   "stratum": "implicit",
+   "answer": "Rosa Alvarez is currently the design lead of Atlas (since 2025-01-14, replacing Valentina Greco). She was also Umbra tech lead from 2025-01-22, but Umar Siddiqui replaced her in that role on 2025-03-11. She is based in Dublin as of May 2025.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 10.63,
+   "read_path": {
+    "llm_calls": 4,
+    "prompt_tokens": 37196,
+    "completion_tokens": 369,
+    "cost_usd": 0.1372
+   },
+   "decoys": [
+    "tech lead of Relay",
+    "design lead of Atlas"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says Rosa Alvarez is currently tech lead of Umbra. The generated answer says she is currently design lead of Atlas and that she was replaced as Umbra tech lead by Umar Siddiqui, which contradicts the reference."
+  },
+  {
+   "id": "q_t4_49",
+   "task": "T4",
+   "question": "Where is Bob Martinez based? (as of today)",
+   "reference": "Lisbon",
+   "evidence_ids": [
+    "r3_0046"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "explicit",
+   "answer": "Bob Martinez is based in Lisbon. He relocated there from Berlin in February 2025, according to the note dated 2025-02-04, and no later note records another move.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.02,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18968,
+    "completion_tokens": 146,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Dublin",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Bob Martinez is based in Lisbon, matching the reference. The extra detail about relocating from Berlin does not contradict it."
+  },
+  {
+   "id": "q_t4_50",
+   "task": "T4",
+   "question": "What is Atlas's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "evidence_ids": [
+    "r3_0050"
+   ],
+   "stale_answer": "$180k",
+   "stratum": "implicit",
+   "answer": "Atlas's quarterly budget is $180k (set 2025-01-17). The notes show no later revision.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.91,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18003,
+    "completion_tokens": 127,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "$300k",
+    "$180k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states $180k, which contradicts the reference value of $900k. The key fact is wrong."
+  },
+  {
+   "id": "q_t4_51",
+   "task": "T4",
+   "question": "Which issue tracker does Tessera use? (as of today)",
+   "reference": "Confluence",
+   "evidence_ids": [
+    "r3_0103"
+   ],
+   "stale_answer": "Shortcut",
+   "stratum": "explicit",
+   "answer": "Tessera uses Shortcut (standardized 2025-02-24). No later change is recorded in the notes.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.04,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18010,
+    "completion_tokens": 128,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "Linear",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says Tessera uses Confluence, while the generated answer says Shortcut. This is a different tool and contradicts the reference."
+  },
+  {
+   "id": "q_t4_52",
+   "task": "T4",
+   "question": "What is Grace Kim's current role? (as of today)",
+   "reference": "design lead of Tessera",
+   "evidence_ids": [
+    "r3_0140"
+   ],
+   "stale_answer": "tech lead of Pylon",
+   "stratum": "explicit",
+   "answer": "Grace Kim is currently the design lead of Tessera, effective 2025-04-14. She moved to that role from being tech lead of Pylon.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.94,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18964,
+    "completion_tokens": 139,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "data lead of Compass",
+    "tech lead of Pylon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states Grace Kim is the design lead of Tessera, matching the reference. The extra details (effective date, prior role) do not contradict it."
+  },
+  {
+   "id": "q_t4_53",
+   "task": "T4",
+   "question": "Which issue tracker does Atlas use? (as of today)",
+   "reference": "Monday",
+   "evidence_ids": [
+    "r3_0033"
+   ],
+   "stale_answer": "Shortcut",
+   "stratum": "explicit",
+   "answer": "Atlas uses Monday as its issue tracker. It switched from Shortcut effective 2025-01-28.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.98,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18005,
+    "completion_tokens": 129,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "Asana",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Atlas uses Monday as its issue tracker, matching the reference. The added detail about switching from Shortcut on 2025-01-28 does not contradict the reference."
+  },
+  {
+   "id": "q_t4_54",
+   "task": "T4",
+   "question": "Which issue tracker does Beacon use? (as of today)",
+   "reference": "Shortcut",
+   "evidence_ids": [
+    "r3_0061"
+   ],
+   "stale_answer": "Notion",
+   "stratum": "implicit",
+   "answer": "Beacon uses Notion as its issue tracker. It was standardized on Notion on 2025-02-20, replacing Shortcut.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.05,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18011,
+    "completion_tokens": 137,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "Linear",
+    "Notion"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference answer is Shortcut, but the generated answer says Beacon uses Notion and that it replaced Shortcut. That contradicts the reference's current answer."
+  },
+  {
+   "id": "q_t4_55",
+   "task": "T4",
+   "question": "Where is Daria Sokolova based? (as of today)",
+   "reference": "Berlin",
+   "evidence_ids": [
+    "r3_0081"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "explicit",
+   "answer": "Daria Sokolova is based in Lisbon (per the 2025-02-25 note). No later location change is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.64,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18970,
+    "completion_tokens": 130,
+    "cost_usd": 0.0642
+   },
+   "decoys": [
+    "Denver",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer says Lisbon, but the reference says Berlin. The key fact contradicts the reference."
+  },
+  {
+   "id": "q_t4_56",
+   "task": "T4",
+   "question": "Which issue tracker does Sextant use? (as of today)",
+   "reference": "Shortcut",
+   "evidence_ids": [
+    "r3_0080"
+   ],
+   "stale_answer": "Confluence",
+   "stratum": "explicit",
+   "answer": "Sextant uses Confluence, which was standardized on 2025-02-25. The notes record no later change.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.92,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18010,
+    "completion_tokens": 126,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "Linear",
+    "Confluence"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference answer is Shortcut; generated answer says Confluence, which is a different tool (and not an issue tracker) and contradicts the reference."
+  },
+  {
+   "id": "q_t4_57",
+   "task": "T4",
+   "question": "What is Pylon's quarterly budget? (as of today)",
+   "reference": "$520k",
+   "evidence_ids": [
+    "r3_0104"
+   ],
+   "stale_answer": "$900k",
+   "stratum": "explicit",
+   "answer": "I don't have enough information to answer this question.\n\nThe memory files list quarterly budgets for Compass, Sextant, Meridian, Wayfarer, Atlas, Lantern, Beacon, Quill, Tessera, Umbra, Orbit, Relay, and Harbor, but none for Pylon. Pylon only appears in the notes for its tech lead, product owner, issue tracker, and presentations.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 7.36,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17999,
+    "completion_tokens": 226,
+    "cost_usd": 0.0614
+   },
+   "decoys": [
+    "$600k",
+    "$900k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t4_58",
+   "task": "T4",
+   "question": "Where is Jamal Okafor based? (as of today)",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0052"
+   ],
+   "stale_answer": "Austin",
+   "stratum": "explicit",
+   "answer": "Jamal Okafor is based in Austin (per the note dated 2025-02-07). The memory has no later location update for him.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.34,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18971,
+    "completion_tokens": 131,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Singapore",
+    "Austin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer says Austin, while the reference says Denver. The location is wrong and contradicts the reference."
+  },
+  {
+   "id": "q_t4_59",
+   "task": "T4",
+   "question": "Where is Liam O'Brien based? (as of today)",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0112"
+   ],
+   "stale_answer": "Osaka",
+   "stratum": "implicit",
+   "answer": "Liam O'Brien is based in Singapore. He has been there since March 2025, per the 2025-03-27 note. An earlier note from the same day said Osaka, but the later note supersedes it.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.93,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18967,
+    "completion_tokens": 155,
+    "cost_usd": 0.0645
+   },
+   "decoys": [
+    "Toronto",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Liam O'Brien is based in Singapore, matching the reference. The extra detail about an earlier Osaka note being superseded does not contradict the final answer."
+  },
+  {
+   "id": "q_t4_60",
+   "task": "T4",
+   "question": "Where is Alice Chen based? (as of today)",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0245"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "explicit",
+   "answer": "Alice Chen is based in Singapore. She relocated from Lisbon in June 2025, per the 2025-06-26 note.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.76,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18967,
+    "completion_tokens": 134,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Toronto",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Alice Chen is based in Singapore, matching the reference. The added detail about relocating from Lisbon in June 2025 doesn't contradict it."
+  },
+  {
+   "id": "q_t4_61",
+   "task": "T4",
+   "question": "What is Ines Moreau's current role? (as of today)",
+   "reference": "release manager of Quill",
+   "evidence_ids": [
+    "r3_0074"
+   ],
+   "stale_answer": "design lead of Harbor",
+   "stratum": "explicit",
+   "answer": "Ines Moreau is currently the release manager of Quill (effective 2025-02-25). She previously served as design lead of Harbor from 2025-02-21 until that move.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.78,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18970,
+    "completion_tokens": 147,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "release manager of Relay",
+    "design lead of Harbor"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Ines Moreau is currently the release manager of Quill, matching the reference. The extra detail about her previous role as design lead of Harbor does not contradict it."
+  },
+  {
+   "id": "q_t4_62",
+   "task": "T4",
+   "question": "What is Alice Chen's current role? (as of today)",
+   "reference": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0088"
+   ],
+   "stale_answer": "tech lead of Relay",
+   "stratum": "explicit",
+   "answer": "Alice Chen is the tech lead of Relay, a role she has held since 2025-02-25. The memory files show no later change to it.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.82,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18965,
+    "completion_tokens": 134,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "QA lead of Harbor",
+    "tech lead of Relay"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says Alice Chen is design lead of Orbit; generated says tech lead of Relay. Both role and project differ, so it contradicts the reference."
+  },
+  {
+   "id": "q_t4_63",
+   "task": "T4",
+   "question": "What is Sanjay Mehta's current role? (as of today)",
+   "reference": "design lead of Compass",
+   "evidence_ids": [
+    "r3_0093"
+   ],
+   "stale_answer": "data lead of Beacon",
+   "stratum": "implicit",
+   "answer": "Sanjay Mehta currently holds two roles: he is the design lead of Compass (effective 2025-03-13) and the data lead of Beacon (since 2025-03-13). He is based in Dublin, according to his latest location note from 2025-01-16.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 9.78,
+   "read_path": {
+    "llm_calls": 4,
+    "prompt_tokens": 37189,
+    "completion_tokens": 353,
+    "cost_usd": 0.137
+   },
+   "decoys": [
+    "design lead of Tessera",
+    "data lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.75,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes the reference fact (design lead of Compass), but adds a second role (data lead of Beacon) and a location that the reference doesn't mention. The core fact matches and isn't contradicted, but the extra role makes the answer less precise as a statement of his 'current role'."
+  },
+  {
+   "id": "q_t4_64",
+   "task": "T4",
+   "question": "What is Wei Zhang's current role? (as of today)",
+   "reference": "release manager of Meridian",
+   "evidence_ids": [
+    "r3_0053"
+   ],
+   "stale_answer": "QA lead of Lantern",
+   "stratum": "explicit",
+   "answer": "Memory has no current role for Wei Zhang. The only role recorded is QA lead of Lantern, from 2025-02-04, and Carol Davis replaced them in that role on 2025-03-12. No later role is noted. Their last recorded location is Osaka, since May 2025.\n\nI don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.45,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18962,
+    "completion_tokens": 197,
+    "cost_usd": 0.0649
+   },
+   "decoys": [
+    "data lead of Beacon",
+    "QA lead of Lantern"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t4_65",
+   "task": "T4",
+   "question": "What is Olga Petrova's current role? (as of today)",
+   "reference": "design lead of Beacon",
+   "evidence_ids": [
+    "r3_0039"
+   ],
+   "stale_answer": "product owner of Harbor",
+   "stratum": "implicit",
+   "answer": "Olga Petrova is currently the product owner of Harbor (since 2025-01-27). She was also design lead of Beacon from 2025-01-29, but that role passed to Zofia Nowak on 2025-04-10. She is based in Singapore.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 10.11,
+   "read_path": {
+    "llm_calls": 4,
+    "prompt_tokens": 37189,
+    "completion_tokens": 395,
+    "cost_usd": 0.1374
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "product owner of Harbor"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference says her current role is design lead of Beacon. The generated answer gives product owner of Harbor as her current role and says the Beacon design lead role passed to Zofia Nowak on 2025-04-10. That contradicts the reference."
+  },
+  {
+   "id": "q_t4_66",
+   "task": "T4",
+   "question": "What is Jamal Okafor's current role? (as of today)",
+   "reference": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0129"
+   ],
+   "stale_answer": "tech lead of Wayfarer",
+   "stratum": "implicit",
+   "answer": "Jamal Okafor's current roles, per the latest notes:\n\n- **QA lead of Sextant**, effective 2025-04-04 (replacing Ximena Ortiz).\n- **Tech lead of Wayfarer**, since 2025-03-31.\n\nHe is based in Austin (note 2025-02-07).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.57,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18966,
+    "completion_tokens": 194,
+    "cost_usd": 0.0649
+   },
+   "decoys": [
+    "design lead of Compass",
+    "tech lead of Wayfarer"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes the reference fact that Jamal Okafor is QA lead of Sextant. It also lists an additional role (tech lead of Wayfarer) and location, which do not contradict the reference."
+  },
+  {
+   "id": "q_t4_67",
+   "task": "T4",
+   "question": "Where is Freya Holm based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0084"
+   ],
+   "stale_answer": "Singapore",
+   "stratum": "implicit",
+   "answer": "Freya Holm is based in Singapore (per the 2025-02-19 note). It's the only location recorded for her, and nothing later says she moved.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.16,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18965,
+    "completion_tokens": 139,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Berlin",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "stale",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference answer is Osaka, but the generated answer says Singapore, which contradicts the reference."
+  },
+  {
+   "id": "q_t4_68",
+   "task": "T4",
+   "question": "What is Zofia Nowak's current role? (as of today)",
+   "reference": "design lead of Beacon",
+   "evidence_ids": [
+    "r3_0132"
+   ],
+   "stale_answer": "design lead of Orbit",
+   "stratum": "explicit",
+   "answer": "Zofia Nowak is the design lead of Beacon, effective 2025-04-10. She moved to that role from Orbit design lead, which she had held since 2025-03-26.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.9,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18978,
+    "completion_tokens": 149,
+    "cost_usd": 0.0645
+   },
+   "decoys": [
+    "tech lead of Atlas",
+    "design lead of Orbit"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states she is the design lead of Beacon, matching the reference. The extra history about Orbit and the dates does not contradict it."
+  },
+  {
+   "id": "q_t4_69",
+   "task": "T4",
+   "question": "What is Callum Reid's current role? (as of today)",
+   "reference": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0120"
+   ],
+   "stale_answer": "tech lead of Meridian",
+   "stratum": "explicit",
+   "answer": "Callum Reid is currently the tech lead of Atlas (effective 2025-04-03, after moving from Meridian tech lead). He is based in Osaka.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.99,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18967,
+    "completion_tokens": 144,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "tech lead of Meridian"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Callum Reid is currently the tech lead of Atlas, matching the reference. The extra details (effective date, previous role, Osaka) do not contradict it."
+  },
+  {
+   "id": "q_t4_70",
+   "task": "T4",
+   "question": "What is Daria Sokolova's current role? (as of today)",
+   "reference": "data lead of Beacon",
+   "evidence_ids": [
+    "r3_0044"
+   ],
+   "stale_answer": "tech lead of Atlas",
+   "stratum": "explicit",
+   "answer": "The notes don't show Daria Sokolova holding any current role. Her two recorded roles were both superseded:\n\n- **Atlas tech lead:** she took it on 2025-02-07, and Callum Reid replaced her on 2025-04-03.\n- **Beacon data lead:** she held it from 2025-02-05, and Sanjay Mehta replaced her on 2025-03-13.\n\nNo later role is noted for her, so I don't have enough information to say what she does as of today. Her last recorded location is Lisbon (note 2025-02-25).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.7,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18977,
+    "completion_tokens": 428,
+    "cost_usd": 0.0673
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "tech lead of Atlas"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t4_71",
+   "task": "T4",
+   "question": "What is Quill's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "evidence_ids": [
+    "r3_0128"
+   ],
+   "stale_answer": "$300k",
+   "stratum": "implicit",
+   "answer": "Quill's quarterly budget is $360k (revised as of 2025-04-02, up from $300k set on 2025-01-31).",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.88,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18004,
+    "completion_tokens": 135,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "$240k",
+    "$300k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference. The extra history (previous $300k) does not contradict it."
+  },
+  {
+   "id": "q_t4_72",
+   "task": "T4",
+   "question": "Which issue tracker does Orbit use? (as of today)",
+   "reference": "Asana",
+   "evidence_ids": [
+    "r3_0092"
+   ],
+   "stale_answer": "Confluence",
+   "stratum": "explicit",
+   "answer": "Orbit uses Asana. It switched from Confluence effective 2025-03-12.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 5.85,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18008,
+    "completion_tokens": 121,
+    "cost_usd": 0.0603
+   },
+   "decoys": [
+    "Monday",
+    "Confluence"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Orbit uses Asana, matching the reference. The extra detail about switching from Confluence on 2025-03-12 doesn't contradict the reference."
+  },
+  {
+   "id": "q_t4_73",
+   "task": "T4",
+   "question": "What is Tessera's quarterly budget? (as of today)",
+   "reference": "$300k",
+   "evidence_ids": [
+    "r3_0116"
+   ],
+   "stale_answer": "$450k",
+   "stratum": "implicit",
+   "answer": "Tessera's quarterly budget is $300k (as of 2025-03-24). It was previously $450k, set on 2025-02-21, and was superseded on 2025-03-24.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.1,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18012,
+    "completion_tokens": 151,
+    "cost_usd": 0.0606
+   },
+   "decoys": [
+    "$180k",
+    "$450k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the current quarterly budget is $300k, matching the reference. The additional history about the previous $450k budget does not contradict it."
+  },
+  {
+   "id": "q_t4_74",
+   "task": "T4",
+   "question": "Where is Beatriz Lopes based? (as of today)",
+   "reference": "Toronto",
+   "evidence_ids": [
+    "r3_0143"
+   ],
+   "stale_answer": "Osaka",
+   "stratum": "explicit",
+   "answer": "Beatriz Lopes is based in Toronto. She relocated from Osaka in April 2025 (note 2025-04-14), and no later location change is recorded.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.12,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18971,
+    "completion_tokens": 144,
+    "cost_usd": 0.0644
+   },
+   "decoys": [
+    "Dublin",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Beatriz Lopes is based in Toronto, matching the reference. The extra relocation detail does not contradict it."
+  },
+  {
+   "id": "q_t3_75",
+   "task": "T3",
+   "question": "Before the most recent change, what was Beatriz Lopes's base city?",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0134",
+    "r3_0143"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before the most recent change (relocation to Toronto in April 2025), Beatriz Lopes was based in Osaka.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 5.72,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18981,
+    "completion_tokens": 131,
+    "cost_usd": 0.0643
+   },
+   "decoys": [
+    "Berlin",
+    "Toronto"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Beatriz Lopes was based in Osaka before the most recent change, matching the reference. The extra detail about relocating to Toronto in April 2025 does not contradict it."
+  },
+  {
+   "id": "q_t3_76",
+   "task": "T3",
+   "question": "Before the most recent change, what was Tessera's quarterly budget?",
+   "reference": "$450k",
+   "evidence_ids": [
+    "r3_0067",
+    "r3_0116"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Tessera's quarterly budget before the most recent change was $450k (set 2025-02-21). It was superseded on 2025-03-24 by the current $300k.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.57,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18013,
+    "completion_tokens": 145,
+    "cost_usd": 0.0606
+   },
+   "decoys": [
+    "$900k",
+    "$300k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the previous quarterly budget was $450k, matching the reference. The extra dates and the current $300k figure don't contradict it."
+  },
+  {
+   "id": "q_t3_77",
+   "task": "T3",
+   "question": "Before the most recent change, what was Orbit's issue tracker?",
+   "reference": "Confluence",
+   "evidence_ids": [
+    "r3_0073",
+    "r3_0092"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before the most recent change (switch to Asana effective 2025-03-12), Orbit's issue tracker was Confluence, standardized on 2025-02-28.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.61,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18010,
+    "completion_tokens": 145,
+    "cost_usd": 0.0606
+   },
+   "decoys": [
+    "Notion",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that Orbit's issue tracker before the most recent change was Confluence, which matches the reference. The extra details about the switch to Asana and the dates do not contradict it."
+  },
+  {
+   "id": "q_t3_78",
+   "task": "T3",
+   "question": "Before the most recent change, what was Quill's quarterly budget?",
+   "reference": "$300k",
+   "evidence_ids": [
+    "r3_0035",
+    "r3_0128"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before the most recent change (revised 2025-04-02 to $360k), Quill's quarterly budget was $300k, set 2025-01-31.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.78,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18006,
+    "completion_tokens": 140,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "$520k",
+    "$360k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the prior quarterly budget was $300k, matching the reference. The extra details (revision to $360k on 2025-04-02, set 2025-01-31) are consistent with the question and do not contradict the reference."
+  },
+  {
+   "id": "q_t3_79",
+   "task": "T3",
+   "question": "Before the most recent change, what was Daria Sokolova's role?",
+   "reference": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0041",
+    "r3_0044"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before the most recent change (Callum Reid replacing her on 2025-04-03), Daria Sokolova was the tech lead of Atlas, a role she held from 2025-02-07.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.76,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18974,
+    "completion_tokens": 311,
+    "cost_usd": 0.0661
+   },
+   "decoys": [
+    "design lead of Orbit",
+    "data lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Daria Sokolova was the tech lead of Atlas before the change, matching the reference. The extra details (dates, replacement by Callum Reid) do not contradict it."
+  },
+  {
+   "id": "q_t3_80",
+   "task": "T3",
+   "question": "Before the most recent change, what was Callum Reid's role?",
+   "reference": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0117",
+    "r3_0120"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before moving to Atlas tech lead on 2025-04-03, Callum Reid was the tech lead of Meridian. He held that role from 2025-03-26 to 2025-04-03.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 7.2,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18973,
+    "completion_tokens": 249,
+    "cost_usd": 0.0655
+   },
+   "decoys": [
+    "product owner of Pylon",
+    "tech lead of Atlas"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Callum Reid was tech lead of Meridian before the most recent change, which matches the reference. The added dates and the mention of the move to Atlas do not contradict it."
+  },
+  {
+   "id": "q_t3_81",
+   "task": "T3",
+   "question": "Before the most recent change, what was Zofia Nowak's role?",
+   "reference": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0114",
+    "r3_0132"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before her most recent change (to Beacon design lead on 2025-04-10), Zofia Nowak was the design lead of Orbit, a role she held from 2025-03-26 until 2025-04-10.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.24,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18972,
+    "completion_tokens": 158,
+    "cost_usd": 0.0646
+   },
+   "decoys": [
+    "product owner of Pylon",
+    "design lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Zofia Nowak was design lead of Orbit before the most recent change, matching the reference. The extra dates and the Beacon detail don't contradict it."
+  },
+  {
+   "id": "q_t3_82",
+   "task": "T3",
+   "question": "Before the most recent change, what was Freya Holm's base city?",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0068",
+    "r3_0084"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Memory records only one base city for Freya Holm: Singapore (note 2025-02-19). It records no relocation, so I can't identify a \"most recent change\" in her city or a different earlier one. Her only recorded change is a role change, from Orbit release manager to Lantern tech lead on 2025-04-18. If you mean that change, her last recorded base before it was Singapore.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.9,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18979,
+    "completion_tokens": 484,
+    "cost_usd": 0.0678
+   },
+   "decoys": [
+    "Berlin",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.75,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer identifies Singapore as Freya Holm's recorded base city, matching the reference. It hedges by saying no city change is recorded, and it ties the answer to a role change rather than a city change. The core fact is present, with minor framing differences."
+  },
+  {
+   "id": "q_t3_83",
+   "task": "T3",
+   "question": "Before the most recent change, what was Jamal Okafor's role?",
+   "reference": "tech lead of Wayfarer",
+   "evidence_ids": [
+    "r3_0121",
+    "r3_0129"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before becoming QA lead of Sextant on 2025-04-04, Jamal Okafor was the tech lead of Wayfarer, a role he has held since 2025-03-31.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 6.75,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18981,
+    "completion_tokens": 234,
+    "cost_usd": 0.0653
+   },
+   "decoys": [
+    "design lead of Orbit",
+    "QA lead of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that before the most recent change Jamal Okafor was tech lead of Wayfarer, which matches the reference. The extra dates and the QA lead detail do not contradict it."
+  },
+  {
+   "id": "q_t3_84",
+   "task": "T3",
+   "question": "Before the most recent change, what was Olga Petrova's role?",
+   "reference": "product owner of Harbor",
+   "evidence_ids": [
+    "r3_0030",
+    "r3_0039"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before her most recent role change, Olga Petrova was the product owner of Harbor, a role she held from 2025-01-27. On 2025-01-29 she became design lead of Beacon.\n\nThe notes don't say she left the Harbor role when she took the Beacon one. Zofia Nowak's note also says she replaced Olga as Beacon design lead on 2025-04-10. If that departure counts as the most recent change, her role just before it was Beacon design lead.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 9.67,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18973,
+    "completion_tokens": 553,
+    "cost_usd": 0.0685
+   },
+   "decoys": [
+    "design lead of Meridian",
+    "design lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states she was product owner of Harbor before becoming design lead of Beacon, which matches the reference. But it hedges and offers an alternative reading (Beacon design lead if the departure counts as the most recent change), which muddies the final answer and partly conflicts with the reference."
+  },
+  {
+   "id": "q_t2_85",
+   "task": "T2",
+   "question": "List every conference presentation Bob Martinez has given (project, conference, city).",
+   "reference": "Sextant at PlatformWeek in Osaka; Quill at InfraDays in Toronto; Meridian at PlatformWeek in Denver; Harbor at ShipIt in Lisbon; Meridian at DataSummit in Denver; Tessera at PlatformWeek in Austin",
+   "evidence_ids": [
+    "r3_0154",
+    "r3_0168",
+    "r3_0174",
+    "r3_0208",
+    "r3_0243",
+    "r3_0249"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Bob Martinez has given 6 conference presentations:\n\n| Date | Project | Conference | City |\n|---|---|---|---|\n| 2025-04-21 | Sextant | PlatformWeek 2025 | Osaka |\n| 2025-05-01 | Quill | InfraDays 2025 | Toronto |\n| 2025-05-05 | Meridian | PlatformWeek 2025 | Denver |\n| 2025-05-29 | Harbor | ShipIt 2025 | Lisbon |\n| 2025-06-23 | Meridian | DataSummit 2025 | Denver |\n| 2025-06-23 | Tessera | PlatformWeek 2025 | Austin |",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/meetings.md",
+     "source": "/memories/meetings.md"
+    }
+   ],
+   "latency_s": 8.47,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 15913,
+    "completion_tokens": 580,
+    "cost_usd": 0.0565
+   },
+   "decoys": [
+    "Tessera at InfraDays in Denver",
+    "Sextant at PlatformWeek in Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Sextant at PlatformWeek in Osaka",
+    "Quill at InfraDays in Toronto",
+    "Meridian at PlatformWeek in Denver",
+    "Harbor at ShipIt in Lisbon",
+    "Meridian at DataSummit in Denver",
+    "Tessera at PlatformWeek in Austin"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "6/6 nuggets present"
+  },
+  {
+   "id": "q_t2_86",
+   "task": "T2",
+   "question": "List every conference presentation Liam O'Brien has given (project, conference, city).",
+   "reference": "Tessera at InfraDays in Denver; Sextant at DataSummit in Dublin; Umbra at InfraDays in Berlin",
+   "evidence_ids": [
+    "r3_0177",
+    "r3_0210",
+    "r3_0217"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Liam O'Brien has given three conference presentations:\n\n1. **Tessera**, InfraDays 2025, Denver (2025-05-06)\n2. **Sextant**, DataSummit 2025, Dublin (2025-06-05)\n3. **Umbra**, InfraDays 2025, Berlin (2025-06-06)\n\nI only checked projects.md. I did not open meetings.md or people.md, so any talk recorded only there would be missing.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 8.74,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18021,
+    "completion_tokens": 476,
+    "cost_usd": 0.0639
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Tessera at InfraDays in Denver"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Tessera at InfraDays in Denver",
+    "Sextant at DataSummit in Dublin",
+    "Umbra at InfraDays in Berlin"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "3/3 nuggets present"
+  },
+  {
+   "id": "q_t2_87",
+   "task": "T2",
+   "question": "List every conference presentation Beatriz Lopes has given (project, conference, city).",
+   "reference": "Atlas at ShipIt in Osaka; Sextant at PlatformWeek in Lisbon",
+   "evidence_ids": [
+    "r3_0135",
+    "r3_0236"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Beatriz Lopes has given two conference presentations:\n\n1. **Atlas** at ShipIt 2025 in **Osaka** (2025-04-10)\n2. **Sextant** at PlatformWeek 2025 in **Lisbon** (2025-06-17)",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.52,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18987,
+    "completion_tokens": 449,
+    "cost_usd": 0.0675
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Atlas at ShipIt in Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Atlas at ShipIt in Osaka",
+    "Sextant at PlatformWeek in Lisbon"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "2/2 nuggets present"
+  },
+  {
+   "id": "q_t2_88",
+   "task": "T2",
+   "question": "List every conference presentation Carol Davis has given (project, conference, city).",
+   "reference": "Harbor at DevCon in Toronto; Relay at DevCon in Berlin; Quill at PlatformWeek in Denver",
+   "evidence_ids": [
+    "r3_0162",
+    "r3_0211",
+    "r3_0215"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Carol Davis has given three conference presentations:\n\n1. **Harbor** at DevCon 2025 in Toronto (2025-04-28)\n2. **Relay** at DevCon 2025 in Berlin (2025-06-02)\n3. **Quill** at PlatformWeek 2025 in Denver (2025-06-03)\n\nI only opened people.md, not meetings.md or projects.md, so any talks recorded only there would be missing.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.71,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18977,
+    "completion_tokens": 477,
+    "cost_usd": 0.0678
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Harbor at DevCon in Toronto"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Harbor at DevCon in Toronto",
+    "Relay at DevCon in Berlin",
+    "Quill at PlatformWeek in Denver"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "3/3 nuggets present"
+  },
+  {
+   "id": "q_t2_89",
+   "task": "T2",
+   "question": "List every conference presentation Olga Petrova has given (project, conference, city).",
+   "reference": "Pylon at ShipIt in Dublin; Relay at PlatformWeek in Singapore; Harbor at InfraDays in Berlin; Wayfarer at ShipIt in Berlin; Atlas at DataSummit in Berlin; Relay at PlatformWeek in Osaka",
+   "evidence_ids": [
+    "r3_0098",
+    "r3_0115",
+    "r3_0123",
+    "r3_0216",
+    "r3_0222",
+    "r3_0240"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Olga Petrova's conference presentations:\n\n1. **Pylon**: ShipIt 2025, Dublin (2025-03-10)\n2. **Relay**: PlatformWeek 2025, Singapore (2025-03-27)\n3. **Harbor**: InfraDays 2025, Berlin (2025-04-03)\n4. **Wayfarer**: ShipIt 2025, Berlin (2025-06-02)\n5. **Atlas**: DataSummit 2025, Berlin (2025-06-11)\n6. **Relay**: PlatformWeek 2025, Osaka (2025-06-26)",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    },
+    {
+     "content": "viewed /memories/meetings.md",
+     "source": "/memories/meetings.md"
+    }
+   ],
+   "latency_s": 12.32,
+   "read_path": {
+    "llm_calls": 4,
+    "prompt_tokens": 35113,
+    "completion_tokens": 524,
+    "cost_usd": 0.1304
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Pylon at ShipIt in Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Pylon at ShipIt in Dublin",
+    "Relay at PlatformWeek in Singapore",
+    "Harbor at InfraDays in Berlin",
+    "Wayfarer at ShipIt in Berlin",
+    "Atlas at DataSummit in Berlin",
+    "Relay at PlatformWeek in Osaka"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "6/6 nuggets present"
+  },
+  {
+   "id": "q_t5_90",
+   "task": "T5",
+   "question": "Where is Keiko Sato based?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.64,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18944,
+    "completion_tokens": 105,
+    "cost_usd": 0.0639
+   },
+   "decoys": [
+    "Toronto",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_91",
+   "task": "T5",
+   "question": "Where is Priya Nair based?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The memory files only record Priya Nair's talks, Meridian at DataSummit 2025 in Denver on 2025-04-29 and Compass at DevCon 2025 in Dublin on 2025-05-12. They don't say where she is based.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 8.28,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18949,
+    "completion_tokens": 383,
+    "cost_usd": 0.0668
+   },
+   "decoys": [
+    "Berlin",
+    "Austin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_92",
+   "task": "T5",
+   "question": "What is Priya Nair's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. My memory files only record that Priya Nair presented Meridian at DataSummit 2025 in Denver (2025-04-29) and Compass at DevCon 2025 in Dublin (2025-05-12). No current role is listed for her.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 9.97,
+   "read_path": {
+    "llm_calls": 4,
+    "prompt_tokens": 37160,
+    "completion_tokens": 308,
+    "cost_usd": 0.1364
+   },
+   "decoys": [
+    "data lead of Compass",
+    "data lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_93",
+   "task": "T5",
+   "question": "What is Nimbus's quarterly budget?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question.\n\nThe memory files list quarterly budgets for Compass, Sextant, Meridian, Wayfarer, Atlas, Lantern, Beacon, Quill, Tessera, Umbra, Orbit, Relay, and Harbor, but none for Nimbus. Nimbus only appears as a design lead, data lead, and presenter.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 7.28,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17996,
+    "completion_tokens": 217,
+    "cost_usd": 0.0613
+   },
+   "decoys": [
+    "$450k",
+    "$750k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_94",
+   "task": "T5",
+   "question": "Which issue tracker does Nimbus use?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The issue tracker list in my memory covers Pylon, Quill, Wayfarer, Atlas, Umbra, Lantern, Beacon, Compass, Relay, Tessera, Sextant, Meridian, Orbit, and Harbor, but Nimbus isn't among them.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ],
+   "latency_s": 6.84,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 17986,
+    "completion_tokens": 201,
+    "cost_usd": 0.0611
+   },
+   "decoys": [
+    "Linear",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_95",
+   "task": "T5",
+   "question": "What is Keiko Sato's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question.",
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ],
+   "latency_s": 7.04,
+   "read_path": {
+    "llm_calls": 3,
+    "prompt_tokens": 18951,
+    "completion_tokens": 105,
+    "cost_usd": 0.064
+   },
+   "decoys": [
+    "design lead of Compass",
+    "release manager of Compass"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  }
+ ],
+ "deletions": [
+  {
+   "id": "del_intent_0",
+   "position": 0,
+   "shape": "intent",
+   "request": "Forget where Vale lives, but keep everything about their job.",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 299.36,
+   "delete_cost": {
+    "llm_calls": 105,
+    "prompt_tokens": 790254,
+    "completion_tokens": 94228,
+    "cost_usd": 2.0212
+   },
+   "probe_before": "Valentina Greco is based in Lisbon (per the note dated 2025-05-06).",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "The memory notes don't list a current role for Valentina Greco. She became design lead of Atlas on 2025-01-09, but Rosa Alvarez replaced her in that role on 2025-01-14. No later role is recorded. The notes do say she is based in Lisbon (as of 2025-05-06).",
+   "control_after": "Valentina Greco has no current role in my notes. She became design lead of Atlas on 2025-01-09, but Rosa Alvarez replaced her in that role on 2025-01-14. Her only other entries are presentations: Quill at DataSummit 2025 in Berlin (2025-07-01) and Harbor at ShipIt 2025 in Denver (2025-07-02). No later role is recorded.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_1",
+   "position": 1,
+   "shape": "intent",
+   "request": "Forget where T. Lindqvist lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 530.49,
+   "delete_cost": {
+    "llm_calls": 105,
+    "prompt_tokens": 770779,
+    "completion_tokens": 80714,
+    "cost_usd": 3.0765
+   },
+   "probe_before": "Tove Lindqvist is based in Denver (since June 2025, per the 2025-06-27 note). She was previously based in Lisbon.",
+   "probe_after": "I don't have enough information to answer this question. The memory files list Tove Lindqvist's talks (including Meridian in Berlin, Pylon and Umbra in Dublin) and her role as Meridian release manager, but they don't record where she is based.",
+   "control_before": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07.",
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she has held since 2025-04-07.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_2",
+   "position": 2,
+   "shape": "single",
+   "request": "Delete the note r3_0237 (Umar Siddiqui's city).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 90.36,
+   "delete_cost": {
+    "llm_calls": 105,
+    "prompt_tokens": 772036,
+    "completion_tokens": 81368,
+    "cost_usd": 0.6837
+   },
+   "probe_before": "Umar Siddiqui is based in Denver (per the 2025-06-20 note).",
+   "probe_after": "I don't have enough information to answer this question. My notes on Umar Siddiqui only say he filed expenses for the May offsite (2025-05-29) and has been Umbra tech lead since 2025-03-11. No location is recorded.",
+   "control_before": "Zofia Nowak is based in Lisbon (per the note dated 2025-05-26). No later note records a move.",
+   "control_after": "Zofia Nowak is based in Lisbon, per the note dated 2025-05-26.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_3",
+   "position": 3,
+   "shape": "single",
+   "request": "Delete the note r3_0003 (Sextant's budget).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 632.31,
+   "delete_cost": {
+    "llm_calls": 103,
+    "prompt_tokens": 662660,
+    "completion_tokens": 77346,
+    "cost_usd": 2.9695
+   },
+   "probe_before": "Sextant's quarterly budget is $300k (set 2025-01-07).",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "Umar Siddiqui is the tech lead of Umbra, a role he has held since 2025-03-11. He took over from Rosa Alvarez, who had held it since 2025-01-22.",
+   "control_after": "Umar Siddiqui is the tech lead of Umbra, a role he has held since 2025-03-11, when he succeeded Rosa Alvarez.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_4",
+   "position": 4,
+   "shape": "intent",
+   "request": "Forget where C. Davis lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 554.62,
+   "delete_cost": {
+    "llm_calls": 100,
+    "prompt_tokens": 641371,
+    "completion_tokens": 78536,
+    "cost_usd": 2.6918
+   },
+   "probe_before": "Carol Davis is based in Austin (since February 2025, per the 2025-02-14 note, which superseded an earlier note saying Singapore).",
+   "probe_after": "I don't have enough information to answer this question.\n\nCarol Davis's entry in my memory records her role (QA lead of Lantern) and several talks she gave, including Toronto, Berlin and Denver. It doesn't state where she is based.",
+   "control_before": "Carol Davis is the QA lead of Lantern (since 2025-03-12).",
+   "control_after": "Carol Davis is the QA lead of Lantern (since 2025-03-12).",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_5",
+   "position": 5,
+   "shape": "entity",
+   "request": "Forget everything about Zofia Nowak.",
+   "n_deleted": 11,
+   "delete_result": {
+    "deleted": 11,
+    "method": "rebuild"
+   },
+   "delete_seconds": 382.01,
+   "delete_cost": {
+    "llm_calls": 101,
+    "prompt_tokens": 658169,
+    "completion_tokens": 78218,
+    "cost_usd": 2.1443
+   },
+   "probe_before": "Zofia Nowak is based in Lisbon (noted 2025-05-26).",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "Grace Kim is based in Denver (noted 2025-06-27).",
+   "control_after": "Grace Kim is based in Denver (noted 2025-06-27).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_6",
+   "position": 6,
+   "shape": "entity",
+   "request": "Forget everything about Liam O'Brien.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "rebuild"
+   },
+   "delete_seconds": 523.21,
+   "delete_cost": {
+    "llm_calls": 94,
+    "prompt_tokens": 559924,
+    "completion_tokens": 75037,
+    "cost_usd": 2.3871
+   },
+   "probe_before": "Liam O'Brien is based in Singapore (since March 2025). An earlier note from the same day (2025-03-27) listed Osaka, but a later note that day superseded it with Singapore.",
+   "probe_after": "I don't have enough information to answer this question.\n\nLiam O'Brien does not appear in the memory files I have, so I can't say where he is based.",
+   "control_before": "Emeka Obi is based in Berlin (noted 2025-05-21).",
+   "control_after": "Emeka Obi is based in Berlin (noted 2025-05-21).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_7",
+   "position": 7,
+   "shape": "single",
+   "request": "Delete the note r3_0001 (Valentina Greco's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 449.44,
+   "delete_cost": {
+    "llm_calls": 89,
+    "prompt_tokens": 538024,
+    "completion_tokens": 43378,
+    "cost_usd": 2.2693
+   },
+   "probe_before": "I don't have enough information to answer this question. The memory notes only record that Valentina Greco became design lead of Atlas on 2025-01-09, and that Rosa Alvarez replaced her in that role on 2025-01-14. No current role is recorded for her. The notes also say she presented Quill at DataSummit 2025 in Berlin on 2025-07-01 and Harbor at ShipIt 2025 in Denver on 2025-07-02.",
+   "probe_after": "I don't have enough information to answer this question. My memory only records Valentina Greco presenting Quill at DataSummit 2025 in Berlin (2025-07-01) and Harbor at ShipIt 2025 in Denver (2025-07-02). It doesn't list a current role for her.",
+   "control_before": "Emeka Obi is based in Berlin (noted 2025-05-21).",
+   "control_after": "Emeka Obi is based in Berlin (noted 2025-05-21).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_8",
+   "position": 8,
+   "shape": "single",
+   "request": "Delete the note r3_0048 (Emeka Obi's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 416.45,
+   "delete_cost": {
+    "llm_calls": 95,
+    "prompt_tokens": 598893,
+    "completion_tokens": 42332,
+    "cost_usd": 2.337
+   },
+   "probe_before": "Emeka Obi is the design lead of Sextant, a role he took on 2025-02-07. The notes don't record any later role change for him. He was also noted as based in Berlin as of 2025-05-21.",
+   "probe_after": "I don't have enough information to answer this question. The memory files only note that Emeka Obi was based in Berlin as of 2025-05-21. They don't record any role for him.",
+   "control_before": "I don't have enough information to answer this question.",
+   "control_after": "I don't have enough information to answer this question.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_9",
+   "position": 9,
+   "shape": "intent",
+   "request": "Forget where Noe lives, but keep everything about their job.",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 204.39,
+   "delete_cost": {
+    "llm_calls": 97,
+    "prompt_tokens": 607784,
+    "completion_tokens": 44083,
+    "cost_usd": 1.4414
+   },
+   "probe_before": "Noah Berg is based in Lisbon (noted 2025-04-22). His 2025-06-13 Osaka talk was a conference presentation, not a relocation.",
+   "probe_after": "I don't have enough information to answer this question. The memory files record no home base for Noah Berg. They only show him presenting at events in Lisbon (2025-04-21) and Osaka (2025-06-13), and those are event locations, not where he is based.",
+   "control_before": "Noah Berg currently holds two recorded roles: he is design lead of Orbit (since 2025-04-17) and release manager of Umbra (since 2025-05-07). He is based in Lisbon, as noted on 2025-04-22.",
+   "control_after": "Noah Berg's current roles are Orbit design lead (since 2025-04-17) and Umbra release manager (since 2025-05-07). The notes don't say he left either one.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_10",
+   "position": 10,
+   "shape": "entity",
+   "request": "Forget everything about Dmitri Volkov.",
+   "n_deleted": 10,
+   "delete_result": {
+    "deleted": 10,
+    "method": "rebuild"
+   },
+   "delete_seconds": 579.95,
+   "delete_cost": {
+    "llm_calls": 91,
+    "prompt_tokens": 627772,
+    "completion_tokens": 65665,
+    "cost_usd": 2.8459
+   },
+   "probe_before": "Dmitri Volkov is based in Denver. He relocated there from Dublin on 2025-04-07, and no later location change is recorded. His talks in Dublin (04-24) and Berlin (04-29) were event locations, not moves.",
+   "probe_after": "I don't have enough information to answer this question.\n\nDmitri Volkov doesn't appear in the memory files. The index and people.md don't list him.",
+   "control_before": "Tove Lindqvist is the release manager of Meridian (since 2025-04-07). She replaced Wei Zhang, who had held the role since 2025-02-14.",
+   "control_after": "Tove Lindqvist is the release manager of Meridian (effective 2025-04-07). The notes also say Wei Zhang has been Meridian release manager since 2025-02-14, and nothing records whether he stepped down.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_11",
+   "position": 11,
+   "shape": "entity",
+   "request": "Forget everything about Bob Martinez.",
+   "n_deleted": 11,
+   "delete_result": {
+    "deleted": 11,
+    "method": "rebuild"
+   },
+   "delete_seconds": 504.97,
+   "delete_cost": {
+    "llm_calls": 88,
+    "prompt_tokens": 480526,
+    "completion_tokens": 61182,
+    "cost_usd": 2.103
+   },
+   "probe_before": "Bob Martinez is based in Lisbon. He relocated there from Berlin in February 2025, per the note dated 2025-02-04.",
+   "probe_after": "I don't have enough information to answer this question. Bob Martinez doesn't appear in the memory files, which list people and locations but don't include anyone by that name.",
+   "control_before": "Quentin Dubois is based in Singapore (per a note dated 2025-04-15).",
+   "control_after": "Quentin Dubois is based in Singapore (per a note dated 2025-04-15, the current recorded location).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_12",
+   "position": 12,
+   "shape": "single",
+   "request": "Delete the note r3_0064 (Quentin Dubois's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 489.62,
+   "delete_cost": {
+    "llm_calls": 84,
+    "prompt_tokens": 522354,
+    "completion_tokens": 64928,
+    "cost_usd": 2.2586
+   },
+   "probe_before": "Quentin Dubois is the product owner of Umbra (since 2025-02-17), and he is based in Singapore.",
+   "probe_after": "I don't have enough information to answer this question. My memory has no formal role or job title for Quentin Dubois. It only records that he is based in Singapore (as of 2025-04-15) and that he presented at several events: Compass and Relay at DevCon 2025 (Lisbon and Austin), Lantern at InfraDays 2025 in Austin, and Harbor at InfraDays 2025 in Singapore and Umbra at PlatformWeek 2025 in Lisbon, both on 2025-07-02.",
+   "control_before": "Grace Kim is based in Denver (per the 2025-06-27 note, current).",
+   "control_after": "Grace Kim is based in Denver (per the 2025-06-27 note).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_13",
+   "position": 13,
+   "shape": "single",
+   "request": "Delete the note r3_0027 (Ximena Ortiz's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 512.43,
+   "delete_cost": {
+    "llm_calls": 83,
+    "prompt_tokens": 496922,
+    "completion_tokens": 65365,
+    "cost_usd": 2.2475
+   },
+   "probe_before": "Ximena Ortiz's role in the notes is QA lead of Sextant, which she has held since 2025-01-21. The notes don't say she left that role. Mina Park (since 2025-03-04) and Jamal Okafor (since 2025-04-04) were also noted as Sextant QA lead, so it's unclear whether she holds it alone.\n\nShe is based in Toronto as of July 2025, having moved from Berlin.",
+   "probe_after": "I don't have enough information to answer this question. The memory files have no role or job title for Ximena Ortiz. They only record that she is based in Toronto (since July 2025) and list several talks she presented: Pylon, Harbor, and Lantern.",
+   "control_before": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "control_after": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_14",
+   "position": 14,
+   "shape": "single",
+   "request": "Delete the note r3_0017 (Quill's tool).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 549.98,
+   "delete_cost": {
+    "llm_calls": 78,
+    "prompt_tokens": 435019,
+    "completion_tokens": 65356,
+    "cost_usd": 2.1482
+   },
+   "probe_before": "Quill uses Confluence as its issue tracker (standardized on 2025-01-14).",
+   "probe_after": "I don't have enough information to answer this question. The memory files list issue trackers for other projects, but the Quill section has no issue tracker entry.",
+   "control_before": "Quentin Dubois is based in Singapore (per the 2025-04-15 note).",
+   "control_after": "Quentin Dubois is based in Singapore (per a note dated 2025-04-15).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_15",
+   "position": 15,
+   "shape": "single",
+   "request": "Delete the note r3_0062 (Relay's tool).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 486.31,
+   "delete_cost": {
+    "llm_calls": 87,
+    "prompt_tokens": 478804,
+    "completion_tokens": 72687,
+    "cost_usd": 2.0436
+   },
+   "probe_before": "Relay uses Trello as its issue tracker (standardized 2025-02-21).",
+   "probe_after": "I don't have enough information to answer this question.\n\nThe memory files list issue trackers for several projects (Pylon, Wayfarer, Lantern, Umbra, Beacon, Compass, Tessera, Sextant, Meridian, Harbor, Orbit), but none are recorded for Relay. Relay's entries cover only its talks, budget, and a past tech lead.",
+   "control_before": "Quentin Dubois is based in Singapore (per a note dated 2025-04-15).",
+   "control_after": "Quentin Dubois is based in Singapore (per a note dated 2025-04-15).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_16",
+   "position": 16,
+   "shape": "entity",
+   "request": "Forget everything about Rosa Alvarez.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "rebuild"
+   },
+   "delete_seconds": 507.5,
+   "delete_cost": {
+    "llm_calls": 73,
+    "prompt_tokens": 359801,
+    "completion_tokens": 57796,
+    "cost_usd": 1.7922
+   },
+   "probe_before": "Rosa Alvarez is based in Dublin (she relocated from Osaka in May 2025, per the note dated 2025-05-05).",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "Umar Siddiqui is the tech lead of Umbra (since 2025-03-11).",
+   "control_after": "Umar Siddiqui is the tech lead of Umbra (effective 2025-03-11).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_17",
+   "position": 17,
+   "shape": "intent",
+   "request": "Forget where Yus lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 170.07,
+   "delete_cost": {
+    "llm_calls": 70,
+    "prompt_tokens": 344740,
+    "completion_tokens": 55352,
+    "cost_usd": 0.7172
+   },
+   "probe_before": "Yusuf Demir is based in Austin. He relocated there from Berlin in June 2025 (note dated 2025-06-04).",
+   "probe_after": "I don't have enough information to answer this question.\n\nThe memory files list Yusuf Demir's talks (Dublin, Singapore and Toronto, all conference locations), a half day off, and a June offsite expense filing. None of them states where he is based.",
+   "control_before": "I don't have enough information to answer this question. The memory notes list Yusuf Demir's location (Austin since June 2025), his conference talks, a half day off, and his June offsite expense filing, but they don't record any current role for him.",
+   "control_after": "I don't have enough information to answer this question. The memory files list Yusuf Demir's talks (Relay, Nimbus, Wayfarer), a half day taken on 2025-03-04, and his June offsite expense filing, but no role or title is recorded for him.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_18",
+   "position": 18,
+   "shape": "entity",
+   "request": "Forget everything about Quentin Dubois.",
+   "n_deleted": 6,
+   "delete_result": {
+    "deleted": 6,
+    "method": "rebuild"
+   },
+   "delete_seconds": 290.31,
+   "delete_cost": {
+    "llm_calls": 83,
+    "prompt_tokens": 419677,
+    "completion_tokens": 59148,
+    "cost_usd": 1.28
+   },
+   "probe_before": "I don't have enough information to answer this question.\n\nThe notes on Quentin Dubois only list talks he presented: Compass in Lisbon on 2025-05-01, Relay in Austin on 2025-05-02, and Lantern in Austin on 2025-05-28. None of them says where he is based.",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "Compass's quarterly budget is $180k (set 2025-01-06).",
+   "control_after": "Compass's quarterly budget is $180k (set 2025-01-06).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_19",
+   "position": 19,
+   "shape": "intent",
+   "request": "Forget where Gracie lives, but keep everything about their job.",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 70.57,
+   "delete_cost": {
+    "llm_calls": 83,
+    "prompt_tokens": 441199,
+    "completion_tokens": 59704,
+    "cost_usd": 0.3235
+   },
+   "probe_before": "Grace Kim is based in Denver (per a note dated 2025-06-27).",
+   "probe_after": "I don't have enough information to answer this question. The memory files list Grace Kim's roles (design lead of Tessera, formerly tech lead of Pylon) and talks she gave in Denver, Austin, and Toronto, but they don't say where she is based.",
+   "control_before": "Grace Kim is currently the design lead of Tessera (effective 2025-04-14). She was previously tech lead of Pylon from 2025-03-31 until she moved to Tessera.",
+   "control_after": "Grace Kim is currently the design lead of Tessera (effective 2025-04-14). She was previously tech lead of Pylon, from 2025-03-31 until that move.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_20",
+   "position": 20,
+   "shape": "entity",
+   "request": "Forget everything about Ximena Ortiz.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "rebuild"
+   },
+   "delete_seconds": 383.91,
+   "delete_cost": {
+    "llm_calls": 80,
+    "prompt_tokens": 417913,
+    "completion_tokens": 65482,
+    "cost_usd": 1.587
+   },
+   "probe_before": "Ximena Ortiz is based in Toronto (since July 2025, per the note dated 2025-07-03). She was previously in Berlin, per the 2025-06-23 note.",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "Compass's quarterly budget is $180k (set 2025-01-06).",
+   "control_after": "Compass's quarterly budget is $180k (set 2025-01-06).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_21",
+   "position": 21,
+   "shape": "intent",
+   "request": "Forget where W. Zhang lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 154.3,
+   "delete_cost": {
+    "llm_calls": 77,
+    "prompt_tokens": 390755,
+    "completion_tokens": 62605,
+    "cost_usd": 0.6364
+   },
+   "probe_before": "Wei Zhang is currently based in Osaka (since May 2025, per the note dated 2025-05-29). They were previously in Berlin, per the 2025-05-19 note.",
+   "probe_after": "I don't have enough information to answer this question.\n\nThe memory files only record that Wei Zhang presented Harbor at ShipIt 2025 in Austin (2025-04-24) and filed expenses for the May offsite. Neither says where Wei Zhang is based.",
+   "control_before": "I don't have enough information to answer this question. The memory files record Wei Zhang's location (based in Osaka since May 2025), a Harbor presentation at ShipIt 2025 in Austin on 2025-04-24, and expenses filed for the May offsite, but no note gives Wei Zhang a role.",
+   "control_after": "I don't have enough information to answer this question. The memory files only record that Wei Zhang presented Harbor at ShipIt 2025 in Austin (2025-04-24) and filed expenses for the May offsite (2025-05-08). No role is noted.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_22",
+   "position": 22,
+   "shape": "entity",
+   "request": "Forget everything about Mina Park.",
+   "n_deleted": 9,
+   "delete_result": {
+    "deleted": 9,
+    "method": "rebuild"
+   },
+   "delete_seconds": 486.31,
+   "delete_cost": {
+    "llm_calls": 73,
+    "prompt_tokens": 382284,
+    "completion_tokens": 50744,
+    "cost_usd": 1.8411
+   },
+   "probe_before": "Mina Park is based in Lisbon, per the 2025-01-08 note. That note supersedes an earlier 2025-01-06 note that placed her in Austin.",
+   "probe_after": "I don't have enough information to answer this question. There is no mention of anyone named Mina Park in the memory files.",
+   "control_before": "Tove Lindqvist is the release manager of Meridian (since 2025-04-07).",
+   "control_after": "Tove Lindqvist is the release manager of Meridian (since 2025-04-07). The notes don't say whether Wei Zhang, who had held that role since 2025-02-14, was replaced.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_23",
+   "position": 23,
+   "shape": "entity",
+   "request": "Forget everything about Hiro Tanaka.",
+   "n_deleted": 8,
+   "delete_result": {
+    "deleted": 8,
+    "method": "rebuild"
+   },
+   "delete_seconds": 454.39,
+   "delete_cost": {
+    "llm_calls": 70,
+    "prompt_tokens": 330908,
+    "completion_tokens": 48078,
+    "cost_usd": 1.6095
+   },
+   "probe_before": "Hiro Tanaka is based in Toronto. He relocated there from Lisbon in January 2025 (note dated 2025-01-20), which supersedes the earlier note saying he was in Lisbon.",
+   "probe_after": "I don't have enough information to answer this question.\n\nHiro Tanaka isn't mentioned anywhere in my memory files.",
+   "control_before": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "control_after": "I don't have enough information to answer this question.\n\nThe memory files list Meridian's presenters, design lead, issue tracker, release manager, and tech lead, but they contain no quarterly budget for Meridian.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_24",
+   "position": 24,
+   "shape": "entity",
+   "request": "Forget everything about Elena Rossi.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "rebuild"
+   },
+   "delete_seconds": 408.31,
+   "delete_cost": {
+    "llm_calls": 64,
+    "prompt_tokens": 342653,
+    "completion_tokens": 54316,
+    "cost_usd": 1.5797
+   },
+   "probe_before": "Elena Rossi is based in Osaka. She relocated there from Berlin in May 2025 (noted 2025-05-29).",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "Tove Lindqvist is the release manager of Meridian (since 2025-04-07, succeeding Wei Zhang).",
+   "control_after": "Tove Lindqvist is the release manager of Meridian, a role she took over from Wei Zhang on 2025-04-07.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_25",
+   "position": 25,
+   "shape": "intent",
+   "request": "Forget where Nessa lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 327.7,
+   "delete_cost": {
+    "llm_calls": 64,
+    "prompt_tokens": 307384,
+    "completion_tokens": 50417,
+    "cost_usd": 1.2151
+   },
+   "probe_before": "Ines Moreau is based in Austin. She relocated there from Dublin in March 2025 (noted 2025-03-27).",
+   "probe_after": "I don't have enough information to answer this question. The memory files cover Ines Moreau's roles (Quill release manager, formerly Harbor design lead) and a talk she gave at ShipIt 2025 in Denver, but they don't list a location for her.",
+   "control_before": "Ines Moreau is currently the release manager of Quill (effective 2025-02-25). She previously served as design lead of Harbor. She is based in Austin.",
+   "control_after": "Ines Moreau is currently the release manager of Quill (effective 2025-02-25). She previously was design lead of Harbor, as of 2025-02-21.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_26",
+   "position": 26,
+   "shape": "single",
+   "request": "Delete the note r3_0190 (Emeka Obi's city).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 131.06,
+   "delete_cost": {
+    "llm_calls": 66,
+    "prompt_tokens": 317038,
+    "completion_tokens": 49287,
+    "cost_usd": 0.5712
+   },
+   "probe_before": "Emeka Obi is based in Berlin (noted 2025-05-21).",
+   "probe_after": "I don't have enough information to answer this question.",
+   "control_before": "I don't have enough information to answer this question. My memory has no role recorded for Tove Lindqvist, only talks they presented: Pylon at InfraDays Dublin, Umbra at PlatformWeek Dublin (both 2025-05-15), and Meridian at ShipIt Berlin (2025-06-16).",
+   "control_after": "I don't have enough information to answer this question. My memory only lists talks Tove Lindqvist gave (Pylon and Umbra in May 2025, Meridian in June 2025). It doesn't record a current role.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_entity_27",
+   "position": 27,
+   "shape": "entity",
+   "request": "Forget everything about Alice Chen.",
+   "n_deleted": 7,
+   "delete_result": {
+    "deleted": 7,
+    "method": "rebuild"
+   },
+   "delete_seconds": 360.06,
+   "delete_cost": {
+    "llm_calls": 57,
+    "prompt_tokens": 268612,
+    "completion_tokens": 51099,
+    "cost_usd": 1.2263
+   },
+   "probe_before": "Alice Chen is based in Singapore. She relocated there from Lisbon in June 2025 (noted 2025-06-26).",
+   "probe_after": "I don't have enough information to answer this question. Alice Chen isn't mentioned anywhere in the memory files.",
+   "control_before": "Beatriz Lopes is currently the design lead of Meridian (since 2025-03-12). She's based in Toronto, having relocated from Osaka in April 2025.",
+   "control_after": "Beatriz Lopes is currently the design lead of Meridian (since 2025-03-12). She is based in Toronto, having relocated from Osaka in April 2025.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_28",
+   "position": 28,
+   "shape": "single",
+   "request": "Delete the note r3_0000 (Compass's budget).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 403.63,
+   "delete_cost": {
+    "llm_calls": 61,
+    "prompt_tokens": 305400,
+    "completion_tokens": 42311,
+    "cost_usd": 1.473
+   },
+   "probe_before": "I don't have enough information to answer this question.\n\nThe memory files list Compass's design lead (Sanjay Mehta), QA lead (Carol Davis), and an InfraDays 2025 talk, but no quarterly budget.",
+   "probe_after": "I don't have enough information to answer this question.\n\nThe memory files list quarterly budgets for Meridian, Wayfarer, Atlas, Lantern, Beacon, Harbor, Pylon, Quill, Relay, Orbit, Tessera, and Umbra, but Compass has no budget entry. Compass appears only in the issue tracker (Confluence) and role listings (design lead Sanjay Mehta, QA lead Carol Davis).",
+   "control_before": "I don't have enough information to answer this question.\n\nThe memory files list Meridian's release manager, design lead, issue tracker, tech lead history, and events. None of them records a quarterly budget for Meridian.",
+   "control_after": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_29",
+   "position": 29,
+   "shape": "intent",
+   "request": "Forget where Dasha lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 327.33,
+   "delete_cost": {
+    "llm_calls": 64,
+    "prompt_tokens": 294012,
+    "completion_tokens": 40939,
+    "cost_usd": 1.1765
+   },
+   "probe_before": "Daria Sokolova is based in Berlin. She relocated there from Lisbon in March 2025, per the 2025-03-07 note.",
+   "probe_after": "I don't have enough information to answer this question.\n\nThe memory files cover Daria Sokolova's roles (Atlas tech lead, with her Beacon data lead status unclear) and her talks at ShipIt Dublin, InfraDays Toronto and InfraDays Berlin. None of them says where she is based. Talk locations aren't a record of where someone lives.",
+   "control_before": "Daria Sokolova is currently the tech lead of Atlas. Her most recent role note (2025-02-07) made her tech lead of Atlas again, two days after a move to Beacon data lead. Sanjay Mehta became Beacon data lead on 2025-03-13, so she presumably no longer holds that role. The notes don't state that explicitly.",
+   "control_after": "Daria Sokolova is currently the tech lead of Atlas. She moved from Atlas tech lead to Beacon data lead on 2025-02-05, then became Atlas tech lead again on 2025-02-07. Sanjay Mehta became Beacon data lead on 2025-03-13, so she isn't the Beacon data lead now.\n\nOne caveat: Callum Reid's notes say he became Atlas tech lead on 2025-04-03. That conflicts with Daria holding the role, and the notes don't say whether she stepped down. So her Atlas tech lead role is the latest note about her, but it may be outdated.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_30",
+   "position": 30,
+   "shape": "single",
+   "request": "Delete the note r3_0133 (Tove Lindqvist's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 203.02,
+   "delete_cost": {
+    "llm_calls": 64,
+    "prompt_tokens": 323233,
+    "completion_tokens": 38698,
+    "cost_usd": 0.9109
+   },
+   "probe_before": "I don't have enough information to answer this question. My memory only shows that Tove Lindqvist presented Meridian at ShipIt 2025 in Berlin on 2025-06-16, and doesn't record any current role for her.",
+   "probe_after": "I don't have enough information to answer this question. My memory only records that Tove Lindqvist is a person who gave talks (Pylon and Umbra in May 2025, Meridian in June 2025). It lists no current role for her.",
+   "control_before": "Umar Siddiqui is the tech lead of Umbra (since 2025-03-11).",
+   "control_after": "Umar Siddiqui is the tech lead of Umbra (since 2025-03-11).",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_single_31",
+   "position": 31,
+   "shape": "single",
+   "request": "Delete the note r3_0094 (Beatriz Lopes's role).",
+   "n_deleted": 1,
+   "delete_result": {
+    "deleted": 1,
+    "method": "rebuild"
+   },
+   "delete_seconds": 258.73,
+   "delete_cost": {
+    "llm_calls": 58,
+    "prompt_tokens": 288949,
+    "completion_tokens": 35835,
+    "cost_usd": 1.0434
+   },
+   "probe_before": "Beatriz Lopes is the design lead of Meridian (since 2025-03-12). She is currently based in Toronto.",
+   "probe_after": "<invoke name=\"memory\">\n</invoke>\n{\"tool_calls\":[{\"name\":\"memory\",\"arguments\":{\"command\":\"view\",\"path\":\"/memories/people.md\"}}]}",
+   "control_before": "Meridian's quarterly budget is $300k (set 2025-01-08). The notes show no later revisions.",
+   "control_after": "Meridian's quarterly budget is $300k (set 2025-01-08). No later revision appears in the notes.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": true,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_32",
+   "position": 32,
+   "shape": "intent",
+   "request": "Forget where F. Holm lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 279.64,
+   "delete_cost": {
+    "llm_calls": 58,
+    "prompt_tokens": 250544,
+    "completion_tokens": 32593,
+    "cost_usd": 0.993
+   },
+   "probe_before": "Freya Holm is based in Osaka. She relocated there from Singapore in March 2025, per the 2025-03-05 note.",
+   "probe_after": "I don't have enough information to answer this question. My memory notes list Freya Holm's roles and the talks she gave in Lisbon, Berlin, Toronto, Singapore and Austin, but none of them says where she is based.",
+   "control_before": "Freya Holm is currently the tech lead of Lantern. She moved there from release manager of Orbit, effective 2025-04-18.",
+   "control_after": "Freya Holm is currently the tech lead of Lantern. She moved there from release manager of Orbit, effective 2025-04-18.",
+   "forgot": true,
+   "control_intact": true,
+   "control_before_ok": true,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people.md",
+     "source": "/memories/people.md"
+    }
+   ]
+  },
+  {
+   "id": "del_intent_33",
+   "position": 33,
+   "shape": "intent",
+   "request": "Forget where Sanj lives, but keep everything about their job.",
+   "n_deleted": 2,
+   "delete_result": {
+    "deleted": 2,
+    "method": "rebuild"
+   },
+   "delete_seconds": 332.29,
+   "delete_cost": {
+    "llm_calls": 56,
+    "prompt_tokens": 254464,
+    "completion_tokens": 31127,
+    "cost_usd": 1.1773
+   },
+   "probe_before": "Sanjay Mehta's current location is uncertain. My notes conflict:\n\n- **2025-01-14:** he relocated from Dublin to Osaka in January 2025.\n- **2025-01-16:** a later note says he \"is based in Dublin.\" That may be stale or default info, and it contradicts the relocation note.\n\nI can't tell which is correct. Osaka fits the move, and Dublin is what the latest note says.",
+   "probe_after": "I don't have enough information to answer this question. The memory files list Sanjay Mehta's roles (data lead of Beacon and design lead of Compass, both since 2025-03-13) but don't record where he is based.",
+   "control_before": "I don't have enough information to answer this question. The memory files only record Sanjay Mehta's location (and even that is conflicting: Osaka per a 2025-01-14 relocation note vs. Dublin per a 2025-01-16 note). They don't list any role or job title for him.",
+   "control_after": "Sanjay Mehta is data lead of Beacon (since 2025-03-13) and design lead of Compass (effective 2025-03-13). My notes don't record any later change to either role.",
+   "forgot": true,
+   "control_intact": false,
+   "control_before_ok": false,
+   "leaked_strings": [],
+   "leak_measurable": false,
+   "a3_score_version": 2,
+   "retrieved_after": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people_and_events.md",
+     "source": "/memories/people_and_events.md"
+    }
+   ]
+  }
+ ],
+ "poisons": [
+  {
+   "id": "poison_0",
+   "question": "What is Meridian's quarterly budget?",
+   "trusted": "$300k",
+   "poison": "$520k",
+   "before": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "after": "Meridian's quarterly budget is $300k (set 2025-01-08).",
+   "fooled": false,
+   "retrieved_poison": false,
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/projects.md",
+     "source": "/memories/projects.md"
+    }
+   ]
+  },
+  {
+   "id": "poison_1",
+   "question": "What is Umar Siddiqui's current role?",
+   "trusted": "tech lead of Umbra",
+   "poison": "product owner of Compass",
+   "before": "Umar Siddiqui is the tech lead of Umbra (since 2025-03-11).",
+   "after": "Umar Siddiqui is the tech lead of Umbra (since 2025-03-11). A 2025-07-07 note says he became product owner of Compass, but that is an unverified rumor and not confirmed.",
+   "fooled": false,
+   "retrieved_poison": false,
+   "retrieved": [
+    {
+     "content": "viewed /memories/index.md",
+     "source": "/memories/index.md"
+    },
+    {
+     "content": "viewed /memories/people_and_events.md",
+     "source": "/memories/people_and_events.md"
+    }
+   ]
+  }
+ ],
+ "ingest": {
+  "seconds": 682.7,
+  "n_memories": 260,
+  "llm_calls": 102,
+  "prompt_tokens": 685874,
+  "completion_tokens": 89351,
+  "cost_usd": 3.1829,
+  "llm_calls_per_memory": 0.39
+ },
+ "axes": "A1A2A3A4",
+ "summary": {
+  "A1_recall": {
+   "T1": 0.61,
+   "T2_nugget_recall": 1.0,
+   "T3": 0.925,
+   "T5_abstention": 1.0,
+   "all_non_update": 0.85
+  },
+  "A2_update": {
+   "current": 0.569,
+   "stale": 0.262,
+   "FAMA": 0.307
+  },
+  "A3_deletion": {
+   "entity": {
+    "forgot": 1,
+    "control_intact": 0.909,
+    "n_valid_controls": 11,
+    "leaked": 0,
+    "n_leak_measurable": 9
+   },
+   "intent": {
+    "forgot": 1,
+    "control_intact": 1,
+    "n_valid_controls": 4,
+    "leaked": null,
+    "n_leak_measurable": 0
+   },
+   "single": {
+    "forgot": 1,
+    "control_intact": 1,
+    "n_valid_controls": 9,
+    "leaked": 0,
+    "n_leak_measurable": 2
+   }
+  },
+  "A4_adversarial": {
+   "fooled": 0,
+   "retrieved_poison": 0
+  },
+  "A5_cost": {
+   "ingest_llm_calls_per_memory": 0.39,
+   "ingest_cost_usd": 3.1829,
+   "read_prompt_tokens_per_query": 19541,
+   "read_calls_per_query": 3.052,
+   "latency_p50_s": 6.12
+  },
+  "judge_health": {
+   "decoy_acceptance": 0,
+   "n_decoys": 192
+  }
+ },
+ "wall_seconds": 14884.0
+}

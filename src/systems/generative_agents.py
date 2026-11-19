@@ -89,6 +89,20 @@ class GenerativeAgentsMemory(BaseAdapter):
             return (x - x.min()) / (x.max() - x.min()) if x.max() > x.min() else np.zeros_like(x)
         return norm(rec) + norm(imp) + norm(rel)
 
+    async def delete(self, source_ids):
+        """Drop the raw memories IN PLACE; reflections are memories in the stream and stay (the paper has no delete).
+        Rounds 2-3 inherited the base rebuild, which re-ingested the surviving reflections as if they were new notes: it
+        re-rated everything and wrote fresh reflections on every delete, so reflections multiplied. See docs/ERRATA.md."""
+        ids = set(source_ids)
+        keep = [i for i, m in enumerate(self.memories) if m.source_id not in ids]
+        n = len(self.memories) - len(keep)
+        self.memories = [self.memories[i] for i in keep]
+        self._imp = [self._imp[i] for i in keep]
+        self._vecs = Embedder.get().encode([m.content for m in self.memories]) if self.memories else None
+        for sid in ids:
+            self._last_access.pop(sid, None)
+        return {"deleted": n, "method": "drop raw memories in place; reflections stay"}
+
     async def query(self, question, timestamp=None):
         t0 = time.time()
         if not self.memories:
@@ -97,8 +111,9 @@ class GenerativeAgentsMemory(BaseAdapter):
         now = timestamp or max(m.timestamp for m in self.memories)
         s = self._scores(question, now)
         idx = np.argsort(-s)[: self.top_k]
-        for i in idx:
-            self._last_access[self.memories[i].source_id] = now   # retrieval refreshes recency (paper semantics)
+        if not __import__("os").environ.get("GA_FREEZE_RECENCY"):   # round 4 asks each question once per reader: a refresh would
+            for i in idx:                                            # make reader 2 see a different stream than reader 1
+                self._last_access[self.memories[i].source_id] = now   # retrieval refreshes recency (paper semantics)
         items = [self._item(fmt_mem(self.memories[i]), self.memories[i].source_id, float(s[i]), self.memories[i].timestamp) for i in idx]
         ans, it, ot = self._answer("\n".join(x.content for x in items), question)
         return self._result(ans, items, "recency+importance+relevance", t0, it, ot)

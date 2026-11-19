@@ -1,0 +1,3742 @@
+{
+ "system": "ms_graphrag",
+ "label": "Microsoft GraphRAG",
+ "kind": "modern",
+ "rep": 1,
+ "tier": "sonnet",
+ "scale": "R3",
+ "seed": 42,
+ "status": "OK",
+ "error": null,
+ "questions": [
+  {
+   "id": "q_t1_0",
+   "task": "T1",
+   "question": "What is Quentin Dubois's current role?",
+   "reference": "product owner of Umbra",
+   "evidence_ids": [
+    "r3_0064"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Quentin Dubois is the **product owner of Umbra**, a role he took on 2025-02-17. The records show no later role change for him. He is also based in Singapore as of 2025-04-15.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 7.89,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11100,
+    "completion_tokens": 65,
+    "cost_usd": 0.045
+   },
+   "decoys": [
+    "tech lead of Meridian",
+    "product owner of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Quentin Dubois is the product owner of Umbra, matching the reference. The extra details (start date, Singapore location) do not contradict it."
+  },
+  {
+   "id": "q_t1_1",
+   "task": "T1",
+   "question": "Where is Emeka Obi based?",
+   "reference": "Berlin",
+   "evidence_ids": [
+    "r3_0190"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Emeka Obi is based in Berlin, per a record dated 2025-05-21. He also became design lead of Sextant on 2025-02-07, and that role doesn't conflict with the location.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.27,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12753,
+    "completion_tokens": 64,
+    "cost_usd": 0.0516
+   },
+   "decoys": [
+    "Austin",
+    "Denver"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Emeka Obi is based in Berlin, matching the reference. The extra details about the design lead role don't contradict it."
+  },
+  {
+   "id": "q_t1_2",
+   "task": "T1",
+   "question": "Where is Zofia Nowak based?",
+   "reference": "Lisbon",
+   "evidence_ids": [
+    "r3_0200"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Zofia Nowak is based in Lisbon, according to a text dated 2025-05-26. Most of her 2025 presentations were in Dublin, with some in Berlin, but the only record of where she's based says Lisbon.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.26,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14020,
+    "completion_tokens": 75,
+    "cost_usd": 0.0568
+   },
+   "decoys": [
+    "Berlin",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Zofia Nowak is based in Lisbon, matching the reference. The extra details about Dublin and Berlin presentations do not contradict it."
+  },
+  {
+   "id": "q_t1_3",
+   "task": "T1",
+   "question": "What is Meridian's quarterly budget?",
+   "reference": "$300k",
+   "evidence_ids": [
+    "r3_0008"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Meridian's quarterly budget was set to $300k on 2025-01-08. No later revision to Meridian's budget appears in the context, so $300k is the only recorded figure.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.44,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10957,
+    "completion_tokens": 59,
+    "cost_usd": 0.0444
+   },
+   "decoys": [
+    "$450k",
+    "$180k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Meridian's quarterly budget is $300k, matching the reference. The extra details about the date and absence of later revisions do not contradict it."
+  },
+  {
+   "id": "q_t1_4",
+   "task": "T1",
+   "question": "What is Valentina Greco's current role?",
+   "reference": "design lead of Atlas",
+   "evidence_ids": [
+    "r3_0001"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Valentina Greco is the design lead of Atlas, a role she took on 2025-01-09. The records show no later role change for her. They also show her based in Lisbon as of 2025-05-06, and presenting Quill at DataSummit and Harbor at ShipIt in July 2025.\n\nNote that Rosa Alvarez is also recorded as becoming design lead of Atlas on 2025-01-14, so the two appointments overlap. The records don't resolve this.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.2,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11584,
+    "completion_tokens": 152,
+    "cost_usd": 0.0479
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "release manager of Meridian"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Valentina Greco is design lead of Atlas, matching the reference. Extra details and the note about Rosa Alvarez's overlapping appointment don't contradict the core fact."
+  },
+  {
+   "id": "q_t1_5",
+   "task": "T1",
+   "question": "What is Ximena Ortiz's current role?",
+   "reference": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0027"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Ximena Ortiz's current role is **QA lead of Sextant**, a position she has held since 2025-01-21. The records show no later role change for her. She is also based in Toronto as of July 2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.78,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 9903,
+    "completion_tokens": 67,
+    "cost_usd": 0.0403
+   },
+   "decoys": [
+    "tech lead of Meridian",
+    "release manager of Relay"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states her role is QA lead of Sextant, matching the reference. The extra details (start date, Toronto location) don't contradict the reference."
+  },
+  {
+   "id": "q_t1_6",
+   "task": "T1",
+   "question": "Where is Grace Kim based?",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0241"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Grace Kim is based in Denver, per the record dated 2025-06-27.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.2,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13253,
+    "completion_tokens": 28,
+    "cost_usd": 0.0533
+   },
+   "decoys": [
+    "Berlin",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Grace Kim is based in Denver, matching the reference. The added record date is extra detail and does not contradict it."
+  },
+  {
+   "id": "q_t1_7",
+   "task": "T1",
+   "question": "What is Emeka Obi's current role?",
+   "reference": "design lead of Sextant",
+   "evidence_ids": [
+    "r3_0048"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Emeka Obi is the design lead of Sextant (effective 2025-02-07). He is also based in Berlin as of 2025-05-21.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.03,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11333,
+    "completion_tokens": 49,
+    "cost_usd": 0.0458
+   },
+   "decoys": [
+    "product owner of Sextant",
+    "data lead of Meridian"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Emeka Obi is the design lead of Sextant, which matches the reference. The extra detail about being based in Berlin does not contradict it."
+  },
+  {
+   "id": "q_t1_8",
+   "task": "T1",
+   "question": "What is Compass's quarterly budget?",
+   "reference": "$180k",
+   "evidence_ids": [
+    "r3_0000"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Compass's quarterly budget is **$180k**, set on 2025-01-06. No later revision to Compass's budget appears in the context.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.37,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11267,
+    "completion_tokens": 46,
+    "cost_usd": 0.0455
+   },
+   "decoys": [
+    "$120k",
+    "$520k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $180k, matching the reference. The extra details (set date, no later revision) don't contradict it."
+  },
+  {
+   "id": "q_t1_9",
+   "task": "T1",
+   "question": "Which issue tracker does Relay use?",
+   "reference": "Trello",
+   "evidence_ids": [
+    "r3_0062"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Relay uses **Trello**. It standardized on Trello as its issue tracker on 2025-02-21, and no later switch away from it is recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.13,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11495,
+    "completion_tokens": 50,
+    "cost_usd": 0.0465
+   },
+   "decoys": [
+    "Notion",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Relay uses Trello, matching the reference. The extra details about the standardization date and no later switch do not contradict it."
+  },
+  {
+   "id": "q_t4_10",
+   "task": "T4",
+   "question": "Which issue tracker does Lantern use? (as of today)",
+   "reference": "Asana",
+   "evidence_ids": [
+    "r3_0059"
+   ],
+   "stale_answer": "Jira",
+   "stratum": "implicit",
+   "answer": "Lantern uses **Asana**. It standardized on Jira on 2025-02-04, but a later record (2025-02-10) says it tracks its issues in Asana. That is the most recent record, so Asana is the current tracker. The rapid switch could reflect inconsistent source data.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.04,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11480,
+    "completion_tokens": 93,
+    "cost_usd": 0.0468
+   },
+   "decoys": [
+    "Notion",
+    "Jira"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Lantern currently uses Asana, matching the reference. The extra Jira history and data-inconsistency note do not contradict it."
+  },
+  {
+   "id": "q_t4_11",
+   "task": "T4",
+   "question": "What is Noah Berg's current role? (as of today)",
+   "reference": "release manager of Umbra",
+   "evidence_ids": [
+    "r3_0171"
+   ],
+   "stale_answer": "design lead of Orbit",
+   "stratum": "implicit",
+   "answer": "Noah Berg's most recent recorded role is **release manager of Umbra**, effective 2025-05-07. He also became design lead of Orbit on 2025-04-17, and nothing in the records says he left that role. The context has no records after mid-2025, so I can't confirm what he holds as of today. He may still hold both roles, or something may have changed since.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.14,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10807,
+    "completion_tokens": 115,
+    "cost_usd": 0.0444
+   },
+   "decoys": [
+    "QA lead of Compass",
+    "design lead of Orbit"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.75,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer identifies 'release manager of Umbra' as his most recent role, matching the reference. However, it also mentions a separate Orbit design lead role as possibly still held and hedges that it can't confirm the current role, which dilutes the match slightly."
+  },
+  {
+   "id": "q_t4_12",
+   "task": "T4",
+   "question": "Where is Callum Reid based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0029"
+   ],
+   "stale_answer": "Austin",
+   "stratum": "implicit",
+   "answer": "Callum Reid is based in Osaka. A 2025-01-21 record places him in Austin, but the later 2025-01-24 record says he has been based in Osaka since January 2025, so Osaka is his most recent known location.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.25,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13748,
+    "completion_tokens": 74,
+    "cost_usd": 0.0557
+   },
+   "decoys": [
+    "Dublin",
+    "Austin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Callum Reid is based in Osaka, matching the reference. The extra context about the earlier Austin record is consistent and does not contradict it."
+  },
+  {
+   "id": "q_t4_13",
+   "task": "T4",
+   "question": "Where is Rosa Alvarez based? (as of today)",
+   "reference": "Dublin",
+   "evidence_ids": [
+    "r3_0178"
+   ],
+   "stale_answer": "Osaka",
+   "stratum": "explicit",
+   "answer": "Rosa Alvarez is most likely based in **Dublin**. She relocated from Osaka to Dublin in May 2025 (source dated 2025-05-05). The earlier \"based in Osaka\" record is dated 2025-04-09, before the move. She presented in Singapore, Osaka, and Austin in June and July 2025, but those look like conference trips, and no later relocation is recorded. The records stop in July 2025, so I can't confirm her location as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.35,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12842,
+    "completion_tokens": 153,
+    "cost_usd": 0.0529
+   },
+   "decoys": [
+    "Toronto",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Rosa Alvarez is most likely based in Dublin, matching the reference. The hedging about the records ending in July 2025 does not change the substantive answer, and the supporting details (relocation from Osaka to Dublin) are consistent with it."
+  },
+  {
+   "id": "q_t4_14",
+   "task": "T4",
+   "question": "What is Bob Martinez's current role? (as of today)",
+   "reference": "product owner of Umbra",
+   "evidence_ids": [
+    "r3_0175"
+   ],
+   "stale_answer": "data lead of Nimbus",
+   "stratum": "implicit",
+   "answer": "Based on the records, Bob Martinez holds two roles:\n\n- **Data lead of Nimbus**, since 2025-04-29\n- **Product owner of Umbra**, effective 2025-05-06\n\nNo later records show him leaving either role, so these are his most recent known roles. The data only runs through mid-2025, though, so I can't confirm they still apply as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.09,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12366,
+    "completion_tokens": 126,
+    "cost_usd": 0.0507
+   },
+   "decoys": [
+    "QA lead of Sextant",
+    "data lead of Nimbus"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes 'Product owner of Umbra' but also lists a second concurrent role (Data lead of Nimbus) as current, and hedges about whether either still applies. The reference gives a single current role, so the answer is ambiguous and partly contradicts it."
+  },
+  {
+   "id": "q_t4_15",
+   "task": "T4",
+   "question": "Where is Carol Davis based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0054"
+   ],
+   "stale_answer": "Singapore",
+   "stratum": "implicit",
+   "answer": "Carol Davis is based in Austin. A record dated 2025-02-06 placed her in Singapore, but a later record dated 2025-02-14 says she relocated to Austin in February 2025. No later record shows her moving again.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.46,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 15128,
+    "completion_tokens": 75,
+    "cost_usd": 0.0613
+   },
+   "decoys": [
+    "Toronto",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Carol Davis is based in Austin, matching the reference. The extra context about the earlier Singapore record and the February 2025 relocation is consistent and does not contradict it."
+  },
+  {
+   "id": "q_t4_16",
+   "task": "T4",
+   "question": "What is Liam O'Brien's current role? (as of today)",
+   "reference": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0051"
+   ],
+   "stale_answer": "release manager of Sextant",
+   "stratum": "implicit",
+   "answer": "Liam O'Brien's most recent recorded role is **tech lead of Meridian** (effective 2025-02-10), but that is not necessarily current. He was also release manager of Sextant (since 2025-02-03).\n\nThe records show Callum Reid became Meridian tech lead on 2025-03-26 and left on 2025-04-03, so Liam's Meridian tenure appears to have ended by late March 2025. No record explicitly states that he left either role. The context doesn't confirm what he holds as of today (2026-11-17), so the answer is uncertain. The best-supported answer is that he was last recorded as Sextant release manager, with his Meridian tech lead role superseded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n0|Meridian and Lantern: 2025 Leadership, Tooling and Presentation Records (Tove Lindqvist, Callum Reid, Wei Zhang)|\"# Meridian and Lantern: 2025 Leadership, Tooling and Presentation Records (Tove Lindqvist, Callum Reid, Wei Zhang)\n\nThe community centers on two organization-like entities, Meridian and Lantern, and three people whose roles link them: Wei Zhang (Lan",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 5.46,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11031,
+    "completion_tokens": 222,
+    "cost_usd": 0.0463
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "release manager of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.25,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer mentions 'tech lead of Meridian' as the most recent recorded role, but then argues it was superseded and concludes the best-supported current role is Sextant release manager. This contradicts the reference's answer of tech lead of Meridian, so only the fact appears and the final conclusion is wrong."
+  },
+  {
+   "id": "q_t4_17",
+   "task": "T4",
+   "question": "Which issue tracker does Compass use? (as of today)",
+   "reference": "Notion",
+   "evidence_ids": [
+    "r3_0071"
+   ],
+   "stale_answer": "Confluence",
+   "stratum": "implicit",
+   "answer": "Compass most likely uses **Notion**. It standardized on Confluence on 2025-02-20, but a record dated 2025-02-24 says it tracks its issues in Notion. That is the latest tracker record for Compass, and it most plausibly reflects a later change, though the sources don't explain the switch. No later change is recorded, so Notion is the best answer from the available records, but the records end in early 2025 and can't confirm what it uses today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.06,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11053,
+    "completion_tokens": 144,
+    "cost_usd": 0.0456
+   },
+   "decoys": [
+    "Asana",
+    "Confluence"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Notion as Compass's issue tracker, matching the reference. The hedging about the records ending in early 2025 does not change the answer."
+  },
+  {
+   "id": "q_t4_18",
+   "task": "T4",
+   "question": "Where is Yusuf Demir based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0214"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "explicit",
+   "answer": "Austin. A document dated 2025-06-04 records that Yusuf Demir relocated from Berlin to Austin in June 2025. He was in Berlin as of 2025-05-15, so Austin is his most recently recorded location. The records contain nothing later, so I can't confirm he is still there as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.32,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14524,
+    "completion_tokens": 101,
+    "cost_usd": 0.0591
+   },
+   "decoys": [
+    "Denver",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Austin as the location, matching the reference. The added context (relocated from Berlin in June 2025, and a caveat that nothing later is recorded) doesn't contradict the reference."
+  },
+  {
+   "id": "q_t4_19",
+   "task": "T4",
+   "question": "Which issue tracker does Umbra use? (as of today)",
+   "reference": "Confluence",
+   "evidence_ids": [
+    "r3_0047"
+   ],
+   "stale_answer": "Shortcut",
+   "stratum": "explicit",
+   "answer": "Umbra uses **Confluence**. It standardized on Shortcut on 2025-01-29, then switched from Shortcut to Confluence effective 2025-02-05. No later switch is recorded, so Confluence is its most recent known tracker.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.23,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11219,
+    "completion_tokens": 82,
+    "cost_usd": 0.0457
+   },
+   "decoys": [
+    "Jira",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Umbra uses Confluence, matching the reference. The extra history about the Shortcut switch doesn't contradict it."
+  },
+  {
+   "id": "q_t4_20",
+   "task": "T4",
+   "question": "What is Harbor's quarterly budget? (as of today)",
+   "reference": "$120k",
+   "evidence_ids": [
+    "r3_0151"
+   ],
+   "stale_answer": "$520k",
+   "stratum": "implicit",
+   "answer": "Harbor's most recent recorded quarterly budget is **$120k** (as of 2025-04-22). This supersedes the earlier $520k figure set on 2025-02-11. No later budget record appears in the context, so $120k is the latest known value, though it may be out of date given how much time has passed.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.82,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10436,
+    "completion_tokens": 97,
+    "cost_usd": 0.0427
+   },
+   "decoys": [
+    "$450k",
+    "$520k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Harbor's quarterly budget is $120k, matching the reference. The extra context about the earlier $520k figure and the caveat about possible staleness does not contradict the reference."
+  },
+  {
+   "id": "q_t4_21",
+   "task": "T4",
+   "question": "Where is Wei Zhang based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0202"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "implicit",
+   "answer": "Wei Zhang is based in **Osaka**. A record dated 2025-05-19 placed Wei Zhang in Berlin, but a later record dated 2025-05-29 says Wei Zhang is now based in Osaka (since May 2025). Osaka is the most recent location in the records. They contain nothing newer, so I can't confirm it is still current as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.53,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13336,
+    "completion_tokens": 121,
+    "cost_usd": 0.0546
+   },
+   "decoys": [
+    "Lisbon",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Wei Zhang is based in Osaka, matching the reference. The extra context about an earlier Berlin record and the caveat about currency does not contradict the answer."
+  },
+  {
+   "id": "q_t4_22",
+   "task": "T4",
+   "question": "What is Relay's quarterly budget? (as of today)",
+   "reference": "$240k",
+   "evidence_ids": [
+    "r3_0148"
+   ],
+   "stale_answer": "$300k",
+   "stratum": "implicit",
+   "answer": "Relay's most recent recorded quarterly budget is **$240k**, as of 2025-04-16. It was set to $300k on 2025-03-07 and later recorded at $240k, which likely reflects a reduction. No later records exist, so this is the latest known figure, though it may be out of date given today's date.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.49,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10174,
+    "completion_tokens": 100,
+    "cost_usd": 0.0417
+   },
+   "decoys": [
+    "$360k",
+    "$300k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Relay's quarterly budget is $240k, matching the reference. The extra context (earlier $300k, date caveat) does not contradict it."
+  },
+  {
+   "id": "q_t4_23",
+   "task": "T4",
+   "question": "Where is Olga Petrova based? (as of today)",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0224"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "implicit",
+   "answer": "Olga Petrova is based in **Singapore**. The most recent record (2025-06-12) says she is now based in Singapore since June 2025. An earlier record (2025-04-23) placed her in Berlin, which fits a Berlin-to-Singapore relocation. Nothing later contradicts this, though the records only run through mid-2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.44,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 15262,
+    "completion_tokens": 112,
+    "cost_usd": 0.0622
+   },
+   "decoys": [
+    "Austin",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Olga Petrova is based in Singapore, matching the reference. The extra context about an earlier Berlin record and the mid-2025 data limit doesn't contradict it."
+  },
+  {
+   "id": "q_t4_24",
+   "task": "T4",
+   "question": "Where is Tove Lindqvist based? (as of today)",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0246"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "implicit",
+   "answer": "Tove Lindqvist is based in Denver. A record dated 2025-06-27 says she has been based there since June 2025. The earlier Lisbon record (2025-02-20) reflects her previous base, so Denver is her most recent known location.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.23,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14162,
+    "completion_tokens": 80,
+    "cost_usd": 0.0574
+   },
+   "decoys": [
+    "Dublin",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Generated answer states Denver, matching the reference. Extra details about the June 2025 move and the earlier Lisbon base don't contradict it."
+  },
+  {
+   "id": "q_t4_25",
+   "task": "T4",
+   "question": "Where is Ines Moreau based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0119"
+   ],
+   "stale_answer": "Dublin",
+   "stratum": "explicit",
+   "answer": "Ines Moreau is most likely based in **Austin**.\n\nA record dated 2025-03-27 says she relocated from Dublin to Austin in March 2025. The only conflicting record, dated 2025-03-13, says she is based in Dublin, and it is earlier than the relocation record. So the move probably happened after 13 March.\n\nHer last recorded activity is a Wayfarer presentation in Denver on 2025-05-01. That is a conference appearance and does not show where she lives. No later location record exists, so Austin is the latest known base.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.42,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14593,
+    "completion_tokens": 176,
+    "cost_usd": 0.0601
+   },
+   "decoys": [
+    "Osaka",
+    "Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Austin, matching the reference. The supporting details (relocation from Dublin in March 2025) do not contradict it."
+  },
+  {
+   "id": "q_t4_26",
+   "task": "T4",
+   "question": "Which issue tracker does Pylon use? (as of today)",
+   "reference": "Linear",
+   "evidence_ids": [
+    "r3_0009"
+   ],
+   "stale_answer": "Trello",
+   "stratum": "explicit",
+   "answer": "Pylon most likely uses **Trello**, but the records are conflicting.\n\n- 2025-01-08: Pylon switched its tracker from Trello to Linear.\n- 2025-01-09: Pylon standardized on Trello as its issue tracker.\n\nTrello has the later date, so it is the most recent recorded state. This could mean a quick reversal back to Trello, or an inconsistent record. No later tracker changes for Pylon appear in the context, so Trello is the best answer, with some uncertainty.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.86,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10677,
+    "completion_tokens": 166,
+    "cost_usd": 0.0444
+   },
+   "decoys": [
+    "Notion",
+    "Trello"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The reference answer is Linear. The generated answer concludes Trello, which contradicts the reference. It mentions Linear only as an earlier, superseded state, so the final answer is wrong."
+  },
+  {
+   "id": "q_t4_27",
+   "task": "T4",
+   "question": "Where is Elena Rossi based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0206"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "explicit",
+   "answer": "Elena Rossi is based in **Osaka**. She relocated there from Berlin in May 2025 (source dated 2025-05-29). The \"based in Berlin\" record is dated 2025-03-25, so it predates the move. The records contain nothing later than that relocation, so Osaka is the most recent known base.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.39,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12496,
+    "completion_tokens": 102,
+    "cost_usd": 0.051
+   },
+   "decoys": [
+    "Toronto",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Elena Rossi is based in Osaka, matching the reference. The extra details about the move from Berlin are consistent and do not contradict it."
+  },
+  {
+   "id": "q_t4_28",
+   "task": "T4",
+   "question": "Where is Mina Park based? (as of today)",
+   "reference": "Austin",
+   "evidence_ids": [
+    "r3_0006"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "implicit",
+   "answer": "Mina Park is most likely based in **Austin**.\n\nThe records conflict. One source (dated 2025-01-08) says she is based in Lisbon. A later one (dated 2025-01-06 in the source text, \"now based in Austin since January 2025\") says she is now based in Austin. The \"now based in Austin (since January 2025)\" wording signals a change of base, which suggests she moved from Lisbon to Austin during January 2025. The entity summary leans toward Lisbon because of the more specific date, but that reading depends on the dates being reliable, and the Austin record's own wording points to a newer state.\n\nNeither record is recent, and nothing later shows her moving again. Her 2025 presentations were in Dublin, Osaka, Denver and Singapore. They don't settle where she lives, and I have no data from after mid-2025. So Austin is the best-supported answer, with Lisbon as the alternative.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.93,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14077,
+    "completion_tokens": 293,
+    "cost_usd": 0.0592
+   },
+   "decoys": [
+    "Singapore",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.9,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer commits to Austin, matching the reference, and gives a coherent rationale. It hedges by naming Lisbon as an alternative and says 'most likely', which is slightly less definitive than the reference, so a small deduction."
+  },
+  {
+   "id": "q_t4_29",
+   "task": "T4",
+   "question": "What is Hiro Tanaka's current role? (as of today)",
+   "reference": "QA lead of Compass",
+   "evidence_ids": [
+    "r3_0028"
+   ],
+   "stale_answer": "release manager of Compass",
+   "stratum": "implicit",
+   "answer": "Hiro Tanaka's most recent recorded roles are on Compass: release manager (effective 2025-01-21) and QA lead (effective 2025-01-22). Both appear to have been held concurrently.\n\nHowever, the QA lead role seems to have been superseded: Carol Davis became QA lead of Compass effective 2025-04-01. Nothing in the records says Hiro Tanaka's release manager role ended, so it is the only role still recorded for him.\n\nAnswer: Release manager of Compass. The records stop in mid-2025, so I can't confirm this is still true as of today. He is also based in Toronto (relocated January 2025).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.47,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12122,
+    "completion_tokens": 208,
+    "cost_usd": 0.0506
+   },
+   "decoys": [
+    "product owner of Sextant",
+    "release manager of Compass"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.25,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says current role is QA lead of Compass. The generated answer concludes release manager of Compass and claims QA lead was superseded by Carol Davis. It mentions QA lead only as a past role, so the final answer contradicts the reference, with only partial overlap on the company/project."
+  },
+  {
+   "id": "q_t4_30",
+   "task": "T4",
+   "question": "What is Freya Holm's current role? (as of today)",
+   "reference": "tech lead of Lantern",
+   "evidence_ids": [
+    "r3_0146"
+   ],
+   "stale_answer": "release manager of Orbit",
+   "stratum": "explicit",
+   "answer": "Freya Holm's most recent recorded role is **tech lead of Lantern**, effective 2025-04-18, when she moved from release manager of Orbit. The records show no later role change, so this is the latest one on file. The data only runs through mid-2025 (her last record is a Lantern presentation on 2025-06-17), so I can't confirm it still holds as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.36,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12324,
+    "completion_tokens": 120,
+    "cost_usd": 0.0505
+   },
+   "decoys": [
+    "data lead of Compass",
+    "release manager of Orbit"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Freya Holm's current role is tech lead of Lantern, matching the reference. The added caveat about the data only running through mid-2025 and the note on her prior role do not contradict the reference."
+  },
+  {
+   "id": "q_t4_31",
+   "task": "T4",
+   "question": "What is Carol Davis's current role? (as of today)",
+   "reference": "QA lead of Compass",
+   "evidence_ids": [
+    "r3_0125"
+   ],
+   "stale_answer": "QA lead of Lantern",
+   "stratum": "implicit",
+   "answer": "Carol Davis's most recent recorded role is **QA lead of Compass**, effective 2025-04-01. She became QA lead of Lantern earlier, on 2025-03-12. The records don't say whether she held both roles at once or whether Compass replaced Lantern. The most recent record is from 2025-04-01, so I can't confirm the role is still current as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.84,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11537,
+    "completion_tokens": 128,
+    "cost_usd": 0.0474
+   },
+   "decoys": [
+    "tech lead of Atlas",
+    "QA lead of Lantern"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.9,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer identifies 'QA lead of Compass' as the most recent role, matching the reference. It adds caveats about uncertainty and mentions an earlier Lantern role, which is extra but not contradictory; the hedging about whether it's still current slightly weakens the definitive match."
+  },
+  {
+   "id": "q_t4_32",
+   "task": "T4",
+   "question": "What is Umbra's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "evidence_ids": [
+    "r3_0131"
+   ],
+   "stale_answer": "$120k",
+   "stratum": "explicit",
+   "answer": "Umbra's quarterly budget is **$900k**. It was set to $120k on 2025-02-25 and revised to $900k on 2025-04-09, which is the latest budget record. The sources flag that jump as substantial and worth verifying, and nothing more recent exists in the context.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.51,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11089,
+    "completion_tokens": 93,
+    "cost_usd": 0.0453
+   },
+   "decoys": [
+    "$300k",
+    "$120k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Umbra's quarterly budget is $900k, matching the reference. The extra history (the earlier $120k figure and the revision date) doesn't contradict it."
+  },
+  {
+   "id": "q_t4_33",
+   "task": "T4",
+   "question": "What is Lantern's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "evidence_ids": [
+    "r3_0139"
+   ],
+   "stale_answer": "$120k",
+   "stratum": "implicit",
+   "answer": "Lantern's quarterly budget is **$900k**, the most recent record (as of 2025-04-10). It was originally set to $120k on 2025-01-27. The jump is large, so it may reflect real growth or a data error, but no later figure supersedes it.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.11,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10148,
+    "completion_tokens": 85,
+    "cost_usd": 0.0414
+   },
+   "decoys": [
+    "$450k",
+    "$120k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $900k, matching the reference. The extra context (earlier $120k figure, data-error caveat) does not contradict it."
+  },
+  {
+   "id": "q_t4_34",
+   "task": "T4",
+   "question": "Which issue tracker does Wayfarer use? (as of today)",
+   "reference": "Monday",
+   "evidence_ids": [
+    "r3_0024"
+   ],
+   "stale_answer": "Asana",
+   "stratum": "implicit",
+   "answer": "Wayfarer uses **Monday**. It standardized on Asana on 2025-01-17, but a later record (2025-01-24) says it now tracks issues in Monday, so it most likely switched from Asana to Monday between those dates. No later record changes this, though the sources don't explicitly confirm the switch or give a reason.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.6,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10945,
+    "completion_tokens": 107,
+    "cost_usd": 0.0448
+   },
+   "decoys": [
+    "Confluence",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Wayfarer uses Monday, matching the reference. The extra context about the earlier Asana usage and the likely switch does not contradict the reference."
+  },
+  {
+   "id": "q_t4_35",
+   "task": "T4",
+   "question": "Which issue tracker does Harbor use? (as of today)",
+   "reference": "Trello",
+   "evidence_ids": [
+    "r3_0082"
+   ],
+   "stale_answer": "Asana",
+   "stratum": "implicit",
+   "answer": "Harbor uses **Trello**, per the most recent record (2025-03-04). It had standardized on Asana on 2025-02-28, but the later Trello record suggests a subsequent change. The sources don't explain the switch, and there's no later tracker record, so Trello is the latest known tracker.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.31,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11576,
+    "completion_tokens": 97,
+    "cost_usd": 0.0473
+   },
+   "decoys": [
+    "Monday",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Harbor uses Trello, matching the reference. The extra context about the earlier Asana record does not contradict it."
+  },
+  {
+   "id": "q_t4_36",
+   "task": "T4",
+   "question": "What is Beacon's quarterly budget? (as of today)",
+   "reference": "$450k",
+   "evidence_ids": [
+    "r3_0058"
+   ],
+   "stale_answer": "$120k",
+   "stratum": "implicit",
+   "answer": "Beacon's quarterly budget is **$450k**, the most recent figure on record (stated as of 2025-02-12). It was earlier set to $120k on 2025-01-30, so the budget appears to have been revised upward. The sources don't explain the change, and no later budget record for Beacon exists in the context.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.35,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10898,
+    "completion_tokens": 101,
+    "cost_usd": 0.0446
+   },
+   "decoys": [
+    "$180k",
+    "$120k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Beacon's quarterly budget is $450k, matching the reference. The extra context about the earlier $120k figure does not contradict the reference."
+  },
+  {
+   "id": "q_t4_37",
+   "task": "T4",
+   "question": "What is Mina Park's current role? (as of today)",
+   "reference": "data lead of Compass",
+   "evidence_ids": [
+    "r3_0086"
+   ],
+   "stale_answer": "QA lead of Sextant",
+   "stratum": "explicit",
+   "answer": "Mina Park's current role is **data lead of Compass**, effective 2025-03-06. She moved there from QA lead of Sextant, a role she had held for only about two days (from 2025-03-04). The records contain no later role change for her.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 2.88,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11991,
+    "completion_tokens": 77,
+    "cost_usd": 0.0487
+   },
+   "decoys": [
+    "design lead of Atlas",
+    "QA lead of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states her current role is data lead of Compass, matching the reference. The extra details (effective date, prior QA lead role at Sextant) do not contradict it."
+  },
+  {
+   "id": "q_t4_38",
+   "task": "T4",
+   "question": "What is Wayfarer's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "evidence_ids": [
+    "r3_0032"
+   ],
+   "stale_answer": "$240k",
+   "stratum": "explicit",
+   "answer": "Wayfarer's quarterly budget is **$360k**. It was first set to $240k on 2025-01-13, then revised upward by $120k to $360k on 2025-01-29. No later revision appears in the records, so $360k is the most recent figure available.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.03,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11442,
+    "completion_tokens": 84,
+    "cost_usd": 0.0466
+   },
+   "decoys": [
+    "$300k",
+    "$240k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $360k, matching the reference exactly. The extra revision history (initial $240k, raised by $120k) is consistent with that figure and does not contradict it."
+  },
+  {
+   "id": "q_t4_39",
+   "task": "T4",
+   "question": "What is Elena Rossi's current role? (as of today)",
+   "reference": "product owner of Pylon",
+   "evidence_ids": [
+    "r3_0111"
+   ],
+   "stale_answer": "data lead of Quill",
+   "stratum": "explicit",
+   "answer": "Elena Rossi's most recent recorded role is **product owner of Pylon**, effective 2025-03-24, when she moved from data lead of Quill. No later role change appears in the records. The records only run through mid-2025, so I can't confirm the role still holds as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.66,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10928,
+    "completion_tokens": 96,
+    "cost_usd": 0.0447
+   },
+   "decoys": [
+    "product owner of Umbra",
+    "data lead of Quill"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Elena Rossi's most recent role is product owner of Pylon, matching the reference. The extra details (effective date, prior role, caveat about records ending mid-2025) do not contradict it."
+  },
+  {
+   "id": "q_t4_40",
+   "task": "T4",
+   "question": "What is Dmitri Volkov's current role? (as of today)",
+   "reference": "release manager of Relay",
+   "evidence_ids": [
+    "r3_0019"
+   ],
+   "stale_answer": "design lead of Nimbus",
+   "stratum": "explicit",
+   "answer": "Dmitri Volkov's most recent recorded role is **release manager of Relay**, effective 2025-01-17. He left his earlier position as design lead of Nimbus (held from 2025-01-08) at that point.\n\nThe records contain no later role change for him, though the data only runs through mid-2025, so I can't confirm that he still holds the role as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.25,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12676,
+    "completion_tokens": 122,
+    "cost_usd": 0.0519
+   },
+   "decoys": [
+    "data lead of Relay",
+    "design lead of Nimbus"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Dmitri Volkov's most recent role is release manager of Relay, matching the reference. The extra details (effective date, prior role) and the caveat about data only running through mid-2025 do not contradict the reference."
+  },
+  {
+   "id": "q_t4_41",
+   "task": "T4",
+   "question": "What is Yusuf Demir's current role? (as of today)",
+   "reference": "product owner of Sextant",
+   "evidence_ids": [
+    "r3_0138"
+   ],
+   "stale_answer": "data lead of Wayfarer",
+   "stratum": "explicit",
+   "answer": "Yusuf Demir's current role is **product owner of Sextant**, effective 2025-04-11, when he moved from data lead of Wayfarer. Nothing in the context records a later role change, so this is the latest known role. The records only run through mid-2025, so this may be outdated as of today. He also relocated from Berlin to Austin in June 2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.37,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11385,
+    "completion_tokens": 115,
+    "cost_usd": 0.0467
+   },
+   "decoys": [
+    "design lead of Lantern",
+    "data lead of Wayfarer"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states his current role is product owner of Sextant, matching the reference. The extra details (start date, prior role, relocation, staleness caveat) do not contradict it."
+  },
+  {
+   "id": "q_t4_42",
+   "task": "T4",
+   "question": "Where is Hiro Tanaka based? (as of today)",
+   "reference": "Toronto",
+   "evidence_ids": [
+    "r3_0020"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "explicit",
+   "answer": "Hiro Tanaka is based in Toronto. He was in Lisbon as of 2025-01-16, then relocated from Lisbon to Toronto in January 2025 (recorded 2025-01-20). His later presentations in Lisbon (May 2025) and Austin (June 2025) were most likely trips, and he presented in Toronto on 2025-06-10. No later relocation is recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.29,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12840,
+    "completion_tokens": 132,
+    "cost_usd": 0.0527
+   },
+   "decoys": [
+    "Berlin",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Hiro Tanaka is based in Toronto, which matches the reference. The extra details about relocation and trips don't contradict it."
+  },
+  {
+   "id": "q_t4_43",
+   "task": "T4",
+   "question": "What is Orbit's quarterly budget? (as of today)",
+   "reference": "$450k",
+   "evidence_ids": [
+    "r3_0100"
+   ],
+   "stale_answer": "$600k",
+   "stratum": "explicit",
+   "answer": "Orbit's quarterly budget is **$450k**. It was set to $600k on 2025-03-13 and revised down to $450k on 2025-03-21. No later budget change appears in the records.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.0,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11750,
+    "completion_tokens": 64,
+    "cost_usd": 0.0476
+   },
+   "decoys": [
+    "$180k",
+    "$600k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $450k, matching the reference. The extra history (set to $600k, then revised to $450k) doesn't contradict it."
+  },
+  {
+   "id": "q_t4_44",
+   "task": "T4",
+   "question": "Where is Sanjay Mehta based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0018"
+   ],
+   "stale_answer": "Dublin",
+   "stratum": "explicit",
+   "answer": "Sanjay Mehta is based in **Osaka**. The records show he was in Dublin as of 2025-01-16, then relocated from Dublin to Osaka in January 2025 (documented 2025-01-14). Osaka is his most recently recorded location, and no later move is recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.28,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13856,
+    "completion_tokens": 95,
+    "cost_usd": 0.0564
+   },
+   "decoys": [
+    "Toronto",
+    "Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Sanjay Mehta is based in Osaka, matching the reference exactly. The extra details about the move from Dublin do not contradict it."
+  },
+  {
+   "id": "q_t4_45",
+   "task": "T4",
+   "question": "Which issue tracker does Meridian use? (as of today)",
+   "reference": "Shortcut",
+   "evidence_ids": [
+    "r3_0105"
+   ],
+   "stale_answer": "Monday",
+   "stratum": "explicit",
+   "answer": "Meridian uses **Shortcut**. It standardized on Monday on 2025-02-27, then switched from Monday to Shortcut effective 2025-03-21. No later change is recorded, though the records only run through mid-2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.16,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10839,
+    "completion_tokens": 76,
+    "cost_usd": 0.0441
+   },
+   "decoys": [
+    "Linear",
+    "Monday"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Meridian uses Shortcut, matching the reference. The extra history about the Monday-to-Shortcut switch and the caveat about records ending in mid-2025 do not contradict it."
+  },
+  {
+   "id": "q_t4_46",
+   "task": "T4",
+   "question": "Where is Dmitri Volkov based? (as of today)",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0136"
+   ],
+   "stale_answer": "Dublin",
+   "stratum": "implicit",
+   "answer": "Dmitri Volkov is most recently recorded as based in **Denver** (since April 2025, per the 2025-04-07 record). An earlier record from 2025-04-03 placed him in Dublin, so the most coherent reading is that he moved from Dublin to Denver in early April 2025. The records don't say whether he has moved since then.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.72,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14155,
+    "completion_tokens": 111,
+    "cost_usd": 0.0577
+   },
+   "decoys": [
+    "Austin",
+    "Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Denver as Dmitri Volkov's current base, matching the reference. The extra details about the earlier Dublin record and the uncertainty about later moves do not contradict the reference."
+  },
+  {
+   "id": "q_t4_47",
+   "task": "T4",
+   "question": "Where is Ximena Ortiz based? (as of today)",
+   "reference": "Toronto",
+   "evidence_ids": [
+    "r3_0257"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "implicit",
+   "answer": "Ximena Ortiz is most recently recorded as based in **Toronto**, since July 2025 (source dated 2025-07-03). An earlier record from 2025-06-23 placed her in Berlin, which looks like her prior base before the move. The records don't state a move explicitly, and nothing in them is dated after July 2025, so I can't confirm where she is as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.39,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13873,
+    "completion_tokens": 122,
+    "cost_usd": 0.0567
+   },
+   "decoys": [
+    "Lisbon",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer identifies Toronto as Ximena Ortiz's base, matching the reference. The extra details (earlier Berlin record, caveat about dates) don't contradict the reference."
+  },
+  {
+   "id": "q_t4_48",
+   "task": "T4",
+   "question": "What is Rosa Alvarez's current role? (as of today)",
+   "reference": "tech lead of Umbra",
+   "evidence_ids": [
+    "r3_0021"
+   ],
+   "stale_answer": "design lead of Atlas",
+   "stratum": "implicit",
+   "answer": "Rosa Alvarez's most recent recorded roles are **tech lead of Umbra** (effective 2025-01-22) and **design lead of Atlas** (since 2025-01-14). Nothing in the records shows either role ending or being replaced, so tech lead of Umbra is the latest-dated role.\n\nThe records only run through mid-2025, so I can't confirm what she holds as of today. Her roles on Orbit and Sextant, which she presented, are not recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.68,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12470,
+    "completion_tokens": 155,
+    "cost_usd": 0.0514
+   },
+   "decoys": [
+    "tech lead of Relay",
+    "design lead of Atlas"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.85,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer identifies 'tech lead of Umbra' as the latest-dated role, matching the reference. It also lists design lead of Atlas and hedges that records only run through mid-2025, so it doesn't commit firmly to the current role. The key fact is present, with minor extra caveats."
+  },
+  {
+   "id": "q_t4_49",
+   "task": "T4",
+   "question": "Where is Bob Martinez based? (as of today)",
+   "reference": "Lisbon",
+   "evidence_ids": [
+    "r3_0046"
+   ],
+   "stale_answer": "Berlin",
+   "stratum": "explicit",
+   "answer": "Bob Martinez is based in **Lisbon**. He relocated there from Berlin in February 2025 (reported 2025-02-04), and no later move is recorded. The latest record placing him in Berlin is dated 2025-01-30, before the move. His later presentations (Denver, Austin, Toronto, Osaka) look like travel rather than a change of base. This reflects only the records available, which end around mid-2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.41,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14763,
+    "completion_tokens": 137,
+    "cost_usd": 0.0604
+   },
+   "decoys": [
+    "Dublin",
+    "Berlin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Bob Martinez is based in Lisbon, matching the reference. The extra details about the move from Berlin and the caveat about records ending mid-2025 do not contradict it."
+  },
+  {
+   "id": "q_t4_50",
+   "task": "T4",
+   "question": "What is Atlas's quarterly budget? (as of today)",
+   "reference": "$900k",
+   "evidence_ids": [
+    "r3_0050"
+   ],
+   "stale_answer": "$180k",
+   "stratum": "implicit",
+   "answer": "Atlas's quarterly budget is **$900k**, per the most recent record (as of 2025-02-11). It was originally set to $180k on 2025-01-17. The jump from $180k to $900k is large and may be a data discrepancy, but no later budget record contradicts it.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.41,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12096,
+    "completion_tokens": 91,
+    "cost_usd": 0.0493
+   },
+   "decoys": [
+    "$300k",
+    "$180k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Atlas's quarterly budget is $900k, matching the reference. The extra details (earlier $180k value, data discrepancy note) don't contradict the reference."
+  },
+  {
+   "id": "q_t4_51",
+   "task": "T4",
+   "question": "Which issue tracker does Tessera use? (as of today)",
+   "reference": "Confluence",
+   "evidence_ids": [
+    "r3_0103"
+   ],
+   "stale_answer": "Shortcut",
+   "stratum": "explicit",
+   "answer": "Tessera's most recent recorded issue tracker is **Confluence**. It adopted Shortcut on 2025-02-24 and switched from Shortcut to Confluence effective 2025-03-18. No later change is recorded.\n\nThe records only run through 2025, so I can't confirm it is still the tracker today. One relationship record also describes the direction of the Tessera/Shortcut switch inconsistently, but the dated source records support Confluence as the latest.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.86,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11382,
+    "completion_tokens": 149,
+    "cost_usd": 0.047
+   },
+   "decoys": [
+    "Linear",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Confluence as Tessera's latest issue tracker, matching the reference. The added caveats about the records ending in 2025 and an inconsistent relationship record don't contradict the answer."
+  },
+  {
+   "id": "q_t4_52",
+   "task": "T4",
+   "question": "What is Grace Kim's current role? (as of today)",
+   "reference": "design lead of Tessera",
+   "evidence_ids": [
+    "r3_0140"
+   ],
+   "stale_answer": "tech lead of Pylon",
+   "stratum": "explicit",
+   "answer": "Grace Kim's current role is design lead of Tessera. She took that role effective 2025-04-14, after moving from tech lead of Pylon (a role she'd held since 2025-03-31). The records show no later role change, though the most recent entry is from July 2025, so I can't confirm nothing has changed since then.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.66,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10645,
+    "completion_tokens": 102,
+    "cost_usd": 0.0436
+   },
+   "decoys": [
+    "data lead of Compass",
+    "tech lead of Pylon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Grace Kim's current role is design lead of Tessera, matching the reference. The extra details about her earlier role and the caveat about the latest record do not contradict it."
+  },
+  {
+   "id": "q_t4_53",
+   "task": "T4",
+   "question": "Which issue tracker does Atlas use? (as of today)",
+   "reference": "Monday",
+   "evidence_ids": [
+    "r3_0033"
+   ],
+   "stale_answer": "Shortcut",
+   "stratum": "explicit",
+   "answer": "Atlas uses **Monday**. It standardized on Shortcut on 2025-01-22, then switched from Shortcut to Monday effective 2025-01-28. No later change is recorded for Atlas.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 2.98,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10864,
+    "completion_tokens": 69,
+    "cost_usd": 0.0441
+   },
+   "decoys": [
+    "Asana",
+    "Shortcut"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Atlas uses Monday, matching the reference. The extra history about Shortcut and the switch date does not contradict it."
+  },
+  {
+   "id": "q_t4_54",
+   "task": "T4",
+   "question": "Which issue tracker does Beacon use? (as of today)",
+   "reference": "Shortcut",
+   "evidence_ids": [
+    "r3_0061"
+   ],
+   "stale_answer": "Notion",
+   "stratum": "implicit",
+   "answer": "Beacon uses **Notion**. It standardized on Notion on 2025-02-20, two days after the record showing it tracked issues in Shortcut (as of 2025-02-18). No later change is recorded, so Notion is the most recent known tracker.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.2,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11439,
+    "completion_tokens": 83,
+    "cost_usd": 0.0466
+   },
+   "decoys": [
+    "Linear",
+    "Notion"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference answer is Shortcut; generated answer says Notion is the current tracker and treats Shortcut as outdated, contradicting the reference."
+  },
+  {
+   "id": "q_t4_55",
+   "task": "T4",
+   "question": "Where is Daria Sokolova based? (as of today)",
+   "reference": "Berlin",
+   "evidence_ids": [
+    "r3_0081"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "explicit",
+   "answer": "Daria Sokolova is based in Berlin. She was in Lisbon as of 2025-02-25, then relocated from Lisbon to Berlin in March 2025 (recorded 2025-03-07). Her May 2025 Berlin presentation fits that, and no later move is recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.24,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14042,
+    "completion_tokens": 96,
+    "cost_usd": 0.0571
+   },
+   "decoys": [
+    "Denver",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Daria Sokolova is based in Berlin, matching the reference. The extra details about the earlier Lisbon location and the March 2025 move do not contradict it."
+  },
+  {
+   "id": "q_t4_56",
+   "task": "T4",
+   "question": "Which issue tracker does Sextant use? (as of today)",
+   "reference": "Shortcut",
+   "evidence_ids": [
+    "r3_0080"
+   ],
+   "stale_answer": "Confluence",
+   "stratum": "explicit",
+   "answer": "Sextant uses **Shortcut**. It standardized on Confluence on 2025-02-25, then switched from Confluence to Shortcut effective 2025-03-06. No later change is recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 2.86,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11180,
+    "completion_tokens": 66,
+    "cost_usd": 0.0454
+   },
+   "decoys": [
+    "Linear",
+    "Confluence"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Sextant uses Shortcut, matching the reference. The extra history about Confluence and the switch date does not contradict the reference."
+  },
+  {
+   "id": "q_t4_57",
+   "task": "T4",
+   "question": "What is Pylon's quarterly budget? (as of today)",
+   "reference": "$520k",
+   "evidence_ids": [
+    "r3_0104"
+   ],
+   "stale_answer": "$900k",
+   "stratum": "explicit",
+   "answer": "Pylon's quarterly budget is **$520k**. It was set to $900k on 2025-02-12, then revised down to $520k on 2025-03-21. That is the latest record in the context, and no later revision appears.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.3,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10833,
+    "completion_tokens": 71,
+    "cost_usd": 0.044
+   },
+   "decoys": [
+    "$600k",
+    "$900k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $520k, matching the reference exactly. The extra history about the earlier $900k figure and the revision date does not contradict the reference."
+  },
+  {
+   "id": "q_t4_58",
+   "task": "T4",
+   "question": "Where is Jamal Okafor based? (as of today)",
+   "reference": "Denver",
+   "evidence_ids": [
+    "r3_0052"
+   ],
+   "stale_answer": "Austin",
+   "stratum": "explicit",
+   "answer": "Jamal Okafor is most likely based in **Denver**. He relocated there from Austin in February 2025 (recorded 2025-02-11). The only record placing him in Austin as a resident is dated 2025-02-07, before the move. His later presentations in Lisbon (2025-06-20, 2025-07-04) and Austin (2025-07-02) look like event travel, not relocations. No later record changes his base.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.51,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13464,
+    "completion_tokens": 136,
+    "cost_usd": 0.0552
+   },
+   "decoys": [
+    "Singapore",
+    "Austin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Jamal Okafor is based in Denver, matching the reference. The extra details about the move from Austin and later event travel do not contradict it."
+  },
+  {
+   "id": "q_t4_59",
+   "task": "T4",
+   "question": "Where is Liam O'Brien based? (as of today)",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0112"
+   ],
+   "stale_answer": "Osaka",
+   "stratum": "implicit",
+   "answer": "Liam O'Brien's location is uncertain. Two records dated 2025-03-27 conflict: one says he has been based in Singapore since March 2025, and the other says he is based in Osaka. Nothing later in the context settles it, so Singapore and Osaka are both possible.\n\nHis June 2025 talks were in Dublin (Sextant, 2025-06-05) and Berlin (Umbra, 2025-06-06). Neither tells us where he lived. I don't have enough information to give a single current base. The best-supported answers are Singapore or Osaka, as of March 2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.61,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14575,
+    "completion_tokens": 190,
+    "cost_usd": 0.0602
+   },
+   "decoys": [
+    "Toronto",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t4_60",
+   "task": "T4",
+   "question": "Where is Alice Chen based? (as of today)",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0245"
+   ],
+   "stale_answer": "Lisbon",
+   "stratum": "explicit",
+   "answer": "Alice Chen is based in **Singapore**. She relocated there from Lisbon in June 2025 (source dated 2025-06-26), which is the latest location record. The earlier \"based in Lisbon\" entry is dated 2025-05-26 and predates the move. The records don't go past mid-2025, so I can't confirm where she is as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.92,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14222,
+    "completion_tokens": 120,
+    "cost_usd": 0.0581
+   },
+   "decoys": [
+    "Toronto",
+    "Lisbon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Alice Chen is based in Singapore, matching the reference. The extra context about the Lisbon relocation and the caveat about records ending in mid-2025 doesn't contradict the reference."
+  },
+  {
+   "id": "q_t4_61",
+   "task": "T4",
+   "question": "What is Ines Moreau's current role? (as of today)",
+   "reference": "release manager of Quill",
+   "evidence_ids": [
+    "r3_0074"
+   ],
+   "stale_answer": "design lead of Harbor",
+   "stratum": "explicit",
+   "answer": "Ines Moreau's most recent recorded role is **release manager of Quill**, effective 2025-02-25. She moved to it from design lead of Harbor, which she had taken on 2025-02-21.\n\nThe records show no later role change for her. Her last dated activity is presenting Wayfarer at ShipIt 2025 in Denver on 2025-05-01. The data only goes through mid-2025, so I can't confirm she still holds the role as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.8,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12129,
+    "completion_tokens": 154,
+    "cost_usd": 0.0501
+   },
+   "decoys": [
+    "release manager of Relay",
+    "design lead of Harbor"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states her current role is release manager of Quill, matching the reference. Extra details (prior role, caveat about data recency) don't contradict it."
+  },
+  {
+   "id": "q_t4_62",
+   "task": "T4",
+   "question": "What is Alice Chen's current role? (as of today)",
+   "reference": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0088"
+   ],
+   "stale_answer": "tech lead of Relay",
+   "stratum": "explicit",
+   "answer": "Alice Chen's most recent recorded role is **design lead of Orbit**, effective 2025-03-06 (she moved there from tech lead of Relay).\n\nCaveats:\n- Orbit's design lead later changed to Zofia Nowak (2025-03-26) and then Noah Berg (2025-04-17), so Alice's tenure in that role likely ended by then, though no record explicitly says she left.\n- No later role is recorded for her, and the records only run through mid-2025, so her role as of today (2026-11-17) isn't established.\n- Her last known location is Singapore (relocated June 2025).\n\nThe best-supported answer is design lead of Orbit, but it may be outdated.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.62,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12338,
+    "completion_tokens": 224,
+    "cost_usd": 0.0516
+   },
+   "decoys": [
+    "QA lead of Harbor",
+    "tech lead of Relay"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.85,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states 'design lead of Orbit' as the best-supported current role, matching the reference. It adds caveats that the role may be outdated because later design leads were recorded, which slightly hedges but does not contradict the reference answer."
+  },
+  {
+   "id": "q_t4_63",
+   "task": "T4",
+   "question": "What is Sanjay Mehta's current role? (as of today)",
+   "reference": "design lead of Compass",
+   "evidence_ids": [
+    "r3_0093"
+   ],
+   "stale_answer": "data lead of Beacon",
+   "stratum": "implicit",
+   "answer": "Sanjay Mehta holds two roles, both effective 2025-03-13: **data lead of Beacon** and **design lead of Compass**. The records show no later change, so these are his most recent recorded roles. The context doesn't confirm they still apply as of today (2026-11-17), since its latest records date from mid-2025.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.64,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11123,
+    "completion_tokens": 106,
+    "cost_usd": 0.0455
+   },
+   "decoys": [
+    "design lead of Tessera",
+    "data lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.5,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer includes 'design lead of Compass' but also claims a second concurrent role, 'data lead of Beacon', which the reference doesn't mention. It also hedges on whether the roles are current. The key fact is present, but the extra role makes the answer partly inconsistent with the reference's single current role."
+  },
+  {
+   "id": "q_t4_64",
+   "task": "T4",
+   "question": "What is Wei Zhang's current role? (as of today)",
+   "reference": "release manager of Meridian",
+   "evidence_ids": [
+    "r3_0053"
+   ],
+   "stale_answer": "QA lead of Lantern",
+   "stratum": "explicit",
+   "answer": "Wei Zhang's most recent recorded role is **release manager of Meridian**, effective 2025-02-14. Wei Zhang moved there from QA lead of Lantern. No later role change appears in the records, though they only run through mid-2025, so this is the latest known role rather than a confirmed current one.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.77,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12153,
+    "completion_tokens": 100,
+    "cost_usd": 0.0496
+   },
+   "decoys": [
+    "data lead of Beacon",
+    "QA lead of Lantern"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.9,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the key fact, release manager of Meridian, matching the reference. It adds a caveat that the records end in mid-2025, so this is the latest known role rather than a confirmed current one. That hedge slightly weakens the answer but does not contradict the reference."
+  },
+  {
+   "id": "q_t4_65",
+   "task": "T4",
+   "question": "What is Olga Petrova's current role? (as of today)",
+   "reference": "design lead of Beacon",
+   "evidence_ids": [
+    "r3_0039"
+   ],
+   "stale_answer": "product owner of Harbor",
+   "stratum": "implicit",
+   "answer": "Olga Petrova's most recent recorded roles are:\n\n- **Product owner of Harbor** (effective 2025-01-27)\n- **Design lead of Beacon** (effective 2025-01-29)\n\nThe records do not show that she held either role past April 2025. Zofia Nowak took over as design lead of Beacon effective 2025-04-10, so Petrova's Beacon role appears to have ended then. No record shows her leaving Harbor product owner, so that role is the only one with no recorded end.\n\nHer latest dated records are the June 2025 presentations and her Singapore relocation (2025-06-12). The data does not extend to today (2026-11-17), so her current role can't be confirmed. Based on the available records, the best answer is **product owner of Harbor**, which may be out of date.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 5.26,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11778,
+    "completion_tokens": 256,
+    "cost_usd": 0.0497
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "product owner of Harbor"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "Reference says current role is design lead of Beacon. The generated answer concludes Beacon role ended (Zofia Nowak took over) and gives 'product owner of Harbor' as best answer, contradicting the reference."
+  },
+  {
+   "id": "q_t4_66",
+   "task": "T4",
+   "question": "What is Jamal Okafor's current role? (as of today)",
+   "reference": "QA lead of Sextant",
+   "evidence_ids": [
+    "r3_0129"
+   ],
+   "stale_answer": "tech lead of Wayfarer",
+   "stratum": "implicit",
+   "answer": "Jamal Okafor's most recent recorded role is **QA lead of Sextant**, effective 2025-04-04. He previously became tech lead of Wayfarer on 2025-03-31, and the later record shows no further role change.\n\nThe records only run through mid-2025, so I can't confirm he still holds that role as of today (2026-11-17).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.81,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11544,
+    "completion_tokens": 112,
+    "cost_usd": 0.0473
+   },
+   "decoys": [
+    "design lead of Compass",
+    "tech lead of Wayfarer"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the current role is QA lead of Sextant, matching the reference. The extra details (dates, prior role, caveat about record coverage) don't contradict it."
+  },
+  {
+   "id": "q_t4_67",
+   "task": "T4",
+   "question": "Where is Freya Holm based? (as of today)",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0084"
+   ],
+   "stale_answer": "Singapore",
+   "stratum": "implicit",
+   "answer": "Freya Holm is based in Osaka. The most recent location record, dated 2025-03-05, says she has been based there since March 2025. An earlier record from 2025-02-19 placed her in Singapore, so she appears to have moved from Singapore to Osaka. No later record shows another relocation. That record is also the only one about where she lives, and it is over a year old as of today (2026-11-17), so her current base could have changed.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.61,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13618,
+    "completion_tokens": 137,
+    "cost_usd": 0.0558
+   },
+   "decoys": [
+    "Berlin",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Freya Holm is based in Osaka, matching the reference. The extra context (prior Singapore record, staleness caveat) does not contradict it."
+  },
+  {
+   "id": "q_t4_68",
+   "task": "T4",
+   "question": "What is Zofia Nowak's current role? (as of today)",
+   "reference": "design lead of Beacon",
+   "evidence_ids": [
+    "r3_0132"
+   ],
+   "stale_answer": "design lead of Orbit",
+   "stratum": "explicit",
+   "answer": "Zofia Nowak's most recent recorded role is design lead of Beacon, effective 2025-04-10 (she moved there from design lead of Orbit). No later role change appears in the records, though the context only runs through mid-2025, so I can't confirm it is still her role as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.74,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11041,
+    "completion_tokens": 92,
+    "cost_usd": 0.0451
+   },
+   "decoys": [
+    "tech lead of Atlas",
+    "design lead of Orbit"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states her role is design lead of Beacon, matching the reference. The added caveat about the records ending in mid-2025 and the mention of her earlier Orbit role do not contradict the reference."
+  },
+  {
+   "id": "q_t4_69",
+   "task": "T4",
+   "question": "What is Callum Reid's current role? (as of today)",
+   "reference": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0120"
+   ],
+   "stale_answer": "tech lead of Meridian",
+   "stratum": "explicit",
+   "answer": "Callum Reid is the tech lead of Atlas. He moved there from Meridian, where he had been tech lead since 2025-03-26, effective 2025-04-03. The records show no later role change, so Atlas tech lead is his latest known role.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n0|Meridian and Lantern: 2025 Leadership, Tooling and Presentation Records (Tove Lindqvist, Callum Reid, Wei Zhang)|\"# Meridian and Lantern: 2025 Leadership, Tooling and Presentation Records (Tove Lindqvist, Callum Reid, Wei Zhang)\n\nThe community centers on two organization-like entities, Meridian and Lantern, and three people whose roles link them: Wei Zhang (Lan",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.17,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11735,
+    "completion_tokens": 81,
+    "cost_usd": 0.0477
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "tech lead of Meridian"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Callum Reid is the tech lead of Atlas, matching the reference. The extra details about his move from Meridian do not contradict it."
+  },
+  {
+   "id": "q_t4_70",
+   "task": "T4",
+   "question": "What is Daria Sokolova's current role? (as of today)",
+   "reference": "data lead of Beacon",
+   "evidence_ids": [
+    "r3_0044"
+   ],
+   "stale_answer": "tech lead of Atlas",
+   "stratum": "explicit",
+   "answer": "Daria Sokolova's most recent recorded role is **data lead of Beacon**, per the move effective 2025-02-05 (from tech lead of Atlas).\n\nThe records conflict. A separate entry says she became tech lead of Atlas on 2025-02-07, two days after that move. One reading is that she took Atlas back up. But Beacon's later records show Sanjay Mehta becoming data lead on 2025-03-13, which suggests she left that role. Her latest dated role entry is therefore the Atlas tech lead one (2025-02-07), and the records don't confirm what she holds today, nearly two years on.\n\nThe most I can say is that her last recorded role is tech lead of Atlas (2025-02-07), with the order of events uncertain. I don't have enough information to state her role as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.41,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12763,
+    "completion_tokens": 259,
+    "cost_usd": 0.0536
+   },
+   "decoys": [
+    "tech lead of Lantern",
+    "tech lead of Atlas"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "other",
+   "score": 0.0,
+   "judge_mode": "false_abstention",
+   "judge_reasoning": "REF has answer, ANS abstained \u2014 FAILED RETRIEVAL"
+  },
+  {
+   "id": "q_t4_71",
+   "task": "T4",
+   "question": "What is Quill's quarterly budget? (as of today)",
+   "reference": "$360k",
+   "evidence_ids": [
+    "r3_0128"
+   ],
+   "stale_answer": "$300k",
+   "stratum": "implicit",
+   "answer": "Quill's most recent recorded quarterly budget is **$360k** (as of 2025-04-02), up from $300k set on 2025-01-31. The context has no later budget record, so I can't confirm it is still $360k as of today.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.11,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10604,
+    "completion_tokens": 76,
+    "cost_usd": 0.0432
+   },
+   "decoys": [
+    "$240k",
+    "$300k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Quill's quarterly budget is $360k, matching the reference. The added caveat about the date and the prior $300k figure doesn't contradict the reference."
+  },
+  {
+   "id": "q_t4_72",
+   "task": "T4",
+   "question": "Which issue tracker does Orbit use? (as of today)",
+   "reference": "Asana",
+   "evidence_ids": [
+    "r3_0092"
+   ],
+   "stale_answer": "Confluence",
+   "stratum": "explicit",
+   "answer": "Orbit uses **Asana**. It standardized on Confluence on 2025-02-28, then switched from Confluence to Asana effective 2025-03-12. No later switch is recorded.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.04,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10107,
+    "completion_tokens": 63,
+    "cost_usd": 0.0411
+   },
+   "decoys": [
+    "Monday",
+    "Confluence"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Orbit uses Asana, which matches the reference. The extra history about Confluence is additional context and does not contradict the reference."
+  },
+  {
+   "id": "q_t4_73",
+   "task": "T4",
+   "question": "What is Tessera's quarterly budget? (as of today)",
+   "reference": "$300k",
+   "evidence_ids": [
+    "r3_0116"
+   ],
+   "stale_answer": "$450k",
+   "stratum": "implicit",
+   "answer": "Tessera's most recent recorded quarterly budget is **$300k**, as of 2025-03-24. It was set to $450k on 2025-02-21 and then reduced to $300k. The records contain nothing later, so this is the latest known figure, but it dates from 2025 and may no longer be current.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.52,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11321,
+    "completion_tokens": 98,
+    "cost_usd": 0.0463
+   },
+   "decoys": [
+    "$180k",
+    "$450k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the quarterly budget is $300k, matching the reference. The extra history (a prior $450k) and the staleness caveat don't contradict the reference."
+  },
+  {
+   "id": "q_t4_74",
+   "task": "T4",
+   "question": "Where is Beatriz Lopes based? (as of today)",
+   "reference": "Toronto",
+   "evidence_ids": [
+    "r3_0143"
+   ],
+   "stale_answer": "Osaka",
+   "stratum": "explicit",
+   "answer": "Beatriz Lopes is most likely based in **Toronto**. She relocated there from Osaka in April 2025 (the source is dated 2025-04-14), after the 2025-04-09 record placing her in Osaka. Her last recorded activity was presenting Sextant in Lisbon on 2025-06-17, but no later record shows her moving anywhere else. The records only run through mid-2025, so I can't confirm where she is now.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.59,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14147,
+    "completion_tokens": 143,
+    "cost_usd": 0.058
+   },
+   "decoys": [
+    "Dublin",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "current",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Toronto as her most likely current base, matching the reference. The hedging about the records ending in mid-2025 does not contradict it."
+  },
+  {
+   "id": "q_t3_75",
+   "task": "T3",
+   "question": "Before the most recent change, what was Beatriz Lopes's base city?",
+   "reference": "Osaka",
+   "evidence_ids": [
+    "r3_0134",
+    "r3_0143"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Osaka. Beatriz Lopes was based in Osaka (as of 2025-04-09) before relocating to Toronto in April 2025, which is her most recent recorded change.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.63,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 13494,
+    "completion_tokens": 60,
+    "cost_usd": 0.0546
+   },
+   "decoys": [
+    "Berlin",
+    "Toronto"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Osaka as Beatriz Lopes's base city before the most recent change, matching the reference. The extra detail about relocating to Toronto does not contradict it."
+  },
+  {
+   "id": "q_t3_76",
+   "task": "T3",
+   "question": "Before the most recent change, what was Tessera's quarterly budget?",
+   "reference": "$450k",
+   "evidence_ids": [
+    "r3_0067",
+    "r3_0116"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Tessera's quarterly budget was $450k, set on 2025-02-21, before it was reduced to $300k as of 2025-03-24.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.1,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10568,
+    "completion_tokens": 48,
+    "cost_usd": 0.0427
+   },
+   "decoys": [
+    "$900k",
+    "$300k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the prior quarterly budget was $450k, matching the reference. The extra details (dates and the reduction to $300k) are consistent with the question's framing and do not contradict the reference."
+  },
+  {
+   "id": "q_t3_77",
+   "task": "T3",
+   "question": "Before the most recent change, what was Orbit's issue tracker?",
+   "reference": "Confluence",
+   "evidence_ids": [
+    "r3_0073",
+    "r3_0092"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Orbit's most recent tracker change was the switch to Asana on 2025-03-12. Before that, its issue tracker was **Confluence**, which it had standardized on as of 2025-02-28.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.2,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10683,
+    "completion_tokens": 66,
+    "cost_usd": 0.0434
+   },
+   "decoys": [
+    "Notion",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that the issue tracker before the most recent change was Confluence, which matches the reference. The extra dates and the mention of Asana do not contradict it."
+  },
+  {
+   "id": "q_t3_78",
+   "task": "T3",
+   "question": "Before the most recent change, what was Quill's quarterly budget?",
+   "reference": "$300k",
+   "evidence_ids": [
+    "r3_0035",
+    "r3_0128"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Quill's quarterly budget was $300k, set on 2025-01-31, before it rose to $360k as of 2025-04-02.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 2.94,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10607,
+    "completion_tokens": 45,
+    "cost_usd": 0.0429
+   },
+   "decoys": [
+    "$520k",
+    "$360k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states the prior quarterly budget was $300k, matching the reference. The extra details (date set, later rise to $360k) don't contradict it."
+  },
+  {
+   "id": "q_t3_79",
+   "task": "T3",
+   "question": "Before the most recent change, what was Daria Sokolova's role?",
+   "reference": "tech lead of Atlas",
+   "evidence_ids": [
+    "r3_0041",
+    "r3_0044"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before her most recent dated change (becoming tech lead of Atlas on 2025-02-07), Daria Sokolova was **data lead of Beacon**, a role she held from 2025-02-05.\n\nThe records conflict here. The 2025-02-05 record says she moved from Atlas tech lead to Beacon data lead. If that move is treated as the latest change instead, her prior role was tech lead of Atlas.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 6.36,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12232,
+    "completion_tokens": 442,
+    "cost_usd": 0.0533
+   },
+   "decoys": [
+    "design lead of Orbit",
+    "data lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "wrong",
+   "score": 0.25,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer's primary claim is that the prior role was data lead of Beacon, which contradicts the reference (tech lead of Atlas). It only mentions tech lead of Atlas as a hedged alternative under a conflicting-records reading, so the correct fact is present but not committed to."
+  },
+  {
+   "id": "q_t3_80",
+   "task": "T3",
+   "question": "Before the most recent change, what was Callum Reid's role?",
+   "reference": "tech lead of Meridian",
+   "evidence_ids": [
+    "r3_0117",
+    "r3_0120"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Callum Reid's most recent change was his move to Atlas as tech lead, effective 2025-04-03. Before that, he was **tech lead of Meridian**, a role he held from 2025-03-26.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n0|Meridian and Lantern: 2025 Leadership, Tooling and Presentation Records (Tove Lindqvist, Callum Reid, Wei Zhang)|\"# Meridian and Lantern: 2025 Leadership, Tooling and Presentation Records (Tove Lindqvist, Callum Reid, Wei Zhang)\n\nThe community centers on two organization-like entities, Meridian and Lantern, and three people whose roles link them: Wei Zhang (Lan",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.87,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10649,
+    "completion_tokens": 68,
+    "cost_usd": 0.0433
+   },
+   "decoys": [
+    "product owner of Pylon",
+    "tech lead of Atlas"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that before the most recent change Callum Reid was tech lead of Meridian, which matches the reference. The extra details about the move to Atlas and the dates do not contradict it."
+  },
+  {
+   "id": "q_t3_81",
+   "task": "T3",
+   "question": "Before the most recent change, what was Zofia Nowak's role?",
+   "reference": "design lead of Orbit",
+   "evidence_ids": [
+    "r3_0114",
+    "r3_0132"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Zofia Nowak's most recent change was on 2025-04-10, when she moved to design lead of Beacon. Before that, she was design lead of Orbit, a role she took on 2025-03-26.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n1|Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes|\"# Pylon and 2025 Conference Circuit: Leadership, Budget and Tooling Changes\n\nThe community centers on Pylon, an entity of unspecified nature (product, project, or team), and the people who led and presented it in 2025: Zofia Nowak, Elena Rossi, Grace Kim, and Carol Davis. Related entitie",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.26,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 9977,
+    "completion_tokens": 67,
+    "cost_usd": 0.0406
+   },
+   "decoys": [
+    "product owner of Pylon",
+    "design lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that before the most recent change, Zofia Nowak was design lead of Orbit, which matches the reference. The extra details about dates and the move to Beacon do not contradict it."
+  },
+  {
+   "id": "q_t3_82",
+   "task": "T3",
+   "question": "Before the most recent change, what was Freya Holm's base city?",
+   "reference": "Singapore",
+   "evidence_ids": [
+    "r3_0068",
+    "r3_0084"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Singapore. Freya Holm was based in Singapore as of 2025-02-19, and her most recent change was the move to Osaka (based there since March 2025).",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 2.93,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14091,
+    "completion_tokens": 53,
+    "cost_usd": 0.0569
+   },
+   "decoys": [
+    "Berlin",
+    "Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states Singapore as Freya Holm's base city before the most recent change (the move to Osaka), which matches the reference. The extra detail about Osaka is consistent and does not contradict it."
+  },
+  {
+   "id": "q_t3_83",
+   "task": "T3",
+   "question": "Before the most recent change, what was Jamal Okafor's role?",
+   "reference": "tech lead of Wayfarer",
+   "evidence_ids": [
+    "r3_0121",
+    "r3_0129"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Jamal Okafor's most recent role change was becoming QA lead of Sextant (effective 2025-04-04). Just before that, he was tech lead of Wayfarer, a role he took on 2025-03-31.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.0,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12093,
+    "completion_tokens": 72,
+    "cost_usd": 0.0491
+   },
+   "decoys": [
+    "design lead of Orbit",
+    "QA lead of Sextant"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that just before the most recent change (to QA lead of Sextant), Jamal Okafor was tech lead of Wayfarer, which matches the reference. The extra dates are additional detail and do not contradict it."
+  },
+  {
+   "id": "q_t3_84",
+   "task": "T3",
+   "question": "Before the most recent change, what was Olga Petrova's role?",
+   "reference": "product owner of Harbor",
+   "evidence_ids": [
+    "r3_0030",
+    "r3_0039"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Before becoming design lead of Beacon (effective 2025-01-29), Olga Petrova was product owner of Harbor, a role she took on 2025-01-27. The records don't say she left the Harbor role, so she may have held both.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.72,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11322,
+    "completion_tokens": 234,
+    "cost_usd": 0.0476
+   },
+   "decoys": [
+    "design lead of Meridian",
+    "design lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "normal_judge",
+   "judge_reasoning": "The generated answer states that before the most recent change (design lead of Beacon), Olga Petrova was product owner of Harbor, matching the reference. The extra details and the hedge about possibly holding both roles do not contradict the reference."
+  },
+  {
+   "id": "q_t2_85",
+   "task": "T2",
+   "question": "List every conference presentation Bob Martinez has given (project, conference, city).",
+   "reference": "Sextant at PlatformWeek in Osaka; Quill at InfraDays in Toronto; Meridian at PlatformWeek in Denver; Harbor at ShipIt in Lisbon; Meridian at DataSummit in Denver; Tessera at PlatformWeek in Austin",
+   "evidence_ids": [
+    "r3_0154",
+    "r3_0168",
+    "r3_0174",
+    "r3_0208",
+    "r3_0243",
+    "r3_0249"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Bob Martinez's presentations (from the sources):\n\n| Date | Project | Conference | City |\n|---|---|---|---|\n| 2025-04-21 | Sextant | PlatformWeek 2025 | Osaka |\n| 2025-05-01 | Quill | InfraDays 2025 | Toronto |\n| 2025-05-05 | Meridian | PlatformWeek 2025 | Denver |\n| 2025-05-29 | Harbor | ShipIt 2025 | Lisbon |\n| 2025-06-23 | Meridian | DataSummit 2025 | Denver |\n| 2025-06-23 | Tessera | PlatformWeek 2025 | Austin |\n\nNote: the 2025-06-23 Denver and Austin talks fall on the same date, which the records don't explain. A relationship record also gives 2025-06-23 as an alternate date for the Sextant talk, but the sources list Sextant only on 2025-04-21 in Osaka.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 4.41,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14317,
+    "completion_tokens": 325,
+    "cost_usd": 0.0605
+   },
+   "decoys": [
+    "Tessera at InfraDays in Denver",
+    "Sextant at PlatformWeek in Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Sextant at PlatformWeek in Osaka",
+    "Quill at InfraDays in Toronto",
+    "Meridian at PlatformWeek in Denver",
+    "Harbor at ShipIt in Lisbon",
+    "Meridian at DataSummit in Denver",
+    "Tessera at PlatformWeek in Austin"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "6/6 nuggets present"
+  },
+  {
+   "id": "q_t2_86",
+   "task": "T2",
+   "question": "List every conference presentation Liam O'Brien has given (project, conference, city).",
+   "reference": "Tessera at InfraDays in Denver; Sextant at DataSummit in Dublin; Umbra at InfraDays in Berlin",
+   "evidence_ids": [
+    "r3_0177",
+    "r3_0210",
+    "r3_0217"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Liam O'Brien has given three conference presentations:\n\n1. **Tessera**: InfraDays 2025, Denver (2025-05-06)\n2. **Sextant**: DataSummit 2025, Dublin (2025-06-05)\n3. **Umbra**: InfraDays 2025, Berlin (2025-06-06)",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.24,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 15032,
+    "completion_tokens": 111,
+    "cost_usd": 0.0612
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Tessera at InfraDays in Denver"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Tessera at InfraDays in Denver",
+    "Sextant at DataSummit in Dublin",
+    "Umbra at InfraDays in Berlin"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "3/3 nuggets present"
+  },
+  {
+   "id": "q_t2_87",
+   "task": "T2",
+   "question": "List every conference presentation Beatriz Lopes has given (project, conference, city).",
+   "reference": "Atlas at ShipIt in Osaka; Sextant at PlatformWeek in Lisbon",
+   "evidence_ids": [
+    "r3_0135",
+    "r3_0236"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Beatriz Lopes has given two presentations:\n\n1. **Atlas** at ShipIt 2025 in Osaka (2025-04-10)\n2. **Sextant** at PlatformWeek 2025 in Lisbon (2025-06-17)",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.31,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 15650,
+    "completion_tokens": 85,
+    "cost_usd": 0.0634
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Atlas at ShipIt in Osaka"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Atlas at ShipIt in Osaka",
+    "Sextant at PlatformWeek in Lisbon"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "2/2 nuggets present"
+  },
+  {
+   "id": "q_t2_88",
+   "task": "T2",
+   "question": "List every conference presentation Carol Davis has given (project, conference, city).",
+   "reference": "Harbor at DevCon in Toronto; Relay at DevCon in Berlin; Quill at PlatformWeek in Denver",
+   "evidence_ids": [
+    "r3_0162",
+    "r3_0211",
+    "r3_0215"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Carol Davis has given three conference presentations, all in 2025:\n\n1. **Harbor**, DevCon 2025, Toronto (2025-04-28)\n2. **Relay**, DevCon 2025, Berlin (2025-06-02)\n3. **Quill**, PlatformWeek 2025, Denver (2025-06-03)",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.45,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 15212,
+    "completion_tokens": 113,
+    "cost_usd": 0.062
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Harbor at DevCon in Toronto"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Harbor at DevCon in Toronto",
+    "Relay at DevCon in Berlin",
+    "Quill at PlatformWeek in Denver"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "3/3 nuggets present"
+  },
+  {
+   "id": "q_t2_89",
+   "task": "T2",
+   "question": "List every conference presentation Olga Petrova has given (project, conference, city).",
+   "reference": "Pylon at ShipIt in Dublin; Relay at PlatformWeek in Singapore; Harbor at InfraDays in Berlin; Wayfarer at ShipIt in Berlin; Atlas at DataSummit in Berlin; Relay at PlatformWeek in Osaka",
+   "evidence_ids": [
+    "r3_0098",
+    "r3_0115",
+    "r3_0123",
+    "r3_0216",
+    "r3_0222",
+    "r3_0240"
+   ],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "Olga Petrova's conference presentations (6 total), chronologically:\n\n1. **Pylon**, ShipIt 2025, Dublin (2025-03-10)\n2. **Relay**, PlatformWeek 2025, Singapore (2025-03-27)\n3. **Harbor**, InfraDays 2025, Berlin (2025-04-03)\n4. **Wayfarer**, ShipIt 2025, Berlin (2025-06-02)\n5. **Atlas**, DataSummit 2025, Berlin (2025-06-11)\n6. **Relay**, PlatformWeek 2025, Osaka (2025-06-26)",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n2|InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)|\"# InfraDays/ShipIt 2025 Event Series, Atlas, Harbor, Quill and Key Presenters (Bob Martinez, Daria Sokolova)\n\nThis community centers on multi-city 2025 conference series (InfraDays 2025, ShipIt 2025, DataSummit 2025) hosted in cities such as Berlin, Lisbo",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.36,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 15190,
+    "completion_tokens": 215,
+    "cost_usd": 0.0629
+   },
+   "decoys": [
+    "Sextant at PlatformWeek in Osaka",
+    "Pylon at ShipIt in Dublin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": [
+    "Pylon at ShipIt in Dublin",
+    "Relay at PlatformWeek in Singapore",
+    "Harbor at InfraDays in Berlin",
+    "Wayfarer at ShipIt in Berlin",
+    "Atlas at DataSummit in Berlin",
+    "Relay at PlatformWeek in Osaka"
+   ],
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "nugget",
+   "judge_reasoning": "6/6 nuggets present"
+  },
+  {
+   "id": "q_t5_90",
+   "task": "T5",
+   "question": "Where is Keiko Sato based?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. Keiko Sato does not appear anywhere in the provided context.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.24,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 14302,
+    "completion_tokens": 36,
+    "cost_usd": 0.0576
+   },
+   "decoys": [
+    "Toronto",
+    "Singapore"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_91",
+   "task": "T5",
+   "question": "Where is Priya Nair based?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The records contain no \"based in\" statement for Priya Nair. They show only that she presented in Berlin (2025-03-19, InfraDays), Denver (2025-04-29, DataSummit), and Dublin (2025-05-12, DevCon), and speaking at an event doesn't establish where someone lives.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n5|PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads|\"# PlatformWeek 2025 and Global Tech Hubs: Dublin, Osaka, Toronto and Mobile Project Leads\n\nThe community centers on PlatformWeek 2025, a distributed event series across eight cities, and on three hub cities (Dublin, Osaka, Toronto) that host events and receive or lose profe",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.58,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12528,
+    "completion_tokens": 114,
+    "cost_usd": 0.0512
+   },
+   "decoys": [
+    "Berlin",
+    "Austin"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_92",
+   "task": "T5",
+   "question": "What is Priya Nair's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The context describes Priya Nair only as a presenter: Atlas at InfraDays 2025 in Berlin (2025-03-19), Meridian at DataSummit 2025 in Denver (2025-04-29), and Compass at DevCon 2025 in Dublin (2025-05-12). It records no job title or leadership role for her.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.17,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 12141,
+    "completion_tokens": 124,
+    "cost_usd": 0.0498
+   },
+   "decoys": [
+    "data lead of Compass",
+    "data lead of Beacon"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_93",
+   "task": "T5",
+   "question": "What is Nimbus's quarterly budget?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The context records leadership changes, conference presentations, and tooling for Nimbus, but no quarterly budget for it. Budgets are listed for other entities (Relay, Orbit, Wayfarer, Pylon, Tessera, and others), not Nimbus.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.32,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10912,
+    "completion_tokens": 100,
+    "cost_usd": 0.0446
+   },
+   "decoys": [
+    "$450k",
+    "$750k"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_94",
+   "task": "T5",
+   "question": "Which issue tracker does Nimbus use?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. The context records issue tracker choices for other projects (Compass, Umbra, Tessera, Sextant, Orbit, Meridian, Atlas, Quill, Pylon, Lantern, Relay, Beacon), but it contains no issue tracker record for Nimbus. Nimbus appears only in leadership roles (design lead, data lead) and conference presentations.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n4|Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025|\"# Umbra, Sextant, Tessera and Issue Tracker Tooling (Shortcut, Confluence) in 2025\n\nThe community is a cluster of 2025 project teams (Umbra, Sextant, Tessera, Compass, plus Orbit, Atlas, Meridian and Quill, which appear mainly through tooling records) and the people who lead and p",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 3.3,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 10634,
+    "completion_tokens": 135,
+    "cost_usd": 0.0439
+   },
+   "decoys": [
+    "Linear",
+    "Asana"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  },
+  {
+   "id": "q_t5_95",
+   "task": "T5",
+   "question": "What is Keiko Sato's current role?",
+   "reference": "I don't have enough information to answer this question.",
+   "evidence_ids": [],
+   "stale_answer": null,
+   "stratum": "",
+   "answer": "I don't have enough information to answer this question. Keiko Sato doesn't appear anywhere in the provided context.",
+   "retrieved": [
+    {
+     "content": "-----Reports-----\nid|title|content\n3|Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)|\"# Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir and the Orbit, Relay, Wayfarer and Nimbus Projects (2025)\n\nThis community centers on four people (Freya Holm, Alice Chen, Dmitri Volkov, Yusuf Demir) and four organization-like entities (Orbit, Relay,",
+     "source": "graphrag"
+    }
+   ],
+   "latency_s": 2.77,
+   "read_path": {
+    "llm_calls": 1,
+    "prompt_tokens": 11508,
+    "completion_tokens": 38,
+    "cost_usd": 0.0464
+   },
+   "decoys": [
+    "design lead of Compass",
+    "release manager of Compass"
+   ],
+   "decoy_accepted": [
+    false,
+    false
+   ],
+   "nuggets_hit": null,
+   "outcome": "correct",
+   "score": 1.0,
+   "judge_mode": "abstention",
+   "judge_reasoning": "abstained"
+  }
+ ],
+ "deletions": [],
+ "poisons": [],
+ "ingest": {
+  "seconds": 1072.3,
+  "n_memories": 260,
+  "llm_calls": 725,
+  "prompt_tokens": 2976390,
+  "completion_tokens": 310422,
+  "cost_usd": 14.7279,
+  "llm_calls_per_memory": 2.79
+ },
+ "axes": "A1A2",
+ "summary": {
+  "A1_recall": {
+   "T1": 1.0,
+   "T2_nugget_recall": 1.0,
+   "T3": 0.925,
+   "T5_abstention": 1.0,
+   "all_non_update": 0.976
+  },
+  "A2_update": {
+   "current": 0.769,
+   "stale": 0,
+   "FAMA": 0.769
+  },
+  "A3_deletion": {},
+  "A4_adversarial": {
+   "fooled": null,
+   "retrieved_poison": null
+  },
+  "A5_cost": {
+   "ingest_llm_calls_per_memory": 2.79,
+   "ingest_cost_usd": 14.7279,
+   "read_prompt_tokens_per_query": 12239,
+   "read_calls_per_query": 1,
+   "latency_p50_s": 3.4
+  },
+  "judge_health": {
+   "decoy_acceptance": 0,
+   "n_decoys": 192
+  }
+ },
+ "wall_seconds": 1721.4
+}
